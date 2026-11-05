@@ -2536,7 +2536,7 @@ const BANK = (function(e){try{const P=">oVO^cd@ge#lJ'~wUTDiEY+LZx-K&hkt(/F0;G`N.
 let HIDQ=new Set();const CFG={c:null,bypass:false};try{const c=JSON.parse(localStorage.getItem("ns.cfg")||"null");if(c&&typeof c==="object"){CFG.c=c;HIDQ=new Set(c.hideQ||[])}}catch(e){}
 const featOn=k=>!CFG.c||!CFG.c.feat||CFG.c.feat[k]!==false;
 
-const APPV="af28677b00147c5b616f928b1f04c0326c62e330c27c52e28c2e8178790f2b03";
+const APPV="ab421a4effa216c7969145305ca9a490c2892d96101bc99018c6f5ad13036529";
 const CATS={
   MOC:{n:"Management of Care",lo:15,hi:21,w:18},
   SIC:{n:"Safety and Infection Prevention and Control",lo:10,hi:16,w:13},
@@ -8098,7 +8098,7 @@ if(SRV.on){
   document.addEventListener("keydown",e=>{if(location.hash!=="#progress"||view==="exam"||!document.querySelector(".ws-top,#c2"))return;const tg=e.target;if(tg&&tg.closest&&tg.closest("input,textarea,select,[contenteditable]")){if(e.key==="Escape"&&tg.id==="wsq"){tg.value="";const r=document.getElementById("wsres");if(r){r.innerHTML="";r.hidden=true}}return}if(app.querySelector(".mnu")||document.querySelector(".smod-bg"))return;if(e.altKey||e.ctrlKey||e.metaKey)return;
     if(e.key==="/"){const q=document.getElementById("wsq");if(q){e.preventDefault();q.focus()}}else if(e.key==="o"||e.key==="O"){e.preventDefault();openCart()}else if(e.key==="p"||e.key==="P"){e.preventDefault();openPz()}});
   /* open My chart on arrival, if the student chose that */
-  if(SRV.ready&&SRV.ready.then)SRV.ready.then(()=>{try{if(SRV.me&&prefs().landing&&!location.hash&&view==="home")location.hash="progress"}catch(e){}});
+  if(SRV.ready&&SRV.ready.then)window.__vxRover=function(){/* v27: on phones, students open straight to My Patients (Epic Rover style), once per app load */if(window.__vxRoverDone)return false;window.__vxRoverDone=1;try{const me=SRV.me;if(!me)return false;const r=JSON.parse(localStorage.getItem("vx.roles."+String(me.id))||"null");const phone=window.matchMedia&&matchMedia("(max-width: 760px)").matches;const first=!location.hash||location.hash==="#";if(phone&&first&&!me.mustReset&&me.role!=="admin"&&!(r&&r.t)&&!(typeof featOn==="function"&&!featOn("ehr"))){location.hash="ehr";return true}}catch(e){}return false};SRV.ready.then(()=>{try{if(window.__vxRover())return;if(SRV.me&&prefs().landing&&!location.hash&&view==="home")location.hash="progress"}catch(e){}});
   /* ===================== My chart, rebuilt as a tabbed chart ===================== */
   const KT="nclexsim.v1.charttab",KA="nclexsim.v1.advlog",KR="nclexsim.v1.reports",KO="nclexsim.v1.orderlog";
   const CJ={RC:"Recognize cues",AC:"Analyze cues",PH:"Prioritize hypotheses",GS:"Generate solutions",TA:"Take action",EO:"Evaluate outcomes"};
@@ -11273,6 +11273,6 @@ renderHome();
 route();
 teleInit();
 /* signed-in students land on My chart; the logo and "home" buttons go there too */
-{const _rhMC=renderHome;renderHome=function(){if(SRV.on&&SRV.me){if(location.hash!=="#progress"){location.hash="progress";return}if(window.__nsProgRender){window.__nsProgRender();return}}return _rhMC.apply(this,arguments)};if(SRV.ready&&SRV.ready.then)SRV.ready.then(()=>setTimeout(()=>{if(SRV.me&&(view==="home"||view==="landing")&&!location.hash)renderHome()},50))}
+{const _rhMC=renderHome;renderHome=function(){if(SRV.on&&SRV.me){if(window.__vxRover&&window.__vxRover())return;if(location.hash!=="#progress"){location.hash="progress";return}if(window.__nsProgRender){window.__nsProgRender();return}}return _rhMC.apply(this,arguments)};if(SRV.ready&&SRV.ready.then)SRV.ready.then(()=>setTimeout(()=>{if(SRV.me&&(view==="home"||view==="landing")&&!location.hash)renderHome()},50))}
 })();
 </script>
