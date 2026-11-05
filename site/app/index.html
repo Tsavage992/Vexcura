@@ -2332,6 +2332,170 @@ svg[data-vxs] .vxs-sw{animation:vxsSway 7s ease-in-out infinite alternate}
 @media (max-width:600px){.vxo-g2{grid-template-columns:1fr}.vxo-ql li{flex-wrap:wrap}.vxo-ql .vxi-btn{margin-left:auto}.vxo-sw,.vxo-sw select{width:100%;max-width:none}.vxo .vxi-sch{display:none}.vxo-pht h2{font-size:20px}}
 
 /* </v22-owner-css> */
+/* <v25-mychart-css> */
+/* v25-mychart-css: My Chart, calm layout. Scoped to #c2.v25 (class added by the v25-mychart-js block). House palette:
+   navy #2c3e57, indigo #4b4f86, flame #f8c27a = the ONE accent, used only for the primary "What's next" action. */
+#c2.v25{--v25-navy:#2c3e57;--v25-ind:#4b4f86;--v25-acc:#f8c27a;--v25-acc-h:#f5b45c;--v25-acc-ink:#22303f;--v25-link:#2c3e57;--v25-card:var(--surface,#fff);--v25-page:var(--bg,#eef2f5);--v25-line:rgb(44 62 87/.12);--v25-tint:rgb(44 62 87/.06);--v25-shadow:0 1px 2px rgb(20 35 43/.05),0 8px 28px rgb(20 35 43/.06);--v25-r:16px}
+html[data-theme="dark"] #c2.v25{--v25-link:#c9cdf5;--v25-line:rgb(201 205 245/.14);--v25-tint:rgb(201 205 245/.08);--v25-shadow:0 1px 2px rgb(0 0 0/.3)}
+@media (prefers-color-scheme:dark){html:not([data-theme="light"]) #c2.v25{--v25-link:#c9cdf5;--v25-line:rgb(201 205 245/.14);--v25-tint:rgb(201 205 245/.08);--v25-shadow:0 1px 2px rgb(0 0 0/.3)}}
+
+/* ---- header: calm navy bar, patient-style banner, only Search · Account · Menu ---- */
+#c2.v25 .c2h{display:flex!important;flex-wrap:wrap;align-items:center;gap:10px 22px;padding:10px 20px;background:linear-gradient(90deg,#2c3e57 0%,#36466a 60%,#4b4f86 100%);color:#fff;border:0}
+#c2.v25 .c2h .c2id small{color:rgb(255 255 255/.72)}
+#c2.v25 .c2h .c2av{background:rgb(255 255 255/.14);color:#fff}
+#c2.v25 .c2h .c2v{display:flex!important;gap:4px 22px;align-items:center;flex-wrap:wrap;margin:0;padding:0 0 0 22px;border-left:1px solid rgb(255 255 255/.18)}
+#c2.v25 .c2h .c2v>*{display:grid;gap:1px;background:none;border:0;padding:0;color:#fff;font:inherit;text-align:left}
+#c2.v25 .c2h .c2v i{font-style:normal;font-size:12.5px;color:rgb(255 255 255/.7)}
+#c2.v25 .c2h .c2v b,#c2.v25 .c2h .c2v b.ok,#c2.v25 .c2h .c2v b.mid,#c2.v25 .c2h .c2v b.low{color:#fff;font-size:15px}
+#c2.v25 .c2h .c2v button{cursor:pointer;border-radius:6px}
+#c2.v25 .c2h .c2v button b{text-decoration:underline;text-decoration-color:rgb(255 255 255/.35);text-underline-offset:3px}
+#c2.v25 .c2h .c2tools{display:flex;align-items:center;gap:10px;margin-left:auto;flex:0 1 460px;min-width:0}
+#c2.v25 .c2h .c2tools .ws-srch{flex:1 1 auto;min-width:0}
+#c2.v25 .c2h .c2tools>.ws-t:not(.c2menu){display:none!important}
+#c2.v25 .c2h .c2menu{display:inline-flex;align-items:center;gap:6px;width:auto;min-height:44px;padding:0 14px;border-radius:10px}
+#c2.v25 .c2h .c2menu span{display:inline!important;font-weight:600}
+#c2.v25 .c2upd{margin:10px 20px 0}
+
+/* ---- left nav: no number badges, quiet selection ---- */
+#c2.v25 .c2n kbd,#c2.v25 .c2kh{display:none!important}
+#c2.v25 .c2n{background:var(--v25-card);border-right:1px solid var(--v25-line)}
+#c2.v25 .c2n button{font-size:16px;min-height:46px;border-radius:10px;grid-template-columns:22px 1fr}
+#c2.v25 .c2n button[aria-selected="true"]{background:var(--v25-tint);color:var(--v25-link);box-shadow:inset 4px 0 0 var(--v25-navy)}
+#c2.v25 .c2s{border-bottom:1px solid var(--v25-line);background:transparent}
+#c2.v25 .c2s .c2pin,#c2.v25 .c2s .c2rf{color:var(--muted);font-weight:500}
+#c2.v25 .c2s .c2pin.on{color:var(--v25-link)}
+#c2.v25 .c2m{background:var(--v25-page)}
+
+/* ---- clinical-day banner (teachhub): neutral card, outlined button ---- */
+#c2.v25 ~ .vxcd,#c2.v25 .vxcd,.c2.v25 #vxcd{border-radius:14px;border:1px solid var(--v25-line);box-shadow:none;background:var(--v25-card);font-size:16px;margin:12px 20px 0;padding:12px 16px}
+#c2.v25 .vxcd b{font-size:16px}
+#c2.v25 .vxcd .btn2,#c2.v25 .vxcd .vxi-btn{background:transparent;color:var(--v25-link);border:1.5px solid currentColor;min-height:44px;border-radius:10px;box-shadow:none}
+#c2.v25 .vxcd .lk{color:var(--v25-link)}
+
+/* ---- Home ---- */
+#c2.v25 [data-pane="summary:overview"]{font-size:16px}
+.v25h{display:grid;gap:20px;max-width:1120px;margin:0 auto;padding:12px 4px 48px;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);grid-template-areas:"next todo" "tiles tiles" "more more";align-items:stretch;color:var(--ink)}
+.v25h button{font:inherit}
+.v25-next,.v25-todo,.v25-tile,.v25-more{background:var(--v25-card);border-radius:var(--v25-r);box-shadow:var(--v25-shadow);border:1px solid var(--v25-line)}
+.v25-next{grid-area:next;padding:26px 28px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+.v25-eye{margin:0;font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.v25-next h2{margin:10px 0 6px;font-size:26px;line-height:1.2;font-weight:700;color:var(--ink);font-family:inherit}
+.v25-why{margin:0 0 20px;color:var(--muted);font-size:16px;line-height:1.45}
+.v25-go{display:inline-flex;align-items:center;gap:10px;min-height:54px;padding:0 28px;border:0;border-radius:12px;background:var(--v25-acc);color:var(--v25-acc-ink);font-size:18px!important;font-weight:700;cursor:pointer}
+.v25-go:hover{background:var(--v25-acc-h)}
+.v25-go:focus-visible,.v25h button:focus-visible,.v25h a:focus-visible{outline:3px solid var(--v25-ind);outline-offset:2px}
+.v25-stat{display:inline-block;font-size:.62em;vertical-align:.22em;font-weight:800;letter-spacing:.06em;color:#b3261e;border:1.5px solid currentColor;border-radius:6px;padding:1px 6px}
+html[data-theme="dark"] .v25-stat{color:#ff9c8f}
+.v25-todo{grid-area:todo;padding:20px 22px;display:flex;flex-direction:column}
+.v25-h{display:flex;align-items:center;gap:10px;margin:0 0 6px;font-size:18px;font-weight:700;color:var(--ink);font-family:inherit}
+.v25-n,.v25-c{display:inline-grid;place-items:center;min-width:26px;height:26px;padding:0 8px;border-radius:13px;background:var(--v25-tint);color:var(--ink);font-size:14px;font-weight:700}
+.v25-tl{list-style:none;margin:0;padding:0}
+.v25-tl li{display:flex;align-items:center;gap:14px;padding:12px 0;border-top:1px solid var(--v25-line)}
+.v25-tl li:first-child{border-top:0}
+.v25-tt{flex:1;min-width:0;display:grid;gap:2px}
+.v25-tt b{font-weight:600;font-size:16px}
+.v25-tt small,.v25-rt small{color:var(--muted);font-size:14.5px;line-height:1.35}
+.v25-sm{flex:none;min-height:44px;padding:0 18px;border-radius:10px;border:1.5px solid var(--v25-line);background:transparent;color:var(--v25-link);font-weight:700;cursor:pointer}
+.v25-sm:hover{background:var(--v25-tint)}
+.v25-none{display:flex;gap:8px;align-items:center;color:var(--muted);margin:8px 0}
+.v25-duel{margin-top:auto;padding-top:10px;border-top:1px solid var(--v25-line)}
+.v25-duel .c2duel{display:flex;align-items:center;gap:10px;margin:0;padding:6px 0 0;background:none;border:0;font-size:15px;color:var(--muted)}
+.v25-duel .c2duel svg{display:none}
+.v25-duel .c2duel span{flex:1}
+.v25-duel .c2duel .lk{font-weight:700;color:var(--v25-link);min-height:44px;font-size:15px}
+.v25-tiles{grid-area:tiles;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.v25-tile{display:flex;flex-direction:column;min-height:196px;overflow:hidden}
+.v25-tb{flex:1;display:grid;align-content:start;gap:6px;padding:20px 20px 14px;border:0;background:none;color:var(--ink);text-align:left;cursor:pointer}
+.v25-tb:hover{background:var(--v25-tint)}
+.v25-ti{display:grid;place-items:center;width:48px;height:48px;margin-bottom:8px;border-radius:14px;background:var(--v25-tint);color:var(--v25-link)}
+.v25-tb b{font-size:18px;font-weight:700}
+.v25-tb small{color:var(--muted);font-size:15px;line-height:1.4}
+#c2.v25 .v25-tx{font-weight:600;color:var(--v25-link)}
+.v25-tx{display:flex;align-items:center;min-height:48px;padding:0 20px;border:0;border-top:1px solid var(--v25-line);background:none;color:var(--v25-link);font-weight:600;font-size:15px;text-align:left;text-decoration:none;cursor:pointer}
+.v25-tx:hover{background:var(--v25-tint)}
+.v25-more{grid-area:more;padding:16px 0 6px}
+.v25-more>.v25-h{padding:0 22px}
+.v25-rows{display:grid}
+.v25-acc{border-top:1px solid var(--v25-line)}
+.v25-acc[hidden]{display:none}
+.v25-row{display:flex;align-items:center;gap:14px;width:100%;min-height:64px;padding:10px 22px;border:0;background:none;color:var(--ink);text-align:left;cursor:pointer}
+.v25-row:hover{background:var(--v25-tint)}
+.v25-ri{flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:var(--v25-tint);color:var(--v25-link)}
+.v25-rt{flex:1;min-width:0;display:grid;gap:2px}
+.v25-rt b{font-size:16px;font-weight:600}
+.v25-c[hidden]{display:none}
+.v25-cv{flex:none;color:var(--muted);transition:transform .15s}
+.v25-row[aria-expanded="true"] .v25-cv{transform:rotate(90deg)}
+.v25-body{padding:2px 22px 20px 76px}
+.v25-body[hidden]{display:none}
+.v25-flat .v25-body{padding:0}
+.v25-pulse{animation:v25p .6s}
+@keyframes v25p{50%{background:var(--v25-tint)}}
+@media (prefers-reduced-motion:reduce){.v25-pulse{animation:none}.v25-cv{transition:none}}
+.v25-sb{display:flex;flex-wrap:wrap;gap:10px}
+/* the original pieces, re-homed */
+.v25-body .c2ov{display:block}
+.v25-body .c2ovr{display:none}
+.v25-body .c2card,.v25-body .c2qd{border:0;box-shadow:none;background:none;padding:0;margin:0}
+.v25-body .c2qd h4{font-size:15px;color:var(--muted);font-weight:600;margin:0 0 6px}
+.v25-body .c2qs-q{font-size:16px;line-height:1.5;margin:0 0 14px}
+.v25-body .btn2{min-height:44px;border-radius:10px;padding:0 20px;background:transparent;color:var(--v25-link);border:1.5px solid var(--v25-line);box-shadow:none}
+.v25-body .btn2.mini{min-height:44px}
+.v25-body .c2card>h4{display:none}
+.v25-body .vxp{margin:0;border:0;box-shadow:none;background:none;padding:0}
+.v25-body .vxp::before{display:none}
+.v25-flat .vxsc-entry{margin:0;padding:12px 22px;min-height:64px;border:0;border-radius:0;background:none;gap:14px;flex-wrap:nowrap}
+.v25-flat .vxsc-entry .vxsc-ei{flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:var(--v25-tint);color:var(--v25-link)}
+.v25-flat .vxsc-entry h4{font-size:16px;font-weight:600;margin:0}
+.v25-flat .vxsc-entry p{font-size:14.5px}
+.v25-flat .vxsc-entry .btn2,.v25-flat .vxsc-entry button{flex:none;min-height:44px;padding:0 18px;border-radius:10px;border:1.5px solid var(--v25-line);background:transparent;color:var(--v25-link);font-weight:700}
+/* the Side panel row only matters where the rail is hidden */
+@media (min-width:861px){.v25-acc[data-v25k="side"]{display:none}}
+
+/* ---- right sidebar: quieter counts; rail hidden on narrow screens (panel still opens from Home › More or the header) ---- */
+.vxsb-tab b{background:#fff;color:#2c3e57;border:1px solid #c9d3dc}
+@media (max-width:860px){html.c2on .vxsb-rail{display:none}}
+
+/* ---- Brain and other panes: fewer simultaneous colours ---- */
+#c2.v25 .bn-lb{border-radius:10px}
+
+/* ---- medium screens ---- */
+@media (max-width:1180px){#c2.v25 .c2h .c2v{border-left:0;padding-left:0;order:5;width:100%}}
+@media (max-width:1100px){.v25h{grid-template-columns:minmax(0,1fr);grid-template-areas:"next" "todo" "tiles" "more"}.v25-tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* ---- phone: one obvious column ---- */
+@media (max-width:860px){
+  #c2.v25 .c2h{padding:12px 16px;gap:10px 12px}
+  #c2.v25 .c2h .c2logo{order:1}
+  #c2.v25 .c2h .c2id{order:2;flex:1 1 auto;min-width:0}
+  #c2.v25 .c2h .c2tools{order:4;flex:1 1 100%;margin:0}
+  #c2.v25 .c2h .c2tools{flex-wrap:nowrap}
+  #c2.v25 .c2h .c2acct .acctb span,#c2.v25 .c2h .c2acct .acctb>b{display:none}
+  #c2.v25 .c2h .c2v{order:3;display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 12px;width:100%;padding:8px 0 0;border:0;border-top:1px solid rgb(255 255 255/.16)}
+  #c2.v25 .c2h .c2v i{font-size:12px}
+  #c2.v25 .c2h .c2v b{font-size:14.5px}
+  #c2.v25 .c2h .c2menu span{display:none!important}
+  #c2.v25 .vxcd{margin:12px 16px 0;padding:12px 14px;gap:10px 12px;font-size:15px}
+  #c2.v25 .vxcd b{font-size:15.5px}
+  #c2.v25 .c2h .c2acct .acctb.me{display:none}
+  #c2.v25 .c2s .c2rf{display:none}
+  .v25h{padding:8px 0 40px;gap:16px}
+  .v25-next{padding:22px 20px}
+  .v25-next h2{font-size:23px}
+  .v25-go{width:100%;justify-content:center}
+  .v25-todo{padding:16px 18px}
+  .v25-tiles{grid-template-columns:minmax(0,1fr);gap:12px}
+  .v25-tile{min-height:0}
+  .v25-tb{grid-template-columns:48px 1fr;column-gap:14px;align-items:center;padding:16px 18px}
+  .v25-ti{grid-row:span 2;margin:0}
+  .v25-tx{padding:0 18px 0 80px}
+  .v25-row{padding:10px 18px}
+  .v25-body{padding:2px 18px 18px}
+  .v25-flat .vxsc-entry{padding:12px 18px;flex-wrap:wrap}
+  .v25-flat .vxsc-entry>div{flex:1 1 180px}
+}
+@media (max-width:420px){.v25-tl li{flex-wrap:wrap}.v25-tl .v25-sm{margin-left:auto}}
+/* </v25-mychart-css> */
 </style>
 
 <div id="app"></div>
@@ -2343,7 +2507,7 @@ const BANK = (function(e){try{const P=">oVO^cd@ge#lJ'~wUTDiEY+LZx-K&hkt(/F0;G`N.
 let HIDQ=new Set();const CFG={c:null,bypass:false};try{const c=JSON.parse(localStorage.getItem("ns.cfg")||"null");if(c&&typeof c==="object"){CFG.c=c;HIDQ=new Set(c.hideQ||[])}}catch(e){}
 const featOn=k=>!CFG.c||!CFG.c.feat||CFG.c.feat[k]!==false;
 
-const APPV="c1f0ef148d678e239807905df078db7c56007ce65e9c761c801dc08ec0d3f02b";
+const APPV="83104f00c6d4b2f03a11a6a3ff16819c37bab0cd3e21b1a40267ca5fde4297f6";
 const CATS={
   MOC:{n:"Management of Care",lo:15,hi:21,w:18},
   SIC:{n:"Safety and Infection Prevention and Control",lo:10,hi:16,w:13},
@@ -7915,7 +8079,7 @@ if(SRV.on){
     lib:'<path d="M5 4h4v16H5zM10 4h4v16h-4zM15.5 4.5l3.8-.9 3 15.5-3.8.9z"/>',alert:'<path d="M12 3l9.5 17h-19z"/><path d="M12 10v4M12 17.5v.01"/>',
     check:'<path d="M5 12.5l4.5 4.5L19 7"/>',help:'<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.8.4-1 .9-1 1.7M12 17v.01"/>',coach:'<path d="M12 3l1.8 3.9 4.2.5-3.1 2.9.8 4.2L12 12.4 8.3 14.5l.8-4.2L6 7.4l4.2-.5z"/><path d="M5 20c1.5-2.5 4-3.5 7-3.5s5.5 1 7 3.5"/>',bell:'<path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4z"/><path d="M10 20.5a2 2 0 0 0 4 0"/>',play:'<path d="M8 5l11 7-11 7z"/>',left:'<path d="M15 6l-6 6 6 6"/>',right:'<path d="M9 6l6 6-6 6"/>',grip:'<circle cx="9" cy="6" r="1"/><circle cx="15" cy="6" r="1"/><circle cx="9" cy="12" r="1"/><circle cx="15" cy="12" r="1"/><circle cx="9" cy="18" r="1"/><circle cx="15" cy="18" r="1"/>'});
   /* v21: Flowsheet + Reports folded into Results; 80/20 focus dropped (By category + the 80/20 report cover it); This week / All orders are views inside the Brain */
-  const TABS=[["summary","Summary","sum",[["overview","Overview"],["advisories","Advisories"]]],
+  const TABS=[["summary","Home","sum",[["overview","Overview"],["advisories","Advisories"]]],
     ["board","Worklist","board",[]],
     ["orders","Orders","orders",[["new","New order"],["sets","Order sets"],["cart","Cart"]]],
     ["results","Results","results",[["exams","Exams"],["flow","Flowsheet"],["trend","Trend"],["cats","By category"],["integ","Integrity"],["codes","Megacodes"],["rounds","Bedside"],["cards","Missed cards"],["reports","Reports"]]],
@@ -7927,7 +8091,7 @@ if(SRV.on){
   const fixSt=s=>{s.sub=s.sub||{};if(!TABS.some(x=>x[0]===s.tab)){const n=c2norm(s.tab,s.sub[s.tab]);s.tab=n[0];if(n[1])s.sub[n[0]]=n[1]}if(!TABS.some(x=>x[0]===s.tab))s.tab="summary";
     Object.keys(s.sub).forEach(t=>{const T=TABS.find(x=>x[0]===t);if(!T){delete s.sub[t];return}if(!T[3].some(x=>x[0]===s.sub[t])){const n=c2norm(t,s.sub[t]);if(n[0]===t&&T[3].some(x=>x[0]===n[1]))s.sub[t]=n[1];else delete s.sub[t]}});return s};
   window.__c2norm=c2norm;
-  const tabState=()=>{const s=fixSt(Object.assign({tab:"summary",sub:{}},store.get(KT,{})));try{if(!sessionStorage.getItem("ns.start")){sessionStorage.setItem("ns.start","1");const st=(store.get(KP,{}).start)||(CFG.c&&CFG.c.start)||"board:brain";if(st!=="last"){const [t,u]=c2norm(...st.split(":"));if(TABS.some(x=>x[0]===t)){s.tab=t;if(u)s.sub[t]=u;store.set(KT,s)}}}}catch(e){}return s};
+  const tabState=()=>{const s=fixSt(Object.assign({tab:"summary",sub:{}},store.get(KT,{})));try{if(!sessionStorage.getItem("ns.start")){sessionStorage.setItem("ns.start","1");const st=(store.get(KP,{}).start)||(CFG.c&&CFG.c.start)||"summary:overview";if(st!=="last"){const [t,u]=c2norm(...st.split(":"));if(TABS.some(x=>x[0]===t)){s.tab=t;if(u)s.sub[t]=u;store.set(KT,s)}}}}catch(e){}return s};
   const pad=n=>String(n).padStart(2,"0");
   const ymd=d=>d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate());
   const today=()=>ymd(new Date());
@@ -8039,7 +8203,7 @@ if(SRV.on){
       <div class="c2tools">${searchHTML()}<button class="ws-t c2t" data-c2go="orders:new" title="New order (N)">${ic("orders",18)}<span>New order</span></button><button class="ws-t c2t" data-cart="open" title="Order cart (O)">${ic("cart",18)}<span>Cart</span><i class="ws-n" data-cart-n hidden>0</i></button><button class="ws-t c2t" data-ws-doc="progress:" title="Progress report PDF">${ic("report",18)}<span>PDF</span></button><button class="ws-t c2t" data-rm="open" title="Daily reminder">${ic("bell",18)}<span>Reminder</span></button><button class="ws-t c2t" data-tip="help" title="Tips for this view">${ic("help",18)}<span>Tips</span></button><button class="ws-t c2t" data-pz="open" title="Personalize (P): layout and sections">${ic("custom",18)}<span>Personalize</span></button><span class="c2acct acct-slot">${typeof acctSlot==="function"?acctSlot():""}</span><button class="ws-t c2t c2menu" data-menu="open" aria-haspopup="dialog" aria-expanded="false" title="Menu"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Menu</span></button></div></div>`}
   function shellHTML(st){const p=prefs();return `<div class="c2${p.dense?" dense":""}${p.navMini?" navmini":""}" id="c2">${headerHTML()}${typeof vxProdHTML==="function"?vxProdHTML():""}
     <div class="c2b"><nav class="c2n" aria-label="Chart sections"><div class="c2tl" role="tablist" aria-label="Chart sections" aria-orientation="vertical">${TABS.map((t,i)=>`<button role="tab" id="c2t-${t[0]}" aria-selected="${st.tab===t[0]}" aria-controls="c2p-${t[0]}" tabindex="${st.tab===t[0]?0:-1}" data-c2tab="${t[0]}">${ic(t[2],20)}<span>${t[1]}</span><kbd>${i+1}</kbd></button>`).join("")}</div><button class="c2nav" data-c2nav="1" aria-expanded="${!p.navMini}" title="${p.navMini?"Expand sidebar":"Collapse sidebar"}">${ic("chevl",18)}<span>Collapse</span></button></nav>
-    <div class="c2m">${TABS.map(t=>`<section class="c2pane" id="c2p-${t[0]}" role="tabpanel" aria-labelledby="c2t-${t[0]}" ${st.tab===t[0]?"":"hidden"}><div class="c2s"><div class="c2tl" role="tablist" aria-label="${t[1]} views">${t[3].map(s=>`<button role="tab" data-c2sub="${t[0]}:${s[0]}" aria-selected="${(st.sub[t[0]]||t[3][0][0])===s[0]}">${s[1]}</button>`).join("")}</div><button class="c2pin${(p.start||"board:brain")===t[0]+":"+(st.sub[t[0]]||t[3][0][0])?" on":""}" data-c2start="1" title="Open this view first when you sign in">${ic("star",15)}<span>Start here</span></button><button class="c2rf" data-c2refresh="1" title="Refresh (R): get your newest progress and site updates" aria-label="Refresh this chart">${ic("refresh",16)}<span>Refresh</span></button><span class="c2kh"><kbd>[</kbd><kbd>]</kbd> switch views</span></div>${t[3].map(s=>`<div class="c2v2" data-pane="${t[0]}:${s[0]}" ${(st.sub[t[0]]||t[3][0][0])===s[0]?"":"hidden"}></div>`).join("")}</section>`).join("")}</div></div></div>`}
+    <div class="c2m">${TABS.map(t=>`<section class="c2pane" id="c2p-${t[0]}" role="tabpanel" aria-labelledby="c2t-${t[0]}" ${st.tab===t[0]?"":"hidden"}><div class="c2s"><div class="c2tl" role="tablist" aria-label="${t[1]} views">${t[3].map(s=>`<button role="tab" data-c2sub="${t[0]}:${s[0]}" aria-selected="${(st.sub[t[0]]||t[3][0][0])===s[0]}">${s[1]}</button>`).join("")}</div><button class="c2pin${(p.start||"summary:overview")===t[0]+":"+(st.sub[t[0]]||t[3][0][0])?" on":""}" data-c2start="1" title="Open this view first when you sign in">${ic("star",15)}<span>Start here</span></button><button class="c2rf" data-c2refresh="1" title="Refresh (R): get your newest progress and site updates" aria-label="Refresh this chart">${ic("refresh",16)}<span>Refresh</span></button><span class="c2kh"><kbd>[</kbd><kbd>]</kbd> switch views</span></div>${t[3].map(s=>`<div class="c2v2" data-pane="${t[0]}:${s[0]}" ${(st.sub[t[0]]||t[3][0][0])===s[0]?"":"hidden"}></div>`).join("")}</section>`).join("")}</div></div></div>`}
   const GEN={"summary:advisories":advPanel,"orders:new":ordersNewHTML,"orders:sets":setsPanel,"orders:cart":cartPanel,"results:reports":()=>reportsBuild()+`<h4 class="c2svh">Saved reports</h4><div class="c2svd">${reportsSaved()}</div>`,"library:videos":videosPanel};
   const SLOT={"results:exams":"exams","results:integ":"integ","results:codes":"codes","results:rounds":"rounds","results:cards":"cards","results:flow":"flow","results:trend":"trend","results:cats":"cats","library:guides":"guides"};
   function paint(tab){const c=document.getElementById("c2");if(!c)return;Object.keys(GEN).forEach(k=>{if(tab&&!k.startsWith(tab+":"))return;const el=c.querySelector(`[data-pane="${k}"]`);if(el)el.innerHTML=GEN[k]()});const o=c.querySelector('[data-pane="summary:overview"] .c2ovr');if(o&&(!tab||tab==="summary"||tab==="board")){const tmp=document.createElement("div");tmp.innerHTML=overviewHTML();o.replaceWith(tmp.querySelector(".c2ovr"))}const h=c.querySelector(".c2h");if(h){const q=h.querySelector("#wsq");const qv=q&&q.value;const tmp=document.createElement("div");tmp.innerHTML=headerHTML();if(!qv){h.querySelector(".c2v").replaceWith(tmp.querySelector(".c2v"))}else{const v=tmp.querySelector(".c2v");h.querySelector(".c2v").replaceWith(v)}}paintCount()}
@@ -8264,7 +8428,7 @@ if(SRV.on){
   /* ---- in-context tips: a small pop-up over each view, closable, can be turned off ---- */
   const KTP="nclexsim.v1.tips";
   const TIPS={
-    "summary:overview":["Your chart at a glance","Numbers across the top, today's question and what's due on the right. Press a number key 1 to 8 to jump between sections, and [ ] to switch views."],
+    "summary:overview":["Home","Start with What's next at the top. Your to-do list sits beside it, the big tiles start practice, and everything else is one tap away under More."],
     "summary:pareto":["80/20 focus","The bold rows are the few topics behind most of your misses. Order a drill for each in one click."],
     "summary:advisories":["Study advisories","When something needs attention, an advisory pops up. Order it, or defer it with a reason. Your responses are logged here."],
     "board:brain":["The Brain","Everything for today in one place. Left: your storyboard and watch list. Top: launch any feature, then today's timeline (drag a chip to a time block). Middle: every order, grouped by when it is due; select one to see details and actions on the right. Far right: your notes, with quick text like .weak and .plan. Select ☆ Start here on any view to open it first."],"board:week":["Your worklist","One column per day. Drag a card to another day, or use the arrows on the card. Press play to start it."],
@@ -8369,7 +8533,7 @@ if(SRV.on){
       <h5>Advisories</h5>${A.length?`<ul class="bn-adv">${A.slice(0,3).map(a=>`<li>${esc(a.t||a.title||"")}</li>`).join("")}</ul><button class="lk" data-c2go="summary:advisories">See all</button>`:`<p class="note">None right now.</p>`}
       <h5>Since your last visit</h5>${last?`<p class="note">${esc(last.mode==="cat"?"Full exam":"Quick round")} on ${esc(fmtDate(last.date))}${pred!=null?`: ${pred}% likelihood`:""}. <button class="lk" data-c2go="results:exams">Results</button></p>`:`<p class="note">No exams yet.</p>`}
       <h5>Start screen</h5><p class="note">${esc(startLabel())} <button class="lk" data-c2go="board:brain" data-bn="pinhelp">Change</button></p></aside>`}
-  function startLabel(){const st=prefs().start||"board:brain";if(st==="last")return "Where you left off";const [t,u]=st.split(":");const T=TABS.find(x=>x[0]===t);if(!T)return st;const S=T[3].find(x=>x[0]===u);return T[1]+(S?" › "+S[1]:"")}
+  function startLabel(){const st=prefs().start||"summary:overview";if(st==="last")return "Where you left off";const [t,u]=st.split(":");const T=TABS.find(x=>x[0]===t);if(!T)return st;const S=T[3].find(x=>x[0]===u);return T[1]+(S?" › "+S[1]:"")}
   function launchHTML(){const L=[["exam","Full exam",`data-ws-start="exam"`],["quick","Quick round",`data-ws-start="quick"`],["td","Test-day exam",`data-ws-start="td"`],["drill","Drill",`data-ws-pick="drill"`],...(caseList().length?[["case","Case study",`data-ws-start="case"`]]:[]),["code","Megacode",`data-ws-start="code"`],["rounds","Bedside",`data-ws-start="rounds"`],["remed","Missed cards",`data-ws-start="remed"`]];
     return `<div class="bn-ln" role="toolbar" aria-label="Start practice">${L.map(([i,t,a])=>`<button class="bn-lb" ${a} title="${esc(t)}">${ic(i,18)}<span>${esc(t)}</span></button>`).join("")}</div>`}
   function itemInfo(x){if(x.std)return {t:x.t,s:x.s,icon:x.icon};const a=actInfo(x.act);return {t:a.t,s:a.s,icon:a.icon}}
@@ -8446,7 +8610,7 @@ if(SRV.on){
   document.addEventListener("click",e=>{const b=e.target.closest&&e.target.closest("[data-c2nav],[data-c2start]");if(!b)return;e.preventDefault();const p=prefs();
     if(b.dataset.c2nav){p.navMini=!p.navMini;setP(p);const c=document.getElementById("c2");if(c)c.classList.toggle("navmini",p.navMini);b.setAttribute("aria-expanded",String(!p.navMini));b.title=p.navMini?"Expand sidebar":"Collapse sidebar";return}
     const st=tabState();const T=TABS.find(x=>x[0]===st.tab);const key=st.tab+":"+(st.sub[st.tab]||T[3][0][0]);p.start=p.start===key?"last":key;setP(p);document.querySelectorAll("[data-c2start]").forEach(x=>{const on=p.start===x.dataset.c2start;x.classList.toggle("on",on);x.setAttribute("aria-pressed",String(on))});toast(p.start==="last"?"Start screen: where you left off":"Start screen set: "+startLabel(),true)});
-  function pinPaint(){const p=prefs();const st=tabState();const T=TABS.find(x=>x[0]===st.tab);if(!T)return;const key=st.tab+":"+(st.sub[st.tab]||T[3][0][0]);const cur=p.start||"board:brain";document.querySelectorAll("[data-c2start]").forEach(x=>{const on=cur===key;x.classList.toggle("on",on);x.setAttribute("aria-pressed",String(on));x.title=on?"This is your start screen (select to use where you left off)":"Open this view first when you sign in"})}
+  function pinPaint(){const p=prefs();const st=tabState();const T=TABS.find(x=>x[0]===st.tab);if(!T)return;const key=st.tab+":"+(st.sub[st.tab]||T[3][0][0]);const cur=p.start||"summary:overview";document.querySelectorAll("[data-c2start]").forEach(x=>{const on=cur===key;x.classList.toggle("on",on);x.setAttribute("aria-pressed",String(on));x.title=on?"This is your start screen (select to use where you left off)":"Open this view first when you sign in"})}
   {const _s=select;select=function(){const r=_s.apply(this,arguments);pinPaint();return r}}
   document.addEventListener("click",e=>{if(e.target.closest&&e.target.closest("[data-c2start]"))setTimeout(pinPaint,0)});
   /* ---- compact order form inside the cart drawer ---- */
@@ -9633,7 +9797,7 @@ app.addEventListener("drop",e=>{const s2=e.target.closest&&e.target.closest(".sl
   const STAGES=[["lead","Lead"],["contacted","Contacted"],["demo","Demo / pilot"],["quote","Quote"],["contract","Contract"],["active","Active"],["lost","Lost"]];
   const STN=Object.fromEntries(STAGES);
   const STATUS=[["all","All programs"],["prospect","Prospects"],["pilot","Pilots"],["active","Active"],["expired","Expired"]];
-  const ACTS=[["needs","Needs you","inbox"],["programs","Programs","school"],["sales","Sales","pipe"],["people","Students & users","users"],["content","Content","book"],["reports","Reports","chart"],["settings","Settings","gear"]];
+  const ACTS=[["needs","Needs you","inbox"],["programs","Programs","school"],["sales","Sales","pipe"],["hiring","Hiring","hire"],["people","Students & users","users"],["content","Content","book"],["reports","Reports","chart"],["settings","Settings","gear"]];
   const SUBS={people:[["users","Users"],["access","Access requests"],["resets","Password resets"],["assign","Assign & message"],["sessions","Signed-in devices"],["claims","Fee reimbursement"]],
     content:[["daily","Daily content"],["bank","Question bank"],["reports","Question reports"]],
     reports:[["overview","Activity"],["system","System & usage"],["audit","Audit log"]],
@@ -9643,7 +9807,7 @@ app.addEventListener("drop",e=>{const s2=e.target.closest&&e.target.closest(".sl
   const LEG={overview:["reports","overview"],users:["people","users"],user:["people","users"],access:["people","access"],requests:["people","resets"],sessions:["people","sessions"],assign:["people","assign"],guar:["people","claims"],schools:["programs"],onb:["programs"],site:["settings","site"],content:["content","bank"],qflags:["content","reports"],system:["reports","system"],audit:["reports","audit"]};
   /* new sub-tab hosted by an old renderer */
   const HOST={"people/users":"users","people/access":"access","people/resets":"requests","people/assign":"assign","people/sessions":"sessions","people/claims":"guar","content/bank":"content","content/reports":"qflags","reports/overview":"overview","reports/system":"system","reports/audit":"audit","settings/site":"site"};
-  const I={inbox:'<path d="M3 13l3-8h12l3 8v6H3z"/><path d="M3 13h5l1 3h6l1-3h5"/>',school:'<path d="M4 20V9l8-5 8 5v11"/><path d="M9 20v-6h6v6"/>',pipe:'<path d="M3 5h18l-7 8v6l-4 2v-8z"/>',users:'<circle cx="9" cy="8" r="3.2"/><path d="M3 20c.8-3.5 3.2-5 6-5s5.2 1.5 6 5"/><path d="M16 4.5a3 3 0 0 1 0 6M18 14.5c1.6.7 2.6 2.4 3 5.5"/>',book:'<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/>',chart:'<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>',gear:'<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/>',plus:'<path d="M12 5v14M5 12h14"/>',refresh:'<path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/>',back:'<path d="M15 6l-6 6 6 6"/>',pin:'<path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/>'};
+  const I={hire:'<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/>',inbox:'<path d="M3 13l3-8h12l3 8v6H3z"/><path d="M3 13h5l1 3h6l1-3h5"/>',school:'<path d="M4 20V9l8-5 8 5v11"/><path d="M9 20v-6h6v6"/>',pipe:'<path d="M3 5h18l-7 8v6l-4 2v-8z"/>',users:'<circle cx="9" cy="8" r="3.2"/><path d="M3 20c.8-3.5 3.2-5 6-5s5.2 1.5 6 5"/><path d="M16 4.5a3 3 0 0 1 0 6M18 14.5c1.6.7 2.6 2.4 3 5.5"/>',book:'<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/>',chart:'<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>',gear:'<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/>',plus:'<path d="M12 5v14M5 12h14"/>',refresh:'<path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/>',back:'<path d="M15 6l-6 6 6 6"/>',pin:'<path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/>'};
   const sv=(k,s)=>`<svg viewBox="0 0 24 24" width="${s||18}" height="${s||18}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${I[k]||""}</svg>`;
   const chip=(t,c)=>`<span class="vxi-chip ${c||""}">${esc(t)}</span>`;
   const ownOn=()=>!!document.getElementById("vxo");
@@ -9651,9 +9815,9 @@ app.addEventListener("drop",e=>{const s2=e.target.closest&&e.target.closest(".sl
   /* ---- data: every source the owner acts on, loaded together; a missing endpoint counts as nothing waiting ---- */
   const soft=(p,dflt)=>srvApi(p).then(r=>({ok:true,r}),e=>({ok:false,e,r:dflt}));
   async function load(force){if(!force&&OWN.d&&Date.now()-OWN.at<30000)return OWN.d;if(OWN.busy)return force?OWN.busy.then(()=>load(true)):OWN.busy;
-    OWN.busy=(async()=>{const [sc,ob,crm,acc,us,qf,gu,cf,dl]=await Promise.all([soft("/api/school/admin/schools",{schools:[]}),soft("/api/onboard/admin",{apps:[],cfg:{plans:[]}}),soft("/api/crm/board",null),soft("/api/admin/access",{requests:[],codes:[]}),srvLoadUsers(true).then(()=>({ok:true}),e=>({ok:false})),soft("/api/qbank/admin/flags?status=open",{flags:[],counts:{}}),soft("/api/guar/admin",{claims:[]}),adxCfg(true).then(r=>({ok:true,r}),e=>({ok:false,r:{}})),soft("/api/daily/admin/summary",null)]);
+    OWN.busy=(async()=>{const [sc,ob,crm,acc,us,qf,gu,cf,dl,at]=await Promise.all([soft("/api/school/admin/schools",{schools:[]}),soft("/api/onboard/admin",{apps:[],cfg:{plans:[]}}),soft("/api/crm/board",null),soft("/api/admin/access",{requests:[],codes:[]}),srvLoadUsers(true).then(()=>({ok:true}),e=>({ok:false})),soft("/api/qbank/admin/flags?status=open",{flags:[],counts:{}}),soft("/api/guar/admin",{claims:[]}),adxCfg(true).then(r=>({ok:true,r}),e=>({ok:false,r:{}})),soft("/api/daily/admin/summary",null),soft("/api/ats/admin/summary",null)]);
       OWN.crmOff=!crm.ok;OWN.dailyOff=!dl.ok;if(ob.ok)OB.adm=ob.r;
-      OWN.d={schools:sc.r.schools||[],apps:ob.r.apps||[],obcfg:ob.r.cfg||{plans:[]},crm:crm.ok?crm.r:{programs:[],tasks:[],notes:{}},access:acc.r||{requests:[],codes:[]},flags:qf.r||{counts:{}},claims:(gu.r&&gu.r.claims)||[],cfg:cf.r||{},daily:dl.ok?dl.r:null,err:[sc,ob].filter(x=>!x.ok).map(x=>x.e&&x.e.message)};
+      OWN.d={schools:sc.r.schools||[],apps:ob.r.apps||[],obcfg:ob.r.cfg||{plans:[]},crm:crm.ok?crm.r:{programs:[],tasks:[],notes:{}},access:acc.r||{requests:[],codes:[]},flags:qf.r||{counts:{}},claims:(gu.r&&gu.r.claims)||[],cfg:cf.r||{},daily:dl.ok?dl.r:null,ats:at&&at.ok?at.r:null,err:[sc,ob].filter(x=>!x.ok).map(x=>x.e&&x.e.message)};
       OWN.at=Date.now();return OWN.d})().finally(()=>{OWN.busy=null});return OWN.busy}
   const D=()=>OWN.d||{schools:[],apps:[],obcfg:{plans:[]},crm:{programs:[],tasks:[],notes:{}},access:{requests:[],codes:[]},flags:{counts:{}},claims:[],cfg:{},daily:null,err:[]};
   /* daily content summary: counts by status (and batch). Shape is owned by the daily pipeline, so read it loosely. */
@@ -9705,11 +9869,12 @@ app.addEventListener("drop",e=>{const s2=e.target.closest&&e.target.closest(".sl
     (d.crm.tasks||[]).forEach(x=>{if(!x.done&&x.due&&x.due<=t){const p=P.find(y=>y.key===x.key||(y.c&&y.c.key===x.key));add("Sales",x.due<t?1:2,`Task: ${x.title}`,`${p?p.name:"Program"} · ${x.due<t?"was due "+fD(x.due):"due today"}`,"Open",`p/${p?p.key:x.key}/tasks`,p?p.key:x.key)}});
     const oc=d.obcfg||{};const miss=[!oc.agreement&&"license agreement",!oc.w9&&"W-9",!oc.vexsig&&"countersignature"].filter(Boolean);if(miss.length)add("Setup",3,`Post your ${miss.join(", ")}`,"Programs can't sign until the agreement is posted","Open",`settings/contracts`);
     if(d.cfg&&d.cfg.maint&&d.cfg.maint.on)add("Setup",1,"Maintenance mode is on","Students see the maintenance page","Turn off",`settings/site`);
+    {const hs=d.ats;if(hs&&Array.isArray(hs.items))hs.items.forEach(x=>add("Hiring",x.pri||2,x.title,x.sub||"",x.btn||"Open","hiring"+(x.app?"/"+x.app:""),""))}
     return N.sort((a,b)=>a.pri-b.pri)}
-  const GROUPS=["Approvals","Contracts","Billing","Licenses","Students","Content","Sales","Setup"];
+  const GROUPS=["Approvals","Contracts","Billing","Licenses","Students","Content","Hiring","Sales","Setup"];
 
   /* ---- routing ---- */
-  function parse(k){const s=String(k||"admin").replace(/^#/,"").split("/");s.shift();const a=s[0]||"";
+  function parse(k){{const hm=String(k||"").match(/^#?admin\/hiring\/(aa_[a-f0-9]{16})/);OWN.hireId=hm?hm[1]:null}const s=String(k||"admin").replace(/^#/,"").split("/");s.shift();const a=s[0]||"";
     if(!a){OWN.act="needs";return}
     if(LEG[a]&&!SUBS[a]&&!ACTS.some(x=>x[0]===a)){const m=LEG[a];OWN.act=m[0];if(m[1])OWN.sub[m[0]]=m[1];else OWN.pid=null;return}
     if(a==="p"&&s[1]){OWN.act="programs";OWN.pid=s[1];if(PTABS.some(t=>t[0]===s[2]))OWN.ptab=s[2];return}
@@ -9749,6 +9914,7 @@ app.addEventListener("drop",e=>{const s2=e.target.closest&&e.target.closest(".sl
     if(q){const i=el.querySelector("#vxo-q");i.focus();try{i.setSelectionRange(i.value.length,i.value.length)}catch(e){}}}
   async function paint(){if(view!=="admin"||!ownOn())return;paintFrame();
     const k=OWN.act+"/"+(OWN.sub[OWN.act]||"");if(SUBS[OWN.act]&&HOST[k])return legacy(HOST[k]);
+    if(OWN.act==="hiring"){main('<div id="vxo-hire"></div>');const hel=document.getElementById("vxo-hire");if(window.__ATS)window.__ATS.renderHiring(hel,OWN.hireId?{id:OWN.hireId}:{});else hel.innerHTML='<div class="vxi-card vxi-empty"><b>Hiring isn\'t installed yet</b></div>';return}
     ADM.tab="__own";
     const f={needs:needsHTML,programs:programsHTML,sales:salesHTML,content:contentHTML,settings:settingsHTML}[OWN.act]||needsHTML;main(await f());after()}
   const subsHTML=a=>`<nav class="vxi-chips vxo-subs" aria-label="Sections">${SUBS[a].map(([k,l])=>`<a class="vxo-sub" href="#admin/${a}/${k}" aria-current="${OWN.sub[a]===k?"page":"false"}">${esc(l)}${subBadge(a,k)}</a>`).join("")}</nav>`;
@@ -10648,6 +10814,430 @@ app.addEventListener("drop",e=>{const s2=e.target.closest&&e.target.closest(".sl
 /* </v23-scores-js> */
 
 /* </v23-scores-js> */
+/* <v24-ats-js> Hiring (applicant tracking) for the owner workspace: pipeline board, candidate chart (Epic-style: list on the left,
+   one header, tabs), postings editor with live preview, job-board posting kits, territories, commission calculator.
+   Insert INSIDE the app's main IIFE in app.html, after the LAST closing v23-scores-js marker comment and before `applyPrefs();applyFont();`
+   (patches/ats-apply.js does this and the owner-workspace hookup).
+   Self-contained: uses only fetch + the DOM (and the app's vxi-* classes when present). Talks to /api/ats/admin/* (worker/ats.js).
+   API for the owner workspace:  window.__ATS.renderHiring(el[, {view, id}])  ·  window.__ATS.summary() -> Promise<{text, needs, counts, items}>
+   Nothing here posts to job boards or creates outside accounts: kits are copy-and-paste text plus links Tyler opens himself. */
+;(function () {
+  "use strict";
+  if (window.__ATS) return;
+  const E = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const today = () => new Date().toLocaleDateString("en-CA");
+  const fD = t => { if (!t) return "—"; try { return new Date(typeof t === "number" ? t : Date.parse(t + "T12:00:00")).toLocaleDateString([], { month: "short", day: "numeric", year: "numeric" }) } catch (e) { return String(t) } };
+  const fDT = t => t ? new Date(t).toLocaleString([], { month: "short", day: "numeric", year: "numeric", hour: "numeric", minute: "2-digit" }) : "—";
+  const money = n => "$" + Number(n || 0).toLocaleString("en-US", { minimumFractionDigits: Number(n) % 1 ? 2 : 0, maximumFractionDigits: 2 });
+  const ini = n => String(n || "?").split(/\s+/).filter(Boolean).slice(0, 2).map(w => w[0].toUpperCase()).join("") || "?";
+  async function api(path, opt) { opt = opt || {}; const r = await fetch(path, { method: opt.method || "GET", credentials: "same-origin", cache: "no-store", headers: Object.assign({ "X-NCLEX": "1" }, opt.body ? { "Content-Type": "application/json" } : {}), body: opt.body ? JSON.stringify(opt.body) : undefined });
+    let j = null; try { j = await r.json() } catch (e) { } if (!r.ok) { const er = new Error((j && j.error) || (r.status === 404 ? "The hiring server update isn't installed yet." : "Something went wrong. Try again.")); er.status = r.status; er.j = j; throw er } return j }
+  const IC = { pipe: '<path d="M3 5h18l-7 8v6l-4 2v-8z"/>', user: '<circle cx="12" cy="8" r="3.5"/><path d="M5 20c1-4 3.8-6 7-6s6 2 7 6"/>', doc: '<path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h7M9 17h7"/>', map: '<path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2z"/><path d="M9 4v14M15 6v14"/>', calc: '<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 11h2M12 11h2M16 11h0M8 15h2M12 15h2M8 18h2M12 18h2"/>', copy: '<rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/>', ext: '<path d="M14 4h6v6M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>', plus: '<path d="M12 5v14M5 12h14"/>', back: '<path d="M15 6l-6 6 6 6"/>', dl: '<path d="M12 4v11M7 10l5 5 5-5M5 20h14"/>', ok: '<path d="M5 12l5 5 9-10"/>', kit: '<path d="M4 7h16v12H4z"/><path d="M9 7V4h6v3"/>' };
+  const sv = (k, s) => `<svg viewBox="0 0 24 24" width="${s || 18}" height="${s || 18}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${IC[k] || ""}</svg>`;
+  const chip = (t, c) => `<span class="vxi-chip ${c || ""}">${E(t)}</span>`;
+  const CLOSED = ["onboarded", "not_selected", "withdrawn"];
+  const VIEWS = [["pipeline", "Pipeline", "pipe"], ["candidates", "Candidates", "user"], ["postings", "Postings", "doc"], ["territories", "Territories", "map"], ["commission", "Commission", "calc"]];
+  const CTABS = [["application", "Application"], ["screening", "Screening"], ["interview", "Interview"], ["references", "References"], ["background", "Background"], ["offer", "Offer"], ["activity", "Activity"]];
+  const S = { el: null, view: "pipeline", id: null, tab: "application", meta: null, apps: null, posts: null, terr: null, det: {}, kit: null, kitPost: null, pid: null, draft: null, calc: null, calcIn: { plan: "site250", seats: 60, years: 3 }, q: "", fstage: "", fpost: "", closed: false, err: "", flash: "" };
+  window.__vxAtsS = S;
+
+  /* ---------- styles (vxa-*), layered on the app's vxi-* workspace styles ---------- */
+  const CSS = `.vxa{font-size:15px;color:var(--ink,#14232b)}.vxa *{box-sizing:border-box}.vxa h2{font-size:22px;margin:0 0 4px}.vxa h3{font-size:17px;margin:0 0 10px}.vxa-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:12px}.vxa-head p{margin:0;color:var(--muted,#4c6470)}
+.vxa-nav{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;margin:0 0 14px;padding-bottom:2px}.vxa-nav::-webkit-scrollbar{display:none}.vxa-nav button{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line,#bccdd5);background:var(--surface,#f7fafb);color:var(--ink,#14232b);border-radius:999px;padding:7px 14px;font:inherit;font-weight:600;white-space:nowrap;cursor:pointer;min-height:38px}.vxa-nav button[aria-current="page"]{background:var(--accent,#1d5670);border-color:var(--accent,#1d5670);color:var(--accent-ink,#fff)}
+.vxa-flash{background:var(--good-soft,#e1ecdf);color:var(--good,#2f6146);border-radius:8px;padding:8px 12px;margin:0 0 12px;font-weight:600}.vxa-err{background:var(--bad-soft,#f4dcd4);color:var(--bad,#9d2a22);border-radius:8px;padding:8px 12px;margin:0 0 12px;font-weight:600}
+.vxa-board{display:flex;gap:10px;overflow-x:auto;padding-bottom:8px;align-items:flex-start;-webkit-overflow-scrolling:touch}.vxa-col{flex:0 0 228px;background:var(--sunk,#dde7ec);border-radius:10px;padding:8px;min-height:120px}.vxa-col h4{display:flex;justify-content:space-between;font-size:13px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted,#4c6470);margin:2px 4px 8px}.vxa-card{display:block;width:100%;text-align:left;background:var(--surface,#f7fafb);border:1px solid var(--line,#bccdd5);border-left:4px solid var(--accent,#1d5670);border-radius:8px;padding:9px 10px;margin:0 0 8px;font:inherit;color:inherit;cursor:pointer}.vxa-card:hover,.vxa-card:focus-visible{border-color:var(--accent,#1d5670)}.vxa-card b{display:block}.vxa-card small{display:block;color:var(--muted,#4c6470);font-size:12.5px}.vxa-card.stale{border-left-color:var(--bad,#9d2a22)}.vxa-card.new{border-left-color:var(--gold,#a57a2a)}.vxa-card .vxa-cm{display:flex;gap:6px;flex-wrap:wrap;margin-top:5px}
+.vxa-cand{display:grid;grid-template-columns:270px minmax(0,1fr);gap:16px;align-items:start}.vxa-list{background:var(--surface,#f7fafb);border:1px solid var(--line,#bccdd5);border-radius:12px;overflow:hidden}.vxa-lf{display:grid;gap:6px;padding:10px;border-bottom:1px solid var(--line,#bccdd5)}.vxa-lf input,.vxa-lf select{width:100%}.vxa-list ul{list-style:none;margin:0;padding:0;max-height:calc(100vh - 260px);overflow:auto}.vxa-list li button{display:flex;gap:10px;align-items:center;width:100%;text-align:left;border:0;border-bottom:1px solid var(--line,#bccdd5);background:none;padding:10px;font:inherit;color:inherit;cursor:pointer}.vxa-list li button[aria-current="true"]{background:var(--sunk,#dde7ec);box-shadow:inset 4px 0 0 var(--accent,#1d5670)}.vxa-list li button span:last-child{min-width:0}.vxa-list b{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.vxa-list small{color:var(--muted,#4c6470)}
+.vxa-av{flex:none;width:36px;height:36px;border-radius:50%;background:var(--accent,#1d5670);color:var(--accent-ink,#fff);display:grid;place-items:center;font-weight:700;font-size:14px}.vxa-av.lg{width:48px;height:48px;font-size:18px}
+.vxa-ph{background:var(--surface,#f7fafb);border:1px solid var(--line,#bccdd5);border-radius:12px;padding:14px;margin-bottom:10px}.vxa-pht{display:flex;gap:12px;align-items:center;min-width:0}.vxa-pht>div{min-width:0}.vxa-pht h2{overflow-wrap:anywhere}.vxa-pm{color:var(--muted,#4c6470);font-size:14px;overflow-wrap:anywhere}.vxa-acts{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:12px}.vxa-acts select{max-width:100%}
+.vxa-tabs{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;border-bottom:1px solid var(--line,#bccdd5);margin-bottom:12px}.vxa-tabs::-webkit-scrollbar{display:none}.vxa-tabs button{border:0;background:none;font:inherit;font-weight:600;color:var(--muted,#4c6470);padding:10px 12px 8px;border-bottom:3px solid transparent;white-space:nowrap;cursor:pointer}.vxa-tabs button[aria-selected="true"]{color:var(--ink,#14232b);border-bottom-color:var(--accent,#1d5670)}.vxa-tabs .n{display:inline-block;min-width:18px;padding:0 5px;border-radius:9px;background:var(--bad,#9d2a22);color:#fff;font-size:11px;margin-left:4px}
+.vxa-kv{display:grid;grid-template-columns:minmax(120px,190px) minmax(0,1fr);gap:6px 14px;margin:0}.vxa-kv dt{color:var(--muted,#4c6470);font-size:13.5px}.vxa-kv dd{margin:0;overflow-wrap:anywhere;white-space:pre-wrap}
+.vxa-f{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:10px 14px;margin:8px 0}.vxa-f label,.vxa-l{display:flex;flex-direction:column;gap:4px;font-weight:600;font-size:13.5px;min-width:0}.vxa input:not([type=checkbox]):not([type=radio]),.vxa select,.vxa textarea{font:inherit;font-size:15px;font-weight:400;padding:8px 10px;border:1px solid var(--line,#bccdd5);border-radius:8px;background:var(--bg,#fff);color:var(--ink,#14232b);min-height:40px;max-width:100%;width:100%}.vxa textarea{min-height:90px;resize:vertical;line-height:1.45}.vxa label.ck{flex-direction:row;align-items:center;gap:8px;font-weight:500}.vxa label.ck input{width:18px;height:18px;flex:none}
+.vxa-rub{border-collapse:collapse;width:100%}.vxa-rub td,.vxa-rub th{padding:6px 4px;border-bottom:1px solid var(--line,#bccdd5);text-align:center}.vxa-rub td:first-child,.vxa-rub th:first-child{text-align:left}.vxa-rub input{width:20px;height:20px}
+.vxa-item{border:1px solid var(--line,#bccdd5);border-radius:10px;padding:10px 12px;margin:0 0 10px;background:var(--bg,#fff)}.vxa-item>summary{cursor:pointer;display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-weight:600}.vxa-act{list-style:none;margin:0;padding:0}.vxa-act li{padding:8px 0;border-bottom:1px solid var(--line,#bccdd5);display:grid;grid-template-columns:auto minmax(0,1fr);gap:2px 10px}.vxa-act li small{color:var(--muted,#4c6470);grid-column:2}.vxa-act li span{overflow-wrap:anywhere;white-space:pre-wrap}.vxa-act .k{font-size:11px;text-transform:uppercase;font-weight:700;color:var(--muted,#4c6470);padding-top:2px;min-width:64px}
+.vxa-ed{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:start}.vxa-pv{border:1px solid var(--line,#bccdd5);border-radius:12px;overflow:hidden;background:#fff;color:#14232b;position:sticky;top:8px}.vxa-pvh{background:#103a4f;color:#eef4f7;padding:16px}.vxa-pvh h1{font-size:22px;margin:0 0 6px;line-height:1.2}.vxa-pvh p{margin:0 0 8px;opacity:.9}.vxa-pvh .pill{display:inline-block;font-size:12px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin:0 6px 6px 0}.vxa-pvb{padding:4px 16px 16px;max-height:560px;overflow:auto}.vxa-pvb h3{font-size:16px;margin:14px 0 4px}.vxa-pvb p,.vxa-pvb li{font-size:14px;line-height:1.5}.vxa-chk{list-style:none;padding:0;margin:8px 0 0}.vxa-chk li{padding:3px 0;font-size:14px}.vxa-chk .y{color:var(--good,#2f6146)}.vxa-chk .n{color:var(--bad,#9d2a22)}
+.vxa-kits{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:14px}.vxa-kit{background:var(--surface,#f7fafb);border:1px solid var(--line,#bccdd5);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:8px;min-width:0}.vxa-kit h3{margin:0;display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap}.vxa-kit p{margin:0;font-size:14px}.vxa-kf{border-top:1px solid var(--line,#bccdd5);padding-top:8px}.vxa-kf div{display:flex;justify-content:space-between;align-items:center;gap:8px}.vxa-kf b{font-size:13px}.vxa-kf pre{white-space:pre-wrap;word-break:break-word;font:13px/1.45 inherit;font-family:inherit;margin:4px 0 0;max-height:120px;overflow:auto;background:var(--bg,#fff);border:1px solid var(--line,#bccdd5);border-radius:6px;padding:6px 8px}.vxa-src{font-size:12.5px;color:var(--muted,#4c6470)}.vxa-src a{overflow-wrap:anywhere}
+.vxa-map{display:grid;grid-template-columns:repeat(11,minmax(0,1fr));gap:3px;max-width:560px;margin:0 0 12px}.vxa-map span{aspect-ratio:1;display:grid;place-items:center;font-size:clamp(9px,2.4vw,12px);font-weight:700;border-radius:4px;background:var(--sunk,#dde7ec);color:var(--muted,#4c6470)}.vxa-map span.t0{background:#1d5670;color:#fff}.vxa-map span.t1{background:#a57a2a;color:#fff}.vxa-map span.t2{background:#2f6146;color:#fff}.vxa-map span.t3{background:#7e4a8e;color:#fff}.vxa-map span.t4{background:#b5543a;color:#fff}.vxa-map span.t5{background:#3f6fa8;color:#fff}.vxa-map span.house{outline:2px dashed #14232b}.vxa-leg{display:flex;gap:10px;flex-wrap:wrap;font-size:13px;margin-bottom:10px}.vxa-leg i{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;margin-right:4px}.vxa-sts{display:grid;grid-template-columns:repeat(auto-fill,minmax(64px,1fr));gap:4px 8px;max-height:220px;overflow:auto;border:1px solid var(--line,#bccdd5);border-radius:8px;padding:8px}
+.vxa-cash{border:1px solid var(--line,#bccdd5);border-left:5px solid var(--gold,#a57a2a);background:var(--surface,#f7fafb);border-radius:10px;padding:12px 14px;margin:12px 0}.vxa-num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}.vxa .vxi-tw{max-width:100%}.vxa .vxi-tbl td,.vxa .vxi-tbl th{white-space:nowrap}
+.vxa-back{display:none}.vxa .vxi-btn{min-height:38px}
+@media (max-width:860px){.vxa-cand{grid-template-columns:minmax(0,1fr)}.vxa-cand.has .vxa-list{display:none}.vxa-cand.has .vxa-back{display:inline-flex}.vxa-ed{grid-template-columns:minmax(0,1fr)}.vxa-pv{position:static}.vxa-kv{grid-template-columns:minmax(0,1fr)}.vxa-kv dt{margin-top:6px}}`;
+  function css() { if (!document.getElementById("vxa-css")) { const s = document.createElement("style"); s.id = "vxa-css"; s.textContent = CSS; document.head.appendChild(s) } }
+
+  /* ---------- data ---------- */
+  async function meta() { if (!S.meta) S.meta = await api("/api/ats/admin/meta"); return S.meta }
+  async function loadApps() { S.apps = (await api("/api/ats/admin/apps")).apps; return S.apps }
+  async function loadPosts() { S.posts = (await api("/api/ats/admin/posts")).posts; return S.posts }
+  async function loadTerr() { S.terr = (await api("/api/ats/admin/territories")).territories; return S.terr }
+  async function loadDet(id) { S.det[id] = await api("/api/ats/admin/apps/" + encodeURIComponent(id)); const a = S.apps && S.apps.find(x => x.id === id); if (a) a.seen = true; return S.det[id] }
+  const SN = () => Object.fromEntries((S.meta && S.meta.stages) || []);
+  const stageOpts = sel => ((S.meta && S.meta.stages) || []).map(([k, l]) => `<option value="${k}"${k === sel ? " selected" : ""}>${E(l)}</option>`).join("");
+  const sel = (name, opts, cur, extra) => `<select name="${name}" ${extra || ""}>${opts.map(o => { const [v, l] = Array.isArray(o) ? o : [o, o]; return `<option value="${E(v)}"${String(v) === String(cur == null ? "" : cur) ? " selected" : ""}>${E(l)}</option>` }).join("")}</select>`;
+  const human = s => String(s || "").replace(/_/g, " ").replace(/^./, c => c.toUpperCase());
+  const terrName = id => { const t = (S.terr || []).find(x => x.id === id); return t ? t.name : id ? id : "Any" };
+
+  /* ---------- public ---------- */
+  async function summary() { try { const j = await api("/api/ats/admin/summary"); return j } catch (e) { return { text: "Hiring isn't available", needs: 0, counts: { new: 0, stale: 0, consents: 0, active: 0 }, items: [], off: true, error: e.message } } }
+  async function renderHiring(el, opt) {
+    if (!el) return; css(); opt = opt || {}; if (S.el !== el) { S.el = el; bind(el) }
+    if (opt.view && VIEWS.some(v => v[0] === opt.view)) S.view = opt.view; if (opt.id) { S.id = opt.id; S.view = "candidates" }
+    el.innerHTML = `<div class="vxa"><p class="vxi-muted">Loading hiring…</p></div>`;
+    try { await Promise.all([meta(), loadApps(), loadTerr(), loadPosts()]); S.err = "" } catch (e) { el.innerHTML = `<div class="vxa"><div class="vxi-card vxi-empty"><b>Hiring isn't available yet</b><p class="vxi-muted">${E(e.message)} It turns on with the v24 ATS update on the server.</p></div></div>`; return }
+    if (S.view === "candidates" && S.id && !S.det[S.id]) { try { await loadDet(S.id) } catch (e) { S.id = null } }
+    paint();
+  }
+  function open(id, tab) { S.view = "candidates"; S.id = id; if (tab) S.tab = tab; if (S.el) { loadDet(id).then(paint, e => { S.err = e.message; paint() }) } }
+
+  /* ---------- paint ---------- */
+  function paint() { if (!S.el) return; const y = window.scrollY;
+    const nav = `<nav class="vxa-nav" aria-label="Hiring sections">${VIEWS.map(([k, l, i]) => `<button type="button" data-a="view" data-v="${k}" aria-current="${S.view === k ? "page" : "false"}">${sv(i, 16)} ${l}</button>`).join("")}</nav>`;
+    const body = { pipeline, candidates, postings, territories, commission }[S.view] || pipeline;
+    S.el.innerHTML = `<div class="vxa" id="vxa">${nav}${S.flash ? `<div class="vxa-flash" role="status">${E(S.flash)}</div>` : ""}${S.err ? `<div class="vxa-err" role="alert">${E(S.err)}</div>` : ""}${body()}</div>`;
+    S.flash = ""; S.err = ""; if (Math.abs(window.scrollY - y) > 2) window.scrollTo(0, y) }
+  const head = (t, sub, right) => `<div class="vxa-head"><div><h2>${t}</h2>${sub ? `<p>${sub}</p>` : ""}</div>${right ? `<div class="vxi-row">${right}</div>` : ""}</div>`;
+
+  /* pipeline */
+  function pipeline() { const A = S.apps || []; const sn = SN(); const open_ = A.filter(a => CLOSED.indexOf(a.stage) < 0 || a.stage === "onboarded");
+    const st = (S.meta.stages || []).filter(([k]) => S.closed || ["not_selected", "withdrawn"].indexOf(k) < 0);
+    const kp = [["Active candidates", A.filter(a => CLOSED.indexOf(a.stage) < 0).length], ["New", A.filter(a => !a.seen && CLOSED.indexOf(a.stage) < 0).length], ["Waiting 5+ days", A.filter(a => CLOSED.indexOf(a.stage) < 0 && a.days >= 5).length], ["Open postings", (S.posts || []).filter(p => p.status === "open" && !p.expired).length], ["Territories filled", `${(S.terr || []).filter(t => t.rep).length} / ${(S.terr || []).filter(t => t.status !== "closed").length}`]];
+    return head("Hiring pipeline", `${open_.length} candidate${open_.length === 1 ? "" : "s"}. Click a card to open the candidate. Cards turn red after 5 days in one stage.`, `<label class="ck vxi-muted" style="display:inline-flex;gap:6px;align-items:center"><input type="checkbox" data-a="closed" ${S.closed ? "checked" : ""}> Show closed</label><a class="vxi-btn sm sec" href="/api/ats/admin/export" download>${sv("dl", 16)} CSV</a>`) +
+      `<div class="vxi-kpi">${kp.map(([l, v]) => `<div><span>${l}</span><b>${E(String(v))}</b></div>`).join("")}</div>` +
+      (A.length ? `<div class="vxa-board" role="list" aria-label="Pipeline stages">${st.map(([k, l]) => { const L = A.filter(a => a.stage === k); return `<section class="vxa-col" role="listitem" aria-label="${E(l)}"><h4><span>${E(l)}</span><span>${L.length}</span></h4>${L.map(card).join("") || `<p class="vxi-muted" style="margin:4px">—</p>`}</section>` }).join("")}</div>`
+        : `<div class="vxi-card vxi-empty"><b>No applications yet</b><p class="vxi-muted">Open a posting, then share it with the posting kits. Applications land here.</p><button class="vxi-btn sm" data-a="view" data-v="postings">Go to postings</button></div>`) }
+  const card = a => `<button type="button" class="vxa-card${!a.seen && CLOSED.indexOf(a.stage) < 0 ? " new" : a.days >= 5 && CLOSED.indexOf(a.stage) < 0 ? " stale" : ""}" data-a="open" data-v="${a.id}"><b>${E(a.name)}</b><small>${E([a.lic_type, a.lic_state].filter(Boolean).join(" · "))}${a.years != null ? ` · ${a.years} yrs` : ""}</small><small>${E(a.post ? a.post.title.replace(/\s+[—–-]\s+1099.*$/, "") : "")}</small><span class="vxa-cm">${!a.seen ? chip("New", "warn") : ""}${chip(a.days + "d", a.days >= 5 && CLOSED.indexOf(a.stage) < 0 ? "bad" : "")}${a.avg != null ? chip("★ " + a.avg, "ok") : ""}${a.terr_pref ? chip(terrName(a.terr_pref)) : ""}</span></button>`;
+
+  /* candidates: left list + chart */
+  function candidates() { const A = (S.apps || []).filter(a => (!S.fstage || a.stage === S.fstage) && (!S.fpost || (a.post && a.post.id === S.fpost)) && (!S.q || (a.name + " " + a.email).toLowerCase().indexOf(S.q.toLowerCase()) >= 0));
+    const list = `<aside class="vxa-list" aria-label="Candidates"><div class="vxa-lf"><input type="search" data-a="q" placeholder="Find a candidate" value="${E(S.q)}" aria-label="Find a candidate"><select data-a="fstage" aria-label="Stage"><option value="">All stages (${(S.apps || []).length})</option>${stageOpts(S.fstage)}</select><select data-a="fpost" aria-label="Posting"><option value="">All postings</option>${(S.posts || []).map(p => `<option value="${p.id}"${p.id === S.fpost ? " selected" : ""}>${E(p.title.replace(/\s+[—–-]\s+1099.*$/, ""))}</option>`).join("")}</select></div>
+      <ul>${A.map(a => `<li><button type="button" data-a="open" data-v="${a.id}" aria-current="${a.id === S.id}"><span class="vxa-av">${E(ini(a.name))}</span><span><b>${E(a.name)}</b><small>${E(SN()[a.stage] || a.stage)} · ${a.days}d${!a.seen ? " · New" : ""}</small></span></button></li>`).join("") || `<li class="vxi-muted" style="padding:12px">No candidates match.</li>`}</ul></aside>`;
+    const d = S.id && S.det[S.id];
+    return `<div class="vxa-cand${d ? " has" : ""}">${list}<section aria-label="Candidate">${d ? chart(d) : `<div class="vxi-card vxi-empty"><b>Choose a candidate</b><p class="vxi-muted">Pick someone on the left. Their tabs stay where you left them.</p></div>`}</section></div>` }
+  function nextStage(st) { const L = ["applied", "screen", "license", "interview", "references", "background", "offer", "agreement", "onboarded"]; const i = L.indexOf(st); return i >= 0 && i < L.length - 1 ? L[i + 1] : null }
+  function counts(d) { const S_ = d.screen; return { lic: S_.filter(x => x.kind === "license").length, refsIn: S_.filter(x => x.kind === "reference" && x.status === "received").length, refs: S_.filter(x => x.kind === "reference").length, fcra: S_.find(x => x.kind === "fcra"), bg: S_.find(x => x.kind === "background") } }
+  function chart(d) { const a = d.app, p = d.applicant || {}; const sn = SN(); const nx = nextStage(a.stage); const c = counts(d);
+    const badge = k => { let n = 0; if (k === "screening" && !c.lic && CLOSED.indexOf(a.stage) < 0) n = 1; if (k === "references" && c.refs > c.refsIn && c.refs) n = c.refs - c.refsIn; if (k === "background" && c.fcra && c.fcra.status === "signed" && (!c.bg || c.bg.status === "not_started")) n = 1; return n ? `<span class="n">${n}</span>` : "" };
+    return `<button type="button" class="vxi-btn sm sec vxa-back" data-a="unopen">${sv("back", 16)} All candidates</button>
+    <div class="vxa-ph"><div class="vxa-pht"><span class="vxa-av lg">${E(ini(a.name))}</span><div><h2>${E(a.name)}</h2><p class="vxa-pm">${chip(sn[a.stage] || a.stage, CLOSED.indexOf(a.stage) >= 0 ? (a.stage === "onboarded" ? "ok" : "bad") : "")} ${a.days} day${a.days === 1 ? "" : "s"} in stage · ${E(p.lic ? p.lic.type + " · " + (p.lic.state || "") : "")} · ${p.years != null ? p.years + " yrs bedside" : ""}</p><p class="vxa-pm">${E(a.email)} · ${E(p.phone || "")} · ${E(a.post ? a.post.title : "")}</p></div></div>
+      <div class="vxa-acts">${nx && CLOSED.indexOf(a.stage) < 0 ? `<button class="vxi-btn sm" data-a="advance" data-v="${nx}">Advance to ${E(sn[nx])}</button>` : ""}<label class="vxi-muted" style="display:inline-flex;gap:6px;align-items:center;white-space:nowrap">Move to <select data-a="moveto" aria-label="Move to stage">${stageOpts(a.stage)}</select></label>${CLOSED.indexOf(a.stage) < 0 ? `<button class="vxi-btn sm sec" data-a="reject">Not selected</button>` : ""}<button class="vxi-btn sm danger" data-a="delapp" data-v="${E(a.person)}">Delete applicant</button></div></div>
+    <div class="vxa-tabs" role="tablist" aria-label="Candidate sections">${CTABS.map(([k, l]) => `<button type="button" role="tab" data-a="tab" data-v="${k}" aria-selected="${S.tab === k}">${l}${badge(k)}</button>`).join("")}</div>
+    <div role="tabpanel" id="vxa-tp">${({ application: tApp, screening: tScreen, interview: tInt, references: tRefs, background: tBg, offer: tOffer, activity: tAct })[S.tab](d)}</div>` }
+  function tApp(d) { const a = d.app, p = d.applicant || {}; const sc = a.scores || {}; const R = S.meta.rubric; const cs = d.consents || {};
+    return `<div class="vxi-grid"><section class="vxi-card"><h3>Application</h3><dl class="vxa-kv">
+      <dt>Lives in</dt><dd>${E((S.meta.states || {})[p.home_state] || p.home_state || "—")}</dd><dt>License</dt><dd>${E(p.lic ? `${p.lic.type} · ${p.lic.state} · number ${p.lic.last4 || "—"}` : "—")}</dd><dt>Other license states</dt><dd>${E(p.lic && p.lic.states.length ? p.lic.states.join(", ") : "—")}</dd>
+      <dt>Years bedside</dt><dd>${E(p.years)}</dd><dt>EHRs</dt><dd>${E((p.ehrs || []).join(", "))}${p.ehr_other ? E(" · " + p.ehr_other) : ""}</dd><dt>Education / teaching</dt><dd>${E(p.edu || "—")}</dd><dt>Sales experience</dt><dd>${E(p.sales || "—")}</dd>
+      <dt>LinkedIn</dt><dd>${p.linkedin ? `<a href="${E(p.linkedin)}" target="_blank" rel="noopener noreferrer">${E(p.linkedin)}</a>` : "—"}</dd><dt>Preferred territory</dt><dd>${E(terrName(a.terr_pref))}</dd><dt>Heard about us</dt><dd>${E(a.heard || "—")}${a.src ? E(" (link: " + a.src + ")") : ""}</dd><dt>Applied</dt><dd>${E(fDT(a.created))}</dd>
+      <dt>Resume</dt><dd>${a.resume ? `<a href="/api/ats/admin/apps/${a.id}/resume" target="_blank" rel="noopener">${E(a.resume.name)}</a> <span class="vxi-muted">(${Math.round(a.resume.size / 1024)} KB)</span>` : "—"}</dd></dl>
+      <h3 style="margin-top:14px">Acknowledgements</h3><ul class="vxa-chk">${[["privacy", "Privacy notice"], ["contractor", "Independent contractor (1099) status"], ["commission", "Commission only"]].map(([k, l]) => `<li class="${cs[k] ? "y" : "n"}">${cs[k] ? "✓" : "✗"} ${l}${cs[k] ? ` · ${E(fDT(cs[k]))}` : ""}</li>`).join("")}</ul>
+      <div class="vxa-acts"><button class="vxi-btn sm sec" data-a="newlink">New status link for the candidate</button></div><div id="vxa-link"></div>${d.other && d.other.length ? `<p class="vxi-muted">Also applied for: ${d.other.map(o => E(o.title || "a posting") + " (" + E(SN()[o.stage] || o.stage) + ")").join(", ")}</p>` : ""}</section>
+      <section class="vxi-card"><h3>Scorecard ${a.avg != null ? chip("Average " + a.avg, "ok") : ""}</h3><form data-f="score"><div class="vxi-tw" style="border:0"><table class="vxa-rub"><thead><tr><th scope="col">1 = weak · 5 = strong</th>${[1, 2, 3, 4, 5].map(n => `<th scope="col">${n}</th>`).join("")}</tr></thead><tbody>${R.map(([k, l]) => `<tr><th scope="row" style="font-weight:600">${E(l)}</th>${[1, 2, 3, 4, 5].map(n => `<td><input type="radio" name="${k}" value="${n}" aria-label="${E(l)} ${n}"${+sc[k] === n ? " checked" : ""}></td>`).join("")}</tr>`).join("")}</tbody></table></div>
+      <label class="vxa-l" style="margin-top:8px">Why <textarea name="note" rows="2" maxlength="1000">${E(sc.note || "")}</textarea></label><div class="vxa-acts"><button class="vxi-btn sm">Save scorecard</button>${sc.at ? `<span class="vxi-muted">Saved ${E(fDT(sc.at))} by ${E(sc.by || "")}</span>` : ""}</div></form>
+      <details class="vxa-item" style="margin-top:10px"><summary>What each score means</summary><p class="vxi-muted"><b>Clinical credibility:</b> would faculty trust this nurse's clinical judgment? <b>EHR breadth:</b> real charting across several systems. <b>Teaching / communication:</b> precepting, instructing, explaining clearly. <b>Sales drive:</b> self-starting, follows up, comfortable asking. <b>Territory fit:</b> lives in and knows the nursing programs of the territory.</p></details></section></div>` }
+  function screenForm(kind, x) { const d = (x && x.data) || {}; const st = S.meta.screen[kind]; const states = Object.entries(S.meta.states).sort((a, b) => a[1].localeCompare(b[1]));
+    if (kind === "license") return `<div class="vxa-f"><label>License state${sel("state", [["", "Choose"]].concat(states), d.state)}</label><label>Type${sel("type", ["RN", "LPN"], d.type)}</label><label>Looked up on${sel("source", ["Nursys QuickConfirm", "State board website"], d.source)}</label><label>Date of lookup<input type="date" name="looked_up" value="${E(d.looked_up || today())}" max="${today()}"></label><label>Result${sel("status", st.map(s => [s, human(s)]), x ? x.status : "")}</label><label>License expires<input type="date" name="expires" value="${E(d.expires || "")}"></label></div><label class="ck"><input type="checkbox" name="discipline"${d.discipline ? " checked" : ""}> Discipline or encumbrance on record</label><label class="ck"><input type="checkbox" name="compact"${d.compact ? " checked" : ""}> Multistate (compact) privilege</label><label class="vxa-l">Note<input name="note" value="${E(d.note || "")}" maxlength="600"></label>`;
+    if (kind === "reference") return `<div class="vxa-f"><label>Name<input name="name" value="${E(d.name || "")}" maxlength="120"></label><label>Title and workplace<input name="org" value="${E(d.org || "")}" maxlength="160"></label><label>Relationship<input name="relation" value="${E(d.relation || "")}" maxlength="160"></label><label>Phone<input name="phone" value="${E(d.phone || "")}" maxlength="30"></label><label>Email<input name="email" value="${E(d.email || "")}" maxlength="254"></label><label>Status${sel("status", st.map(s => [s, human(s)]), x ? x.status : "to_contact")}</label><label>Contacted on<input type="date" name="contacted" value="${E(d.contacted || "")}"></label><label>Rating (1–5)${sel("rating", [["", "—"], 1, 2, 3, 4, 5], d.rating)}</label><label>Would work with them again?${sel("rehire", [["", "—"], ["yes", "Yes"], ["no", "No"], ["unsure", "Unsure"]], d.rehire)}</label></div><label class="vxa-l">Notes<textarea name="notes" rows="3" maxlength="2000">${E(d.notes || "")}</textarea></label>`;
+    if (kind === "interview" || kind === "demo") return `<div class="vxa-f"><label>Date<input type="date" name="date" value="${E(d.date || "")}"></label><label>Time<input name="time" value="${E(d.time || "")}" placeholder="2:30 PM ET" maxlength="20"></label><label>With<input name="with" value="${E(d.with || "")}" maxlength="120"></label><label>Video link<input name="link" value="${E(d.link || "")}" maxlength="300" placeholder="https://"></label><label>Status${sel("status", st.map(s => [s, human(s)]), x ? x.status : "scheduled")}</label><label>Rating (1–5)${sel("rating", [["", "—"], 1, 2, 3, 4, 5], d.rating)}</label></div><label class="vxa-l">Notes<textarea name="notes" rows="3" maxlength="3000">${E(d.notes || "")}</textarea></label>`;
+    if (kind === "offer") return `<div class="vxa-f"><label>Territory${sel("territory", [["", "Choose"]].concat((S.terr || []).map(t => [t.id, t.name + (t.rep ? " (assigned to " + t.rep.name + ")" : "")])), d.territory)}</label><label>Sent on<input type="date" name="sent" value="${E(d.sent || "")}"></label><label>Respond by<input type="date" name="respond_by" value="${E(d.respond_by || "")}"></label><label>Status${sel("status", st.map(s => [s, human(s)]), x ? x.status : "draft")}</label></div><label class="vxa-l">Terms<input name="terms" value="${E(d.terms || "Standard: 20% first-year license revenue, 10% renewals, paid after funds clear")}" maxlength="600"></label><label class="vxa-l">Notes<textarea name="notes" rows="2" maxlength="2000">${E(d.notes || "")}</textarea></label>`;
+    if (kind === "agreement") return `<div class="vxa-f"><label>Agreement version<input name="version" value="${E(d.version || "ISR 2026-11 DRAFT")}" maxlength="40"></label><label>Sent on<input type="date" name="sent" value="${E(d.sent || "")}"></label><label>Signed on<input type="date" name="signed" value="${E(d.signed || "")}"></label><label>Status${sel("status", st.map(s => [s, human(s)]), x ? x.status : "sent")}</label></div><label class="vxa-l">Notes<input name="notes" value="${E(d.notes || "")}" maxlength="1000"></label>`;
+    return "" }
+  function screenList(d, kind, title, empty) { const L = d.screen.filter(x => x.kind === kind);
+    return L.map(x => `<details class="vxa-item"><summary>${chip(human(x.status), /unencumbered|received|done|accepted|signed/.test(x.status) ? "ok" : /encumbered|declined|not_found|expired|inactive|no_show/.test(x.status) ? "bad" : "")} ${E(x.data.name || x.data.state || x.data.date || title)} <span class="vxi-muted">${E(x.data.looked_up ? "looked up " + fD(x.data.looked_up) : x.data.date ? fD(x.data.date) : x.data.from === "applicant" ? "from the candidate" : "")} · ${E(x.by)}</span></summary><form data-f="screen-edit" data-v="${x.id}" data-k="${kind}">${screenForm(kind, x)}<div class="vxa-acts"><button class="vxi-btn sm">Save</button><button type="button" class="vxi-btn sm danger" data-a="delscreen" data-v="${x.id}">Remove</button></div></form></details>`).join("") || `<p class="vxi-muted">${empty}</p>` }
+  function tScreen(d) { const p = d.applicant || {};
+    return `<div class="vxi-grid"><section class="vxi-card"><h3>License verification</h3><p class="vxi-muted">Look the nurse up yourself on <a href="https://www.nursys.com/LQC/LQC.aspx" target="_blank" rel="noopener noreferrer">Nursys QuickConfirm ${sv("ext", 14)}</a> (free) or the state board's site, by name and state. Then record what you saw here. Nothing is looked up automatically.</p>
+      ${screenList(d, "license", "License", "No lookup recorded yet. The candidate can't move past Screen until one shows an active, unencumbered license.")}
+      <details class="vxa-item"${d.screen.some(x => x.kind === "license") ? "" : " open"}><summary>${sv("plus", 16)} Record a license lookup</summary><form data-f="screen-add" data-k="license">${screenForm("license", { data: { state: p.lic && p.lic.state, type: p.lic && p.lic.type, looked_up: today() }, status: "active_unencumbered" })}<div class="vxa-acts"><button class="vxi-btn sm">Save lookup</button></div></form></details></section>
+      <section class="vxi-card"><h3>Check the license number</h3><p class="vxi-muted">The candidate entered a number ending in <b>${E(p.lic ? p.lic.last4 : "—")}</b>. Type the full number you see on Nursys to check it matches. The full number is never stored or shown.</p><form data-f="licmatch" class="vxi-row"><input name="number" autocomplete="off" spellcheck="false" placeholder="License number from Nursys" aria-label="License number from Nursys" style="flex:1;min-width:0"><button class="vxi-btn sm">Check</button></form><p id="vxa-lm" role="status" aria-live="polite"></p>
+      <h3 style="margin-top:14px">Phone screen</h3><p class="vxi-muted">Use the Activity tab for screen notes. Good questions: why nursing education, which EHRs and how deeply, teaching moments, comfort asking for a meeting, availability, which schools they already know.</p></section></div>` }
+  function tInt(d) { return `<div class="vxi-grid"><section class="vxi-card"><h3>Video interview</h3>${screenList(d, "interview", "Interview", "Not scheduled yet.")}<details class="vxa-item"><summary>${sv("plus", 16)} Add interview</summary><form data-f="screen-add" data-k="interview">${screenForm("interview", null)}<div class="vxa-acts"><button class="vxi-btn sm">Save</button></div></form></details></section>
+      <section class="vxi-card"><h3>Mock demo</h3><p class="vxi-muted">Give the candidate a demo account a few days ahead. Ask for a 15-minute demo to a "program director" (you): the EHR's MAR and barcode scan, an NCLEX practice exam, and the instructor dashboard. Score clarity, clinical accuracy, and whether they ask for a next step.</p>${screenList(d, "demo", "Demo", "Not scheduled yet.")}<details class="vxa-item"><summary>${sv("plus", 16)} Add mock demo</summary><form data-f="screen-add" data-k="demo">${screenForm("demo", null)}<div class="vxa-acts"><button class="vxi-btn sm">Save</button></div></form></details></section></div>` }
+  function tRefs(d) { const c = counts(d); return `<section class="vxi-card"><h3>Professional references ${chip(`${c.refsIn} of 2 received`, c.refsIn >= 2 ? "ok" : "warn")}</h3><p class="vxi-muted">The candidate can add references from their status page once they reach Interview. Call each one yourself; record what you heard. Two received references are needed before Offer.</p>${screenList(d, "reference", "Reference", "No references yet.")}
+      <details class="vxa-item"><summary>${sv("plus", 16)} Add a reference</summary><form data-f="screen-add" data-k="reference">${screenForm("reference", null)}<div class="vxa-acts"><button class="vxi-btn sm">Save reference</button></div></form></details></section>` }
+  function tBg(d) { const a = d.app; const c = counts(d); const f = c.fcra; const bg = c.bg; const fin = ["references", "background", "offer", "agreement", "onboarded"].indexOf(a.stage) >= 0;
+    const fs = !f ? `<p>Not requested yet. Background checks are for finalists only.</p><button class="vxi-btn sm" data-a="fcra"${fin ? "" : " disabled"}>Request authorization from the candidate</button>${fin ? "" : `<p class="vxi-muted">Available once the candidate reaches References.</p>`}`
+      : f.status === "requested" ? `<p>${chip("Waiting for the candidate", "warn")} Requested ${E(fDT(f.data.requested_at))}. The candidate sees a stand-alone disclosure and signs from their status link.</p>`
+      : f.status === "signed" ? `<p>${chip("Signed", "ok")} by <b>${E(f.data.sig)}</b> on ${E(fDT(f.data.at))} · ${E(f.data.version)} · text fingerprint ${E(String(f.data.text_sha || "").slice(0, 12))}…</p>`
+      : `<p>${chip("Declined", "bad")} ${E(fDT(f.data.declined_at))}. You can't run a check without authorization.</p>`;
+    const can = f && f.status === "signed"; const bd = (bg && bg.data) || {};
+    return `<div class="vxi-grid"><section class="vxi-card"><h3>Authorization (FCRA)</h3>${fs}<details class="vxa-item"><summary>What the candidate reads</summary><p style="white-space:pre-wrap">${E(S.meta.fcra.disclosure)}</p><p><b>Authorization:</b> ${E(S.meta.fcra.auth)}</p></details></section>
+      <section class="vxi-card"><h3>Background check ${bg ? chip(human(bg.status), /clear/.test(bg.status) ? "ok" : /adverse|review/.test(bg.status) ? "bad" : "") : ""}</h3><p class="vxi-muted">Order the check with any screening company you choose, then record its status here. Vexcura doesn't connect to a vendor yet, and never stores Social Security numbers or dates of birth.</p>
+      <form data-f="bg"><fieldset ${can ? "" : "disabled"} style="border:0;padding:0;margin:0"><div class="vxa-f"><label>Status${sel("status", S.meta.bg.map(s => [s, human(s)]), bg ? bg.status : "not_started")}</label><label>Screening company<input name="vendor" value="${E(bd.vendor || "")}" maxlength="120"></label><label>Order / reference no.<input name="order_ref" value="${E(bd.order_ref || "")}" maxlength="120"></label><label>Ordered on<input type="date" name="ordered" value="${E(bd.ordered || "")}"></label><label>Completed on<input type="date" name="completed" value="${E(bd.completed || "")}"></label><label>Pre-adverse notice sent<input type="date" name="pre_adverse" value="${E(bd.pre_adverse || "")}"></label><label>Final adverse notice sent<input type="date" name="final_adverse" value="${E(bd.final_adverse || "")}"></label></div><label class="vxa-l">Notes<textarea name="notes" rows="2" maxlength="2000">${E(bd.notes || "")}</textarea></label><div class="vxa-acts"><button class="vxi-btn sm">Save</button></div></fieldset></form>
+      <details class="vxa-item"><summary>If something in the report changes your decision</summary><p class="vxi-muted">Before deciding not to go forward because of the report: send a pre-adverse action notice with a copy of the report and the CFPB "Summary of Your Rights Under the FCRA", wait a reasonable time (commonly at least 5 business days) for the candidate to respond, then send a final adverse action notice. Your screening company can supply these letters.</p></details></section></div>` }
+  function tOffer(d) { const a = d.app; const S_ = d.screen; const of = S_.find(x => x.kind === "offer"), ag = S_.find(x => x.kind === "agreement"), ob = S_.find(x => x.kind === "onboard"); const ok = ["offer", "agreement", "onboarded"].indexOf(a.stage) >= 0; const od = (ob && ob.data) || {};
+    const mine = (S.terr || []).filter(t => t.rep && t.rep.app === a.id);
+    return `<div class="vxi-grid"><section class="vxi-card"><h3>Offer</h3>${of ? `<form data-f="screen-edit" data-v="${of.id}" data-k="offer">${screenForm("offer", of)}<div class="vxa-acts"><button class="vxi-btn sm">Save offer</button></div></form>` : `<form data-f="screen-add" data-k="offer">${screenForm("offer", null)}<div class="vxa-acts"><button class="vxi-btn sm">Save offer</button></div></form>`}
+      <h3 style="margin-top:14px">Exclusive territory</h3>${mine.length ? `<p>${mine.map(t => chip(t.name + " · " + t.states.join(", "), "ok")).join(" ")}</p>` : `<p class="vxi-muted">No territory assigned yet.</p>`}${ok ? `<form data-f="assign" class="vxi-row">${sel("tid", [["", "Choose a territory"]].concat((S.terr || []).filter(t => t.status !== "closed").map(t => [t.id, t.name + (t.rep ? " (now: " + t.rep.name + ")" : "")])), of && of.data.territory)}<button class="vxi-btn sm">Assign</button></form>` : `<p class="vxi-muted">Assign once the candidate reaches Offer.</p>`}</section>
+      <section class="vxi-card"><h3>Independent sales representative agreement</h3>${ag ? `<form data-f="screen-edit" data-v="${ag.id}" data-k="agreement">${screenForm("agreement", ag)}<div class="vxa-acts"><button class="vxi-btn sm">Save</button></div></form>` : `<form data-f="screen-add" data-k="agreement">${screenForm("agreement", null)}<div class="vxa-acts"><button class="vxi-btn sm">Save</button></div></form>`}
+      <h3 style="margin-top:14px">Onboarding checklist</h3><form data-f="onboard" data-v="${ob ? ob.id : ""}">${[["w9", "W-9 received"], ["agreement", "Signed agreement on file"], ["territory_letter", "Territory letter sent"], ["demo_account", "Demo account created"], ["training", "Product training done"], ["brand_guide", "Brand guide and claims rules sent"]].map(([k, l]) => `<label class="ck"><input type="checkbox" name="${k}"${od[k] ? " checked" : ""}> ${l}</label>`).join("")}<div class="vxa-acts"><button class="vxi-btn sm">Save checklist</button></div></form></section></div>` }
+  function tAct(d) { return `<section class="vxi-card"><h3>Activity</h3><form data-f="note"><label class="vxa-l">Add a note <textarea name="text" rows="2" maxlength="4000" placeholder="Phone screen notes, follow-ups… Keep it professional: the candidate can ask for a copy."></textarea></label><div class="vxa-acts"><button class="vxi-btn sm">Add note</button></div></form>
+      <ul class="vxa-act">${d.activity.map(x => `<li><span class="k">${E(x.kind)}</span><span>${E(x.text)}</span><small>${E(fDT(x.at))}${x.by ? " · " + E(x.by) : ""}</small></li>`).join("") || `<li class="vxi-muted">Nothing yet.</li>`}</ul></section>` }
+
+  /* postings */
+  function postings() {
+    if (S.kitPost) return kitsView();
+    if (S.draft) return editor();
+    const L = S.posts || [];
+    return head("Job postings", "Open postings appear at nclexsim.com/careers and in Google's job search. Use posting kits to share them on job boards yourself.", `<button class="vxi-btn sm" data-a="newpost">${sv("plus", 16)} New posting</button>`) +
+      (L.length ? `<div class="vxi-tw"><table class="vxi-tbl"><thead><tr><th>Posting</th><th>Status</th><th>Territory</th><th class="vxa-num">Applicants</th><th>Open until</th><th></th></tr></thead><tbody>${L.map(p => `<tr><td><b>${E(p.title.replace(/\s+[—–-]\s+1099.*$/, ""))}</b><br><span class="vxi-muted">/careers/${E(p.slug)}</span></td><td>${chip(p.expired && p.status === "open" ? "Expired" : human(p.status), p.status === "open" && !p.expired ? "ok" : p.status === "draft" ? "warn" : "")}</td><td>${E(terrName(p.territory))}</td><td class="vxa-num">${p.apps}</td><td>${E(p.valid_through ? fD(p.valid_through) : "—")}</td><td><div class="vxi-row" style="flex-wrap:nowrap"><button class="vxi-btn sm sec" data-a="editpost" data-v="${p.id}">Edit</button><button class="vxi-btn sm sec" data-a="kits" data-v="${p.id}">${sv("kit", 16)} Kits</button>${p.status === "open" && !p.expired ? `<a class="vxi-btn sm sec" href="/careers/${E(p.slug)}" target="_blank" rel="noopener">View ${sv("ext", 14)}</a>` : ""}</div></td></tr>`).join("")}</tbody></table></div>`
+        : `<div class="vxi-card vxi-empty"><b>No postings yet</b><p class="vxi-muted">Start from the standard Clinical Education Sales Representative posting; you can change anything before you open it.</p><button class="vxi-btn sm" data-a="newpost">${sv("plus", 16)} New posting</button></div>`) }
+  function editor() { const p = S.draft; const terrOpts = [["", "All open territories"]].concat((S.terr || []).filter(t => t.status !== "closed").map(t => [t.id, t.name + " (" + t.states.join(", ") + ")"]));
+    return head(p.id ? "Edit posting" : "New posting", "Plain text: a blank line starts a new paragraph, a line starting with “- ” is a bullet, a short line on its own is a heading.", `<button class="vxi-btn sm sec" data-a="cancelpost">${sv("back", 16)} Back to postings</button>`) +
+      `<div class="vxa-ed"><form data-f="post" class="vxi-card" id="vxa-pf"><div class="vxa-f"><label style="grid-column:1/-1">Title<input name="title" value="${E(p.title)}" maxlength="160" required></label><label>Web address<input name="slug" value="${E(p.slug)}" maxlength="70" ${p.posted ? "readonly" : ""} aria-describedby="vxa-slug"><small id="vxa-slug" class="vxi-muted">nclexsim.com/careers/${E(p.slug || "…")}${p.posted ? " · locked once posted" : ""}</small></label><label>Territory${sel("territory", terrOpts, p.territory)}</label><label>Status${sel("status", [["draft", "Draft (not public)"], ["open", "Open (public)"], ["closed", "Closed"]], p.status)}</label><label>Open until<input type="date" name="valid_through" value="${E(p.valid_through || "")}" min="${today()}"></label></div>
+      <label class="ck"><input type="checkbox" name="remote"${p.remote ? " checked" : ""}> 100% remote (works from home; must live in the territory)</label>
+      <label class="vxa-l">Summary (one or two sentences)<textarea name="summary" rows="2" maxlength="400">${E(p.summary)}</textarea></label>
+      <label class="vxa-l">Description<textarea name="body" rows="12" maxlength="12000">${E(p.body)}</textarea></label>
+      <label class="vxa-l">Requirements<textarea name="reqs" rows="7" maxlength="6000">${E(p.reqs)}</textarea></label>
+      <label class="vxa-l">Compensation<textarea name="comp" rows="8" maxlength="6000">${E(p.comp)}</textarea></label><button type="button" class="vxi-btn sm sec" data-a="stdcomp">Reset to the standard commission wording</button>
+      <div class="vxa-acts"><button class="vxi-btn" type="submit">Save posting</button>${p.id ? `<button type="button" class="vxi-btn sm sec" data-a="kits" data-v="${p.id}">${sv("kit", 16)} Posting kits</button>${p.apps ? "" : `<button type="button" class="vxi-btn sm danger" data-a="delpost" data-v="${p.id}">Delete</button>`}` : ""}</div></form>
+      <aside aria-label="Live preview"><div class="vxa-pv" id="vxa-pv">${preview(p)}</div></aside></div>` }
+  const blocks = txt => { const out = []; String(txt || "").split(/\n{2,}/).forEach(ch => { const L = ch.split("\n").map(s => s.trim()).filter(Boolean); let i = 0; if (L.length > 1 && !/^[-*•]\s/.test(L[0]) && L[0].length <= 60 && !/[.:;]$/.test(L[0])) { out.push({ h: L[0] }); i = 1 } let ul = null; for (; i < L.length; i++) { const m = L[i].match(/^[-*•]\s+(.*)$/); if (m) { if (!ul) { ul = []; out.push({ ul }) } ul.push(m[1]) } else { ul = null; out.push({ p: L[i] }) } } }); return out };
+  const html = (t, h) => blocks(t).map(b => b.h ? `<${h || "h3"}>${E(b.h)}</${h || "h3"}>` : b.ul ? `<ul>${b.ul.map(x => `<li>${E(x)}</li>`).join("")}</ul>` : `<p>${E(b.p)}</p>`).join("");
+  function preview(p) { const t = (S.terr || []).find(x => x.id === p.territory); const sts = t ? t.states : [...new Set((S.terr || []).filter(x => x.status !== "closed").flatMap(x => x.states))];
+    const chk = [["Title", (p.title || "").length >= 5], ["Description at least 300 characters", ((p.summary || "") + (p.body || "")).length >= 300], ["Requirements listed", (p.reqs || "").trim().length > 20], ["Compensation stated (commission only, no base pay)", /commission/i.test(p.comp || "")], [p.remote ? `Remote: applicants must live in ${sts.join(", ") || "—"}` : "In territory: location set", sts.length > 0], ["Open-until date (Google removes expired jobs)", !!p.valid_through || p.status !== "open"], ["Employment type: Contractor · Apply directly on the page", true]];
+    return `<div class="vxa-pvh"><small style="opacity:.75">Preview · nclexsim.com/careers/${E(p.slug || "")}</small><h1>${E(p.title || "Untitled")}</h1><p>${E(p.summary)}</p><span class="pill">1099 independent contractor</span><span class="pill">Commission only</span><span class="pill">${p.remote ? "Remote" : "In territory"} · ${E(sts.join(", "))}</span></div><div class="vxa-pvb">${html(p.body)}<h3>Requirements</h3>${html(p.reqs)}<h3>Compensation</h3>${html(p.comp)}<h3>Google job search check</h3><ul class="vxa-chk">${chk.map(([l, y]) => `<li class="${y ? "y" : "n"}">${y ? "✓" : "✗"} ${E(l)}</li>`).join("")}</ul></div>` }
+  function kitsView() { const k = S.kit; const p = k.post;
+    return head(`Posting kits · ${E(p.title.replace(/\s+[—–-]\s+1099.*$/, ""))}`, `Copy each field into the board's own posting form. Nothing is posted for you, and no accounts are created. ${k.live ? "" : "<b>This posting isn't open yet</b>; open it first so the apply link works."}`, `<button class="vxi-btn sm sec" data-a="closekits">${sv("back", 16)} Back to postings</button>`) +
+      `<div class="vxa-kits">${k.kits.map(b => `<article class="vxa-kit" aria-label="${E(b.name)}"><h3><span>${E(b.name)}</span>${chip(b.cost, b.free === "yes" ? "ok" : b.free === "no" ? "bad" : "warn")}</h3><p>${E(b.note)}</p><div class="vxi-row"><a class="vxi-btn sm" href="${E(b.post_url)}" target="_blank" rel="noopener noreferrer">${b.k === "google" ? "Rich Results Test" : "Open " + E(b.name.split(" (")[0])} ${sv("ext", 14)}</a>${b.url2 ? `<a class="vxi-btn sm sec" href="${E(b.url2)}" target="_blank" rel="noopener noreferrer">Search Console ${sv("ext", 14)}</a>` : ""}<button class="vxi-btn sm sec" data-a="copy" data-t="${E(b.all)}">${sv("copy", 14)} Copy all</button></div>
+        ${b.fields.map(f => `<div class="vxa-kf"><div><b>${E(f.label)}</b><button class="vxi-btn sm sec" data-a="copy" data-t="${E(f.text)}" aria-label="Copy ${E(f.label)} for ${E(b.name)}">${sv("copy", 14)} Copy</button></div><pre>${E(f.text)}</pre></div>`).join("")}
+        <p class="vxa-src">Checked November 2026: ${b.sources.map(s => `<a href="${E(s.url)}" target="_blank" rel="noopener noreferrer">${E(s.title)}</a>`).join(" · ")}</p></article>`).join("")}</div>` }
+
+  /* territories */
+  const TILE = { AK: [0, 0], ME: [0, 10], VT: [1, 9], NH: [1, 10], WA: [2, 0], ID: [2, 1], MT: [2, 2], ND: [2, 3], MN: [2, 4], IL: [2, 5], WI: [2, 6], MI: [2, 7], NY: [2, 8], RI: [2, 9], MA: [2, 10], OR: [3, 0], NV: [3, 1], WY: [3, 2], SD: [3, 3], IA: [3, 4], IN: [3, 5], OH: [3, 6], PA: [3, 7], NJ: [3, 8], CT: [3, 9], CA: [4, 0], UT: [4, 1], CO: [4, 2], NE: [4, 3], MO: [4, 4], KY: [4, 5], WV: [4, 6], VA: [4, 7], MD: [4, 8], DE: [4, 9], AZ: [5, 1], NM: [5, 2], KS: [5, 3], AR: [5, 4], TN: [5, 5], NC: [5, 6], SC: [5, 7], DC: [5, 8], OK: [6, 3], LA: [6, 4], MS: [6, 5], AL: [6, 6], GA: [6, 7], HI: [7, 0], TX: [7, 3], FL: [7, 8] };
+  function territories() { const L = (S.terr || []).filter(t => t.status !== "closed"); const of = st => L.findIndex(t => t.states.indexOf(st) >= 0);
+    const cells = []; for (let r = 0; r < 8; r++) for (let c = 0; c < 11; c++) { const st = Object.keys(TILE).find(k => TILE[k][0] === r && TILE[k][1] === c); if (!st) { cells.push(`<span aria-hidden="true" style="background:none"></span>`); continue } const i = of(st); const t = L[i]; cells.push(`<span class="${i >= 0 ? "t" + (i % 6) + (t.status === "house" ? " house" : "") : ""}" title="${E(S.meta.states[st])}${t ? " · " + E(t.name) + (t.rep ? " · " + E(t.rep.name) : " · open") : ""}">${st}</span>`) }
+    const cand = (S.apps || []).filter(a => ["offer", "agreement", "onboarded"].indexOf(a.stage) >= 0);
+    return head("Territories", "Each territory is exclusive: one rep, and a state can belong to only one territory. House accounts stay with Vexcura.", "") +
+      `<div class="vxi-grid"><section class="vxi-card"><h3>Map</h3><div class="vxa-map" role="img" aria-label="Map of territories: ${E(L.map(t => t.name + " (" + t.states.join(", ") + ")" + (t.rep ? " assigned to " + t.rep.name : " open")).join("; "))}">${cells.join("")}</div><div class="vxa-leg">${L.map((t, i) => `<span><i class="t${i % 6}" style="background:${["#1d5670", "#a57a2a", "#2f6146", "#7e4a8e", "#b5543a", "#3f6fa8"][i % 6]}"></i>${E(t.name)}</span>`).join("")}</div></section>
+      <section class="vxi-card"><h3>Add a territory</h3><form data-f="terr-add"><label class="vxa-l">Name<input name="name" maxlength="80" placeholder="e.g. Carolinas"></label><p class="vxa-l" style="margin:8px 0 4px">States</p><div class="vxa-sts">${Object.keys(S.meta.states).sort().map(s => `<label class="ck" title="${E(S.meta.states[s])}"><input type="checkbox" name="states" value="${s}"${of(s) >= 0 ? " disabled" : ""}> ${s}</label>`).join("")}</div><div class="vxa-acts"><button class="vxi-btn sm">Add territory</button></div></form></section></div>
+      <div class="vxi-tw"><table class="vxi-tbl"><thead><tr><th>Territory</th><th>States</th><th>Status</th><th>Assigned rep</th><th>Assign</th></tr></thead><tbody>${(S.terr || []).map(t => `<tr><td><b>${E(t.name)}</b></td><td>${E(t.states.join(", "))}</td><td><select data-a="tstatus" data-v="${t.id}" aria-label="Status of ${E(t.name)}">${[["open", "Open"], ["assigned", "Assigned"], ["house", "House accounts"], ["closed", "Closed"]].map(([k, l]) => `<option value="${k}"${t.status === k ? " selected" : ""}${k === "assigned" ? " disabled" : ""}>${l}</option>`).join("")}</select></td><td>${t.rep ? `<button class="vxi-btn sm sec" data-a="open" data-v="${t.rep.app}">${E(t.rep.name)}</button>` : `<span class="vxi-muted">Open</span>`}</td><td><select data-a="tassign" data-v="${t.id}" aria-label="Assign ${E(t.name)}"><option value="">${t.rep ? "Remove rep" : "Choose a finalist"}</option>${cand.map(a => `<option value="${a.id}"${t.rep && t.rep.app === a.id ? " selected" : ""}>${E(a.name)} (${E(SN()[a.stage])})</option>`).join("")}</select></td></tr>`).join("")}</tbody></table></div>` }
+
+  /* commission */
+  function commission() { const c = S.calc; const pl = (S.meta.plans || []); const ci = S.calcIn;
+    const form = `<form data-f="calc" class="vxi-card"><h3>Calculator</h3><div class="vxa-f"><label>Plan${sel("plan", pl.map(p => [p.k, `${p.name} (${money(p.price)}${p.unit ? " a seat" : ""})`]), ci.plan)}</label><label>Seats (per-student plan)<input type="number" name="seats" min="1" max="5000" value="${E(ci.seats)}"></label><label>Years${sel("years", [1, 2, 3, 4, 5], ci.years)}</label></div><div class="vxa-acts"><button class="vxi-btn sm">Calculate</button></div>
+      ${c && c.single ? `<div class="vxi-tw"><table class="vxi-tbl"><thead><tr><th>Year</th><th>Kind</th><th class="vxa-num">School pays</th><th class="vxa-num">Rate</th><th class="vxa-num">Rep earns</th><th class="vxa-num">Vexcura nets</th></tr></thead><tbody>${c.single.rows.map(r => `<tr><td>${r.year}</td><td>${E(r.kind)}</td><td class="vxa-num">${money(r.revenue)}</td><td class="vxa-num">${Math.round(r.rate * 100)}%</td><td class="vxa-num"><b>${money(r.rep)}</b></td><td class="vxa-num">${money(r.net)}</td></tr>`).join("")}<tr><td colspan="2"><b>Total</b></td><td class="vxa-num"><b>${money(c.single.total.revenue)}</b></td><td></td><td class="vxa-num"><b data-calc="rep">${money(c.single.total.rep)}</b></td><td class="vxa-num"><b data-calc="net">${money(c.single.total.net)}</b></td></tr></tbody></table></div>` : ""}</form>`;
+    if (!c) return head("Commission model", "20% of first-year license revenue, 10% of each renewal while the account is active. Paid only after the school's check clears.", "") + form + `<p class="vxi-muted">Loading…</p>`;
+    return head("Commission model", "20% of first-year license revenue, 10% of each renewal while the account is active. Paid only after the school's check clears.", `<a class="vxi-btn sm sec" href="#" data-a="noop" aria-disabled="true" title="marketing/rep-program/Commission-Model.pdf">One-page PDF in marketing/rep-program</a>`) + form +
+      `<div class="vxa-cash" role="note"><b>Cash timing.</b> ${E(c.timing)}</div>
+      <section class="vxi-card"><h3>Per account, by plan (3 years)</h3><div class="vxi-tw"><table class="vxi-tbl" id="vxa-plans"><thead><tr><th>Plan</th><th class="vxa-num">School pays / yr</th><th class="vxa-num">Rep, year 1</th><th class="vxa-num">Vexcura nets, yr 1</th><th class="vxa-num">Rep, each renewal</th><th class="vxa-num">Vexcura nets, renewal</th><th class="vxa-num">Rep, 3 yrs</th><th class="vxa-num">Vexcura, 3 yrs</th></tr></thead><tbody>${c.plans.map(p => `<tr><td>${E(p.name)}${p.seats ? ` (${p.seats} seats)` : ""}</td><td class="vxa-num">${money(p.revenue)}</td><td class="vxa-num">${money(p.rows[0].rep)}</td><td class="vxa-num">${money(p.rows[0].net)}</td><td class="vxa-num">${money(p.rows[1] ? p.rows[1].rep : 0)}</td><td class="vxa-num">${money(p.rows[1] ? p.rows[1].net : 0)}</td><td class="vxa-num"><b>${money(p.total.rep)}</b></td><td class="vxa-num">${money(p.total.net)}</td></tr>`).join("")}</tbody></table></div></section>
+      <section class="vxi-card"><h3>Example: a rep with ${c.example.accounts} accounts</h3><p class="vxi-muted">${E(c.example.mix.map(m => `${m.n} × ${(pl.find(p => p.k === m.plan) || {}).name || m.plan}${m.seats ? ` (${m.seats} seats)` : ""}`).join(", "))}, all signed in year 1 and renewed.</p><div class="vxi-tw"><table class="vxi-tbl" id="vxa-ex"><thead><tr><th>Year</th><th class="vxa-num">Schools pay</th><th class="vxa-num">Rep earns</th><th class="vxa-num">Vexcura nets</th></tr></thead><tbody>${c.example.byYear.map(y => `<tr><td>${y.year}</td><td class="vxa-num">${money(y.revenue)}</td><td class="vxa-num">${money(y.rep)}</td><td class="vxa-num">${money(y.net)}</td></tr>`).join("")}<tr><td><b>Total</b></td><td class="vxa-num"><b>${money(c.example.total.revenue)}</b></td><td class="vxa-num"><b>${money(c.example.total.rep)}</b></td><td class="vxa-num"><b>${money(c.example.total.net)}</b></td></tr></tbody></table></div></section>` }
+  async function runCalc() { const ci = S.calcIn; try { S.calc = await api(`/api/ats/admin/commission?plan=${encodeURIComponent(ci.plan)}&seats=${encodeURIComponent(ci.seats)}&years=${encodeURIComponent(ci.years)}`) } catch (e) { S.err = e.message } paint() }
+
+  /* ---------- events ---------- */
+  function fv(f) { const o = {}; [...f.elements].forEach(i => { if (!i.name) return; if (i.type === "checkbox") { if (f.querySelectorAll(`input[type=checkbox][name="${i.name}"]`).length > 1) { (o[i.name] = o[i.name] || []); if (i.checked) o[i.name].push(i.value) } else o[i.name] = i.checked } else if (i.type === "radio") { if (i.checked) o[i.name] = i.value } else o[i.name] = i.value }); return o }
+  async function act(fn, ok) { try { await fn(); if (ok) S.flash = ok } catch (e) { S.err = e.message } paint() }
+  async function refresh(id) { await loadApps(); if (id) await loadDet(id) }
+  async function copy(t, btn) { let ok = false; try { await navigator.clipboard.writeText(t); ok = true } catch (e) { const ta = document.createElement("textarea"); ta.value = t; ta.setAttribute("readonly", ""); ta.style.position = "fixed"; ta.style.top = "-1000px"; document.body.appendChild(ta); ta.select(); try { ok = document.execCommand("copy") } catch (e2) { } ta.remove() }
+    if (btn) { const h = btn.innerHTML; btn.innerHTML = ok ? `${sv("ok", 14)} Copied` : "Select and copy"; btn.dataset.copied = ok ? "1" : "0"; setTimeout(() => { btn.innerHTML = h }, 1600) } }
+  function bind(el) {
+    el.addEventListener("click", async ev => { const b = ev.target.closest("[data-a]"); if (!b || !el.contains(b) || b.tagName === "SELECT" || b.tagName === "INPUT") return; const a = b.dataset.a, v = b.dataset.v;
+      if (a === "noop") { ev.preventDefault(); return }
+      if (a === "view") { S.view = v; S.kitPost = null; S.draft = null; if (v === "commission" && !S.calc) runCalc(); paint(); return }
+      if (a === "open") { S.view = "candidates"; S.id = v; paint(); act(() => loadDet(v)); return }
+      if (a === "unopen") { S.id = null; paint(); return }
+      if (a === "tab") { S.tab = v; paint(); const t = el.querySelector(`.vxa-tabs [data-v="${v}"]`); if (t) t.focus();
+        /* refresh in the background: the candidate may have signed or added references from their status page meanwhile */
+        const id = S.id; loadDet(id).then(() => { if (S.id === id && S.tab === v) { paint(); const t2 = el.querySelector(`.vxa-tabs [data-v="${v}"]`); if (t2) t2.focus() } }, () => { }); return }
+      if (a === "advance") { act(async () => { await api("/api/ats/admin/apps/" + S.id, { method: "PUT", body: { stage: v } }); await refresh(S.id) }, "Moved to " + SN()[v] + "."); return }
+      if (a === "reject") { const r = prompt("Reason (kept in the record; the candidate sees only “not selected”):", "Not selected"); if (r == null) return; act(async () => { await api("/api/ats/admin/apps/" + S.id, { method: "PUT", body: { stage: "not_selected", reason: r } }); await refresh(S.id) }, "Marked not selected."); return }
+      if (a === "delapp") { if (!confirm("Delete this applicant, every application they made, their resume and all notes? This can't be undone.")) return; act(async () => { await api("/api/ats/admin/applicants/" + encodeURIComponent(v), { method: "DELETE" }); S.det = {}; S.id = null; await Promise.all([loadApps(), loadTerr()]) }, "Applicant and files deleted."); return }
+      if (a === "newlink") { try { const j = await api("/api/ats/admin/apps/" + S.id + "/link", { method: "POST" }); const box = el.querySelector("#vxa-link"); box.innerHTML = `<p class="vxa-flash" style="word-break:break-all">Send this to the candidate yourself (text or email): <b>${E(j.status_url)}</b> · backup code <b>${E(j.code)}</b> <button class="vxi-btn sm sec" data-a="copy" data-t="${E(j.status_url + "\nBackup code: " + j.code)}">${sv("copy", 14)} Copy</button></p>` } catch (e) { S.err = e.message; paint() } return }
+      if (a === "delscreen") { if (!confirm("Remove this record?")) return; act(async () => { await api("/api/ats/admin/screen/" + v, { method: "DELETE" }); await loadDet(S.id) }, "Removed."); return }
+      if (a === "fcra") { if (!confirm("Ask the candidate to sign the background check authorization? They'll see a stand-alone disclosure on their status page. Send them their status link if they've lost it.")) return; act(async () => { await api("/api/ats/admin/apps/" + S.id + "/fcra", { method: "POST" }); await refresh(S.id) }, "Authorization requested. It shows on the candidate's status page."); return }
+      if (a === "newpost") { const T = S.meta.template; S.draft = Object.assign({ id: null, status: "draft", territory: "", remote: true, valid_through: "" }, T); paint(); return }
+      if (a === "editpost") { const p = (S.posts || []).find(x => x.id === v); S.draft = Object.assign({}, p); paint(); return }
+      if (a === "cancelpost") { S.draft = null; paint(); return }
+      if (a === "delpost") { if (!confirm("Delete this posting?")) return; act(async () => { await api("/api/ats/admin/posts/" + v, { method: "DELETE" }); S.draft = null; await loadPosts() }, "Posting deleted."); return }
+      if (a === "stdcomp") { const f = el.querySelector("#vxa-pf"); f.comp.value = S.meta.template.comp; f.dispatchEvent(new Event("input", { bubbles: true })); return }
+      if (a === "kits") { act(async () => { S.kit = await api("/api/ats/admin/posts/" + v + "/kits"); S.kitPost = v; S.draft = null; S.view = "postings" }); return }
+      if (a === "closekits") { S.kitPost = null; S.kit = null; paint(); return }
+      if (a === "copy") { copy(b.dataset.t || "", b); return }
+    });
+    el.addEventListener("change", ev => { const t = ev.target; const a = t.dataset && t.dataset.a; if (!a) return;
+      if (a === "closed") { S.closed = t.checked; paint(); return }
+      if (a === "fstage") { S.fstage = t.value; paint(); return }
+      if (a === "fpost") { S.fpost = t.value; paint(); return }
+      if (a === "moveto") { const v = t.value; if (v === "not_selected" || v === "withdrawn") { const r = prompt("Reason:", v === "withdrawn" ? "Withdrew" : "Not selected"); if (r == null) { paint(); return } act(async () => { await api("/api/ats/admin/apps/" + S.id, { method: "PUT", body: { stage: v, reason: r } }); await refresh(S.id) }, "Moved to " + SN()[v] + "."); return }
+        act(async () => { await api("/api/ats/admin/apps/" + S.id, { method: "PUT", body: { stage: v } }); await refresh(S.id) }, "Moved to " + SN()[v] + "."); return }
+      if (a === "tassign") { const tid = t.dataset.v; const v = t.value; act(async () => { try { await api(`/api/ats/admin/territories/${tid}/assign`, { method: "PUT", body: { app: v || null } }) } catch (e) { if (e.j && e.j.code === "taken" && confirm(e.message + "\n\nReplace them?")) await api(`/api/ats/admin/territories/${tid}/assign`, { method: "PUT", body: { app: v, replace: true } }); else throw e } await Promise.all([loadTerr(), loadApps()]) }, v ? "Territory assigned." : "Rep removed from the territory."); return }
+      if (a === "tstatus") { act(async () => { await api(`/api/ats/admin/territories/${t.dataset.v}`, { method: "PUT", body: { status: t.value } }); await loadTerr() }, "Territory updated."); return }
+    });
+    el.addEventListener("input", ev => { const t = ev.target; if (t.dataset && t.dataset.a === "q") { S.q = t.value; const pos = t.selectionStart; paint(); const i = el.querySelector('[data-a="q"]'); if (i) { i.focus(); try { i.setSelectionRange(pos, pos) } catch (e) { } } return }
+      const f = t.closest && t.closest("#vxa-pf"); if (f && S.draft) { const o = fv(f); Object.assign(S.draft, { title: o.title, slug: o.slug, territory: o.territory, status: o.status, valid_through: o.valid_through, remote: o.remote, summary: o.summary, body: o.body, reqs: o.reqs, comp: o.comp }); const pv = el.querySelector("#vxa-pv"); if (pv) pv.innerHTML = preview(S.draft) } });
+    el.addEventListener("submit", async ev => { const f = ev.target; const k = f.dataset && f.dataset.f; if (!k) return; ev.preventDefault(); const o = fv(f);
+      if (k === "score") return act(async () => { await api("/api/ats/admin/apps/" + S.id + "/scores", { method: "PUT", body: o }); await refresh(S.id) }, "Scorecard saved.");
+      if (k === "note") { if (!String(o.text || "").trim()) return; return act(async () => { await api("/api/ats/admin/apps/" + S.id + "/notes", { method: "POST", body: { text: o.text } }); await loadDet(S.id) }, "Note added.") }
+      if (k === "screen-add") { const status = o.status; delete o.status; return act(async () => { await api("/api/ats/admin/apps/" + S.id + "/screen", { method: "POST", body: { kind: f.dataset.k, status, data: o } }); await refresh(S.id) }, "Saved.") }
+      if (k === "screen-edit") { const status = o.status; delete o.status; return act(async () => { await api("/api/ats/admin/screen/" + f.dataset.v, { method: "PUT", body: { status, data: o } }); await loadDet(S.id) }, "Saved.") }
+      if (k === "onboard") { const v = f.dataset.v; return act(async () => { if (v) await api("/api/ats/admin/screen/" + v, { method: "PUT", body: { status: Object.values(o).filter(x => x === true).length >= 6 ? "done" : "open", data: o } }); else await api("/api/ats/admin/apps/" + S.id + "/screen", { method: "POST", body: { kind: "onboard", status: "open", data: o } }); await loadDet(S.id) }, "Checklist saved.") }
+      if (k === "bg") return act(async () => { await api("/api/ats/admin/apps/" + S.id + "/background", { method: "PUT", body: o }); await loadDet(S.id) }, "Background check updated.");
+      if (k === "licmatch") { const out = el.querySelector("#vxa-lm"); try { const j = await api("/api/ats/admin/apps/" + S.id + "/license-match", { method: "POST", body: { number: o.number } }); f.number.value = ""; out.innerHTML = j.match ? `<span class="vxi-chip ok">✓ Matches</span> the number the candidate entered (${E(j.last4)}).` : `<span class="vxi-chip bad">✗ Doesn't match</span> the number the candidate entered (${E(j.last4)}). Check for a typo, or ask the candidate.`; loadDet(S.id) } catch (e) { out.textContent = e.message } return }
+      if (k === "assign") { if (!o.tid) return; return act(async () => { try { await api(`/api/ats/admin/territories/${o.tid}/assign`, { method: "PUT", body: { app: S.id } }) } catch (e) { if (e.j && e.j.code === "taken" && confirm(e.message + "\n\nReplace them?")) await api(`/api/ats/admin/territories/${o.tid}/assign`, { method: "PUT", body: { app: S.id, replace: true } }); else throw e } await Promise.all([loadTerr(), loadDet(S.id)]) }, "Territory assigned.") }
+      if (k === "terr-add") return act(async () => { await api("/api/ats/admin/territories", { method: "POST", body: { name: o.name, states: o.states || [] } }); await loadTerr() }, "Territory added.");
+      if (k === "calc") { S.calcIn = { plan: o.plan, seats: +o.seats || 1, years: +o.years || 3 }; return runCalc() }
+      if (k === "post") { const d = S.draft; const body = { title: o.title, slug: o.slug, territory: o.territory, status: o.status, valid_through: o.valid_through, remote: !!o.remote, summary: o.summary, body: o.body, reqs: o.reqs, comp: o.comp };
+        return act(async () => { if (d.id) { const j = await api("/api/ats/admin/posts/" + d.id, { method: "PUT", body }); S.draft = Object.assign({ apps: d.apps }, j.post) } else { const j = await api("/api/ats/admin/posts", { method: "POST", body }); await loadPosts(); S.draft = Object.assign({}, S.posts.find(p => p.id === j.id)) } await loadPosts() }, o.status === "open" ? "Saved. The posting is live at nclexsim.com/careers." : "Saved.") }
+    });
+  }
+  window.__ATS = { renderHiring, summary, open, version: "v24" };
+})();
+/* </v24-ats-js> */
+/* <v25-mychart-js> */
+/* v25-mychart-js: My Chart, calm layout ("so simple a toddler can do it").
+   Insert INSIDE the app's main IIFE (uses store, SRV, BY, CATS, qotdId, qotdDone, vxStreak, practicePool, runPractice):
+   directly after the LAST closing v23-scores-js marker comment, before `applyPrefs();applyFont();`.
+   Nothing is removed. Every original control stays in the DOM (same data-* hooks, same deep links); this layer only
+   regroups what My Chart (#c2) already renders:
+   - Home (the Summary tab, now labelled Home) leads with ONE "What's next" card, a short "To do" list from the worklist,
+     four big tiles (Practice exam, Drill / Quick round, Case study / EHR, Results) and a "More" list of collapsed rows
+     (Question of the day, Bring your scores, Progress tiles, Usage score + fee reimbursement, Advisories, Program, New today,
+     Side panel, All practice).
+   - The usage-score panel moves from above every tab into Home › More.
+   - Header tool icons (New order, Cart, PDF, Reminder, Tips, Clinical EHR, Personalize) move into Menu › Chart tools.
+   - Right sidebar rail stays on wide screens; on narrow screens it is hidden and starts closed (Home › More › Side panel,
+     or the header Worklist count, opens it).
+   Per-viewer UI state (which More rows are open) lives in raw localStorage key nclexsim.v25.mc, not in the synced store. */
+{
+  const LSK = "nclexsim.v25.mc";
+  const lsG = () => { try { return JSON.parse(localStorage.getItem(LSK) || "{}") || {} } catch (e) { return {} } };
+  const lsS = o => { try { localStorage.setItem(LSK, JSON.stringify(Object.assign(lsG(), o))) } catch (e) { } };
+  const e_ = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+  const P = {
+    exam: '<path d="M6 3h9l3 3v15H6z"/><path d="M9 9h6M9 13h6M9 17h4"/>', quick: '<circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M10 2h4"/>',
+    case: '<rect x="4" y="4" width="16" height="16" rx="2"/><path d="M12 8v8M8 12h8"/>', res: '<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>',
+    q: '<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .9-1 1.7M12 17h.01"/>', up: '<path d="M4 16l5-5 4 4 7-7"/><path d="M15 8h5v5"/>',
+    score: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/>', alert: '<path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17h.01"/>',
+    prog: '<path d="M4 20V9l8-5 8 5v11"/><path d="M9 20v-6h6v6"/>', star: '<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3 9.5l6.1-.9z"/>',
+    side: '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M15 4v16"/>', all: '<path d="M4 6h16M4 12h16M4 18h10"/>',
+    chev: '<path d="M9 6l6 6-6 6"/>', go: '<path d="M5 12h14M13 6l6 6-6 6"/>', ok: '<path d="M5 12l4 4 10-10"/>',
+    order: '<path d="M9 4h6l1 2h3v15H5V6h3z"/><path d="M9 12h6M12 9v6"/>', pdf: '<path d="M6 3h9l3 3v15H6z"/><path d="M9 14h6M9 17h4"/>',
+    bell: '<path d="M6 16V11a6 6 0 1 1 12 0v5l2 2H4z"/><path d="M10 20a2 2 0 0 0 4 0"/>', tips: '<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7h.01"/>',
+    ehr: '<path d="M4 5h16v14H4z"/><path d="M4 9h16M9 9v10"/>', pz: '<path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/>',
+    ref: '<path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 5v6h-6"/>'
+  };
+  const sv = (k, n) => `<svg viewBox="0 0 24 24" width="${n || 22}" height="${n || 22}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${P[k] || ""}</svg>`;
+  const C2X = () => { try { return window.__C2X && window.__C2X.get() } catch (e) { return null } };
+  const plural = (n, w) => n + " " + w + (n === 1 ? "" : "s");
+  /* What's next / To do forward their click to the original hook (data-wl-start, data-c2qotd, data-ws-start ...) through a
+     temporary button, so each original hook stays unique in the DOM (the Brain keeps the only data-wl-start for an order). */
+  const fw = a => { const m = /([\w-]+)="([^"]*)"/.exec(a || ""); return m ? `data-v25-fw="${e_(m[1])}" data-v25-fv="${e_(m[2])}"` : "" };
+  const forward = (k, v) => { const t = document.getElementById("c2") || document.body; const b = document.createElement("button"); b.type = "button"; b.hidden = true; b.setAttribute(k, v); t.appendChild(b); b.click(); b.remove() };
+
+  /* ---- data ---- */
+  function todo() {
+    const X = C2X(); if (!X) return null; let d; try { d = X.bnData() } catch (e) { return null }
+    const td = d.td, rank = { over: 0, today: 1, unsch: 2 };
+    const W = (d.W || []).filter(w => !w.done).map(w => ({ w, g: X.whenGroup(w, td) })).filter(x => x.g in rank)
+      .sort((a, b) => ((b.w.pri === "stat") - (a.w.pri === "stat")) || (rank[a.g] - rank[b.g]) || ((a.w.by === "Self-study") - (b.w.by === "Self-study")) || ((a.w.added || 0) - (b.w.added || 0)))
+      .map(({ w, g }) => { let I = { t: "Order" }; try { I = X.itemInfo(w) } catch (e) { }
+        return { id: w.id, t: I.t, stat: w.pri === "stat", s: [w.note, w.by && w.by !== "Self-study" ? "From " + w.by : "", g === "over" ? "Overdue" : g === "today" ? "Due today" : "Anytime"].filter(Boolean).join(" · "), go: `data-wl-start="${e_(w.id)}"`, verb: "Start" } });
+    const S = (d.std || []).filter(x => !x.done).map(x => ({ id: x.id, t: x.t, s: x.s, go: x.go, verb: x.act === "qotd" ? "Answer" : "Start", stat: false }));
+    return { all: W.concat(S), nW: W.length };
+  }
+  function newToday() { const D = window.__DAILY; if (!D || !D.isNew) return []; try { return practicePool().filter(it => D.isNew(it)).map(it => it.id) } catch (e) { return [] } }
+
+  /* ---- markup ---- */
+  function nextHTML(L) {
+    const n = L && L.all[0];
+    const x = n || { t: "Quick round", s: "30 questions, about 30 minutes. A good way to keep your streak going.", go: 'data-ws-start="quick"', verb: "Start" };
+    return `<p class="v25-eye">What's next</p><h2 id="v25nh">${x.stat ? '<span class="v25-stat">STAT</span> ' : ""}${e_(x.t)}</h2><p class="v25-why">${e_(x.s || "")}</p>
+      <button type="button" class="v25-go" ${fw(x.go)} data-v25-next="1">${e_(x.verb || "Start")} ${sv("go", 20)}</button>`;
+  }
+  function todoHTML(L) {
+    const rest = L ? L.all.slice(1) : []; const shown = rest.slice(0, 3);
+    return `<h3 class="v25-h">To do <span class="v25-n" aria-label="${rest.length} more">${rest.length}</span></h3>
+      ${shown.length ? `<ul class="v25-tl">${shown.map(x => `<li><span class="v25-tt"><b>${x.stat ? '<span class="v25-stat">STAT</span> ' : ""}${e_(x.t)}</b><small>${e_(x.s || "")}</small></span><button type="button" class="v25-sm" ${fw(x.go)}>${e_(x.verb)}</button></li>`).join("")}</ul>`
+        : `<p class="v25-none">${sv("ok", 18)} Nothing else due. Nice work.</p>`}
+      <div class="v25-duel" data-v25slot="duel"></div>`;
+  }
+  const TILES = [
+    ["exam", "Practice exam", "85 to 150 questions, like the real NCLEX", 'data-ws-start="exam"', ["Test-day mode", 'data-ws-start="td"']],
+    ["quick", "Drill / Quick round", "30 questions, or 10 on one topic", 'data-ws-start="quick"', ["Drill one topic", 'data-ws-pick="drill"']],
+    ["case", "Case study / EHR", "One patient, six NGN questions", 'data-ws-start="case"', ["Open the EHR", null, "#ehr"]],
+    ["res", "Results", "Scores, trends and missed cards", 'data-c2go="results:exams"', ["Missed cards", 'data-c2go="results:cards"']]];
+  function tilesHTML() {
+    return TILES.map(([k, t, s, go, sec]) => `<div class="v25-tile"><button type="button" class="v25-tb" ${go} data-v25-tile="${k}"><span class="v25-ti">${sv(k, 26)}</span><b>${t}</b><small>${s}</small></button>${sec ? (sec[2] ? `<a class="v25-tx" href="${sec[2]}">${sec[0]}</a>` : `<button type="button" class="v25-tx" ${sec[1]}>${sec[0]}</button>`) : ""}</div>`).join("");
+  }
+  /* More rows: [key, icon, title, kind] kind: acc (collapsible body), flat (body always shown), link (one action) */
+  const ROWS = [["qotd", "q", "Question of the day", "acc"], ["scores", "up", "Bring your scores", "flat"], ["prog", "res", "Progress", "acc"],
+    ["usage", "score", "Usage score and fee reimbursement", "acc"], ["adv", "alert", "Advisories", "acc"], ["program", "prog", "From my program", "link"],
+    ["new", "star", "New today", "link"], ["side", "side", "Side panel", "acc"], ["all", "all", "All practice and the full worklist", "link"]];
+  function moreHTML() {
+    const op = lsG().open || {};
+    return `<h3 class="v25-h">More</h3><div class="v25-rows">${ROWS.map(([k, i, t, kind]) => {
+      if (kind === "flat") return `<div class="v25-acc v25-flat" data-v25k="${k}"><div class="v25-body" data-v25slot="${k}"></div></div>`;
+      if (kind === "link") return `<div class="v25-acc" data-v25k="${k}"><button type="button" class="v25-row" data-v25-link="${k}"><span class="v25-ri">${sv(i, 20)}</span><span class="v25-rt"><b>${t}</b><small data-v25s></small></span><span class="v25-cv">${sv("chev", 18)}</span></button></div>`;
+      const o = !!op[k];
+      return `<div class="v25-acc" data-v25k="${k}"><button type="button" class="v25-row" data-v25-tog="${k}" aria-expanded="${o}" aria-controls="v25b-${k}"><span class="v25-ri">${sv(i, 20)}</span><span class="v25-rt"><b>${t}</b><small data-v25s></small></span><span class="v25-c" data-v25c hidden></span><span class="v25-cv">${sv("chev", 18)}</span></button><div class="v25-body" id="v25b-${k}" data-v25slot="${k}" ${o ? "" : "hidden"}>${k === "side" ? `<div class="v25-sb"><button type="button" class="v25-sm" data-sb-open="wl">Worklist</button><button type="button" class="v25-sm" data-sb-open="brain">Brain</button><button type="button" class="v25-sm" data-sb-open="req">Required documentation</button></div>` : ""}</div></div>`;
+    }).join("")}</div>`;
+  }
+
+  /* ---- apply (idempotent; runs from a MutationObserver before paint) ---- */
+  const setT = (el, t) => { if (el && el.textContent !== t) el.textContent = t };
+  const setH = (el, h) => { if (el && el.__v25 !== h) { el.__v25 = h; el.innerHTML = h } };
+  const into = (slot, node) => { if (!slot || !node || node.parentNode === slot) return; slot.querySelectorAll(":scope>." + node.className.split(" ")[0]).forEach(o => { if (o !== node) o.remove() }); slot.appendChild(node) };
+  let sbDone = false;
+  function apply() {
+    const c = document.getElementById("c2"); if (!c) return;
+    if (!c.classList.contains("v25")) c.classList.add("v25");
+    const nav = c.querySelector("#c2t-summary span"); setT(nav, "Home");
+    const pane = c.querySelector('[data-pane="summary:overview"]'); if (!pane) return;
+    let H = pane.querySelector(":scope>.v25h");
+    if (!H) { pane.insertAdjacentHTML("afterbegin", `<div class="v25h"><section class="v25-next" aria-labelledby="v25nh" data-v25="next"></section><section class="v25-todo" aria-label="To do" data-v25="todo"></section><section class="v25-tiles" aria-label="Practice" data-v25="tiles">${tilesHTML()}</section><section class="v25-more" aria-label="More" data-v25="more">${moreHTML()}</section></div>`); H = pane.querySelector(":scope>.v25h") }
+    const L = todo();
+    setH(H.querySelector('[data-v25="next"]'), nextHTML(L));
+    setH(H.querySelector('[data-v25="todo"]'), todoHTML(L));
+    const slot = k => H.querySelector(`[data-v25slot="${k}"]`), row = k => H.querySelector(`[data-v25k="${k}"]`);
+    const stat = (k, t) => setT(row(k) && row(k).querySelector("[data-v25s]"), t);
+    const cnt = (k, n) => { const b = row(k) && row(k).querySelector("[data-v25c]"); if (!b) return; setT(b, n ? String(n) : ""); if (b.hidden !== !n) b.hidden = !n };
+    /* move the original pieces in (each keeps its own hooks; later partial repaints replace them in place) */
+    const ov = pane.querySelector(":scope>.c2ov"); if (ov) into(slot("prog"), ov);
+    const ovr = H.querySelector(".c2ovr");
+    if (ovr) { const du = ovr.querySelector(":scope>.c2duel"); if (du) into(slot("duel"), du); const qd = ovr.querySelector(":scope>.c2qd"); if (qd) into(slot("qotd"), qd); const ad = ovr.querySelector(":scope>.c2card:not(.c2qd)"); if (ad) into(slot("adv"), ad) }
+    const sc = [...pane.querySelectorAll("[data-vxsc-entry]")].find(x => x.parentNode !== slot("scores")); if (sc) into(slot("scores"), sc);
+    const vp = [...c.querySelectorAll(".vxp")].find(x => x.parentNode !== slot("usage")); if (vp) into(slot("usage"), vp);
+    /* statuses */
+    let st = { cur: 0 }; try { st = vxStreak() } catch (e) { }
+    let qd = null; try { qd = qotdDone() } catch (e) { }
+    stat("qotd", (qd == null ? "Not answered yet" : qd >= 100 ? "Answered correctly" : "Answered today") + " · Streak " + plural(st.cur, "day"));
+    stat("prog", "Streak " + plural(st.cur, "day") + " · questions, exams and study days");
+    const v = slot("usage") && slot("usage").querySelector(".vxp");
+    if (v) { const pct = ((v.querySelector(".vxp-ring b") || v.querySelector(".vxp-clt b") || {}).textContent || "").replace(/[^\d.%]/g, "").replace(/%?$/, "%"); const s = (v.querySelector(".vxp-st") || v.querySelector(".vxp-cls") || {}).textContent || ""; stat("usage", "Usage score " + pct + (s ? " · " + s.trim() : "")) }
+    else stat("usage", "Not available yet");
+    const advN = slot("adv") ? slot("adv").querySelectorAll(".c2adv").length : 0; stat("adv", advN ? plural(advN, "advisory") + " to look at" : "None right now"); cnt("adv", advN);
+    const hasProg = !!c.querySelector('[data-c2sub="library:program"]'); const pr = row("program"); if (pr && pr.hidden !== !hasProg) pr.hidden = !hasProg;
+    if (hasProg) { let req = 0; try { req = (window.__CURR && window.__CURR.req ? window.__CURR.req() : []).length } catch (e) { } stat("program", ((SRV.me && SRV.me.school) || "Your program's content and curriculum") + (req ? " · " + plural(req, "required item") : "")) }
+    const nt = newToday().length; stat("new", nt ? plural(nt, "new question") + " today · practice them now" : "No new questions yet today. New ones arrive daily.");
+    stat("side", "Worklist, Brain and Required documentation");
+    stat("all", "Every practice mode, the timeline and your notes (the Brain)");
+    /* narrow screens: the side panel starts closed */
+    if (!sbDone) { if (!matchMedia("(max-width:860px)").matches) sbDone = true; else { const p = document.querySelector("#vxsb .vxsb-p"); if (p) { sbDone = true; const x = document.querySelector("#vxsb [data-sb-close]"); if (!p.hidden && x) setTimeout(() => x.click(), 0) } } }
+  }
+  /* Menu › Chart tools (only while My Chart is on screen) */
+  const TOOLS = [["order", "New order", "Order practice for yourself", 'data-c2go="orders:new"'], ["side", "Worklist sidebar", "Worklist, Brain, Required documentation", 'data-sb-open="wl"'],
+    ["pdf", "Progress report PDF", "Everything on your chart in one document", 'data-ws-doc="progress:"'], ["ehr", "Clinical EHR", "MAR, orders, flowsheets, LDAs", null, "#ehr"],
+    ["bell", "Daily reminder", "A nudge at the time you pick", 'data-rm="open"'], ["pz", "Personalize", "Layout and sections", 'data-pz="open"'],
+    ["tips", "Tips for this view", "What everything here does", 'data-tip="help"'], ["ref", "Refresh", "Get your newest progress", 'data-c2refresh="1"']];
+  function menu() {
+    const m = document.querySelector(".mnu"); if (!m || !document.getElementById("c2") || m.querySelector("[data-v25-tools]")) return;
+    const after = [...m.querySelectorAll(".mnu-s")].find(s => /Your progress/.test((s.querySelector("h3") || {}).textContent || "")) || m.querySelector(".mnu-s");
+    if (!after) return;
+    after.insertAdjacentHTML("afterend", `<section class="mnu-s" data-v25-tools><h3>Chart tools</h3><div class="mnu-g">${TOOLS.map(([i, t, s, a, href]) => href ? `<a class="mtile" href="${href}" data-v25-tool><span class="mtic">${sv(i, 22)}</span><b>${t}</b><small>${s}</small></a>` : `<button type="button" class="mtile" ${a} data-v25-tool><span class="mtic">${sv(i, 22)}</span><b>${t}</b><small>${s}</small></button>`).join("")}</div></section>`);
+  }
+  /* close only the Menu itself; a drawer the tool opened (Personalize, cart) is also a .mnu and must stay */
+  const closeMenu = () => { const m = [...document.querySelectorAll(".mnu")].filter(x => x.querySelector("[data-v25-tools]")); if (!m.length) return; m.forEach(x => x.remove()); if (!document.querySelector(".mnu")) document.documentElement.style.overflow = ""; document.querySelectorAll('[data-menu="open"]').forEach(b => b.setAttribute("aria-expanded", "false")) };
+  document.addEventListener("click", e => {
+    const t = e.target; if (!t || !t.closest) return; let b;
+    if ((b = t.closest("[data-v25-fw]"))) { e.preventDefault(); forward(b.dataset.v25Fw, b.dataset.v25Fv); return }
+    if ((b = t.closest("[data-v25-tool]")) && b.tagName === "BUTTON") { setTimeout(closeMenu, 0); return }
+    if ((b = t.closest("[data-v25-tog]"))) { e.preventDefault(); const k = b.dataset.v25Tog; const body = document.getElementById("v25b-" + k); if (!body) return; const o = body.hidden; body.hidden = !o; b.setAttribute("aria-expanded", String(o)); const op = lsG().open || {}; op[k] = o; lsS({ open: op }); return }
+    if ((b = t.closest("[data-v25-link]"))) { e.preventDefault(); const k = b.dataset.v25Link;
+      if (k === "program" || k === "all") { const g = document.createElement("button"); g.hidden = true; g.dataset.c2go = k === "program" ? "library:program" : "board:brain"; document.getElementById("c2").appendChild(g); g.click(); g.remove(); return }
+      if (k === "new") { const ids = newToday(); if (!ids.length) { const r = b.closest(".v25-acc"); if (r) { r.classList.remove("v25-pulse"); void r.offsetWidth; r.classList.add("v25-pulse") } return }
+        runPractice({ mode: "new", title: "New today · " + new Date().toLocaleDateString([], { weekday: "long", month: "long", day: "numeric" }), ids: ids.slice(0, 10), again: 'data-act="home"', againL: "Back to My Chart" }) } }
+  });
+  /* the summary tip described the old layout */
+  let busy = false;
+  const mo = new MutationObserver(() => { if (busy) return; busy = true; try { apply(); menu() } catch (e) { } mo.takeRecords(); busy = false });
+  mo.observe(document.body, { childList: true, subtree: true });
+  window.__v25mc = { apply, todo, version: "v25" };
+}
+/* </v25-mychart-js> */
 applyPrefs();applyFont();
 renderHome();
 route();
