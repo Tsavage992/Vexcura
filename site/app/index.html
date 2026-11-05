@@ -2496,6 +2496,17 @@ html[data-theme="dark"] .v25-stat{color:#ff9c8f}
 }
 @media (max-width:420px){.v25-tl li{flex-wrap:wrap}.v25-tl .v25-sm{margin-left:auto}}
 /* </v25-mychart-css> */
+/* <v25b-search-css> */
+/* v25b: header search as a clear pill field; drops to its own row when the header is tight */
+#c2.v25 .c2h .c2tools{flex-wrap:wrap;row-gap:10px}
+#c2.v25 .c2h .c2tools .ws-srch{position:relative;flex:1 1 260px;min-width:220px;max-width:420px}
+#c2.v25 .c2h .ws-srch .ws-sl{position:absolute;left:12px;top:50%;transform:translateY(-50%);display:flex;color:rgb(255 255 255/.85);pointer-events:none;z-index:1}
+#c2.v25 .c2h .ws-srch input{box-sizing:border-box;width:100%;height:44px;padding:0 14px 0 40px;border-radius:10px;border:1px solid rgb(255 255 255/.35);background:rgb(255 255 255/.12);color:#fff;font:inherit;font-size:15px;text-overflow:ellipsis;box-shadow:none}
+#c2.v25 .c2h .ws-srch input::placeholder{color:rgb(255 255 255/.78);opacity:1}
+#c2.v25 .c2h .ws-srch input:focus{background:#fff;color:var(--ink);border-color:#fff;outline:none;box-shadow:0 0 0 3px rgb(248 194 122/.55)}
+#c2.v25 .c2h .ws-srch:focus-within .ws-sl{color:var(--ink)}
+@media (max-width:1180px){#c2.v25 .c2h .c2tools .ws-srch{order:9;flex:1 1 100%;max-width:none}}
+/* </v25b-search-css> */
 </style>
 
 <div id="app"></div>
@@ -2507,7 +2518,7 @@ const BANK = (function(e){try{const P=">oVO^cd@ge#lJ'~wUTDiEY+LZx-K&hkt(/F0;G`N.
 let HIDQ=new Set();const CFG={c:null,bypass:false};try{const c=JSON.parse(localStorage.getItem("ns.cfg")||"null");if(c&&typeof c==="object"){CFG.c=c;HIDQ=new Set(c.hideQ||[])}}catch(e){}
 const featOn=k=>!CFG.c||!CFG.c.feat||CFG.c.feat[k]!==false;
 
-const APPV="83104f00c6d4b2f03a11a6a3ff16819c37bab0cd3e21b1a40267ca5fde4297f6";
+const APPV="d85b820d4d6845c8cd0cb282ff3f73a9c577f49cbc9ead3e65766052efa429a1";
 const CATS={
   MOC:{n:"Management of Care",lo:15,hi:21,w:18},
   SIC:{n:"Safety and Infection Prevention and Control",lo:10,hi:16,w:13},
@@ -8009,7 +8020,7 @@ if(SRV.on){
      `<button class="btn2" data-menu="close">Done</button><button class="btn2 sec2" data-pz="reset">Reset to default</button>`)}
   function rerender(reopen){if(location.hash==="#progress"&&window.__nsProgRender)window.__nsProgRender();if(reopen)reopen()}
   /* ---- the chart screen itself ---- */
-  function searchHTML(){return `<div class="ws-srch"><label for="wsq" class="ws-sl">${ic("search")}<span class="sr">What do you want to do?</span></label><input id="wsq" type="search" autocomplete="off" placeholder="Search practice, PDFs, or trusted sources (NIH, CDC, FDA)…" aria-describedby="wskeys"><div class="ws-res" id="wsres" hidden></div></div>`}
+  function searchHTML(){return `<div class="ws-srch"><label for="wsq" class="ws-sl">${ic("search")}<span class="sr">What do you want to do?</span></label><input id="wsq" type="search" autocomplete="off" placeholder="Search practice, guides and sources" aria-describedby="wskeys"><div class="ws-res" id="wsres" hidden></div></div>`}
   function resHTML(q){const raw=q.trim();if(!raw)return"";const top=`<div class="wsf"><button class="wsfb" data-find="${esc(raw)}">${ic("globe",18)}<span>Search trusted sources for <b>“${esc(raw)}”</b><small>NIH, CDC, FDA, StatPearls, NCSBN and more · press Enter</small></span></button><div id="wsfind"></div></div><h5 class="wsh">On Vexcura</h5>`;return top+resHTML0(q)}
   function resHTML0(q){q=q.trim().toLowerCase();if(!q)return"";const words=q.split(/\s+/);const m=x=>{const h=(x.t+" "+x.s+" "+x.k).toLowerCase();return words.every(w=>new RegExp("(^|[^a-z0-9])"+w.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+(w.length<3?"($|[^a-z0-9])":"")).test(h))};
     const A=acts().filter(m).slice(0,8),Dd=docs().filter(m).slice(0,4);if(!A.length&&!Dd.length)return `<p class="note">Nothing matches “${esc(q)}”. Try “exam”, “drill”, or “PDF”.</p>`;
