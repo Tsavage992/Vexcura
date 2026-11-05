@@ -2518,7 +2518,7 @@ const BANK = (function(e){try{const P=">oVO^cd@ge#lJ'~wUTDiEY+LZx-K&hkt(/F0;G`N.
 let HIDQ=new Set();const CFG={c:null,bypass:false};try{const c=JSON.parse(localStorage.getItem("ns.cfg")||"null");if(c&&typeof c==="object"){CFG.c=c;HIDQ=new Set(c.hideQ||[])}}catch(e){}
 const featOn=k=>!CFG.c||!CFG.c.feat||CFG.c.feat[k]!==false;
 
-const APPV="d85b820d4d6845c8cd0cb282ff3f73a9c577f49cbc9ead3e65766052efa429a1";
+const APPV="4e8aad69fbfe12eeea111f039674e96541dc3fe5e60c0ea146dde14a54639ccf";
 const CATS={
   MOC:{n:"Management of Care",lo:15,hi:21,w:18},
   SIC:{n:"Safety and Infection Prevention and Control",lo:10,hi:16,w:13},
@@ -2738,7 +2738,7 @@ function foot(){const yr=new Date().getFullYear();const owner=COMPANY.legalName|
    <div class="f3top"><span class="logo" style="color:var(--navy-ink)" role="img" aria-label="Vexcura">${LOGO}</span><p>The full NCLEX-RN practice exam, an Epic-style academic EHR and clinical instructor tools. Free for students and instructors; your school licenses Vexcura. Built by a registered nurse.</p><a class="f3cta" href="/for-nursing-schools#pilot">Request a pilot</a></div>
    <div class="fcols f3cols">
     <nav aria-label="For programs"><h4>For programs</h4><ul><li><a href="/for-nursing-schools">Vexcura for nursing schools</a></li><li><a href="/clinical-instructor-tools">Clinical instructor tools</a></li><li><a href="/academic-ehr-for-nursing-students">Academic EHR</a></li><li><a href="/nursing-simulation-scenarios">Simulation drills</a></li><li><a href="/nursing-lms-integration">LMS integration</a></li><li><a href="/status">System status</a></li></ul></nav>
-    <nav aria-label="Students"><h4>Students</h4><ul><li><button class="lk" data-act="brief" data-mode="cat">Full examination</button></li><li><button class="lk" data-act="brief" data-mode="quick">Quick round</button></li><li><button class="lk" data-act="toexplore">Topic drill</button></li><li><a href="/nclex-practice-questions">Practice questions</a></li><li><a href="/nclex-study-guides">Study guides</a></li><li><a href="/question-of-the-day">Question of the day</a></li></ul></nav>
+    <nav aria-label="Students"><h4>Students</h4><ul><li><button class="lk" data-act="brief" data-mode="cat">Full examination</button></li><li><button class="lk" data-act="brief" data-mode="quick">Quick round</button></li><li><button class="lk" data-act="toexplore">Topic drill</button></li><li><a href="/nclex-practice-questions">Practice questions</a></li><li><a href="/nclex-study-guides">Study guides</a></li><li><a href="/question-of-the-day">Question of the day</a><a href="/careers">Careers</a></li></ul></nav>
     <nav aria-label="Legal"><h4>Legal</h4><ul><li><a href="#terms">Terms of Use</a></li><li><a href="#privacy">Privacy Policy</a></li><li><a href="#copyright">Copyright</a></li><li><a href="#disclaimer">Educational Disclaimer</a></li><li><a href="#trademarks">Trademarks and Affiliation</a></li><li><a href="#accessibility">Accessibility</a></li><li><a href="#editorial">How questions are checked</a></li><li class="adm-link" ${TELE.isAdmin?"":"hidden"}><a href="#admin">Admin dashboard</a></li></ul></nav>
     <div><h4>Contact</h4><address class="fcorp">${esc(COMPANY.address)}<br><a href="tel:+1${COMPANY.phone.replace(/\D/g,"")}">${esc(COMPANY.phone)}</a></address></div>
    </div>
