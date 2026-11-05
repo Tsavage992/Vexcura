@@ -2063,6 +2063,24 @@ svg[data-vxs] .vxs-sw{animation:vxsSway 7s ease-in-out infinite alternate}
 @media (prefers-reduced-motion:reduce){svg[data-vxs],svg[data-vxs] *{animation:none!important;transition:none!important}}
 @media print{.vxs-band>svg.vxs-art,.vxs-band>.vxs-sh{display:none!important}}
 /* </v26-art-css> */
+/* <v27-sbhandle-css> */
+.vxsb-hdl{position:relative;display:flex;align-items:center;justify-content:center;width:22px;height:56px;padding:0;border:1px solid var(--sbl);border-right:0;border-radius:8px 0 0 8px;background:var(--sbh);color:#fff;cursor:pointer;box-shadow:-2px 2px 8px rgb(0 0 0/.18)}
+.vxsb-hdl:hover{width:26px}
+.vxsb-hdl b{position:absolute;top:-8px;left:-8px;min-width:18px;height:18px;padding:0 4px;border-radius:9px;background:#fff;color:#2c3e57;border:1px solid #c9d3dc;font-size:11px;line-height:16px;text-align:center}
+.vxsb-hdl:focus-visible{outline:3px solid #f8c27a;outline-offset:1px}
+.vxsb-hd{gap:8px;padding:8px 8px 0 8px!important;align-items:flex-end!important}
+.vxsb-tabs{display:flex;gap:2px;min-width:0;flex:1}
+.vxsb-tab2{position:relative;flex:1 1 0;min-width:0;display:flex;align-items:center;justify-content:center;gap:5px;padding:9px 6px;border:0;border-radius:8px 8px 0 0;background:transparent;color:rgb(255 255 255/.85);font:inherit;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap}
+.vxsb-tab2 span{overflow:hidden;text-overflow:ellipsis}
+.vxsb-tab2.on{background:var(--sb);color:var(--sbi)}
+.vxsb-tab2 b{min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:rgb(255 255 255/.18);color:inherit;font-size:11px;line-height:18px}
+.vxsb-tab2.on b{background:#2c3e57;color:#fff}
+.vxsb-hd .vxsb-x{align-self:center;margin-bottom:6px}
+@media (max-width:860px){html.c2on .vxsb-rail{display:flex!important}}
+@media (max-width:480px){.vxsb-tab2 svg{display:none}.vxsb-tab2{font-size:12.5px;padding:9px 3px;gap:4px}.vxsb-tab2 b{min-width:16px;padding:0 4px}.vxsb-p{width:calc(100vw - 24px)}}
+.vxsb-tab2 i{font-style:normal}@media (max-width:480px){.vxsb-tab2 .vxsb-w2{display:none}}
+/* </v27-sbhandle-css> */
+
 /* <v20-teachhub-css> */
 /* ---------- v20: instructor hub + view switcher + student clinical-day strip ---------- */
 .vxrs{display:inline-flex;align-items:center;gap:0;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:2px;background:rgba(255,255,255,.08);flex:none;white-space:nowrap}
@@ -2518,7 +2536,7 @@ const BANK = (function(e){try{const P=">oVO^cd@ge#lJ'~wUTDiEY+LZx-K&hkt(/F0;G`N.
 let HIDQ=new Set();const CFG={c:null,bypass:false};try{const c=JSON.parse(localStorage.getItem("ns.cfg")||"null");if(c&&typeof c==="object"){CFG.c=c;HIDQ=new Set(c.hideQ||[])}}catch(e){}
 const featOn=k=>!CFG.c||!CFG.c.feat||CFG.c.feat[k]!==false;
 
-const APPV="4e8aad69fbfe12eeea111f039674e96541dc3fe5e60c0ea146dde14a54639ccf";
+const APPV="af28677b00147c5b616f928b1f04c0326c62e330c27c52e28c2e8178790f2b03";
 const CATS={
   MOC:{n:"Management of Care",lo:15,hi:21,w:18},
   SIC:{n:"Safety and Infection Prevention and Control",lo:10,hi:16,w:13},
@@ -8738,8 +8756,8 @@ if(SRV.on){
   function el(){if(host)return host;host=document.createElement("div");host.id="vxsb";host.className="vxsb";document.body.appendChild(host);host.addEventListener("click",onClick);host.addEventListener("change",onChange);return host}
   function paint(){const c=ctx();if(!c){if(host)host.hidden=true;document.documentElement.classList.remove("vxsb-on");return}const D=c==="ehr"?ehrHTML():chartHTML();if(!D){if(host)host.hidden=true;return}
     const S=st();const tab=TB.find(t=>t[0]===S.tab)?S.tab:"wl";const n=D.n||{};
-    const h=`<nav class="vxsb-rail" aria-label="Sidebar">${TB.map(([k,l])=>`<button type="button" class="vxsb-tab${S.open&&tab===k?" on":""}" data-sb-tab="${k}" aria-expanded="${S.open&&tab===k}" aria-controls="vxsb-p" title="${l}">${sv(k,18)}<span>${l}</span>${n[k]?`<b>${n[k]>99?"99+":n[k]}</b>`:""}</button>`).join("")}</nav>
-      <section class="vxsb-p" id="vxsb-p" role="region" aria-label="${TB.find(t=>t[0]===tab)[1]}" ${S.open?"":"hidden"}><header><h4>${sv(tab,16)} ${tab==="req"?"Required Documentation":TB.find(t=>t[0]===tab)[1]}</h4><button type="button" class="vxsb-x" data-sb-close="1" aria-label="Close sidebar">${sv("x",16)}</button></header><div class="vxsb-b">${(D.html[tab]||D.html.wl)}</div></section>`;
+    const tot=(n.wl||0)+(n.req||0);const h=`<nav class="vxsb-rail" aria-label="Sidebar"><button type="button" class="vxsb-hdl${S.open?" on":""}" data-sb-toggle="1" aria-expanded="${!!S.open}" aria-controls="vxsb-p" title="${S.open?"Collapse":"Open"} Worklist, Brain and Required Documentation"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${S.open?"M9 6l6 6-6 6":"M15 6l-6 6 6 6"}"/></svg><span class="sr">${S.open?"Collapse":"Open"} side panel</span>${!S.open&&tot?`<b>${tot>99?"99+":tot}</b>`:""}</button></nav>
+      <section class="vxsb-p" id="vxsb-p" role="region" aria-label="${TB.find(t=>t[0]===tab)[1]}" ${S.open?"":"hidden"}><header class="vxsb-hd"><div class="vxsb-tabs" role="tablist" aria-label="Side panel">${TB.map(([k,l])=>`<button type="button" role="tab" class="vxsb-tab2${tab===k?" on":""}" data-sb-tab="${k}" aria-selected="${tab===k}">${sv(k,15)}<span>${k==="req"?'Required<i class="vxsb-w2"> Doc</i>':l}</span>${n[k]?`<b>${n[k]>99?"99+":n[k]}</b>`:""}</button>`).join("")}</div><button type="button" class="vxsb-x" data-sb-close="1" aria-label="Close sidebar">${sv("x",16)}</button></header><div class="vxsb-b">${(D.html[tab]||D.html.wl)}</div></section>`;
     const H=el();H.hidden=false;H.classList.toggle("open",!!S.open);document.documentElement.classList.toggle("vxsb-on",!!S.open);if(h!==lastH){const sc=H.querySelector(".vxsb-b");const top=sc?sc.scrollTop:0;H.innerHTML=h;lastH=h;const b=H.querySelector(".vxsb-b");if(b)b.scrollTop=top}}
   const later=()=>{clearTimeout(timer);timer=setTimeout(paint,250)};
   function forward(k,v){const tgt=document.getElementById("c2")||document.getElementById("app");const b=document.createElement("button");b.type="button";b.hidden=true;b.setAttribute(k,v);tgt.appendChild(b);b.click();b.remove();later()}
@@ -8747,8 +8765,9 @@ if(SRV.on){
     const [a,grp]=g.split(":");if(a==="flow"&&grp){E.go(pid,"flow");setTimeout(()=>{const x=document.querySelector(`[data-ex="fsgrp"][data-v="${grp}"]`)||[...document.querySelectorAll("#ehm th,#ehm h3,#ehm h4,#ehm .fsg")].find(n=>(n.textContent||"").toLowerCase().indexOf(grp)>=0);if(x)x.scrollIntoView({block:"center",behavior:"smooth"})},350);return}
     E.go(pid,a)}
   function onClick(e){const t=e.target.closest("button");if(!t||t.disabled)return;
-    if(t.dataset.sbTab){const S=st();const k=t.dataset.sbTab;setSt(S.open&&S.tab===k?{open:false}:{open:true,tab:k});lastH="";paint();if(st().open){const b=host.querySelector(".vxsb-x");if(b)b.focus()}return}
-    if(t.dataset.sbClose){setSt({open:false});lastH="";paint();const b=host.querySelector(`[data-sb-tab="${st().tab}"]`);if(b)b.focus();return}
+    if(t.dataset.sbToggle){const S=st();setSt(S.open?{open:false}:{open:true,tab:S.tab||"wl"});lastH="";paint();return}
+    if(t.dataset.sbTab){const S=st();const k=t.dataset.sbTab;setSt({open:true,tab:k});lastH="";paint();if(st().open){const b=host.querySelector(".vxsb-x");if(b)b.focus()}return}
+    if(t.dataset.sbClose){setSt({open:false});lastH="";paint();const b=host.querySelector("[data-sb-toggle]");if(b)b.focus();return}
     if(t.dataset.sbPt){const E=EH();if(E)E.go(t.dataset.sbPt);return}
     if(t.dataset.sbGo){ehrGo(t.dataset.sbGo);if(innerWidth<760){setSt({open:false});lastH=""}later();return}
     if(t.dataset.fwk){forward(t.dataset.fwk,t.dataset.fwv);if(innerWidth<760&&!/done/.test(t.dataset.fwk)){setSt({open:false});lastH=""}}}
