@@ -1,0 +1,3409 @@
+{
+ "version": 1,
+ "updated": "2026-11-05",
+ "about": "Maps outside-assessment topic names (ATI, HESI, Kaplan, UWorld and others, named descriptively) to Vexcura's NCLEX client-need categories and finer subtopics. kw = keyword stems for fuzzy matching and for picking bank questions; tp = daily/topics.json topic ids; g = /study-guides/<slug>; ehr = practice activity id for clinical topics. Built by scratchpad scores-build/build-topicmap.js. Vendor-specific names need verification against real reports.",
+ "cats": {
+  "MOC": "Management of Care",
+  "SIC": "Safety and Infection Prevention and Control",
+  "HPM": "Health Promotion and Maintenance",
+  "PSY": "Psychosocial Integrity",
+  "BCC": "Basic Care and Comfort",
+  "PHA": "Pharmacological and Parenteral Therapies",
+  "RRP": "Reduction of Risk Potential",
+  "PHY": "Physiological Adaptation"
+ },
+ "catGuide": {
+  "MOC": "management-of-care",
+  "SIC": "safety-and-infection-control",
+  "HPM": "health-promotion-and-maintenance",
+  "PSY": "psychosocial-integrity",
+  "BCC": "basic-care-and-comfort",
+  "PHA": "pharmacology",
+  "RRP": "reduction-of-risk-potential",
+  "PHY": "physiological-adaptation"
+ },
+ "guides": {
+  "prioritization-and-delegation": "Prioritization and delegation",
+  "management-of-care": "Management of Care",
+  "isolation-precautions": "Infection control and isolation",
+  "safety-and-infection-control": "Safety and Infection Control",
+  "falls-and-restraints": "Safety: falls and restraints",
+  "high-alert-meds-and-antidotes": "Pharm: high-alert meds and antidotes",
+  "er-triage-esi-and-start": "ER: ESI triage and START mass casualty",
+  "ob-fetal-heart-rate-and-postpartum": "OB: fetal heart rate, preeclampsia, PPH",
+  "health-promotion-and-maintenance": "Health Promotion and Maintenance",
+  "labor-stages-and-apgar": "OB: labor stages and APGAR",
+  "pediatric-milestones-and-safety": "Peds: milestones, safe sleep, car seats",
+  "psych-meds-and-communication": "Psych: meds, side effects, communication",
+  "psychosocial-integrity": "Psychosocial Integrity",
+  "basic-care-and-comfort": "Basic Care and Comfort",
+  "pressure-injury-staging": "Pressure injuries: staging and prevention",
+  "dosage-calculation-formulas": "Dosage calculation formulas",
+  "pharmacology": "Pharmacology",
+  "iv-safety-and-hanging-meds": "IV safety: fluids, complications, hanging meds",
+  "dka-vs-hhs": "DKA vs. HHS, plus insulin timing",
+  "blood-transfusion-reactions": "Blood transfusion reactions",
+  "copd-vs-asthma": "COPD vs. asthma, plus oxygen safety",
+  "lab-values-quick-reference": "Lab values quick reference",
+  "electrolyte-imbalances": "Electrolytes: K, Na, Ca, Mg",
+  "reduction-of-risk-potential": "Reduction of Risk Potential",
+  "abg-interpretation": "ABGs in 3 steps",
+  "chest-tube-care": "Chest tubes: care and troubleshooting",
+  "oxygen-delivery-devices": "Oxygen devices: flow rates and safety",
+  "ecg-rhythms-basics": "Cardiac rhythms: reading a strip",
+  "heart-failure-left-vs-right": "Heart failure: left vs. right",
+  "physiological-adaptation": "Physiological Adaptation",
+  "stroke-be-fast": "Stroke: BE-FAST and first-hour care",
+  "nihss-stroke-scale": "NIH Stroke Scale (NIHSS) at a glance",
+  "thyroid-and-adrenal-disorders": "Thyroid and adrenal: hyper vs. hypo",
+  "aki-vs-ckd": "Kidney injury: AKI vs. CKD",
+  "types-of-shock": "Shock: the 4 types",
+  "burns-rule-of-nines": "Burns: rule of nines and fluids",
+  "icu-hemodynamics-and-drips": "ICU: hemodynamics, pressors, vent alarms"
+ },
+ "subs": [
+  {
+   "k": "MOC.prior",
+   "cat": "MOC",
+   "n": "Prioritization",
+   "kw": [
+    "priorit",
+    "first action",
+    "which client",
+    "see first",
+    "abc",
+    "airway, breathing",
+    "maslow",
+    "establishing priorities",
+    "time management",
+    "cluster"
+   ],
+   "g": [
+    "prioritization-and-delegation",
+    "management-of-care"
+   ],
+   "ehr": "rounds",
+   "tp": [
+    "MOC-001",
+    "MOC-002",
+    "MOC-038",
+    "MOC-045",
+    "MOC-046",
+    "MOC-047",
+    "PHY-001"
+   ],
+   "bank": 39
+  },
+  {
+   "k": "MOC.deleg",
+   "cat": "MOC",
+   "n": "Delegation and assignment",
+   "kw": [
+    "delegat",
+    "assign",
+    "assistive personnel",
+    "uap",
+    "lpn",
+    "lvn",
+    "scope of practice",
+    "supervis",
+    "float"
+   ],
+   "g": [
+    "prioritization-and-delegation",
+    "management-of-care"
+   ],
+   "ehr": null,
+   "tp": [
+    "MOC-003",
+    "MOC-004",
+    "MOC-005",
+    "MOC-006",
+    "MOC-031",
+    "MOC-035",
+    "MOC-053",
+    "MOC-054"
+   ],
+   "bank": 41
+  },
+  {
+   "k": "MOC.consent",
+   "cat": "MOC",
+   "n": "Informed consent and advance directives",
+   "kw": [
+    "consent",
+    "advance directive",
+    "living will",
+    "power of attorney",
+    "dnr",
+    "do-not-resuscitate",
+    "code status",
+    "self-determination",
+    "organ donation"
+   ],
+   "g": [
+    "management-of-care"
+   ],
+   "ehr": null,
+   "tp": [
+    "MOC-007",
+    "MOC-008",
+    "MOC-009",
+    "MOC-010",
+    "MOC-039",
+    "MOC-049",
+    "MOC-056"
+   ],
+   "bank": 26
+  },
+  {
+   "k": "MOC.legal",
+   "cat": "MOC",
+   "n": "Legal and ethical practice",
+   "kw": [
+    "legal",
+    "ethic",
+    "negligence",
+    "malpractice",
+    "autonomy",
+    "beneficence",
+    "client rights",
+    "right to refuse",
+    "against medical advice",
+    "mandatory report",
+    "nurse practice act",
+    "liabil"
+   ],
+   "g": [
+    "management-of-care"
+   ],
+   "ehr": null,
+   "tp": [
+    "MOC-011",
+    "MOC-014",
+    "MOC-015",
+    "MOC-026",
+    "MOC-027",
+    "MOC-030",
+    "MOC-031",
+    "MOC-050",
+    "PSY-026"
+   ],
+   "bank": 26
+  },
+  {
+   "k": "MOC.confid",
+   "cat": "MOC",
+   "n": "Confidentiality and information security",
+   "kw": [
+    "confidential",
+    "hipaa",
+    "privacy",
+    "social media",
+    "information technology",
+    "information security",
+    "electronic health record",
+    "charting error"
+   ],
+   "g": [
+    "management-of-care"
+   ],
+   "ehr": null,
+   "tp": [
+    "MOC-012",
+    "MOC-013",
+    "MOC-040",
+    "MOC-042",
+    "HPM-018"
+   ],
+   "bank": 14
+  },
+  {
+   "k": "MOC.comm",
+   "cat": "MOC",
+   "n": "Handoff, SBAR and collaboration",
+   "kw": [
+    "sbar",
+    "handoff",
+    "hand-off",
+    "shift report",
+    "interprofessional",
+    "interdisciplinary",
+    "collaborat",
+    "referral",
+    "case management",
+    "discharge planning",
+    "continuity of care",
+    "transfer"
+   ],
+   "g": [
+    "management-of-care"
+   ],
+   "ehr": "rounds",
+   "tp": [
+    "MOC-001",
+    "MOC-017",
+    "MOC-018",
+    "MOC-021",
+    "MOC-022",
+    "MOC-023",
+    "MOC-024",
+    "MOC-057"
+   ],
+   "bank": 24
+  },
+  {
+   "k": "MOC.qi",
+   "cat": "MOC",
+   "n": "Quality improvement and incident reporting",
+   "kw": [
+    "quality improvement",
+    "performance improvement",
+    "incident report",
+    "occurrence report",
+    "variance",
+    "root cause",
+    "near miss",
+    "irregular occurrence"
+   ],
+   "g": [
+    "management-of-care"
+   ],
+   "ehr": null,
+   "tp": [
+    "MOC-032",
+    "MOC-033",
+    "SIC-037"
+   ],
+   "bank": 7
+  },
+  {
+   "k": "MOC.lead",
+   "cat": "MOC",
+   "n": "Leadership and advocacy",
+   "kw": [
+    "leader",
+    "manage",
+    "staffing",
+    "conflict",
+    "chain of command",
+    "advoca",
+    "impaired coworker",
+    "resource",
+    "cultural",
+    "interpreter"
+   ],
+   "g": [
+    "management-of-care"
+   ],
+   "ehr": null,
+   "tp": [
+    "MOC-010",
+    "MOC-021",
+    "MOC-022",
+    "MOC-025",
+    "MOC-028",
+    "MOC-029",
+    "MOC-043",
+    "MOC-046",
+    "MOC-047",
+    "MOC-052",
+    "MOC-054",
+    "MOC-055",
+    "HPM-029",
+    "PSY-019",
+    "PSY-025",
+    "PSY-031",
+    "BCC-019",
+    "PHA-044",
+    "PHY-005",
+    "PHY-011",
+    "PHY-021",
+    "PHY-043"
+   ],
+   "bank": 33
+  },
+  {
+   "k": "SIC.infect",
+   "cat": "SIC",
+   "n": "Infection control and isolation",
+   "kw": [
+    "infection control",
+    "isolation",
+    "precaution",
+    "contact precaution",
+    "droplet",
+    "airborne",
+    "ppe",
+    "hand hygiene",
+    "mrsa",
+    "vre",
+    "difficile",
+    "tuberculosis",
+    "n95",
+    "standard precaution",
+    "transmission"
+   ],
+   "g": [
+    "isolation-precautions",
+    "safety-and-infection-control"
+   ],
+   "ehr": null,
+   "tp": [
+    "SIC-001",
+    "SIC-002",
+    "SIC-003",
+    "SIC-004",
+    "SIC-005",
+    "SIC-006",
+    "SIC-007",
+    "SIC-008",
+    "SIC-019",
+    "SIC-020",
+    "SIC-038",
+    "SIC-039",
+    "BCC-006",
+    "BCC-026",
+    "RRP-012"
+   ],
+   "bank": 48
+  },
+  {
+   "k": "SIC.asepsis",
+   "cat": "SIC",
+   "n": "Surgical asepsis and line infections",
+   "kw": [
+    "sterile",
+    "asepsis",
+    "aseptic",
+    "cauti",
+    "clabsi",
+    "catheter-associated",
+    "central line-associated",
+    "surgical safety",
+    "time-out"
+   ],
+   "g": [
+    "isolation-precautions",
+    "safety-and-infection-control"
+   ],
+   "ehr": null,
+   "tp": [
+    "SIC-009",
+    "SIC-010",
+    "SIC-011",
+    "SIC-012",
+    "SIC-042",
+    "PHA-016"
+   ],
+   "bank": 13
+  },
+  {
+   "k": "SIC.falls",
+   "cat": "SIC",
+   "n": "Falls and restraints",
+   "kw": [
+    "fall!",
+    "restraint",
+    "bed alarm",
+    "least restrictive",
+    "safety device"
+   ],
+   "g": [
+    "falls-and-restraints",
+    "safety-and-infection-control"
+   ],
+   "ehr": null,
+   "tp": [
+    "SIC-015",
+    "SIC-017",
+    "SIC-018",
+    "MOC-033",
+    "MOC-050",
+    "PSY-026",
+    "PHA-040"
+   ],
+   "bank": 20
+  },
+  {
+   "k": "SIC.medsafe",
+   "cat": "SIC",
+   "n": "Medication safety and error prevention",
+   "kw": [
+    "two identifiers",
+    "client identification",
+    "look-alike",
+    "sound-alike",
+    "high-alert",
+    "barcode",
+    "medication error",
+    "error prevention",
+    "double check",
+    "rights of medication"
+   ],
+   "g": [
+    "high-alert-meds-and-antidotes",
+    "safety-and-infection-control"
+   ],
+   "ehr": null,
+   "tp": [
+    "SIC-026",
+    "SIC-027",
+    "SIC-028",
+    "SIC-029",
+    "MOC-032"
+   ],
+   "bank": 5
+  },
+  {
+   "k": "SIC.env",
+   "cat": "SIC",
+   "n": "Home and environmental safety",
+   "kw": [
+    "home safety",
+    "fire",
+    "electrical safety",
+    "oxygen safety",
+    "radiation",
+    "hazardous",
+    "chemotherapy spill",
+    "poison",
+    "car seat",
+    "safe sleep",
+    "security plan",
+    "abduction",
+    "latex",
+    "ergonomic",
+    "lift",
+    "safe use of equipment",
+    "accident",
+    "injury prevention"
+   ],
+   "g": [
+    "safety-and-infection-control"
+   ],
+   "ehr": null,
+   "tp": [
+    "SIC-021",
+    "SIC-022",
+    "SIC-023",
+    "SIC-024",
+    "SIC-030",
+    "SIC-031",
+    "SIC-032",
+    "SIC-033",
+    "SIC-034",
+    "SIC-035",
+    "SIC-036",
+    "SIC-038",
+    "SIC-041",
+    "BCC-004"
+   ],
+   "bank": 31
+  },
+  {
+   "k": "SIC.emerg",
+   "cat": "SIC",
+   "n": "Emergency response and triage",
+   "kw": [
+    "emergency response",
+    "disaster",
+    "mass casualty",
+    "triage",
+    "start triage",
+    "emergency preparedness",
+    "bioterror",
+    "evacuat"
+   ],
+   "g": [
+    "er-triage-esi-and-start",
+    "safety-and-infection-control"
+   ],
+   "ehr": null,
+   "tp": [
+    "MOC-036",
+    "MOC-037"
+   ],
+   "bank": 7
+  },
+  {
+   "k": "SIC.prec",
+   "cat": "SIC",
+   "n": "Seizure, suicide and neutropenic precautions",
+   "kw": [
+    "seizure precaution",
+    "suicide precaution",
+    "neutropenic precaution",
+    "protective environment"
+   ],
+   "g": [
+    "safety-and-infection-control"
+   ],
+   "ehr": null,
+   "tp": [
+    "SIC-019",
+    "SIC-020",
+    "SIC-039"
+   ],
+   "bank": 5
+  },
+  {
+   "k": "HPM.prenatal",
+   "cat": "HPM",
+   "n": "Pregnancy and prenatal care",
+   "kw": [
+    "prenatal",
+    "antepartum",
+    "pregnan",
+    "trimester",
+    "fundal height",
+    "rh immune",
+    "rho(d)",
+    "gestational",
+    "nonstress test",
+    "folic acid"
+   ],
+   "g": [
+    "ob-fetal-heart-rate-and-postpartum",
+    "health-promotion-and-maintenance"
+   ],
+   "ehr": null,
+   "tp": [
+    "HPM-001",
+    "HPM-002",
+    "HPM-003",
+    "HPM-004",
+    "HPM-005",
+    "HPM-006",
+    "HPM-007"
+   ],
+   "bank": 21
+  },
+  {
+   "k": "HPM.labor",
+   "cat": "HPM",
+   "n": "Labor and delivery",
+   "kw": [
+    "labor!",
+    "intrapartum",
+    "fetal heart",
+    "contraction",
+    "apgar",
+    "epidural",
+    "delivery"
+   ],
+   "g": [
+    "labor-stages-and-apgar",
+    "ob-fetal-heart-rate-and-postpartum",
+    "health-promotion-and-maintenance"
+   ],
+   "ehr": null,
+   "tp": [
+    "HPM-008"
+   ],
+   "bank": 12
+  },
+  {
+   "k": "HPM.postpartum",
+   "cat": "HPM",
+   "n": "Postpartum and newborn care",
+   "kw": [
+    "postpartum",
+    "lochia",
+    "fundus",
+    "breastfe",
+    "newborn",
+    "neonat",
+    "jaundice",
+    "vitamin k",
+    "circumcision"
+   ],
+   "g": [
+    "ob-fetal-heart-rate-and-postpartum",
+    "health-promotion-and-maintenance"
+   ],
+   "ehr": null,
+   "tp": [
+    "HPM-009",
+    "HPM-010",
+    "HPM-011",
+    "HPM-012",
+    "HPM-013",
+    "HPM-014",
+    "PSY-033",
+    "PHY-043"
+   ],
+   "bank": 28
+  },
+  {
+   "k": "HPM.growth",
+   "cat": "HPM",
+   "n": "Growth and development",
+   "kw": [
+    "growth and development",
+    "developmental",
+    "milestone",
+    "infant",
+    "toddler",
+    "preschool",
+    "school-age",
+    "adolescen",
+    "erikson",
+    "piaget",
+    "aging",
+    "older adult"
+   ],
+   "g": [
+    "pediatric-milestones-and-safety",
+    "health-promotion-and-maintenance"
+   ],
+   "ehr": null,
+   "tp": [
+    "HPM-015",
+    "HPM-016",
+    "HPM-017",
+    "HPM-018",
+    "HPM-025",
+    "HPM-033",
+    "SIC-031",
+    "SIC-034",
+    "SIC-036",
+    "PHA-040"
+   ],
+   "bank": 40
+  },
+  {
+   "k": "HPM.immun",
+   "cat": "HPM",
+   "n": "Immunizations",
+   "kw": [
+    "immuniz",
+    "vaccin"
+   ],
+   "g": [
+    "health-promotion-and-maintenance"
+   ],
+   "ehr": null,
+   "tp": [
+    "HPM-019",
+    "HPM-020",
+    "PHA-048"
+   ],
+   "bank": 4
+  },
+  {
+   "k": "HPM.screen",
+   "cat": "HPM",
+   "n": "Health screening and disease prevention",
+   "kw": [
+    "screening",
+    "health promotion",
+    "disease prevention",
+    "mammogra",
+    "colonoscop",
+    "cancer screening",
+    "osteoporosis",
+    "smoking cessation",
+    "lifestyle",
+    "physical activity",
+    "contracepti",
+    "sexually transmitted",
+    "high-risk behavior",
+    "self-care",
+    "family planning",
+    "menopause"
+   ],
+   "g": [
+    "health-promotion-and-maintenance"
+   ],
+   "ehr": null,
+   "tp": [
+    "HPM-004",
+    "HPM-014",
+    "HPM-021",
+    "HPM-022",
+    "HPM-023",
+    "HPM-024",
+    "HPM-025",
+    "HPM-026",
+    "HPM-027",
+    "HPM-028",
+    "HPM-029",
+    "HPM-030",
+    "HPM-033",
+    "HPM-034",
+    "PSY-023",
+    "RRP-028",
+    "RRP-030"
+   ],
+   "bank": 23
+  },
+  {
+   "k": "HPM.assess",
+   "cat": "HPM",
+   "n": "Physical assessment techniques",
+   "kw": [
+    "physical assessment",
+    "assessment technique",
+    "inspection",
+    "palpation",
+    "percussion",
+    "auscultat",
+    "health history"
+   ],
+   "g": [
+    "health-promotion-and-maintenance"
+   ],
+   "ehr": null,
+   "tp": [
+    "HPM-031",
+    "HPM-032"
+   ],
+   "bank": 2
+  },
+  {
+   "k": "HPM.community",
+   "cat": "HPM",
+   "n": "Community and public health",
+   "kw": [
+    "community",
+    "public health",
+    "home health",
+    "home visit",
+    "epidemiolog",
+    "outbreak",
+    "reportable",
+    "school nurse",
+    "occupational health",
+    "primary prevention",
+    "secondary prevention",
+    "tertiary prevention"
+   ],
+   "g": [
+    "health-promotion-and-maintenance"
+   ],
+   "ehr": null,
+   "tp": [
+    "MOC-022"
+   ],
+   "bank": 1
+  },
+  {
+   "k": "PSY.comm",
+   "cat": "PSY",
+   "n": "Therapeutic communication",
+   "kw": [
+    "therapeutic communication",
+    "therapeutic response",
+    "open-ended",
+    "nontherapeutic",
+    "false reassurance",
+    "therapeutic environment",
+    "milieu",
+    "therapeutic relationship"
+   ],
+   "g": [
+    "psych-meds-and-communication",
+    "psychosocial-integrity"
+   ],
+   "ehr": null,
+   "tp": [
+    "PSY-001",
+    "PSY-002"
+   ],
+   "bank": 9
+  },
+  {
+   "k": "PSY.suicide",
+   "cat": "PSY",
+   "n": "Suicide risk and crisis intervention",
+   "kw": [
+    "suicid",
+    "crisis",
+    "self-harm",
+    "safety plan"
+   ],
+   "g": [
+    "psychosocial-integrity"
+   ],
+   "ehr": null,
+   "tp": [
+    "PSY-003",
+    "PSY-004",
+    "PSY-012",
+    "MOC-056",
+    "SIC-020",
+    "PHY-024",
+    "PHY-036"
+   ],
+   "bank": 16
+  },
+  {
+   "k": "PSY.mood",
+   "cat": "PSY",
+   "n": "Depression and bipolar disorder",
+   "kw": [
+    "depress",
+    "bipolar",
+    "mania",
+    "manic",
+    "mood disorder"
+   ],
+   "g": [
+    "psych-meds-and-communication",
+    "psychosocial-integrity"
+   ],
+   "ehr": null,
+   "tp": [
+    "PSY-005",
+    "PSY-006",
+    "PSY-033",
+    "PHA-028"
+   ],
+   "bank": 17
+  },
+  {
+   "k": "PSY.psychosis",
+   "cat": "PSY",
+   "n": "Schizophrenia and psychosis",
+   "kw": [
+    "schizophren",
+    "hallucinat",
+    "delusion",
+    "psychos",
+    "psychotic"
+   ],
+   "g": [
+    "psych-meds-and-communication",
+    "psychosocial-integrity"
+   ],
+   "ehr": null,
+   "tp": [
+    "PSY-007",
+    "PSY-033"
+   ],
+   "bank": 14
+  },
+  {
+   "k": "PSY.anxiety",
+   "cat": "PSY",
+   "n": "Anxiety, coping and trauma",
+   "kw": [
+    "anxiety",
+    "panic",
+    "obsessive",
+    "ocd",
+    "ptsd",
+    "posttraumatic",
+    "trauma-informed",
+    "stress management",
+    "coping",
+    "support system",
+    "family dynamic"
+   ],
+   "g": [
+    "psychosocial-integrity"
+   ],
+   "ehr": null,
+   "tp": [
+    "PSY-008",
+    "PSY-009",
+    "PSY-010",
+    "PSY-028",
+    "PSY-031",
+    "PSY-032"
+   ],
+   "bank": 23
+  },
+  {
+   "k": "PSY.substance",
+   "cat": "PSY",
+   "n": "Substance use and withdrawal",
+   "kw": [
+    "alcohol",
+    "withdrawal",
+    "ciwa",
+    "opioid use disorder",
+    "substance",
+    "chemical dependenc",
+    "addiction",
+    "wernicke",
+    "detox"
+   ],
+   "g": [
+    "psychosocial-integrity"
+   ],
+   "ehr": null,
+   "tp": [
+    "PSY-013",
+    "PSY-014",
+    "PSY-015"
+   ],
+   "bank": 21
+  },
+  {
+   "k": "PSY.eating",
+   "cat": "PSY",
+   "n": "Eating disorders",
+   "kw": [
+    "anorexia",
+    "bulimia",
+    "eating disorder",
+    "binge",
+    "refeeding"
+   ],
+   "g": [
+    "psychosocial-integrity"
+   ],
+   "ehr": null,
+   "tp": [
+    "PSY-016",
+    "PSY-017"
+   ],
+   "bank": 3
+  },
+  {
+   "k": "PSY.cognitive",
+   "cat": "PSY",
+   "n": "Dementia, delirium and sensory changes",
+   "kw": [
+    "dementia",
+    "delirium",
+    "alzheimer",
+    "cognitive impairment",
+    "sensory",
+    "perceptual"
+   ],
+   "g": [
+    "psychosocial-integrity"
+   ],
+   "ehr": null,
+   "tp": [
+    "PSY-020",
+    "PSY-021",
+    "PSY-030"
+   ],
+   "bank": 9
+  },
+  {
+   "k": "PSY.abuse",
+   "cat": "PSY",
+   "n": "Abuse, violence and behavioral management",
+   "kw": [
+    "abuse",
+    "neglect",
+    "intimate partner",
+    "violence",
+    "de-escalat",
+    "aggressi",
+    "seclusion",
+    "involuntary",
+    "behavioral intervention",
+    "behavioral management"
+   ],
+   "g": [
+    "psychosocial-integrity"
+   ],
+   "ehr": null,
+   "tp": [
+    "PSY-022",
+    "PSY-023",
+    "PSY-024",
+    "PSY-025",
+    "PSY-026",
+    "PSY-027",
+    "MOC-014",
+    "MOC-015",
+    "MOC-051"
+   ],
+   "bank": 15
+  },
+  {
+   "k": "PSY.grief",
+   "cat": "PSY",
+   "n": "Grief, culture and spirituality",
+   "kw": [
+    "grief",
+    "loss",
+    "bereave",
+    "end-of-life",
+    "end of life",
+    "spiritual",
+    "religio",
+    "cultural",
+    "body image"
+   ],
+   "g": [
+    "psychosocial-integrity"
+   ],
+   "ehr": null,
+   "tp": [
+    "PSY-011",
+    "PSY-028",
+    "PSY-029",
+    "MOC-043",
+    "MOC-057",
+    "BCC-021"
+   ],
+   "bank": 18
+  },
+  {
+   "k": "PSY.person",
+   "cat": "PSY",
+   "n": "Personality disorders",
+   "kw": [
+    "personality disorder",
+    "borderline",
+    "antisocial",
+    "manipulat"
+   ],
+   "g": [
+    "psychosocial-integrity"
+   ],
+   "ehr": null,
+   "tp": [
+    "PSY-018",
+    "PSY-019"
+   ],
+   "bank": 2
+  },
+  {
+   "k": "BCC.mobility",
+   "cat": "BCC",
+   "n": "Mobility and assistive devices",
+   "kw": [
+    "mobility",
+    "immobil",
+    "assistive device",
+    "cane!",
+    "walker",
+    "crutch",
+    "range of motion",
+    "transfer",
+    "ambulat",
+    "positioning",
+    "hip replacement",
+    "hip arthroplasty",
+    "cast!",
+    "traction"
+   ],
+   "g": [
+    "basic-care-and-comfort"
+   ],
+   "ehr": null,
+   "tp": [
+    "BCC-001",
+    "BCC-002",
+    "BCC-003",
+    "BCC-016",
+    "BCC-024",
+    "BCC-025",
+    "BCC-026",
+    "BCC-027",
+    "MOC-023",
+    "SIC-016",
+    "RRP-016",
+    "RRP-018"
+   ],
+   "bank": 18
+  },
+  {
+   "k": "BCC.skin",
+   "cat": "BCC",
+   "n": "Pressure injury and skin care",
+   "kw": [
+    "pressure injur",
+    "pressure ulcer",
+    "braden",
+    "skin integrity",
+    "repositioning"
+   ],
+   "g": [
+    "pressure-injury-staging",
+    "basic-care-and-comfort"
+   ],
+   "ehr": null,
+   "tp": [
+    "BCC-004",
+    "BCC-005"
+   ],
+   "bank": 11
+  },
+  {
+   "k": "BCC.nutrition",
+   "cat": "BCC",
+   "n": "Nutrition and feeding",
+   "kw": [
+    "nutrition",
+    "diet",
+    "dysphagia",
+    "aspiration",
+    "enteral",
+    "tube feeding",
+    "oral hydration",
+    "sodium-restricted",
+    "calori",
+    "feeding"
+   ],
+   "g": [
+    "basic-care-and-comfort"
+   ],
+   "ehr": null,
+   "tp": [
+    "BCC-006",
+    "BCC-007",
+    "BCC-008",
+    "BCC-009",
+    "BCC-010",
+    "BCC-011",
+    "HPM-003",
+    "PSY-006",
+    "PHA-012",
+    "PHA-045",
+    "PHA-050",
+    "PHY-013"
+   ],
+   "bank": 21
+  },
+  {
+   "k": "BCC.elim",
+   "cat": "BCC",
+   "n": "Elimination and ostomy care",
+   "kw": [
+    "elimination",
+    "bowel",
+    "constipation",
+    "urinary retention",
+    "bladder",
+    "catheter care",
+    "indwelling",
+    "ostomy",
+    "stoma",
+    "incontinen",
+    "intake and output",
+    "enema"
+   ],
+   "g": [
+    "basic-care-and-comfort"
+   ],
+   "ehr": null,
+   "tp": [
+    "BCC-012",
+    "BCC-013",
+    "BCC-014",
+    "BCC-015",
+    "BCC-030",
+    "PHY-032"
+   ],
+   "bank": 22
+  },
+  {
+   "k": "BCC.comfort",
+   "cat": "BCC",
+   "n": "Pain, comfort, rest and sleep",
+   "kw": [
+    "comfort",
+    "nonpharmacolog",
+    "non-pharmacolog",
+    "pain assessment",
+    "heat!",
+    "cold application",
+    "sleep",
+    "rest!",
+    "palliative",
+    "postmortem",
+    "complementary",
+    "herbal"
+   ],
+   "g": [
+    "basic-care-and-comfort"
+   ],
+   "ehr": null,
+   "tp": [
+    "BCC-018",
+    "BCC-019",
+    "BCC-020",
+    "BCC-021",
+    "BCC-022",
+    "BCC-023",
+    "BCC-028",
+    "MOC-057",
+    "SIC-034"
+   ],
+   "bank": 23
+  },
+  {
+   "k": "BCC.hygiene",
+   "cat": "BCC",
+   "n": "Personal hygiene",
+   "kw": [
+    "hygiene",
+    "oral care",
+    "bath!",
+    "bathing",
+    "hearing aid",
+    "eyeglass",
+    "denture",
+    "perineal"
+   ],
+   "g": [
+    "basic-care-and-comfort"
+   ],
+   "ehr": null,
+   "tp": [
+    "BCC-016",
+    "BCC-017",
+    "BCC-029",
+    "SIC-001",
+    "SIC-003"
+   ],
+   "bank": 8
+  },
+  {
+   "k": "PHA.calc",
+   "cat": "PHA",
+   "n": "Dosage calculation",
+   "kw": [
+    "dosage calculation",
+    "dose calculation",
+    "calculat",
+    "ml/h",
+    "ml/hr",
+    "gtt",
+    "drip rate",
+    "mg/kg",
+    "units/h",
+    "safe dose range"
+   ],
+   "g": [
+    "dosage-calculation-formulas",
+    "pharmacology"
+   ],
+   "ehr": null,
+   "tp": [
+    "PHA-001",
+    "PHA-002",
+    "PHA-003",
+    "PHA-004",
+    "PHA-005"
+   ],
+   "bank": 17
+  },
+  {
+   "k": "PHA.admin",
+   "cat": "PHA",
+   "n": "Medication administration and adverse effects",
+   "kw": [
+    "medication administration",
+    "administer",
+    "administration",
+    "route",
+    "injection",
+    "intramuscular",
+    "subcutaneous",
+    "z-track",
+    "reconciliation",
+    "adverse effect",
+    "side effect",
+    "contraindication",
+    "interaction",
+    "expected action",
+    "expected outcome",
+    "client response to medication"
+   ],
+   "g": [
+    "iv-safety-and-hanging-meds",
+    "pharmacology"
+   ],
+   "ehr": "rounds",
+   "tp": [
+    "PHA-020",
+    "PHA-026",
+    "PHA-033",
+    "PHA-045",
+    "PHA-048",
+    "PHA-049",
+    "PHA-050"
+   ],
+   "bank": 25
+  },
+  {
+   "k": "PHA.cardio",
+   "cat": "PHA",
+   "n": "Cardiovascular medications",
+   "kw": [
+    "cardiovascular medication",
+    "digoxin",
+    "beta-blocker",
+    "beta blocker",
+    "metoprolol",
+    "ace inhibitor",
+    "lisinopril",
+    "angiotensin",
+    "nitroglycerin",
+    "statin",
+    "antihypertensive",
+    "diuretic",
+    "furosemide",
+    "spironolactone",
+    "amiodarone",
+    "calcium channel blocker",
+    "antidysrhythmic"
+   ],
+   "g": [
+    "high-alert-meds-and-antidotes",
+    "pharmacology"
+   ],
+   "ehr": null,
+   "tp": [
+    "PHA-015",
+    "PHA-016",
+    "PHA-017",
+    "PHA-018",
+    "PHA-019",
+    "PHA-021",
+    "PHA-022"
+   ],
+   "bank": 20
+  },
+  {
+   "k": "PHA.anticoag",
+   "cat": "PHA",
+   "n": "Anticoagulants and antiplatelets",
+   "kw": [
+    "anticoagul",
+    "heparin",
+    "enoxaparin",
+    "warfarin",
+    "inr",
+    "apixaban",
+    "rivaroxaban",
+    "dabigatran",
+    "clopidogrel",
+    "antiplatelet",
+    "aspirin",
+    "thrombolytic",
+    "alteplase",
+    "protamine",
+    "hematologic medication"
+   ],
+   "g": [
+    "high-alert-meds-and-antidotes",
+    "pharmacology"
+   ],
+   "ehr": null,
+   "tp": [
+    "PHA-004",
+    "PHA-011",
+    "PHA-012",
+    "PHA-013",
+    "PHA-014",
+    "RRP-006",
+    "PHY-017"
+   ],
+   "bank": 22
+  },
+  {
+   "k": "PHA.endo",
+   "cat": "PHA",
+   "n": "Insulin and endocrine medications",
+   "kw": [
+    "insulin",
+    "metformin",
+    "antidiabetic",
+    "oral hypoglycemic",
+    "sglt2",
+    "glp-1",
+    "sulfonylurea",
+    "levothyroxine",
+    "thyroid medication",
+    "corticosteroid",
+    "prednisone",
+    "glucocorticoid",
+    "endocrine medication",
+    "hormone"
+   ],
+   "g": [
+    "dka-vs-hhs",
+    "pharmacology"
+   ],
+   "ehr": null,
+   "tp": [
+    "PHA-006",
+    "PHA-007",
+    "PHA-008",
+    "PHA-009",
+    "PHA-010",
+    "PHA-032",
+    "PHA-033"
+   ],
+   "bank": 24
+  },
+  {
+   "k": "PHA.antimic",
+   "cat": "PHA",
+   "n": "Antibiotics and anti-infectives",
+   "kw": [
+    "antibiotic",
+    "antimicrobial",
+    "anti-infective",
+    "vancomycin",
+    "aminoglycoside",
+    "gentamicin",
+    "penicillin",
+    "cephalosporin",
+    "fluoroquinolone",
+    "antituberc",
+    "isoniazid",
+    "rifampin",
+    "antiviral",
+    "antifungal",
+    "antiretroviral",
+    "peak and trough"
+   ],
+   "g": [
+    "pharmacology"
+   ],
+   "ehr": null,
+   "tp": [
+    "PHA-023",
+    "PHA-024",
+    "PHA-025",
+    "PHA-026",
+    "PHA-027",
+    "RRP-037"
+   ],
+   "bank": 11
+  },
+  {
+   "k": "PHA.pain",
+   "cat": "PHA",
+   "n": "Pain medications and opioids",
+   "kw": [
+    "pharmacological pain",
+    "analgesic",
+    "opioid",
+    "morphine",
+    "hydromorphone",
+    "fentanyl",
+    "naloxone",
+    "nsaid",
+    "ibuprofen",
+    "ketorolac",
+    "acetaminophen",
+    "patient-controlled",
+    "pca"
+   ],
+   "g": [
+    "high-alert-meds-and-antidotes",
+    "pharmacology"
+   ],
+   "ehr": null,
+   "tp": [
+    "PHA-028",
+    "PHA-029",
+    "PHA-030",
+    "PHA-031",
+    "PSY-014"
+   ],
+   "bank": 23
+  },
+  {
+   "k": "PHA.psych",
+   "cat": "PHA",
+   "n": "Psychiatric medications",
+   "kw": [
+    "psychiatric medication",
+    "psychotropic",
+    "lithium",
+    "ssri",
+    "antidepressant",
+    "maoi",
+    "tyramine",
+    "antipsychotic",
+    "clozapine",
+    "haloperidol",
+    "benzodiazepine",
+    "serotonin syndrome",
+    "extrapyramidal",
+    "neuroleptic malignant",
+    "mood stabilizer"
+   ],
+   "g": [
+    "psych-meds-and-communication",
+    "pharmacology"
+   ],
+   "ehr": null,
+   "tp": [
+    "PHA-035",
+    "PHA-036",
+    "PHA-037",
+    "PHA-038",
+    "PHA-039",
+    "PHA-040",
+    "PSY-005"
+   ],
+   "bank": 16
+  },
+  {
+   "k": "PHA.neuro",
+   "cat": "PHA",
+   "n": "Neurologic medications",
+   "kw": [
+    "neurological medication",
+    "neurologic medication",
+    "antiepileptic",
+    "anticonvulsant",
+    "phenytoin",
+    "levetiracetam",
+    "carbamazepine",
+    "levodopa",
+    "carbidopa",
+    "cholinesterase",
+    "neostigmine",
+    "pyridostigmine",
+    "donepezil"
+   ],
+   "g": [
+    "pharmacology"
+   ],
+   "ehr": null,
+   "tp": [
+    "PHA-034"
+   ],
+   "bank": 9
+  },
+  {
+   "k": "PHA.iv",
+   "cat": "PHA",
+   "n": "IV therapy, blood products and central lines",
+   "kw": [
+    "parenteral",
+    "intravenous",
+    "iv therapy",
+    "iv fluid",
+    "infiltration",
+    "extravasation",
+    "central venous",
+    "central line",
+    "picc",
+    "blood transfusion",
+    "blood product",
+    "packed red",
+    "total parenteral",
+    "tpn",
+    "albumin",
+    "potassium chloride"
+   ],
+   "g": [
+    "blood-transfusion-reactions",
+    "iv-safety-and-hanging-meds",
+    "pharmacology"
+   ],
+   "ehr": null,
+   "tp": [
+    "PHA-020",
+    "PHA-041",
+    "PHA-042",
+    "PHA-043",
+    "PHA-044",
+    "PHA-045",
+    "SIC-012",
+    "BCC-009",
+    "RRP-036"
+   ],
+   "bank": 9
+  },
+  {
+   "k": "PHA.resp",
+   "cat": "PHA",
+   "n": "Respiratory medications",
+   "kw": [
+    "respiratory medication",
+    "inhaler",
+    "bronchodilator",
+    "albuterol",
+    "ipratropium",
+    "tiotropium",
+    "inhaled corticosteroid",
+    "montelukast",
+    "spacer",
+    "theophylline",
+    "mdi"
+   ],
+   "g": [
+    "copd-vs-asthma",
+    "pharmacology"
+   ],
+   "ehr": null,
+   "tp": [
+    "PHA-051"
+   ],
+   "bank": 4
+  },
+  {
+   "k": "PHA.onc",
+   "cat": "PHA",
+   "n": "Chemotherapy and immunosuppressants",
+   "kw": [
+    "chemotherap",
+    "antineoplastic",
+    "immunosuppress",
+    "transplant",
+    "myelosuppress",
+    "cyclosporine",
+    "tacrolimus",
+    "oncology medication",
+    "biologic"
+   ],
+   "g": [
+    "pharmacology"
+   ],
+   "ehr": null,
+   "tp": [
+    "PHA-046",
+    "PHA-047",
+    "SIC-025"
+   ],
+   "bank": 1
+  },
+  {
+   "k": "PHA.gi",
+   "cat": "PHA",
+   "n": "Gastrointestinal medications",
+   "kw": [
+    "gastrointestinal medication",
+    "antacid",
+    "proton pump",
+    "pantoprazole",
+    "omeprazole",
+    "h2 blocker",
+    "famotidine",
+    "laxative",
+    "antiemetic",
+    "ondansetron",
+    "lactulose",
+    "sucralfate"
+   ],
+   "g": [
+    "pharmacology"
+   ],
+   "ehr": null,
+   "tp": [],
+   "bank": 8
+  },
+  {
+   "k": "RRP.labs",
+   "cat": "RRP",
+   "n": "Laboratory values",
+   "kw": [
+    "laboratory",
+    "lab value",
+    "potassium level",
+    "sodium level",
+    "serum",
+    "creatinine",
+    "bun",
+    "cbc",
+    "hemoglobin",
+    "hematocrit",
+    "platelet",
+    "wbc",
+    "white blood cell",
+    "troponin",
+    "aptt",
+    "hba1c",
+    "a1c"
+   ],
+   "g": [
+    "lab-values-quick-reference",
+    "electrolyte-imbalances",
+    "reduction-of-risk-potential"
+   ],
+   "ehr": null,
+   "tp": [
+    "RRP-002",
+    "RRP-003",
+    "RRP-004",
+    "RRP-005",
+    "RRP-006",
+    "RRP-009"
+   ],
+   "bank": 24
+  },
+  {
+   "k": "RRP.abg",
+   "cat": "RRP",
+   "n": "ABG interpretation and acid-base",
+   "kw": [
+    "abg",
+    "arterial blood gas",
+    "acid-base",
+    "acidosis",
+    "alkalosis"
+   ],
+   "g": [
+    "abg-interpretation",
+    "reduction-of-risk-potential"
+   ],
+   "ehr": null,
+   "tp": [
+    "RRP-007"
+   ],
+   "bank": 12
+  },
+  {
+   "k": "RRP.vitals",
+   "cat": "RRP",
+   "n": "Vital signs and changes in condition",
+   "kw": [
+    "vital sign",
+    "early warning",
+    "deteriorat",
+    "change in condition",
+    "changes/abnormalities",
+    "system specific assessment",
+    "system-specific assessment",
+    "alterations in body systems",
+    "sepsis screen",
+    "pulse oximetry",
+    "rapid response",
+    "neurovascular check",
+    "glasgow"
+   ],
+   "g": [
+    "reduction-of-risk-potential"
+   ],
+   "ehr": "rounds",
+   "tp": [
+    "RRP-001",
+    "RRP-026",
+    "RRP-028",
+    "RRP-036",
+    "MOC-018",
+    "MOC-058",
+    "BCC-024"
+   ],
+   "bank": 11
+  },
+  {
+   "k": "RRP.diag",
+   "cat": "RRP",
+   "n": "Diagnostic tests and procedures",
+   "kw": [
+    "diagnostic",
+    "procedure",
+    "catheterization",
+    "contrast",
+    "mri",
+    "ct scan",
+    "thoracentesis",
+    "paracentesis",
+    "lumbar puncture",
+    "bronchoscopy",
+    "endoscop",
+    "colonoscopy prep",
+    "biopsy",
+    "stress test",
+    "specimen",
+    "blood culture",
+    "24-hour urine"
+   ],
+   "g": [
+    "reduction-of-risk-potential"
+   ],
+   "ehr": "case",
+   "tp": [
+    "RRP-010",
+    "RRP-011",
+    "RRP-012",
+    "RRP-018",
+    "RRP-019",
+    "RRP-020",
+    "RRP-021",
+    "RRP-022",
+    "RRP-030",
+    "RRP-031",
+    "RRP-032",
+    "RRP-037",
+    "RRP-038",
+    "MOC-007",
+    "MOC-041",
+    "PHA-009"
+   ],
+   "bank": 30
+  },
+  {
+   "k": "RRP.periop",
+   "cat": "RRP",
+   "n": "Perioperative care and complications",
+   "kw": [
+    "preoperative",
+    "pre-operative",
+    "postoperative",
+    "post-operative",
+    "surgical procedure",
+    "surgery",
+    "atelectasis",
+    "dehiscence",
+    "evisceration",
+    "ileus",
+    "incentive spirometer",
+    "npo",
+    "pacu",
+    "anesthesia"
+   ],
+   "g": [
+    "reduction-of-risk-potential"
+   ],
+   "ehr": "rounds",
+   "tp": [
+    "RRP-013",
+    "RRP-014",
+    "RRP-015",
+    "RRP-016",
+    "RRP-017"
+   ],
+   "bank": 34
+  },
+  {
+   "k": "RRP.tubes",
+   "cat": "RRP",
+   "n": "Tubes, drains, dialysis and ventilators",
+   "kw": [
+    "therapeutic procedure",
+    "chest tube",
+    "nasogastric",
+    "ng tube",
+    "drain",
+    "tracheostomy",
+    "suction",
+    "mechanical ventilation",
+    "ventilator",
+    "dialysis",
+    "fistula",
+    "graft",
+    "peritoneal dialysis"
+   ],
+   "g": [
+    "chest-tube-care",
+    "oxygen-delivery-devices",
+    "reduction-of-risk-potential"
+   ],
+   "ehr": "case",
+   "tp": [
+    "RRP-023",
+    "RRP-024",
+    "RRP-029",
+    "RRP-032",
+    "RRP-033"
+   ],
+   "bank": 14
+  },
+  {
+   "k": "RRP.ecg",
+   "cat": "RRP",
+   "n": "ECG and telemetry",
+   "kw": [
+    "ecg",
+    "ekg",
+    "electrocardiogram",
+    "telemetry",
+    "rhythm strip",
+    "cardiac rhythm"
+   ],
+   "g": [
+    "ecg-rhythms-basics",
+    "reduction-of-risk-potential"
+   ],
+   "ehr": "code",
+   "tp": [
+    "RRP-002",
+    "RRP-025",
+    "MOC-047"
+   ],
+   "bank": 6
+  },
+  {
+   "k": "PHY.cardiac",
+   "cat": "PHY",
+   "n": "Cardiac disorders",
+   "kw": [
+    "cardiovascular",
+    "cardiac",
+    "heart failure",
+    "myocardial infarction",
+    "acute coronary",
+    "angina",
+    "chest pain",
+    "atrial fibrillation",
+    "dysrhythm",
+    "arrhythm",
+    "hypertensi",
+    "pericarditis",
+    "endocarditis",
+    "valve"
+   ],
+   "g": [
+    "heart-failure-left-vs-right",
+    "physiological-adaptation"
+   ],
+   "ehr": "rounds",
+   "tp": [
+    "PHY-001",
+    "PHY-002",
+    "PHY-003",
+    "PHY-004",
+    "PHY-005",
+    "MOC-048",
+    "RRP-009",
+    "RRP-010",
+    "RRP-011"
+   ],
+   "bank": 29
+  },
+  {
+   "k": "PHY.vasc",
+   "cat": "PHY",
+   "n": "Vascular disorders, DVT and PE",
+   "kw": [
+    "vascular",
+    "peripheral arterial",
+    "peripheral venous",
+    "venous insufficiency",
+    "deep vein",
+    "dvt",
+    "pulmonary embol",
+    "aneurysm",
+    "raynaud"
+   ],
+   "g": [
+    "physiological-adaptation"
+   ],
+   "ehr": null,
+   "tp": [
+    "PHY-006",
+    "PHY-007",
+    "RRP-015"
+   ],
+   "bank": 9
+  },
+  {
+   "k": "PHY.resp",
+   "cat": "PHY",
+   "n": "Respiratory disorders",
+   "kw": [
+    "respiratory",
+    "asthma",
+    "copd",
+    "pneumonia",
+    "ards",
+    "respiratory distress",
+    "pneumothorax",
+    "oxygen therapy",
+    "oxygenation",
+    "cystic fibrosis",
+    "lung"
+   ],
+   "g": [
+    "copd-vs-asthma",
+    "oxygen-delivery-devices",
+    "physiological-adaptation"
+   ],
+   "ehr": "rounds",
+   "tp": [
+    "PHY-011",
+    "PHY-012",
+    "PHY-013",
+    "PHY-014",
+    "PHY-015",
+    "PHY-041",
+    "MOC-024",
+    "HPM-023",
+    "BCC-027",
+    "PHA-016",
+    "PHA-028"
+   ],
+   "bank": 20
+  },
+  {
+   "k": "PHY.neuro",
+   "cat": "PHY",
+   "n": "Neurologic disorders and stroke",
+   "kw": [
+    "neurolog",
+    "stroke",
+    "cva",
+    "intracranial pressure",
+    "icp",
+    "seizure",
+    "epilep",
+    "spinal cord injury",
+    "autonomic dysreflexia",
+    "brain injury",
+    "meningitis",
+    "multiple sclerosis",
+    "parkinson",
+    "guillain",
+    "myasthenia"
+   ],
+   "g": [
+    "stroke-be-fast",
+    "nihss-stroke-scale",
+    "physiological-adaptation"
+   ],
+   "ehr": "rounds",
+   "tp": [
+    "PHY-003",
+    "PHY-016",
+    "PHY-017",
+    "PHY-018",
+    "PHY-019",
+    "PHY-020",
+    "PHY-044",
+    "SIC-019",
+    "RRP-003"
+   ],
+   "bank": 21
+  },
+  {
+   "k": "PHY.endo",
+   "cat": "PHY",
+   "n": "Endocrine disorders and diabetes",
+   "kw": [
+    "endocrine",
+    "diabet",
+    "dka",
+    "ketoacidosis",
+    "hhs",
+    "hyperosmolar",
+    "hypoglycemia",
+    "hyperglycemia",
+    "thyroid",
+    "adrenal",
+    "addison",
+    "cushing",
+    "siadh",
+    "diabetes insipidus",
+    "pituitary"
+   ],
+   "g": [
+    "dka-vs-hhs",
+    "thyroid-and-adrenal-disorders",
+    "physiological-adaptation"
+   ],
+   "ehr": "rounds",
+   "tp": [
+    "PHY-021",
+    "PHY-022",
+    "PHY-023",
+    "PHY-024",
+    "PHY-025",
+    "HPM-004",
+    "PHA-008",
+    "PHA-010",
+    "PHA-032",
+    "RRP-034"
+   ],
+   "bank": 12
+  },
+  {
+   "k": "PHY.renal",
+   "cat": "PHY",
+   "n": "Renal and urinary disorders",
+   "kw": [
+    "renal",
+    "kidney",
+    "aki",
+    "ckd",
+    "urinary",
+    "genitourinary",
+    "nephr",
+    "urinary tract infection",
+    "uti",
+    "prostat",
+    "bph"
+   ],
+   "g": [
+    "aki-vs-ckd",
+    "physiological-adaptation"
+   ],
+   "ehr": null,
+   "tp": [
+    "PHY-026",
+    "PHY-027",
+    "SIC-010",
+    "BCC-010",
+    "BCC-013",
+    "PHA-030",
+    "RRP-004",
+    "RRP-012",
+    "RRP-035"
+   ],
+   "bank": 11
+  },
+  {
+   "k": "PHY.fluids",
+   "cat": "PHY",
+   "n": "Fluid and electrolyte imbalances",
+   "kw": [
+    "fluid and electrolyte",
+    "electrolyte",
+    "fluid volume",
+    "fluid imbalance",
+    "hyperkalemia",
+    "hypokalemia",
+    "hyponatremia",
+    "hypernatremia",
+    "hypocalcemia",
+    "hypercalcemia",
+    "magnesium",
+    "dehydration",
+    "overload"
+   ],
+   "g": [
+    "electrolyte-imbalances",
+    "physiological-adaptation"
+   ],
+   "ehr": null,
+   "tp": [
+    "PHY-028",
+    "PHY-029",
+    "PHY-040",
+    "PHY-042",
+    "PSY-017",
+    "PHA-019"
+   ],
+   "bank": 24
+  },
+  {
+   "k": "PHY.gi",
+   "cat": "PHY",
+   "n": "Gastrointestinal and liver disorders",
+   "kw": [
+    "gastrointestinal",
+    "gi bleed",
+    "bowel obstruction",
+    "pancreatitis",
+    "cirrhosis",
+    "hepat",
+    "liver",
+    "appendicitis",
+    "peritonitis",
+    "crohn",
+    "ulcerative colitis",
+    "peptic ulcer",
+    "gerd",
+    "cholecyst"
+   ],
+   "g": [
+    "physiological-adaptation"
+   ],
+   "ehr": null,
+   "tp": [
+    "PHY-031",
+    "PHY-032",
+    "PHY-033",
+    "PHY-034",
+    "PHY-035",
+    "PHA-022",
+    "PHA-027",
+    "PHA-030",
+    "PHA-031"
+   ],
+   "bank": 13
+  },
+  {
+   "k": "PHY.shock",
+   "cat": "PHY",
+   "n": "Shock, sepsis and medical emergencies",
+   "kw": [
+    "medical emergenc",
+    "emergency care",
+    "shock",
+    "sepsis",
+    "septic",
+    "anaphyla",
+    "cardiac arrest",
+    "cpr",
+    "resuscitat",
+    "code blue",
+    "unexpected response"
+   ],
+   "g": [
+    "types-of-shock",
+    "physiological-adaptation"
+   ],
+   "ehr": "code",
+   "tp": [
+    "PHY-004",
+    "PHY-008",
+    "PHY-009",
+    "PHY-010",
+    "PHY-030",
+    "MOC-010",
+    "RRP-027",
+    "RRP-028"
+   ],
+   "bank": 18
+  },
+  {
+   "k": "PHY.heme",
+   "cat": "PHY",
+   "n": "Hematology and oncology",
+   "kw": [
+    "hematolog",
+    "oncolog",
+    "sickle cell",
+    "anemia",
+    "leukemia",
+    "lymphoma",
+    "cancer",
+    "tumor lysis",
+    "neutropenia",
+    "hemophilia",
+    "dic",
+    "bleeding disorder",
+    "thrombocytopenia"
+   ],
+   "g": [
+    "physiological-adaptation"
+   ],
+   "ehr": null,
+   "tp": [
+    "PHY-036",
+    "PHY-037",
+    "HPM-021",
+    "HPM-022",
+    "HPM-023",
+    "PHA-039",
+    "RRP-005"
+   ],
+   "bank": 4
+  },
+  {
+   "k": "PHY.musc",
+   "cat": "PHY",
+   "n": "Musculoskeletal disorders and trauma",
+   "kw": [
+    "musculoskeletal",
+    "fracture",
+    "compartment syndrome",
+    "amputation",
+    "osteoarthritis",
+    "rheumatoid",
+    "gout",
+    "orthopedic",
+    "trauma"
+   ],
+   "g": [
+    "physiological-adaptation"
+   ],
+   "ehr": null,
+   "tp": [
+    "PHY-020",
+    "PHY-039",
+    "PSY-010"
+   ],
+   "bank": 4
+  },
+  {
+   "k": "PHY.integ",
+   "cat": "PHY",
+   "n": "Burns and integumentary disorders",
+   "kw": [
+    "integumentary",
+    "burn",
+    "rule of nines",
+    "wound",
+    "skin infection",
+    "cellulitis",
+    "dermat"
+   ],
+   "g": [
+    "burns-rule-of-nines",
+    "physiological-adaptation"
+   ],
+   "ehr": null,
+   "tp": [
+    "PHY-030",
+    "RRP-017"
+   ],
+   "bank": 7
+  },
+  {
+   "k": "PHY.immune",
+   "cat": "PHY",
+   "n": "Immune and infectious disorders",
+   "kw": [
+    "immune",
+    "immunolog",
+    "autoimmune",
+    "hiv",
+    "aids",
+    "lupus",
+    "infectious disease",
+    "infection"
+   ],
+   "g": [
+    "physiological-adaptation"
+   ],
+   "ehr": null,
+   "tp": [
+    "PHY-044",
+    "HPM-005",
+    "HPM-028",
+    "PHA-010"
+   ],
+   "bank": 8
+  },
+  {
+   "k": "PHY.peds",
+   "cat": "PHY",
+   "n": "Pediatric acute illness",
+   "kw": [
+    "pediatric",
+    "child",
+    "croup",
+    "bronchiolitis",
+    "rsv",
+    "epiglottitis",
+    "congenital heart",
+    "pyloric",
+    "intussusception",
+    "kawasaki"
+   ],
+   "g": [
+    "pediatric-milestones-and-safety",
+    "physiological-adaptation"
+   ],
+   "ehr": null,
+   "tp": [
+    "PHY-040",
+    "PHY-041",
+    "MOC-014",
+    "SIC-032",
+    "HPM-019",
+    "PSY-022",
+    "PHA-005"
+   ],
+   "bank": 10
+  },
+  {
+   "k": "PHY.ob",
+   "cat": "PHY",
+   "n": "Pregnancy complications",
+   "kw": [
+    "preeclampsia",
+    "eclampsia",
+    "magnesium sulfate",
+    "postpartum hemorrhage",
+    "placenta previa",
+    "abruption",
+    "preterm labor",
+    "high-risk pregnan",
+    "hyperemesis"
+   ],
+   "g": [
+    "ob-fetal-heart-rate-and-postpartum",
+    "physiological-adaptation"
+   ],
+   "ehr": null,
+   "tp": [
+    "PHY-042",
+    "PHY-043",
+    "HPM-010"
+   ],
+   "bank": 5
+  },
+  {
+   "k": "PHY.hemo",
+   "cat": "PHY",
+   "n": "Hemodynamics and critical care",
+   "kw": [
+    "hemodynamic",
+    "arterial line",
+    "central venous pressure",
+    "pulmonary artery",
+    "vasopressor",
+    "critical care",
+    "intensive care",
+    "icu"
+   ],
+   "g": [
+    "icu-hemodynamics-and-drips",
+    "physiological-adaptation"
+   ],
+   "ehr": "code",
+   "tp": [
+    "PHY-038"
+   ],
+   "bank": 1
+  }
+ ],
+ "aliases": [
+  [
+   "advance directives",
+   "MOC.consent"
+  ],
+  [
+   "self determination",
+   "MOC.consent"
+  ],
+  [
+   "life planning",
+   "MOC.consent"
+  ],
+  [
+   "advocacy",
+   "MOC.lead"
+  ],
+  [
+   "assignment delegation and supervision",
+   "MOC.deleg"
+  ],
+  [
+   "delegation",
+   "MOC.deleg"
+  ],
+  [
+   "case management",
+   "MOC.comm"
+  ],
+  [
+   "client rights",
+   "MOC.legal"
+  ],
+  [
+   "collaboration with interdisciplinary team",
+   "MOC.comm"
+  ],
+  [
+   "concepts of management",
+   "MOC.lead"
+  ],
+  [
+   "confidentiality",
+   "MOC.confid"
+  ],
+  [
+   "information security",
+   "MOC.confid"
+  ],
+  [
+   "continuity of care",
+   "MOC.comm"
+  ],
+  [
+   "establishing priorities",
+   "MOC.prior"
+  ],
+  [
+   "prioritization",
+   "MOC.prior"
+  ],
+  [
+   "ethical practice",
+   "MOC.legal"
+  ],
+  [
+   "informed consent",
+   "MOC.consent"
+  ],
+  [
+   "information technology",
+   "MOC.confid"
+  ],
+  [
+   "legal rights and responsibilities",
+   "MOC.legal"
+  ],
+  [
+   "legal responsibilities",
+   "MOC.legal"
+  ],
+  [
+   "performance improvement",
+   "MOC.qi"
+  ],
+  [
+   "quality improvement",
+   "MOC.qi"
+  ],
+  [
+   "referrals",
+   "MOC.comm"
+  ],
+  [
+   "leadership",
+   "MOC.lead"
+  ],
+  [
+   "management",
+   "MOC.lead"
+  ],
+  [
+   "accident error injury prevention",
+   "SIC.env"
+  ],
+  [
+   "emergency response plan",
+   "SIC.emerg"
+  ],
+  [
+   "ergonomic principles",
+   "SIC.env"
+  ],
+  [
+   "handling hazardous and infectious materials",
+   "SIC.env"
+  ],
+  [
+   "home safety",
+   "SIC.env"
+  ],
+  [
+   "reporting of incident event irregular occurrence variance",
+   "MOC.qi"
+  ],
+  [
+   "safe use of equipment",
+   "SIC.env"
+  ],
+  [
+   "security plan",
+   "SIC.env"
+  ],
+  [
+   "standard precautions",
+   "SIC.infect"
+  ],
+  [
+   "transmission based precautions",
+   "SIC.infect"
+  ],
+  [
+   "surgical asepsis",
+   "SIC.asepsis"
+  ],
+  [
+   "use of restraints",
+   "SIC.falls"
+  ],
+  [
+   "safety devices",
+   "SIC.falls"
+  ],
+  [
+   "infection control",
+   "SIC.infect"
+  ],
+  [
+   "safety",
+   "SIC"
+  ],
+  [
+   "aging process",
+   "HPM.growth"
+  ],
+  [
+   "ante intra postpartum and newborn care",
+   "HPM.postpartum"
+  ],
+  [
+   "antepartum",
+   "HPM.prenatal"
+  ],
+  [
+   "intrapartum",
+   "HPM.labor"
+  ],
+  [
+   "newborn care",
+   "HPM.postpartum"
+  ],
+  [
+   "developmental stages and transitions",
+   "HPM.growth"
+  ],
+  [
+   "health promotion disease prevention",
+   "HPM.screen"
+  ],
+  [
+   "health screening",
+   "HPM.screen"
+  ],
+  [
+   "high risk behaviors",
+   "HPM.screen"
+  ],
+  [
+   "lifestyle choices",
+   "HPM.screen"
+  ],
+  [
+   "self care",
+   "HPM.screen"
+  ],
+  [
+   "techniques of physical assessment",
+   "HPM.assess"
+  ],
+  [
+   "growth and development",
+   "HPM.growth"
+  ],
+  [
+   "abuse neglect",
+   "PSY.abuse"
+  ],
+  [
+   "behavioral interventions",
+   "PSY.abuse"
+  ],
+  [
+   "chemical and other dependencies",
+   "PSY.substance"
+  ],
+  [
+   "substance use disorder",
+   "PSY.substance"
+  ],
+  [
+   "coping mechanisms",
+   "PSY.anxiety"
+  ],
+  [
+   "crisis intervention",
+   "PSY.suicide"
+  ],
+  [
+   "cultural awareness",
+   "PSY.grief"
+  ],
+  [
+   "cultural influences on health",
+   "PSY.grief"
+  ],
+  [
+   "end of life care",
+   "PSY.grief"
+  ],
+  [
+   "family dynamics",
+   "PSY.anxiety"
+  ],
+  [
+   "grief and loss",
+   "PSY.grief"
+  ],
+  [
+   "mental health concepts",
+   "PSY"
+  ],
+  [
+   "religious and spiritual influences on health",
+   "PSY.grief"
+  ],
+  [
+   "sensory perceptual alterations",
+   "PSY.cognitive"
+  ],
+  [
+   "stress management",
+   "PSY.anxiety"
+  ],
+  [
+   "support systems",
+   "PSY.anxiety"
+  ],
+  [
+   "therapeutic communication",
+   "PSY.comm"
+  ],
+  [
+   "therapeutic environment",
+   "PSY.comm"
+  ],
+  [
+   "assistive devices",
+   "BCC.mobility"
+  ],
+  [
+   "elimination",
+   "BCC.elim"
+  ],
+  [
+   "mobility immobility",
+   "BCC.mobility"
+  ],
+  [
+   "non pharmacological comfort interventions",
+   "BCC.comfort"
+  ],
+  [
+   "nonpharmacological comfort interventions",
+   "BCC.comfort"
+  ],
+  [
+   "nutrition and oral hydration",
+   "BCC.nutrition"
+  ],
+  [
+   "personal hygiene",
+   "BCC.hygiene"
+  ],
+  [
+   "rest and sleep",
+   "BCC.comfort"
+  ],
+  [
+   "adverse effects contraindications side effects interactions",
+   "PHA.admin"
+  ],
+  [
+   "blood and blood products",
+   "PHA.iv"
+  ],
+  [
+   "central venous access devices",
+   "PHA.iv"
+  ],
+  [
+   "dosage calculation",
+   "PHA.calc"
+  ],
+  [
+   "dosage calculations",
+   "PHA.calc"
+  ],
+  [
+   "expected actions outcomes",
+   "PHA.admin"
+  ],
+  [
+   "medication administration",
+   "PHA.admin"
+  ],
+  [
+   "parenteral intravenous therapies",
+   "PHA.iv"
+  ],
+  [
+   "pharmacological pain management",
+   "PHA.pain"
+  ],
+  [
+   "total parenteral nutrition",
+   "PHA.iv"
+  ],
+  [
+   "changes abnormalities in vital signs",
+   "RRP.vitals"
+  ],
+  [
+   "diagnostic tests",
+   "RRP.diag"
+  ],
+  [
+   "laboratory values",
+   "RRP.labs"
+  ],
+  [
+   "potential for alterations in body systems",
+   "RRP.vitals"
+  ],
+  [
+   "potential for complications of diagnostic tests treatments procedures",
+   "RRP.diag"
+  ],
+  [
+   "potential for complications from surgical procedures and health alterations",
+   "RRP.periop"
+  ],
+  [
+   "system specific assessments",
+   "RRP.vitals"
+  ],
+  [
+   "therapeutic procedures",
+   "RRP.tubes"
+  ],
+  [
+   "alterations in body systems",
+   "PHY"
+  ],
+  [
+   "fluid and electrolyte imbalances",
+   "PHY.fluids"
+  ],
+  [
+   "hemodynamics",
+   "PHY.hemo"
+  ],
+  [
+   "illness management",
+   "PHY"
+  ],
+  [
+   "medical emergencies",
+   "PHY.shock"
+  ],
+  [
+   "pathophysiology",
+   "PHY"
+  ],
+  [
+   "unexpected response to therapies",
+   "PHY"
+  ],
+  [
+   "cardiovascular",
+   "PHY.cardiac"
+  ],
+  [
+   "cardiac",
+   "PHY.cardiac"
+  ],
+  [
+   "respiratory",
+   "PHY.resp"
+  ],
+  [
+   "pulmonary",
+   "PHY.resp"
+  ],
+  [
+   "neurological",
+   "PHY.neuro"
+  ],
+  [
+   "neurologic",
+   "PHY.neuro"
+  ],
+  [
+   "neurology",
+   "PHY.neuro"
+  ],
+  [
+   "endocrine",
+   "PHY.endo"
+  ],
+  [
+   "gastrointestinal",
+   "PHY.gi"
+  ],
+  [
+   "gi",
+   "PHY.gi"
+  ],
+  [
+   "hepatic",
+   "PHY.gi"
+  ],
+  [
+   "renal",
+   "PHY.renal"
+  ],
+  [
+   "renal and urinary",
+   "PHY.renal"
+  ],
+  [
+   "genitourinary",
+   "PHY.renal"
+  ],
+  [
+   "urinary",
+   "PHY.renal"
+  ],
+  [
+   "hematological",
+   "PHY.heme"
+  ],
+  [
+   "hematology",
+   "PHY.heme"
+  ],
+  [
+   "oncology",
+   "PHY.heme"
+  ],
+  [
+   "hematology oncology",
+   "PHY.heme"
+  ],
+  [
+   "musculoskeletal",
+   "PHY.musc"
+  ],
+  [
+   "integumentary",
+   "PHY.integ"
+  ],
+  [
+   "immune",
+   "PHY.immune"
+  ],
+  [
+   "immunological",
+   "PHY.immune"
+  ],
+  [
+   "infectious disease",
+   "PHY.immune"
+  ],
+  [
+   "fluids and electrolytes",
+   "PHY.fluids"
+  ],
+  [
+   "acid base",
+   "RRP.abg"
+  ],
+  [
+   "critical care",
+   "PHY.hemo"
+  ],
+  [
+   "emergency care",
+   "PHY.shock"
+  ],
+  [
+   "emergency nursing",
+   "PHY.shock"
+  ],
+  [
+   "perioperative",
+   "RRP.periop"
+  ],
+  [
+   "reproductive",
+   "HPM.screen"
+  ],
+  [
+   "maternity",
+   "HPM.prenatal"
+  ],
+  [
+   "obstetrics",
+   "HPM.prenatal"
+  ],
+  [
+   "pediatrics",
+   "HPM.growth"
+  ],
+  [
+   "cardiovascular medications",
+   "PHA.cardio"
+  ],
+  [
+   "cardiac medications",
+   "PHA.cardio"
+  ],
+  [
+   "respiratory medications",
+   "PHA.resp"
+  ],
+  [
+   "endocrine medications",
+   "PHA.endo"
+  ],
+  [
+   "neurological medications",
+   "PHA.neuro"
+  ],
+  [
+   "neurologic medications",
+   "PHA.neuro"
+  ],
+  [
+   "psychiatric medications",
+   "PHA.psych"
+  ],
+  [
+   "mental health medications",
+   "PHA.psych"
+  ],
+  [
+   "pain and inflammation",
+   "PHA.pain"
+  ],
+  [
+   "medications affecting pain and inflammation",
+   "PHA.pain"
+  ],
+  [
+   "anti infectives",
+   "PHA.antimic"
+  ],
+  [
+   "antimicrobials",
+   "PHA.antimic"
+  ],
+  [
+   "hematologic medications",
+   "PHA.anticoag"
+  ],
+  [
+   "medications affecting coagulation",
+   "PHA.anticoag"
+  ],
+  [
+   "gastrointestinal medications",
+   "PHA.gi"
+  ],
+  [
+   "oncology medications",
+   "PHA.onc"
+  ],
+  [
+   "immunizations",
+   "HPM.immun"
+  ],
+  [
+   "fundamentals",
+   "BCC"
+  ],
+  [
+   "pharmacology",
+   "PHA"
+  ],
+  [
+   "mental health",
+   "PSY"
+  ],
+  [
+   "psychiatric",
+   "PSY"
+  ],
+  [
+   "community health",
+   "HPM.community"
+  ],
+  [
+   "nutrition",
+   "BCC.nutrition"
+  ],
+  [
+   "maternal newborn",
+   "HPM"
+  ],
+  [
+   "nursing care of children",
+   "HPM.growth"
+  ],
+  [
+   "management of care",
+   "MOC"
+  ],
+  [
+   "safety and infection control",
+   "SIC"
+  ],
+  [
+   "safety and infection prevention and control",
+   "SIC"
+  ],
+  [
+   "health promotion and maintenance",
+   "HPM"
+  ],
+  [
+   "psychosocial integrity",
+   "PSY"
+  ],
+  [
+   "basic care and comfort",
+   "BCC"
+  ],
+  [
+   "pharmacological and parenteral therapies",
+   "PHA"
+  ],
+  [
+   "reduction of risk potential",
+   "RRP"
+  ],
+  [
+   "physiological adaptation",
+   "PHY"
+  ],
+  [
+   "clinical judgment",
+   "MOC.prior"
+  ],
+  [
+   "critical thinking",
+   "MOC.prior"
+  ]
+ ],
+ "areas": [
+  {
+   "k": "fund",
+   "n": "Fundamentals",
+   "cats": [
+    "BCC",
+    "SIC"
+   ],
+   "al": [
+    "fundamentals",
+    "fundamentals of nursing",
+    "foundations",
+    "foundations of nursing",
+    "fundamental",
+    "basic nursing"
+   ],
+   "subs": [
+    "SIC.infect",
+    "SIC.falls",
+    "BCC.mobility",
+    "BCC.elim",
+    "PHA.admin",
+    "MOC.prior"
+   ]
+  },
+  {
+   "k": "ms",
+   "n": "Adult Medical-Surgical",
+   "cats": [
+    "PHY",
+    "RRP"
+   ],
+   "al": [
+    "adult medical surgical",
+    "medical surgical",
+    "med surg",
+    "adult health",
+    "adult med surg",
+    "medsurg",
+    "medical surgical"
+   ],
+   "subs": [
+    "PHY.cardiac",
+    "PHY.resp",
+    "PHY.endo",
+    "PHY.fluids",
+    "RRP.labs",
+    "RRP.periop"
+   ]
+  },
+  {
+   "k": "pharm",
+   "n": "Pharmacology",
+   "cats": [
+    "PHA"
+   ],
+   "al": [
+    "pharmacology",
+    "pharmacology in nursing",
+    "pharmacology for nursing",
+    "pharm"
+   ],
+   "subs": [
+    "PHA.cardio",
+    "PHA.anticoag",
+    "PHA.endo",
+    "PHA.admin",
+    "PHA.calc",
+    "PHA.psych"
+   ]
+  },
+  {
+   "k": "mn",
+   "n": "Maternal Newborn",
+   "cats": [
+    "HPM"
+   ],
+   "al": [
+    "maternal newborn",
+    "maternity",
+    "obstetrics",
+    "maternal child",
+    "women s health",
+    "ob"
+   ],
+   "subs": [
+    "HPM.prenatal",
+    "HPM.labor",
+    "HPM.postpartum",
+    "PHY.ob"
+   ]
+  },
+  {
+   "k": "peds",
+   "n": "Nursing Care of Children",
+   "cats": [
+    "HPM",
+    "PHY"
+   ],
+   "al": [
+    "nursing care of children",
+    "pediatrics",
+    "pediatric nursing",
+    "peds",
+    "child health"
+   ],
+   "subs": [
+    "HPM.growth",
+    "HPM.immun",
+    "PHY.peds",
+    "SIC.env"
+   ]
+  },
+  {
+   "k": "mh",
+   "n": "Mental Health",
+   "cats": [
+    "PSY"
+   ],
+   "al": [
+    "mental health",
+    "psychiatric",
+    "psychiatric mental health",
+    "behavioral health",
+    "psych"
+   ],
+   "subs": [
+    "PSY.comm",
+    "PSY.suicide",
+    "PSY.mood",
+    "PSY.psychosis",
+    "PHA.psych"
+   ]
+  },
+  {
+   "k": "comm",
+   "n": "Community Health",
+   "cats": [
+    "HPM",
+    "SIC"
+   ],
+   "al": [
+    "community health",
+    "public health",
+    "community",
+    "population health"
+   ],
+   "subs": [
+    "HPM.community",
+    "HPM.screen",
+    "HPM.immun",
+    "SIC.emerg"
+   ]
+  },
+  {
+   "k": "lead",
+   "n": "Leadership and Management",
+   "cats": [
+    "MOC"
+   ],
+   "al": [
+    "leadership",
+    "management",
+    "leadership and management",
+    "nursing leadership"
+   ],
+   "subs": [
+    "MOC.prior",
+    "MOC.deleg",
+    "MOC.legal",
+    "MOC.comm"
+   ]
+  },
+  {
+   "k": "nutr",
+   "n": "Nutrition",
+   "cats": [
+    "BCC"
+   ],
+   "al": [
+    "nutrition",
+    "nutrition for nursing"
+   ],
+   "subs": [
+    "BCC.nutrition",
+    "PHY.fluids"
+   ]
+  },
+  {
+   "k": "comp",
+   "n": "Comprehensive (all areas)",
+   "cats": [
+    "MOC",
+    "SIC",
+    "HPM",
+    "PSY",
+    "BCC",
+    "PHA",
+    "RRP",
+    "PHY"
+   ],
+   "al": [
+    "comprehensive predictor",
+    "comprehensive",
+    "exit",
+    "exit exam",
+    "readiness",
+    "predictor",
+    "capstone",
+    "integrated",
+    "nclex readiness",
+    "self assessment",
+    "qbank",
+    "question bank",
+    "cat",
+    "assessment test"
+   ],
+   "subs": [
+    "MOC.prior",
+    "PHA.admin",
+    "SIC.infect",
+    "RRP.labs",
+    "PHY.cardiac",
+    "PHY.resp"
+   ]
+  }
+ ],
+ "levels": [
+  [
+   "L3",
+   "Level 3"
+  ],
+  [
+   "L2",
+   "Level 2"
+  ],
+  [
+   "L1",
+   "Level 1"
+  ],
+  [
+   "B1",
+   "Below Level 1"
+  ]
+ ],
+ "vendors": [
+  [
+   "ati",
+   "ATI"
+  ],
+  [
+   "hesi",
+   "HESI"
+  ],
+  [
+   "kaplan",
+   "Kaplan"
+  ],
+  [
+   "uworld",
+   "UWorld"
+  ],
+  [
+   "other",
+   "Another test"
+  ]
+ ]
+}
