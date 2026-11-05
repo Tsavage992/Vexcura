@@ -1986,7 +1986,7 @@ html[data-theme="dark"] .vxsb-lk{color:#8fd0ee}
 /* <v24-home-css> signed-out home: full exam hero, device frames, live clock (house palette navy #2c3e57 -> indigo #4b4f86, flame #f8c27a) */
 .lp3{--h1:#2c3e57;--h2:#4b4f86;--hf:#f8c27a;--sh-1:0 1px 2px rgb(11 36 51/.10),0 10px 24px -10px rgb(11 36 51/.28),0 34px 64px -30px rgb(11 36 51/.42);--sh-line:rgb(11 36 51/.14)}
 .lp3 .wrap{max-width:1180px}
-.lp3-hero{position:relative;isolation:isolate;overflow:hidden;color:#fff;background:linear-gradient(118deg,var(--h1) 0%,#38456d 52%,var(--h2) 100%);padding:clamp(34px,6vh,64px) 0 clamp(22px,4vh,40px)}
+.lp3-hero .lp-scene{position:absolute;inset:0;width:100%;height:100%;z-index:-2}.lp3-hero .lp3-shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgb(9 30 43/.9) 0%,rgb(9 30 43/.74) 45%,rgb(9 30 43/.3) 75%,rgb(9 30 43/.1) 100%)}@media (max-width:760px){.lp3-hero .lp3-shade{background:linear-gradient(180deg,rgb(9 30 43/.82),rgb(9 30 43/.6) 60%,rgb(9 30 43/.85))}}.lp3-hero{position:relative;isolation:isolate;overflow:hidden;color:#fff;background:#16243a;padding:clamp(34px,6vh,64px) 0 clamp(22px,4vh,40px)}
 .lp3-hero::before{content:"";position:absolute;inset:auto -10% -55% 38%;height:120%;z-index:-1;background:radial-gradient(closest-side,rgb(248 194 122/.22),transparent 70%)}
 .lp3-hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,transparent,var(--hf) 30%,var(--hf) 70%,transparent)}
 .lp3-hi{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:28px 48px;align-items:center}
@@ -2323,7 +2323,7 @@ const BANK = (function(e){try{const P=">oVO^cd@ge#lJ'~wUTDiEY+LZx-K&hkt(/F0;G`N.
 let HIDQ=new Set();const CFG={c:null,bypass:false};try{const c=JSON.parse(localStorage.getItem("ns.cfg")||"null");if(c&&typeof c==="object"){CFG.c=c;HIDQ=new Set(c.hideQ||[])}}catch(e){}
 const featOn=k=>!CFG.c||!CFG.c.feat||CFG.c.feat[k]!==false;
 
-const APPV="d41fdf1301c2e35b5c922b4340e04c225f30309aa47b1a595e3593340141ebea";
+const APPV="0e15e0e3548127db00fcf6a64112dd61f191e04e8209565c47caa673d7cc4dee";
 const CATS={
   MOC:{n:"Management of Care",lo:15,hi:21,w:18},
   SIC:{n:"Safety and Infection Prevention and Control",lo:10,hi:16,w:13},
@@ -9063,7 +9063,7 @@ app.addEventListener("drop",e=>{const s2=e.target.closest&&e.target.closest(".sl
   function renderLanding(){stopLoop();stopTick();stopSpeak();view="landing";window.scrollTo(0,0);
     const n=BANK.length.toLocaleString();
     app.innerHTML=`<div class="page lp lp2 lp3">${band()}<main id="main">
-    <section class="lp3-hero" aria-labelledby="lp3h"><div class="wrap lp3-hi">
+    <section class="lp3-hero" aria-labelledby="lp3h">${VXS.art(VXS.cur(),"lp-scene")}<div class="lp-shade lp3-shade" aria-hidden="true"></div><div class="wrap lp3-hi">
       <div class="lp3-copy">
         <p class="lp3-eye">The full NCLEX-RN practice exam</p>
         <h1 id="lp3h">Sit the whole NCLEX&#8209;RN before test day.</h1>
