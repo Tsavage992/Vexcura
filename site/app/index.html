@@ -2043,6 +2043,26 @@ html[data-theme="dark"] .vxsb-lk{color:#8fd0ee}
 @media (max-width:900px){.lp3-hi,.lp3-split,.lp3-split.rev,.lp3-fi{grid-template-columns:minmax(0,1fr)}.lp3-split.rev>.lp3-t{order:0}.lp3-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.lp3-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:560px){.lp3-grid{grid-template-columns:minmax(0,1fr)}.lp3 .dv-bar span{transform:none;font-size:11px}.lp3 .duo .dv-b,.lp3-pair .dv-b{width:calc(100% - 26px)}.lp3 .duo-s{padding-bottom:20px}.lp3 .dv-b{border-radius:11px}.lp3-back{margin-left:6%!important}.lp3-cta .btn-lamp,.lp3-cta .btn-ink{flex:1 1 auto;justify-content:center}}
 /* </v24-home-css> */
+/* <v26-art-css> time-of-day scene art: dark bands carry the rotating scene under a readability shade; gentle motion, none under reduced motion */
+@keyframes vxsDrift{from{transform:translateX(-28px)}to{transform:translateX(28px)}}
+@keyframes vxsTw{0%,100%{opacity:.95}50%{opacity:.2}}
+@keyframes vxsFall{from{transform:translateY(0)}to{transform:translateY(900px)}}
+@keyframes vxsSway{from{transform:translateX(-14px)}to{transform:translateX(14px)}}
+svg[data-vxs] .vxs-cl{animation:vxsDrift 80s ease-in-out infinite alternate}
+svg[data-vxs] .vxs-tw circle{animation:vxsTw 4.2s ease-in-out infinite}svg[data-vxs] .vxs-tw circle:nth-child(3n){animation-duration:5.6s;animation-delay:-2s}svg[data-vxs] .vxs-tw circle:nth-child(3n+1){animation-duration:3.4s;animation-delay:-1.1s}
+svg[data-vxs] .vxs-fall{animation:vxsFall 70s linear infinite}svg[data-vxs] .vxs-fall.f1{animation-duration:55s}svg[data-vxs] .vxs-fall.f2{animation-duration:80s}svg[data-vxs] .vxs-fall.f3{animation-duration:95s}
+svg[data-vxs] .vxs-sw{animation:vxsSway 7s ease-in-out infinite alternate}
+.vxs-band{position:relative;isolation:isolate;overflow:hidden}
+.vxs-band>svg.vxs-art{position:absolute;inset:0;width:100%;height:100%;z-index:-2;pointer-events:none}
+.vxs-band>.vxs-sh{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.lp3-free.vxs-band>.vxs-sh{background:linear-gradient(118deg,rgb(44 62 87/.94),rgb(44 62 87/.87) 45%,rgb(75 79 134/.85))}
+.lp-close.vxs-band>.vxs-sh{background:linear-gradient(90deg,rgb(9 30 43/.88),rgb(9 30 43/.74) 55%,rgb(9 30 43/.68))}
+@media (max-width:760px){.lp3-free.vxs-band>.vxs-sh{background:linear-gradient(180deg,rgb(44 62 87/.9),rgb(75 79 134/.88))}.lp-close.vxs-band>.vxs-sh{background:rgb(9 30 43/.8)}}
+.lp3 .lp3-hero .lp3-shade{background:linear-gradient(0deg,rgb(9 30 43/.9),rgb(9 30 43/.84) 140px,rgb(9 30 43/.5) 270px,rgb(9 30 43/0) 400px),linear-gradient(90deg,rgb(9 30 43/.9) 0%,rgb(9 30 43/.74) 45%,rgb(9 30 43/.3) 75%,rgb(9 30 43/.1) 100%)}
+@media (max-width:760px){.lp3 .lp3-hero .lp3-shade{background:linear-gradient(180deg,rgb(9 30 43/.82),rgb(9 30 43/.66) 60%,rgb(9 30 43/.86))}}
+@media (prefers-reduced-motion:reduce){svg[data-vxs],svg[data-vxs] *{animation:none!important;transition:none!important}}
+@media print{.vxs-band>svg.vxs-art,.vxs-band>.vxs-sh{display:none!important}}
+/* </v26-art-css> */
 /* <v20-teachhub-css> */
 /* ---------- v20: instructor hub + view switcher + student clinical-day strip ---------- */
 .vxrs{display:inline-flex;align-items:center;gap:0;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:2px;background:rgba(255,255,255,.08);flex:none;white-space:nowrap}
@@ -2323,7 +2343,7 @@ const BANK = (function(e){try{const P=">oVO^cd@ge#lJ'~wUTDiEY+LZx-K&hkt(/F0;G`N.
 let HIDQ=new Set();const CFG={c:null,bypass:false};try{const c=JSON.parse(localStorage.getItem("ns.cfg")||"null");if(c&&typeof c==="object"){CFG.c=c;HIDQ=new Set(c.hideQ||[])}}catch(e){}
 const featOn=k=>!CFG.c||!CFG.c.feat||CFG.c.feat[k]!==false;
 
-const APPV="0e15e0e3548127db00fcf6a64112dd61f191e04e8209565c47caa673d7cc4dee";
+const APPV="c1f0ef148d678e239807905df078db7c56007ce65e9c761c801dc08ec0d3f02b";
 const CATS={
   MOC:{n:"Management of Care",lo:15,hi:21,w:18},
   SIC:{n:"Safety and Infection Prevention and Control",lo:10,hi:16,w:13},
@@ -4356,6 +4376,7 @@ function uaName(ua){ua=ua||"";const b=/Edg\//.test(ua)?"Edge":/OPR\//.test(ua)?"
 
 /* ---------- v14: time-of-day artwork shared by the sign-in screen and the landing cover ---------- */
 const VXS=(()=>{
+/*<vxs-core>*/
   const SLOTS=[ // [startHour, key, label, composition]
     [5,"dawn","Dawn","lake"],[8,"morning","Morning","campus"],[11,"midday","Midday","hospital"],
     [14,"afternoon","Afternoon","lake"],[17,"sunset","Sunset","hospital"],[20,"night","Night","campus"]];
@@ -4366,27 +4387,62 @@ const VXS=(()=>{
     afternoon:{sky:["#8cc6e3","#cfe6ee","#f6e6c8"],sun:[1180,300,46,"#fff0bf","#ffd98f"],cloud:"#fffaf0",co:.85,mf:"#9fb6c2",mn:"#87a2b1",h1:"#9ab874",h2:"#7ea35d",w:["#6eb2cc","#356f8f"],wall:"#f3ecdf",roof:"#7a3e2c",win:"#6fa8c2",lit:"#6fa8c2",leaf:"#c99a3e",bl:"#e0a640",bd:"#b8642c",trunk:"#6b4f3a",bird:"#3d5a68",gr:"#6c8f4c",city:"#a9bcc6",cityw:"#d6e4ea",stars:0,dark:0},
     sunset:{sky:["#4b4f86","#d77a6a","#f8c27a"],sun:[1330,400,58,"#fff0c0","#ff9f6a"],cloud:"#f3b5a0",co:.75,mf:"#7a6a8e",mn:"#5f557a",h1:"#5f7a5a",h2:"#4b6448",w:["#c98a7a","#3f4f78"],wall:"#e8d6c6",roof:"#2b3a5a",win:"#f4c27a",lit:"#ffd27a",leaf:"#4f6a48",bl:"#3f5a3c",bd:"#2f4630",trunk:"#3b2f2a",bird:"#3b2f44",gr:"#3f5a3c",city:"#5d5578",cityw:"#ffd27a",stars:0,dark:1},
     night:{sky:["#0b1a33","#1d3557","#3a4f6e"],moon:[1300,180,40],cloud:"#4a5f7e",co:.45,mf:"#2c3e57",mn:"#22324a",h1:"#2f4a3e",h2:"#253d33",w:["#1f3a58","#0d1f33"],wall:"#c9c4b6",roof:"#14304a",win:"#33506a",lit:"#ffd77a",leaf:"#2f4a3e",bl:"#e8dfe6",bd:"#b88fa2",trunk:"#3b2f2a",bird:"#000",gr:"#22382e",city:"#2c3e57",cityw:"#ffd77a",stars:1,dark:2}};
+  // v26: twelve compositions. Each slot rotates through its list by local calendar day (stable across re-renders);
+  // in season (Dec-Feb snow, Mar-Apr blossoms, Sep-Nov autumn) every other day is the seasonal scene.
+  const COMPS=["lake","campus","hospital","mountains","rivertown","school","garden","nightward","graduation","autumn","spring","winter"];
+  const ROT={dawn:["lake","mountains","rivertown","garden","nightward"],morning:["campus","school","mountains","garden","graduation"],
+    midday:["hospital","graduation","rivertown","school","garden"],afternoon:["lake","rivertown","mountains","school","graduation"],
+    sunset:["hospital","mountains","rivertown","nightward","garden"],night:["campus","nightward","rivertown","mountains","garden"]};
+  const SEASON=m=>(m===11||m<2)?"winter":m<4?"spring":(m>7&&m<11)?"autumn":"";
+  const dayN=d=>Math.floor((d.getTime()-d.getTimezoneOffset()*6e4)/864e5);
   const slot=(d)=>{const h=(d||new Date()).getHours();let s=SLOTS[SLOTS.length-1];for(const x of SLOTS){if(h>=x[0])s=x}if(h<5)s=SLOTS[SLOTS.length-1];return s};
-  function art(key,cls){const S=SLOTS.find(x=>x[1]===key)||slot();const k=S[1],P=PAL[k],comp=S[3],id="vxs"+k;
-    const night=P.dark===2;let o=`<svg class="${cls||"wsx-art"} vxs-${k}" data-vxs="${k}" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><defs><linearGradient id="${id}S" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${P.sky[0]}"/><stop offset=".55" stop-color="${P.sky[1]}"/><stop offset=".8" stop-color="${P.sky[2]}"/></linearGradient><linearGradient id="${id}W" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${P.w[0]}"/><stop offset="1" stop-color="${P.w[1]}"/></linearGradient><radialGradient id="${id}G" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="${P.sun?P.sun[3]:"#fff"}"/><stop offset=".45" stop-color="${P.sun?P.sun[4]:"#cfd8ff"}" stop-opacity="${night?.35:.75}"/><stop offset="1" stop-color="${P.sun?P.sun[4]:"#cfd8ff"}" stop-opacity="0"/></radialGradient></defs><rect width="1600" height="900" fill="url(#${id}S)"/>`;
+  // off: stable per-section offset so stacked bands on one page show different pictures
+  function pick(k,d,off){d=d||new Date();off=off|0;let q="";try{q=new URLSearchParams(location.search).get("art")||""}catch(e){}
+    const L=ROT[k]||ROT.night,i=SLOTS.findIndex(x=>x[1]===k),n=dayN(d),se=SEASON(d.getMonth());
+    if(COMPS.includes(q)&&!off)return q;
+    const b=(se?n>>1:n)+i,at=j=>L[(b+j)%L.length];
+    if(se){const p=n%2;if(off===p)return se;return at(off>p?off-1:off)}
+    return at(off)}
+  const mix=(a,b,t)=>{const h=c=>{c=c.slice(1);if(c.length===3)c=c.replace(/./g,"$&$&");return[0,2,4].map(i=>parseInt(c.substr(i,2),16))};const A=h(a),B=h(b);return"#"+A.map((v,i)=>Math.round(v+(B[i]-v)*t).toString(16).padStart(2,"0")).join("")};
+  const rng=s=>()=>(s=(s*16807)%2147483647)/2147483647;
+  const R0=Math.round;
+  function art(key,cls,force,off){const S=SLOTS.find(x=>x[1]===key)||slot();const k=S[1],P=PAL[k],comp=COMPS.includes(force)?force:pick(k,null,off),id="vxs"+k+comp;
+    const night=P.dark===2,X=EXT[comp];let o=`<svg class="${cls||"wsx-art"} vxs-${k}" data-vxs="${k}" data-vxc="${comp}" data-vxo="${off|0}" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><defs><linearGradient id="${id}S" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${P.sky[0]}"/><stop offset=".55" stop-color="${P.sky[1]}"/><stop offset=".8" stop-color="${P.sky[2]}"/></linearGradient><linearGradient id="${id}W" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${P.w[0]}"/><stop offset="1" stop-color="${P.w[1]}"/></linearGradient><radialGradient id="${id}G" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="${P.sun?P.sun[3]:"#fff"}"/><stop offset=".45" stop-color="${P.sun?P.sun[4]:"#cfd8ff"}" stop-opacity="${night?.35:.75}"/><stop offset="1" stop-color="${P.sun?P.sun[4]:"#cfd8ff"}" stop-opacity="0"/></radialGradient>${X?`<linearGradient id="${id}M" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${P.cloud}" stop-opacity="0"/><stop offset=".5" stop-color="${P.cloud}" stop-opacity=".9"/><stop offset="1" stop-color="${P.cloud}" stop-opacity="0"/></linearGradient><radialGradient id="${id}L"><stop offset="0" stop-color="${P.lit}" stop-opacity=".8"/><stop offset="1" stop-color="${P.lit}" stop-opacity="0"/></radialGradient>`:""}</defs><rect width="1600" height="900" fill="url(#${id}S)"/>`;
     if(P.stars){let st="";for(let i=0;i<70;i++){const x=(i*233)%1600,y=(i*97)%420,r=(i%5===0)?1.8:1;st+=`<circle cx="${x}" cy="${y}" r="${r}"/>`}o+=`<g fill="#fff" opacity=".8">${st}</g>`}
+    const tw=(n,y0,y1,x0)=>{let s="";for(let i=0;i<n;i++)s+=`<circle cx="${x0+(i*389)%(1600-x0)}" cy="${y0+(i*151)%(y1-y0)}" r="${i%3?1.5:2.2}"/>`;return`<g class="vxs-tw" fill="#fff">${s}</g>`};
+    if(night||(P.dark&&comp==="nightward"))o+=tw(15,24,night?380:200,780);
     if(P.sun){const[x,y,r,c]=P.sun;o+=`<circle cx="${x}" cy="${y}" r="${r*4.2}" fill="url(#${id}G)"/><circle cx="${x}" cy="${y}" r="${r}" fill="${c}"/>`}
     if(P.moon){const[x,y,r]=P.moon;o+=`<circle cx="${x}" cy="${y}" r="${r*2.6}" fill="url(#${id}G)" opacity=".55"/><path d="M${x} ${y-r}A${r} ${r} 0 1 0 ${x} ${y+r}A${r*.72} ${r} 0 1 1 ${x} ${y-r}Z" fill="#f4f0dc"/>`}
-    o+=`<g fill="${P.cloud}" opacity="${P.co}"><ellipse cx="210" cy="140" rx="120" ry="34"/><ellipse cx="290" cy="118" rx="80" ry="40"/><ellipse cx="150" cy="122" rx="60" ry="30"/><ellipse cx="1080" cy="110" rx="110" ry="28"/><ellipse cx="1150" cy="92" rx="70" ry="34"/><ellipse cx="520" cy="230" rx="90" ry="18" opacity=".6"/></g>`;
+    o+=`<g class="vxs-cl" fill="${P.cloud}" opacity="${P.co}"><ellipse cx="210" cy="140" rx="120" ry="34"/><ellipse cx="290" cy="118" rx="80" ry="40"/><ellipse cx="150" cy="122" rx="60" ry="30"/><ellipse cx="1080" cy="110" rx="110" ry="28"/><ellipse cx="1150" cy="92" rx="70" ry="34"/><ellipse cx="520" cy="230" rx="90" ry="18" opacity=".6"/></g>`;
     if(!night)o+=`<g fill="none" stroke="${P.bird}" stroke-width="2.4" stroke-linecap="round" opacity=".5"><path d="M1180 170q8-8 16 0q8-8 16 0"/><path d="M1230 140q6-6 12 0q6-6 12 0"/><path d="M380 190q7-7 14 0q7-7 14 0"/></g>`;
-    const big=comp==="lake";
-    o+=big?`<path d="M0 450L140 330L260 380L420 270L560 360L700 300L860 390L1020 290L1180 370L1320 280L1460 350L1600 300V560H0Z" fill="${P.mf}"/><path d="M380 300L420 270L460 300L440 296L420 284L402 298Z M980 318L1020 290L1060 318L1040 312L1020 302L1000 314Z" fill="#fff" opacity="${night?.35:.8}"/><path d="M0 500L200 420L360 470L540 410L760 480L960 430L1160 490L1380 420L1600 470V600H0Z" fill="${P.mn}"/>`
-      :`<path d="M0 470L120 430L260 445L420 400L560 420L760 380L980 395L1120 360L1260 372L1400 340L1600 360V560H0Z" fill="${P.mf}"/><path d="M1100 372L1260 372L1400 340L1600 360V420L1450 400L1300 410L1180 395Z" fill="${P.mn}"/>`;
-    o+=`<path d="M0 520Q200 470 420 500T860 490T1300 480T1600 470V600H0Z" fill="${P.h1}"/><path d="M0 560Q260 520 520 548T1060 540T1600 520V640H0Z" fill="${P.h2}"/>`;
     const win=(lit)=>lit&&P.dark?P.lit:P.win;
     // skyline
     const city=(tx,ty,s)=>`<g transform="translate(${tx} ${ty}) scale(${s})"><g fill="${P.city}"><rect x="0" y="20" width="34" height="90"/><rect x="40" y="-10" width="26" height="120"/><rect x="72" y="30" width="40" height="80"/><rect x="118" y="5" width="22" height="105"/><rect x="146" y="40" width="44" height="70"/></g><g fill="${P.cityw}"><rect x="46" y="2" width="5" height="6"/><rect x="55" y="2" width="5" height="6"/><rect x="46" y="18" width="5" height="6"/><rect x="55" y="34" width="5" height="6"/><rect x="122" y="20" width="5" height="6"/><rect x="130" y="40" width="5" height="6"/><rect x="80" y="44" width="5" height="6"/><rect x="160" y="54" width="5" height="6"/></g></g>`;
-    const tree=(tx,ty,s)=>`<g transform="translate(${tx} ${ty}) scale(${s})"><path d="M0 0q-4-60 2-120" stroke="${P.trunk}" stroke-width="12" fill="none" stroke-linecap="round"/><path d="M0-70q-30-20-50-30M2-90q28-18 46-22" stroke="${P.trunk}" stroke-width="6" fill="none" stroke-linecap="round"/><g fill="${P.bl}"><circle cx="-60" cy="-110" r="34"/><circle cx="-20" cy="-150" r="40"/><circle cx="30" cy="-140" r="38"/><circle cx="62" cy="-108" r="30"/><circle cx="0" cy="-104" r="34"/></g><g fill="${P.bd}"><circle cx="-44" cy="-128" r="6"/><circle cx="-8" cy="-162" r="6"/><circle cx="34" cy="-150" r="6"/><circle cx="58" cy="-116" r="5"/><circle cx="6" cy="-118" r="6"/><circle cx="-70" cy="-100" r="5"/><circle cx="20" cy="-96" r="5"/></g></g>`;
+    const tree=(tx,ty,s,bl,bd)=>`<g transform="translate(${tx} ${ty}) scale(${s})"><path d="M0 0q-4-60 2-120" stroke="${P.trunk}" stroke-width="12" fill="none" stroke-linecap="round"/><path d="M0-70q-30-20-50-30M2-90q28-18 46-22" stroke="${P.trunk}" stroke-width="6" fill="none" stroke-linecap="round"/><g fill="${bl||P.bl}"><circle cx="-60" cy="-110" r="34"/><circle cx="-20" cy="-150" r="40"/><circle cx="30" cy="-140" r="38"/><circle cx="62" cy="-108" r="30"/><circle cx="0" cy="-104" r="34"/></g><g fill="${bd||P.bd}"><circle cx="-44" cy="-128" r="6"/><circle cx="-8" cy="-162" r="6"/><circle cx="34" cy="-150" r="6"/><circle cx="58" cy="-116" r="5"/><circle cx="6" cy="-118" r="6"/><circle cx="-70" cy="-100" r="5"/><circle cx="20" cy="-96" r="5"/></g></g>`;
     const pine=(tx,ty,s)=>`<g transform="translate(${tx} ${ty}) scale(${s})"><rect x="-5" y="-20" width="10" height="24" fill="${P.trunk}"/><path d="M0-150L-44-60H44Z M0-120L-54-20H54Z" fill="${P.leaf}"/><path d="M0-150L-44-60H0Z M0-120L-54-20H0Z" fill="#000" opacity=".12"/></g>`;
     const vx=(x,y)=>`<rect x="${x}" y="${y}" width="26" height="26" rx="6" fill="${P.roof}"/><path d="M${x+6} ${y+6}h5l3 9 4-9h5l-7 14h-4z" fill="#fff"/><path d="M${x+19} ${y+15}h3l3 3-3 3h-3l3-3z" fill="#c9a24a"/>`;
-    if(comp==="campus"){
+    const boat=(x,y,s,c)=>`<g transform="translate(${x} ${y}) scale(${s})"><path d="M0 0h60l-10 14h-42z" fill="${P.wall}"/><path d="M28 0v-44l22 38z" fill="${c||"#fff"}"/><path d="M26 0v-46" stroke="#5c6f78" stroke-width="2"/></g>`;
+    if(X){const dk=[0,.32,.6][P.dark],tone=c=>dk?mix(c,P.mn,dk):c;
+      const C={P,k,id,night,dk,tone,win,tree,pine,vx,boat,city,
+        g:(d,f,op)=>`<path d="${d}" fill="${f}"${op?` opacity="${op}"`:""}/>`,
+        mist:(y,h,op)=>`<rect y="${y}" width="1600" height="${h}" fill="url(#${id}M)" opacity="${op}"/>`,
+        glow:(x,y,r)=>P.dark?`<circle cx="${R0(x)}" cy="${R0(y)}" r="${R0(r)}" fill="url(#${id}L)"/>`:"",
+        ff:pts=>night?`<g fill="#ffd77a" opacity=".8">${pts.map(([x,y])=>`<circle cx="${x}" cy="${y}" r="3"/>`).join("")}</g>`:"",
+        water:(y)=>`<g stroke="#fff" stroke-width="2" opacity="${night?.2:.45}" stroke-linecap="round"><path d="M120 ${y}h70M520 ${y-10}h90M900 ${y+10}h60M1180 ${y}h80M1380 ${y+30}h60M700 ${y+60}h70M300 ${y+90}h60M1100 ${y+80}h90"/></g>`};
+      C.lamp=(x,y,s)=>{s=s||1;const ir=tone("#3a4450");return`<g transform="translate(${x} ${y}) scale(${s})"><rect x="-2.5" y="-74" width="5" height="74" fill="${ir}"/><path d="M-8-74h16l-3-15h-10z" fill="${P.dark?P.lit:tone("#f3e6c4")}"/><path d="M-10-89h20l-10-8z" fill="${ir}"/></g>`+C.glow(x,y-82*s,46*s)};
+      C.bench=(x,y,s)=>{const wd=tone("#9a6b45"),ir=tone("#3a4450");return`<g transform="translate(${x} ${y}) scale(${s||1})"><path d="M-32-13v13M32-13v13M-34-42v29M34-42v29" stroke="${ir}" stroke-width="4" stroke-linecap="round"/><g fill="${wd}"><rect x="-38" y="-42" width="76" height="6" rx="2"/><rect x="-38" y="-33" width="76" height="6" rx="2"/><rect x="-41" y="-20" width="82" height="7" rx="2"/></g></g>`};
+      const hd=tone("#3b2f2a");
+      C.person=(x,y,s,c,up)=>`<g transform="translate(${R0(x)} ${R0(y)}) scale(${s})" fill="${c}"><circle cx="0" cy="-31" r="5.5" fill="${hd}"/><rect x="-6.5" y="-24" width="13" height="16" rx="5"/><rect x="-5.5" y="-11" width="4.5" height="11" rx="2"/><rect x="1" y="-11" width="4.5" height="11" rx="2"/>${up?`<path d="M5-21l7-13" stroke="${c}" stroke-width="3.5" stroke-linecap="round"/>`:""}</g>`;
+      // periodic falling layer: each item is drawn at y and y-900, the group slides 900 units and loops seamlessly
+      C.fall=(n,seed,mk,cls)=>{const r=rng(seed);let s="";for(let i=0;i<n;i++){const x=R0(i%4===0?r()*700:700+r()*900),y=R0(r()*900),a=r();s+=mk(x,y,a,i)+mk(x,y-900,a,i)}return`<g class="vxs-fall ${cls||""}"><g class="vxs-sw">${s}</g></g>`};
+      return o+X(C)+`</svg>`}
+    const comp0=comp,big=comp0==="lake";
+    o+=big?`<path d="M0 450L140 330L260 380L420 270L560 360L700 300L860 390L1020 290L1180 370L1320 280L1460 350L1600 300V560H0Z" fill="${P.mf}"/><path d="M380 300L420 270L460 300L440 296L420 284L402 298Z M980 318L1020 290L1060 318L1040 312L1020 302L1000 314Z" fill="#fff" opacity="${night?.35:.8}"/><path d="M0 500L200 420L360 470L540 410L760 480L960 430L1160 490L1380 420L1600 470V600H0Z" fill="${P.mn}"/>`
+      :`<path d="M0 470L120 430L260 445L420 400L560 420L760 380L980 395L1120 360L1260 372L1400 340L1600 360V560H0Z" fill="${P.mf}"/><path d="M1100 372L1260 372L1400 340L1600 360V420L1450 400L1300 410L1180 395Z" fill="${P.mn}"/>`;
+    o+=`<path d="M0 520Q200 470 420 500T860 490T1300 480T1600 470V600H0Z" fill="${P.h1}"/><path d="M0 560Q260 520 520 548T1060 540T1600 520V640H0Z" fill="${P.h2}"/>`;
+    if(comp0==="campus"){
       o+=`<g transform="translate(130 360)"><rect x="0" y="80" width="300" height="160" fill="${P.wall}" stroke="#00000022" stroke-width="2"/><path d="M-14 84L150 18L314 84Z" fill="${P.roof}"/><rect x="120" y="-26" width="60" height="58" fill="${P.wall}" stroke="#00000022" stroke-width="2"/><path d="M112 -24L150 -54L188 -24Z" fill="${P.roof}"/>${vx(137,-9)}<g stroke="#00000030" stroke-width="1.5">${[[22,104,1],[72,104,0],[198,104,1],[248,104,0],[22,160,0],[72,160,1],[198,160,1],[248,160,0]].map(([x,y,l])=>`<rect x="${x}" y="${y}" width="30" height="36" fill="${win(l)}"/>`).join("")}</g><rect x="124" y="150" width="52" height="90" rx="26" fill="${P.roof}"/><rect x="-20" y="236" width="340" height="10" fill="#00000018"/></g>${city(1210,430,1)}`;
-    }else if(comp==="hospital"){
+    }else if(comp0==="hospital"){
       o+=`<g transform="translate(150 300)"><rect x="0" y="120" width="140" height="190" fill="${P.wall}" stroke="#00000022" stroke-width="2"/><rect x="140" y="20" width="160" height="290" fill="${P.wall}" stroke="#00000022" stroke-width="2"/><rect x="300" y="150" width="130" height="160" fill="${P.wall}" stroke="#00000022" stroke-width="2"/><rect x="140" y="8" width="160" height="14" fill="${P.roof}"/><rect x="0" y="110" width="140" height="12" fill="${P.roof}"/><rect x="300" y="140" width="130" height="12" fill="${P.roof}"/>
        <ellipse cx="220" cy="8" rx="46" ry="7" fill="#00000030"/><circle cx="220" cy="2" r="26" fill="none" stroke="#fff" stroke-width="3" opacity=".8"/><text x="220" y="11" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="24" fill="#fff" opacity=".9">H</text>
        <g transform="translate(196 44)"><rect width="48" height="48" rx="8" fill="#1f7a8c"/><path d="M19 9h10v10h10v10H29v10H19V29H9V19h10z" fill="#fff"/></g>
@@ -4401,21 +4457,144 @@ const VXS=(()=>{
     if(P.sun&&(k==="sunset"||k==="dawn"))o+=`<g fill="${P.sun[4]}" opacity=".45"><rect x="${P.sun[0]-60}" y="660" width="120" height="6" rx="3"/><rect x="${P.sun[0]-40}" y="690" width="80" height="5" rx="3"/><rect x="${P.sun[0]-24}" y="718" width="48" height="4" rx="2"/></g>`;
     if(P.moon)o+=`<g fill="#f4f0dc" opacity=".3"><rect x="${P.moon[0]-40}" y="680" width="80" height="5" rx="3"/><rect x="${P.moon[0]-24}" y="706" width="48" height="4" rx="2"/></g>`;
     o+=`<g stroke="#fff" stroke-width="2" opacity="${night?.2:.45}" stroke-linecap="round"><path d="M120 690h70M260 720h50M520 680h90M900 700h60M1180 690h80M1380 730h60M700 760h70M300 800h60M1100 790h90"/></g>`;
-    if(comp==="campus")o+=`<g transform="translate(980 600)"><path d="M0 40Q160 -40 320 40" fill="none" stroke="#5c6f78" stroke-width="10"/><g stroke="#5c6f78" stroke-width="4"><path d="M40 22v24M80 6v40M120 -2v48M160 -6v52M200 -2v48M240 6v40M280 22v24"/></g><rect x="-10" y="38" width="340" height="10" fill="#5c6f78"/></g>`;
-    const boat=(x,y,s,c)=>`<g transform="translate(${x} ${y}) scale(${s})"><path d="M0 0h60l-10 14h-42z" fill="${P.wall}"/><path d="M28 0v-44l22 38z" fill="${c||"#fff"}"/><path d="M26 0v-46" stroke="#5c6f78" stroke-width="2"/></g>`;
-    o+=comp==="lake"?boat(640,800,1.2)+boat(980,730,.8,"#f2b84b")+boat(420,760,.7):boat(640,820,1);
-    if(comp==="campus")o+=tree(70,660,1.15)+tree(470,650,.9)+tree(1520,670,1.2)+tree(1110,650,.75);
-    else if(comp==="hospital")o+=tree(80,650,1)+tree(690,640,.8)+tree(1510,660,1.1)+tree(980,630,.7);
+    if(comp0==="campus")o+=`<g transform="translate(980 600)"><path d="M0 40Q160 -40 320 40" fill="none" stroke="#5c6f78" stroke-width="10"/><g stroke="#5c6f78" stroke-width="4"><path d="M40 22v24M80 6v40M120 -2v48M160 -6v52M200 -2v48M240 6v40M280 22v24"/></g><rect x="-10" y="38" width="340" height="10" fill="#5c6f78"/></g>`;
+    o+=comp0==="lake"?boat(640,800,1.2)+boat(980,730,.8,"#f2b84b")+boat(420,760,.7):boat(640,820,1);
+    if(comp0==="campus")o+=tree(70,660,1.15)+tree(470,650,.9)+tree(1520,670,1.2)+tree(1110,650,.75);
+    else if(comp0==="hospital")o+=tree(80,650,1)+tree(690,640,.8)+tree(1510,660,1.1)+tree(980,630,.7);
     else o+=pine(90,640,1.3)+pine(170,650,1)+pine(1480,640,1.4)+pine(1560,660,1)+pine(1100,620,.8)+tree(720,636,.7);
     o+=`<path d="M0 860Q400 836 800 852T1600 846V900H0Z" fill="${P.gr}"/>`;
     if(night)o+=`<g fill="#ffd77a" opacity=".8"><circle cx="560" cy="600" r="3"/><circle cx="900" cy="590" r="3"/><circle cx="1300" cy="604" r="3"/></g>`;
     return o+`</svg>`}
+  // New compositions. Left ~45% stays low and calm (hero headline sits there under the shade); tall/bright things live right of x~760.
+  const AU=["#d9822b","#c4532d","#e8b23a","#a8452f","#d96a3a"],PK=["#f7c6d4","#fbe3ea","#ee9fb8","#fff5f8"];
+  const EXT={
+    mountains(C){const{P,g,mist,tone,pine,glow,win}=C,r=rng(7);let o=g("M0 420Q140 360 280 388T560 368T840 392T1120 350T1400 378T1600 356V900H0Z",mix(P.mf,P.sky[2],.42))+mist(350,150,.75)
+      +g("M0 470Q180 410 360 440T720 428T1080 448T1320 400T1600 430V900H0Z",P.mf)+mist(425,130,.6)
+      +g("M0 540Q220 488 440 516T880 500T1240 522T1600 488V900H0Z",P.mn)+mist(500,110,.5)
+      +g("M0 618Q260 576 540 604T1060 590T1600 566V900H0Z",P.h1);
+      let pr="";for(let x=930;x<1600;x+=19){const y=R0(594-(x-1060)*.045+(x<1060?(1060-x)*.08:0)),h=R0(18+r()*22);pr+=`M${x} ${y-h}L${x-9} ${y+6}H${x+9}Z`}
+      o+=g(pr,P.h2)+mist(600,70,.35)+g("M0 700Q320 656 660 684T1300 662T1600 650V900H0Z",P.h2);
+      const cw=tone(mix(P.wall,"#8a5a3c",.45));
+      o+=`<g transform="translate(1140 668)"><rect x="40" y="-52" width="10" height="22" fill="${tone("#5a4a44")}"/><rect x="0" y="-34" width="64" height="36" fill="${cw}"/><path d="M-8-32L32-58L72-32Z" fill="${P.roof}"/><rect x="10" y="-24" width="12" height="12" fill="${P.dark?P.lit:win(0)}"/><rect x="40" y="-24" width="14" height="26" fill="${tone("#5a4a44")}"/><g fill="${P.cloud}" opacity=".55"><circle cx="48" cy="-64" r="6"/><circle cx="56" cy="-78" r="8"/><circle cx="66" cy="-94" r="10"/></g></g>`+glow(1156,650,40);
+      o+=g("M0 822Q380 784 760 806T1600 790V900H0Z",P.gr)+g("M648 900Q700 840 840 812Q960 790 1054 736Q1000 800 900 826Q800 856 790 900Z",`url(#${C.id}W)`);
+      return o+pine(1420,866,1.15)+pine(1500,886,1.45)+pine(1572,856,.9)+pine(1320,846,.7)+pine(70,890,.75)+C.ff([[980,760],[1250,720],[1380,780],[600,800]])},
+    rivertown(C){const{P,g,mist,tone,win,tree,pine,boat}=C,r=rng(11);let o=g("M0 470Q200 420 400 446T800 430T1200 452T1600 420V900H0Z",P.mf)+mist(420,110,.5)
+      +g("M0 560Q240 520 480 540T960 528T1400 540T1600 520V900H0Z",P.mn);
+      const WC=["#e9d8c4","#d9c7b0","#c9d3d6","#e6c9b8","#f3eee2"].map(tone),RC=[P.roof,tone(mix(P.roof,"#7a3e2c",.55)),tone(mix(P.roof,"#5b6b76",.5))];
+      let t=`<g transform="translate(1296 0)"><rect x="0" y="520" width="34" height="120" fill="${WC[4]}"/><path d="M-4 522L17 478L38 522Z" fill="${RC[0]}"/><rect x="11" y="540" width="12" height="16" rx="6" fill="${win(1)}"/></g>`;
+      let x=900,i=0;while(x<1600){const w=R0(40+r()*30),h=R0(34+r()*34);if(x>1280&&x<1336){x=1340;continue}
+        t+=`<rect x="${x}" y="${640-h}" width="${w}" height="${h}" fill="${WC[i%5]}"/><path d="M${x-5} ${642-h}L${x+w/2} ${R0(640-h-w*.42)}L${x+w+5} ${642-h}Z" fill="${RC[i%3]}"/><rect x="${R0(x+w*.2)}" y="${R0(640-h*.66)}" width="${R0(w*.22)}" height="${R0(h*.28)}" fill="${win(i%2)}"/><rect x="${R0(x+w*.58)}" y="${R0(640-h*.66)}" width="${R0(w*.22)}" height="${R0(h*.28)}" fill="${win(i%3===0)}"/>`;x+=w+R0(6+r()*14);i++}
+      o+=t+g("M0 628Q300 610 640 620T1280 612T1600 606V900H0Z",P.h1);
+      // river flows toward the viewer under the bridge
+      o+=g("M1150 632Q1100 676 1010 712Q800 800 560 900H1330Q1380 800 1440 712Q1300 672 1236 632Z",`url(#${C.id}W)`);
+      o+=`<g stroke="#fff" stroke-width="2" opacity="${C.night?.2:.45}" stroke-linecap="round"><path d="M1180 660h30M1120 740h60M1300 760h50M900 810h70M1160 830h80M760 870h60M1220 880h70"/></g>`;
+      if(P.dark)o+=`<g fill="${P.lit}" opacity=".35">${[1170,1200,1150,1230].map((x,i)=>`<rect x="${x}" y="${646+i*10}" width="${18-i%2*6}" height="3" rx="1.5"/>`).join("")}</g>`;
+      const st=tone(mix(P.wall,"#8a8f96",.45)),dkS=tone(mix(st,"#000",.2)),P0=[950,1080,1210,1340,1470];let b=`M940 652H1480V720H940Z`;for(let j=0;j<4;j++){const a=P0[j]+12,e=P0[j+1]-12,rx=(e-a)/2;b+=`M${a} 720V700A${rx} 34 0 0 1 ${e} 700V720Z`}
+      o+=`<path d="M904 722L940 652V722Z M1516 722L1480 652V722Z" fill="${dkS}"/><path d="${b}" fill="${st}" fill-rule="evenodd"/><rect x="936" y="644" width="548" height="9" fill="${dkS}"/><path d="M940 644V632H1480V644" stroke="${dkS}" stroke-width="3" fill="none"/><path d="M904 722H1516" stroke="${dkS}" stroke-width="3"/>`;
+      o+=[950,1210,1470].map(x=>C.lamp(x,644,.55)).join("");
+      o+=boat(1150,800,.8)+boat(980,860,.6,"#f2b84b");
+      o+=g("M0 770Q260 750 470 776Q560 800 620 900H0Z",P.h2)+g("M1600 760Q1480 770 1420 812Q1380 850 1370 900H1600Z",P.h2)+g("M0 852Q300 836 520 852L560 900H0Z",P.gr);
+      return o+tree(1540,880,.95)+tree(1440,870,.55)+pine(80,880,.8)+pine(150,892,.6)+tree(420,776,.45)+C.ff([[700,790],[1500,800],[300,760]])},
+    school(C){const{P,g,tone,win,vx,tree,glow}=C;let o=g("M0 500Q240 456 480 478T960 462T1440 480T1600 470V900H0Z",P.mf)+g("M0 560Q260 530 520 546T1040 536T1600 540V900H0Z",P.mn)+g("M0 640Q400 618 800 630T1600 620V900H0Z",P.h1);
+      const wl=P.wall,col=tone(mix(P.wall,"#ffffff",.35)),sh="#00000022",dr=tone(mix(P.roof,P.wall,.5));
+      let w="";for(const bx of [0,410])for(let rr=0;rr<3;rr++)for(let c=0;c<3;c++)w+=`<rect x="${bx+18+c*44}" y="${492+rr*48}" width="26" height="34" rx="3" fill="${win((rr+c+bx)%2===0)}"/>`;
+      o+=`<g transform="translate(800 0)"><rect x="245" y="300" width="70" height="70" fill="${wl}" stroke="${sh}" stroke-width="2"/><path d="M238 302Q280 236 322 302Z" fill="${P.roof}"/><path d="M280 254V232" stroke="${P.roof}" stroke-width="4"/><rect x="262" y="318" width="12" height="26" rx="6" fill="${win(1)}"/><rect x="286" y="318" width="12" height="26" rx="6" fill="${win(1)}"/>
+        <rect x="0" y="470" width="150" height="182" fill="${wl}" stroke="${sh}" stroke-width="2"/><rect x="410" y="470" width="150" height="182" fill="${wl}" stroke="${sh}" stroke-width="2"/><rect x="-6" y="460" width="162" height="12" fill="${P.roof}"/><rect x="404" y="460" width="162" height="12" fill="${P.roof}"/>
+        <rect x="150" y="420" width="260" height="232" fill="${wl}" stroke="${sh}" stroke-width="2"/><rect x="160" y="432" width="240" height="200" fill="${dr}"/><rect x="250" y="540" width="60" height="92" rx="30" fill="${win(1)}"/>
+        <path d="M140 424L280 356L420 424Z" fill="${wl}" stroke="${sh}" stroke-width="2"/><path d="M174 416L280 366L386 416Z" fill="${tone(mix(P.wall,P.roof,.12))}"/>${vx(267,382)}<rect x="140" y="420" width="280" height="12" fill="${P.roof}"/>
+        <g fill="${col}" stroke="${sh}">${[168,212,256,290,334,378].map(x=>`<rect x="${x}" y="432" width="14" height="200"/>`).join("")}</g>${w}
+        <rect x="140" y="630" width="280" height="8" fill="${tone("#d8d2c6")}"/><rect x="126" y="638" width="308" height="8" fill="${tone("#cfc8ba")}"/><rect x="112" y="646" width="336" height="8" fill="${tone("#c6bfb0")}"/></g>`+(P.dark?glow(1080,600,90):"");
+      o+=g("M1060 654Q1000 720 880 770Q760 816 640 900H930Q980 830 1060 780Q1140 724 1140 654Z",tone(mix(P.wall,P.h1,.4)));
+      const SC=["#2f7f86","#2c3e57","#7a3e4c","#3f5a78","#5a6f3a"].map(tone);
+      o+=[[1010,738,1],[1036,742,1.04,1],[1196,700,.9],[1334,690,.85],[900,800,1.22],[930,806,1.2,1],[1252,716,.94],[770,860,1.4]].map(([x,y,s,u],i)=>C.person(x,y,s,SC[i%5],u)).join("");
+      o+=C.lamp(960,770,1)+C.lamp(1180,690,.8)+tree(1540,716,1)+tree(740,690,.7)+tree(90,716,.8);
+      return o+g("M0 868Q400 848 800 860T1600 854V900H0Z",P.gr)+C.ff([[700,780],[1420,760]])},
+    garden(C){const{P,g,tone,win,tree,glow}=C,r=rng(5);let o=g("M0 490Q220 446 440 470T880 452T1320 474T1600 450V900H0Z",P.mf)+g("M0 560Q300 524 600 544T1200 530T1600 540V900H0Z",P.mn);
+      let w="";for(let rr=0;rr<2;rr++)for(let c=0;c<11;c++)w+=`<rect x="${16+c*46}" y="${468+rr*52}" width="26" height="30" rx="3" fill="${win((rr*3+c)%4===0)}"/>`;
+      o+=`<g transform="translate(960 0)"><rect x="200" y="384" width="110" height="70" fill="${P.wall}" stroke="#00000022" stroke-width="2"/><rect x="194" y="376" width="122" height="10" fill="${P.roof}"/><g transform="translate(236 396)"><rect width="38" height="38" rx="7" fill="#1f7a8c"/><path d="M15 7h8v8h8v8h-8v8h-8v-8H7v-8h8z" fill="#fff"/></g><rect x="0" y="450" width="520" height="150" fill="${P.wall}" stroke="#00000022" stroke-width="2"/><rect x="-6" y="442" width="532" height="12" fill="${P.roof}"/>${w}</g>`;
+      o+=g("M0 600Q400 584 800 594T1600 586V900H0Z",P.h1);
+      const hg=tone(mix(P.h2,"#000",.08));let h="";for(let x=930;x<1540;x+=34)h+=`<ellipse cx="${x}" cy="604" rx="24" ry="16"/>`;o+=`<g fill="${hg}">${h}</g>`;
+      o+=g("M1170 610Q1120 680 1000 740Q860 810 700 900H1000Q1080 820 1170 760Q1240 700 1230 610Z",tone(mix(P.wall,P.h1,.4)));
+      o+=`<ellipse cx="1330" cy="700" rx="110" ry="24" fill="${tone(mix(P.wall,"#999",.3))}"/><ellipse cx="1330" cy="700" rx="98" ry="19" fill="url(#${C.id}W)"/><path d="M1330 700V672" stroke="#fff" stroke-width="3" opacity=".6"/><circle cx="1330" cy="668" r="6" fill="#fff" opacity=".45"/>`;
+      const FL=["#f2a7b8","#f6d36b","#b9a3e0","#ffffff","#ee8a6a"].map(tone);
+      const bed=(cx,cy,rx,ry,n)=>{let s=`<ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" fill="${hg}"/>`;for(let i=0;i<n;i++){const a=r()*6.28,d=Math.sqrt(r())*.8;s+=`<circle cx="${R0(cx+Math.cos(a)*rx*d)}" cy="${R0(cy-4+Math.sin(a)*ry*d)}" r="${R0(4+r()*3)}" fill="${FL[i%5]}"/>`}return s};
+      o+=bed(880,690,90,22,22)+bed(1470,742,100,24,24)+bed(380,780,70,16,12);
+      o+=C.bench(1010,786,1)+C.bench(1420,812,1.1)+C.lamp(930,760,1)+C.lamp(1130,700,.85)+C.lamp(1262,660,.7)+C.lamp(760,830,1.15);
+      const ar=tone("#7a5a44");o+=`<g transform="translate(1520 840)"><path d="M-50 0V-120A50 40 0 0 1 50-120V0" fill="none" stroke="${ar}" stroke-width="8"/><g fill="${tone(P.h2)}">${[[-50,-60],[-48,-100],[-30,-150],[0,-162],[30,-150],[48,-100],[50,-60]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="13"/>`).join("")}</g><g fill="${FL[0]}">${[[-46,-84],[-22,-154],[22,-154],[46,-84]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="5"/>`).join("")}</g></g>`;
+      return o+tree(1580,720,.85)+tree(90,734,.8)+tree(660,664,.55)+g("M0 870Q400 852 800 864T1600 858V900H0Z",P.gr)+C.ff([[820,740],[1220,770],[1500,690]])},
+    nightward(C){const{P,g,tone,win,glow,pine,tree,city,k}=C;let o="";
+      if(!P.moon&&(P.dark||k==="dawn")){const x=1500,y=110,r=22;o+=`<path d="M${x} ${y-r}A${r} ${r} 0 1 0 ${x} ${y+r}A${r*.72} ${r} 0 1 1 ${x} ${y-r}Z" fill="#f4f0dc" opacity="${P.dark?.95:.55}"/>`}
+      o+=g("M0 500Q240 462 480 482T960 470T1440 490T1600 476V900H0Z",P.mf)+g("M0 570Q300 536 600 556T1200 544T1600 552V900H0Z",P.mn)+city(1330,520,.75);
+      let w="";for(let rr=0;rr<7;rr++)for(let c=0;c<8;c++)w+=`<rect x="${22+c*34}" y="${392+rr*32}" width="18" height="18" fill="${P.win}"/>`;
+      for(let rr=0;rr<3;rr++)for(let c=0;c<4;c++)w+=`<rect x="${316+c*30}" y="${510+rr*34}" width="18" height="18" fill="${P.win}"/>`;
+      for(let c=0;c<2;c++)w+=`<rect x="${-62+c*32}" y="566" width="20" height="18" fill="${P.win}"/>`;
+      const lx=22+5*34,ly=392+3*32,wm="#ffd77a";
+      o+=`<g transform="translate(820 0)"><rect x="-80" y="548" width="80" height="92" fill="${P.wall}" stroke="#00000022" stroke-width="2"/><rect x="300" y="480" width="140" height="160" fill="${P.wall}" stroke="#00000022" stroke-width="2"/><rect x="0" y="330" width="300" height="310" fill="${P.wall}" stroke="#00000022" stroke-width="2"/><rect x="-6" y="320" width="312" height="12" fill="${P.roof}"/><rect x="296" y="472" width="150" height="10" fill="${P.roof}"/><rect x="-84" y="540" width="86" height="10" fill="${P.roof}"/>
+        <g transform="translate(130 346)"><rect width="40" height="40" rx="7" fill="#1f7a8c"/><path d="M16 7h8v9h9v8h-9v9h-8v-9H7v-8h9z" fill="#fff"/></g>${w}
+        <rect x="${lx-4}" y="${ly-4}" width="26" height="26" rx="3" fill="${wm}" opacity=".35"/><rect x="${lx}" y="${ly}" width="18" height="18" fill="${wm}"/><path d="M${lx+4} ${ly+18}q0-7 5-7t5 7z" fill="${tone("#5a4a44")}"/><circle cx="${lx+9}" cy="${ly+8}" r="3" fill="${tone("#5a4a44")}"/>
+        <rect x="100" y="604" width="100" height="36" fill="${P.roof}"/><rect x="84" y="596" width="132" height="10" fill="${P.roof}"/><rect x="120" y="612" width="60" height="28" fill="${P.dark?P.lit:P.win}" opacity="${P.dark?.85:1}"/></g>`;
+      o+=`<circle cx="${820+lx+9}" cy="${ly+9}" r="${P.dark?60:30}" fill="url(#${C.id}${P.dark?"L":"G"})" opacity="${P.dark?1:.5}"/>`+glow(970,628,80);
+      o+=g("M0 640Q400 620 800 632T1600 624V900H0Z",P.h1)+g("M920 640Q900 720 820 790Q760 850 700 900H930Q960 840 1000 780Q1040 710 1020 640Z",tone(mix(P.mn,P.wall,.3)));
+      o+=C.lamp(890,720,.9)+C.lamp(1050,700,.8)+C.lamp(820,840,1.1);
+      return o+pine(1520,716,1.1)+pine(1590,730,.8)+tree(1400,720,.75)+pine(90,740,.9)+pine(170,750,.7)+g("M0 864Q400 844 800 856T1600 850V900H0Z",P.gr)+C.ff([[660,760],[1240,760],[1460,790]])},
+    graduation(C){const{P,g,tone,tree}=C,r=rng(3);let o=g("M0 520Q260 478 520 500T1040 486T1600 496V900H0Z",P.mf);
+      let hw="";for(let c=0;c<7;c++)hw+=`<rect x="${14+c*50}" y="518" width="8" height="10" fill="${P.cityw}"/>`;
+      o+=`<g transform="translate(1060 0)" fill="${P.city}"><path d="M0 600V500H130L190 466L250 500H380V600Z"/><path d="M160 470Q190 420 220 470Z"/>${P.dark?`<g>${hw}</g>`:""}</g>`;
+      o+=g("M0 600Q400 580 800 592T1600 584V900H0Z",P.h1);
+      const nt=P.dark===2,gw=nt?["#4a5c80","#56688e","#5e537c"]:[tone("#24324f"),tone("#2c3e57"),tone("#3a2f4f")],cp=nt?"#3a4c70":tone("#1d2a45"),gd=nt?"#f2c14e":tone("#f2c14e"),hd=nt?"#2a3346":tone("#3b2f2a");
+      const grad=(x,y,s,c,up)=>`<g transform="translate(${R0(x)} ${R0(y)}) scale(${s})" fill="${c}"><path d="M-9 0L-6-24Q0-28 6-24L9 0Z"/><circle cx="0" cy="-31" r="5.5" fill="${hd}"/><path d="M-10-36L0-40L10-36L0-32Z" fill="${cp}"/>${up?`<path d="M5-22L12-40" stroke="${c}" stroke-width="3.5" stroke-linecap="round"/>`:""}</g>`;
+      let cr="";for(let row=0;row<3;row++)for(let i=0;i<11;i++){const x=800+i*64+(row%2)*30+r()*14,y=690+row*30;if(x>1560)continue;cr+=grad(x,y,1+row*.18,gw[(i+row)%3],r()<.35)}
+      o+=g("M0 680Q400 660 800 672T1600 664V900H0Z",P.h2)+cr;
+      const cap=(x,y,a,s)=>`<g transform="translate(${x} ${y}) rotate(${a}) scale(${s})"><path d="M-14 4v10q14 7 28 0V4L0 10Z" fill="${tone(mix(cp,"#000",.25))}"/><path d="M-27 0L0-10L27 0L0 10Z" fill="${cp}"/><path d="M-27 0L0-10L27 0L0 10Z" fill="none" stroke="#fff" stroke-opacity=".25" stroke-width="1.5"/><path d="M0 0L19 6V20" stroke="${gd}" stroke-width="2.2" fill="none"/><circle cx="19" cy="22" r="2.8" fill="${gd}"/></g>`;
+      o+=[[900,300,-18,1],[1030,200,12,1.2],[1170,340,-8,.9],[1290,230,24,1.1],[1450,320,-22,1],[960,430,8,.8],[1540,200,16,.85],[1110,460,-30,.75],[820,180,20,.7]].map(a=>cap(...a)).join("");
+      const CF=["#f2c14e","#f2a7b8","#7cc3d8","#ffffff","#9fd08a"].map(tone);
+      o+=C.fall(36,9,(x,y,a,i)=>x<760?"":`<rect x="${x}" y="${y}" width="7" height="4" rx="1" fill="${CF[i%5]}" transform="rotate(${R0(a*180)} ${x} ${y})"/>`,"f3");
+      const bt=[];for(let i=0;i<=12;i++){const t=i/12,x=R0(780+t*780),y=R0(556+Math.sin(t*Math.PI)*40);bt.push([x,y])}
+      o+=`<path d="M${bt.map(p=>p.join(" ")).join("L")}" stroke="${tone("#6b5a6e")}" stroke-width="2" fill="none"/>`+bt.slice(0,12).map(([x,y],i)=>`<path d="M${x+8} ${y+1}l26 0l-13 22z" fill="${CF[i%5]}"/>`+(P.dark?`<circle cx="${x}" cy="${y+3}" r="3.5" fill="${P.lit}"/>`+C.glow(x,y+3,16):"")).join("");
+      return o+tree(770,640,.72)+tree(1570,652,1)+tree(80,704,.8)+g("M0 866Q400 846 800 858T1600 852V900H0Z",P.gr)},
+    autumn(C){const{P,g,tone,glow}=C,r=rng(13),A=AU.map(tone);let o=g("M0 480Q220 436 440 460T880 444T1320 466T1600 446V900H0Z",mix(P.mf,tone("#d9a27a"),.3));
+      o+=C.mist(430,110,.5)+g("M0 560Q280 524 560 544T1120 532T1600 540V900H0Z",P.mn);
+      let bm="";for(let x=-10;x<1640;x+=30){const y=R0(570+Math.sin(x/97)*6+Math.sin(x/41)*3);bm+=`<circle cx="${x}" cy="${y}" r="${R0(22+r()*8)}" fill="${mix(A[(x/30|0)%5],P.mn,x<700?.5:.3)}"/>`}
+      bm=`<rect y="570" width="1600" height="76" fill="${mix(A[3],P.mn,.45)}"/>`+bm;
+      o+=bm+g("M0 640Q400 618 800 630T1600 620V900H0Z",mix(P.h1,tone("#c9a24a"),.3));
+      o+=g("M1100 628Q1060 680 960 730Q820 800 600 900H1000Q1060 820 1120 740Q1150 680 1130 628Z",tone(mix(P.wall,"#b08860",.42)));
+      const fc=tone(mix(P.trunk,"#9a7a5a",.3));let fe="";for(let x=1190;x<1600;x+=58)fe+=`M${x} ${R0(668-(x-1190)*.05)}v34`;
+      o+=`<path d="${fe}" stroke="${fc}" stroke-width="6"/><path d="M1190 676L1600 656M1190 692L1600 672" stroke="${fc}" stroke-width="4"/>`;
+      o+=`<g fill="${A[0]}"><ellipse cx="1240" cy="712" rx="14" ry="11"/><ellipse cx="1268" cy="716" rx="11" ry="9"/></g><path d="M1240 702v-6M1268 708v-5" stroke="${tone("#5a6f3a")}" stroke-width="3"/>`;
+      o+=[[1300,720,1.15,0,1],[1500,712,1.3,2,3],[920,660,.75,1,2],[1190,650,.6,4,0],[90,734,.8,2,4],[330,670,.5,0,3]].map(([x,y,s,a,b])=>`<ellipse cx="${x}" cy="${y+4}" rx="${R0(60*s)}" ry="${R0(9*s)}" fill="${A[a]}" opacity=".7"/>`+C.tree(x,y,s,A[a],A[b])).join("");
+      o+=C.lamp(1040,760,1)+g("M0 864Q400 844 800 856T1600 850V900H0Z",mix(P.gr,tone("#8a6a3a"),.25));
+      return o+C.fall(30,21,(x,y,a,i)=>`<path d="M0-7Q7 0 0 7Q-7 0 0-7Z" fill="${A[i%5]}" transform="translate(${x} ${y}) rotate(${R0(a*180)})"/>`,"f2")+C.ff([[760,720],[1400,780]])},
+    spring(C){const{P,g,tone,tree,boat}=C,r=rng(17),K=PK.map(tone);let o=g("M0 486Q220 440 440 464T880 448T1320 470T1600 446V900H0Z",P.mf)+C.mist(440,100,.45)+g("M0 556Q300 520 600 540T1200 526T1600 536V900H0Z",P.mn);
+      o+=g("M0 600Q300 584 640 594T1280 586T1600 580V660H0Z",mix(P.h1,tone("#9fd08a"),.25));
+      let gv="";for(let x=960;x<1600;x+=R0(54+r()*26))gv+=tree(x,632,R0((.34+r()*.16)*100)/100,K[x%2],K[2]);
+      o+=gv+tree(300,628,.3,K[1],K[2])+g("M0 640Q400 630 800 640T1600 634V760H0Z",`url(#${C.id}W)`);
+      o+=`<g fill="${K[0]}" opacity=".35">${[980,1080,1180,1300,1420,1520].map((x,i)=>`<rect x="${x}" y="${650+i%2*10}" width="${50-i%3*10}" height="4" rx="2"/>`).join("")}</g>`+C.water(690)+boat(620,722,.7,K[2]);
+      o+=g("M0 740Q360 716 760 730T1600 718V900H0Z",mix(P.h1,tone("#9fd08a"),.2));
+      o+=C.bench(1210,812,1)+tree(1370,808,1.25,K[0],K[2])+tree(1546,796,1,K[1],K[2])+tree(880,778,.82,K[1],K[2])+tree(90,808,.85,K[0],K[2]);
+      const TU=["#e85d75","#f6d36b","#ee9fb8","#b9a3e0"].map(tone),sg=tone("#5a8f4a");let tl="";for(let i=0;i<26;i++){const x=R0(960+i*24+r()*8),y=R0(858+(i%2)*10);tl+=`<path d="M${x} ${y}v-16" stroke="${sg}" stroke-width="2.5"/><path d="M${x-5} ${y-24}q5 14 10 0l-2.5 4-2.5-5-2.5 5z" fill="${TU[i%4]}"/>`}
+      o+=g("M0 872Q400 856 800 866T1600 860V900H0Z",P.gr)+tl;
+      return o+C.fall(32,29,(x,y,a,i)=>`<ellipse cx="${x}" cy="${y}" rx="5" ry="3" fill="${K[i%4]}" transform="rotate(${R0(a*180)} ${x} ${y})"/>`,"f2")+C.ff([[700,760],[1260,700]])},
+    winter(C){const{P,g,tone,glow,k}=C,sd=[0,.26,.5][P.dark],SN=sd?mix("#eef3f8",P.mn,sd):"#eef3f8",SH=mix(SN,P.mn,.22),lf=tone(mix(P.leaf,"#2f4a3e",.45));
+      const sp=(x,y,s)=>`<g transform="translate(${x} ${y}) scale(${s})"><rect x="-5" y="-20" width="10" height="24" fill="${P.trunk}"/><path d="M0-150L-44-60H44Z M0-120L-54-20H54Z" fill="${lf}"/><path d="M0-150L-44-60H0Z M0-120L-54-20H0Z" fill="#000" opacity=".1"/><path d="M0-150L-24-102Q-12-94 0-104Q12-94 24-102Z M-30-62Q-14-52 0-64Q14-52 30-62L22-76Q8-70 0-78Q-8-70-22-76Z M-38-24Q-18-14 0-26Q18-14 38-24L30-38Q12-32 0-40Q-12-32-30-38Z" fill="${SN}"/></g>`;
+      let o=g("M0 440Q180 380 360 408T720 392T1080 414T1360 372T1600 398V900H0Z",mix(P.mf,SN,.45))+C.mist(400,130,.6)+g("M0 520Q240 476 480 500T960 486T1300 504T1600 478V900H0Z",mix(P.mn,SN,.35));
+      o+=g("M0 610Q300 578 620 596T1240 584T1600 574V900H0Z",SH);
+      let tl="";for(let x=980;x<1600;x+=36)tl+=sp(x,R0(600-(x-980)*.035),.3+((x*7)%5)/30);o+=tl;
+      const cw=tone("#8a5a3c"),lt=P.dark?P.lit:tone("#f3d79a");
+      o+=`<g transform="translate(1110 664)"><rect x="56" y="-74" width="12" height="30" fill="${tone("#5a4a44")}"/><rect x="0" y="-44" width="92" height="46" fill="${cw}"/><path d="M-12-40L46-80L104-40Z" fill="${P.roof}"/><path d="M-14-38Q-8-46 0-44L46-76L92-44Q100-46 106-38L46-84Z" fill="${SN}"/><rect x="12" y="-32" width="16" height="16" fill="${lt}"/><rect x="62" y="-32" width="16" height="16" fill="${lt}"/><rect x="36" y="-28" width="18" height="30" fill="${tone("#5a4a44")}"/><g fill="${P.cloud}" opacity=".55"><circle cx="64" cy="-86" r="6"/><circle cx="72" cy="-100" r="8"/><circle cx="84" cy="-116" r="10"/></g></g>`+glow(1150,640,70);
+      o+=`<ellipse cx="860" cy="716" rx="230" ry="32" fill="${tone(mix(P.w[0],"#ffffff",.45))}"/><path d="M700 712h80M860 722h120M920 706h60" stroke="#fff" stroke-width="3" opacity=".55" stroke-linecap="round"/>`;
+      o+=g("M0 760Q400 730 800 748T1600 736V900H0Z",SN)+`<g fill="${SH}"><ellipse cx="1440" cy="824" rx="80" ry="10"/><ellipse cx="1540" cy="852" rx="60" ry="8"/><ellipse cx="1240" cy="790" rx="40" ry="6"/></g>`;
+      o+=`<g transform="translate(1240 788)"><g fill="${SN}" stroke="${mix(SN,P.mn,.4)}" stroke-width="2.5"><circle cx="0" cy="-20" r="22"/><circle cx="0" cy="-54" r="15"/></g><path d="M-14-44h28v7h-28z" fill="${tone("#c4532d")}"/><path d="M-11-66h22v-4h-4v-14h-14v14h-4z" fill="${tone("#2c3e57")}"/><path d="M-20-30l-22-14M20-30l22-16" stroke="${P.trunk}" stroke-width="3" stroke-linecap="round"/></g>`;
+      o+=sp(1440,820,1.4)+sp(1540,852,1.1)+sp(1336,800,.8)+sp(80,846,.8)+sp(160,866,.6);
+      return o+C.fall(48,41,(x,y,a)=>`<circle cx="${x}" cy="${y}" r="${(1.6+a*2.2).toFixed(1)}"/>`,"f1 vxs-snow").replace('<g class="vxs-sw">','<g class="vxs-sw" fill="#fff" opacity=".85">')}};
+  const preview=(key,comp,cls,off)=>art(key,cls,comp||"lake",off);
+/*</vxs-core>*/
   const cur=()=>{let q="";try{q=new URLSearchParams(location.search).get("scene")||""}catch(e){}return PAL[q]?q:slot()[1]};
-  function refresh(){const k=cur();document.querySelectorAll("svg[data-vxs]").forEach(s=>{if(s.dataset.vxs===k)return;const cls=s.getAttribute("class").split(" ").filter(c=>!/^vxs-/.test(c)).join(" ");const t=document.createElement("div");t.innerHTML=art(k,cls);const n=t.firstChild;n.style.opacity="0";n.style.transition="opacity 1.2s";s.after(n);requestAnimationFrame(()=>{n.style.opacity="1"});setTimeout(()=>s.remove(),1300)});
+  function refresh(){const k=cur();document.querySelectorAll("svg[data-vxs]").forEach(s=>{const off=+s.dataset.vxo||0;if(s.dataset.vxs===k&&s.dataset.vxc===pick(k,null,off))return;const cls=s.getAttribute("class").split(" ").filter(c=>!/^vxs-/.test(c)).join(" ");const t=document.createElement("div");t.innerHTML=art(k,cls,null,off);const n=t.firstChild;n.style.opacity="0";n.style.transition="opacity 1.2s";s.after(n);requestAnimationFrame(()=>{n.style.opacity="1"});setTimeout(()=>s.remove(),1300)});
     document.documentElement.dataset.vxscene=k}
   document.documentElement.dataset.vxscene=cur();
   setInterval(refresh,5*60000);document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible")refresh()});
-  return {art,cur,slot,SLOTS,refresh};
+  const api={art,cur,slot,SLOTS,refresh,preview,pick,COMPS};try{if(!window.VXS)window.VXS=api}catch(e){} /* tests: VXS.preview(slot, composition) */
+  return api;
 })();
 
 const WSX_ART="";
@@ -9111,7 +9290,7 @@ app.addEventListener("drop",e=>{const s2=e.target.closest&&e.target.closest(".sl
       <p class="lp3-note">${n} cited practice questions in the bank.</p>
     </div></section>
 
-    <section class="lp3-free" aria-labelledby="lp3f"><div class="wrap lp3-fi">
+    <section class="lp3-free vxs-band" aria-labelledby="lp3f">${VXS.art(VXS.cur(),"vxs-art",null,1)}<div class="vxs-sh" aria-hidden="true"></div><div class="wrap lp3-fi">
       <div><p class="lp3-k">How Vexcura is licensed</p><h2 id="lp3f" class="lp3-h2">Students and instructors are free. Your school licenses Vexcura.</h2>
         <p>Every plan includes everything: the full exam, the academic EHR, the instructor workspace, badge sign-in, curriculum uploads, SSO and LTI. Plans differ only by how many students they cover. Board-ready reporting is coming soon, included in every plan.</p>
         <div class="lp3-cta"><a class="btn-lamp" href="/for-nursing-schools#pricing">See school pricing</a><a class="btn-ink" href="/#program-setup">Set up your program</a><a class="btn-ink" href="/for-nursing-schools#pilot">Request a pilot</a></div></div>
@@ -9122,7 +9301,7 @@ app.addEventListener("drop",e=>{const s2=e.target.closest&&e.target.closest(".sl
       <h2 id="lps" class="lp-h2">How a pilot works</h2>
       <ol class="lp-sgrid"><li><b>1</b><h3>Pick one cohort</h3><p>Choose a clinical group or course. We set up your program, faculty accounts and join codes in a short kickoff call.</p></li><li><b>2</b><h3>Use it for a semester</h3><p>Students join with a code and take the full exam, chart in the EHR and practice daily. Instructors run clinical days and assign work.</p></li><li><b>3</b><h3>Decide with your data</h3><p>Review the results together at the end of the semester and export your data. There's no obligation to buy.</p></li></ol>
     </div></section>
-    <section class="lp-close"><div class="wrap lp-ci"><div><h2 class="lp-h2 l">Bring the full NCLEX practice exam to your program.</h2><p>Talk with Tyler Savage, RN, CRS, LNC, the nurse who built it: <a href="tel:+17626772802">762-677-2802</a> · <a href="/about#founder">Meet the founder</a></p></div><div class="lp-cta"><a class="btn-lamp lp-go" href="/for-nursing-schools">For nursing schools</a><a class="btn-ink" href="#signin">Student sign-in</a></div></div></section>
+    <section class="lp-close vxs-band">${VXS.art(VXS.cur(),"vxs-art",null,2)}<div class="vxs-sh" aria-hidden="true"></div><div class="wrap lp-ci"><div><h2 class="lp-h2 l">Bring the full NCLEX practice exam to your program.</h2><p>Talk with Tyler Savage, RN, CRS, LNC, the nurse who built it: <a href="tel:+17626772802">762-677-2802</a> · <a href="/about#founder">Meet the founder</a></p></div><div class="lp-cta"><a class="btn-lamp lp-go" href="/for-nursing-schools">For nursing schools</a><a class="btn-ink" href="#signin">Student sign-in</a></div></div></section>
     </main>${foot()}</div>`;
     lpLive()}
   window.__nsLanding=renderLanding;window.addEventListener("hashchange",()=>{window.__vxMoved=1});document.addEventListener("click",e=>{if(e.target.closest&&e.target.closest("[data-act],a"))window.__vxMoved=1},true);
