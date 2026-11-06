@@ -2620,6 +2620,178 @@ html.sc-on .ehsim{right:440px}
 @media (min-width:1280px){html.sc-on .ehw .ehmain{margin-right:428px}html.sc-on .ehsim{right:440px}}
 @media (max-width:760px){.sd-tabs{display:grid;grid-template-columns:1fr 1fr;overflow:visible}.sd-tabs button{border-bottom:1px solid var(--eh-line,#c9d6dd);white-space:normal}}
 /* </v29-sdoh-css> */
+/* <v30-tele-css> */
+/* v30 Telemetry & EKG module (scoped to #tl30, .tl-*) */
+#tl30{--tl-ink:#1c2a35;--tl-mut:#52626d;--tl-line:#d5dee4;--tl-bg:#eef2f5;--tl-cd:#fff;--tl-hd:#103a4f;--tl-hd2:#1d5670;--tl-acc:#0b63c5;--tl-ok:#1f7a45;--tl-okb:#e3f4ea;--tl-bad:#b3261e;--tl-badb:#fbe4e1;--tl-warn:#8a5a00;--tl-warnb:#fff3d6;--tl-tab:#f4f7f9;
+  position:fixed;inset:0;z-index:85;display:flex;flex-direction:column;background:var(--tl-bg);color:var(--tl-ink);font:15px/1.45 var(--f-body,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif);overflow:hidden}
+html[data-theme="dark"] #tl30{--tl-ink:#e4ecf1;--tl-mut:#a6b5bf;--tl-line:#2f4250;--tl-bg:#0f1a22;--tl-cd:#16242e;--tl-tab:#1b2b36;--tl-okb:#173527;--tl-badb:#3a1c1a;--tl-warnb:#3a2e14;--tl-ok:#7fd6a1;--tl-bad:#ff9a90;--tl-warn:#f3c66a;--tl-acc:#7fb6ff}
+@media (prefers-color-scheme:dark){html:not([data-theme="light"]) #tl30{--tl-ink:#e4ecf1;--tl-mut:#a6b5bf;--tl-line:#2f4250;--tl-bg:#0f1a22;--tl-cd:#16242e;--tl-tab:#1b2b36;--tl-okb:#173527;--tl-badb:#3a1c1a;--tl-warnb:#3a2e14;--tl-ok:#7fd6a1;--tl-bad:#ff9a90;--tl-warn:#f3c66a;--tl-acc:#7fb6ff}}
+#tl30 *,#tl30 *:before,#tl30 *:after{box-sizing:border-box}
+#tl30 button{font:inherit;color:inherit}
+#tl30 .tl-tile .tl-btn,#tl30 .tl-ab.al-r{color:#fff}#tl30 .tl-ab.al-y{color:#111}#tl30 .tl-ab.al-c{color:#062033}
+.tl-h{display:flex;align-items:center;gap:10px;background:var(--tl-hd);color:#fff;padding:8px 10px 8px 16px;flex:none}
+.tl-h .tl-hi{display:grid;place-items:center;width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,.12);flex:none}
+.tl-h div{flex:1;min-width:0}.tl-h small{display:block;font-size:12px;opacity:.85;letter-spacing:.02em}.tl-h h2{margin:0;font-size:18px;line-height:1.2;color:#fff}
+.tl-x{background:none;border:0;color:#fff!important;min-width:44px;height:44px;display:flex;align-items:center;gap:6px;justify-content:center;border-radius:8px;cursor:pointer;padding:0 10px;font-weight:600}.tl-x:hover,.tl-x:focus-visible{background:rgba(255,255,255,.14)}
+.tl-tabs{display:flex;overflow-x:auto;background:var(--tl-tab);border-bottom:1px solid var(--tl-line);flex:none;scrollbar-width:none}.tl-tabs::-webkit-scrollbar{display:none}
+.tl-tabs button{flex:1 0 auto;min-height:46px;padding:6px 14px;border:0;background:none;font-weight:600;cursor:pointer;color:var(--tl-ink);white-space:nowrap}
+.tl-tabs button[aria-selected="true"]{background:var(--tl-cd);box-shadow:inset 0 -3px 0 var(--tl-hd2);color:var(--tl-ink)}
+.tl-b{flex:1;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch}
+.tl-w{max-width:1180px;margin:0 auto;padding:14px 16px 40px}
+.tl-cd{background:var(--tl-cd);border:1px solid var(--tl-line);border-radius:10px;padding:14px;margin:0 0 12px;min-width:0}
+.tl-cd h3{margin:0 0 8px;font-size:17px}.tl-cd h4{margin:12px 0 6px;font-size:15px}
+.tl-lbl{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;color:var(--tl-warn);background:var(--tl-warnb);border-radius:999px;padding:3px 10px;margin:0 0 10px}
+.tl-fine{font-size:13px;color:var(--tl-mut);margin:6px 0}
+.tl-btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;padding:8px 16px;border-radius:8px;border:1.5px solid var(--tl-hd2);background:var(--tl-hd2);color:#fff!important;font-weight:700;cursor:pointer;text-decoration:none}
+.tl-btn:hover{filter:brightness(1.08)}.tl-btn.sec{background:transparent;color:var(--tl-ink)!important;border-color:var(--tl-line)}.tl-btn.warn{background:var(--tl-bad);border-color:var(--tl-bad)}
+.tl-btn[disabled]{opacity:.5;cursor:not-allowed}
+.tl-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.tl-grid2{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
+@media (min-width:900px){.tl-grid2{grid-template-columns:260px minmax(0,1fr)}}
+/* ---- paper ---- */
+.tl-strip{min-width:0}
+.tl-sw{overflow-x:auto;overflow-y:hidden;border:1px solid #e3b5b5;border-radius:6px;background:#fff;touch-action:pan-x pan-y}
+.tl-svg{display:block;width:100%;height:auto;user-select:none;-webkit-user-select:none}
+.tl-paper{fill:#fff7f6}.tl-top{fill:#fff}
+.tl-g1{stroke:#f3c4c4;stroke-width:.6px;vector-effect:non-scaling-stroke;fill:none}
+.tl-g5{stroke:#e48a8a;stroke-width:1.15px;vector-effect:non-scaling-stroke;fill:none}
+.tl-tr{fill:none;stroke:#141414;stroke-width:1.35px;vector-effect:non-scaling-stroke;stroke-linejoin:round;stroke-linecap:round}
+.tl-spk{fill:none;stroke:#141414;stroke-width:1.1px;vector-effect:non-scaling-stroke}
+.tl-calp{fill:none;stroke:#141414;stroke-width:1.1px;vector-effect:non-scaling-stroke}
+.tl-tick{stroke:#141414;stroke-width:1.4px;vector-effect:non-scaling-stroke}
+.tl-tt,.tl-hd{font:2.6px/1 var(--f-body,system-ui,sans-serif);fill:#333}.tl-hd{fill:#555}
+.tl-ll{font:700 3.4px/1 var(--f-body,system-ui,sans-serif);fill:#141414}
+/* ---- calipers ---- */
+.tl-cl{stroke:#0b63c5;stroke-width:1.6px;vector-effect:non-scaling-stroke;fill:none}
+.tl-cg{stroke:#0b63c5;stroke-width:1.1px;stroke-dasharray:5 4;vector-effect:non-scaling-stroke;opacity:.75}
+.tl-csh{fill:rgba(11,99,197,.07)}
+.tl-ch{fill:#fff;stroke:#0b63c5;stroke-width:1.6px;vector-effect:non-scaling-stroke}
+.tl-cbx{fill:#0b63c5}.tl-cbt{font:700 2.9px/1 var(--f-body,system-ui,sans-serif);fill:#fff}
+.tl-hit{fill:transparent;cursor:ew-resize;touch-action:none;outline:none}.tl-hit[data-cal="bar"]{cursor:grab}
+.tl-hit:focus-visible{fill:rgba(11,99,197,.16)}
+.tl-drag .tl-hit[data-cal="bar"]{cursor:grabbing}
+.tl-ctl{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;margin:8px 0 4px}
+.tl-seg{display:inline-flex;border:1.5px solid var(--tl-line);border-radius:8px;overflow:hidden;flex-wrap:wrap}
+.tl-seg button{min-height:42px;min-width:52px;padding:4px 10px;border:0;border-right:1px solid var(--tl-line);background:var(--tl-cd);font-weight:700;cursor:pointer}
+.tl-seg button:last-child{border-right:0}#tl30 .tl-seg button[aria-pressed="true"]{background:var(--tl-hd2);color:#fff}
+.tl-tb{display:flex;flex-wrap:wrap;gap:6px}
+.tl-tg{min-height:42px;padding:4px 12px;border-radius:8px;border:1.5px solid var(--tl-line);background:var(--tl-cd);font-weight:600;cursor:pointer}
+.tl-tg[aria-pressed="true"]{border-color:var(--tl-acc);box-shadow:inset 0 0 0 1px var(--tl-acc);color:var(--tl-acc)}
+.tl-nudge{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--tl-mut);margin:2px 0 6px}
+.tl-nudge button{min-width:44px;min-height:40px;margin-left:4px;border-radius:8px;border:1.5px solid var(--tl-line);background:var(--tl-cd);cursor:pointer}
+.tl-ro{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
+.tl-ro span{background:var(--tl-tab);border-radius:8px;padding:6px 4px;text-align:center;min-width:0}.tl-ro b{display:block;font-size:17px;font-variant-numeric:tabular-nums}.tl-ro small{font-size:11.5px;color:var(--tl-mut)}
+.tl-rx{margin:6px 0;font-size:14px}.tl-sv{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0;font-size:13px}
+.tl-sv span{border:1px dashed var(--tl-line);border-radius:999px;padding:2px 10px;color:var(--tl-mut)}.tl-sv span.on{border-style:solid;color:var(--tl-ink)}
+.tl-use{margin-top:4px}
+@media (max-width:560px){.tl-ro{grid-template-columns:repeat(3,minmax(0,1fr))}.tl-ro span:nth-child(4),.tl-ro span:nth-child(5){grid-column:span 1}}
+/* ---- learn ---- */
+.tl-lib h3{display:flex;align-items:center;gap:8px}.tl-lib h3 small{font-size:12px;background:var(--tl-tab);border-radius:999px;padding:1px 8px;color:var(--tl-mut)}
+.tl-libl h4{margin:10px 0 4px;font-size:12.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--tl-mut)}.tl-libl ul{list-style:none;margin:0;padding:0}
+.tl-libl button{display:block;width:100%;text-align:left;border:0;background:none;border-radius:6px;padding:7px 8px;min-height:36px;cursor:pointer;font-size:14px}
+.tl-libl button:hover{background:var(--tl-tab)}#tl30 .tl-libl button[aria-current="true"]{background:var(--tl-hd2);color:#fff;font-weight:700}
+.tl-sel.tl-libsel{display:none}
+@media (max-width:899px){.tl-libl{display:none}.tl-sel.tl-libsel{display:grid}.tl-lib{order:0}}
+.tl-sel{display:grid;gap:4px;font-size:13px;font-weight:600;color:var(--tl-mut);min-width:0}.tl-sel select{min-height:44px;border:1.5px solid var(--tl-line);border-radius:8px;padding:0 10px;background:var(--tl-cd);color:var(--tl-ink);font:inherit;font-size:15px;max-width:100%;width:100%;min-width:0;text-overflow:ellipsis}
+.tl-sel.sm select{min-width:110px}
+.tl-row>.tl-sel,.tl-pick>.tl-sel{max-width:100%}.tl-rowh>div{min-width:0;max-width:100%}
+.tl-how ol{margin:6px 0;padding-left:22px}.tl-how{border-top:1px solid var(--tl-line);margin-top:10px;padding-top:6px}
+.tl-rowh{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end;justify-content:space-between;margin-bottom:10px}.tl-grp{font-size:12.5px;color:var(--tl-mut);font-weight:700;text-transform:uppercase;letter-spacing:.05em}.tl-rn{margin:0;font-size:21px}
+.tl-crit ul,.tl-cols ul{margin:4px 0;padding-left:20px}
+.tl-cols{display:grid;grid-template-columns:minmax(0,1fr);gap:4px 24px}@media (min-width:760px){.tl-cols{grid-template-columns:1fr 1fr}}
+.tl-cols p{margin:0 0 6px}
+.tl-acl{background:var(--tl-badb);border:1px solid rgba(179,38,30,.35);border-radius:10px;padding:10px 14px;margin:8px 0}.tl-acl h4{margin:2px 0 6px;color:var(--tl-bad)}.tl-acl ol{margin:0;padding-left:20px}.tl-acl li{margin:3px 0}
+.tl-src{margin:4px 0;padding-left:20px;font-size:14px}.tl-src a,.tl-acl a,#tl30 .tl-fine a{color:var(--tl-acc)}
+/* ---- practice ---- */
+.tl-pick{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end}.tl-pick .tl-sel{flex:1 1 220px}
+.tl-art{border:1.5px solid var(--tl-line);border-radius:8px;padding:4px 10px 6px;margin:0;display:flex;flex-wrap:wrap;gap:4px 14px;font-size:14px}.tl-art legend{font-size:12.5px;color:var(--tl-mut);font-weight:600;padding:0 4px}
+.tl-art label{display:flex;align-items:center;gap:6px;min-height:34px}.tl-art input,.tl-chk input{width:20px;height:20px;margin:0}
+.tl-ctx{margin:10px 0 8px;padding:8px 12px;background:var(--tl-tab);border-left:4px solid var(--tl-hd2);border-radius:6px}
+.tl-wf h3{margin-bottom:2px}
+.tl-step{border:1px solid var(--tl-line);border-radius:10px;padding:10px 12px 12px;margin:10px 0;min-width:0}
+.tl-step legend{font-weight:700;padding:0 6px;display:flex;align-items:center;gap:8px}
+.tl-n{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--tl-hd2);color:#fff;font-size:13.5px}
+.tl-step.ok{border-color:var(--tl-ok)}.tl-step.ok .tl-n{background:var(--tl-ok)}.tl-step.bad{border-color:var(--tl-bad)}.tl-step.bad .tl-n{background:var(--tl-bad)}
+.tl-two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:8px 14px;align-items:end}
+.tl-fld{display:grid;gap:4px;font-size:13px;font-weight:600;color:var(--tl-mut)}.tl-fld input{min-height:44px;border:1.5px solid var(--tl-line);border-radius:8px;padding:0 10px;font:inherit;font-size:16px;background:var(--tl-cd);color:var(--tl-ink);width:100%}
+.tl-fld.sm{max-width:220px}
+.tl-chk{display:flex;align-items:center;gap:8px;min-height:44px;font-size:14px}
+.tl-opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:6px;margin-top:6px}
+.tl-o{display:flex;align-items:flex-start;gap:8px;border:1.5px solid var(--tl-line);border-radius:8px;padding:9px 10px;cursor:pointer;min-height:44px;font-size:14.5px;background:var(--tl-cd)}
+.tl-o input{width:20px;height:20px;margin:1px 0 0;flex:none;accent-color:var(--tl-hd2)}.tl-o:has(input:checked){border-color:var(--tl-hd2);box-shadow:inset 0 0 0 1px var(--tl-hd2)}
+.tl-o:has(input:disabled){cursor:default;opacity:.85}
+.tl-q{margin:8px 0 2px}.tl-qtc{margin:6px 0;font-size:14px}
+.tl-sub{margin-top:12px}
+.tl-fb{display:flex;gap:8px;align-items:flex-start;border-radius:8px;padding:8px 10px;margin-top:8px;font-size:14.5px}.tl-fb p{margin:0 0 4px}.tl-fb svg{flex:none;margin-top:2px}
+.tl-fb.ok{background:var(--tl-okb);color:var(--tl-ink)}.tl-fb.ok svg{color:var(--tl-ok)}.tl-fb.bad{background:var(--tl-badb)}.tl-fb.bad svg{color:var(--tl-bad)}
+.tl-lk{border:0;background:none;color:var(--tl-acc)!important;font-weight:700;text-decoration:underline;cursor:pointer;padding:6px 0;min-height:36px}
+.tl-sum{border-radius:10px;padding:12px 14px;margin-top:12px;background:var(--tl-warnb)}.tl-sum.ok{background:var(--tl-okb)}.tl-sum .tl-row{margin-top:8px}
+.tl-flash{animation:tlf 1s ease-out}@keyframes tlf{0%{box-shadow:0 0 0 4px rgba(11,99,197,.45)}100%{box-shadow:0 0 0 0 rgba(11,99,197,0)}}
+/* ---- central station (dark, monitor-style) ---- */
+.tl-cs{background:#0a0f12;border-radius:12px;padding:10px;color:#dfe8ec;margin-bottom:12px}
+.tl-csh{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:2px 4px 10px}.tl-csh>b{font-size:15px;margin-right:auto}.tl-csd{font-size:13px;color:#9fb0b8}
+.tl-csh .tl-btn.sec{color:#dfe8ec!important;border-color:#2b3a42}
+[data-tl-alist]{display:flex;flex-wrap:wrap;gap:6px;align-items:center;width:100%;order:3}
+.tl-ali{display:inline-flex;align-items:center;gap:4px;font-size:13px;font-weight:700;color:#ffd5d0}.tl-ali.none{color:#7d9098;font-weight:600}
+.tl-ab{min-height:40px;border-radius:6px;border:0;padding:4px 10px;font-weight:800;font-size:13px;cursor:pointer;color:#111!important}
+.al-r{background:#e5332a!important;color:#fff!important}.al-y{background:#f5c518!important;color:#111!important}.al-c{background:#38b6ff!important;color:#062033!important}
+.tl-bank{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr));gap:8px}
+.tl-tile{background:#000;border:2px solid #1f2a30;border-radius:8px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.tl-th{display:flex;gap:8px;align-items:center;padding:5px 8px;background:#111a1f;font-size:13.5px;min-height:32px}.tl-th b{color:#fff}.tl-th span{color:#9fb0b8;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.tl-th em{margin-left:auto;font-style:normal;font-weight:800;font-size:12.5px;border-radius:4px;padding:1px 6px}
+.tl-tile.al{border-color:#e5332a}.tl-tile.al-y{border-color:#f5c518!important;background:#000!important}.tl-tile.al-c{border-color:#38b6ff!important;background:#000!important}.tl-tile.al-r{background:#000!important}
+.tl-tile.al .tl-th em{background:inherit}.tl-tile.al-r .tl-th{background:#5a0f0b}.tl-tile.al-y .tl-th{background:#4d3d00}.tl-tile.al-c .tl-th{background:#0b3a57}
+.tl-tile.al-r .tl-th em{background:#e5332a;color:#fff}.tl-tile.al-y .tl-th em{background:#f5c518;color:#111}.tl-tile.al-c .tl-th em{background:#38b6ff;color:#062033}
+.tl-tile.done{border-color:#24533a}.tl-tile.done .tl-th em{color:#7fd6a1}
+@media (prefers-reduced-motion:no-preference){.tl-tile.al-r .tl-th{animation:tlblink 1s steps(2,start) infinite}@keyframes tlblink{50%{background:#8f1610}}}
+.tl-tv{display:flex;min-height:96px}.tl-tv canvas{flex:1;min-width:0;height:96px;display:block}
+.tl-num{width:92px;flex:none;display:grid;gap:0;padding:4px 8px;font-variant-numeric:tabular-nums;border-left:1px solid #1a2328}
+.tl-num span{display:flex;justify-content:space-between;align-items:baseline;gap:4px}.tl-num small{font-size:10.5px;color:#8a9aa1}.tl-num b{font-size:15px}
+.tl-num .hr b{font-size:26px;color:#39ff74;line-height:1.05}.tl-num .sp b{color:#5ec8ff}.tl-num .bp b{color:#f2f2f2;font-size:13px}
+.tl-tf{display:flex;align-items:center;gap:8px;padding:5px 8px;background:#0c1317;font-size:12.5px;color:#9fb0b8;min-height:44px}.tl-tf .tl-btn{min-height:36px;padding:4px 12px;background:#e5332a;border-color:#e5332a}
+.tl-btn.sm{min-height:38px;padding:4px 12px;font-size:14px}
+.tl-alp{border-width:2px}.tl-alh{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px;margin:-14px -14px 10px;padding:10px 14px;border-radius:9px 9px 0 0;font-size:15px}
+.tl-afl{list-style:none;padding:0;margin:8px 0}.tl-afl li{display:flex;gap:6px;align-items:flex-start;padding:4px 0}.tl-afl li.ok svg{color:var(--tl-ok)}.tl-afl li.bad svg{color:var(--tl-bad)}
+.tl-intro{max-width:780px}
+/* secure chat (mirrors the EHR Secure Chat) */
+.tl-scw{position:fixed;right:16px;bottom:16px;z-index:3;width:min(410px,calc(100vw - 32px));height:min(600px,calc(100vh - 32px))}
+.tl-sc{height:100%;display:flex;flex-direction:column;background:#fff;color:#1c2a35;border:1px solid #9fb2bd;border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,.3);overflow:hidden}
+.tl-sch{display:flex;align-items:center;gap:8px;background:#103a4f;color:#fff;padding:8px 8px 8px 12px}.tl-sch div{flex:1;display:grid;min-width:0}.tl-sch span{font-size:12.5px;opacity:.85;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tl-scm{flex:1;overflow-y:auto;padding:10px;display:flex;flex-direction:column;gap:8px;background:#fbfcfd}
+.tl-msg{display:flex;flex-direction:column;max-width:88%}.tl-msg.me{align-self:flex-end;align-items:flex-end}.tl-msg.them{align-self:flex-start}
+.tl-bub{border-radius:12px;padding:8px 10px;background:#eef2f4;overflow-wrap:anywhere}.tl-msg.me .tl-bub{background:#1d5670;color:#fff;border-bottom-right-radius:4px}.tl-msg.them .tl-bub{border-bottom-left-radius:4px}
+.tl-bub p{margin:0;white-space:pre-wrap}.tl-bub>b{display:block;font-size:12.5px;color:#46525a;margin-bottom:2px}
+.tl-ord{margin-top:6px;padding:6px 8px;border-radius:8px;background:#fff;border:1px dashed #e3a21a;display:grid;gap:2px}.tl-ord b{font-size:12px;color:#7a4f00}
+.tl-scr{margin-top:6px;font-size:12px;color:#33444e;background:#fff4e0;border-radius:6px;padding:3px 6px}
+.tl-typ{font-size:12.5px;color:#46525a}.tl-empty{margin:auto 0;text-align:center}
+.tl-scc{border-top:1px solid #d9e1e6;padding:6px 8px 8px;display:grid;gap:4px;background:#fff}.tl-scc textarea{width:100%;resize:none;border:1px solid #9fb2bd;border-radius:8px;padding:6px 8px;font:inherit;font-size:15px;color:#1c2a35;background:#fff}
+.tl-scc .tl-row{justify-content:space-between}.tl-scc .tl-lk{color:#0b63c5!important}
+/* ---- code ---- */
+.tl-codes{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,240px),1fr));gap:8px;margin:10px 0}
+.tl-cbtn{display:grid;gap:4px;text-align:left;border:1.5px solid var(--tl-line);border-left:5px solid #e5332a;border-radius:10px;background:var(--tl-cd);padding:10px 12px;cursor:pointer;min-height:64px}.tl-cbtn span{font-size:13.5px;color:var(--tl-mut)}
+.tl-cr{padding-left:20px}.tl-cr li{margin:6px 0}.tl-cr li.ok::marker{color:var(--tl-ok)}.tl-cr li.bad::marker{color:var(--tl-bad)}.tl-cr .tl-fine{display:block}
+.tl-code h3 small{font-size:13px;color:var(--tl-mut);font-weight:600}
+/* ---- progress ---- */
+.tl-kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,140px),1fr));gap:8px;margin-bottom:10px}.tl-kpi span{background:var(--tl-tab);border-radius:10px;padding:10px;text-align:center}.tl-kpi b{display:block;font-size:24px}.tl-kpi small{color:var(--tl-mut)}
+.tl-bar{display:grid;grid-template-columns:minmax(0,160px) minmax(0,1fr) 48px;gap:8px;align-items:center;margin:4px 0;font-size:14px}.tl-bar i{height:10px;border-radius:5px;background:var(--tl-tab);overflow:hidden;display:block}.tl-bar em{display:block;height:100%;background:var(--tl-hd2)}.tl-bar b{text-align:right}
+.tl-tw{overflow-x:auto}.tl-t{width:100%;border-collapse:collapse;font-size:14px}.tl-t th,.tl-t td{border-bottom:1px solid var(--tl-line);padding:6px 8px;text-align:left}.tl-t th{font-size:12.5px;color:var(--tl-mut)}
+/* ---- EHR flowsheet card (lives in the EHR, outside #tl30) ---- */
+.tl-ehr{margin:6px 0 8px;border:1px solid #c9d3da;border-radius:6px;background:#fff;padding:6px 8px;font:13px/1.35 var(--f-body,system-ui,sans-serif);color:#1c2a35}
+.tl-ehrh{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:center;margin-bottom:4px}.tl-ehrh span{color:#52626d}.tl-ehrh .tl-lk{margin-left:auto;border:0;background:none;color:#0b63c5;font-weight:700;text-decoration:underline;cursor:pointer;min-height:32px}
+.tl-ehr .tl-sw{max-width:760px;overflow:hidden;border:1px solid #e3b5b5;border-radius:4px}.tl-ehr .tl-svg{display:block;width:100%;height:auto}
+.tl-ehr .tl-paper{fill:#fff7f6}.tl-ehr .tl-top{fill:#fff}.tl-ehr .tl-g1{stroke:#f3c4c4;stroke-width:.6px;vector-effect:non-scaling-stroke;fill:none}.tl-ehr .tl-g5{stroke:#e48a8a;stroke-width:1.15px;vector-effect:non-scaling-stroke;fill:none}
+.tl-ehr .tl-tr,.tl-ehr .tl-calp{fill:none;stroke:#141414;stroke-width:1.3px;vector-effect:non-scaling-stroke}.tl-ehr .tl-tick{stroke:#141414;stroke-width:1.4px;vector-effect:non-scaling-stroke}.tl-ehr .tl-tt,.tl-ehr .tl-hd{font:2.6px/1 system-ui,sans-serif;fill:#444}.tl-ehr .tl-ll{font:700 3.4px/1 system-ui,sans-serif}
+@media (prefers-reduced-motion:reduce){#tl30 *,#tl30 *:before,#tl30 *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+@media (max-width:560px){.tl-w{padding:10px 10px 40px}.tl-cd{padding:12px 10px}.tl-h{padding-left:10px}.tl-x span{display:none}.tl-num{width:80px}.tl-bar{grid-template-columns:minmax(0,110px) minmax(0,1fr) 42px}}
+html.tl30-on body{overflow:hidden}
+.tl-more{flex:1 1 420px;min-width:0}.tl-more summary{cursor:pointer;font-weight:700;min-height:44px;display:flex;align-items:center;color:var(--tl-ink)}
+@media (min-width:600px){.tl-more summary{display:none}}
+#tl30 h2,#tl30 h3,#tl30 h4{font-family:var(--f-body,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif);letter-spacing:0;color:inherit}#tl30 .tl-h h2{color:#fff}
+#tl30 p{max-width:none}
+.tl-mode button{min-width:0}
+.tl-chb{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:10px 0 0;padding:8px 10px;border-radius:10px;background:var(--tl-tab)}.tl-chb span{display:grid;text-align:center;min-width:64px;background:var(--tl-cd,var(--tl-card));border-radius:8px;padding:4px 8px}.tl-chb small{font-size:11.5px;color:var(--tl-mut)}.tl-chb b{font-size:19px;font-variant-numeric:tabular-nums}.tl-chb em{font-size:12.5px;color:var(--tl-mut);font-style:normal;flex:1 1 200px}
+.tl-tmr b.low{color:var(--tl-bad)}.tl-chs{margin:0 0 4px;font-weight:700}
+@media (min-width:600px){.tl-mode{flex-wrap:nowrap}.tl-mode button{white-space:nowrap}.tl-pick>.tl-sel:first-child{flex:0 1 auto}}
+/* </v30-tele-css> */
 /* <v25b-search-css> */
 /* v25b: header search as a clear pill field; drops to its own row when the header is tight */
 #c2.v25 .c2h .c2tools{flex-wrap:wrap;row-gap:10px}
@@ -2642,7 +2814,7 @@ const BANK = (function(e){try{const P=">oVO^cd@ge#lJ'~wUTDiEY+LZx-K&hkt(/F0;G`N.
 let HIDQ=new Set();const CFG={c:null,bypass:false};try{const c=JSON.parse(localStorage.getItem("ns.cfg")||"null");if(c&&typeof c==="object"){CFG.c=c;HIDQ=new Set(c.hideQ||[])}}catch(e){}
 const featOn=k=>!CFG.c||!CFG.c.feat||CFG.c.feat[k]!==false;
 
-const APPV="effb2b3b2fe295916429cb2166594cd5bd6779bb45ae6d737490636a9605cf48";
+const APPV="8973469d7ef3836f589ef3996024cbe1a64f024075307b9be748b2329cd1fab2";
 const CATS={
   MOC:{n:"Management of Care",lo:15,hi:21,w:18},
   SIC:{n:"Safety and Infection Prevention and Control",lo:10,hi:16,w:13},
@@ -11376,6 +11548,794 @@ app.addEventListener("drop",e=>{const s2=e.target.closest&&e.target.closest(".sl
   window.__v25mc = { apply, todo, version: "v25" };
 }
 /* </v25-mychart-js> */
+/* <v30-tele-js> */
+/* v30-tele-js: Telemetry & EKG interpretation module with digital calipers (Learn, Practice, Central station, Code/ACLS, Progress).
+   Insert INSIDE the app's main IIFE (uses store, SRV, view, deepLink, srvSyncSoon when present; everything else is local).
+   Placement: directly BEFORE the opening v29-sdoh-js marker comment (that is, right after the closing v25-mychart-js marker),
+   NOT after the last block. The e2e harness boot regex (srv*.mjs: /\* <\/v2[0-9]-[a-z]+-js> \*\/\n(applyPrefs...)/) needs a
+   v2N marker directly before `applyPrefs();applyFont();`; "v30" does not match v2[0-9], so this block must not be last.
+   Entry points: Menu › Practice one thing tile, My Chart › More row, #telemetry (also #telemetry/learn|practice|station|code|progress),
+   and a telemetry strip card on the EHR Flowsheets activity for monitored patients (via window.__EHXpost; desktop only).
+   Progress: localStorage "nclexsim.v1.tele" (synced to the account with the other nclexsim.v1.* keys via srvSyncSoon).
+   Clinical content: AI-generated · fact-checked · not yet reviewed by a registered nurse. Fictional patients only. */
+(function(){"use strict";
+const TLV="v30";
+const LBL="AI-generated · fact-checked · not yet reviewed by a registered nurse";
+const e_=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c]);
+const RM=()=>{try{return matchMedia("(prefers-reduced-motion: reduce)").matches||document.documentElement.classList.contains("reduce-motion")}catch(e){return false}};
+const TT=()=>Object.assign({alarm0:2500,alarmGap:7000,prov:[1200,2200],seed:0},window.__vx30T||{});
+const f2=x=>x==null||isNaN(x)?"—":(Math.round(x*100)/100).toFixed(2);
+const f3=x=>x==null||isNaN(x)?"—":(Math.round(x*1000)/1000).toFixed(3);
+const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
+const med=a=>{if(!a.length)return null;const s=a.slice().sort((x,y)=>x-y),m=s.length>>1;return s.length%2?s[m]:(s[m-1]+s[m])/2};
+const mean=a=>a.length?a.reduce((s,x)=>s+x,0)/a.length:null;
+
+/* ================= signal engine =================
+   Units: time in seconds, voltage in mV. Paper: 25 mm/s, 10 mm/mV, small box 1 mm = 0.04 s, large box 5 mm = 0.20 s.
+   Each strip is built from beats (P, QRS, ST, T, U as sums of Gaussian / asymmetric Gaussian components with per-lead shapes),
+   continuous components (flutter, fibrillation, VF, torsades, artifact, wander) and pacer spikes (drawn as vertical lines). */
+function mkR(seed){let a=(seed>>>0)||7;const u=()=>{a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296};
+  return {u,r:(x,y)=>x+(y-x)*u(),i:(x,y)=>Math.floor(x+(y-x+1)*u()),pick:a=>a[Math.floor(u()*a.length)],n:()=>{let s=0;for(let k=0;k<12;k++)s+=u();return s-6}}}
+/* per-lead shapes: [center (fraction of duration), sigma (fraction), relative amplitude] */
+const SH={
+  II:{P:{n:[[.5,.18,1]],ec:[[.42,.15,.8],[.8,.1,-.3]],inv:[[.5,.18,-.85]],pk:[[.5,.12,1.25]],bif:[[.33,.12,.6],[.7,.12,.6]],flat:[[.5,.2,.5]],pc:[[.5,.16,.9]]},
+    Q:{N:[[.12,.07,-.1],[.42,.115,1],[.72,.09,-.22]],BB:[[.14,.08,-.08],[.36,.1,.85],[.74,.12,-.38]],VL:[[.36,.17,1.3],[.84,.08,-.22]],VR:[[.28,.11,.25],[.62,.17,-1.2]],VS:[[.25,.12,-.55],[.62,.14,1.05]],PM:[[.18,.08,.12],[.56,.2,-1]],J:[[.12,.07,-.06],[.42,.115,.9],[.72,.09,-.18]]},
+    T:{N:1,BB:.8,VL:-1.5,VR:1.4,VS:-1.2,PM:1.1,J:1},base:.55,spikeV:1.3,spikeA:.7},
+  V1:{P:{n:[[.35,.14,.65],[.72,.13,-.5]],ec:[[.4,.15,-.5],[.75,.12,.3]],inv:[[.5,.18,.4]],pk:[[.35,.12,.8],[.7,.12,-.5]],bif:[[.33,.12,.5],[.7,.12,-.5]],flat:[[.5,.2,.3]],pc:[[.5,.16,.6]]},
+    Q:{N:[[.3,.1,.28],[.62,.13,-1]],BB:[[.14,.06,.25],[.38,.08,-.45],[.72,.13,.85]],VL:[[.42,.18,1.35]],VR:[[.2,.08,.12],[.55,.18,-1.35]],VS:[[.3,.14,.8],[.7,.13,-.8]],PM:[[.56,.2,-1.25]],J:[[.3,.1,.25],[.62,.13,-.9]]},
+    T:{N:.35,BB:-.9,VL:-1.5,VR:1.5,VS:1,PM:1.2,J:.35},base:.6,spikeV:1.1,spikeA:.6}};
+const LEADS={II:"II",V1:"V1",MCL1:"MCL1"};
+const shapeLead=l=>l==="II"?"II":"V1";
+/* QT from rate with a target QTc (Bazett) */
+const qtFor=(rr,qtc)=>clamp(qtc*Math.sqrt(rr),.2,.62);
+
+function Builder(o){const X={dur:o.dur||6,beats:[],ps:[],spk:[],cont:[],aCL:null,T:{},notes:[]};
+  /* one ventricular complex. q: QRS onset; opt: {m, qd, a, qt, qtc, rr, st, tA, tS, u, p:{t,sh,d,a}, k(kind), cap} */
+  X.beat=(q,opt)=>{opt=opt||{};const m=opt.m||"N";const qd=opt.qd||.08;const rr=opt.rr||.85;
+    const qt=opt.qt||(m==="N"||m==="J"||m==="BB"?qtFor(rr,opt.qtc||.41):clamp(qd+.26+.1*Math.sqrt(rr),.36,.6));
+    const b={q,m,qd,a:opt.a==null?1:opt.a,qt,st:opt.st||0,tA:opt.tA,tS:opt.tS||1,u:opt.u||0,k:opt.k||"N",p:null,cap:opt.cap};
+    if(opt.p){b.p=X.p(opt.p.t,opt.p.sh,opt.p.d,opt.p.a,b)}X.beats.push(b);return b};
+  X.p=(t,sh,d,a,b)=>{const p={t,sh:sh||"n",d:d||.09,a:a==null?.15:a,b:b||null};X.ps.push(p);return p};
+  X.spike=(t,ch)=>{X.spk.push({t,ch})};
+  X.add=fn=>{X.cont.push(fn)};
+  return X}
+
+/* sinus-type driver: calls each(t,i,rr) with P-onset times; returns list of times. jitter ra, respiratory modulation resp */
+function sched(R,rate,X,ra,resp,from){const out=[];let t=from!=null?from:-R.r(.2,60/rate+.2);let i=0;
+  while(t<X.dur+1.2){const rr=60/rate*(1+(ra||.012)*R.n()+(resp||0)*Math.sin(2*Math.PI*t/4.4+.6));out.push([t,rr,i++]);t+=rr}return out}
+function sinusBeat(X,R,t,rr,o){o=o||{};const pr=o.pr||.16;return X.beat(t+pr,{m:o.m||"N",qd:o.qd||.08,rr,qtc:o.qtc||.41,st:o.st||0,tA:o.tA,tS:o.tS,u:o.u,a:(o.a||1)*(1+.03*R.n()),k:o.k||"N",
+  p:{t,sh:o.psh||"n",d:o.pd||.09,a:(o.pa||.15)*(1+.04*R.n())}})}
+const G=(t,mu,s)=>{const z=(t-mu)/s;return Math.exp(-.5*z*z)};
+function rPeakOf(b){const c=SH.II.Q[b.m]||SH.II.Q.N;let best=c[0];c.forEach(x=>{if(Math.abs(x[2])>Math.abs(best[2]))best=x});return b.q+best[0]*b.qd}
+function tGeom(b){const sR=(.036+.05*Math.max(0,b.qt-.34))*b.tS;const tEnd=b.q+b.qt;const tPk=tEnd-2.6*sR;const room=Math.max(.012,(tPk-(b.q+b.qd))/2.3);const sL=Math.min(1.7*sR*(b.tS<1?1/1.7:1),room);return {sR,sL,tPk,tEnd}}
+/* render one lead to a Float32Array (sr samples/s over [0,dur]) */
+function synth(X,lead,sr,art,seed){const L=shapeLead(lead);const S=SH[L];const N=Math.round(X.dur*sr)+1;const v=new Float32Array(N);
+  const addG=(mu,s,a)=>{if(!a||s<=0)return;const i0=Math.max(0,Math.floor((mu-4*s)*sr)),i1=Math.min(N-1,Math.ceil((mu+4*s)*sr));for(let i=i0;i<=i1;i++){const z=(i/sr-mu)/s;v[i]+=a*Math.exp(-.5*z*z)}};
+  const addF=(t0,t1,f)=>{const i0=Math.max(0,Math.floor(t0*sr)),i1=Math.min(N-1,Math.ceil(t1*sr));for(let i=i0;i<=i1;i++)v[i]+=f(i/sr)};
+  const lf=(X.lf&&X.lf[lead])||{g:1,p:1,r:1,s:1,t:1,tv:1};const vsc=(lead==="MCL1"?.9:1)*lf.g;
+  X.ps.forEach(p=>{if(p.t>X.dur+.3||p.t+p.d<-.3)return;(S.P[p.sh]||S.P.n).forEach(([c,s,ra])=>addG(p.t+c*p.d,s*p.d,ra*p.a*vsc*lf.p))});
+  X.beats.forEach(b=>{if(b.q>X.dur+.3||b.q+b.qt<-.3)return;const sh=S.Q[b.m]||S.Q.N;sh.forEach(([c,s,ra])=>addG(b.q+c*b.qd,s*b.qd,ra*b.a*vsc*(ra>0?lf.r:lf.s)));
+    const g=tGeom(b);const tA=(b.tA==null?.3:b.tA)*(S.T[b.m]==null?1:S.T[b.m])*vsc*lf.t*((b.m==="N"||b.m==="J")&&L==="V1"?lf.tv:1);
+    addF(g.tPk-4.2*g.sL,g.tEnd+.06,t=>{const s=t<g.tPk?g.sL:g.sR;const z=(t-g.tPk)/s;return tA*Math.exp(-.5*z*z)});
+    if(b.st){const st=b.st*(L==="II"?1:-.45)*vsc;const j=b.q+.72*b.qd,w=.05*b.qd+.004;addF(b.q+.3*b.qd,g.tEnd+.08,t=>{const up=1/(1+Math.exp(-(t-j)/w));const dn=t<g.tPk?1:Math.exp(-.5*((t-g.tPk)/(g.sR*1.15))**2);return st*up*dn})}
+    if(b.u)addG(g.tEnd+.1,.045,b.u*(L==="II"?1:1.2)*vsc)});
+  X.cont.forEach(fn=>{for(let i=0;i<N;i++)v[i]+=fn(i/sr,L)});
+  /* noise floor, wander, artifact (all seeded) */
+  const R=mkR((seed||1)*7+(L==="II"?3:11));let nz=0;art=art||{};const nzA=X.nzA||.007;
+  const wf=[R.r(.17,.32),R.r(.07,.12)],wp=[R.r(0,6),R.r(0,6)],wa=art.wander?[R.r(.14,.24),R.r(.05,.09)]:[X.wan||.012,(X.wan||.012)*.5];
+  const bursts=[];if(art.move){const nb=X.dur>8?Math.max(2,Math.round(X.dur/9)):R.i(1,2);for(let k=0;k<nb;k++){const t0=R.r(.3,X.dur-1.6);bursts.push({t0,t1:t0+R.r(.8,1.7),f:[R.r(18,26),R.r(29,37),R.r(40,47)],p:[R.r(0,6),R.r(0,6),R.r(0,6)],lf:R.r(1.2,2.4),la:R.r(.12,.3)})}}
+  (X.art||[]).forEach(a=>bursts.push(a));
+  for(let i=0;i<N;i++){const t=i/sr;nz=.55*nz+.45*nzA*R.n();let x=v[i]+nz+wa[0]*Math.sin(2*Math.PI*wf[0]*t+wp[0])+wa[1]*Math.sin(2*Math.PI*wf[1]*t+wp[1]);
+    if(art.ac||X.acA)x+=(art.ac?.045:X.acA)*Math.sin(2*Math.PI*60*t);
+    for(const b of bursts){if(t<b.t0||t>b.t1)continue;const e=Math.sin(Math.PI*(t-b.t0)/(b.t1-b.t0));const amp=b.amp||1;
+      x+=e*amp*(.09*Math.sin(2*Math.PI*b.f[0]*t+b.p[0])+.07*Math.sin(2*Math.PI*b.f[1]*t+b.p[1])+.05*Math.sin(2*Math.PI*b.f[2]*t+b.p[2])+(b.la)*Math.sin(2*Math.PI*b.lf*t+b.p[0])+(b.vf||0)*Math.sin(2*Math.PI*(4.6+.9*Math.sin(t*1.7+b.p[1]))*t+b.p[2]))+(.03*R.n())*e*amp}
+    v[i]=x}
+  return v}
+
+/* ---- continuous components ---- */
+function flutterFn(R,cl,amp){const ph=R.r(0,1);return (t,L)=>{let f=((t/cl+ph)%1+1)%1;if(L==="II"){/* negative sawtooth: quick down, slower ramp back */const d=f<.32?-Math.sin(Math.PI/2*f/.32):-Math.cos(Math.PI/2*(f-.32)/.68);return amp*(d+.55)}return amp*.7*Math.exp(-.5*((f-.3)/.09)**2)-amp*.12}}
+function fibFn(R,amp){const k=[0,1,2,3,4].map(()=>({f:R.r(4.2,8.8),p:R.r(0,6),a:R.r(.5,1)})),mf=R.r(.2,.5),mp=R.r(0,6);return (t,L)=>{let s=0;for(const c of k)s+=c.a*Math.sin(2*Math.PI*c.f*t+c.p);return amp*(L==="II"?1:1.6)*(.65+.35*Math.sin(2*Math.PI*mf*t+mp))*s/3}}
+function vfFn(R,amp){const k=[0,1,2,3].map(()=>({f:R.r(3.2,6.4),p:R.r(0,6),a:R.r(.6,1),w:R.r(.3,.9),wp:R.r(0,6)}));const mf=R.r(.18,.4),mp=R.r(0,6),c0=R.r(0,6);
+  return (t,L)=>{let s=0;for(const c of k)s+=c.a*Math.sin(2*Math.PI*c.f*t+2.2*Math.sin(c.w*t+c.wp)+c.p);return amp*(L==="II"?1:.85)*(.72+.28*Math.sin(2*Math.PI*mf*t+mp))*(s/2.2+.18*Math.sin(2*Math.PI*9.3*t+c0)*Math.sin(1.1*t))}}
+function tdpFn(R,rate,amp){const f=rate/60,per=R.r(2.6,3.4),ph=R.r(0,6),p0=R.r(0,6);return (t,L)=>{const th=2*Math.PI*f*t+p0+.35*Math.sin(t*1.3);const w=Math.sin(th);const sp=Math.sign(w)*Math.pow(Math.abs(w),.65)+.35*Math.sin(2*th+.7);const env=Math.cos(2*Math.PI*t/per+ph);
+  return amp*(L==="II"?1:.8)*(Math.sign(env)*Math.max(.12,Math.abs(env)))*sp}}
+
+/* ================= rhythm library (generators + ground-truth rules) =================
+   Every build draws new physiology: rate, PR, QRS, QT, amplitudes, per-lead gain/axis/T polarity, start phase, ectopic count,
+   position, coupling and morphology, block ratios. About 30% of strips (X.edge) use boundary values on purpose
+   (PR near 0.20, QRS near 0.12, rates near 60/100, QTc near 0.46/0.50). Truth is always computed from the model. */
+const GROUPS=["Sinus","Atrial","Junctional","Ventricular","AV blocks","Paced","Morphology"];
+const RH=[];const RHM=Object.create(null);
+function def(id,g,n,gen,t){const r=Object.assign({id,g,n,gen,reg:["reg"],pc:["N"],prc:null,qc:null,stc:["none"],qtcat:null,aNA:false,vNA:false},t||{});RH.push(r);RHM[id]=r;return r}
+const sp=(R,a,b)=>R.r(a,b);
+/* value from the normal range, or (on an edge strip) from one of the boundary ranges */
+const EG=(R,X,norm,edges)=>X.edge&&edges&&edges.length?sp(R,...R.pick(edges)):sp(R,...norm);
+const PR_N=[.12,.19],PR_E=[[.18,.195],[.121,.13]],QRS_N=[.06,.1],QRS_E=[[.1,.112]],QTC_N=[.38,.44],QTC_E=[[.44,.455]];
+const prN=(R,X)=>EG(R,X,PR_N,PR_E),qdN=(R,X)=>EG(R,X,QRS_N,QRS_E),qtcN=(R,X)=>EG(R,X,QTC_N,QTC_E),qdW=(R,X,a,b)=>EG(R,X,[a||.13,b||.2],[[.122,.132]]);
+const pA=R=>sp(R,.09,.2),qA=R=>sp(R,.65,1.45);
+function sinusRun(X,R,rate,o){o=o||{};const pr=o.pr||prN(R,X),qd=o.qd||qdN(R,X),qtc=o.qtc||qtcN(R,X),pa=o.pa||pA(R),tA=o.tA==null?sp(R,.18,.42):o.tA,a=o.a||qA(R);
+  sched(R,rate,X,o.ra||sp(R,.006,.02),o.resp||0).forEach(([t,rr])=>sinusBeat(X,R,t,rr,Object.assign({pr,qd,qtc,pa,tA,a},o.b||{})));return {pr,qd,qtc}}
+/* pick k distinct beat indices from [lo,hi] with at least gap apart */
+function idxs(R,k,lo,hi,gap){const out=[];let tries=0;while(out.length<k&&tries++<200){const i=R.i(lo,hi);if(out.every(j=>Math.abs(j-i)>=(gap||2)))out.push(i)}return new Set(out)}
+/* Sinus */
+def("nsr","Sinus","Normal sinus rhythm",(X,R)=>sinusRun(X,R,EG(R,X,[62,98],[[61,66],[94,99]])));
+def("sbrady","Sinus","Sinus bradycardia",(X,R)=>sinusRun(X,R,EG(R,X,[38,56],[[53,57.5]])));
+def("stach","Sinus","Sinus tachycardia",(X,R)=>sinusRun(X,R,EG(R,X,[106,150],[[102,108]]),{pr:EG(R,X,[.12,.16],[[.121,.13]]),qtc:sp(R,.39,.44)}));
+def("sarr","Sinus","Sinus arrhythmia",(X,R)=>sinusRun(X,R,sp(R,56,88),{resp:sp(R,.13,.26),ra:.008}),{reg:["irr","patt"]});
+def("sarrest","Sinus","Sinus arrest (sinus pause)",(X,R)=>{const pp=60/sp(R,58,96),pr=prN(R,X),qd=qdN(R,X),pa=pA(R),a=qA(R);let t=-R.r(.1,pp),done=false;const at=sp(R,.6,2.6);
+  while(t<X.dur+1.2){const rr=pp*(1+.01*R.n());sinusBeat(X,R,t,rr,{pr,qd,pa,a});if(!done&&t>at){done=true;t+=pp*R.pick([sp(R,2.3,2.7),sp(R,3.25,3.6)])}else t+=rr}},{reg:["occ"]});
+def("saeb","Sinus","Sinoatrial exit block",(X,R)=>{const pp=60/sp(R,62,96),pr=prN(R,X),qd=qdN(R,X),pa=pA(R),a=qA(R);let t=-R.r(.1,pp),i=0;const skip=R.i(1,4),two=R.u()<.3;
+  while(t<X.dur+1.2){if(i!==skip&&!(two&&i===skip+1))sinusBeat(X,R,t,pp,{pr,qd,pa,a});t+=pp*(1+.005*R.n());i++}},{reg:["occ"]});
+/* Atrial */
+function sinusWithA(X,R,ab){const pp=60/sp(R,60,96),pr=prN(R,X),qd=qdN(R,X),pa=pA(R),a=qA(R);let t=-R.r(.1,pp),i=0;const at=idxs(R,R.i(1,3),1,6,2);const psh=R.pick(["ec","pk","flat","bif"]);const wq=sp(R,.12,.15);
+  while(t<X.dur+1.2){if(at.has(i)){const tp=t-pp+pp*sp(R,.5,.72);sinusBeat(X,R,tp,pp*.62,{pr:pr*sp(R,.92,1.15),qd:ab?wq:qd,m:ab?"BB":"N",tA:ab?.3:undefined,pa:pa*sp(R,.6,.9),psh,k:"PAC",a});t=tp+pp*sp(R,1,1.08)}else{sinusBeat(X,R,t,pp,{pr,qd,pa,a});t+=pp*(1+.01*R.n())}i++}}
+def("pac","Atrial","Sinus rhythm with PACs",(X,R)=>sinusWithA(X,R,false),{reg:["occ"],pc:["NX"],prc:["nl"]});
+def("pacab","Atrial","Sinus rhythm with an aberrantly conducted PAC",(X,R)=>sinusWithA(X,R,true),{reg:["occ"],pc:["NX"],prc:["nl"],qc:["mix"]});
+function wander(X,R,rate,irr){const shs=["n","ec","pk","bif","flat","inv"].sort(()=>R.u()-.5);let t=-R.r(.1,.6),k=0;const qd=qdN(R,X),a=qA(R);while(t<X.dur+1.2){const rr=60/rate*(1+irr*R.n());const sh=shs[k%3===2&&R.u()<.5?R.i(3,5):k%3];const pr=sh==="inv"?sp(R,.1,.12):sp(R,.12,.2);
+  sinusBeat(X,R,t,rr,{pr,qd,psh:sh,pa:sp(R,.08,.18),a});t+=rr;k++}}
+def("wap","Atrial","Wandering atrial pacemaker",(X,R)=>wander(X,R,EG(R,X,[58,92],[[92,98]]),sp(R,.07,.12)),{reg:["irr","occ"],pc:["VAR"],prc:["var"]});
+def("mat","Atrial","Multifocal atrial tachycardia (MAT)",(X,R)=>wander(X,R,EG(R,X,[108,140],[[102,108]]),sp(R,.1,.15)),{reg:["irr"],pc:["VAR"],prc:["var"]});
+def("svt","Atrial","Supraventricular tachycardia (SVT/AVNRT)",(X,R)=>{const rr=60/EG(R,X,[165,230],[[150,162]]),qd=qdN(R,X),a=qA(R);let t=-R.r(0,rr);const rp=R.u()<.35;while(t<X.dur+1.2){const b=X.beat(t,{m:"N",qd,rr,qtc:sp(R,.4,.44),a,tA:sp(R,.12,.28)});if(rp)X.p(t+qd+.03,"inv",.05,.07,null);t+=rr*(1+.004*R.n())}},{pc:["NONE","INV"],prc:["na"],aNA:true});
+function flutter(X,R,seq){const cl=60/sp(R,250,345);X.aCL=cl;X.add(flutterFn(R,cl,sp(R,.1,.28)));const qd=qdN(R,X),a=qA(R),dl=sp(R,.16,.26);let t=-R.r(0,cl*4),k=0;
+  while(t<X.dur+1.2){const n=typeof seq==="function"?seq(k):seq;t+=n*cl;X.beat(t+dl,{m:"N",qd,rr:n*cl,qtc:.41,tA:sp(R,.1,.22),a});k++}}
+def("afl21","Atrial","Atrial flutter, 2:1 conduction",(X,R)=>flutter(X,R,2),{pc:["FL"],prc:["na"]});
+def("afl41","Atrial","Atrial flutter, 4:1 conduction",(X,R)=>flutter(X,R,4),{pc:["FL"],prc:["na"]});
+def("aflv","Atrial","Atrial flutter, variable conduction",(X,R)=>{const L=[2,3,4];const pat=[];for(let i=0;i<14;i++)pat.push(R.pick(L));pat[1]=pat[0]===2?4:2;flutter(X,R,k=>pat[k%pat.length])},{reg:["irr","patt"],pc:["FL"],prc:["na"]});
+function afib(X,R,rate,o){o=o||{};X.add(fibFn(R,sp(R,.025,.11)));const m=60/rate;let t=-R.r(0,m);const qd=o.qd||qdN(R,X),a=qA(R),ir=sp(R,.18,.32);while(t<X.dur+1.2){const rr=m*clamp(1+ir*R.n(),.5,1.75);t+=rr;X.beat(t,{m:o.m||"N",qd,rr,qtc:.41,tA:o.m?.3:sp(R,.12,.3),a})}}
+def("afib","Atrial","Atrial fibrillation, controlled rate",(X,R)=>afib(X,R,EG(R,X,[60,92],[[90,98]])),{reg:["irr"],pc:["FIB"],prc:["na"],aNA:true});
+def("afrvr","Atrial","Atrial fibrillation with RVR",(X,R)=>afib(X,R,EG(R,X,[118,170],[[104,114]])),{reg:["irr"],pc:["FIB"],prc:["na"],aNA:true});
+def("afab","Atrial","Atrial fibrillation with aberrant conduction (wide QRS)",(X,R)=>afib(X,R,sp(R,112,165),{m:"BB",qd:sp(R,.125,.15)}),{reg:["irr"],pc:["FIB"],prc:["na"],qc:["w"],aNA:true,qtcat:["nl","long","high","na"]});
+/* Junctional */
+function junc(X,R,rate,o){const rr0=60/rate,qd=qdN(R,X),a=qA(R);const v=o&&o.v||R.pick(["before","none","after"]);X.T.jv=v;let t=-R.r(0,rr0);const pa=sp(R,.07,.13);
+  while(t<X.dur+1.2){const rr=rr0*(1+.008*R.n());const b=X.beat(t,{m:"J",qd,rr,qtc:qtcN(R,X),a,k:"J"});
+    if(v==="before")b.p=X.p(t-sp(R,.07,.1),"inv",.07,pa,b);else if(v==="after")X.p(t+qd+.04,"inv",.07,pa,null);t+=rr}}
+const jPR=X=>X.T.jv==="before"?["short"]:["na"];
+def("pjc","Junctional","Sinus rhythm with PJCs",(X,R)=>{const pp=60/sp(R,60,92),pr=prN(R,X),qd=qdN(R,X),pa=pA(R),a=qA(R);let t=-R.r(.1,pp),i=0;const at=idxs(R,R.i(1,3),1,6,2);
+  while(t<X.dur+1.2){if(at.has(i)){const q=t-pp+pr+pp*sp(R,.58,.72);const b=X.beat(q,{m:"J",qd,rr:pp*.66,k:"PJC",a});const v=R.u();if(v<.5)b.p=X.p(q-.08,"inv",.07,pa*.8,b);else if(v<.75)X.p(q+qd+.04,"inv",.07,pa*.8,null);t=q-pr+pp*sp(R,1,1.08)}else{sinusBeat(X,R,t,pp,{pr,qd,pa,a});t+=pp*(1+.01*R.n())}i++}},{reg:["occ"],pc:["NX","INV"],prc:["nl"]});
+def("junc","Junctional","Junctional rhythm",(X,R)=>junc(X,R,EG(R,X,[40,56],[[55,59]])),{pc:["INV"],prc:jPR});
+def("ajr","Junctional","Accelerated junctional rhythm",(X,R)=>junc(X,R,EG(R,X,[64,96],[[61,66],[95,99]])),{pc:["INV"],prc:jPR});
+def("jt","Junctional","Junctional tachycardia",(X,R)=>junc(X,R,EG(R,X,[108,150],[[102,108]])),{pc:["INV"],prc:jPR});
+/* Ventricular */
+const VM=["VL","VR","VS"];
+function sinusWithV(X,R,plan,o){o=o||{};const rate=o.rate||sp(R,58,96),pp=60/rate,pr=prN(R,X),qd=qdN(R,X),pa=pA(R),a=qA(R);let t=-R.r(.1,pp),i=0;let lastQ=-9;const cpl0=o.cpl||sp(R,.48,.68);
+  while(t<X.dur+1.2){const k=plan(i);if(k){const ms=Array.isArray(k)?k:[k];let q=lastQ;ms.forEach((m,j)=>{q=j?q+Math.max(.34,pp*sp(R,.42,.55)):lastQ+(o.cpl?cpl0:pp*cpl0);X.beat(q,{m,qd:sp(R,.13,.18),rr:pp,k:"V",a:a*sp(R,.9,1.3)});lastQ=q});
+      X.p(t,"n",.09,pa*.9,null);t+=pp;i++;continue}
+    const b=sinusBeat(X,R,t,pp,{pr,qd,pa,a});lastQ=b.q;t+=pp*(1+.008*R.n());i++}}
+const pvcT={reg:["occ"],pc:["NX","N"],prc:["nl"],qc:["mix"]};
+def("pvc","Ventricular","Sinus rhythm with unifocal PVCs",(X,R)=>{const at=idxs(R,R.i(1,3),1,6,2),m=R.pick(VM);sinusWithV(X,R,i=>at.has(i)?m:null)},pvcT);
+def("pvcm","Ventricular","Sinus rhythm with multifocal PVCs",(X,R)=>{const ms=VM.slice().sort(()=>R.u()-.5);const at=[...idxs(R,R.i(2,3),1,7,2)];const mp={};at.forEach((i,j)=>mp[i]=ms[j%3]);sinusWithV(X,R,i=>mp[i]||null)},pvcT);
+def("bigem","Ventricular","Ventricular bigeminy",(X,R)=>{const m=R.pick(VM),ph=R.i(0,1);sinusWithV(X,R,i=>(i+ph)%2?m:null,{rate:sp(R,56,84)})},Object.assign({},pvcT,{reg:["patt"]}));
+def("trigem","Ventricular","Ventricular trigeminy",(X,R)=>{const m=R.pick(VM),ph=R.i(0,2);sinusWithV(X,R,i=>(i+ph)%3===2?m:null)},Object.assign({},pvcT,{reg:["patt"]}));
+def("couplet","Ventricular","Sinus rhythm with a PVC couplet",(X,R)=>{const a=R.i(1,5),m=R.pick(VM),m2=R.u()<.3?R.pick(VM):m;sinusWithV(X,R,i=>i===a?[m,m2]:null)},pvcT);
+def("ront","Ventricular","R-on-T PVC",(X,R)=>{const a=R.i(2,5),m=R.pick(VM);sinusWithV(X,R,i=>i===a?m:null,{cpl:sp(R,.25,.31)})},pvcT);
+function ventEsc(X,R,rate){const rr0=60/rate,m=R.pick(VM),qd=qdW(R,X,.14,.2),a=qA(R);let t=-R.r(0,rr0);while(t<X.dur+1.2){const rr=rr0*(1+.012*R.n());X.beat(t,{m,qd,rr,k:"V",a});t+=rr}}
+const QANY=["nl","long","high","na"];const vNoP={pc:["NONE"],prc:["na"],qc:["w"],aNA:true,stc:["none","na"],qtcat:QANY};
+def("idio","Ventricular","Idioventricular rhythm",(X,R)=>ventEsc(X,R,EG(R,X,[22,38],[[35,39.5]])),vNoP);
+def("aivr","Ventricular","Accelerated idioventricular rhythm (AIVR)",(X,R)=>ventEsc(X,R,EG(R,X,[52,96],[[41,46],[94,99]])),vNoP);
+def("vt","Ventricular","Monomorphic ventricular tachycardia",(X,R)=>{const rr=60/EG(R,X,[150,230],[[118,138]]),qd=qdW(R,X,.13,.2),m=R.pick(VM),a=qA(R)*sp(R,.9,1.3);let t=-R.r(0,rr);const dis=R.u()<.3?60/sp(R,60,90):0;
+  while(t<X.dur+1.2){X.beat(t,{m,qd,rr,k:"V",qt:Math.min(rr*.92,.33),a});t+=rr*(1+.005*R.n())}if(dis)for(let p=-R.r(0,dis);p<X.dur+1;p+=dis)X.p(p,"n",.09,.08,null)},Object.assign({},vNoP,{qtcat:["na"]}));
+const arrestT={reg:["na"],pc:["NONE"],prc:["na"],qc:["na"],stc:["na"],qtcat:["na"],aNA:true,vNA:true,arrest:1};
+/* polymorphic runs: torsades starts after long-QT beats and twists; polymorphic VT with a normal QT changes shape without the twist */
+function polyRun(X,R,twist){const lead=sp(R,.7,2);const pp=60/sp(R,58,80);let t=-R.r(.1,pp)-pp;const qtc=twist?sp(R,.56,.64):sp(R,.39,.43);const a=qA(R);let lastQ=-9;
+  while(t+.16<lead){const b=sinusBeat(X,R,t,pp,{pr:.16,qd:.09,qtc,a,tA:twist?.32:.3});lastQ=b.q;t+=pp}const t0=lastQ+(twist?sp(R,.36,.42):sp(R,.3,.36));X.T.t0=t0;
+  const rate=sp(R,200,260),f=rate/60,per=sp(R,2.2,3.4),ph=R.r(0,6),amp=sp(R,.7,1.15),k2=sp(R,.4,.9);
+  X.add((tt,L)=>{if(tt<t0)return 0;const u=tt-t0;const ramp=Math.min(1,u/.12);const th=2*Math.PI*f*u+.35*Math.sin(u*1.3);const w=Math.sin(th);const s=Math.sign(w)*Math.pow(Math.abs(w),.65)+.35*Math.sin(2*th+.7);
+    const env=twist?Math.cos(2*Math.PI*u/per+ph):(.75+.25*Math.sin(u*2.1+ph))*(Math.sin(2*Math.PI*u*k2+ph)>-.2?1:-.8);return ramp*amp*(L==="II"?1:.8)*(twist?Math.sign(env)*Math.max(.12,Math.abs(env)):env)*s})}
+def("tdp","Ventricular","Torsades de pointes (polymorphic VT with a long QT)",(X,R)=>polyRun(X,R,true),Object.assign({},arrestT,{reg:["irr","na"],qc:["w","na","mix"],pc:["NONE","N"],stc:["na","none"]}));
+def("pmvt","Ventricular","Polymorphic VT (normal QT)",(X,R)=>polyRun(X,R,false),Object.assign({},arrestT,{reg:["irr","na"],qc:["w","na","mix"],pc:["NONE","N"],stc:["na","none"]}));
+def("vfc","Ventricular","Ventricular fibrillation, coarse",(X,R)=>{X.add(vfFn(R,sp(R,.55,1.1)))},arrestT);
+def("vff","Ventricular","Ventricular fibrillation, fine",(X,R)=>{X.add(vfFn(R,sp(R,.11,.22)))},arrestT);
+def("asys","Ventricular","Asystole",(X,R)=>{const a=sp(R,.004,.02),f=sp(R,.15,.4);X.add((t)=>a*Math.sin(2*Math.PI*f*t))},arrestT);
+/* PEA: any organized rhythm without a pulse; the strip shows the underlying rhythm and the truth follows it */
+def("pea","Ventricular","Pulseless electrical activity (PEA)",(X,R)=>{const u=R.pick(["sinus","slow","junc","wide"]);X.T.under=u;
+  if(u==="sinus")sinusRun(X,R,sp(R,60,100));else if(u==="slow")sinusRun(X,R,sp(R,40,58),{qd:sp(R,.08,.11)});else if(u==="junc"){junc(X,R,sp(R,40,60));X.T.pc=["INV"];X.T.prc=jPR(X)}else{ventEsc(X,R,sp(R,24,40));Object.assign(X.T,{pc:["NONE"],prc:["na"],qc:["w"],aNA:true,qtcat:QANY})}},{pea:1});
+/* AV blocks */
+def("avb1","AV blocks","First-degree AV block",(X,R)=>sinusRun(X,R,sp(R,56,96),{pr:EG(R,X,[.24,.4],[[.215,.235]])}),{prc:["long"]});
+def("avb2i","AV blocks","Second-degree AV block type I (Wenckebach)",(X,R)=>{const pp=60/sp(R,60,100),qd=qdN(R,X),pa=pA(R),a=qA(R),grp=R.pick([3,4,4,5]);
+  const pr0=sp(R,.14,.24),inc=sp(R,.06,.14),fac=sp(R,.4,.65);const prs=[pr0];for(let j=1;j<grp-1;j++)prs.push(prs[j-1]+inc*Math.pow(fac,j-1));
+  let t=-R.r(.1,pp)-pp*R.i(0,grp-1),i=R.i(0,grp-1);while(t<X.dur+1.2){const j=i%grp;if(j<grp-1)sinusBeat(X,R,t,pp,{pr:prs[j]+.004*R.n(),qd,pa,a});else X.p(t,"n",.09,pa,null);t+=pp*(1+.006*R.n());i++}},{reg:["patt"],pc:["MORE"],prc:["prog"]});
+def("avb2ii","AV blocks","Second-degree AV block type II",(X,R)=>{const pp=60/sp(R,62,100),wide=R.u()<.7,qd=wide?sp(R,.125,.15):qdN(R,X),pr=EG(R,X,[.14,.19],[[.215,.24]]),pa=pA(R),a=qA(R);
+  const drop=new Set();let i0=R.i(1,4);while(i0<14){drop.add(i0);i0+=R.pick([3,4,5,6])}let t=-R.r(.1,pp),i=0;
+  while(t<X.dur+1.2){if(drop.has(i))X.p(t,"n",.09,pa,null);else sinusBeat(X,R,t,pp,{pr,qd,pa,a,m:wide?"BB":"N",tA:wide?.28:undefined});t+=pp*(1+.005*R.n());i++}},{reg:["occ","patt"],pc:["MORE"]});
+def("avb21","AV blocks","2:1 AV block",(X,R)=>{const pp=60/sp(R,70,104),wide=R.u()<.5,qd=wide?sp(R,.125,.15):qdN(R,X),pr=sp(R,.14,.26),pa=pA(R),a=qA(R);
+  let t=-R.r(.1,pp),i=R.i(0,1);while(t<X.dur+1.2){if(i%2)X.p(t,"n",.09,pa,null);else sinusBeat(X,R,t,pp*2,{pr,qd,pa,a,m:wide?"BB":"N"});t+=pp*(1+.004*R.n());i++}},{pc:["MORE"]});
+def("avb3","AV blocks","Third-degree (complete) heart block",(X,R)=>{const pp=60/sp(R,62,110),pa=pA(R);let t=-R.r(0,pp);while(t<X.dur+1.2){X.p(t,"n",.09,pa,null);t+=pp*(1+.006*R.n())}
+  const jx=R.u()<.5;const rr0=60/(jx?sp(R,38,55):sp(R,24,40));let q=-R.r(0,rr0)+.1;const m=jx?"J":R.pick(VM),qd=jx?qdN(R,X):qdW(R,X,.14,.19),a=qA(R);while(q<X.dur+1.2){X.beat(q,{m,qd,rr:rr0,k:jx?"J":"V",qtc:.43,a});q+=rr0*(1+.006*R.n())}
+  if(!jx)X.T.qtcat=QANY},{pc:["MORE"],prc:["var"]});
+/* Paced */
+const LR=R=>R.pick([50,55,60,65,70,75,80]);
+def("aai","Paced","Atrial paced rhythm",(X,R)=>{const rr=60/LR(R),pr=sp(R,.16,.22),qd=qdN(R,X),a=qA(R);let t=-R.r(0,rr);while(t<X.dur+1.2){X.spike(t,"A");sinusBeat(X,R,t+.012,rr,{pr:pr-.012,qd,psh:"pc",pa:sp(R,.08,.14),a});t+=rr}},{pc:["PACE"],paced:"A"});
+def("vvi","Paced","Ventricular paced rhythm",(X,R)=>{const rr=60/LR(R),qd=sp(R,.13,.18),a=qA(R);let t=-R.r(0,rr);while(t<X.dur+1.2){X.spike(t,"V");X.beat(t+.01,{m:"PM",qd,rr,k:"PM",a});t+=rr}},{pc:["NONE"],prc:["na"],qc:["w"],stc:["none","na"],aNA:true,qtcat:QANY,paced:"V"});
+def("ddd","Paced","Dual-chamber (AV) paced rhythm",(X,R)=>{const rr=60/LR(R),av=sp(R,.12,.22),qd=sp(R,.13,.18),a=qA(R);let t=-R.r(0,rr);while(t<X.dur+1.2){X.spike(t,"A");const p=X.p(t+.012,"pc",.09,sp(R,.07,.13),null);X.spike(t+av,"V");const b=X.beat(t+av+.01,{m:"PM",qd,rr,k:"PM",a});b.p=p;p.b=b;t+=rr}},{pc:["PACE"],qc:["w"],stc:["none","na"],qtcat:QANY,paced:"AV"});
+def("fcap","Paced","Pacemaker failure to capture",(X,R)=>{const rr=60/LR(R),a=qA(R);let t=-R.r(0,rr),i=0;const miss=idxs(R,R.i(1,3),1,6,2);while(t<X.dur+1.2){X.spike(t,"V");if(!miss.has(i))X.beat(t+.01,{m:"PM",qd:.15,rr,k:"PM",a});t+=rr;i++}},{reg:["occ"],pc:["NONE"],prc:["na"],qc:["w"],stc:["none","na"],aNA:true,qtcat:QANY,paced:"V"});
+def("fsense","Paced","Pacemaker failure to sense (undersensing)",(X,R)=>{const pp=60/sp(R,68,96),pr=prN(R,X),pa=pA(R),a=qA(R);const qs=[];let t=-R.r(.1,pp);
+  while(t<X.dur+1.2){qs.push([t,pp]);t+=pp*(1+.01*R.n())}const pi=60/R.pick([50,55,60,65]),p0=R.r(.1,.9);const spk=[];for(let s=p0;s<X.dur+1;s+=pi)spk.push(s);
+  let lastQ=-9;const evs=[];qs.forEach(([pt,rr])=>evs.push({t:pt+pr,k:"S",pt,rr}));spk.forEach(s=>evs.push({t:s,k:"P"}));evs.sort((a,b)=>a.t-b.t);
+  evs.forEach(e=>{if(e.k==="P"){X.spike(e.t,"V");if(e.t-lastQ>.42){X.beat(e.t+.01,{m:"PM",qd:.15,rr:pp,k:"PM",a});lastQ=e.t+.01}}else{if(e.t-lastQ>.36){sinusBeat(X,R,e.pt,e.rr,{pr,qd:.08,pa,a});lastQ=e.t}else X.p(e.pt,"n",.09,pa,null)}})},
+  {reg:["irr","occ"],pc:["NX","N"],prc:["nl"],qc:["mix"],paced:"V"});
+def("osense","Paced","Pacemaker oversensing",(X,R)=>{const rr=60/LR(R),a=qA(R);let t=-R.r(0,rr),i=0;const gaps=idxs(R,R.i(1,2),1,5,3);while(t<X.dur+1.2){if(gaps.has(i)){t+=sp(R,1.6,2.6);i++;continue}X.spike(t,"V");X.beat(t+.01,{m:"PM",qd:.15,rr,k:"PM",a});t+=rr;i++}},{reg:["occ"],pc:["NONE"],prc:["na"],qc:["w"],stc:["none","na"],aNA:true,qtcat:QANY,paced:"V"});
+/* Morphology */
+def("stemi","Morphology","Sinus rhythm with ST elevation",(X,R)=>sinusRun(X,R,sp(R,60,108),{b:{st:EG(R,X,[.16,.42],[[.12,.15]]),tA:sp(R,.32,.55)}}),{stc:["ste"]});
+def("stdep","Morphology","Sinus rhythm with ST depression",(X,R)=>sinusRun(X,R,sp(R,64,110),{b:{st:-EG(R,X,[.15,.28],[[.11,.14]]),tA:sp(R,.05,.15)}}),{stc:["std"]});
+def("hyperk","Morphology","Peaked T waves (hyperkalemia pattern)",(X,R)=>sinusRun(X,R,sp(R,52,84),{pa:sp(R,.03,.08),pr:sp(R,.17,.24),qd:sp(R,.09,.118),qtc:sp(R,.38,.42),b:{tA:sp(R,.7,1.2),tS:sp(R,.5,.7)}}),{stc:["peak"],prc:["nl","long"]});
+def("hypok","Morphology","Flat T waves with U waves (hypokalemia pattern)",(X,R)=>sinusRun(X,R,sp(R,64,100),{b:{tA:sp(R,.03,.09),u:sp(R,.13,.24),st:-sp(R,.03,.08)}}),{stc:["u","std"],qtcat:QANY});
+def("lqt","Morphology","Prolonged QT interval",(X,R)=>sinusRun(X,R,sp(R,50,80),{qtc:EG(R,X,[.51,.62],[[.475,.5]])}),{});
+def("artvf","Morphology","Artifact mimicking VF",(X,R)=>{sinusRun(X,R,sp(R,62,100));const t0=sp(R,.2,2.2),d=sp(R,2.2,4.6);X.art=[{t0,t1:Math.min(X.dur-.2,t0+d),f:[sp(R,16,24),sp(R,26,34),sp(R,37,46)],p:[R.r(0,6),R.r(0,6),R.r(0,6)],lf:sp(R,2.2,3.8),la:sp(R,.22,.42),vf:sp(R,.3,.5),amp:sp(R,.8,1.25)}]},{art:1});
+
+/* ---------- build a strip and its ground truth ---------- */
+const SR=500;let BUILDN=0;
+function seedOf(o){const T0=TT().seed;if(o&&o.seed)return o.seed;if(T0)return T0+(++BUILDN)*7919;return (Math.random()*4294967295)>>>0||13}
+function build(rid,o){o=o||{};const rh=RHM[rid]||RHM.nsr;const seed=seedOf(o);const R=mkR(seed);const X=Builder({dur:o.dur||6});
+  X.edge=o.edge!=null?o.edge:R.u()<(o.edgeP!=null?o.edgeP:.3);
+  const leads=o.leads||["II"];X.lf={};leads.forEach((l,i)=>{const low=i>0&&R.u()<.12;X.lf[l]={g:low?sp(R,.45,.62):sp(R,.75,1.3),p:i?sp(R,.6,1.4):sp(R,.85,1.3),r:sp(R,.75,1.25),s:sp(R,.6,1.6),t:sp(R,.65,1.35),tv:R.u()<.4?-1:1}});
+  X.nzA=sp(R,.003,.013);X.wan=sp(R,.006,.045);X.acA=R.u()<.1?sp(R,.008,.02):0;
+  rh.gen(X,R,o);
+  /* optional quirks that don't change the answer: a brief, small movement burst away from what matters */
+  if(!rh.arrest&&!rh.art&&rh.g!=="AV blocks"&&rh.g!=="Paced"&&!X.aCL&&R.u()<(o.quirkP!=null?o.quirkP:.1)){const t0=sp(R,.3,X.dur-1.2);(X.art=X.art||[]).push({t0,t1:t0+sp(R,.4,.8),f:[sp(R,18,24),sp(R,28,34),sp(R,38,44)],p:[R.r(0,6),R.r(0,6),R.r(0,6)],lf:2,la:.06,amp:sp(R,.25,.4)})}
+  X.beats.sort((a,b)=>a.q-b.q);X.ps.sort((a,b)=>a.t-b.t);X.spk.sort((a,b)=>a.t-b.t);
+  const sr=o.sr||SR;const art=o.art||{};const sig={};leads.forEach(l=>sig[l]=synth(X,l,sr,art,seed));
+  const st={rid,rh,seed,dur:X.dur,sr,leads,sig,X,art,edge:X.edge};st.truth=truthOf(st);return st}
+/* quick content hash of a strip's samples (tests and de-duplication) */
+function sigHash(st){const v=st.sig[st.leads[0]];let h=2166136261>>>0;for(let i=0;i<v.length;i+=3){h^=Math.round(v[i]*1000)&0xffff;h=Math.imul(h,16777619)>>>0}return h.toString(16)}
+const PC={N:"Upright and alike, one before every QRS",NX:"Upright and alike, except early or ectopic beats",MORE:"More P waves than QRS complexes",VAR:"P waves change shape (3 or more shapes)",INV:"Inverted, hidden in the QRS, or after the QRS",FL:"Flutter (sawtooth) waves",FIB:"Wavy fibrillatory baseline, no distinct P waves",NONE:"No P waves seen",PACE:"A pacer spike before each P wave"};
+const PRC={nl:"0.12–0.20 s and the same every beat",long:"Longer than 0.20 s, the same every beat",short:"Shorter than 0.12 s",prog:"Gets longer until a beat drops",var:"Varies, with no relationship to the QRS",na:"Can't measure (no P waves linked to the QRS)"};
+const QC={n:"Narrow (less than 0.12 s)",w:"Wide (0.12 s or more)",mix:"Mostly narrow, with some wide beats",na:"No QRS complexes"};
+const REG={reg:"Regular",occ:"Regular except for early or late beats (occasionally irregular)",patt:"Regularly irregular (a repeating pattern)",irr:"Irregularly irregular (no pattern)",na:"No organized rhythm"};
+const STC={none:"No ST or T-wave changes",ste:"ST elevation",std:"ST depression",peak:"Tall, narrow, peaked T waves",u:"Flat T waves with U waves",na:"Can't assess (no organized complexes)"};
+const QTC={nl:"Normal",long:"Prolonged (QTc 0.46–0.49 s)",high:"QTc 0.50 s or longer (high risk)",na:"Can't measure"};
+function qtcat(q){return q==null?"na":q>=.5?"high":q>=.46?"long":"nl"}
+function truthOf(st){const {X,dur}=st;const rh=Object.assign({},st.rh,X.T);const B=X.beats,Pw=X.ps;const inS=t=>t>=0&&t<dur;
+  const Qs=B.filter(b=>inS(b.q));const rr=[];for(let i=1;i<B.length;i++){if(B[i].q>-.5&&B[i-1].q<dur+.2&&(inS(B[i].q)||inS(B[i-1].q)))rr.push(B[i].q-B[i-1].q)}
+  const six=Qs.length*Math.round(60/dur);const vMean=rr.length?60/mean(rr):null,vMed=rr.length?60/med(rr):null;
+  let aRate=null,aSix=null;if(X.aCL){aRate=60/X.aCL;aSix=Math.round(dur/X.aCL)*10}else if(Pw.length>=2&&!rh.aNA){const pp=[];for(let i=1;i<Pw.length;i++)pp.push(Pw[i].t-Pw[i-1].t);aRate=60/med(pp);aSix=Pw.filter(p=>inS(p.t)).length*Math.round(60/dur)}
+  const dom=(()=>{const c={};B.forEach(b=>c[b.k]=(c[b.k]||0)+1);return Object.keys(c).sort((a,b)=>c[b]-c[a])[0]||"N"})();
+  const cond=B.filter(b=>b.p&&inS(b.q)&&(b.k===dom||b.k==="N"));const prs=cond.map(b=>b.q-b.p.t);const prM=prs.length?med(prs):null;
+  const prConst=prs.length&&prs.every(x=>Math.abs(x-prM)<.025);
+  let prc=typeof rh.prc==="function"?rh.prc(X):rh.prc;if(!prc){prc=!prs.length?["na"]:!prConst?["var"]:prM<.12?["short"]:prM<=.205?["nl"]:["long"]}
+  const qds=B.filter(b=>b.k===dom).map(b=>b.qd);const qdM=qds.length?med(qds):null;let qc=rh.qc;if(!qc)qc=qdM==null?["na"]:[qdM>=.12?"w":"n"];
+  const rrM=med(rr)||1;let rep=null;for(const pass of [0,1,2]){const needP=pass===0;let best=1e9;for(let i=1;i<B.length-1;i++){const b=B[i];if(b.k!==dom||(pass<2&&B[i-1].k!==dom))continue;if(pass<2&&Math.abs((b.q-B[i-1].q)/rrM-1)>.3&&rh.reg[0]!=="irr")continue;if(b.q<.5||b.q+b.qt>dur-.15)continue;if(needP&&!b.p)continue;const d=Math.abs(b.q-dur*.45);if(d<best){best=d;rep={b,prev:B[i-1],next:B[i+1]}}}if(rep)break}
+  let qt=null,rrRep=null,qtcB=null,qtcF=null,pts=null;
+  if(rep){qt=rep.b.qt;rrRep=rep.b.q-rep.prev.q;qtcB=qt/Math.sqrt(rrRep);qtcF=qt/Math.cbrt(rrRep);const g=tGeom(rep.b);
+    pts={pOn:rep.b.p?rep.b.p.t:null,qOn:rep.b.q,qOff:rep.b.q+rep.b.qd,tOff:g.tEnd,r0:rPeakOf(rep.prev),r1:rPeakOf(rep.b)}}
+  let qtcat2=rh.qtcat||(qtcB==null?["na"]:[qtcat(qtcB)]);if(!rh.qtcat&&vMed>105&&qtcat2[0]!=="high"&&qtcat2[0]!=="na")qtcat2=[qtcat2[0],qtcat2[0]==="nl"?"long":"nl"];/* Bazett over-corrects at fast rates */
+  if(!rh.qtcat&&rep&&rep.prev.k!==dom)qtcat2=["nl","long","high","na"];
+  return {rid:st.rh.id,name:st.rh.n,six,vMean,vMed,aRate,aSix,aNA:!!rh.aNA||aRate==null,vNA:!!rh.vNA,reg:rh.reg,pc:rh.pc,prc,pr:prConst?prM:null,qc,qrs:qdM,qt:qtcat2[0]==="na"?null:qt,rr:rrRep,qtcB,qtcF,qtcat:qtcat2,stc:rh.stc,pts,dom,
+    nQ:Qs.length,nP:Pw.filter(p=>inS(p.t)).length,edge:!!X.edge}}
+
+/* ================= ECG paper renderer (SVG, units = mm) ================= */
+const MM=25,X0=10,LH=30,TOP=5;
+const BASE={II:19,V1:12,MCL1:12};
+const tx=t=>X0+t*MM;
+let UID=0;
+function stripSVG(st,o){o=o||{};const id=o.id||("tls"+(++UID));const W=X0+st.dur*MM+1,H=TOP+st.leads.length*LH+.5;
+  let minor="",major="";for(let x=0;x<=W-1+.001;x+=1){(Math.round(x)%5===0?(major+=`M${x} ${TOP}V${H-.5}`):(minor+=`M${x} ${TOP}V${H-.5}`))}
+  for(let y=0;y<=st.leads.length*LH+.001;y+=1){const yy=TOP+y;(Math.round(y)%5===0?(major+=`M0 ${yy}H${W-1}`):(minor+=`M0 ${yy}H${W-1}`))}
+  let tr="",lab="",spk="",cal="";
+  st.leads.forEach((l,li)=>{const top=TOP+li*LH,b=top+BASE[l==="II"?"II":"V1"];const v=st.sig[l],sr=st.sr;let d="";const step=o.step||1;
+    for(let i=0;i<v.length;i+=step){const x=tx(i/sr),y=clamp(b-v[i]*10,top+.3,top+LH-.3);d+=(i?"L":"M")+x.toFixed(2)+" "+y.toFixed(2)}
+    tr+=`<path class="tl-tr" d="${d}" clip-path="url(#${id}c${li})"/>`;
+    st.X.spk.forEach(s=>{if(s.t<0||s.t>st.dur)return;const i=Math.round(s.t*sr);const y0=b-(v[i]||0)*10;const amp=(l==="II"?(s.ch==="A"?6:9):(s.ch==="A"?5:8));spk+=`M${tx(s.t).toFixed(2)} ${y0.toFixed(2)}V${Math.max(top+.5,y0-amp).toFixed(2)}`});
+    lab+=`<text class="tl-ll" x="${X0+1.2}" y="${top+4.2}">${e_(LEADS[l]||l)}</text>`;
+    cal+=`<path class="tl-calp" d="M1.5 ${b}H3V${b-10}H8V${b}H9.5"/>`;
+    lab+=`<clipPath id="${id}c${li}"><rect x="0" y="${top}" width="${W}" height="${LH}"/></clipPath>`});
+  let ticks="";for(let k=0;k*3<=st.dur+.001;k++){const x=tx(k*3);const last=k*3+3>st.dur+.001;ticks+=`<path class="tl-tick" d="M${x} 0V${TOP-.6}"/><text class="tl-tt" x="${x+(last&&k?-.6:.8)}" y="${TOP-1.6}" text-anchor="${last&&k?"end":"start"}">${k*3} s</text>`}
+  const hdr=`<text class="tl-hd" x="${X0+7}" y="${TOP-1.6}">${e_(o.head||(st.leads.map(l=>LEADS[l]).join(" + ")+"  ·  25 mm/s  ·  10 mm/mV"))}</text>`;
+  return `<svg class="tl-svg" id="${id}" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMinYMin meet" role="img" aria-label="${e_(o.aria||"6-second ECG rhythm strip, lead "+st.leads.map(l=>LEADS[l]).join(" and "))}" data-w="${W}" data-h="${H}">
+   <rect class="tl-paper" x="0" y="${TOP}" width="${W-1}" height="${H-TOP-.5}"/><rect class="tl-top" x="0" y="0" width="${W-1}" height="${TOP}"/>
+   <path class="tl-g1" d="${minor}"/><path class="tl-g5" d="${major}"/>${ticks}${hdr}${lab}<g class="tl-cals">${cal}</g>${tr}<path class="tl-spk" d="${spk}"/><g class="tl-cal" data-cal-g></g></svg>`}
+
+/* ================= calipers ================= */
+/* one caliper per strip view; modes keep their own saved measurement. Times are seconds from the start of the strip. */
+const CMODES=[["rr","R-R"],["pr","PR"],["qrs","QRS"],["qt","QT"],["free","Free"]];
+function Cal(host,st,opt){opt=opt||{};const C={host,st,a:st.dur*.2,b:st.dur*.2+.8,mode:"rr",snap:false,march:false,saved:{},onUse:opt.onUse||null,lbl:null,show:null};
+  const svg=()=>host.querySelector("svg.tl-svg"),g=()=>host.querySelector("[data-cal-g]");
+  const pxmm=()=>{const s=svg();if(!s)return 6;const r=s.getBoundingClientRect();return r.width/(+s.dataset.w||160)};
+  C.toT=(cx)=>{const s=svg();const r=s.getBoundingClientRect();return ((cx-r.left)/r.width*(+s.dataset.w)-X0)/MM};
+  const sn=t=>C.snap?Math.round(t*MM)/MM:t;
+  C.val=()=>Math.abs(C.b-C.a);
+  C.draw=()=>{const G=g();if(!G)return;const s=svg();const H=+s.dataset.h;const xa=tx(C.a),xb=tx(C.b),lo=Math.min(xa,xb),hi=Math.max(xa,xb);const hw=Math.max(5,46/pxmm());const by=TOP+2.6;
+    let h="";if(C.march&&C.val()>.12){const d=C.val()*MM;for(let x=lo-d;x>-.5;x-=d)h+=`<path class="tl-cg" d="M${x.toFixed(2)} ${TOP}V${H-.5}"/>`;for(let x=hi+d;x<+s.dataset.w;x+=d)h+=`<path class="tl-cg" d="M${x.toFixed(2)} ${TOP}V${H-.5}"/>`}
+    const v=C.val(),sb=v*MM,rate=sb>0?1500/sb:0;const lbl=C.lbl||`${f2(v)} s${C.mode==="rr"||C.mode==="free"?" · "+(rate?Math.round(rate):"—")+"/min":""}`;
+    const lx=clamp((lo+hi)/2,13,+s.dataset.w-14);
+    h+=`<rect class="tl-csh" x="${lo}" y="${TOP}" width="${Math.max(.01,hi-lo)}" height="${H-TOP-.5}"/>`+
+      `<path class="tl-cl" d="M${xa} ${TOP}V${H-.5}M${xb} ${TOP}V${H-.5}M${lo} ${by}H${hi}"/>`+
+      `<rect class="tl-cbx" x="${lx-12}" y="${TOP+4}" width="24" height="5.2" rx="1"/><text class="tl-cbt" x="${lx}" y="${TOP+7.8}" text-anchor="middle">${e_(lbl)}</text>`+
+      `<circle class="tl-ch" cx="${xa}" cy="${H-4}" r="2.2"/><circle class="tl-ch" cx="${xb}" cy="${H-4}" r="2.2"/>`+
+      `<rect class="tl-hit" data-cal="bar" x="${lo}" y="${TOP}" width="${Math.max(0,hi-lo)}" height="10" tabindex="-1"/>`+
+      `<rect class="tl-hit" data-cal="a" x="${xa-hw/2}" y="${TOP+10}" width="${hw}" height="${H-TOP-10}" tabindex="0" role="slider" aria-label="Caliper leg A" aria-valuetext="${f2(C.a)} seconds"/>`+
+      `<rect class="tl-hit" data-cal="b" x="${xb-hw/2}" y="${TOP+10}" width="${hw}" height="${H-TOP-10}" tabindex="0" role="slider" aria-label="Caliper leg B" aria-valuetext="${f2(C.b)} seconds"/>`;
+    G.innerHTML=h;C.out()};
+  C.out=()=>{const o=host.querySelector("[data-cal-out]");if(!o)return;const v=C.val(),sb=v*MM;const sv=C.saved;const rr=sv.rr;
+    let x="";if(C.mode==="pr")x=`PR normal 0.12–0.20 s (3–5 small boxes). ${v>.205?"<b>Long</b>":v<.115?"<b>Short</b>":"In range"}.`;
+    else if(C.mode==="qrs")x=`QRS normal is less than 0.12 s (3 small boxes). ${v>=.12?"<b>Wide</b>":"Narrow"}.`;
+    else if(C.mode==="qt"){if(rr){const b=v/Math.sqrt(rr),fr=v/Math.cbrt(rr);x=`QTc (Bazett) = QT ÷ √RR = ${f2(v)} ÷ √${f2(rr)} = <b>${f2(b)} s</b> · Fridericia ${f2(fr)} s`}else x="Measure the R-R interval first (R-R tab) to get the QTc."}
+    else x=`Rate = 1500 ÷ ${sb.toFixed(1)} small boxes = <b>${sb>0?Math.round(1500/sb):"—"}/min</b> · 300 ÷ ${(sb/5).toFixed(1)} large boxes`;
+    o.innerHTML=`<div class="tl-ro"><span><b>${f2(v)} s</b><small>seconds</small></span><span><b>${Math.round(v*1000)}</b><small>ms</small></span><span><b>${sb.toFixed(1)}</b><small>small boxes</small></span><span><b>${(sb/5).toFixed(2)}</b><small>large boxes</small></span><span><b>${sb>0?Math.round(1500/sb):"—"}</b><small>/min if R-R</small></span></div><p class="tl-rx">${x}</p>
+     <p class="tl-sv">${CMODES.slice(0,4).map(([k,l])=>`<span class="${sv[k]!=null?"on":""}">${l} <b>${sv[k]!=null?f2(sv[k])+" s":"—"}</b></span>`).join("")}${sv.qt!=null&&sv.rr?`<span class="on">QTc <b>${f2(sv.qt/Math.sqrt(sv.rr))} s</b></span>`:""}</p>`;
+    host.querySelectorAll("[data-cm]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.cm===C.mode)));
+    const sn2=host.querySelector('[data-ct="snap"]');if(sn2)sn2.setAttribute("aria-pressed",String(C.snap));const mr=host.querySelector('[data-ct="march"]');if(mr)mr.setAttribute("aria-pressed",String(C.march))};
+  C.set=(a,b,mode,lbl)=>{C.a=clamp(a,0,st.dur);C.b=clamp(b,0,st.dur);if(mode)C.mode=mode;C.lbl=lbl||null;C.draw()};
+  C.save=()=>{if(C.mode!=="free")C.saved[C.mode]=Math.round(C.val()*1000)/1000};
+  C.setMode=m=>{C.save();C.mode=m;C.lbl=null;const pos=C.pos&&C.pos[m];if(pos){C.a=pos[0];C.b=pos[1]}else{const mid=(C.a+C.b)/2;const w={rr:.8,pr:.16,qrs:.08,qt:.38,free:.6}[m]||.6;C.a=clamp(mid-w/2,0,st.dur);C.b=clamp(mid+w/2,0,st.dur)}C.draw()};
+  C.pos={};
+  /* pointer + keyboard */
+  let drag=null;
+  host.addEventListener("touchstart",e=>{if(e.target.closest&&e.target.closest("[data-cal]"))e.preventDefault()},{passive:false});
+  host.addEventListener("pointerdown",e=>{const h=e.target.closest&&e.target.closest("[data-cal]");if(!h||!host.contains(h))return;e.preventDefault();const k=h.dataset.cal;const t=C.toT(e.clientX);
+    drag={k,id:e.pointerId,off:k==="bar"?t-Math.min(C.a,C.b):0,w:C.b-C.a};try{h.setPointerCapture(e.pointerId)}catch(x){}host.classList.add("tl-drag")});
+  let raf=0;host.addEventListener("pointermove",e=>{if(!drag||e.pointerId!==drag.id)return;e.preventDefault();const t=C.toT(e.clientX);C.lbl=null;
+    if(drag.k==="a")C.a=clamp(sn(t),0,st.dur);else if(drag.k==="b")C.b=clamp(sn(t),0,st.dur);else{const lo=clamp(sn(t-drag.off),0,st.dur-Math.abs(drag.w));if(drag.w>=0){C.a=lo;C.b=lo+drag.w}else{C.b=lo;C.a=lo-drag.w}}
+    if(!raf)raf=requestAnimationFrame(()=>{raf=0;C.draw()})});
+  const end=e=>{if(!drag||e.pointerId!==drag.id)return;drag=null;host.classList.remove("tl-drag");C.pos[C.mode]=[C.a,C.b];C.save();C.draw()};
+  host.addEventListener("pointerup",end);host.addEventListener("pointercancel",end);
+  host.addEventListener("keydown",e=>{const h=e.target.closest&&e.target.closest("[data-cal]");if(!h)return;const d=(e.shiftKey?.04:.004)*(e.key==="ArrowLeft"?-1:e.key==="ArrowRight"?1:0);if(!d)return;e.preventDefault();const k=h.dataset.cal;C.lbl=null;
+    if(k==="a")C.a=clamp(C.snap?sn(C.a+(e.shiftKey?.04:.04)*Math.sign(d)):C.a+d,0,st.dur);else C.b=clamp(C.snap?sn(C.b+.04*Math.sign(d)):C.b+d,0,st.dur);C.pos[C.mode]=[C.a,C.b];C.save();C.draw();const n=host.querySelector(`[data-cal="${k}"]`);if(n)n.focus()});
+  host.addEventListener("click",e=>{const b=e.target.closest&&e.target.closest("[data-cm],[data-ct],[data-cn]");if(!b||!host.contains(b))return;e.preventDefault();
+    if(b.dataset.cm){C.setMode(b.dataset.cm);return}
+    if(b.dataset.cn){const [leg,dir]=b.dataset.cn.split(":");const step=C.snap?.04:.004;C.lbl=null;if(leg==="a")C.a=clamp(C.a+step*+dir,0,st.dur);else C.b=clamp(C.b+step*+dir,0,st.dur);C.pos[C.mode]=[C.a,C.b];C.save();C.draw();return}
+    const k=b.dataset.ct;if(k==="snap"){C.snap=!C.snap;if(C.snap){C.a=sn(C.a);C.b=sn(C.b)}C.draw()}else if(k==="march"){C.march=!C.march;C.draw()}
+    else if(k==="zoom"){const z={1:2,2:3,3:1}[host.dataset.zoom||"1"];host.dataset.zoom=z;b.textContent="Zoom "+z+"×";const s=svg();if(s)s.style.width=(z*100)+"%";C.draw()}
+    else if(k==="use"){C.save();if(C.onUse)C.onUse(C.mode,C.saved[C.mode],C.saved)}
+    else if(k==="reset"){C.saved={};C.pos={};C.a=st.dur*.2;C.b=C.a+.8;C.mode="rr";C.march=false;C.draw()}});
+  return C}
+function calTools(){return `<div class="tl-ctl" role="group" aria-label="Caliper tools"><div class="tl-seg" role="group" aria-label="Measure">${CMODES.map(([k,l])=>`<button type="button" data-cm="${k}" aria-pressed="${k==="rr"}">${l}</button>`).join("")}</div>
+   <div class="tl-tb"><button type="button" class="tl-tg" data-ct="snap" aria-pressed="false">Snap to small box</button><button type="button" class="tl-tg" data-ct="march" aria-pressed="false">March out</button><button type="button" class="tl-tg" data-ct="zoom">Zoom 1×</button><button type="button" class="tl-tg" data-ct="reset">Reset</button></div></div>
+   <div class="tl-nudge" aria-label="Fine adjust"><span>Leg A <button type="button" data-cn="a:-1" aria-label="Move leg A left">◀</button><button type="button" data-cn="a:1" aria-label="Move leg A right">▶</button></span><span>Leg B <button type="button" data-cn="b:-1" aria-label="Move leg B left">◀</button><button type="button" data-cn="b:1" aria-label="Move leg B right">▶</button></span></div>`}
+/* a full strip block: paper + caliper overlay + tools + readout */
+function stripBlock(st,o){o=o||{};return `<div class="tl-strip" data-zoom="1"><div class="tl-sw">${stripSVG(st,o)}</div>${o.nocal?"":calTools()+`<div class="tl-out" data-cal-out aria-live="polite"></div>${o.use?`<button type="button" class="tl-btn sec tl-use" data-ct="use">Use this measurement in my answers</button>`:""}`}</div>`}
+
+/* ================= teaching content (AI-generated · fact-checked · not yet reviewed by a registered nurse) =================
+   c: criteria · ca: common causes · as: what to assess · ac: priority nursing actions (RN scope) · pv: what the provider may order
+   acl: ACLS card key · pri: correct priority action key · nx: correct next steps · nw: tempting but wrong next steps · sp: StatPearls search term */
+const SRC={
+  ca:["American Heart Association. Adult Cardiac Arrest Algorithm, 2025 Guidelines for CPR and ECC","https://cpr.heart.org/-/media/CPR-Files/CPR-Guidelines-Files/2025-Accessible/Algorithm-ACLS-CA-LngDscrp-250725-Ed.pdf?sc_lang=en"],
+  br:["American Heart Association. Adult Bradycardia With a Pulse Algorithm, 2025","https://cpr.heart.org/-/media/CPR-Files/CPR-Guidelines-Files/2025-Accessible/Algorithm-ACLS-Bradycardia-LngDscrp-250725-Ed.pdf?sc_lang=en"],
+  tc:["American Heart Association. Adult Tachyarrhythmia With a Pulse Algorithm, 2025","https://cpr.heart.org/-/media/CPR-Files/CPR-Guidelines-Files/2025-Accessible/Algorithm-ACLS-Tachyarrhythmia-LngDscrp-250726-Ed.pdf?sc_lang=en"],
+  als:["American Heart Association. 2025 Guidelines, Part 9: Adult Advanced Life Support","https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/adult-advanced-life-support"],
+  or3:["Open RN. Nursing Advanced Skills, 7.3 A Systematic Approach to Interpreting an ECG (CC BY 4.0)","https://wtcs.pressbooks.pub/nursingadvancedskills/chapter/7-3-a-systematic-approach-to-interpreting-an-ecg/"],
+  or4:["Open RN. Nursing Advanced Skills, 7.4 ECG Patterns and Dysrhythmias (CC BY 4.0)","https://wtcs.pressbooks.pub/nursingadvancedskills/chapter/7-4-ecg-patterns-and-dysrhythmias/"],
+  lt:["Open RN on LibreTexts. Chapter 7: Interpret Basic ECG","https://med.libretexts.org/Bookshelves/Nursing/Nursing_Advanced_Skills_(OpenRN)/07%3A_Interpret_Basic_ECG/7.01%3A_Introduction"]};
+const spURL=t=>"https://www.ncbi.nlm.nih.gov/books/?term="+encodeURIComponent("StatPearls "+t);
+const ACL={
+  shock:{t:"ACLS: shockable arrest (VF / pulseless VT)",s:"ca",l:["Unresponsive, not breathing normally, no pulse (check no more than 10 seconds): call a code and start high-quality CPR (100–120/min, at least 2 inches / 5 cm, full recoil, few interruptions).","Attach the defibrillator and shock as soon as possible: biphasic per the manufacturer (for example 120–200 J; if unknown, use the maximum), monophasic 360 J.","Resume CPR right away for 2 minutes, then check the rhythm. Get IV or IO access.","Epinephrine 1 mg IV/IO every 3–5 minutes after the second shock (after initial shocks fail).","Amiodarone 300 mg IV/IO (then 150 mg) or lidocaine 1–1.5 mg/kg (then 0.5–0.75 mg/kg) for VF/pVT that persists after shocks.","Look for reversible causes (Hs and Ts). Use waveform capnography; switch compressors every 2 minutes."]},
+  nons:{t:"ACLS: non-shockable arrest (asystole / PEA)",s:"ca",l:["Unresponsive, no pulse: call a code and start high-quality CPR. Do not shock asystole or PEA.","Asystole: confirm it is not a loose lead or fine VF (check the leads, the gain and a second lead).","Give epinephrine 1 mg IV/IO as soon as possible, then every 3–5 minutes.","CPR in 2-minute cycles with rhythm checks; shock only if the rhythm becomes VF/pVT.","Search for and treat reversible causes: hypovolemia, hypoxia, hydrogen ion (acidosis), hypo-/hyperkalemia, hypothermia, tension pneumothorax, tamponade, toxins, pulmonary thrombosis, coronary thrombosis."]},
+  brady:{t:"ACLS: bradycardia with a pulse",s:"br",l:["Treat if the slow rate causes problems: hypotension, acute change in mental status, signs of shock, ischemic chest discomfort or acute heart failure.","Keep the airway open, give oxygen if hypoxemic, put on the monitor, check BP and SpO2, start IV access, get a 12-lead ECG.","Atropine 1 mg IV, repeat every 3–5 minutes, maximum 3 mg (per provider order or ACLS protocol).","If atropine doesn't work: transcutaneous pacing and/or dopamine 5–20 mcg/kg/min or epinephrine 2–10 mcg/min infusion.","Consider expert consultation and transvenous pacing. Atropine is often ineffective for type II or third-degree block, so have pacing ready."]},
+  tachy:{t:"ACLS: tachyarrhythmia with a pulse",s:"tc",l:["Check for instability: hypotension, acutely altered mental status, signs of shock, ischemic chest discomfort, acute heart failure.","Unstable: synchronized cardioversion (sedate when feasible). For atrial fibrillation, 2025 guidance favors starting at 200 J or more.","Stable, narrow and regular: vagal maneuvers, then adenosine 6 mg rapid IV push with a saline flush, then 12 mg if needed. Consider a beta-blocker or calcium channel blocker.","Stable and wide (QRS 0.12 s or more): adenosine only if regular and monomorphic; consider an antiarrhythmic infusion (procainamide, amiodarone 150 mg IV over 10 min) and expert consultation.","Never give adenosine for an irregular or polymorphic wide-complex tachycardia."]},
+  tdp:{t:"ACLS: polymorphic VT / torsades",s:"als",l:["Sustained polymorphic VT is treated as unstable: if pulseless, follow the shockable arrest algorithm.","Sustained polymorphic VT needs an immediate unsynchronized shock (defibrillation); it can't be synchronized.","Magnesium may be considered for recurring polymorphic VT with a long QT (torsades); routine magnesium isn't recommended when the QT is normal.","Stop QT-prolonging drugs and correct potassium and magnesium (per orders)."]}};
+const PRI={code:"Call a code, start high-quality CPR and get the defibrillator on the client",
+  unstT:"Call for help (rapid response) and prepare for synchronized cardioversion per protocol",
+  stabT:"Stay with the client, get a 12-lead ECG and IV access, and notify the provider for orders",
+  unstB:"Call for help, give atropine per order or protocol, and get transcutaneous pacing ready",
+  stabB:"Keep monitoring, get a 12-lead, review rate-slowing medications and notify the provider",
+  acs:"Stay with the client, get a STAT 12-lead per protocol and call the rapid response team or provider",
+  notify:"Check electrolytes and QT-prolonging drugs, and notify the provider promptly",
+  device:"Check pacemaker function, keep the defibrillator nearby, and notify the provider or device team",
+  leads:"Look at the client, then check the electrodes and lead wires and re-check the strip",
+  routine:"Recheck the client, keep monitoring and document; report it if it's new",
+  cause:"Look for and treat the cause (pain, fever, fluid loss, hypoxia) and notify the provider",
+  med:"Give a PRN antiarrhythmic first, then go assess the client",
+  dfib:"Defibrillate immediately, before anything else"};
+const NB={atrOrd:"Give atropine 1 mg IV per order or protocol",vagwait:"Coach vagal maneuvers and wait to see if it stops",notify:"Notify the provider with an SBAR",lytes:"Check recent potassium and magnesium results",tw:"Get a 12-lead ECG (per order or protocol)",vit:"Check BP, SpO2 and symptoms",pads:"Place transcutaneous pacing pads and have atropine ready",cpr:"Start high-quality CPR",shock:"Defibrillate as soon as possible",epi:"Give epinephrine 1 mg IV/IO as soon as possible",ht:"Look for reversible causes (Hs and Ts)",doc:"Document the strip with measurements",meds:"Review medications that slow the heart or prolong the QT",fall:"Keep the client in bed or seated and use fall precautions",
+  bleed:"Check the anticoagulation plan and stroke risk",o2:"Give oxygen if SpO2 is low (per order)",leadck:"Check electrodes, skin prep and lead wires",reassure:"Ask the client to rest still and re-check the strip",vag:"Coach vagal maneuvers if ordered and the client is stable",rrt:"Call the rapid response team",pmck:"Check pacemaker settings/records and notify the provider or device team",shockNow:"Defibrillate immediately",atrop:"Give atropine without checking the client",cardio:"Prepare for synchronized cardioversion",ignore:"No change needed because the monitor counts the rate",cpr0:"Start CPR right away",dig:"Hold digoxin, beta-blockers and calcium channel blockers without telling anyone"};
+const CT={
+ nsr:{c:["Rate 60–100/min, regular","Upright P before every QRS, all alike","PR 0.12–0.20 s, QRS less than 0.12 s"],ca:"The normal rhythm from the SA node.",as:"Compare with the client's baseline strip and vital signs.",ac:"No treatment for the rhythm. Keep monitoring and document a strip per policy.",pv:"Nothing for the rhythm.",pri:"assess",nx:["doc","vit"],nw:["pads","shockNow"],sp:"physiology sinus node"},
+ sbrady:{c:["Rate less than 60/min, regular","Normal P before every QRS","PR and QRS normal"],ca:"Sleep, athletes, vagal stimulation, beta-blockers, calcium channel blockers, digoxin, hypothermia, hypothyroidism, inferior MI, increased ICP.",as:"Dizziness, syncope, low BP, confusion, chest pain, shortness of breath. Many people have no symptoms.",ac:"If symptomatic: stay with the client, keep them lying down, oxygen if hypoxemic, notify the provider, have atropine and pacing available. Hold rate-slowing drugs per parameters and tell the provider.",pv:"Atropine for symptoms, pacing if atropine fails, review of medications, 12-lead ECG, electrolytes, TSH.",acl:"brady",pri:"assess",nx:["vit","meds","notify"],nw:["atrop","ignore"],sp:"sinus bradycardia"},
+ stach:{c:["Rate 101–160/min (usually up to about 150), regular","Normal P before every QRS (may merge with the T wave at fast rates)","PR and QRS normal"],ca:"Pain, fever, anxiety, dehydration or bleeding, hypoxia, sepsis, anemia, hyperthyroidism, stimulants, caffeine, heart failure.",as:"Look for the cause: temperature, pain, fluid status and bleeding, SpO2, BP, signs of sepsis.",ac:"Treat the cause, not the rate: pain relief, fluids, antipyretics, oxygen per orders. Notify the provider of new or persistent tachycardia.",pv:"Labs (CBC, cultures, lactate), fluids, treatment of the cause. Rate-slowing drugs are rarely the answer.",pri:"assess",nx:["vit","notify"],nw:["cardio","vag"],sp:"sinus tachycardia"},
+ sarr:{c:["Rate 60–100/min","Irregular: R-R speeds up with inhalation and slows with exhalation","Normal P before every QRS; PR and QRS normal"],ca:"Normal breathing variation, common in children, young adults and athletes.",as:"Watch the rhythm with breathing. Usually no symptoms.",ac:"No treatment. Document.",pv:"Nothing for the rhythm.",pri:"assess",nx:["doc"],nw:["notify","pads"],sp:"sinus arrhythmia"},
+ sarrest:{c:["Underlying sinus rhythm","A pause with no P, QRS or T","The pause is NOT an exact multiple of the P-P interval"],ca:"Sick sinus syndrome, vagal stimulation, digoxin, beta-blockers, ischemia of the SA node, hypoxia, sleep apnea.",as:"Measure the pause. Ask about dizziness, near-fainting or falls during the pause.",ac:"Stay with a symptomatic client, keep them safe in bed, notify the provider, review rate-slowing drugs, be ready for pacing if the pauses are long or symptomatic.",pv:"Medication changes, Holter or event monitoring, a permanent pacemaker for symptomatic sinus node dysfunction.",acl:"brady",pri:"assess",nx:["vit","fall","notify"],nw:["shockNow","ignore"],sp:"sinus arrest"},
+ saeb:{c:["Underlying sinus rhythm","A whole P-QRS-T is missing","The pause is an exact multiple (usually 2×) of the P-P interval"],ca:"Drug effects (digoxin, beta-blockers), vagal tone, SA node disease, ischemia.",as:"Measure P-P before and across the pause with calipers (march it out). Check for symptoms.",ac:"Same as sinus arrest: assess, keep safe, notify if new or symptomatic, review medications.",pv:"Medication review; monitoring; pacing if symptomatic.",acl:"brady",pri:"assess",nx:["vit","meds","notify"],nw:["shockNow","cardio"],sp:"sinoatrial exit block"},
+ pac:{c:["Underlying sinus rhythm","An early beat with a P wave that looks different","Usually narrow QRS; a short, noncompensatory pause follows"],ca:"Caffeine, nicotine, stress, alcohol, hypokalemia, hypomagnesemia, heart failure, atrial stretch, COPD.",as:"Count how often they happen; ask about palpitations; check electrolytes.",ac:"Usually no treatment. Reduce triggers. Frequent PACs can lead to atrial fibrillation, so report a rising number.",pv:"Electrolyte replacement, treatment of triggers.",pri:"assess",nx:["lytes","doc"],nw:["shockNow","cardio"],sp:"premature atrial contractions"},
+ wap:{c:["Rate less than 100/min","P waves of at least 3 different shapes","PR varies; slightly irregular"],ca:"Normal variant in healthy people and athletes, vagal tone, lung disease.",as:"Symptoms are rare. Confirm the rate is under 100.",ac:"Usually no treatment. Document.",pv:"Nothing for the rhythm.",pri:"assess",nx:["doc"],nw:["cardio","pads"],sp:"wandering atrial pacemaker"},
+ mat:{c:["Rate more than 100/min","P waves of 3 or more shapes; PR varies","Irregular rhythm"],ca:"Severe lung disease (COPD exacerbation), hypoxia, sepsis, theophylline toxicity, electrolyte problems.",as:"Respiratory status first: work of breathing, SpO2, lung sounds.",ac:"Treat the cause: oxygen per orders, bronchodilators, electrolyte replacement. Notify the provider.",pv:"Treatment of the lung disease, magnesium and potassium replacement; rate control in some cases. Cardioversion does not work for MAT.",pri:"assess",nx:["o2","lytes","notify"],nw:["cardio","shockNow"],sp:"multifocal atrial tachycardia"},
+ svt:{c:["Rate usually 150–220/min, regular","P waves hidden or not visible","Narrow QRS; often starts and stops suddenly"],ca:"Re-entry in or near the AV node (AVNRT), stimulants, stress, caffeine. Often in otherwise healthy people.",as:"Is the client stable? BP, mental status, chest pain, shortness of breath, signs of shock.",ac:"Stable: stay with the client, notify the provider, get a 12-lead, IV access; coach vagal maneuvers if ordered. Unstable: call for help and prepare for synchronized cardioversion.",pv:"Vagal maneuvers, adenosine 6 mg rapid IV push then 12 mg; a beta-blocker or calcium channel blocker; synchronized cardioversion if unstable.",acl:"tachy",pri:"assess",nx:["vit","tw","notify"],nw:["shockNow","ignore"],sp:"AV nodal reentrant tachycardia"},
+ afl21:{c:["Sawtooth flutter waves, atrial rate about 250–350/min","Every 2nd flutter wave conducts: ventricular rate about 150/min, regular","Narrow QRS; PR not measurable"],ca:"Heart disease, after heart surgery, COPD, hyperthyroidism, alcohol.",as:"Check BP and symptoms. A regular rate near 150 should make you look for flutter waves.",ac:"Notify the provider, assess stability, 12-lead ECG, check anticoagulation (stroke risk like AF).",pv:"Rate control, anticoagulation, synchronized cardioversion (200 J may be reasonable initially per 2025 guidance), ablation.",acl:"tachy",pri:"assess",nx:["vit","notify","bleed"],nw:["vag","shockNow"],sp:"atrial flutter"},
+ afl41:{c:["Sawtooth flutter waves, atrial rate about 300/min","4 flutter waves per QRS: ventricular rate about 75/min, regular","Narrow QRS"],ca:"Same as atrial flutter; slower conduction from AV nodal drugs or AV node disease.",as:"Usually stable at this rate. Symptoms, BP, anticoagulation plan.",ac:"Monitor, document, confirm the anticoagulation plan, report new flutter.",pv:"Anticoagulation, rhythm control or ablation.",pri:"assess",nx:["doc","bleed"],nw:["cardio","pads"],sp:"atrial flutter"},
+ aflv:{c:["Sawtooth flutter waves","The conduction ratio changes (2:1, 3:1, 4:1), so the ventricular rhythm is irregular","Narrow QRS"],ca:"Same as atrial flutter.",as:"Rate, BP and symptoms; look for a pattern of flutter waves between QRS complexes.",ac:"Notify the provider of a new rhythm, check the anticoagulation plan.",pv:"Rate control, anticoagulation, cardioversion or ablation.",pri:"assess",nx:["vit","notify","bleed"],nw:["vag","shockNow"],sp:"atrial flutter"},
+ afib:{c:["No P waves; a wavy (fibrillatory) baseline","Irregularly irregular R-R","Ventricular rate 100/min or less is controlled"],ca:"Hypertension, heart failure, valve disease, age, alcohol, hyperthyroidism, sleep apnea, after surgery.",as:"Apical pulse for a full minute (pulse deficit), BP, symptoms, signs of stroke.",ac:"Monitor rate, give rate-control drugs and anticoagulants as ordered, fall and bleeding precautions, teach stroke signs.",pv:"Anticoagulation based on stroke risk, rate or rhythm control.",pri:"assess",nx:["vit","bleed","doc"],nw:["cardio","shockNow"],sp:"atrial fibrillation"},
+ afrvr:{c:["No P waves; fibrillatory baseline","Irregularly irregular","Ventricular rate more than 100/min (rapid ventricular response)"],ca:"New AF, missed rate-control doses, infection, dehydration, pain, hyperthyroidism, alcohol, after surgery.",as:"Stability: BP, mental status, chest pain, heart failure signs (crackles, SpO2).",ac:"Notify the provider, IV access, 12-lead, give ordered rate control; if unstable call for help and prepare for synchronized cardioversion.",pv:"IV diltiazem or a beta-blocker, amiodarone in some cases; synchronized cardioversion if unstable (2025 guidance: start at 200 J or more); anticoagulation.",acl:"tachy",pri:"assess",nx:["vit","notify","tw"],nw:["vag","ignore"],sp:"atrial fibrillation"},
+ pjc:{c:["Underlying sinus rhythm","An early narrow beat","P wave inverted before the QRS (short PR), hidden, or after the QRS"],ca:"Digoxin toxicity, caffeine, ischemia, electrolyte imbalance.",as:"How often; check digoxin level and potassium if relevant.",ac:"Usually no treatment. Report frequent PJCs, especially in a client on digoxin.",pv:"Digoxin level, electrolytes.",pri:"assess",nx:["lytes","doc"],nw:["cardio","shockNow"],sp:"premature junctional contraction"},
+ junc:{c:["Rate 40–60/min, regular","P inverted with a short PR (less than 0.12 s), hidden in the QRS, or after the QRS","Narrow QRS"],ca:"SA node failure, digoxin toxicity, inferior MI, beta-blockers, after heart surgery.",as:"BP, mental status, dizziness; digoxin level.",ac:"Assess for symptoms, notify the provider, hold rate-slowing drugs per parameters and report, be ready for atropine or pacing if symptomatic.",pv:"Treat the cause, stop digoxin if toxic, atropine or pacing if symptomatic.",acl:"brady",pri:"assess",nx:["vit","meds","notify"],nw:["cardio","shockNow"],sp:"junctional rhythm"},
+ ajr:{c:["Rate 61–100/min, regular","P inverted, hidden or after the QRS","Narrow QRS"],ca:"Digoxin toxicity, ischemia, after cardiac surgery, myocarditis.",as:"Symptoms, digoxin level, electrolytes.",ac:"Notify the provider of a new rhythm; check digoxin and potassium.",pv:"Treat the cause; stop digoxin if toxic.",pri:"assess",nx:["vit","lytes","notify"],nw:["cardio","pads"],sp:"accelerated junctional rhythm"},
+ jt:{c:["Rate more than 100/min, regular","P inverted, hidden or after the QRS","Narrow QRS"],ca:"Digoxin toxicity, ischemia, after heart surgery, catecholamines.",as:"Stability: BP, chest pain, shortness of breath.",ac:"Notify the provider, 12-lead, check digoxin and electrolytes.",pv:"Treat the cause; stop digoxin if toxic; rate-control drugs.",acl:"tachy",pri:"assess",nx:["vit","notify","lytes"],nw:["shockNow","ignore"],sp:"junctional tachycardia"},
+ pvc:{c:["Underlying rhythm with early, wide (0.12 s or more), bizarre QRS complexes","No P wave before the PVC; T wave opposite the QRS","Usually a full compensatory pause; all PVCs look alike (unifocal)"],ca:"Hypokalemia, hypomagnesemia, hypoxia, ischemia or MI, caffeine, stimulants, heart failure, digoxin toxicity.",as:"Check the pulse with the PVCs, symptoms, SpO2; potassium and magnesium.",ac:"Assess, treat causes (oxygen if hypoxemic, electrolyte replacement per orders), notify if frequent, new, multifocal, in pairs or runs.",pv:"Electrolyte replacement, treatment of ischemia, beta-blockers for symptoms.",pri:"assess",nx:["vit","lytes","doc"],nw:["shockNow","cpr0"],sp:"premature ventricular contraction"},
+ pvcm:{c:["Early, wide PVCs","PVCs have 2 or more shapes (more than one focus)","Underlying rhythm between them"],ca:"More irritable ventricle: ischemia, hypokalemia, hypomagnesemia, hypoxia, digoxin toxicity.",as:"Assess the client, SpO2, chest pain, potassium and magnesium.",ac:"Notify the provider: multifocal PVCs show more irritability. Treat causes per orders.",pv:"Electrolytes, 12-lead ECG, troponin, antiarrhythmics in some cases.",pri:"assess",nx:["vit","lytes","notify"],nw:["shockNow","ignore"],sp:"premature ventricular contraction"},
+ bigem:{c:["Every other beat is a PVC","Pattern: normal, PVC, normal, PVC","Regularly irregular"],ca:"Same as PVCs; also digoxin toxicity.",as:"Count the pulse at the apex and radial site: PVCs may not perfuse, so the pulse can be half the monitor rate.",ac:"Assess perfusion, check electrolytes, notify the provider.",pv:"Electrolytes, digoxin level, medication changes.",pri:"assess",nx:["vit","lytes","notify"],nw:["shockNow","ignore"],sp:"ventricular bigeminy"},
+ trigem:{c:["Every third beat is a PVC","Pattern: normal, normal, PVC","Regularly irregular"],ca:"Same as PVCs.",as:"Pulse, symptoms, electrolytes.",ac:"Assess, check electrolytes, report.",pv:"Electrolytes; treat the cause.",pri:"assess",nx:["vit","lytes","doc"],nw:["shockNow","cpr0"],sp:"premature ventricular contraction"},
+ couplet:{c:["Two PVCs in a row","Underlying rhythm otherwise","Three or more in a row is a run of VT"],ca:"Increased ventricular irritability: ischemia, hypokalemia, hypomagnesemia, hypoxia.",as:"Assess the client and watch for runs of VT.",ac:"Notify the provider, check electrolytes and oxygenation.",pv:"Electrolytes, 12-lead, troponin, possibly an antiarrhythmic.",pri:"assess",nx:["vit","lytes","notify"],nw:["shockNow","ignore"],sp:"premature ventricular contraction"},
+ ront:{c:["A PVC that lands on the T wave of the beat before","The T wave is the vulnerable period","Can trigger VT or VF"],ca:"Ischemia, long QT, hypokalemia, hypomagnesemia.",as:"Assess the client right away and watch the monitor for VT/VF.",ac:"Stay with the client, notify the provider promptly, check electrolytes and the QT, have the defibrillator nearby.",pv:"Electrolyte correction, review QT-prolonging drugs, antiarrhythmics.",pri:"assess",nx:["vit","notify","lytes"],nw:["ignore","shockNow"],sp:"R on T phenomenon"},
+ idio:{c:["Rate 20–40/min","Wide QRS (0.12 s or more), no P waves","A ventricular escape rhythm"],ca:"Failure of the SA node and AV junction: massive MI, severe hypoxia, hyperkalemia, drug toxicity; often near death.",as:"Pulse and BP: often low or absent. If no pulse, this is PEA.",ac:"Check a pulse. Pulse present: call for help, prepare for pacing, notify the provider. Do not suppress it (it may be the only rhythm). No pulse: start CPR.",pv:"Transcutaneous pacing, atropine, epinephrine or dopamine infusion, treat the cause.",acl:"brady",pri:"assess",nx:["vit","pads","notify"],nw:["shockNow","dig"],sp:"idioventricular rhythm"},
+ aivr:{c:["Rate 41–100/min","Wide QRS, no P waves","Regular"],ca:"Common after the artery opens in reperfusion of an MI; digoxin toxicity; cardiomyopathy.",as:"BP and perfusion. Often well tolerated and brief.",ac:"Assess, notify the provider, don't treat it with antiarrhythmics; document.",pv:"Usually observation; treat the cause.",pri:"assess",nx:["vit","notify","doc"],nw:["shockNow","cardio"],sp:"accelerated idioventricular rhythm"},
+ vt:{c:["Rate usually 150–250/min (more than 100/min), regular","Wide, bizarre QRS complexes that look alike","No visible P waves (or P waves not related to the QRS)"],ca:"MI or ischemia, cardiomyopathy, heart failure, hypokalemia, hypomagnesemia, drug toxicity, long QT.",as:"Pulse and responsiveness first. VT can be with or without a pulse.",ac:"No pulse: call a code, CPR, defibrillate. Pulse but unstable: call for help, prepare for synchronized cardioversion. Pulse and stable: notify the provider, 12-lead, IV, antiarrhythmic per orders.",pv:"Pulseless: ACLS cardiac arrest. Stable: amiodarone 150 mg IV over 10 minutes or procainamide, expert consult. Unstable: synchronized cardioversion.",acl:"shock",pri:"code",nx:["cpr","shock","notify"],nw:["vag","ignore"],sp:"ventricular tachycardia"},
+ pacab:{c:["Underlying sinus rhythm","An early beat with a P wave before it (often hidden in the T wave)","That early beat has a wide QRS because it reached a bundle branch that was still refractory; a short, noncompensatory pause follows"],ca:"Same as PACs (caffeine, stress, atrial stretch, electrolytes), plus a very early PAC.",as:"Look for the early P wave before the wide beat: that's the key difference from a PVC.",ac:"Usually no treatment; assess the client, check electrolytes, document.",pv:"Treat triggers; usually nothing for the rhythm.",pri:"routine",nx:["lytes","doc"],nw:["shockNow","cardio"],sp:"aberrant conduction"},
+ afab:{c:["No P waves; fibrillatory baseline","Irregularly irregular","Wide QRS (0.12 s or more) from a bundle branch block or rate-related aberrancy"],ca:"AF with a bundle branch block or rate-related aberrancy; also AF with an accessory pathway.",as:"Is the client stable? An irregularly irregular wide rhythm is AF with aberrancy until proven otherwise; VT is regular.",ac:"Assess stability, 12-lead ECG, notify the provider. Never give adenosine for an irregular wide-complex tachycardia.",pv:"12-lead, rate control or cardioversion per stability, expert consultation.",acl:"tachy",pri:"assess",nx:["vit","tw","notify"],nw:["vag","shockNow"],sp:"atrial fibrillation aberrancy"},
+ pmvt:{c:["Polymorphic VT: QRS complexes change shape beat to beat","Very fast and irregular","The QT before the run is normal (this is not torsades)"],ca:"Acute ischemia or MI is the most common cause; also cardiomyopathy and electrolyte problems.",as:"Pulse and responsiveness. Treat sustained polymorphic VT as unstable.",ac:"No pulse: call a code, CPR, defibrillate (unsynchronized). Treat ischemia.",pv:"Defibrillation, ACLS, urgent ischemia evaluation. Magnesium is not routine when the QT is normal.",acl:"tdp",pri:"code",nx:["cpr","shock","notify"],nw:["vag","cardio"],sp:"polymorphic ventricular tachycardia"},
+ tdp:{c:["Polymorphic VT whose QRS complexes twist around the baseline, growing and shrinking","Very fast, irregular","Starts after beats with a long QT (often triggered by an R-on-T PVC)"],ca:"Long QT (drugs such as some antiarrhythmics, antipsychotics, antibiotics, methadone), hypokalemia, hypomagnesemia, bradycardia.",as:"Pulse and responsiveness. Usually unstable.",ac:"No pulse: call a code, CPR, defibrillate. Have magnesium available; stop QT-prolonging drugs per orders.",pv:"Defibrillation, magnesium (may be considered for recurring torsades), correction of potassium, stopping QT-prolonging drugs, overdrive pacing.",acl:"tdp",pri:"code",nx:["cpr","shock","lytes"],nw:["vag","cardio"],sp:"torsades de pointes"},
+ vfc:{c:["Chaotic, irregular waves with no P, QRS or T","Large (coarse) waves","No pulse, no cardiac output"],ca:"MI, ischemia, VT that degenerates, electrolyte imbalance, hypoxia, drug toxicity, electric shock.",as:"Confirm: unresponsive, not breathing normally, no pulse.",ac:"Call a code, start CPR, defibrillate as soon as possible.",pv:"ACLS: shocks, epinephrine, amiodarone or lidocaine, treat reversible causes.",acl:"shock",pri:"code",nx:["cpr","shock","epi"],nw:["atrop","cardio"],sp:"ventricular fibrillation"},
+ vff:{c:["Low-amplitude chaotic waves","No P, QRS or T","No pulse"],ca:"Prolonged VF, same causes as coarse VF.",as:"Confirm no pulse; fine VF can look like asystole. Check the gain and a second lead.",ac:"Call a code, CPR, defibrillate as soon as possible.",pv:"ACLS shockable algorithm.",acl:"shock",pri:"code",nx:["cpr","shock","ht"],nw:["atrop","ignore"],sp:"ventricular fibrillation"},
+ asys:{c:["A flat (or nearly flat) line","No electrical activity","Confirm in a second lead"],ca:"Prolonged arrest, hypoxia, acidosis, hyperkalemia, hypothermia, drug overdose.",as:"Unresponsive, no pulse. Confirm it isn't a disconnected lead.",ac:"Call a code, start CPR, confirm in another lead, epinephrine as soon as possible. Do not shock.",pv:"ACLS non-shockable algorithm; treat reversible causes.",acl:"nons",pri:"code",nx:["cpr","epi","ht"],nw:["shockNow","atrop"],sp:"asystole"},
+ pea:{c:["Organized electrical activity on the monitor (any rhythm except VF/VT)","NO palpable pulse","Diagnosed at the bedside, not from the strip alone"],ca:"The Hs and Ts: hypovolemia, hypoxia, acidosis, hypo-/hyperkalemia, hypothermia, tension pneumothorax, tamponade, toxins, pulmonary embolism, coronary thrombosis.",as:"The monitor looks fine, but the client is unresponsive with no pulse. Always treat the patient, not the monitor.",ac:"Call a code, start CPR, epinephrine as soon as possible, look for reversible causes. Do not shock.",pv:"ACLS non-shockable algorithm and treatment of the cause (fluids, needle decompression, pericardiocentesis, thrombolytics).",acl:"nons",pri:"code",nx:["cpr","epi","ht"],nw:["shockNow","ignore"],sp:"pulseless electrical activity"},
+ avb1:{c:["Sinus rhythm","PR longer than 0.20 s (more than 5 small boxes)","The PR is the same every beat; every P conducts"],ca:"Beta-blockers, calcium channel blockers, digoxin, inferior MI, older age, athletes, hyperkalemia.",as:"Usually no symptoms. Watch for progression to higher block.",ac:"Monitor and document the PR each shift; review AV nodal drugs.",pv:"Usually nothing; medication review.",pri:"assess",nx:["doc","meds"],nw:["pads","atrop"],sp:"first degree heart block"},
+ avb2i:{c:["P waves regular","PR gets longer each beat until a P wave doesn't conduct (a dropped QRS)","Then the cycle repeats: grouped beating"],ca:"Inferior MI, digoxin, beta-blockers, calcium channel blockers, vagal tone.",as:"Usually stable. Check BP and symptoms.",ac:"Monitor, review AV nodal drugs, notify the provider of a new block.",pv:"Medication review; atropine if symptomatic; usually no pacing.",acl:"brady",pri:"assess",nx:["vit","meds","notify"],nw:["shockNow","cardio"],sp:"second degree heart block"},
+ avb2ii:{c:["P waves regular","PR stays the same, then a P wave suddenly doesn't conduct","Often a wide QRS (block below the AV node)"],ca:"Anterior MI, conduction system disease, Lyme carditis.",as:"BP, mental status, dizziness. Can progress suddenly to complete block.",ac:"Notify the provider promptly, place transcutaneous pacing pads as ordered, keep atropine and pacing at the bedside.",pv:"Transcutaneous then transvenous pacing, a permanent pacemaker. Atropine may not work.",acl:"brady",pri:"assess",nx:["vit","pads","notify"],nw:["ignore","dig"],sp:"second degree heart block"},
+ avb21:{c:["Two P waves for every QRS","The PR of conducted beats is constant","Can't tell type I from type II on this strip alone"],ca:"Either AV nodal disease (like type I) or disease below the node (like type II).",as:"Ventricular rate is half the atrial rate. Check BP and symptoms.",ac:"Treat as potentially serious: notify the provider, have pacing ready if symptomatic.",pv:"Longer strip or 12-lead to sort out the level of block; pacing if symptomatic.",acl:"brady",pri:"assess",nx:["vit","notify","pads"],nw:["shockNow","ignore"],sp:"second degree heart block"},
+ avb3:{c:["P waves regular and QRS complexes regular, but unrelated (AV dissociation)","More P waves than QRS complexes; PR varies","Ventricular rate slow: 40–60 (junctional, narrow) or 20–40 (ventricular, wide)"],ca:"MI, conduction system disease, drug toxicity, hyperkalemia, after heart surgery.",as:"BP, mental status, chest pain, signs of shock. Often symptomatic.",ac:"Stay with the client, call for help, apply pacing pads, notify the provider; prepare for transcutaneous pacing.",pv:"Transcutaneous pacing, atropine (often ineffective), dopamine or epinephrine infusion, transvenous then permanent pacemaker.",acl:"brady",pri:"assess",nx:["vit","pads","notify"],nw:["ignore","dig"],sp:"third degree heart block"},
+ aai:{c:["A pacer spike before each P wave","Rate equals the set lower rate","Normal QRS after each paced P"],ca:"Pacemaker for sinus node dysfunction.",as:"Check that every spike makes a P wave (capture) and the rate matches the setting.",ac:"Document paced rhythm and capture; know the device type and lower rate.",pv:"Device check as scheduled.",pri:"assess",nx:["doc","pmck"],nw:["shockNow","pads"],sp:"pacemaker"},
+ vvi:{c:["A pacer spike before each wide QRS","Rate equals the set lower rate","QRS is wide (paced) with the T wave opposite"],ca:"Pacemaker for heart block or slow AF.",as:"Every spike followed by a QRS (capture), pulse matches the paced rate.",ac:"Document, check capture and the pulse, know the device settings.",pv:"Device check as scheduled.",pri:"assess",nx:["doc","vit"],nw:["shockNow","pads"],sp:"pacemaker"},
+ ddd:{c:["An atrial spike before the P wave, then a ventricular spike before a wide QRS","AV delay is set by the device","Rate at or above the lower rate"],ca:"Dual-chamber pacemaker.",as:"Capture in both chambers, pulse.",ac:"Document; verify capture.",pv:"Device check as scheduled.",pri:"assess",nx:["doc","vit"],nw:["shockNow","atrop"],sp:"pacemaker"},
+ fcap:{c:["Pacer spikes that are NOT followed by a QRS","Pauses where the heart didn't respond","Rate lower than the set rate"],ca:"Lead displacement or fracture, battery depletion, high capture threshold (electrolytes, ischemia, drugs).",as:"Pulse, BP and symptoms during the pauses.",ac:"Assess the client, notify the provider, have transcutaneous pacing ready, position as ordered, check electrolytes.",pv:"Chest X-ray for lead position, device interrogation, increase output, pacing.",acl:"brady",pri:"assess",nx:["vit","pmck","pads"],nw:["shockNow","ignore"],sp:"pacemaker malfunction"},
+ fsense:{c:["Pacer spikes appear where they shouldn't, ignoring the client's own beats","Spikes may land on T waves","Competes with the intrinsic rhythm"],ca:"Lead displacement, low sensitivity setting, battery problems, magnet use.",as:"Assess the client; a spike on a T wave can cause VT/VF.",ac:"Notify the provider and the device team, keep the defibrillator nearby, document strips.",pv:"Device interrogation and reprogramming.",pri:"assess",nx:["vit","pmck","doc"],nw:["shockNow","atrop"],sp:"pacemaker malfunction"},
+ osense:{c:["Pauses with NO pacer spike when one was due","The pacer sensed noise (muscle activity, electromagnetic interference) as heartbeats","Rate lower than the set rate"],ca:"Muscle potentials, electromagnetic interference, lead problems, sensitivity set too high.",as:"Pulse and symptoms during pauses.",ac:"Assess, remove sources of interference, notify the provider and the device team, have pacing ready.",pv:"Device interrogation and reprogramming.",acl:"brady",pri:"assess",nx:["vit","pmck","notify"],nw:["shockNow","ignore"],sp:"pacemaker malfunction"},
+ stemi:{c:["ST segment raised 1 mm or more above the baseline (at the J point)","Can look like a tombstone or a dome","Confirm on a 12-lead ECG (2 contiguous leads)"],ca:"Acute MI (coronary occlusion); also pericarditis and other causes.",as:"Chest pain or pressure, radiation, sweating, nausea, shortness of breath, BP.",ac:"Stay with the client, call for help (rapid response or chest pain protocol), STAT 12-lead, oxygen if SpO2 low, IV access, give ordered aspirin or nitroglycerin, notify the provider.",pv:"STAT 12-lead, troponin, aspirin, nitroglycerin, heparin, emergent cardiac catheterization.",pri:"assess",nx:["tw","rrt","notify"],nw:["ignore","shockNow"],sp:"ST elevation myocardial infarction"},
+ stdep:{c:["ST segment 1 mm or more below the baseline","Often horizontal or downsloping","Confirm on a 12-lead"],ca:"Ischemia, NSTEMI, digoxin effect, hypokalemia, LV hypertrophy.",as:"Chest pain, shortness of breath, BP.",ac:"Assess, 12-lead per protocol, notify the provider, oxygen if hypoxemic, ordered anti-ischemic drugs.",pv:"12-lead, troponins, aspirin, nitrates, heparin, cardiology consult.",pri:"assess",nx:["tw","vit","notify"],nw:["ignore","cardio"],sp:"NSTEMI"},
+ hyperk:{c:["Tall, narrow, peaked T waves","Later: flat P waves, long PR, wide QRS","Can progress to a sine wave and arrest"],ca:"Kidney failure, potassium-sparing diuretics, ACE inhibitors or ARBs, acidosis, tissue breakdown, missed dialysis.",as:"Check the potassium level, weakness, urine output, dialysis history.",ac:"Notify the provider promptly; keep on the monitor; hold potassium supplements; prepare ordered treatment.",pv:"Calcium gluconate IV (protects the heart), insulin with dextrose, albuterol, potassium binders, dialysis.",pri:"assess",nx:["lytes","notify","tw"],nw:["ignore","shockNow"],sp:"hyperkalemia"},
+ hypok:{c:["Flat or low T waves","Prominent U waves after the T","May have ST depression and PVCs"],ca:"Diuretics, vomiting, diarrhea, NG suction, poor intake, insulin.",as:"Check potassium and magnesium; muscle weakness; cramps; digoxin use (hypokalemia increases digoxin toxicity).",ac:"Notify the provider, give ordered potassium (never IV push), recheck levels.",pv:"Potassium and magnesium replacement, review of diuretics.",pri:"assess",nx:["lytes","notify","doc"],nw:["ignore","shockNow"],sp:"hypokalemia"},
+ lqt:{c:["QT long for the heart rate","QTc 0.46 s or more is prolonged; 0.50 s or more is high risk for torsades","Measure QT from the start of the QRS to the end of the T"],ca:"Drugs (some antiarrhythmics, antipsychotics, antiemetics like ondansetron, macrolide and fluoroquinolone antibiotics, methadone), hypokalemia, hypomagnesemia, hypocalcemia, congenital.",as:"Measure the QTc each shift and after new QT-prolonging drugs; check electrolytes.",ac:"Notify the provider of a QTc of 0.50 s or more or a big increase; hold the next QT-prolonging dose per policy until clarified; check potassium and magnesium.",pv:"Stop or change drugs, correct electrolytes, magnesium.",pri:"assess",nx:["meds","lytes","notify"],nw:["ignore","shockNow"],sp:"long QT syndrome"},
+ artvf:{c:["Chaotic waves that look like VF","But normal QRS complexes can be seen marching through at the same rate","The client is awake and talking"],ca:"Patient movement (brushing teeth, shivering, tremor, CPR on another patient), loose electrodes, 60-cycle electrical interference.",as:"Look at the client before you do anything else.",ac:"If the client is awake with a pulse, it's artifact: check electrodes and wires, replace dried electrodes, ask the client to hold still, re-check the strip.",pv:"Nothing for the rhythm.",pri:"leads",nx:["leadck","reassure","doc"],nw:["shockNow","cpr0"],sp:"electrocardiogram artifact"}};
+
+/* ================= presentation: randomized vitals and symptoms; the right action depends on them ================= */
+const ARREST=["vfc","vff","asys","tdp","pmvt","pea"],SHOCK=["vfc","vff","vt","tdp","pmvt"];
+const TACHY=["svt","afrvr","afab","afl21","aflv","vt"],BRADY=["sbrady","junc","idio","avb2ii","avb21","avb3","fcap","osense","sarrest","avb2i","saeb"];
+const MILD=["sbrady","sarr","avb2i","saeb","sarrest"];
+const SIGNS={hypo:"BP is low and the client says they feel faint",ams:"newly confused and hard to keep awake",cp:"reports crushing chest pressure",shock:"skin is cool, clammy and mottled; capillary refill 4 seconds",hf:"short of breath lying flat, with new crackles in both lungs"};
+const NAMES=["A. Rivera","B. Chen","C. Okonkwo","D. Fischer","E. Haddad","F. Moreau","G. Nakamura","H. Silva","I. Novak","J. Mensah","K. Larsen","L. Duarte","M. Petrov","N. Kaur","O. Brennan","P. Alvarez","Q. Tran","R. Delgado","S. Ibrahim","T. Kowalski","U. Achebe","V. Lindqvist","W. Osei","Y. Park"];
+const DXP=["admitted with pneumonia","post-op day 1 after a hip replacement","admitted for cellulitis of the leg","here for a COPD exacerbation","post-op day 2 after bowel surgery","admitted with a GI bleed, now stable","admitted for sepsis from a urinary infection","recovering from diabetic ketoacidosis","under observation after a fall at home","admitted to rule out chest pain","here for fluid management with kidney disease","admitted with shortness of breath","recovering from a stroke","admitted with dehydration","post-op day 1 after gallbladder surgery","admitted for a heart failure tune-up"];
+const ACTP=["sitting up in bed","just back from the bathroom","resting with eyes closed","eating lunch","talking on the phone","brushing their teeth","shivering under two blankets","watching TV","moving around to get comfortable","asking for a warm blanket"];
+const rint=(a,b)=>a+Math.floor(Math.random()*(b-a+1));const pick=a=>a[Math.floor(Math.random()*a.length)];
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function presFor(rid){const P={pulse:true,unstable:false,signs:[],nm:pick(NAMES),age:rint(24,92),dx:pick(DXP),act:pick(ACTP)};
+  if(ARREST.includes(rid)||(rid==="vt"&&Math.random()<.35))P.pulse=false;
+  else{let pu=0;if(TACHY.includes(rid))pu=.42;else if(rid==="idio")pu=.6;else if(BRADY.includes(rid))pu=MILD.includes(rid)?.18:.4;if(Math.random()<pu)P.unstable=true}
+  if(!P.pulse){P.bp="unable to obtain";P.spo2="no waveform";P.rr="agonal or absent";P.loc="Unresponsive, not breathing normally; no carotid pulse";P.act=null}
+  else if(P.unstable){P.signs=shuffle(Object.keys(SIGNS)).slice(0,rint(1,2));if(Math.random()<.6&&!P.signs.includes("hypo"))P.signs.unshift("hypo");P.signs=[...new Set(P.signs)];
+    P.bp=P.signs.includes("hypo")||P.signs.includes("shock")?rint(66,86)+"/"+rint(36,52):rint(96,128)+"/"+rint(56,78);P.spo2=P.signs.includes("hf")?rint(84,89):rint(90,96);P.rr=rint(20,30);P.act=null;P.loc=P.signs.includes("ams")?"Drowsy and confused":"Awake, anxious"}
+  else{{const sy=rint(104,152);P.bp=sy+"/"+Math.round(sy*(.55+Math.random()*.13))};P.spo2=rint(93,99);P.rr=rint(12,20);P.loc=pick(["Alert and oriented","Awake and talking","Alert, denies chest pain or shortness of breath","Awake; says they feel fine"]);if(TACHY.includes(rid)&&Math.random()<.5)P.loc+=", aware of a racing heartbeat"}
+  return P}
+function contextText(P){if(!P.pulse)return `${P.nm}, ${P.age}, ${P.dx}. The monitor alarms. You find the client unresponsive, not breathing normally, and you can't feel a carotid pulse.`;
+  const sg=P.signs.map(k=>SIGNS[k]);return `${P.nm}, ${P.age}, ${P.dx}. ${P.act?cap(P.act)+". ":""}${P.loc}${sg.length?"; "+sg.join("; "):""}. BP ${P.bp}, SpO\u2082 ${P.spo2}%, RR ${P.rr}/min.`}
+const cap=s=>s.charAt(0).toUpperCase()+s.slice(1);
+/* correct priority (k) and the other acceptable keys (ok) for this rhythm in this presentation */
+function priOf(rid,P){const r=k=>({k,ok:[k]});if(!P.pulse)return r("code");if(rid==="artvf")return r("leads");
+  if(TACHY.includes(rid))return r(P.unstable?"unstT":"stabT");if(rid==="stach")return r("cause");if(rid==="jt"||rid==="mat")return r("stabT");
+  if(BRADY.includes(rid)){if(P.unstable)return r("unstB");if(rid==="fcap"||rid==="osense")return r("device");return MILD.includes(rid)?{k:"routine",ok:["routine","stabB"]}:r("stabB")}
+  if(rid==="stemi"||rid==="stdep")return r("acs");if(["hyperk","hypok","lqt","ront","pvcm","couplet"].includes(rid))return r("notify");if(rid==="fsense")return r("device");return r("routine")}
+function priOptions(rid,P){const p=priOf(rid,P);const others=["med",...shuffle(Object.keys(PRI).filter(k=>!p.ok.includes(k)&&k!=="med")).slice(0,3)];return shuffle([p.k,...others])}
+function nextOf(rid,P){const c=CT[rid]||{};const p=priOf(rid,P).k;
+  if(p==="code")return SHOCK.includes(rid)?{nx:["cpr","shock","epi"],nw:["atrOrd","cardio","vag"]}:{nx:["cpr","epi","ht"],nw:["shockNow","atrOrd","cardio"]};
+  if(p==="unstT")return {nx:["cardio","rrt","vit"],nw:["vagwait","atrOrd"]};if(p==="unstB")return {nx:["pads","atrOrd","rrt"],nw:["cardio","vagwait"]};
+  if(p==="stabT")return {nx:["tw","vit","notify"],nw:["shockNow","atrOrd"]};
+  return {nx:(c.nx||[]).slice(),nw:(c.nw||[]).filter(k=>!(c.nx||[]).includes(k))}}
+
+/* ================= progress (per user: nclexsim.v1.tele, synced with the other nclexsim.v1.* keys) ================= */
+const PKEY="nclexsim.v1.tele";
+const STO=(typeof store!=="undefined"&&store)?store:{get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+function prog(){const p=STO.get(PKEY,null)||{};p.v=1;p.r=p.r||{};p.st=p.st||{};p.hist=p.hist||[];p.shift=p.shift||[];p.code=p.code||[];return p}
+function saveProg(p){STO.set(PKEY,p);try{if(typeof srvSyncSoon==="function")srvSyncSoon()}catch(e){}}
+function recStrip(rid,steps,score){const p=prog();const r=p.r[rid]=p.r[rid]||{n:0,c:0,s:0};r.n++;const s8=steps.find(s=>s.k==="int");if(s8&&s8.idOk)r.c++;r.s+=score;r.last=Date.now();
+  steps.forEach(s=>{const x=p.st[s.k]=p.st[s.k]||{n:0,c:0};x.n++;if(s.ok)x.c++});p.hist.unshift({t:Date.now(),rid,sc:score});p.hist=p.hist.slice(0,40);saveProg(p)}
+const STEPS=[["rate","Rate"],["reg","Regularity"],["p","P waves"],["pr","PR interval"],["qrs","QRS width"],["qt","QT / QTc"],["st","ST / T changes"],["int","Interpretation and action"]];
+
+/* ================= shell ================= */
+const S={tab:"learn",open:false,prev:"",learn:"nsr",lst:null,pr:null,cal:null,sec:"none",art:{move:false,ac:false,wander:false},pick:"nsr",mode:"random",timer:0,checked:null};
+const ICO={ecg:'<path d="M2 12h4l2-5 3 10 3-8 2 3h6"/>',x:'<path d="M6 6l12 12M18 6L6 18"/>',ok:'<path d="M5 12l5 5 9-10"/>',no:'<path d="M6 6l12 12M18 6L6 18"/>',bell:'<path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4z"/><path d="M10 20a2 2 0 0 0 4 0"/>',send:'<path d="M4 12l16-8-6 16-3-7z"/>'};
+const ic=(k,n)=>`<svg viewBox="0 0 24 24" width="${n||18}" height="${n||18}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICO[k]||""}</svg>`;
+const TABS=[["learn","Learn"],["practice","Practice"],["challenge","Challenge"],["station","Central station"],["code","Code / ACLS"],["progress","My progress"]];
+function root(){let o=document.getElementById("tl30");if(!o){o=document.createElement("div");o.id="tl30";o.setAttribute("role","dialog");o.setAttribute("aria-modal","true");o.setAttribute("aria-labelledby","tl30-t");document.body.appendChild(o)}return o}
+function open(tab,arg){const o=root();if(!S.open){S.prev=/^#telemetry/.test(location.hash)?S.prev:location.hash;S.open=true;document.documentElement.style.overflow="hidden";document.documentElement.classList.add("tl30-on")}
+  if(tab)S.tab=tab;if(S.tab==="learn"&&arg&&RHM[arg])S.learn=arg;if(S.tab==="practice"&&arg&&RHM[arg]){S.pick=arg;S.mode="drill";S.pr=null}if(S.tab==="practice"&&arg==="challenge"){S.mode="challenge";S.pr=null}
+  o.innerHTML=`<header class="tl-h"><span class="tl-hi">${ic("ecg",22)}</span><div><small>Learning module · Telemetry</small><h2 id="tl30-t">Telemetry &amp; EKG</h2></div><button type="button" class="tl-x" data-tl="close" aria-label="Close telemetry module">${ic("x",20)}<span>Close</span></button></header>
+   <nav class="tl-tabs" role="tablist" aria-label="Telemetry module">${TABS.map(([k,l])=>`<button type="button" role="tab" id="tl-tab-${k}" aria-selected="${S.tab===k}" aria-controls="tl-main" data-tl="tab" data-v="${k}">${l}</button>`).join("")}</nav>
+   <main class="tl-b" id="tl-main" role="tabpanel" aria-labelledby="tl-tab-${S.tab}" tabindex="-1"><div class="tl-w" data-tl-pane></div></main>`;
+  try{history.replaceState(null,"",location.pathname+location.search+"#telemetry"+(S.tab==="learn"?(S.learn==="nsr"?"":"/learn/"+S.learn):"/"+S.tab))}catch(e){}
+  paint();const x=o.querySelector(".tl-x");if(x&&!o.contains(document.activeElement))try{x.focus({preventScroll:true})}catch(e){}}
+function close(){stopStation();const o=document.getElementById("tl30");if(o)o.remove();S.open=false;document.documentElement.classList.remove("tl30-on");if(!document.querySelector(".mnu,.smod-bg,#sdl29"))document.documentElement.style.overflow="";
+  const to=S.prev&&!/^#telemetry/.test(S.prev)?S.prev:"";try{history.replaceState(null,"",location.pathname+location.search+to)}catch(e){}if(to==="#progress"&&window.__nsProgRender)try{window.__nsProgRender()}catch(e){}}
+const pane=()=>document.querySelector("#tl30 [data-tl-pane]");
+function paint(){const p=pane();if(!p)return;if(S.tab!=="station")stopStation();if(S.tab==="challenge"&&S.mode!=="challenge"){S.mode="challenge";S.pr=null}else if(S.tab==="practice"&&S.mode==="challenge"){S.mode="random";S.pr=null}({learn:paintLearn,practice:paintPractice,challenge:paintPractice,station:paintStation,code:paintCode,progress:paintProgress}[S.tab]||paintLearn)(p);const m=document.getElementById("tl-main");if(m)m.scrollTop=0}
+const lblHTML=()=>`<p class="tl-lbl">${e_(LBL)}</p>`;
+const srcHTML=keys=>`<ul class="tl-src">${keys.map(k=>Array.isArray(k)?k:SRC[k]).filter(Boolean).map(([t,u])=>`<li><a href="${e_(u)}" target="_blank" rel="noopener noreferrer">${e_(t)}</a></li>`).join("")}</ul>`;
+function rhythmOptions(sel,extra){return `<option value="">Choose…</option>${GROUPS.map(g=>`<optgroup label="${e_(g)}">${RH.filter(r=>r.g===g).map(r=>`<option value="${r.id}" ${r.id===sel?"selected":""}>${e_(r.n)}</option>`).join("")}</optgroup>`).join("")}${extra||""}`}
+function mountStrip(host,st,o){host.innerHTML=stripBlock(st,o);const sh=host.querySelector(".tl-strip");if(!o.nocal&&innerWidth<600){sh.dataset.zoom="2";const sv=sh.querySelector("svg");if(sv)sv.style.width="200%";const z=sh.querySelector('[data-ct="zoom"]');if(z)z.textContent="Zoom 2×"}if(o.nocal)return null;const C=Cal(sh,st,o);C.draw();return C}
+
+/* ================= Learn ================= */
+function aclHTML(k){const a=ACL[k];if(!a)return "";return `<section class="tl-acl"><h4>${e_(a.t)}</h4><ol>${a.l.map(x=>`<li>${e_(x)}</li>`).join("")}</ol><p class="tl-fine">Within RN scope: recognize, call for help, start CPR and defibrillate (AED or manual per training and policy), and give ACLS drugs only by order or protocol. Source: <a href="${e_(SRC[a.s][1])}" target="_blank" rel="noopener noreferrer">${e_(SRC[a.s][0])}</a>.</p></section>`}
+function paintLearn(p){const r=RHM[S.learn]||RH[0],c=CT[r.id]||{};
+  p.innerHTML=`${lblHTML()}<div class="tl-grid2"><aside class="tl-cd tl-lib"><h3>Rhythm library <small>${RH.length}</small></h3><label class="tl-sel tl-libsel"><span>Choose a rhythm</span><select data-tl="learnsel">${rhythmOptions(r.id)}</select></label>
+     <div class="tl-libl">${GROUPS.map(g=>`<h4>${e_(g)}</h4><ul>${RH.filter(x=>x.g===g).map(x=>`<li><button type="button" data-tl="learn" data-v="${x.id}" aria-current="${x.id===r.id}">${e_(x.n)}</button></li>`).join("")}</ul>`).join("")}</div>
+     <section class="tl-how"><h4>How to read any strip: 8 steps</h4><ol>${STEPS.map(([k,l])=>`<li>${e_(l)}</li>`).join("")}</ol><p class="tl-fine">Then: assess the client first. Treat the patient, not the monitor.</p></section></aside>
+   <div class="tl-lm"><section class="tl-cd"><div class="tl-rowh"><div><small class="tl-grp">${e_(r.g)}</small><h3 class="tl-rn">${e_(r.n)}</h3></div><div class="tl-row"><label class="tl-sel sm"><span>Second lead</span><select data-tl="sec">${[["none","None"],["V1","V1"],["MCL1","MCL1"]].map(([v,l])=>`<option value="${v}" ${S.sec===v?"selected":""}>${l}</option>`).join("")}</select></label><button type="button" class="tl-btn sec" data-tl="learnnew">New example</button><button type="button" class="tl-btn sec" data-tl="topractice" data-v="${r.id}">Practice this rhythm</button></div></div>
+     <div data-tl-strip></div>
+     <div class="tl-crit"><h4>Criteria</h4><ul>${(c.c||[]).map(x=>`<li>${e_(x)}</li>`).join("")}</ul></div></section>
+    <section class="tl-cd tl-cols"><div><h4>Common causes</h4><p>${e_(c.ca)}</p><h4>What to assess</h4><p>${e_(c.as)}</p></div><div><h4>Priority nursing actions</h4><p>${e_(c.ac)}</p><h4>What the provider will likely order</h4><p>${e_(c.pv)}</p></div></section>
+    ${c.acl?`<section class="tl-cd">${aclHTML(c.acl)}</section>`:""}
+    <section class="tl-cd"><h4>Check it</h4>${srcHTML(["or3","or4",["StatPearls (NCBI Bookshelf): "+(c.sp||r.n),spURL(c.sp||r.n)]].concat(c.acl?[ACL[c.acl].s,"als"]:[]))}<p class="tl-fine">${e_(LBL)}. Strips are computer-generated for practice, not recordings of real patients.</p></section></div></div>`;
+  learnStrip()}
+function learnStrip(){const h=pane()&&pane().querySelector("[data-tl-strip]");if(!h)return;S.lst=build(S.learn,{leads:S.sec==="none"?["II"]:["II",S.sec]});S.cal=mountStrip(h,S.lst,{})}
+
+/* ================= Practice: 8-step workflow (Random, Challenge, Drill one rhythm) ================= */
+/* look-alike families served back to back in Challenge */
+const LOOK=[["avb2i","avb2ii","avb21"],["afl21","svt","stach"],["afib","mat","aflv"],["junc","aivr","idio"],["artvf","vfc"],["tdp","vfc","pmvt"],["pvc","pacab"],["avb1","nsr"],["fcap","fsense","osense"],["afab","vt"],["vff","asys"],["sbrady","junc","avb21"],["pea","nsr","sbrady"],["wap","mat","pac"],["stemi","stdep","hyperk"],["lqt","hypok"],["bigem","trigem","pac"]];
+const STEPREL={rate:["afl21","avb3","avb21","sbrady","stach","aflv"],reg:["sarr","afib","mat","aflv","avb2i","wap"],p:["wap","mat","afl21","afib","junc","avb3","pjc"],pr:["avb1","avb2i","avb2ii","avb21","avb3","junc","nsr"],qrs:["pvc","pacab","afab","aivr","idio","avb2ii","vt"],qt:["lqt","hypok","nsr"],st:["stemi","stdep","hyperk","hypok"],int:[]};
+function chStats(){const p=prog();return p.ch=Object.assign({n:0,c:0,streak:0,best:0,lvl:1,sum:0,to:0},p.ch||{})}
+function challengePick(last){const p=prog();const sib=LOOK.filter(g=>g.includes(last)).flat().filter(x=>x!==last&&RHM[x]);if(last&&sib.length&&Math.random()<.55)return pick(sib);
+  const w=RH.map(r=>{if(r.id===last)return 0;const x=p.r[r.id];let v=x&&x.n?1+3*(1-x.c/x.n):1.6;Object.entries(STEPREL).forEach(([k,L])=>{const s=p.st[k];if(s&&s.n>=3&&s.c/s.n<.7&&L.includes(r.id))v+=1.5});return v});
+  let tot=w.reduce((a,b)=>a+b,0),u=Math.random()*tot;for(let i=0;i<RH.length;i++){u-=w[i];if(u<=0)return RH[i].id}return RH[0].id}
+function newPractice(){S.timedOut=false;const last=S.pr?S.pr.rid:S.lastRid;let rid;
+  if(S.mode==="drill")rid=RHM[S.pick]?S.pick:"nsr";else if(S.mode==="challenge")rid=challengePick(last);else{const pool=RH.filter(r=>r.id!==last);rid=pick(pool).id}
+  const lvl=chStats().lvl;const ch=S.mode==="challenge";const art=Object.assign({},S.art);if(ch&&lvl>=3&&Math.random()<.35)art.wander=true;if(ch&&lvl>=5&&Math.random()<.25)art.move=true;
+  S.lastRid=rid;S.pr=build(rid,{leads:S.sec==="none"?["II"]:["II",S.sec],art,edgeP:ch?Math.min(.7,.3+.04*lvl):.3});S.pr.pres=presFor(rid);S.pr.ctx=contextText(S.pr.pres);
+  S.pr.ord={};["reg","pc","prc","qc","qtcat","stc"].forEach(k=>S.pr.ord[k]=shuffle(Object.keys({reg:REG,pc:PC,prc:PRC,qc:QC,qtcat:QTC,stc:STC}[k])));
+  S.pr.pri=priOptions(rid,S.pr.pres);const nx=nextOf(rid,S.pr.pres);S.pr.nx=nx;S.pr.nxo=shuffle([...nx.nx,...nx.nw]);S.checked=null;S.ans=null;S.t0=Date.now();startTimer()}
+function flatRhythms(sel,extra){return `<option value="">Choose…</option>${RH.slice().sort((a,b)=>a.n.localeCompare(b.n)).map(r=>`<option value="${r.id}" ${r.id===sel?"selected":""}>${e_(r.n)}</option>`).join("")}${extra||""}`}
+let TMR=0;function startTimer(){clearInterval(TMR);if(S.mode!=="challenge"||!S.timer)return;TMR=setInterval(()=>{const el=document.querySelector("#tl30 [data-tl-timer]");if(!S.pr||S.checked||!el){if(!el)clearInterval(TMR);return}
+  const left=Math.max(0,S.timer-Math.floor((Date.now()-S.t0)/1000));el.textContent=Math.floor(left/60)+":"+String(left%60).padStart(2,"0");el.classList.toggle("low",left<=15);if(!left){clearInterval(TMR);const f=document.querySelector("#tl30 [data-tl-form]");if(f){S.timedOut=true;onCheck(f)}}},250)}
+function paintPractice(p){if(!S.pr)newPractice();const st=S.pr,rid=st.rid,O=st.ord;const C=chStats();
+  p.innerHTML=`${lblHTML()}<section class="tl-cd"><div class="tl-pick"><div class="tl-sel"><span>Mode</span><div class="tl-seg tl-mode" role="group" aria-label="Practice mode">${[["random","Random"],["challenge","Challenge"],["drill","Drill one rhythm"]].map(([k,l])=>`<button type="button" data-tl="mode" data-v="${k}" aria-pressed="${S.mode===k}">${l}</button>`).join("")}</div></div>
+     ${S.mode==="drill"?`<label class="tl-sel"><span>Rhythm to drill</span><select data-tl="pick">${flatRhythms(RHM[S.pick]?S.pick:"nsr")}</select></label>`:""}
+     ${S.mode==="challenge"?`<label class="tl-sel sm"><span>Timer per strip</span><select data-tl="timer">${[[0,"Off"],[60,"60 s"],[90,"90 s"],[120,"120 s"]].map(([v,l])=>`<option value="${v}" ${S.timer==v?"selected":""}>${l}</option>`).join("")}</select></label>`:""}
+     <details class="tl-more" ${innerWidth>=600||S.sec!=="none"||Object.values(S.art).some(Boolean)?"open":""}><summary>Strip options</summary><div class="tl-pick"><label class="tl-sel sm"><span>Second lead</span><select data-tl="sec">${[["none","None"],["V1","V1"],["MCL1","MCL1"]].map(([v,l])=>`<option value="${v}" ${S.sec===v?"selected":""}>${l}</option>`).join("")}</select></label>
+     <fieldset class="tl-art"><legend>Add realism</legend>${[["move","Movement artifact"],["ac","60-cycle"],["wander","Baseline wander"]].map(([k,l])=>`<label><input type="checkbox" data-tl="art" value="${k}" ${S.art[k]?"checked":""}> ${l}</label>`).join("")}</fieldset></div></details>
+     <button type="button" class="tl-btn" data-tl="newstrip">New strip</button></div>
+    ${S.mode==="challenge"?`<div class="tl-chb" data-tl-chb><span><small>Level</small><b>${C.lvl}</b></span><span><small>Streak</small><b>${C.streak}</b></span><span><small>Best</small><b>${C.best}</b></span><span><small>Strips</small><b>${C.n}</b></span>${S.timer?`<span class="tl-tmr"><small>Time left</small><b data-tl-timer>${Math.floor(S.timer/60)}:${String(S.timer%60).padStart(2,"0")}</b></span>`:""}<em>Adaptive: favors rhythms and steps you miss, and look-alikes back to back.</em></div>`:""}
+    <p class="tl-ctx" data-tl-ctx>${e_(st.ctx)}</p><div data-tl-strip></div></section>
+   <form class="tl-cd tl-wf" data-tl-form novalidate><h3>Interpret it in 8 steps</h3><p class="tl-fine">Measure with the calipers, then press <b>Use this measurement</b> to copy R-R, PR, QRS or QT into your answers. Type your own numbers.</p>
+    ${stepHTML(1,"Rate",`<div class="tl-two"><label class="tl-fld"><span>Atrial rate (/min)</span><input name="ar" inputmode="numeric" autocomplete="off"></label><label class="tl-chk"><input type="checkbox" name="arNA"> Atrial rate can't be measured</label>
+       <label class="tl-fld"><span>Ventricular rate (/min)</span><input name="vr" inputmode="numeric" autocomplete="off"></label><label class="tl-chk"><input type="checkbox" name="vrNA"> No measurable ventricular rate</label></div>
+       <p class="tl-fine">6-second method: count QRS complexes between the 0 s and 6 s marks × 10. 1500 method: 1500 ÷ small boxes between R waves. 300 method: 300 ÷ large boxes.</p>`)}
+    ${stepHTML(2,"Regularity",radios("reg",REG,O.reg))}
+    ${stepHTML(3,"P waves",`<p class="tl-q">Are P waves present and upright, and is there one P for every QRS?</p>${radios("pc",PC,O.pc)}`)}
+    ${stepHTML(4,"PR interval",`<label class="tl-fld sm"><span>PR (seconds)</span><input name="pr" inputmode="decimal" autocomplete="off"></label>${radios("prc",PRC,O.prc)}`)}
+    ${stepHTML(5,"QRS width",`<label class="tl-fld sm"><span>QRS (seconds)</span><input name="qrs" inputmode="decimal" autocomplete="off"></label>${radios("qc",QC,O.qc)}`)}
+    ${stepHTML(6,"QT / QTc",`<div class="tl-two"><label class="tl-fld sm"><span>QT (seconds)</span><input name="qt" inputmode="decimal" autocomplete="off"></label><label class="tl-fld sm"><span>R-R before it (seconds)</span><input name="rr" inputmode="decimal" autocomplete="off"></label></div><p class="tl-qtc" data-tl-qtc>QTc: enter QT and R-R.</p>${radios("qtcat",QTC,O.qtcat)}`)}
+    ${stepHTML(7,"ST segment and T waves",radios("stc",STC,O.stc))}
+    ${stepHTML(8,"Interpretation and priority action",`<label class="tl-sel"><span>Rhythm interpretation (all ${RH.length} rhythms, A to Z)</span><select name="rid">${flatRhythms("")}</select></label>
+       <p class="tl-q"><b>Priority:</b> for this strip and this assessment, what do you do first?</p>${radios("pri",PRI,st.pri)}
+       <p class="tl-q"><b>Next steps:</b> select all that apply.</p><div class="tl-opts">${st.nxo.map(k=>`<label class="tl-o"><input type="checkbox" name="nx" value="${k}"> <span>${e_(NB[k])}</span></label>`).join("")}</div>`)}
+    <div class="tl-row tl-sub"><button type="submit" class="tl-btn">Check my strip</button><button type="button" class="tl-btn sec" data-tl="newstrip">Skip to a new strip</button></div><div data-tl-fb aria-live="polite"></div></form>`;
+  const host=p.querySelector("[data-tl-strip]");S.cal=mountStrip(host,st,{use:true,onUse:(m,v,all)=>useMeas(m,v,all)});if(S.ans)fillForm(S.ans);if(S.checked)showFeedback(S.checked);startTimer()}
+function stepHTML(n,t,body){return `<fieldset class="tl-step" data-step="${STEPS[n-1][0]}"><legend><span class="tl-n">${n}</span> ${e_(t)}</legend>${body}<div class="tl-sfb" data-sfb="${STEPS[n-1][0]}"></div></fieldset>`}
+function radios(name,M,order){const ks=order||Object.keys(M);return `<div class="tl-opts">${ks.map(k=>`<label class="tl-o"><input type="radio" name="${name}" value="${k}"> <span>${e_(M[k])}</span></label>`).join("")}</div>`}
+function useMeas(m,v,all){const f=document.querySelector("#tl30 [data-tl-form]");if(!f||v==null)return;const set=(n,x)=>{const i=f.elements[n];if(i){i.value=f2(x);i.dispatchEvent(new Event("input",{bubbles:true}))}};
+  if(m==="rr"){set("rr",v);if(!f.elements.vr.value)f.elements.vr.value=Math.round(60/v)}else if(m==="pr")set("pr",v);else if(m==="qrs")set("qrs",v);else if(m==="qt"){set("qt",v);if(all.rr)set("rr",all.rr)}
+  const sec=f.querySelector(`[data-step="${m==="rr"?"rate":m}"]`);if(sec){sec.classList.add("tl-flash");setTimeout(()=>sec.classList.remove("tl-flash"),900)}}
+function readForm(f){const fd=new FormData(f);const g=k=>fd.get(k);const n=k=>{const v=parseFloat(String(g(k)||"").replace(",","."));return isNaN(v)?null:v};
+  return {ar:n("ar"),arNA:!!g("arNA"),vr:n("vr"),vrNA:!!g("vrNA"),reg:g("reg"),pc:g("pc"),pr:n("pr"),prc:g("prc"),qrs:n("qrs"),qc:g("qc"),qt:n("qt"),rr:n("rr"),qtcat:g("qtcat"),stc:g("stc"),rid:g("rid"),pri:g("pri"),nx:fd.getAll("nx")}}
+function fillForm(a){const f=document.querySelector("#tl30 [data-tl-form]");if(!f)return;Object.entries(a).forEach(([k,v])=>{const el=f.elements[k];if(!el)return;if(k==="nx"){f.querySelectorAll('[name="nx"]').forEach(c=>c.checked=v.includes(c.value));return}
+  if(el instanceof RadioNodeList||el.length&&el[0]&&el[0].type==="radio"){[...f.querySelectorAll(`[name="${k}"]`)].forEach(r=>r.checked=r.value===v);return}if(el.type==="checkbox")el.checked=!!v;else el.value=v==null?"":(typeof v==="number"&&k!=="ar"&&k!=="vr"?f2(v):v)})}
+/* ---- grading (always against ground truth and the presentation) ---- */
+const near=(x,ts,tol)=>x!=null&&ts.some(t=>t!=null&&Math.abs(x-t)<=tol(t));
+const bl=(v,cut,w)=>v!=null&&Math.abs(v-cut)<=w;
+function grade(st,a){const t=st.truth,rid=st.rid,c=CT[rid]||{},P=t.pts,PR=st.pres||{pulse:true,signs:[]};const out=[];const sb=x=>(x*25).toFixed(1);
+  /* 1 rate */
+  let vOk,aOk,msg=[];if(t.vNA){vOk=a.vrNA||(rid==="asys"&&a.vr===0);msg.push(vOk?"Right: there are no organized QRS complexes to count.":"There are no organized QRS complexes to count here, so check \"No measurable ventricular rate.\"")}
+  else{vOk=!a.vrNA&&near(a.vr,[t.vMean,t.vMed],x=>Math.max(6,x*.1))||(!a.vrNA&&near(a.vr,[t.six],()=>10));msg.push((vOk?"Ventricular rate: right. ":"Ventricular rate: not quite. ")+`${t.nQ} QRS complexes in 6 seconds × 10 = ${t.six}/min; by R-R it is about ${Math.round(t.vMed)}/min${Math.abs(t.vMed-t.vMean)>8?` (average ${Math.round(t.vMean)}/min)`:""}.${P?` One R-R here is ${f2(P.r1-P.r0)} s = ${sb(P.r1-P.r0)} small boxes, and 1500 ÷ ${sb(P.r1-P.r0)} = ${Math.round(1500/((P.r1-P.r0)*25))}.`:""}${bl(t.vMed,60,6)||bl(t.vMed,100,6)?` Borderline: ${Math.round(t.vMed)}/min is close to the ${t.vMed<80?60:100} cutoff, so measure R-R with calipers instead of estimating; the 6-second count is too coarse here.`:""}`)}
+  if(t.aNA){aOk=a.arNA||(a.ar!=null&&a.ar>=350&&/^af/.test(rid));msg.push(aOk?"Atrial rate: right, it can't be measured here.":"Atrial rate: there are no measurable P waves here, so mark it as not measurable.")}
+  else{const tol=X=>Math.max(8,X*(st.X.aCL?.15:.1));aOk=!a.arNA&&(near(a.ar,[t.aRate],tol)||near(a.ar,[t.aSix],()=>10));msg.push((aOk?"Atrial rate: right. ":"Atrial rate: ")+`about ${Math.round(t.aRate)}/min${st.X.aCL?" (flutter waves)":` (${t.nP} P waves in 6 seconds)`}.${!t.vNA&&Math.abs(t.aRate-t.vMed)>15?" The atrial and ventricular rates differ: that's a clue.":""}`)}
+  out.push({k:"rate",ok:vOk&&aOk,msg:msg.join(" "),show:P?{a:P.r0,b:P.r1,mode:"rr"}:null});
+  out.push({k:"reg",ok:t.reg.includes(a.reg),msg:`${t.reg.includes(a.reg)?"Right":"Not quite"}: ${REG[t.reg[0]]}. March out the R-R interval with the calipers to check.`,show:P?{a:P.r0,b:P.r1,mode:"rr",march:true}:null});
+  out.push({k:"p",ok:t.pc.includes(a.pc),msg:`${t.pc.includes(a.pc)?"Right":"Look again"}: ${PC[t.pc[0]]}.`,show:P&&P.pOn!=null?{a:P.pOn,b:P.qOn,mode:"pr",lbl:"P wave → QRS"}:null});
+  const prCat=t.prc.includes(a.prc);const prNum=t.pr==null||a.pr==null||Math.abs(a.pr-t.pr)<=.04;const prB=t.pr!=null&&bl(t.pr,.2,.035);
+  out.push({k:"pr",ok:prCat&&prNum,msg:t.pr!=null?`${prCat&&prNum?"Right":"Not quite"}: the PR is ${f2(t.pr)} s (${sb(t.pr)} small boxes), from the start of the P wave to the start of the QRS. ${PRC[t.prc[0]]}.${prB?` Borderline call: ${t.pr>.2?"it is just over 0.20 s (5 small boxes), so it is prolonged.":"it is at or just under 0.20 s (5 small boxes), so it is still normal."} Measure several beats; a PR that is exactly 1 small box over the line still counts.`:""}${a.pr!=null&&!prNum?` You measured ${f2(a.pr)} s; within 0.04 s (1 small box) counts.`:""}`:`${prCat?"Right":"Not quite"}: ${PRC[t.prc[0]]}.`,show:P&&P.pOn!=null&&t.pr!=null?{a:P.pOn,b:P.qOn,mode:"pr"}:null});
+  const qCat=t.qc.includes(a.qc);const qNum=t.qrs==null||a.qrs==null||t.qc[0]==="na"||Math.abs(a.qrs-t.qrs)<=.03;const qB=t.qrs!=null&&bl(t.qrs,.12,.015)&&t.qc[0]!=="mix";
+  out.push({k:"qrs",ok:qCat&&qNum,msg:t.qrs!=null&&t.qc[0]!=="na"?`${qCat&&qNum?"Right":"Not quite"}: ${QC[t.qc[0]]}. The main QRS is ${f2(t.qrs)} s (${sb(t.qrs)} small boxes).${qB?` Borderline: ${t.qrs>=.12?"0.12 s is the cutoff, and this QRS reaches it, so call it wide.":"it is just under 0.12 s (3 small boxes), so it is still narrow."}`:""}`:`${qCat?"Right":"Not quite"}: ${QC[t.qc[0]]}.`,show:P?{a:P.qOn,b:P.qOff,mode:"qrs"}:null});
+  const qtCat=t.qtcat.includes(a.qtcat);const qtNum=t.qt==null||a.qt==null||Math.abs(a.qt-t.qt)<=.04;const qtAny=t.qtcat.length>=4;const qtB=t.qtcB!=null&&(bl(t.qtcB,.46,.02)||bl(t.qtcB,.5,.02));
+  out.push({k:"qt",ok:qtCat&&qtNum,msg:t.qt!=null&&!qtAny?`${qtCat&&qtNum?"Right":"Not quite"}: QT ${f2(t.qt)} s with an R-R of ${f2(t.rr)} s. QTc (Bazett) = ${f2(t.qt)} ÷ √${f2(t.rr)} = ${f2(t.qtcB)} s (Fridericia ${f2(t.qtcF)} s): ${QTC[t.qtcat[0]].toLowerCase()}.${qtB?` Borderline: the QTc is close to the ${Math.abs(t.qtcB-.46)<Math.abs(t.qtcB-.5)?"0.46":"0.50"} s line. A 1-small-box error in QT moves the QTc by about 0.04 s, so measure carefully and compare with the 12-lead.`:""}`:qtAny?"With a wide or paced QRS, or right after an early beat, the QTc is hard to interpret. Any answer counts; note it and compare with the 12-lead.":`${qtCat?"Right":"Not quite"}: the QT can't be measured on this strip.`,show:P&&t.qt!=null?{a:P.qOn,b:P.tOff,mode:"qt"}:null});
+  out.push({k:"st",ok:t.stc.includes(a.stc),msg:`${t.stc.includes(a.stc)?"Right":"Not quite"}: ${STC[t.stc[0]]}.${t.stc[0]==="ste"?" Confirm with a STAT 12-lead ECG.":""}`,show:P&&t.stc[0]!=="na"&&t.stc[0]!=="none"?{a:P.qOff,b:P.tOff,mode:"free",lbl:"ST segment and T wave"}:null});
+  const po=priOf(rid,PR);const nx=st.nx||nextOf(rid,PR);const idOk=a.rid===rid,priOk=po.ok.includes(a.pri);const want=new Set(nx.nx);const got=new Set(a.nx||[]);const nxOk=[...want].every(k=>got.has(k))&&[...got].every(k=>want.has(k));
+  const why=!PR.pulse?"There is no pulse, so this is a cardiac arrest no matter what the monitor shows."+(rid==="pea"?" An organized rhythm without a pulse is PEA.":""):PR.unstable?`The client is unstable (${PR.signs.map(k=>({hypo:"hypotension",ams:"altered mental status",cp:"ischemic chest discomfort",shock:"signs of shock",hf:"acute heart failure"})[k]).join(", ")}), so the 2025 AHA algorithm moves to ${po.k==="unstT"?"synchronized cardioversion":"atropine and pacing"}.`:TACHY.concat(BRADY).includes(rid)?"The client is stable (no hypotension, altered mental status, chest pain, shock or acute heart failure), so there's time for a 12-lead and orders.":"";
+  out.push({k:"int",ok:idOk&&priOk&&nxOk,idOk,priOk,nxOk,msg:`${idOk?"Interpretation: right, ":"Interpretation: this is "}<b>${e_(RHM[rid].n)}</b>${idOk?".":`, not ${a.rid&&RHM[a.rid]?e_(RHM[a.rid].n):"blank"}.`} Key criteria: ${e_((c.c||[]).join("; "))}. `+
+    `<br>Priority: ${priOk?"right. ":"the best first action here is: "}${e_(PRI[po.k])}. ${e_(why)} Treat the patient, not the monitor.<br>Next steps: ${nxOk?"right. ":""}${nx.nx.map(k=>e_(NB[k])).join("; ")}.${!nxOk&&nx.nw.some(k=>got.has(k))?" Not yet: "+nx.nw.filter(k=>got.has(k)).map(k=>e_(NB[k])).join("; ")+".":""}`,show:null});
+  return out}
+function onCheck(f){clearInterval(TMR);const a=readForm(f);S.ans=a;const steps=grade(S.pr,a);const n=steps.filter(s=>s.ok).length;const score=Math.round(n/8*100);S.checked={steps,score,to:!!S.timedOut};S.timedOut=false;recStrip(S.pr.rid,steps,score);
+  if(S.mode==="challenge"){const p=prog();const C=p.ch=Object.assign({n:0,c:0,streak:0,best:0,lvl:1,sum:0,to:0},p.ch||{});const win=steps[7].idOk&&n>=6&&!S.checked.to;C.n++;C.sum+=score;if(S.checked.to)C.to++;if(steps[7].idOk)C.c++;C.streak=win?C.streak+1:0;C.best=Math.max(C.best,C.streak);C.lvl=Math.min(10,1+Math.floor(C.c/4));C.last=Date.now();saveProg(p);S.checked.ch=Object.assign({},C)}
+  showFeedback(S.checked);const b=document.querySelector("#tl30 [data-tl-chb]");if(b&&S.checked.ch){const C=S.checked.ch;b.querySelectorAll("b")[0].textContent=C.lvl;b.querySelectorAll("b")[1].textContent=C.streak;b.querySelectorAll("b")[2].textContent=C.best;b.querySelectorAll("b")[3].textContent=C.n}}
+function showFeedback(ck){const f=document.querySelector("#tl30 [data-tl-form]");if(!f)return;ck.steps.forEach((s,i)=>{const box=f.querySelector(`[data-sfb="${s.k}"]`);const fs=f.querySelector(`[data-step="${s.k}"]`);if(fs){fs.classList.toggle("ok",s.ok);fs.classList.toggle("bad",!s.ok)}
+    if(box)box.innerHTML=`<div class="tl-fb ${s.ok?"ok":"bad"}">${ic(s.ok?"ok":"no",18)}<div><p>${s.msg}</p>${s.show?`<button type="button" class="tl-lk" data-tl="show" data-i="${i}">Show me on the strip</button>`:""}</div></div>`});
+  const fb=f.querySelector("[data-tl-fb]");const n=ck.steps.filter(s=>s.ok).length;
+  if(fb)fb.innerHTML=`<div class="tl-sum ${n>=6?"ok":""}">${ck.to?"<p><b>Time's up.</b> Your answers so far were checked.</p>":""}${ck.ch?`<p class="tl-chs">Challenge: level ${ck.ch.lvl} · streak ${ck.ch.streak} (best ${ck.ch.best})</p>`:""}<b>${n} of 8 steps right (${ck.score}%).</b> ${n===8?"Excellent: complete and accurate.":n>=6?"Nice work. Review the steps marked in red.":"Good effort. Open each red step and press Show me to see the right measurement."}<div class="tl-row"><button type="button" class="tl-btn" data-tl="newstrip">Next strip</button><button type="button" class="tl-btn sec" data-tl="learn" data-v="${S.pr.rid}">Learn this rhythm</button>${S.mode==="challenge"?"":`<button type="button" class="tl-btn sec" data-tl="topractice" data-v="${S.pr.rid}">Drill this rhythm</button>`}</div></div>`}
+function showMe(i){const s=S.checked&&S.checked.steps[i];if(!s||!s.show||!S.cal)return;const C=S.cal;C.march=!!s.show.march;C.mode=s.show.mode;C.set(s.show.a,s.show.b,s.show.mode,s.show.lbl);
+  const el=document.querySelector("#tl30 .tl-strip");if(el)el.scrollIntoView({behavior:RM()?"auto":"smooth",block:"center"});const sw=document.querySelector("#tl30 .tl-sw");if(sw){sw.classList.add("tl-flash");setTimeout(()=>sw.classList.remove("tl-flash"),1100)}}
+
+/* ================= Telemetry shift: central station =================
+   Each shift draws 6 scenarios, beds, names, ages, diagnoses, vitals (consistent with stable / unstable / pulseless) and alarm
+   timing at random. The monitor's algorithm label is sometimes WRONG (like real monitors): students grade the strip, not the label. */
+const ESC={sbar:"Send an SBAR to the provider (Secure Chat)",rrt:"Call a rapid response",code:"Call a code (cardiac arrest)",none:"No escalation: fix the cause and document"};
+const KIND={true:"True alarm: the rhythm is real",false:"False alarm: artifact",tech:"Technical alarm: leads off or no signal"};
+const LBLQ={yes:"Yes: the label matches the strip",no:"No: the strip shows something else",nolab:"No rhythm call: it's an equipment (technical) alarm"};
+/* what a monitor algorithm would print for each rhythm when it gets it right */
+const MLAB={vfc:"VFIB",vff:"VFIB",vt:"V-TACH",asys:"ASYSTOLE",afib:"AFIB",afrvr:"AFIB  HR HIGH",svt:"SVT",sbrady:"SINUS BRADY",stach:"SINUS TACH",couplet:"COUPLET",pvc:"PVCs",bigem:"BIGEMINY",stemi:"ST ELEV  II",lqt:"QTc HIGH",sarrest:"PAUSE",tdp:"POLY VT",pmvt:"POLY VT"};
+/* scenario pool: rid, label shown (wrong when it differs from MLAB[rid]), alarm color, kind */
+const POOL=[
+ {rid:"artvf",lab:"VFIB",c:"r",kind:"false"},{rid:"artvf",lab:"V-TACH",c:"r",kind:"false"},
+ {rid:"afab",lab:"V-TACH",c:"r",kind:"true"},{rid:"avb21",lab:"SINUS BRADY",c:"y",kind:"true"},{rid:"avb2i",lab:"PAUSE",c:"y",kind:"true"},
+ {rid:"afl21",lab:"SINUS TACH",c:"y",kind:"true"},{rid:"afl21",lab:"SVT",c:"y",kind:"true"},{rid:"vff",lab:"ASYSTOLE",c:"r",kind:"true"},{rid:"avb3",lab:"SINUS BRADY",c:"r",kind:"true"},
+ {rid:"loff",lab:"LEADS OFF",c:"c",kind:"tech"},
+ {rid:"vt",lab:"V-TACH",c:"r",kind:"true"},{rid:"vfc",lab:"VFIB",c:"r",kind:"true"},{rid:"afrvr",lab:"AFIB  HR HIGH",c:"y",kind:"true"},{rid:"sbrady",lab:"SINUS BRADY",c:"y",kind:"true"},
+ {rid:"couplet",lab:"COUPLET",c:"y",kind:"true"},{rid:"stemi",lab:"ST ELEV  II",c:"y",kind:"true"},{rid:"lqt",lab:"QTc HIGH",c:"y",kind:"true"},{rid:"svt",lab:"SVT",c:"y",kind:"true"},{rid:"asys",lab:"ASYSTOLE",c:"r",kind:"true"}];
+const labelOk=s=>s.kind==="tech"?"nolab":s.kind==="false"?"no":MLAB[s.rid]===s.lab?"yes":"no";
+const realRid=s=>s.rid==="loff"?"nsr":s.rid;
+function escOf(s,P){if(s.kind!=="true")return ["none"];const p=priOf(s.rid,P).k;if(p==="code")return ["code"];if(p==="unstT"||p==="unstB")return ["rrt"];if(p==="acs")return ["rrt","sbar"];if(p==="routine")return ["none","sbar"];return ["sbar"]}
+const ESCX={vt:{order:"Give amiodarone 150 mg IV over 10 minutes, get a 12-lead ECG and keep the defibrillator pads on.",rb:[/amiodarone/i,/150/,/12.?lead|ecg|ekg|pads/i]},
+ afrvr:{order:"Give diltiazem 10 mg IV over 2 minutes now and get a 12-lead ECG. Recheck the BP in 15 minutes.",rb:[/diltiazem|cardizem/i,/\b10\b/,/12.?lead|ecg|ekg/i]},
+ afab:{order:"Get a 12-lead ECG now. Don't give adenosine. Give diltiazem 10 mg IV over 2 minutes if the systolic stays over 100.",rb:[/12.?lead|ecg|ekg/i,/diltiazem|cardizem/i]},
+ afl21:{order:"Get a 12-lead ECG and give diltiazem 10 mg IV over 2 minutes. I'll check the anticoagulation plan.",rb:[/12.?lead|ecg|ekg/i,/diltiazem|cardizem/i]},
+ svt:{order:"Coach a modified Valsalva. If it doesn't break, give adenosine 6 mg rapid IV push with a saline flush on the monitor.",rb:[/valsalva|vagal/i,/adenosine/i,/\b6\b/]},
+ couplet:{order:"Draw a BMP and a magnesium level now and replace potassium per protocol.",rb:[/bmp|potassium|lab/i,/magnesium|\bmg\b/i]},
+ lqt:{order:"Hold the QT-prolonging medications and check a magnesium and potassium now.",rb:[/hold/i,/magnesium|potassium/i]},
+ stemi:{order:"Get a STAT 12-lead and a troponin, give aspirin 324 mg chewed, and I'm calling the cath lab.",rb:[/12.?lead|ecg|ekg/i,/aspirin|324/i]},
+ _brady:{order:"Get a 12-lead, hold rate-slowing medications, and put pacing pads on. Call me right away if the BP drops.",rb:[/12.?lead|ecg|ekg/i,/hold/i,/pads|pac/i]},
+ _def:{order:"Get a 12-lead ECG and a BMP with magnesium; I'll come see the client.",rb:[/12.?lead|ecg|ekg/i,/bmp|magnesium|lab/i]}};
+const kwOf=rid=>new RegExp(((RHM[rid]||{n:""}).n.toLowerCase().match(/[a-z]{5,}/g)||["xxxxx"]).filter(w=>!["rhythm","sinus","with","degree","conduction","second"].includes(w)).concat({afrvr:["rvr","a.?fib"],afib:["a.?fib"],afab:["a.?fib","aberr"],avb21:["2:1","two to one"],avb2i:["wenck","mobitz"],avb3:["chb","complete","third","3rd"],vt:["v.?tach","\\bvt\\b"],svt:["\\bsvt\\b"],lqt:["\\bqtc?\\b"],stemi:["st.?elev","stemi"],couplet:["pvc"],afl21:["flutter"]}[rid]||[]).join("|"),"i");
+const ST={on:false,beds:[],t0:0,raf:0,tm:[],cur:null};
+function pickShift(){const F=window.__vx30T&&window.__vx30T.shift;if(F)return F.map(x=>typeof x==="string"?POOL.find(p=>p.rid===x)||{rid:x,lab:MLAB[x]||"ARRHYTHMIA",c:"y",kind:"true"}:x);
+  const wrong=shuffle(POOL.filter(p=>p.kind==="true"&&MLAB[p.rid]!==p.lab)),right=shuffle(POOL.filter(p=>p.kind==="true"&&MLAB[p.rid]===p.lab)),fals=shuffle(POOL.filter(p=>p.kind==="false")),tech=POOL.filter(p=>p.kind==="tech");
+  const L=[...wrong.slice(0,rint(2,3)),fals[0]];if(Math.random()<.6)L.push(tech[0]);const seen=new Set(L.map(x=>x.rid));for(const r of right){if(L.length>=6)break;if(!seen.has(r.rid)){L.push(r);seen.add(r.rid)}}return shuffle(L).slice(0,6)}
+function stopStation(){ST.on=false;cancelAnimationFrame(ST.raf);ST.tm.forEach(clearTimeout);ST.tm=[]}
+function startShift(){stopStation();const L=pickShift();const base=rint(30,48)*100;const rooms=shuffle([0,2,4,6,8,10,12,14]).slice(0,6).sort((a,b)=>a-b).map(n=>String(base+n));
+  const preOf={afrvr:"afib",vt:"pvc",vfc:"pvcm",vff:"pvcm",avb3:"avb2ii",avb21:"nsr",avb2i:"nsr",asys:"sbrady",afab:"afib",afl21:"nsr",svt:"nsr",lqt:"nsr",stemi:"nsr",couplet:"nsr",sbrady:"sbrady",artvf:"nsr",loff:"nsr"};
+  const nms=shuffle(NAMES);ST.beds=L.map((s0,i)=>{const s=Object.assign({},s0);const rid=realRid(s);const P=presFor(rid);P.nm=nms[i];if(s.kind!=="true"){P.pulse=true;P.unstable=false;P.signs=[]}if(rid==="artvf"&&!P.act)P.act=pick(["brushing their teeth","shivering under two blankets","moving around to get comfortable"]);
+    const pre=build(preOf[s.rid]||"nsr",{dur:30,sr:250,edgeP:0,quirkP:0});const al=build(rid,{dur:30,sr:250,quirkP:0});return {s,P,rid,room:rooms[i],pre,al,state:"ok",ans:null,pri:priOptions(s.kind==="true"?rid:"artvf",P),eo:shuffle(Object.keys(ESC)),ko:shuffle(Object.keys(KIND)),lo:shuffle(Object.keys(LBLQ))}});
+  ST.t0=performance.now();ST.on=true;ST.cur=null;const T=TT();const order=shuffle(ST.beds.map((b,i)=>i));let at=T.alarm0;order.forEach((i,k)=>{const b=ST.beds[i];ST.tm.push(setTimeout(()=>{if(!ST.on)return;b.state="alarm";b.at=performance.now();paintBank()},at));at+=T.alarmGap*(window.__vx30T&&window.__vx30T.alarmGap?1:(.6+Math.random()*1.2))});
+  paintStation(pane());loop()}
+const hrOf=b=>{const s=b.state==="ok"?b.pre:b.al;if(b.s.rid==="loff"&&b.state!=="ok")return "---";const t=s.truth;return t.vNA?"---":Math.round(t.vMed)};
+const vitOf=b=>b.state==="ok"?{bp:b.P.pulse&&!b.P.unstable?b.P.bp:rint(118,134)+"/"+rint(68,82),sp:b.P.pulse&&typeof b.P.spo2==="number"?Math.max(b.P.spo2,94):97}:{bp:b.P.bp==="unable to obtain"?"---":b.P.bp,sp:typeof b.P.spo2==="number"?b.P.spo2:"--"};
+function paintStation(p){if(!p)return;if(!ST.beds.length){p.innerHTML=`${lblHTML()}<section class="tl-cd tl-intro"><h3>Telemetry shift</h3><p>You are the telemetry nurse at the central station for six fictional clients. Alarms will go off. Some are real, some are false, some are technical, and <b>the monitor's rhythm label is sometimes wrong</b>. For each alarm: acknowledge it, read the strip yourself, check the label, decide what's real, choose your first action for <i>this</i> client's vital signs, and escalate when needed.</p><p class="tl-fine">Alarm colors: red = life-threatening, yellow = warning, blue = technical (equipment). Treat the patient, not the monitor.</p><button type="button" class="tl-btn" data-tl="shift">Start the shift</button></section>`;return}
+  const done=ST.beds.filter(b=>b.state==="done").length;
+  p.innerHTML=`<section class="tl-cs" aria-label="Central station"><div class="tl-csh"><b>Central station · ${e_(ST.beds[0].room.slice(0,1))} West Telemetry</b><span data-tl-alist></span><span class="tl-csd">${done} of ${ST.beds.length} reviewed</span><button type="button" class="tl-btn sec sm" data-tl="shift">New shift</button></div><div class="tl-bank" data-tl-bank>${ST.beds.map((b,i)=>tileHTML(b,i)).join("")}</div></section><div data-tl-alarm></div>${done===ST.beds.length?shiftSummary():""}`;
+  paintBank();drawAll(true)}
+function tileHTML(b,i){return `<article class="tl-tile" data-bed="${i}"><header class="tl-th"><b>${e_(b.room)}</b><span>${e_(b.P.nm)}, ${b.P.age}</span><em data-tl-al></em></header><div class="tl-tv"><canvas data-cv="${i}" aria-hidden="true"></canvas><div class="tl-num"><span class="hr"><small>HR</small><b data-hr>--</b></span><span class="sp"><small>SpO₂</small><b data-sp>--</b></span><span class="bp"><small>NBP</small><b data-bp>--</b></span></div></div>
+  <footer class="tl-tf"><button type="button" class="tl-btn sm" data-tl="ack" data-i="${i}" hidden>Acknowledge</button><span data-tl-st></span></footer></article>`}
+function paintBank(){const p=pane();if(!p||!ST.beds.length)return;const act=[];ST.beds.forEach((b,i)=>{const t=p.querySelector(`[data-bed="${i}"]`);if(!t)return;const al=b.state==="alarm";t.className="tl-tile"+(al?" al al-"+b.s.c:"")+(b.state==="done"?" done":"");
+  t.querySelector("[data-tl-al]").textContent=al?b.s.lab:b.state==="done"?"Reviewed":"";const a=t.querySelector('[data-tl="ack"]');a.hidden=!al;const st=t.querySelector("[data-tl-st]");st.textContent=b.state==="done"?(b.res&&b.res.n===5?"✓ All correct":`✓ ${b.res?b.res.n:0} of 5 right`):al?"Alarm":"Monitoring";
+  const v=vitOf(b);t.querySelector("[data-hr]").textContent=hrOf(b);t.querySelector("[data-sp]").textContent=v.sp;t.querySelector("[data-bp]").textContent=v.bp;if(al)act.push(`<button type="button" class="tl-ab al-${b.s.c}" data-tl="ack" data-i="${i}">${e_(b.room)} · ${e_(b.s.lab)}</button>`)});
+  const L=p.querySelector("[data-tl-alist]");if(L)L.innerHTML=act.length?`<span class="tl-ali">${ic("bell",16)} ${act.length} active</span>${act.join("")}`:`<span class="tl-ali none">No active alarms</span>`}
+function drawTile(b,i,tnow){const cv=document.querySelector(`#tl30 canvas[data-cv="${i}"]`);if(!cv)return;const w=cv.clientWidth,h=cv.clientHeight;if(!w||!h)return;const d=Math.min(2,window.devicePixelRatio||1);if(cv.width!==Math.round(w*d)){cv.width=Math.round(w*d);cv.height=Math.round(h*d)}
+  const c=cv.getContext("2d");c.setTransform(d,0,0,d,0,0);c.fillStyle="#000";c.fillRect(0,0,w,h);c.strokeStyle="rgba(60,255,120,.08)";c.lineWidth=1;c.beginPath();for(let y=h/4;y<h;y+=h/4){c.moveTo(0,y);c.lineTo(w,y)}c.stroke();
+  const win=6,sweep=(tnow%win)/win*w;const useAl=b.state!=="ok"&&!(b.state==="done"&&b.s.kind!=="true");const sig=useAl?b.al:b.pre;const v=sig.sig.II,sr=sig.sr,D=sig.dur;const flat=b.s.rid==="loff"&&b.state==="alarm";
+  const base=h*.6,sc=h/3.9;c.strokeStyle="#39ff74";c.lineWidth=1.5;c.lineJoin="round";c.beginPath();let pen=false;
+  for(let x=0;x<w;x++){if(x>sweep&&x<sweep+10){pen=false;continue}const ts=x<=sweep?tnow-(sweep-x)/w*win:tnow-win+(x-sweep)/w*win;if(ts<0){pen=false;continue}
+    const idx=Math.floor(((ts%D)+D)%D*sr);const y=flat?base:base-clamp(v[idx]||0,-1.6,1.9)*sc;if(!pen){c.moveTo(x,y);pen=true}else c.lineTo(x,y)}c.stroke();
+  if(!flat){c.lineWidth=1.2;c.beginPath();sig.X.spk.forEach(s=>{for(const k of [Math.floor(tnow/D)*D,Math.floor(tnow/D)*D-D]){const age=tnow-(k+s.t);if(age<0||age>win)continue;const x=sweep-age/win*w;const xx=x<0?x+w:x;if(xx>sweep&&xx<sweep+10)continue;c.moveTo(xx,base);c.lineTo(xx,base-sc*.9)}});c.stroke()}
+  c.fillStyle="#39ff74";c.font="600 11px system-ui,sans-serif";c.fillText("II",6,14);if(flat){c.fillStyle="#5ec8ff";c.font="700 13px system-ui,sans-serif";c.fillText("LEADS OFF",w/2-34,h/2-6)}}
+function drawAll(){const tn=RM()?Math.floor((performance.now()-ST.t0)/2000)*2:(performance.now()-ST.t0)/1000;ST.beds.forEach((b,i)=>drawTile(b,i,tn+i*.7))}
+function loop(){if(!ST.on)return;let last=0;const f=ts=>{if(!ST.on)return;if(!document.getElementById("tl30")){stopStation();return}if(!RM()||ts-last>2000){drawAll();last=ts}ST.raf=requestAnimationFrame(f)};ST.raf=requestAnimationFrame(f)}
+/* ---- alarm review panel ---- */
+function ack(i){const b=ST.beds[i];if(!b)return;ST.cur=i;b.cap=build(b.rid,{leads:["II","V1"]});if(b.s.rid==="loff"){b.cap.sig.II.fill(0);b.cap.sig.V1.fill(0);b.cap.X.spk=[]}
+  const h=document.querySelector("#tl30 [data-tl-alarm]");if(!h)return;const s=b.s,P=b.P;const v=vitOf(b);
+  h.innerHTML=`<section class="tl-cd tl-alp" aria-labelledby="tl-alh"><header class="tl-alh al-${s.c}"><b id="tl-alh">${e_(b.room)} · monitor label: ${e_(s.lab)}</b><span>Acknowledged ${new Date().toLocaleTimeString([],{hour:"2-digit",minute:"2-digit"})}</span></header>
+    <p class="tl-ctx" data-tl-sctx>${s.kind==="tech"?e_(`${P.nm}, ${P.age}, ${P.dx}. ${cap(P.act||"resting in bed")}. ${P.loc}. BP ${P.bp}, SpO₂ ${P.spo2}%.`):e_(contextText(P))}</p>
+    <div data-tl-cap></div>
+    <form class="tl-af" data-tl-af novalidate>
+     <fieldset class="tl-step"><legend><span class="tl-n">1</span> What does the strip show?</legend><label class="tl-sel"><span>Rhythm (A to Z)</span><select name="rid">${flatRhythms("",`<option value="noise">No signal (leads off)</option>`)}</select></label></fieldset>
+     <fieldset class="tl-step"><legend><span class="tl-n">2</span> Is the monitor's label right?</legend>${radios("lab",LBLQ,b.lo)}</fieldset>
+     <fieldset class="tl-step"><legend><span class="tl-n">3</span> Is the alarm real?</legend>${radios("kind",KIND,b.ko)}</fieldset>
+     <fieldset class="tl-step"><legend><span class="tl-n">4</span> Your first action for this client</legend>${radios("resp",PRI,b.pri)}</fieldset>
+     <fieldset class="tl-step"><legend><span class="tl-n">5</span> Escalation</legend>${radios("esc",ESC,b.eo)}</fieldset>
+     <div class="tl-row"><button type="submit" class="tl-btn">Submit</button></div><div data-tl-afb aria-live="polite"></div></form></section>`;
+  S.cal=mountStrip(h.querySelector("[data-tl-cap]"),b.cap,{head:"Captured · II + V1 · 25 mm/s"});h.scrollIntoView({behavior:RM()?"auto":"smooth",block:"start"})}
+function judgeAlarm(b,a){const s=b.s,P=b.P;const po=s.kind==="true"?priOf(b.rid,P):{k:s.kind==="tech"?"leads":"leads",ok:["leads"]};const eo=escOf(s,P);
+  return {idOk:s.rid==="loff"?a.rid==="noise":a.rid===b.rid,lOk:a.lab===labelOk(s),kOk:a.kind===s.kind,rOk:po.ok.includes(a.resp),eOk:eo.includes(a.esc),po,eo}}
+function submitAlarm(f){const b=ST.beds[ST.cur];if(!b)return;const s=b.s;const fd=new FormData(f);const a={rid:fd.get("rid"),lab:fd.get("lab"),kind:fd.get("kind"),resp:fd.get("resp"),esc:fd.get("esc")};const J=judgeAlarm(b,a);
+  const n=[J.idOk,J.lOk,J.kOk,J.rOk,J.eOk].filter(Boolean).length;b.res=Object.assign({n},J);const ok=(x,t)=>`<li class="${x?"ok":"bad"}">${ic(x?"ok":"no",16)} ${t}</li>`;const truth=s.rid==="loff"?"no signal: a lead is off":RHM[b.rid].n;
+  const fb=f.querySelector("[data-tl-afb]");fb.innerHTML=`<ul class="tl-afl">${ok(J.idOk,`The strip shows: ${e_(truth)}.`)}${ok(J.lOk,`The label "${e_(s.lab)}" ${labelOk(s)==="yes"?"is right":labelOk(s)==="nolab"?"is a technical alarm, not a rhythm call":"is wrong: monitors mislabel rhythms, so always read the strip yourself"}.`)}${ok(J.kOk,KIND[s.kind]+".")}${ok(J.rOk,"First action: "+e_(PRI[J.po.k])+".")}${ok(J.eOk,"Escalation: "+J.eo.map(k=>ESC[k]).join(" or ")+".")}</ul>
+   ${s.kind==="false"?`<p class="tl-fine">QRS complexes march straight through the "VF": that's artifact. The client is awake with a pulse.</p>`:s.kind==="tech"?`<p class="tl-fine">A flat line with LEADS OFF is an equipment problem. Look at the client, then fix the electrode.</p>`:!b.P.pulse?`<p class="tl-fine">No pulse: this is a cardiac arrest.</p>`:b.P.unstable?`<p class="tl-fine">The client is unstable, so this needs help at the bedside now, not a message.</p>`:""}
+   ${J.eo.includes("sbar")||a.esc==="sbar"&&s.kind==="true"?`<p><button type="button" class="tl-btn" data-tl="chat">Open Secure Chat to send your SBAR</button></p>`:""}<p><button type="button" class="tl-btn sec" data-tl="alarmdone">Done with this alarm</button></p>`;
+  f.querySelectorAll("input,select,button[type=submit]").forEach(x=>x.disabled=true)}
+function alarmDone(){const b=ST.beds[ST.cur];if(!b)return;b.state="done";if(!b.res)b.res={n:0};ST.cur=null;const h=document.querySelector("#tl30 [data-tl-alarm]");if(h)h.innerHTML="";closeChat();
+  if(ST.beds.every(x=>x.state==="done")){const p=prog();const n=ST.beds.reduce((s,x)=>s+(x.res?x.res.n:0),0);p.shift.unshift({t:Date.now(),n,of:ST.beds.length*5,sb:ST.beds.filter(x=>x.chat).map(x=>x.chat.best),lab:ST.beds.filter(x=>x.res&&x.res.lOk).length});p.shift=p.shift.slice(0,10);saveProg(p);paintStation(pane())}else paintBank()}
+function shiftSummary(){const n=ST.beds.reduce((s,x)=>s+(x.res?x.res.n:0),0),of=ST.beds.length*5;return `<section class="tl-cd tl-sum ok"><h3>Shift complete</h3><p><b>${n} of ${of}</b> decisions right (${Math.round(n/of*100)}%).</p><ul>${ST.beds.map(b=>`<li>${e_(b.room)} · label "${e_(b.s.lab)}" · strip: ${e_(b.s.rid==="loff"?"leads off":RHM[b.rid].n)}: ${b.res?b.res.n:0} of 5${b.chat?` · SBAR ${b.chat.best}/8`:""}</li>`).join("")}</ul><button type="button" class="tl-btn" data-tl="shift">Start another shift</button></section>`}
+/* ---- Secure Chat (mirrors the v29 EHR Secure Chat look; standalone, rule-based) ---- */
+const SBAR_T="S: This is ___, the telemetry nurse, calling about ___ in room ___. I'm concerned because ___.\nB: Admitted for ___. History of ___.\nA: The strip shows ___. HR ___, BP ___, SpO2 ___. The client is ___.\nR: I'm requesting ___.";
+function rubric(txt,b){const L=String(txt||"").toLowerCase(),P=b.P;const r={};
+  const who=/\b(this is|my name|i'?m (the |a )?(nurse|student|rn)|nurse (for|caring)|calling (about|regarding|from))\b/.test(L),pt=L.includes(P.nm.toLowerCase().split(" ").pop())||L.includes(b.room)||/\b(patient|client|room|bed)\b/.test(L),con=/(concern|worr|alarm|new|chang|drop|low|high|pain|dizz|confus|unstable)/.test(L);r.S=Math.min(2,(who?1:0)+(pt&&con?1:0));
+  const dxw=P.dx.toLowerCase().split(/[^a-z]+/).filter(w=>w.length>=5&&!["admitted","after","with","under"].includes(w));r.B=Math.min(2,(dxw.some(w=>L.includes(w))?1:0)+(/(admit|history|hx|post-?op|takes|baseline|meds|medication)/.test(L)?1:0));
+  const vit=[/\b(hr|heart rate|rate)\b[^0-9]{0,10}\d{2,3}/,/\d{2,3}\s*\/\s*\d{2,3}/,/\b(spo2|sat|o2|oxygen)\w*[^0-9]{0,10}\d{2,3}/].filter(re=>re.test(L)).length;r.A=Math.min(2,(kwOf(b.rid).test(L)?1:0)+(vit>=2?1:0));
+  r.R=Math.min(2,(/(request|recommend|would like|can you|could you|please|need|want you|come (and )?(see|evaluate)|order)/.test(L)?1:0)+(/(order|12.?lead|ecg|ekg|lab|come|see|evaluate|rate control|atropine|pac|amiodarone|adenosine|diltiazem|potassium|magnesium|hold)/.test(L)?1:0));r.tot=r.S+r.B+r.A+r.R;return r}
+function chatHTML(b){const c=b.chat;return `<aside class="tl-sc" role="dialog" aria-label="Secure Chat"><header class="tl-sch"><div><b>Secure Chat</b><span>Dr. Rivera (hospitalist) · re: ${e_(b.room)} ${e_(b.P.nm)}</span></div><button type="button" class="tl-x" data-tl="chatx" aria-label="Close Secure Chat">${ic("x",18)}</button></header>
+  <div class="tl-scm" aria-live="polite">${c.m.map(m=>`<div class="tl-msg ${m.me?"me":"them"}"><div class="tl-bub">${m.me?"":"<b>Dr. Rivera</b>"}<p>${e_(m.t)}</p>${m.ord?`<div class="tl-ord"><b>Verbal order</b><span>${e_(m.ord)}</span></div>`:""}${m.sc?`<div class="tl-scr">SBAR score ${m.sc.tot}/8 · S ${m.sc.S} · B ${m.sc.B} · A ${m.sc.A} · R ${m.sc.R}</div>`:""}</div></div>`).join("")||`<p class="tl-fine tl-empty">Write an SBAR: Situation, Background, Assessment, Recommendation.</p>`}${c.typing?`<div class="tl-typ">Dr. Rivera is typing…</div>`:""}</div>
+  <form class="tl-scc" data-tl-chatf><textarea name="t" rows="4" maxlength="1200" aria-label="Message to the provider" placeholder="${c.rb?"Read back the order":"Type your SBAR"}"></textarea><div class="tl-row"><button type="button" class="tl-lk" data-tl="tpl">${c.rb?"":"Insert SBAR template"}</button><button type="submit" class="tl-btn sm">${ic("send",16)} Send</button></div></form></aside>`}
+function openChat(){const b=ST.beds[ST.cur];if(!b)return;b.chat=b.chat||{m:[],best:0,rb:false,done:false};let el=document.querySelector("#tl30 .tl-scw");if(!el){el=document.createElement("div");el.className="tl-scw";document.getElementById("tl30").appendChild(el)}el.innerHTML=chatHTML(b);const ta=el.querySelector("textarea");if(ta)ta.focus()}
+function closeChat(){const el=document.querySelector("#tl30 .tl-scw");if(el)el.remove()}
+function sendChat(txt){const b=ST.beds[ST.cur];if(!b||!txt.trim())return;const c=b.chat;c.m.push({me:1,t:txt});const X=ESCX[b.rid]||(BRADY.includes(b.rid)?ESCX._brady:ESCX._def);const need=escOf(b.s,b.P).includes("sbar")||escOf(b.s,b.P).includes("rrt");
+  let reply;if(c.rb){const ok=X.rb.every(re=>re.test(txt));reply=ok?{t:"That's correct. Thanks for the clear call."}:{t:"Please read back the whole order: the drug or test, the dose, and the route."};if(ok)c.done=true}
+  else{const r=rubric(txt,b);c.best=Math.max(c.best,r.tot);if(!need){reply={t:"Thanks for letting me know. That doesn't need me right now; fix the cause, document, and call back if anything changes.",sc:r}}
+   else if(r.tot>=6&&r.A>=1){reply={t:"Got it. Here's what I want.",ord:X.order,sc:r};c.rb=true}
+   else{const low=["S","B","A","R"].sort((x,y)=>r[x]-r[y])[0];reply={sc:r,t:{S:"Sorry, who is this, and which client are you calling about?",B:"What's the background? Why is this client here, and what's the history?",A:"What rhythm do you see, and what are the vital signs? How does the client look?",R:"What do you need from me?"}[low]}}}
+  c.typing=true;openChat();const [a,z]=TT().prov;ST.tm.push(setTimeout(()=>{c.typing=false;c.m.push(reply);if(document.querySelector("#tl30 .tl-scw"))openChat()},a+Math.random()*(z-a)))}
+
+/* ================= Code / ACLS decisions ================= */
+const CODES=[
+ {id:"vf",rid:"vfc",t:"Coarse VF",ctx:"Room 5114: K. Osei, 58 (fictional), admitted with chest pain. The monitor alarms and you find him unresponsive, not breathing, with no pulse.",cause:"ct",ci:"Coronary thrombosis (acute MI)"},
+ {id:"vff",rid:"vff",t:"Fine VF",ctx:"Room 5108: E. Brandt, 70, two days after a large MI. You find her unresponsive with no pulse. The waves on the monitor are small.",cause:"ct",ci:"Coronary thrombosis (acute MI)"},
+ {id:"pvt",rid:"vt",t:"Pulseless VT",ctx:"Room 5102: H. Iqbal, 63, heart failure; this morning's potassium was 2.9 mEq/L. He collapses in the hallway; no pulse.",cause:"k",ci:"Hypokalemia"},
+ {id:"tdp",rid:"tdp",t:"Torsades",ctx:"Room 5120: P. Laurent, 49, receiving IV haloperidol and ondansetron; this morning's QTc was 0.56 s. She is unresponsive with no pulse.",cause:"tox",ci:"Toxins (QT-prolonging drugs)"},
+ {id:"pmvt",rid:"pmvt",t:"Polymorphic VT",ctx:"Room 5116: J. Abernathy, 64, admitted this morning with chest pain; the QTc on admission was 0.42 s. He becomes unresponsive with no pulse.",cause:"ct",ci:"Coronary thrombosis (acute ischemia)"},
+ {id:"asys",rid:"asys",t:"Asystole",ctx:"Room 5104: W. Haddad, 81. You find him unresponsive and not breathing. You checked: the leads are attached and a second lead also shows a flat line.",cause:"hypox",ci:"Hypoxia"},
+ {id:"pea",rid:"pea",t:"PEA",ctx:"Room 5110: N. Ferreira, 56, end-stage kidney disease, missed two dialysis sessions; potassium 7.4 mEq/L. She is unresponsive. The monitor shows an organized rhythm, but there is no carotid pulse.",cause:"k2",ci:"Hyperkalemia"}];
+const HT={hv:"Hypovolemia",hypox:"Hypoxia",h:"Hydrogen ion (acidosis)",k:"Hypokalemia",k2:"Hyperkalemia",ht:"Hypothermia",tp:"Tension pneumothorax",tam:"Cardiac tamponade",tox:"Toxins (QT-prolonging drugs)",pe:"Pulmonary thrombosis",ct:"Coronary thrombosis (acute MI)"};
+const LETHAL=["vfc","vff","vt","tdp","pmvt","asys","pea"];
+const CQ=c=>{const sh=["vfc","vff","vt","tdp","pmvt"].includes(c.rid);return [
+ {k:"first",q:"What do you do first?",o:["Check responsiveness, breathing and a carotid pulse together, for no more than 10 seconds, and shout for help","Shock right away, before touching the client","Give epinephrine 1 mg IV","Get a 12-lead ECG"],a:0,why:"Confirm the arrest at the bedside first: the monitor can be wrong (artifact, a loose lead). Then call the code and start CPR."},
+ {k:"rid",q:"Name the rhythm.",o:LETHAL.map(r=>RHM[r].n),a:LETHAL.indexOf(c.rid),why:CT[c.rid].c.join("; ")+"."},
+ {k:"shock",q:"Is this rhythm shockable?",o:["Yes: shockable","No: not shockable"],a:sh?0:1,why:sh?"VF and pulseless VT (including polymorphic VT) are shockable.":"Asystole and PEA are not shockable: CPR, epinephrine, and find the cause."},
+ {k:"next",q:"CPR is going. What comes next?",o:sh?["Defibrillate as soon as the defibrillator is ready, then resume CPR immediately for 2 minutes","Give amiodarone before the first shock","Synchronized cardioversion at 50 J","Check for a pulse right after each shock before restarting CPR"]:["Give epinephrine 1 mg IV/IO as soon as possible; CPR in 2-minute cycles with rhythm checks","Defibrillate at 200 J","Give atropine 1 mg IV","Start transcutaneous pacing first"],a:0,
+  why:sh?"Shock as soon as possible (biphasic per the manufacturer, for example 120–200 J; monophasic 360 J) and resume compressions right away.":"For non-shockable rhythms, give epinephrine as soon as feasible and keep high-quality CPR going. Atropine and pacing are not used in arrest."},
+ {k:"drug",q:"Which medication plan fits the 2025 AHA algorithm?",o:c.rid==="tdp"?["Defibrillate (unsynchronized); magnesium may be considered for torsades with a long QT; epinephrine after the second shock","Adenosine 6 mg rapid IV push","Synchronized cardioversion and procainamide","Atropine 1 mg every 3–5 minutes"]:sh?["Epinephrine 1 mg every 3–5 minutes after the second shock; amiodarone 300 mg (or lidocaine 1–1.5 mg/kg) if VF/pVT continues after shocks","Vasopressin 40 units instead of epinephrine","Adenosine 6 mg, then 12 mg","Amiodarone 150 mg over 10 minutes before any shock"]:["Epinephrine 1 mg every 3–5 minutes; no antiarrhythmic for asystole or PEA","Amiodarone 300 mg IV push","Atropine 1 mg every 3–5 minutes, up to 3 mg","Adenosine 6 mg rapid IV push"],a:0,
+  why:c.rid==="tdp"?"Sustained polymorphic VT gets an immediate unsynchronized shock. Magnesium may be considered for recurring torsades with a long QT.":sh?"Epinephrine is reasonable after initial shocks fail. Amiodarone or lidocaine may be considered for shock-refractory VF/pVT. Vasopressin adds no benefit.":"Epinephrine as soon as feasible for non-shockable rhythms. Antiarrhythmics and atropine have no role."},
+ {k:"cause",q:"Which reversible cause (H or T) best fits this client?",o:Object.keys(HT).map(k=>HT[k]),a:Object.keys(HT).indexOf(c.cause),why:`${c.ci}. Treating the cause is how PEA and asystole are reversed, and it helps in VF too.`}]};
+const CS={c:null,i:0,ans:[],ord:[]};
+function paintCode(p){if(!CS.c){p.innerHTML=`${lblHTML()}<section class="tl-cd"><h3>Code / ACLS decisions</h3><p>Lethal rhythms need fast, correct choices. Pick a scenario. Each one asks six questions: confirm the arrest, name the rhythm, shockable or not, what comes next, medications and the likely cause.</p>
+   <div class="tl-codes">${CODES.map(c=>`<button type="button" class="tl-cbtn" data-tl="codego" data-v="${c.id}"><b>${e_(c.t)}</b><span>${e_(c.ctx.split(":")[1]?c.ctx.split(".")[0]:c.ctx)}</span></button>`).join("")}</div>
+   <p class="tl-fine">For the full simulation with a live monitor, use Menu › ACLS megacode. Source: <a href="${e_(SRC.ca[1])}" target="_blank" rel="noopener noreferrer">${e_(SRC.ca[0])}</a>; <a href="${e_(SRC.als[1])}" target="_blank" rel="noopener noreferrer">${e_(SRC.als[0])}</a>.</p></section>${aclCards()}`;return}
+  const c=CS.c,Q=CQ(c),q=Q[CS.i];
+  if(!q){const n=CS.ans.filter((x,i)=>x===Q[i].a).length;p.innerHTML=`${lblHTML()}<section class="tl-cd tl-sum ${n>=5?"ok":""}"><h3>${e_(c.t)}: ${n} of 6</h3><ol class="tl-cr">${Q.map((x,i)=>`<li class="${CS.ans[i]===x.a?"ok":"bad"}"><b>${e_(x.q)}</b> ${e_(x.o[x.a])}. <span class="tl-fine">${e_(x.why)}</span></li>`).join("")}</ol>${aclHTML(CT[c.rid].acl)}<div class="tl-row"><button type="button" class="tl-btn" data-tl="codego" data-v="${c.id}">Try again</button><button type="button" class="tl-btn sec" data-tl="codeback">Another scenario</button></div></section>`;return}
+  p.innerHTML=`${lblHTML()}<section class="tl-cd tl-code"><div class="tl-rowh"><h3>${e_(c.t)} <small>Question ${CS.i+1} of 6</small></h3><button type="button" class="tl-btn sec sm" data-tl="codeback">All scenarios</button></div><p class="tl-ctx">${e_(c.ctx)}</p><div data-tl-strip></div>
+   <form data-tl-codef class="tl-step"><p class="tl-q"><b>${e_(q.q)}</b></p>${radios("c",Object.fromEntries(q.o.map((o,k)=>[k,o])),(CS.ord[CS.i]=CS.ord[CS.i]||shuffle(q.o.map((o,k)=>String(k)))))}<div class="tl-row"><button type="submit" class="tl-btn">Answer</button></div><div data-tl-cfb aria-live="polite"></div></form></section>`;
+  if(!CS.st)CS.st=build(c.rid,{leads:["II"]});mountStrip(p.querySelector("[data-tl-strip]"),CS.st,{nocal:true,head:"Code monitor · II · 25 mm/s"})}
+function aclCards(){return `<section class="tl-cd"><h3>ACLS quick cards</h3>${["shock","nons","tdp","brady","tachy"].map(aclHTML).join("")}</section>`}
+function codeAnswer(f){const c=CS.c,Q=CQ(c),q=Q[CS.i];const v=new FormData(f).get("c");if(v==null)return;const ok=+v===q.a;CS.ans[CS.i]=+v;
+  f.querySelector("[data-tl-cfb]").innerHTML=`<div class="tl-fb ${ok?"ok":"bad"}">${ic(ok?"ok":"no",18)}<div><p>${ok?"Right.":"Not quite. The answer is: "+e_(q.o[q.a])+"."} ${e_(q.why)}</p><button type="button" class="tl-btn sm" data-tl="codenext">${CS.i<5?"Next question":"See results"}</button></div></div>`;
+  f.querySelectorAll("input,button[type=submit]").forEach(x=>x.disabled=true);
+  if(CS.i===5){const n=CS.ans.filter((x,i)=>x===Q[i].a).length;const p=prog();p.code.unshift({t:Date.now(),id:c.id,n});p.code=p.code.slice(0,20);saveProg(p)}}
+
+/* ================= My progress ================= */
+function paintProgress(p){const P=prog();const rows=RH.filter(r=>P.r[r.id]);const tot=rows.reduce((s,r)=>s+P.r[r.id].n,0);const ok=rows.reduce((s,r)=>s+P.r[r.id].c,0);
+  p.innerHTML=`${lblHTML()}<section class="tl-cd"><h3>My telemetry progress</h3><div class="tl-kpi"><span><b>${tot}</b><small>strips interpreted</small></span><span><b>${tot?Math.round(ok/tot*100)+"%":"—"}</b><small>rhythms named correctly</small></span><span><b>${P.shift.length}</b><small>shifts completed</small></span><span><b>${P.code.length}</b><small>code scenarios</small></span>${P.ch?`<span><b>${P.ch.lvl}</b><small>challenge level · best streak ${P.ch.best}</small></span><span><b>${P.ch.n?Math.round(P.ch.c/P.ch.n*100)+"%":"—"}</b><small>challenge rhythms named (${P.ch.n} strips)</small></span>`:""}</div>
+   <h4>Accuracy by step</h4>${STEPS.map(([k,l])=>{const s=P.st[k];const pc=s&&s.n?Math.round(s.c/s.n*100):null;return `<div class="tl-bar"><span>${e_(l)}</span><i><em style="width:${pc||0}%"></em></i><b>${pc==null?"—":pc+"%"}</b></div>`}).join("")}</section>
+   <section class="tl-cd"><h3>By rhythm</h3>${rows.length?`<div class="tl-tw"><table class="tl-t"><thead><tr><th>Rhythm</th><th>Strips</th><th>Named correctly</th><th>Average score</th><th></th></tr></thead><tbody>${rows.map(r=>{const x=P.r[r.id];return `<tr><td>${e_(r.n)}</td><td>${x.n}</td><td>${Math.round(x.c/x.n*100)}%</td><td>${Math.round(x.s/x.n)}%</td><td><button type="button" class="tl-lk" data-tl="topractice" data-v="${r.id}">Practice</button></td></tr>`}).join("")}</tbody></table></div>`:`<p>No strips yet. <button type="button" class="tl-lk" data-tl="tab" data-v="practice">Start practicing</button></p>`}
+   ${P.shift.length?`<h4>Recent shifts</h4><ul>${P.shift.map(s=>`<li>${new Date(s.t).toLocaleDateString()} · ${s.n} of ${s.of} decisions</li>`).join("")}</ul>`:""}${P.code.length?`<h4>Recent code scenarios</h4><ul>${P.code.slice(0,8).map(s=>`<li>${new Date(s.t).toLocaleDateString()} · ${e_((CODES.find(c=>c.id===s.id)||{}).t||s.id)}: ${s.n} of 6</li>`).join("")}</ul>`:""}
+   <p class="tl-fine">Saved to your account with the rest of your progress when you're signed in.</p></section>`}
+
+/* ================= events ================= */
+document.addEventListener("click",e=>{const t=e.target;if(!t.closest)return;const o=t.closest("[data-tl-open]");if(o){e.preventDefault();e.stopPropagation();document.querySelectorAll(".mnu").forEach(x=>{try{x.remove()}catch(er){}});open(o.dataset.tlOpen||"learn");return}
+  const b=t.closest("#tl30 [data-tl]");if(!b)return;const k=b.dataset.tl,v=b.dataset.v;if(b.tagName==="SELECT"||b.type==="checkbox")return;e.preventDefault();
+  if(k==="close"){close();return}if(k==="tab"){S.tab=v;open();return}
+  if(k==="learn"){S.tab="learn";S.learn=v;open();return}if(k==="learnnew"){learnStrip();return}
+  if(k==="topractice"){S.pick=v;S.mode="drill";S.pr=null;S.tab="practice";open();return}
+  if(k==="mode"){S.mode=v;S.tab=v==="challenge"?"challenge":"practice";S.pr=null;open();return}
+  if(k==="newstrip"){S.pr=null;paint();return}if(k==="show"){showMe(+b.dataset.i);return}
+  if(k==="shift"){startShift();return}if(k==="ack"){ack(+b.dataset.i);return}if(k==="alarmdone"){alarmDone();return}
+  if(k==="chat"){openChat();return}if(k==="chatx"){closeChat();return}if(k==="tpl"){const ta=document.querySelector("#tl30 .tl-scw textarea");if(ta&&!ta.value){ta.value=SBAR_T.replace("___ in room ___",(ST.beds[ST.cur]||{s:{nm:""}}).s.nm+" in room "+((ST.beds[ST.cur]||{}).room||""));ta.focus()}return}
+  if(k==="codego"){CS.c=CODES.find(c=>c.id===v);CS.i=0;CS.ans=[];CS.ord=[];CS.st=null;paint();return}if(k==="codeback"){CS.c=null;paint();return}if(k==="codenext"){CS.i++;paint();return}},true);
+document.addEventListener("change",e=>{const t=e.target;if(!t.closest||!t.closest("#tl30"))return;const k=t.dataset.tl;
+  if(k==="learnsel"&&t.value){S.learn=t.value;open();return}if(k==="sec"){S.sec=t.value;if(S.tab==="learn")learnStrip();else{S.pr=null;paint()}return}
+  if(k==="pick"){S.pick=t.value;S.pr=null;paint();return}if(k==="timer"){S.timer=+t.value;S.pr=null;paint();return}if(k==="art"){S.art[t.value]=t.checked;S.pr=null;paint();return}});
+document.addEventListener("input",e=>{const f=e.target.closest&&e.target.closest("#tl30 [data-tl-form]");if(!f)return;const qt=parseFloat(f.elements.qt.value),rr=parseFloat(f.elements.rr.value);const o=f.querySelector("[data-tl-qtc]");
+  if(o)o.innerHTML=qt>0&&rr>0?`QTc (Bazett) = ${f2(qt)} ÷ √${f2(rr)} = <b>${f2(qt/Math.sqrt(rr))} s</b> · Fridericia = ${f2(qt)} ÷ ∛${f2(rr)} = ${f2(qt/Math.cbrt(rr))} s`:"QTc: enter QT and R-R."});
+document.addEventListener("submit",e=>{const f=e.target;if(!f.closest||!f.closest("#tl30"))return;e.preventDefault();
+  if(f.matches("[data-tl-form]"))onCheck(f);else if(f.matches("[data-tl-af]"))submitAlarm(f);else if(f.matches("[data-tl-chatf]")){const v=f.elements.t.value;f.elements.t.value="";sendChat(v)}else if(f.matches("[data-tl-codef]"))codeAnswer(f)},true);
+document.addEventListener("keydown",e=>{if(e.key!=="Escape"||!S.open)return;if(document.querySelector("#tl30 .tl-scw")){closeChat();return}if(document.querySelector(".smod-bg"))return;e.preventDefault();close()});
+
+/* ================= routing: #telemetry[/tab[/rhythm]] ================= */
+const BOOTH=location.hash;
+const parseH=h=>{const m=/^#telemetry(?:\/(learn|practice|challenge|station|code|progress))?(?:\/([a-z0-9]+))?$/.exec(h||"");return m?[m[1]||"learn",m[2]]:null};
+function hashGo(){const r=parseH(location.hash);if(r&&!S.open){open(r[0],r[1])}}
+window.addEventListener("hashchange",hashGo);
+try{if(typeof deepLink==="function"){const _dl30=deepLink;deepLink=function(k){const r=parseH("#"+(k||""));if(r){setTimeout(()=>open(r[0],r[1]),0);return true}return _dl30.apply(this,arguments)}}}catch(e){}
+setTimeout(()=>{const r=parseH(BOOTH);if(r&&!S.booted){S.booted=true;if(!S.open)S.prev=location.hash;else if(!/^#telemetry/.test(location.hash))S.prev=location.hash;open(r[0],r[1])}},700);
+
+/* ================= entry points ================= */
+const TLI='<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h4l2-5 3 10 3-8 2 3h6"/></svg>';
+function entries(){document.querySelectorAll(".mnu-s").forEach(s=>{const h=s.querySelector("h3");if(!h||h.textContent.trim()!=="Practice one thing"||s.querySelector("[data-tl-tile]"))return;const g=s.querySelector(".mnu-g");
+    if(g)g.insertAdjacentHTML("beforeend",`<button type="button" class="mtile" data-tl-open="practice" data-tl-tile><span class="mtic">${TLI}</span><b>Telemetry &amp; EKG</b><small>Read strips with calipers</small></button>`)});
+  const rows=document.querySelector("#c2 .v25-rows");if(rows&&!rows.querySelector('[data-v25k="tele"]')){const P=prog();const n=Object.values(P.r).reduce((s,x)=>s+x.n,0);const at=rows.querySelector('[data-v25k="sdoh"]')||rows.querySelector('[data-v25k="side"]');
+    const h=`<div class="v25-acc" data-v25k="tele"><button type="button" class="v25-row" data-tl-open="learn"><span class="v25-ri">${TLI}</span><span class="v25-rt"><b>Telemetry &amp; EKG</b><small>${n?n+" strips interpreted · ":""}${RH.length} rhythms, calipers, central station, ACLS</small></span><span class="v25-cv"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></span></button></div>`;
+    if(at)at.insertAdjacentHTML("beforebegin",h);else rows.insertAdjacentHTML("beforeend",h)}}
+{let busy=false,pend=0;const mo=new MutationObserver(()=>{if(busy||pend)return;pend=requestAnimationFrame(()=>{pend=0;busy=true;try{entries();ehrCard()}catch(e){}mo.takeRecords();busy=false})});mo.observe(document.body,{childList:true,subtree:true})}
+
+/* ================= EHR: telemetry strip on the Flowsheets activity (desktop) for monitored patients ================= */
+function monitored(p){if(!p)return false;const txt=JSON.stringify([(p.orders||[]).map(o=>[o.text,o.med]),(p.dx||p.problems||[]),p.case&&p.case.title,p.label]).toLowerCase();return /telemetry|cardiac monitor|metoprolol|diltiazem|amiodarone|digoxin|heart failure|atrial|arrhythm|chest pain|myocard|\bchf\b|hyperkal|hypokal|syncope/.test(txt)}
+function ehrCard(){const m=document.querySelector("#ehm");if(!m||!m.querySelector(".fsb")||m.querySelector(".tl-ehr"))return;let E=null;try{E=window.__EHX&&window.__EHX.get()}catch(e){}if(!E||!E.v29||E.v29.isRover&&E.v29.isRover())return;const p=E.v29.P&&E.v29.P();if(!monitored(p))return;
+  const hrs=(p.flow||[]).filter(x=>x.r==="hr"&&+x.v>0).sort((a,b)=>b.t-a.t);const hr=hrs.length?+hrs[0].v:78;const rid=hr<60?"sbrady":hr>100?"stach":"nsr";
+  const st=build(rid,{edgeP:0});
+  const tool=m.querySelector(".mtool");const box=document.createElement("section");box.className="tl-ehr";
+  box.innerHTML=`<div class="tl-ehrh"><b>Telemetry</b><span>Lead II · last strip (practice, computer-generated) · monitor HR ~${Math.round(st.truth.vMed)}</span><button type="button" class="tl-lk" data-tl-open="practice">Interpret strips in the Telemetry module</button></div><div class="tl-strip tl-ehrs"><div class="tl-sw">${stripSVG(st,{head:"II · 25 mm/s · 10 mm/mV"})}</div></div>`;
+  if(tool)tool.insertAdjacentElement("afterend",box);else m.prepend(box)}
+{const POST=window.__EHXpost=window.__EHXpost||[];POST.push(()=>{try{ehrCard()}catch(e){}})}
+
+/* ================= test / integration API ================= */
+window.__vxTele={version:TLV,open,close,RH,RHM,build,grade,sigHash,presFor,contextText,priOf,nextOf,priOptions,challengePick,judgeAlarm,labelOk,escOf,code:()=>CS,POOL,MLAB,LOOK,truth:()=>S.pr&&S.pr.truth,strip:()=>S.pr,cal:()=>S.cal,state:S,station:ST,prog,CT,GROUPS,useMeas};
+})();
+/* </v30-tele-js> */
 /* <v29-sdoh-js> */
 /* v29-sdoh-js: Social Drivers of Health (SDOH) + Secure Chat for the academic EHR, and a My Chart learning module.
    Insert INSIDE the app's main IIFE (uses BY, qflagL, subjOf, runPractice, deepLink, view, sModal, sClose, sConfirm, alertBox),
