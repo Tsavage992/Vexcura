@@ -3226,6 +3226,129 @@ html.sc-on .dx32{right:auto;left:14px}
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .dx32 .dxsw{background:#fff}}
 /* </v32-deter-css> */
+/* <v33-nomenu-css> */
+/* v33-nomenu-css: Epic-style "More" overflow that replaces the Menu drawer (dropdown on desktop/iPad, bottom sheet on phones),
+   More buttons (My Chart header, band header, Brain toolbar, Rover bar), header-search "Go to" rows, inline Display controls. */
+.vxl-hb .vxl-cv{margin-left:-2px;opacity:.75}
+.vxl-hb[aria-expanded="true"] .vxl-cv{transform:rotate(180deg)}
+.menub.vxl-hb{gap:8px}
+@media (max-width:640px){.menub.vxl-hb .vxl-cv{display:none}}
+#c2.v25 .c2h .c2menu.vxl-hb{gap:6px}
+@media (max-width:760px){#c2 .c2h .c2menu.vxl-hb .vxl-cv{display:none}}
+.bn-lb.vxl-bnm{border-left:1px solid var(--line);border-radius:0 10px 10px 0;margin-left:2px}
+.rvb.vxl-rvb{margin-left:auto}
+.rvb.vxl-rvb+.rvb{margin-left:0}
+
+.vxl-bg{position:fixed;inset:0;z-index:69;background:transparent}
+.vxl-bg.vxl-dim{background:rgb(10 20 28 / .45)}
+.vxl{position:fixed;z-index:70;display:flex;flex-direction:column;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:12px;box-shadow:0 18px 48px rgb(10 25 35 / .28),0 2px 6px rgb(10 25 35 / .12);overflow:hidden;font-family:var(--f-body);font-size:15px;line-height:1.35;animation:vxlIn .12s ease-out}
+@keyframes vxlIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+.vxl.vxl-sheet{left:0;right:0;bottom:0;top:auto;width:auto!important;max-height:86vh;max-height:86dvh;border-radius:16px 16px 0 0;border-bottom:0;padding-bottom:env(safe-area-inset-bottom,0px);animation:vxlUp .16s ease-out}
+@keyframes vxlUp{from{transform:translateY(24px);opacity:.6}to{transform:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){.vxl,.vxl.vxl-sheet{animation:none}}
+html.vxl-lock,html.vxl-lock body{overflow:hidden}
+.vxl-hd{display:flex;align-items:center;gap:8px;padding:10px 10px 6px 16px;position:relative}
+.vxl-hd h2{font-family:var(--f-body);font-size:16px;font-weight:700;letter-spacing:0;margin:0;flex:1}
+.vxl-grab{position:absolute;left:50%;top:6px;width:40px;height:4px;margin-left:-20px;border-radius:2px;background:var(--line)}
+.vxl-sheet .vxl-hd{padding-top:16px}
+.vxl-x{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;border:0;background:none;color:var(--muted)}
+.vxl-x:hover{background:var(--sunk);color:var(--ink)}
+.vxl-sr0{position:relative;margin:0 12px 8px}
+.vxl-sl{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--muted);display:flex}
+.vxl-sr0 input{width:100%;height:40px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font:inherit;padding:0 12px 0 36px}
+.vxl-sr0 input:focus{outline:2px solid var(--accent);outline-offset:0;border-color:var(--accent)}
+.vxl .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.vxl-l{overflow-y:auto;overscroll-behavior:contain;padding:2px 8px 10px;column-count:2;column-gap:8px}
+.vxl-sheet .vxl-l,.vxl.vxl-one .vxl-l{column-count:1}
+.vxl-g{break-inside:avoid;padding:4px 0 6px}
+.vxl-g[hidden]{display:none}
+.vxl-g h3{font-family:var(--f-body);font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin:6px 8px 2px}
+.vxl-g ul{list-style:none;margin:0;padding:0}
+.vxl-g.vxl-hl h3{color:var(--accent)}
+.vxl-i{display:flex;align-items:center;gap:10px;width:100%;min-height:40px;padding:5px 8px;border:0;border-radius:8px;background:none;color:var(--ink);text-align:left;font:inherit}
+.vxl-i:hover,.vxl-i:focus-visible{background:var(--sunk)}
+.vxl-i:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.vxl-ic{flex:none;display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:7px;background:var(--bg);color:var(--accent);border:1px solid var(--line)}
+.vxl-t{display:flex;flex-direction:column;min-width:0}
+.vxl-t b{font-weight:600;font-size:14.5px}
+.vxl-t small{font-size:12.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vxl-sheet .vxl-i{min-height:48px}
+.vxl-sheet .vxl-t small{white-space:normal}
+.vxl-none{column-span:all;padding:14px 10px;color:var(--muted);font-size:14px}
+.vxl-f{column-span:all;display:flex;flex-wrap:wrap;gap:4px 14px;border-top:1px solid var(--line);margin-top:6px;padding:10px 8px 2px}
+.vxl-f[hidden]{display:none}
+.vxl-fl{border:0;background:none;padding:6px 0;color:var(--muted);font:inherit;font-size:13px;text-decoration:underline;text-underline-offset:2px}
+.vxl-fl:hover{color:var(--ink)}
+.vxl-fl[hidden]{display:none}
+.vxl-disp{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:4px 8px}
+.vxl-seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.vxl-sz{width:44px;height:40px;border:0;border-right:1px solid var(--line);background:var(--surface);color:var(--ink);font-family:var(--f-body);font-weight:700;line-height:1}
+.vxl-sz:last-child{border-right:0}
+.vxl-sz1{font-size:13px}.vxl-sz2{font-size:16px}.vxl-sz3{font-size:20px}
+.vxl-sz[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+.vxl-tg{display:inline-flex;align-items:center;gap:6px;height:40px;padding:0 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);font:inherit;font-size:14px;font-weight:600}
+.vxl-tg svg{width:18px;height:18px}
+.vxl-tg[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.vxl-sz:focus-visible,.vxl-tg:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.vxl-pz{margin:4px 0 10px}.vxl-pz .vxl-disp{padding:6px 0 0}
+.vxl-srr .vxl-wr svg{color:var(--accent)}
+
+/* Orders tab on the Brain side panel (replaces the My Chart Orders screen) */
+.vxsb-tabs{min-width:0}
+.vxsb-tab2{padding:9px 4px;gap:4px}
+.vxsb-tabs:has(.vxo-tab) .vxsb-w2{display:none}
+.vxsb-tabs:has(.vxo-tab) .vxsb-tab2{font-size:13px}
+.vxsb-tab2 span{overflow:visible;text-overflow:clip;white-space:nowrap}
+@media (max-width:1100px){.vxsb-tab2 svg{display:none}}
+@media (max-width:480px){.vxsb-tab2{font-size:12px;padding:9px 2px}.vxsb-tab2 b{min-width:15px;height:16px;line-height:16px;padding:0 3px;font-size:10.5px}}
+@media (max-width:760px){.vxsb.open{left:0}.vxsb.open .vxsb-p{width:100vw;max-width:100vw;border-left:0}.vxsb.open .vxsb-rail{position:absolute;left:0;top:50%;transform:translateY(-50%);z-index:2;margin:0}.vxsb.open .vxsb-b{padding-left:30px}}
+.vxo{display:flex;flex-direction:column;gap:10px}
+.vxo-seg{display:flex;border:1px solid var(--sbl);border-radius:8px;overflow:hidden}
+.vxo-s{flex:1 1 0;min-width:0;border:0;border-right:1px solid var(--sbl);background:var(--sbs);color:var(--sbi);font:inherit;font-size:13px;font-weight:600;padding:8px 4px;white-space:nowrap}
+.vxo-s:last-child{border-right:0}
+.vxo-s.on{background:var(--sbh);color:#fff}
+.vxo-f{display:flex;flex-direction:column;gap:10px}
+.vxo-f .o2f{display:flex;flex-direction:column;gap:3px;font-size:13px;color:var(--sbm)}
+.vxo-f .o2f>span{font-weight:600}
+.vxo-f input:not([type=checkbox]),.vxo-f select{width:100%;min-height:40px;border:1px solid var(--sbl);border-radius:6px;background:var(--sb);color:var(--sbi);font:inherit;font-size:14.5px;padding:0 10px}
+.vxo-f input:focus,.vxo-f select:focus{outline:2px solid #f8c27a;outline-offset:0}
+.vxo-w .o2f{position:relative}
+.vxo-f .o2res{position:static;display:grid;gap:4px;margin-top:4px;max-height:260px;overflow:auto}
+.vxo-f .o2res:empty{display:none}
+.vxo-f .c2ri{display:grid;grid-template-columns:20px 1fr;column-gap:8px;text-align:left;border:1px solid var(--sbl);border-radius:6px;background:var(--sbs);color:var(--sbi);padding:6px 8px;font:inherit;font-size:13.5px}
+.vxo-f .c2ri svg{grid-row:span 2;align-self:center}.vxo-f .c2ri small{color:var(--sbm)}
+.vxo-qp{display:flex;flex-wrap:wrap;gap:6px}
+.vxo-chip{border:1px solid var(--sbl);background:var(--sbs);color:var(--sbi);border-radius:14px;padding:5px 11px;font:inherit;font-size:13px;min-height:32px}
+.vxo-chip:hover{border-color:#8aa3b3}
+.vxo-det{border:1px solid var(--sbl);border-radius:6px;background:var(--sbs)}
+.vxo-det summary{cursor:pointer;padding:8px 10px;font-size:13.5px;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.vxo-det summary b{font-weight:600}
+.vxo-ds{color:var(--sbm);font-size:12.5px}
+.vxo-dg{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:0 10px 10px}
+.vxo-dg .o2f:first-child,.vxo-dg .o2w{grid-column:1/-1}
+.vxo-f .o2s{display:flex;flex-direction:column;align-items:stretch;gap:8px;border:0;border-top:1px solid var(--sbl);border-radius:0;background:none;padding:10px 0 0;margin:0}
+.vxo-f .o2s>*{text-align:left;justify-content:flex-start;margin:0}
+.vxo-f .c2sum{font-size:13.5px;color:var(--sbi)}
+.vxo-f .o2rb{display:flex;align-items:center;gap:8px;font-size:14px}
+.vxo-f .o2rb input{width:20px;height:20px}
+.vxo-f .csign{min-height:42px;width:100%}
+.vxo-f .o2d{font-size:13px}.vxo-f .o2d summary{cursor:pointer;color:var(--sbm);padding:4px 0}
+.vxo-f .vxo-log summary{color:var(--sbi);font-weight:600}
+.vxo-f .c2log{list-style:none;margin:4px 0 0;padding:0;display:grid;gap:4px}
+.vxo-f .c2log li{display:flex;flex-wrap:wrap;gap:4px 6px;border-left:3px solid var(--sbg);background:var(--sbs);border-radius:4px;padding:5px 8px}
+.vxo-f .c2log small{width:100%;color:var(--sbm)}
+.vxo-b .csets{display:grid;gap:6px;grid-template-columns:1fr}
+.vxo-b .cset{text-align:left;display:grid;gap:2px;border:1px solid var(--sbl);border-radius:6px;background:var(--sbs);color:var(--sbi);padding:8px 10px;font:inherit}
+.vxo-b .cset small{color:var(--sbm)}.vxo-b .cset span{font-size:12.5px;font-weight:600;display:flex;gap:4px;align-items:center}
+.vxo-b .clist{list-style:none;margin:8px 0;padding:0;display:grid;gap:6px}
+.vxo-b .crow{display:grid;grid-template-columns:24px 1fr auto;gap:8px;align-items:center;border:1px solid var(--sbl);border-radius:6px;padding:6px 8px}
+.vxo-b .crow small{display:block;color:var(--sbm)}
+.vxo-b .c2sig .csign{width:100%;min-height:42px}
+.vxo-b .c2empty{display:grid;justify-items:center;gap:6px;text-align:center;padding:16px 8px;color:var(--sbm)}
+.vxo-b .note{font-size:13px;color:var(--sbm)}
+.vxo-msg{font-size:13.5px;border-left:4px solid var(--sbg);background:var(--sbs);padding:8px 10px;border-radius:4px}
+.vxo-all{margin:0}
+/* </v33-nomenu-css> */
 /* <v25b-search-css> */
 /* v25b: header search as a clear pill field; drops to its own row when the header is tight */
 #c2.v25 .c2h .c2tools{flex-wrap:wrap;row-gap:10px}
@@ -3237,6 +3360,128 @@ html.sc-on .dx32{right:auto;left:14px}
 #c2.v25 .c2h .ws-srch:focus-within .ws-sl{color:var(--ink)}
 @media (max-width:1180px){#c2.v25 .c2h .c2tools .ws-srch{order:9;flex:1 1 100%;max-width:none}}
 /* </v25b-search-css> */
+/* <v35-library-css> */
+/* v35-library-css: My Chart › Library as an Epic-style list + preview (scoped to .vxlib, .vxlib-rd). Colors come from the app's
+   theme tokens (--surface, --line, --ink, --muted, --accent ...), which already switch for dark mode; the few own tokens are
+   redefined for dark under the same two selectors the app uses. */
+.vxlib{--vl-sel:rgb(29 86 112/.10);--vl-selb:#1d5670;--vl-hov:rgb(29 86 112/.05);--vl-new:#1d5670;--vl-as:#8a5a00;--vl-asb:#fbefd2;--vl-dn:#2f6146;--vl-dnb:#e1ecdf;--vl-star:#a57a2a;--vl-ai:#6a4a00;--vl-aib:#fff4dc;--vl-r:10px;
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,40%);gap:14px;align-items:start;color:var(--ink);font-size:15.5px;min-width:0}
+html[data-theme="dark"] .vxlib{--vl-sel:rgb(108 184 212/.16);--vl-selb:#6cb8d4;--vl-hov:rgb(108 184 212/.07);--vl-new:#9fd3e6;--vl-as:#e2ac52;--vl-asb:#352812;--vl-dn:#7fc39a;--vl-dnb:#1a2d21;--vl-star:#d4a85a;--vl-ai:#f3c66a;--vl-aib:#33280f}
+@media (prefers-color-scheme:dark){html:not([data-theme="light"]) .vxlib{--vl-sel:rgb(108 184 212/.16);--vl-selb:#6cb8d4;--vl-hov:rgb(108 184 212/.07);--vl-new:#9fd3e6;--vl-as:#e2ac52;--vl-asb:#352812;--vl-dn:#7fc39a;--vl-dnb:#1a2d21;--vl-star:#d4a85a;--vl-ai:#f3c66a;--vl-aib:#33280f}}
+.vxlib *,.vxlib *::before,.vxlib *::after{box-sizing:border-box}
+.vxlib button,.vxlib select,.vxlib input{font:inherit;color:inherit}
+.vxlib .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* hide the old sub-tab buttons (their panes stay for deep links) and any card other modules inject into the Library pane */
+#c2 [data-c2sub="library:program"],#c2 [data-c2sub="library:videos"]{display:none!important}
+#c2 [data-pane="library:guides"]>[data-vxlib-adopted],#c2 [data-pane="library:guides"]:has(>[data-vxlib])>:not([data-vxlib]){display:none!important}
+
+/* ---- left: search, chips, list ---- */
+.vl-main{min-width:0;display:grid;gap:10px}
+.vl-top{display:flex;gap:8px;align-items:center;min-width:0}
+.vl-q{flex:1;min-width:0;display:flex;align-items:center;gap:8px;background:var(--surface);border:1.5px solid var(--line);border-radius:var(--vl-r);padding:0 12px;min-height:46px}
+.vl-q:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px var(--vl-sel)}
+.vl-q svg{color:var(--muted);flex:none}
+.vl-q input{flex:1;min-width:0;border:0;background:none;outline:0;font-size:16px;padding:10px 0}
+.vl-sel select{min-height:46px;border:1.5px solid var(--line);border-radius:var(--vl-r);background:var(--surface);padding:0 10px;max-width:220px}
+.vl-f{display:grid;gap:8px;min-width:0}
+.vl-chips{display:flex;flex-wrap:wrap;gap:6px;align-items:center;min-width:0}
+.vl-chips .vl-sel select{min-height:38px;font-size:14.5px}
+.vl-c{display:inline-flex;align-items:center;gap:5px;min-height:38px;padding:0 12px;border-radius:19px;border:1.5px solid var(--line);background:var(--surface);cursor:pointer;font-size:14.5px;font-weight:600;white-space:nowrap}
+.vl-c i{font-style:normal;font-weight:700;color:var(--muted);font-size:13px}
+.vl-c:hover{border-color:var(--accent)}
+.vl-c.on{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}.vl-c.on i{color:inherit;opacity:.85}
+.vl-clr{border:0;background:none;color:var(--accent);font-weight:700;text-decoration:underline;cursor:pointer;min-height:38px;padding:0 6px}
+.vl-msg{margin:0;font-size:14.5px;color:var(--good)}.vl-msg:empty{display:none}
+.vl-list{min-width:0}
+.vl-h{display:flex;align-items:center;gap:6px;margin:6px 0 6px;font-size:15px;font-weight:700;color:var(--ink)}
+.vl-h i,.vl-g i{font-style:normal;color:var(--muted);font-weight:600}
+.vl-h svg{color:var(--vl-star)}
+.vl-hh{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-top:10px}
+.vl-sb{display:flex;gap:6px;flex-wrap:wrap}
+.vl-g{margin:12px 0 4px;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.vl-l{list-style:none;margin:0;padding:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--vl-r);overflow:hidden}
+.vl-r{display:flex;align-items:center;gap:10px;padding:10px 12px;min-height:56px;border-top:1px solid var(--line);cursor:pointer;outline:0;position:relative}
+.vl-r:first-child{border-top:0}
+.vl-r:hover{background:var(--vl-hov)}
+.vl-r:focus-visible{box-shadow:inset 0 0 0 2px var(--accent)}
+.vl-r.on{background:var(--vl-sel)}.vl-r.on::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--vl-selb)}
+.vl-ic{display:grid;place-items:center;width:34px;height:34px;border-radius:8px;flex:none;background:var(--sunk);color:var(--accent)}
+.vl-ic.t-video{color:#9d2a22}.vl-ic.t-module{color:#4b4f86}.vl-ic.t-book{color:#8a5a00}.vl-ic.t-coloring{color:#2f6146}
+html[data-theme="dark"] .vl-ic.t-video{color:#ee8b80}html[data-theme="dark"] .vl-ic.t-module{color:#c9cdf5}html[data-theme="dark"] .vl-ic.t-book{color:#e2ac52}html[data-theme="dark"] .vl-ic.t-coloring{color:#7fc39a}
+@media (prefers-color-scheme:dark){html:not([data-theme="light"]) .vl-ic.t-video{color:#ee8b80}html:not([data-theme="light"]) .vl-ic.t-module{color:#c9cdf5}html:not([data-theme="light"]) .vl-ic.t-book{color:#e2ac52}html:not([data-theme="light"]) .vl-ic.t-coloring{color:#7fc39a}}
+.vl-tx{flex:1;min-width:0;display:grid;gap:1px}
+.vl-tx b{font-weight:500;overflow-wrap:anywhere}
+.vl-r.nw .vl-tx b{font-weight:800}
+.vl-r.dn .vl-tx b{color:var(--muted)}
+.vl-tx small{color:var(--muted);font-size:13.5px;overflow-wrap:anywhere}
+.vl-tx small.vl-pm{color:var(--accent)}
+.vl-st{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end;flex:none;max-width:45%}
+.vl-b{display:inline-flex;align-items:center;gap:3px;border-radius:5px;padding:2px 7px;font-size:12.5px;font-weight:700;white-space:nowrap}
+.vl-b.nw{background:var(--vl-new);color:var(--surface)}
+.vl-b.as{background:var(--vl-asb);color:var(--vl-as)}
+.vl-b.dn{background:var(--vl-dnb);color:var(--vl-dn)}
+.vl-b.sv{color:var(--vl-star);padding:2px 2px}.vl-b.sv svg{fill:currentColor}
+.vl-b.lk{background:var(--sunk);color:var(--muted)}
+.vl-ck{display:grid;place-items:center;flex:none;width:28px}.vl-ck input{width:22px;height:22px;accent-color:var(--accent)}
+.vl-empty{display:grid;gap:6px;justify-items:start;padding:22px;background:var(--surface);border:1px dashed var(--line);border-radius:var(--vl-r)}
+.vl-empty span{color:var(--muted)}
+.vl-btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:40px;padding:0 14px;border-radius:8px;border:1.5px solid var(--line);background:var(--surface);font-weight:700;cursor:pointer;text-decoration:none;color:var(--ink)}
+.vl-btn:hover{border-color:var(--accent)}
+.vl-btn.p{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.vl-btn.p:hover{filter:brightness(1.08)}
+.vl-btn[disabled]{opacity:.5;cursor:not-allowed}
+.vl-btn.big{min-height:52px;padding:0 26px;font-size:17px;width:100%}
+
+/* ---- right: preview ---- */
+.vl-prev{position:sticky;top:8px;min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--vl-r);max-height:calc(100vh - 24px);overflow:auto}
+.vp-in{padding:18px 20px 20px;display:grid;gap:10px}
+.vp-bar{display:none}
+.vp-k{display:flex;align-items:center;gap:8px;margin:0;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.vp-k .vl-ic{width:26px;height:26px;border-radius:6px}
+.vp-t{margin:0;font-size:22px;line-height:1.25;font-weight:700;outline:0;overflow-wrap:anywhere}
+.vp-lab{margin:0;justify-self:start;font-size:13px;font-weight:700;padding:3px 9px;border-radius:5px;background:var(--sunk);color:var(--muted)}
+.vp-lab.ai{background:var(--vl-aib);color:var(--vl-ai)}
+.vp-d{margin:0;color:var(--ink);line-height:1.5}
+.vp-act{margin-top:4px}
+.vp-sec{display:flex;flex-wrap:wrap;gap:4px 14px}
+.vl-lk{display:inline-flex;align-items:center;gap:6px;min-height:40px;border:0;background:none;color:var(--accent);font-weight:700;cursor:pointer;padding:0 2px;text-decoration:none}
+.vl-lk:hover{text-decoration:underline}
+.vl-lk[aria-pressed="true"]{color:var(--vl-dn)}
+.vl-lk[data-vxlib-save][aria-pressed="true"]{color:var(--vl-star)}.vl-lk[data-vxlib-save][aria-pressed="true"] svg{fill:currentColor}
+.vp-note{margin:0;display:flex;gap:6px;align-items:center;font-size:13.5px;color:var(--muted)}
+.vp-f{margin:6px 0 0;display:grid;gap:0;border-top:1px solid var(--line)}
+.vp-f div{display:grid;grid-template-columns:130px minmax(0,1fr);gap:10px;padding:7px 0;border-bottom:1px solid var(--line)}
+.vp-f dt{color:var(--muted);font-size:13.5px}.vp-f dd{margin:0;font-size:14.5px;overflow-wrap:anywhere}
+.vp-pl summary{cursor:pointer;font-weight:700;color:var(--accent);min-height:40px;display:flex;align-items:center}
+.vp-pl ol{margin:0 0 6px;padding-left:28px}.vp-pl li{margin:3px 0}.vp-pl small{color:var(--muted)}
+.vp-ps{margin:8px 0 2px;font-weight:700;font-size:13.5px}
+.vp-empty{display:grid;justify-items:center;text-align:center;gap:6px;padding:48px 20px;color:var(--muted)}
+.vp-empty b{color:var(--ink);font-size:17px}
+
+/* ---- narrow (phone, or a narrow pane): list, then a full-screen preview with Back (Rover / Haiku pattern) ---- */
+.vxlib.nar{grid-template-columns:minmax(0,1fr)}
+.vxlib.nar .vl-prev{display:none}
+.vxlib.nar .vl-prev.open{display:block;position:fixed;inset:0;z-index:90;border:0;border-radius:0;max-height:none;overflow:auto;background:var(--bg);padding-bottom:env(safe-area-inset-bottom)}
+.vxlib.nar .vl-prev.open .vp-in{max-width:720px;margin:0 auto;padding:0 16px 28px}
+.vxlib.nar .vp-bar{display:flex;position:sticky;top:0;z-index:1;background:var(--bg);margin:0 -16px;padding:6px 8px;border-bottom:1px solid var(--line)}
+.vp-back{display:inline-flex;align-items:center;gap:4px;min-height:44px;padding:0 10px 0 4px;border:0;background:none;color:var(--accent);font-weight:700;font-size:16px;cursor:pointer}
+.vxlib.nar .vl-st{max-width:40%}
+.vxlib.nar .vl-top .vl-sel select{max-width:132px}.vxlib.nar .vl-chips .vl-sel select{max-width:190px}
+html.vxlib-pv{overflow:hidden}
+@media (max-width:480px){.vl-r{padding:10px}.vl-c{padding:0 10px}.vp-f div{grid-template-columns:110px minmax(0,1fr)}}
+
+/* ---- in-app reader ---- */
+.vxlib-rd{position:fixed;inset:0;z-index:95;display:flex;flex-direction:column;background:var(--bg)}
+html.vxlib-rdon{overflow:hidden}
+.rd-h{display:flex;align-items:center;gap:8px;padding:6px 10px;background:var(--navy,#103a4f);color:var(--navy-ink,#fff);flex:none;min-width:0}
+.rd-x,.rd-dl{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 12px;border-radius:8px;border:0;background:rgb(255 255 255/.12);color:inherit;font:inherit;font-weight:700;cursor:pointer;text-decoration:none;flex:none}
+.rd-t{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:16px}
+.rd-b{flex:1;overflow:auto;-webkit-overflow-scrolling:touch}
+.rd-s{min-height:100%}
+.rd-msg{display:grid;gap:8px;justify-items:start;max-width:560px;margin:40px auto;padding:0 18px;color:var(--ink)}
+@media (max-width:560px){.rd-dl span{display:none}}
+/* </v35-library-css> */
 </style>
 
 <div id="app"></div>
@@ -3248,7 +3493,7 @@ const BANK = (function(e){try{const P=">oVO^cd@ge#lJ'~wUTDiEY+LZx-K&hkt(/F0;G`N.
 let HIDQ=new Set();const CFG={c:null,bypass:false};try{const c=JSON.parse(localStorage.getItem("ns.cfg")||"null");if(c&&typeof c==="object"){CFG.c=c;HIDQ=new Set(c.hideQ||[])}}catch(e){}
 const featOn=k=>!CFG.c||!CFG.c.feat||CFG.c.feat[k]!==false;
 
-const APPV="db8b019c079602dcad160c125d8c2bb1ba80f217e5475d2ddfc6f5ea2ab0f798";
+const APPV="b75e9703c44ba0579b564a19d47b9e12ddb206bf38865cea6400c365040ca254";
 const CATS={
   MOC:{n:"Management of Care",lo:15,hi:21,w:18},
   SIC:{n:"Safety and Infection Prevention and Control",lo:10,hi:16,w:13},
@@ -9249,7 +9494,7 @@ if(SRV.on){
   const H3={"Flowsheet":"flow","Pass likelihood over time":"trend","Strength by NCLEX category":"cats","Exams and practice rounds":"exams","Test-day integrity reports":"integ","ACLS megacodes":"codes","Bedside rounds":"rounds","Missed-question cards":"cards"};
   const TOOLS=[["exam","Full exam"],["quick","Quick round"],["td","Test day"],["drill","Topic drill"],["case","Case study"],["code","Megacode"],["rounds","Bedside"],["remed","Missed cards"],["report","Progress PDF"],["cart","Order cart"],["custom","Personalize"],["account","Account"],["guides","Study guides"]];
   const GUIDES=[["ai-for-nursing-students","Studying with AI, safely","What AI is good for, where it goes wrong, and a 4-step check for anything it tells you",4,"ai chatgpt chatbot artificial intelligence credible fact check source"],["fact-check-card","60-second fact-check card","One page: the 4-step check, trusted sources, red flags",1,"fact check card credible source ai"],["lab-values-quick-reference","Lab values quick reference","Typical adult ranges with what abnormal results mean",3,"lab values labs ranges electrolytes cbc abg"],["nclex-test-plan-at-a-glance","Test plan and clinical judgment","The 8 categories, the 6 clinical judgment steps, and NGN item types",2,"test plan categories clinical judgment ngn"],["prioritization-and-delegation","Prioritization and delegation","The who-first ladder and the five rights of delegation",2,"prioritization delegation five rights abc maslow"],["dosage-calculation-formulas","Dosage calculation formulas","Conversions and formulas with worked examples",2,"dosage calculation med math formulas drip rate"],["isolation-precautions","Infection control and isolation","Precautions by infection, PPE order, and hand hygiene",2,"isolation precautions infection control ppe contact droplet airborne"],["heart-failure-left-vs-right", "Heart failure: left vs. right", "Signs, core medicines, daily weights", 1, "med surg medsurg cheat sheet heart failure hf chf bnp edema", 1],["dka-vs-hhs", "DKA vs. HHS, plus insulin timing", "Criteria, treatment order, insulin chart, rule of 15", 1, "med surg medsurg cheat sheet dka hhs diabetes insulin hypoglycemia glucose", 1],["electrolyte-imbalances", "Electrolytes: K, Na, Ca, Mg", "Low vs. high, ECG clues, first actions", 1, "med surg medsurg cheat sheet electrolytes potassium sodium calcium magnesium", 1],["abg-interpretation", "ABGs in 3 steps", "ROME, compensation, the four disorders", 1, "med surg medsurg cheat sheet abg arterial blood gas acid base rome", 1],["types-of-shock", "Shock: the 4 types", "Causes, key numbers, sepsis first hour", 1, "med surg medsurg cheat sheet shock sepsis septic map hypovolemic cardiogenic", 1],["stroke-be-fast", "Stroke: BE-FAST and first hour", "Ischemic vs. hemorrhagic, BP limits", 1, "med surg medsurg cheat sheet stroke cva be fast tpa neuro", 1],["copd-vs-asthma", "COPD vs. asthma", "Inhalers, peak flow zones, oxygen targets", 1, "med surg medsurg cheat sheet copd asthma inhaler oxygen respiratory", 1],["thyroid-and-adrenal-disorders", "Thyroid and adrenal: hyper vs. hypo", "Graves, Hashimoto, Cushing, Addison", 1, "med surg medsurg cheat sheet thyroid adrenal cushing addison graves endocrine", 1],["aki-vs-ckd", "Kidney injury: AKI vs. CKD", "Causes, stages, dialysis access care", 1, "med surg medsurg cheat sheet kidney renal aki ckd dialysis fistula", 1],["burns-rule-of-nines", "Burns: rule of nines and fluids", "Depth, Parkland formula, airway first", 1, "med surg medsurg cheat sheet burns rule of nines parkland tbsa", 1],["high-alert-meds-and-antidotes", "Pharm: high-alert meds and antidotes", "The medicine classes most likely to cause harm", 1, "pharm pharmacology antidote naloxone heparin warfarin digoxin high alert", 2],["ob-fetal-heart-rate-and-postpartum", "OB: fetal heart rate, preeclampsia, PPH", "FHR decelerations and what to do (VEAL CHOP)", 1, "ob obstetric maternity fetal heart rate veal chop preeclampsia magnesium postpartum hemorrhage", 2],["psych-meds-and-communication", "Psych: meds, side effects, communication", "Antipsychotic side effects", 1, "psych mental health lithium nms serotonin antipsychotic therapeutic communication", 2],["icu-hemodynamics-and-drips", "ICU: hemodynamics, pressors, vent alarms", "Normal hemodynamic numbers", 1, "icu critical care vasopressor norepinephrine hemodynamics map ventilator icp", 2],["nihss-stroke-scale", "NIH Stroke Scale (NIHSS) at a glance", "All 15 NIHSS items with their score ranges", 1, "nihss stroke scale neuro", 2],["er-triage-esi-and-start", "ER: ESI triage and START mass casualty", "The 5 ESI triage levels with the decision questions", 1, "er emergency triage esi start mass casualty", 2],["iv-safety-and-hanging-meds", "IV safety: fluids, complications, hanging meds", "Hanging an IV medicine step by step", 1, "iv fluids infusion hanging meds infiltration transfusion drip rate", 2]];
-  const gTitle=slug=>(GUIDES.find(g=>g[0]===slug)||[slug,"Study guide"])[1];
+  const gTitle=slug=>(GUIDES.find(g=>g[0]===slug)||[slug,"Study guide"])[1];window.__vxGuides35={GUIDES,dlGuide:s=>dlGuide(s)};
   function dlGuide(slug){const a=document.createElement("a");a.href="/guides/"+slug+".pdf";a.download="Vexcura-"+slug+".pdf";document.body.appendChild(a);a.click();a.remove()}
   const DEF={order:SECS.map(s=>s[0]),hidden:[],tools:["exam","quick","td","drill","guides","report","cart","custom"],hideTiles:[],dense:false,landing:false};
   const prefs=()=>{const p=Object.assign({},DEF,store.get(KP,{}));p.order=(p.order||[]).filter(id=>SECS.some(s=>s[0]===id));SECS.forEach(s=>{if(p.order.indexOf(s[0])<0)p.order.push(s[0])});return p};
@@ -9413,12 +9658,11 @@ if(SRV.on){
   /* v21: Flowsheet + Reports folded into Results; 80/20 focus dropped (By category + the 80/20 report cover it); This week / All orders are views inside the Brain */
   const TABS=[["summary","Home","sum",[["overview","Overview"],["advisories","Advisories"]]],
     ["board","Worklist","board",[]],
-    ["orders","Orders","orders",[["new","New order"],["sets","Order sets"],["cart","Cart"]]],
     ["results","Results","results",[["exams","Exams"],["flow","Flowsheet"],["trend","Trend"],["cats","By category"],["integ","Integrity"],["codes","Megacodes"],["rounds","Bedside"],["cards","Missed cards"],["reports","Reports"]]],
     ["library","Library","lib",[["guides","Study guides"],["videos","Videos"]]],
     ["coach","Coach","coach",[["careplan","Care plan"],["notes","Progress notes"],["review","Study material"]]]];
   /* v21: old links (data-c2go, saved start screens, admin "first screen") keep working */
-  const C2AL={"flow:flow":"results:flow","flow:trend":"results:trend","flow:cats":"results:cats","flow:":"results:flow","reports:build":"results:reports","reports:saved":"results:reports","reports:":"results:reports","summary:pareto":"results:cats","board:week":"board:brain","board:list":"board:brain"};
+  const C2AL={"orders:":"board:brain","orders:new":"board:brain","orders:sets":"board:brain","orders:cart":"board:brain","flow:flow":"results:flow","flow:trend":"results:trend","flow:cats":"results:cats","flow:":"results:flow","reports:build":"results:reports","reports:saved":"results:reports","reports:":"results:reports","summary:pareto":"results:cats","board:week":"board:brain","board:list":"board:brain"};
   const c2norm=(t,u)=>{const k=C2AL[(t||"")+":"+(u||"")]||(TABS.some(x=>x[0]===t)?null:C2AL[(t||"")+":"]);return k?k.split(":"):[t,u]};
   const fixSt=s=>{s.sub=s.sub||{};if(!TABS.some(x=>x[0]===s.tab)){const n=c2norm(s.tab,s.sub[s.tab]);s.tab=n[0];if(n[1])s.sub[n[0]]=n[1]}if(!TABS.some(x=>x[0]===s.tab))s.tab="summary";
     Object.keys(s.sub).forEach(t=>{const T=TABS.find(x=>x[0]===t);if(!T){delete s.sub[t];return}if(!T[3].some(x=>x[0]===s.sub[t])){const n=c2norm(t,s.sub[t]);if(n[0]===t&&T[3].some(x=>x[0]===n[1]))s.sub[t]=n[1];else delete s.sub[t]}});return s};
@@ -9539,7 +9783,7 @@ if(SRV.on){
   const GEN={"summary:advisories":advPanel,"orders:new":ordersNewHTML,"orders:sets":setsPanel,"orders:cart":cartPanel,"results:reports":()=>reportsBuild()+`<h4 class="c2svh">Saved reports</h4><div class="c2svd">${reportsSaved()}</div>`,"library:videos":videosPanel};
   const SLOT={"results:exams":"exams","results:integ":"integ","results:codes":"codes","results:rounds":"rounds","results:cards":"cards","results:flow":"flow","results:trend":"trend","results:cats":"cats","library:guides":"guides"};
   function paint(tab){const c=document.getElementById("c2");if(!c)return;Object.keys(GEN).forEach(k=>{if(tab&&!k.startsWith(tab+":"))return;const el=c.querySelector(`[data-pane="${k}"]`);if(el)el.innerHTML=GEN[k]()});const o=c.querySelector('[data-pane="summary:overview"] .c2ovr');if(o&&(!tab||tab==="summary"||tab==="board")){const tmp=document.createElement("div");tmp.innerHTML=overviewHTML();o.replaceWith(tmp.querySelector(".c2ovr"))}const h=c.querySelector(".c2h");if(h){const q=h.querySelector("#wsq");const qv=q&&q.value;const tmp=document.createElement("div");tmp.innerHTML=headerHTML();if(!qv){h.querySelector(".c2v").replaceWith(tmp.querySelector(".c2v"))}else{const v=tmp.querySelector(".c2v");h.querySelector(".c2v").replaceWith(v)}}paintCount()}
-  function select(tab,sub){if(tab==="board"&&(sub==="week"||sub==="list"))C2.bv=sub==="week"?"week":"all";if(tab){const n=c2norm(tab,sub);tab=n[0];sub=n[1]}const st=tabState();if(tab&&TABS.some(x=>x[0]===tab))st.tab=tab;if(sub&&(TABS.find(x=>x[0]===st.tab)||[,,,[]])[3].some(x=>x[0]===sub))st.sub[st.tab]=sub;store.set(KT,st);const c=document.getElementById("c2");if(!c)return;
+  function select(tab,sub){if(tab==="orders"&&window.__vxOrd){window.__vxOrd.open(sub);return}if(tab==="board"&&(sub==="week"||sub==="list"))C2.bv=sub==="week"?"week":"all";if(tab){const n=c2norm(tab,sub);tab=n[0];sub=n[1]}const st=tabState();if(tab&&TABS.some(x=>x[0]===tab))st.tab=tab;if(sub&&(TABS.find(x=>x[0]===st.tab)||[,,,[]])[3].some(x=>x[0]===sub))st.sub[st.tab]=sub;store.set(KT,st);const c=document.getElementById("c2");if(!c)return;
     c.querySelectorAll("[data-c2tab]").forEach(b=>{const on=b.dataset.c2tab===st.tab;b.setAttribute("aria-selected",on);b.tabIndex=on?0:-1});
     c.querySelectorAll(".c2pane").forEach(p=>p.hidden=p.id!=="c2p-"+st.tab);
     const T=TABS.find(t=>t[0]===st.tab);const s=st.sub[st.tab]||T[3][0][0];
@@ -9683,7 +9927,7 @@ if(SRV.on){
     ["JB-CqwMyrTM","Chest tubes: nursing care and drainage systems","4:08","rn","Respiratory","chest tube drainage pneumothorax",0],
     ["l0G7iXaIfOg","Lung sounds: crackles, wheezes, rhonchi, stridor","9:31","rn","Respiratory","lung sounds auscultation",0],
     ["QN1HlIl4eiM","Wound drainage types","8:06","rn","Skin and wounds","wound drainage serous purulent",0]];
-  const vState={q:"",t:"",s:""};
+  const vState={q:"",t:"",s:""};window.__vxVids35={VIDS,VSRC,play:id=>playVid(id)};
   function videosPanel(){const topics=[...new Set(VIDS.map(v=>v[4]))].sort();const q=vState.q.toLowerCase();
     const L=VIDS.filter(v=>(!vState.t||v[4]===vState.t)&&(!vState.s||v[3]===vState.s)&&(!q||(v[1]+" "+v[5]+" "+v[4]+" "+VSRC[v[3]][0]).toLowerCase().includes(q)));
     return `<div class="vd-top"><input id="vdq" type="search" placeholder="Search videos: ABG, stroke, IV fluids…" value="${esc(vState.q)}" aria-label="Search videos">
@@ -9778,7 +10022,7 @@ if(SRV.on){
     "results:cats":["By category","Your strength in each NCLEX category from your recent exams."],
     "results:reports":["Reports","Choose a report and date range, run it, then save or print it."],
     "reports:saved":["Saved reports","Open a saved report to run it again with your newest data."],
-    "library:guides":["Study library","Free PDFs with cited sources. Download one, read it online, or add it to your cart."],
+    "library:guides":["Library","Everything in one list: study guides, the Review Book, learning modules, videos, the coloring workbook and your program's content. Search or tap a filter, pick an item, then use the one big button."],
     "library:videos":["Videos","Short videos from trusted sources, 10 minutes or less. Search or filter, then tap to play."],
     "coach:careplan":["Care plan coach","Pick a scenario, write your care plan, and get rubric feedback. It's AI feedback, so check it against your textbook."],
     "coach:notes":["Progress notes","Paste notes, instructor feedback, or grades. The coach suggests what to study next."],
@@ -9906,7 +10150,7 @@ if(SRV.on){
       ${C2.bv==="week"?`<div class="bn-wkv">${boardHTML()}</div>`:C2.bv==="all"?`<div class="bn-allv">${listHTML()}</div>`:""}<div class="bn-split"${C2.bv==="week"||C2.bv==="all"?" hidden":""}><div class="bn-list">${B.W.length?`<table class="bn-t"><thead><tr><th></th><th>When</th><th>Task</th><th>Ordered by</th><th>Status</th><th></th></tr></thead>${listRows(B)}</table>`:`<div class="c2empty">${ic("board",30)}<b>No orders yet</b><span>Your standing tasks are on the timeline above. Place an order to schedule more.</span><button class="btn2" data-c2go="orders:new">New order</button></div>`}</div><div class="bn-pv" aria-live="polite">${previewHTML(B)}</div></div>
       <footer class="bn-ft"><button class="lk" data-c2go="orders:new">${ic("plus",14)} Add order</button><button class="lk" data-bn="note">${ic("plus",14)} Add note</button><button class="lk" data-c2go="orders:sets">${ic("plus",14)} Order set</button><span class="bn-sp"></span><span class="${over?"bad":""}">${over} overdue</span><span>${dueT} due today</span><span class="ok">${doneT} done today</span></footer></section>${notesHTML()}</div>`}
   TABS[1][3].unshift(["brain","Brain"]);
-  GEN["board:brain"]=brainHTML;{const LT=TABS.find(t=>t[0]==="library");if(LT&&!LT[3].some(x=>x[0]==="program"))LT[3].unshift(["program","From my program"])}GEN["library:program"]=()=>window.__CURR?window.__CURR.panel():"";window.__C2X={get:()=>({bnData,itemInfo,whenGroup,SLOTS,slotNow,repaint:()=>{try{paint("library")}catch(e){}}})};
+  GEN["board:brain"]=brainHTML;{const LT=TABS.find(t=>t[0]==="library");if(LT&&!LT[3].some(x=>x[0]==="program"))LT[3].unshift(["program","From my program"])}GEN["library:program"]=()=>window.__CURR?window.__CURR.panel():"";window.__C2X={lib35:{GEN,TABS,select:(t,s)=>select(t,s),paint:t=>paint(t)},get:()=>({bnData,itemInfo,whenGroup,SLOTS,slotNow,repaint:()=>{try{paint("library")}catch(e){}}})};
   function bnPaint(){const el=document.querySelector('#c2 [data-pane="board:brain"]');if(el&&!el.hidden){const a=document.activeElement;const keep=a&&a.id==="bnq"?a.selectionStart:null;const nt=document.getElementById("bnnote");const ntv=nt?nt.value:"";el.innerHTML=brainHTML();if(keep!=null){const q=document.getElementById("bnq");q.focus();q.setSelectionRange(keep,keep)}const n2=document.getElementById("bnnote");if(n2&&ntv)n2.value=ntv}}
   const upd=(id,fn)=>{const W=wl();const w=W.find(x=>x.id===id);if(!w)return;fn(w);setWl(W);bnPaint()};
   const qtext=k=>{const B=bnData();if(k===".weak")return B.weak.length?"Weak areas: "+B.weak.map(([c,a])=>CATS[c].n+" ("+a+"%)").join(", ")+".":"No weak areas flagged.";if(k===".plan"){const o=B.W.filter(w=>!w.done&&w.day===B.td).map(w=>itemInfo(w).t);return "Today's plan: "+(o.length?o.join("; "):"no orders yet")+"."}if(k===".last")return B.last?"Last exam: "+(B.last.mode==="cat"?"full exam":"quick round")+" on "+fmtDate(B.last.date)+(B.last.pred!=null?", "+Math.round(B.last.pred>1?B.last.pred:B.last.pred*100)+"% likelihood":"")+".":"No exams yet.";if(k===".date")return new Date().toLocaleDateString([],{weekday:"long",month:"long",day:"numeric"});return k};
@@ -9989,7 +10233,7 @@ if(SRV.on){
       else if(n&&view!=="exam")toast(`${n} new order${n===1?"":"s"} from your administrator added to your worklist`)}catch(e){}finally{inboxBusy=false}}
   if(typeof SRV!=="undefined"&&SRV.ready&&SRV.ready.then)SRV.ready.then(()=>setTimeout(inbox,1200));
   setInterval(inbox,180000);document.addEventListener("visibilitychange",()=>{if(!document.hidden)inbox()});window.__nsInbox=inbox;
-  window.__nsCart={open:openCart,count:()=>cart().length};
+  window.__nsCart={open:openCart,count:()=>cart().length,v33:{form:ordersNewHTML,sets:setsPanel,cart:cartPanel,summary:orderSummary,items:()=>cart(),log:()=>store.get(KO,[]),actInfo}};
 }
 /* ---------- v19: Epic-style right sidebar: Worklist · Brain · Required Documentation (EHR + My Chart) ---------- */
 {
@@ -13385,6 +13629,482 @@ if(window.__vx32T&&window.__vx32T.test)Object.assign(window.__vx32,{RUN,CASES,CA
 }
 
 /* </v20-teachhub-js> */
+/* <v35-library-js> */
+/* v35-library-js: My Chart › Library, rebuilt Epic-style (Chart Review "Media" tab / In Basket): one searchable list on the left,
+   a preview on the right with ONE primary action (Read, Open module, Watch, Open). "So easy a toddler could do it."
+   Insert INSIDE the app's main IIFE directly AFTER the closing v20-teachhub-js marker comment (see patches/library-apply.js).
+   It uses the IIFE bindings store, SRV, CATS and srvSyncSoon at run time only, plus four small exact edits made by library-apply.js:
+     window.__vxGuides35  (GUIDES + dlGuide, the static study-guide table: the single source for titles and page counts)
+     window.__vxVids35    (VIDS + VSRC + playVid, the video table and its player)
+     window.__C2X.lib35   (My Chart's GEN pane renderers, TABS, select(), paint())
+     the Library tip text no longer mentions the cart.
+   What it does:
+   - Library › "All items" renders this list. The old "From my program" and "Videos" sub-tabs stay as panes (deep links, saved start
+     screens, the launcher and Required Documentation keep working) but their buttons are hidden; opening one lands on the list
+     with that type filter on.
+   - Items come from window.__vxLib (registry; patches/library-API.md) plus built-in sources: static guides, the whole study book,
+     nightly AI guides (read from the public /nclex-study-guides hub, label kept), the Review Book (protected reader; never a
+     download), learning modules (SDOH, Telemetry & EKG, Assessment & Auscultation), the coloring workbook (plates searchable),
+     videos, and the student's program content. Cards that other modules inject into the old pane are hidden and adapted.
+   - No cart here. "Select" + "Download selected" replaces it (same per-file downloads the cart's Sign orders did).
+   - Per-user status (saved, done, read, first seen) lives in store key nclexsim.v1.library (synced like the other nclexsim.v1.* keys);
+     filter/sort choices are a per-viewer convenience in raw localStorage key nclexsim.v35.libui.
+   - If window.__vxLaunch exists (v33 launcher registry) every Library item is registered for header search (not in More). */
+{
+  const V35 = "v35";
+  const LK = "nclexsim.v1.library", UK = "nclexsim.v35.libui";
+  const e_ = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+  const C2 = () => (window.__C2X && window.__C2X.lib35) || null;
+  const CN = k => { try { return (CATS[k] || {}).n || "" } catch (e) { return "" } };
+  const CK = () => { try { return Object.keys(CATS) } catch (e) { return ["MOC", "SIC", "HPM", "PSY", "BCC", "PHA", "RRP", "PHY"] } };
+  const lsG = () => { try { return JSON.parse(localStorage.getItem(UK) || "{}") || {} } catch (e) { return {} } };
+  const lsS = o => { try { localStorage.setItem(UK, JSON.stringify(o)) } catch (e) { } };
+  const stG = () => { try { const v = store.get(LK, null); return v && typeof v === "object" ? Object.assign({ s: {}, d: {}, r: {}, f: {}, b: 0 }, v) : { s: {}, d: {}, r: {}, f: {}, b: 0 } } catch (e) { return { s: {}, d: {}, r: {}, f: {}, b: 0 } } };
+  const stS = v => { try { store.set(LK, v); if (typeof srvSyncSoon === "function") srvSyncSoon() } catch (e) { } };
+  const today = () => new Date().toLocaleDateString("en-CA");
+  const fd = d => { try { return new Date(d + "T12:00:00").toLocaleDateString([], { month: "short", day: "numeric" }) } catch (e) { return d } };
+
+  /* ---------------- icons ---------------- */
+  const IP = {
+    guide: '<path d="M6 3h9l3 3v15H6z"/><path d="M9 10h6M9 14h6M9 18h4"/>', book: '<path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 5.5v16M8 7h8M8 11h6"/>',
+    module: '<rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M10 8l5 3-5 3z"/>', video: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3z"/>',
+    coloring: '<path d="M12 3a9 9 0 1 0 0 18c1.2 0 1.8-.8 1.8-1.7 0-1.1-.9-1.5-.9-2.4 0-.9.7-1.4 1.6-1.4H17a4 4 0 0 0 4-4c0-4.7-4-8.5-9-8.5z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10" cy="7" r="1.2"/><circle cx="15" cy="7" r="1.2"/>',
+    program: '<path d="M4 20V9l8-5 8 5v11"/><path d="M9 20v-6h6v6"/>', search: '<circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/>',
+    star: '<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3 9.5l6.1-.9z"/>', ok: '<path d="M5 12.5l4.5 4.5L19 7"/>',
+    dl: '<path d="M12 4v11M7 10l5 5 5-5M5 20h14"/>', back: '<path d="M15 6l-6 6 6 6"/>', x: '<path d="M6 6l12 12M18 6L6 18"/>',
+    spark: '<path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/>', lock: '<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>',
+    ext: '<path d="M14 4h6v6M20 4l-9 9M18 14v6H4V6h6"/>', check: '<rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 12l3 3 5-6"/>', pin: '<path d="M9 4h6l-1 6 3 3H7l3-3z"/><path d="M12 13v7"/>'
+  };
+  const sv = (k, n) => `<svg viewBox="0 0 24 24" width="${n || 18}" height="${n || 18}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${IP[k] || IP.guide}</svg>`;
+
+  /* ---------------- types ---------------- */
+  /* [label, plural chip label, default primary label, order, launcher icon] */
+  const TYPES = {
+    guide: ["Study guide", "Study guides", "Read", 1, "guide"], book: ["Review Book", "Review Book", "Read", 2, "book"],
+    module: ["Learning module", "Modules", "Open module", 3, "ekg"], video: ["Video", "Videos", "Watch", 4, "guide"],
+    coloring: ["Coloring workbook", "Coloring", "Open", 5, "pdf"], program: ["From my program", "My program", "Open", 6, "school"]
+  };
+  const tInfo = t => TYPES[t] || [String(t || "Item"), String(t || "Other"), "Open", 9, "guide"];
+
+  /* ---------------- truthful counts: the two whole-book PDFs ----------------
+     These describe the exact files served at these URLs (checked against the files by e2e v35.mjs with pdfinfo):
+     /guides/nclexsim-study-book.pdf = guides-pdf/NCLEXSim-Study-Book.pdf (35 pages: contents + the 24 static guides);
+     /guides/nclexsim-coloring-pages.pdf = coloring workbook v2 (marketing/coloring/NCLEX-RN-Coloring-Workbook.pdf, 77 pages,
+     64 plates; plate n is on page n + 3). If either file is rebuilt, update these numbers and PLATES. */
+  const STUDYBOOK = { href: "/guides/nclexsim-study-book.pdf", name: "Vexcura-Study-Book.pdf", pages: 35, guides: 24 };
+  const COLORING = { href: "/guides/nclexsim-coloring-pages.pdf", name: "Vexcura-Coloring-Workbook.pdf", pages: 77, first: 4 };
+  const PLATES = [
+    ["Cells and fluids", ["Fluid compartments and osmosis", "Acid–base balance: the ABG map"]],
+    ["Cardiovascular", ["Heart chambers, valves and blood flow", "Coronary arteries", "Cardiac conduction system", "ECG waveform components", "Key rhythm strips to trace", "Major arteries and veins", "Capillary exchange and edema", "Shock: the concept map"]],
+    ["Respiratory", ["Upper and lower airway", "Lungs: lobes and fissures", "Alveolus and gas exchange", "Ventilation and perfusion (V/Q)"]],
+    ["Renal", ["Kidney: gross anatomy", "The nephron and where diuretics act", "The RAAS cascade"]],
+    ["Neurologic", ["Brain lobes and their jobs", "Brainstem and the 12 cranial nerves", "Spinal cord: tracts (simplified)", "Dermatomes: key landmarks", "Circle of Willis and stroke territories", "Increased ICP and the Cushing triad"]],
+    ["Endocrine", ["Endocrine glands and their hormones", "The HPA axis and the adrenal gland", "Pancreatic islets and insulin action", "Thyroid gland and its feedback loop"]],
+    ["Gastrointestinal", ["The gastrointestinal tract", "Liver and the biliary tree", "The exocrine pancreas", "Where nutrients are absorbed"]],
+    ["Hematologic and immune", ["Blood cells", "Clotting cascade (simplified)", "The lymphatic system"]],
+    ["Musculoskeletal", ["The skeleton", "Synovial joints and joint types", "Fracture types", "Traction and casts", "Compartment syndrome"]],
+    ["Integumentary", ["Skin layers and burn depth", "Burns: the rule of nines (adult and child)", "Pressure injury stages"]],
+    ["Reproductive and maternity", ["Female and male reproductive anatomy", "Menstrual cycle hormones", "Fetal circulation", "Placenta, membranes and umbilical cord", "Cervical change and the stages of labor", "Fetal position and station", "Postpartum fundal assessment"]],
+    ["Pediatrics", ["Infant skull: fontanelles and sutures", "Growth and development milestones", "Pediatric airway differences"]],
+    ["Sensory", ["The eye: structures and disease sites", "The ear: hearing and balance"]],
+    ["Pharmacology maps", ["Autonomic receptors and drug targets", "Diuretics: where each class acts", "Anticoagulant and antiplatelet targets"]],
+    ["Safety and infection control", ["PPE: donning and doffing order", "Transmission-based precautions", "Patient positioning"]],
+    ["Lines and devices", ["Central venous catheter vs PICC", "Chest tube drainage system", "Nasogastric tube: placement and checks", "Tracheostomy tube parts"]]
+  ];
+  const PLATE_LIST = (() => { const L = []; PLATES.forEach(([sec, ts]) => ts.forEach(t => { L.push({ n: L.length + 1, t, sec }) })); L.forEach(p => p.p = p.n + COLORING.first - 1); return L })();
+
+  /* NCLEX client-needs category for each static guide (GUIDES has no category field) */
+  const GCAT = {
+    "ai-for-nursing-students": [], "fact-check-card": [], "nclex-test-plan-at-a-glance": [], "lab-values-quick-reference": ["RRP"], "prioritization-and-delegation": ["MOC"],
+    "dosage-calculation-formulas": ["PHA"], "isolation-precautions": ["SIC"], "heart-failure-left-vs-right": ["PHY"], "dka-vs-hhs": ["PHY", "PHA"], "electrolyte-imbalances": ["PHY", "RRP"],
+    "abg-interpretation": ["PHY"], "types-of-shock": ["PHY"], "stroke-be-fast": ["PHY"], "copd-vs-asthma": ["PHY"], "thyroid-and-adrenal-disorders": ["PHY"], "aki-vs-ckd": ["PHY"],
+    "burns-rule-of-nines": ["PHY"], "high-alert-meds-and-antidotes": ["PHA"], "ob-fetal-heart-rate-and-postpartum": ["HPM"], "psych-meds-and-communication": ["PSY", "PHA"],
+    "icu-hemodynamics-and-drips": ["PHY", "PHA"], "nihss-stroke-scale": ["RRP"], "er-triage-esi-and-start": ["MOC", "SIC"], "iv-safety-and-hanging-meds": ["PHA"]
+  };
+  const VCAT = { "Test plan": [], "Safety and infection control": ["SIC"], "Endocrine": ["PHY"], "Acid-base and ABGs": ["PHY"], "Neuro": ["PHY"], "Cardiac": ["PHY"], "OB": ["HPM", "PHA"], "IV therapy and blood": ["PHA"], "Respiratory": ["PHY"], "Skin and wounds": ["PHY"] };
+  /* program content (v19 curriculum) uses its own category keys */
+  const PCAT = { MCC: "MOC", SIPC: "SIC", HPM: "HPM", PI: "PSY", BCC: "BCC", PPT: "PHA", RRP: "RRP", PA: "PHY" };
+  /* best-effort category for text without one (nightly guides, book units) */
+  function catOf(t) {
+    t = String(t || "").toLowerCase(); const H = [];
+    const R = [["PHA", /pharm|medication|\bmeds?\b|drug|dosage|insulin|anticoag|heparin|warfarin|antidote|\biv\b|infusion|transfus|blood product|parenteral|opioid|antibiotic/],
+      ["SIC", /infection|isolation|precaution|ppe|safety|fall|restraint|hand hygiene|sepsis bundle|disaster|triage|fire/],
+      ["MOC", /delegat|prioriti|management of care|ethic|legal|consent|advocacy|assignment|handoff|sbar|case management|referral|social driver|sdoh/],
+      ["HPM", /pregnan|prenatal|labor|postpartum|newborn|ob\b|obstetric|growth|develop|immuniz|screening|health promotion|maternity/],
+      ["PSY", /psych|mental|depress|anxiety|suicid|abuse|grief|therapeutic communication|substance|schizo|bipolar/],
+      ["BCC", /nutrition|mobility|elimination|sleep|comfort|hygiene|pain management|pressure injur|positioning/],
+      ["RRP", /lab value|diagnostic|vital sign|complication|lab\b|ekg|ecg|telemetry|monitor|potential for|assessment/],
+      ["PHY", /heart|cardiac|respir|copd|asthma|renal|kidney|stroke|neuro|endocrine|thyroid|diabet|dka|shock|burn|fluid|electrolyte|abg|acid|pathophys|hemodynamic|gi\b|liver/]];
+    R.forEach(([k, re]) => { if (re.test(t)) H.push(k) }); return H.slice(0, 2);
+  }
+  const catByName = n => { n = String(n || "").toLowerCase(); for (const k of CK()) { const m = CN(k).toLowerCase(); if (m && (n.indexOf(m) >= 0 || m.indexOf(n) >= 0 && n.length > 6)) return [k] } return catOf(n) };
+
+  /* ---------------- registry (window.__vxLib) ---------------- */
+  const REG = new Map(), SRCS = new Map(); let seq = 0;
+  let pend = 0; function soon() { if (pend) return; pend = setTimeout(() => { pend = 0; if (root()) paint() }, 30) }
+  function norm(x) {
+    if (!x || x.id == null || !x.title) return null;
+    const o = Object.assign({}, x); o.id = String(o.id); o.type = String(o.type || "guide"); o.title = String(o.title);
+    o.topics = (Array.isArray(o.topic) ? o.topic : o.topic ? [o.topic] : (o.topics || [])).map(String).filter(k => !!CN(k));
+    if (typeof o.download === "string") o.download = { href: o.download, name: o.download.split("/").pop() };
+    if (o.type === "book") o.download = null; /* the Review Book is never downloadable */
+    if (o.download && !/^\/(?!\/)/.test(o.download.href || "")) o.download = null; /* same-origin paths only */
+    if (o.href && !/^(\/(?!\/)|https:\/\/)/.test(o.href)) o.href = null;
+    o._s = o._s || ++seq; return o;
+  }
+  function add(x) { if (Array.isArray(x)) return x.map(add); const o = norm(x); if (!o) return null; REG.set(o.id, o); soon(); return o.id }
+  function remove(id) { const r = REG.delete(String(id)); soon(); return r }
+  function source(name, fn) { if (typeof fn === "function") SRCS.set(String(name), fn); else SRCS.delete(String(name)); soon() }
+  function gather() {
+    const M = new Map();
+    SRCS.forEach((fn, nm) => { try { (fn() || []).forEach(x => { const o = norm(x); if (o) { o.src = o.src || nm; M.set(o.id, o) } }) } catch (e) { } });
+    REG.forEach((o, id) => M.set(id, o));
+    return [...M.values()].filter(o => !o.hidden);
+  }
+
+  /* ---------------- built-in sources ---------------- */
+  const GD = () => window.__vxGuides35 || null, VD = () => window.__vxVids35 || null;
+  source("guides", () => {
+    const G = GD(); if (!G) return []; const L = [];
+    L.push({ id: "pdf:study-book", type: "guide", pin: 1, title: "The whole study book", desc: `All ${STUDYBOOK.guides} study guides and visual sheets in one PDF, with a contents page. Ready to print or keep on your tablet.`, pages: STUDYBOOK.pages, label: "Vexcura · checked against current sources", href: STUDYBOOK.href, primary: "Open PDF", download: { href: STUDYBOOK.href, name: STUDYBOOK.name }, topic: [], keys: "whole study book all guides pdf print" });
+    (G.GUIDES || []).forEach(g => L.push({ id: "guide:" + g[0], type: "guide", title: g[1], desc: g[2], pages: g[3], keys: (g[4] || "") + " " + (g[5] === 1 ? "med-surg visual sheet" : g[5] === 2 ? "specialty visual sheet" : ""), topic: GCAT[g[0]] || catOf(g[1] + " " + g[4]), group: g[5] === 1 ? "Med-surg visual sheet" : g[5] === 2 ? "Specialty visual sheet" : "Study guide", label: "Vexcura · checked against current sources", read: "/study-guides/" + g[0], download: { href: "/guides/" + g[0] + ".pdf", name: "Vexcura-" + g[0] + ".pdf" }, slug: g[0] }));
+    return L;
+  });
+  source("coloring", () => [{ id: "pdf:coloring", type: "coloring", pin: 1, title: "NCLEX-RN Coloring Workbook", desc: `${PLATE_LIST.length} anatomy and concept plates in ${PLATES.length} body-system sections, with an answer key, sources and an index. Color each title and its structure the same color: active recall in disguise.`, pages: COLORING.pages, meta: PLATE_LIST.length + " plates", label: "Vexcura · reviewed by a registered nurse (Tyler Savage, RN)", href: COLORING.href, primary: "Open workbook", download: { href: COLORING.href, name: COLORING.name }, topic: ["PHY"], keys: "coloring color pages anatomy plates workbook " + PLATES.map(p => p[0]).join(" "), plates: PLATE_LIST }]);
+  source("videos", () => {
+    const V = VD(); if (!V) return [];
+    return (V.VIDS || []).map(v => ({ id: "video:" + v[0], type: "video", title: v[1], desc: "Short video from " + ((V.VSRC[v[3]] || [])[0] || "a trusted source") + " (" + ((V.VSRC[v[3]] || [])[1] || "") + "). Videos teach concepts; your course materials and facility policies come first.", meta: v[2], label: ((V.VSRC[v[3]] || [])[0] || "") + " · YouTube" + (v[6] ? ", " + v[6] : ""), topic: VCAT[v[4]] || catOf(v[4] + " " + v[5]), group: v[4], keys: v[5] + " " + v[4] + " video", vid: v[0], open: () => play(v[0]), ext: "https://www.youtube.com/watch?v=" + v[0] }));
+  });
+  source("modules", () => {
+    const L = [];
+    L.push({ id: "module:sdoh", type: "module", title: "Social Drivers of Health", desc: "What SDOH are, why they matter on the NCLEX, how to screen and refer, and 21 practice questions.", label: "Vexcura learning module", topic: ["MOC", "PSY"], keys: "sdoh social determinants drivers of health screening referral", open: () => { if (window.__vxSDL) window.__vxSDL.open("learn"); else fwd('data-sdl-open="learn"') }, match: "[data-sdl-open]", avail: () => !!window.__vxSDL || !!document.querySelector("[data-sdl-open]") });
+    L.push({ id: "module:tele", type: "module", title: "Telemetry & EKG", desc: "Read rhythm strips with digital calipers: learn each rhythm, practice, run a central station, and work ACLS codes.", label: "AI-generated · fact-checked · not yet reviewed by a registered nurse", ai: 1, topic: ["PHY", "RRP"], keys: "telemetry ekg ecg rhythm strips calipers acls central station dysrhythmia", open: () => { if (window.__vxTele) window.__vxTele.open("learn"); else location.hash = "telemetry" }, match: "[data-tl-open]", avail: () => !!window.__vxTele });
+    L.push({ id: "module:ausc", type: "module", title: "Assessment & Auscultation", desc: "A virtual stethoscope with heart, lung and bowel sounds, a head-to-toe assessment, Epic-style flowsheet charting and SBAR.", label: "AI-generated · fact-checked · not yet reviewed by a registered nurse", ai: 1, topic: ["RRP", "PHY"], keys: "assessment auscultation stethoscope heart sounds lung sounds bowel sounds physical exam head to toe", open: () => { if (window.__vxAusc) window.__vxAusc.open("learn"); else location.hash = "assessment" }, avail: () => !!window.__vxAusc });
+    return L.filter(x => { try { return x.avail() } catch (e) { return false } });
+  });
+  /* nightly AI guides: the public hub lists them with their label (no student JSON API exists; the worker is not changed) */
+  const HUB = { L: null, at: 0, busy: null };
+  try { const c = JSON.parse(sessionStorage.getItem("vx35.hub") || "null"); if (c && Date.now() - c.at < 30 * 60000) { HUB.L = c.L; HUB.at = c.at } } catch (e) { }
+  function loadHub() {
+    if (HUB.busy || (HUB.L && Date.now() - HUB.at < 30 * 60000)) return HUB.busy;
+    HUB.busy = (async () => {
+      try {
+        const r = await fetch("/nclex-study-guides", { credentials: "same-origin" }); if (!r.ok) throw 0;
+        const d = new DOMParser().parseFromString(await r.text(), "text/html"); const h = d.getElementById("daily-guides"); const L = [];
+        let n = h ? h.nextElementSibling : null; while (n && !(n.classList && n.classList.contains("gcards"))) n = n.nextElementSibling;
+        const known = new Set(((GD() || {}).GUIDES || []).map(g => g[0]));
+        if (n) n.querySelectorAll(".gcard").forEach(c => {
+          const a = c.querySelector('a[href^="/study-guides/"]'); if (!a) return; const slug = (a.getAttribute("href").match(/^\/study-guides\/([a-z0-9-]{3,80})$/) || [])[1]; if (!slug || known.has(slug)) return;
+          const sm = (c.querySelector("small") || {}).textContent || ""; const lb = c.querySelector(".vxl");
+          L.push({ slug, t: a.textContent.trim(), d: ((c.querySelector("p") || {}).textContent || "").trim(), pages: parseInt(sm, 10) || null, pdf: !!c.querySelector('a[href$=".pdf"]'), lab: lb ? lb.textContent.trim() : "AI-generated · fact-checked · not yet reviewed by a registered nurse", rv: !!(lb && lb.classList.contains("rv")) });
+        });
+        HUB.L = L; HUB.at = Date.now(); try { sessionStorage.setItem("vx35.hub", JSON.stringify({ L, at: HUB.at })) } catch (e) { }
+      } catch (e) { HUB.L = HUB.L || []; HUB.at = Date.now() }
+      HUB.busy = null; soon();
+    })(); return HUB.busy;
+  }
+  source("nightly", () => (HUB.L || []).map(g => ({ id: "daily:" + g.slug, type: "guide", title: g.t, desc: g.d, pages: g.pages, label: g.lab, ai: g.rv ? 0 : 1, topic: catOf(g.t + " " + g.d), group: "New study guide", read: "/study-guides/" + g.slug, download: g.pdf ? { href: "/guides/" + g.slug + ".pdf", name: "Vexcura-" + g.slug + ".pdf" } : null, keys: "new daily ai study guide", slug: g.slug })));
+  /* Review Book: chapters when the student has access; one locked item otherwise. Read-only calls; never offers a download. */
+  const BKD = { acc: null, toc: null, busy: null, at: 0 };
+  function loadBook() {
+    if (BKD.busy || (BKD.at && Date.now() - BKD.at < 10 * 60000)) return BKD.busy;
+    let me = null; try { me = SRV.on ? SRV.me : null } catch (e) { } if (!me) return null;
+    BKD.busy = (async () => {
+      try { const r = await fetch("/api/book/access", { credentials: "same-origin", cache: "no-store" }); BKD.acc = r.ok ? await r.json() : { ok: false }; if (BKD.acc && BKD.acc.ok) { const t = await fetch("/api/book/toc", { credentials: "same-origin", cache: "no-store" }); BKD.toc = t.ok ? await t.json() : null } } catch (e) { }
+      BKD.at = Date.now(); BKD.busy = null; soon();
+    })(); return BKD.busy;
+  }
+  const bookOpen = o => { if (window.__BOOK) window.__BOOK.open(o || {}); else location.hash = "book" };
+  source("book", () => {
+    if (!window.__BOOK && !document.querySelector("[data-vxbk]")) return [];
+    const L = [], ok = BKD.acc && BKD.acc.ok;
+    L.push({ id: "book:review", type: "book", pin: 1, title: "Vexcura Review Book", desc: ok ? "Chapters by NCLEX-RN test plan category, with practice questions and NGN case studies. Opens in the secure reader." : "Chapters by NCLEX-RN test plan category, with practice questions and NGN case studies. Included with licensed programs. Opens in the secure reader.", label: (BKD.toc && BKD.toc.label) || "Protected reader · read in the app only", lock: !ok && !!BKD.acc, keys: "review book textbook chapters reader", topic: [], open: () => bookOpen(), primary: ok ? "Open the book" : "Open the book", match: "[data-vxbk]" });
+    if (ok && BKD.toc) (BKD.toc.units || []).forEach(u => (u.chapters || []).forEach(c => { if (c.status !== "ready") return; L.push({ id: "book:" + c.id, type: "book", title: (c.num ? "Chapter " + c.num + ". " : "") + c.title, desc: "Unit " + u.n + ". " + u.title + ((c.sections || []).length ? " · " + c.sections.length + " sections" : "") + (c.nq ? " · " + c.nq + " practice questions" : ""), label: BKD.toc.label || "Protected reader", topic: catByName(u.title), group: "Unit " + u.n, keys: (c.sections || []).map(s => s.title || s).join(" ") + " chapter", open: () => bookOpen({ ch: c.id }), primary: "Read" }) }));
+    return L;
+  });
+  /* program content (v19 curriculum). "Mark as done" uses the same store and handler as before. */
+  const CDONE = () => { try { return store.get("nclexsim.v1.currdone", {}) || {} } catch (e) { return {} } };
+  let curLoad = 0;
+  source("program", () => {
+    const CU = window.__CURR; let D = null; try { D = CU && CU.__d35 } catch (e) { }
+    if (CU && CU.load && !D) { try { const p = CU.load(); if (p && p.schools) D = CU.__d35 = p } catch (e) { } }
+    if (!D) return []; const L = [], dn = CDONE();
+    (D.schools || []).forEach(s => (s.items || []).forEach(x => {
+      if (x.status === "draft") return;
+      const kb = n => n > 1048576 ? (n / 1048576).toFixed(1) + " MB" : Math.max(1, Math.round(n / 1024)) + " KB";
+      L.push({ id: "prog:" + x.id, type: "program", title: x.title, desc: x.note || (x.kind === "link" ? "A link from your program." : x.kind === "file" ? "A file from your program." : ""), label: "From " + (s.short || s.name) + (x.unit ? " · " + x.unit : ""), topic: x.cat ? [PCAT[x.cat] || x.cat] : [], group: s.short || s.name,
+        meta: x.file ? x.file.name.split(".").pop().toUpperCase() + " · " + kb(x.file.size) : x.kind === "link" ? "Link" : "Note",
+        href: x.file ? "/api/curr/file/" + encodeURIComponent(x.id) : x.url || null, primary: x.file ? "Open file" : x.url ? "Open link" : "Mark as done",
+        assigned: (x.req || x.due) ? { due: x.due || "", req: !!x.req, by: s.short || s.name } : null,
+        isDone: () => !!CDONE()[x.id], setDone: v => { if (!!CDONE()[x.id] !== !!v) fwd(`data-cudone="${e_(x.id)}"`) }, keys: (x.unit || "") + " " + (s.name || "") + " program instructor", pid: x.id });
+      void dn;
+    }));
+    return L;
+  });
+
+  /* ---------------- helpers ---------------- */
+  function fwd(attrs) { const host = document.getElementById("c2") || document.body; const b = document.createElement("button"); b.type = "button"; b.hidden = true; String(attrs).replace(/([\w-]+)="([^"]*)"/g, (m, k, v) => { b.setAttribute(k, v.replace(/&quot;/g, '"').replace(/&amp;/g, "&")); return m }); host.appendChild(b); try { b.click() } finally { b.remove() } }
+  function play(id) { const V = VD(); if (V && V.play) V.play(id); else fwd(`data-vid="${e_(id)}"`) }
+  /* items the student was ordered: guides in the order cart (instructor orders for documents arrive there) */
+  function cartGuides() { try { const c = store.get("nclexsim.v1.cart", []) || []; const S = new Set(); c.forEach(x => { if (x && x.kind === "doc" && x.doc === "guide" && x.ref) S.add(x.ref) }); return S } catch (e) { return new Set() } }
+  /* weak categories: the same rule as the Brain's watch list (average of the last 3 scored exams, below 60%) */
+  function weak() {
+    try { const g = window.__C2X && window.__C2X.get && window.__C2X.get(); if (g && g.bnData) { const B = g.bnData(); if (B && Array.isArray(B.weak)) return B.weak.slice() } } catch (e) { }
+    try { const D = window.__nsDash && window.__nsDash.data(); const rec = (D ? D.exams : []).filter(e => e.cats).slice(0, 3); const W = []; CK().forEach(c => { const v = rec.map(e => e.cats[c]).filter(x => x != null); if (v.length) { const a = Math.round(v.reduce((s, x) => s + x, 0) / v.length); if (a < 60) W.push([c, a]) } }); return W.sort((a, b) => a[1] - b[1]) } catch (e) { return [] }
+  }
+
+  /* ---------------- state ---------------- */
+  const U0 = lsG();
+  const ST = { q: "", type: U0.type || "", topic: U0.topic || "", fl: Object.assign({ asg: 0, nw: 0, sv: 0, ur: 0 }, U0.fl || {}), sort: U0.sort || "rec", sel: null, pv: false, pick: new Set(), selMode: false, msg: "", items: [], scroll: 0 };
+  const saveUI = () => lsS({ type: ST.type, topic: ST.topic, fl: ST.fl, sort: ST.sort });
+
+  function build() {
+    const L = gather(), S = stG(), cg = cartGuides(); let dirty = false; const now = Date.now();
+    if (!S.b) { S.b = now; dirty = true }
+    L.forEach(o => {
+      if (!S.f[o.id]) { S.f[o.id] = S.b === now ? 1 : now; dirty = true }
+      o.saved = !!S.s[o.id]; o.opened = !!S.r[o.id]; o.done = o.isDone ? !!o.isDone() : !!S.d[o.id];
+      if (!o.assigned && o.slug && cg.has(o.slug) && o.id.indexOf("guide:") === 0) o.assigned = { due: "", req: false, by: "your order cart", cart: 1 };
+      o.isNew = (o.isNewFn ? !!o.isNewFn() : S.f[o.id] > S.b) && !o.opened && !o.done;
+      o.fresh = S.f[o.id] > 1 ? S.f[o.id] : 0;
+      o.hay = [o.title, o.desc, o.keys, o.group, o.label, tInfo(o.type)[0], tInfo(o.type)[1], o.topics.map(CN).join(" "), (o.plates || []).map(p => p.t + " " + p.sec).join(" ")].join(" ").toLowerCase();
+    });
+    if (dirty) stS(S);
+    ST.items = L; return L;
+  }
+  const qw = () => ST.q.toLowerCase().split(/\s+/).filter(Boolean);
+  function match(o, skip) {
+    if (skip !== "type" && ST.type && o.type !== ST.type) return false;
+    if (ST.topic && (ST.topic === "_" ? o.topics.length : o.topics.indexOf(ST.topic) < 0)) return false;
+    if (ST.fl.asg && !(o.assigned && !o.done)) return false; if (ST.fl.nw && !o.isNew) return false;
+    if (ST.fl.sv && !o.saved) return false; if (ST.fl.ur && (o.opened || o.done)) return false;
+    const w = qw(); return !w.length || w.every(x => o.hay.indexOf(x) >= 0);
+  }
+  const filtering = () => !!(ST.q.trim() || ST.type || ST.topic || ST.fl.asg || ST.fl.nw || ST.fl.sv || ST.fl.ur);
+  function sorted(L) {
+    const by = { az: (a, b) => a.title.localeCompare(b.title), newest: (a, b) => (b.fresh - a.fresh) || (b._s - a._s) || a.title.localeCompare(b.title) };
+    if (by[ST.sort]) return L.slice().sort(by[ST.sort]);
+    const W = new Map(weak().map(([c, a], i) => [c, 10 - i]));
+    const sc = o => (o.assigned && !o.done ? 1000 : 0) + (o.isNew ? 50 : 0) + Math.max(0, ...o.topics.map(t => W.get(t) || 0)) * 5 - (o.done ? 200 : 0);
+    return L.slice().sort((a, b) => tInfo(a.type)[3] - tInfo(b.type)[3] || (b.pin || 0) - (a.pin || 0) || sc(b) - sc(a) || a._s - b._s);
+  }
+  function recommended(L) {
+    const out = [], seen = new Set(); const push = (o, why) => { if (o && !seen.has(o.id) && out.length < 5) { seen.add(o.id); out.push([o, why]) } };
+    L.filter(o => o.assigned && !o.done).sort((a, b) => String(a.assigned.due || "9999").localeCompare(String(b.assigned.due || "9999"))).forEach(o => push(o, o.assigned.cart ? "Ordered for you · in your order cart" : "Assigned by " + o.assigned.by + (o.assigned.due ? " · due " + fd(o.assigned.due) : "") + (o.assigned.req ? " · required" : "")));
+    const W = weak();
+    W.forEach(([c, a]) => { const pool = L.filter(o => !o.done && o.topics.indexOf(c) >= 0 && !o.pin).sort((x, y) => (x.opened - y.opened) || (tInfo(x.type)[3] - tInfo(y.type)[3]) || x._s - y._s); const why = `Your weak area: ${CN(c)} (${a}%)`; const types = new Set(); pool.forEach(o => { if (!types.has(o.type) && types.size < 2) { types.add(o.type); push(o, why) } }) });
+    if (!out.length) ["guide:nclex-test-plan-at-a-glance", "guide:ai-for-nursing-students", "module:tele"].forEach(id => push(L.find(o => o.id === id && !o.done), "Good first read. Take a quick round and this list fills with picks for your weakest areas."));
+    return { list: out, weak: W };
+  }
+
+  /* ---------------- rendering ---------------- */
+  const badge = o => [o.isNew ? `<span class="vl-b nw">New</span>` : "", o.assigned && !o.done ? `<span class="vl-b as">${o.assigned.cart ? "Ordered" : "Assigned"}${o.assigned.due ? " · due " + e_(fd(o.assigned.due)) : ""}</span>` : "", o.done ? `<span class="vl-b dn">${sv("ok", 13)}Done</span>` : "", o.saved ? `<span class="vl-b sv" title="Saved">${sv("star", 13)}<span class="sr">Saved</span></span>` : "", o.lock ? `<span class="vl-b lk">${sv("lock", 13)}Licensed</span>` : ""].join("");
+  const metaLine = o => [tInfo(o.type)[0], o.topics.length ? o.topics.map(CN).join(", ") : "", o.pages ? o.pages + " page" + (o.pages === 1 ? "" : "s") : "", o.meta || ""].filter(Boolean).map(e_).join(" · ");
+  function rowHTML(o, why, rec) {
+    const can = !!o.download, chk = ST.selMode ? `<span class="vl-ck">${can ? `<input type="checkbox" data-vxlib-pick="${e_(o.id)}" aria-label="Select ${e_(o.title)}"${ST.pick.has(o.id) ? " checked" : ""}>` : `<input type="checkbox" disabled aria-label="${e_(o.title)} has no download">`}</span>` : "";
+    const pm = ST.q.trim() && o.plates ? o.plates.filter(p => qw().every(w => (p.t + " " + p.sec).toLowerCase().indexOf(w) >= 0)).slice(0, 3) : [];
+    return `<li class="vl-r${ST.sel === o.id ? " on" : ""}${o.isNew ? " nw" : ""}${o.done ? " dn" : ""}" role="option" aria-selected="${ST.sel === o.id}" data-vxlib-row="${e_(o.id)}" tabindex="${ST.sel === o.id || (!ST.sel && rec === 0) ? 0 : -1}">${chk}<span class="vl-ic t-${e_(o.type)}">${sv(o.type)}</span><span class="vl-tx"><b>${e_(o.title)}</b><small>${why ? e_(why) : metaLine(o)}</small>${pm.length ? `<small class="vl-pm">${pm.map(p => "Plate " + p.n + ": " + e_(p.t) + " (p. " + p.p + ")").join(" · ")}</small>` : ""}</span><span class="vl-st">${badge(o)}</span></li>`;
+  }
+  function chipsHTML(L) {
+    const n = t => L.filter(o => match(o, "type") && (!t || o.type === t)).length;
+    const T = Object.keys(TYPES).filter(t => L.some(o => o.type === t)).concat([...new Set(L.map(o => o.type))].filter(t => !TYPES[t]));
+    const ch = (on, attrs, label, cnt) => `<button type="button" class="vl-c${on ? " on" : ""}" aria-pressed="${on}" ${attrs}>${label}${cnt != null ? ` <i>${cnt}</i>` : ""}</button>`;
+    const cnt = k => L.filter(o => ({ asg: o.assigned && !o.done, nw: o.isNew, sv: o.saved, ur: !o.opened && !o.done })[k]).length;
+    return `<div class="vl-chips" role="group" aria-label="Type">${ch(!ST.type, 'data-vxlib-type=""', "All", n(""))}${T.map(t => ch(ST.type === t, `data-vxlib-type="${e_(t)}"`, e_(tInfo(t)[1]), n(t))).join("")}</div>
+      <div class="vl-chips" role="group" aria-label="Show only">${ch(ST.fl.asg, 'data-vxlib-fl="asg"', "Assigned to me", cnt("asg"))}${ch(ST.fl.nw, 'data-vxlib-fl="nw"', "New", cnt("nw"))}${ch(ST.fl.sv, 'data-vxlib-fl="sv"', sv("star", 14) + "Saved", cnt("sv"))}${ch(ST.fl.ur, 'data-vxlib-fl="ur"', "Unread", null)}
+      <label class="vl-sel"><span class="sr">NCLEX category</span><select data-vxlib-topic aria-label="NCLEX category"><option value="">All categories</option>${CK().map(k => `<option value="${k}"${ST.topic === k ? " selected" : ""}>${e_(CN(k))}</option>`).join("")}<option value="_"${ST.topic === "_" ? " selected" : ""}>General (no category)</option></select></label>
+      ${filtering() ? `<button type="button" class="vl-clr" data-vxlib-clear>Clear</button>` : ""}</div>`;
+  }
+  function listHTML(L) {
+    const F = sorted(L.filter(o => match(o))); let h = "";
+    if (!filtering() && ST.sort === "rec") {
+      const R = recommended(L);
+      if (R.list.length) h += `<h4 class="vl-h">${sv("spark", 16)} Recommended for you</h4><ul class="vl-l" role="listbox" aria-label="Recommended for you">${R.list.map(([o, w], i) => rowHTML(o, w, i)).join("")}</ul>`;
+    }
+    const sel = ST.selMode ? `<span class="vl-sb"><button type="button" class="vl-btn p" data-vxlib-dlsel ${ST.pick.size ? "" : "disabled"}>${sv("dl", 16)} Download selected (${ST.pick.size})</button><button type="button" class="vl-btn" data-vxlib-selmode>Cancel</button></span>` : `<button type="button" class="vl-btn" data-vxlib-selmode title="Pick several PDFs and download them together">${sv("check", 16)} Select</button>`;
+    h += `<div class="vl-hh"><h4 class="vl-h">${filtering() ? "Results" : "All items"} <i data-vxlib-count>${F.length}</i></h4>${sel}</div>`;
+    if (!F.length) return h + `<div class="vl-empty"><b>Nothing matches</b><span>Try a different word, or clear the filters.</span><button type="button" class="vl-btn" data-vxlib-clear>Clear filters</button></div>`;
+    if (ST.sort === "rec" && !ST.type) { let cur = null; let open = false; F.forEach((o, i) => { if (o.type !== cur) { if (open) h += "</ul>"; cur = o.type; const c = F.filter(x => x.type === cur).length; h += `<h5 class="vl-g">${e_(tInfo(cur)[1])} <i>${c}</i></h5><ul class="vl-l" role="listbox" aria-label="${e_(tInfo(cur)[1])}">`; open = true } h += rowHTML(o, "", i) }); h += "</ul>" }
+    else h += `<ul class="vl-l" role="listbox" aria-label="Library items">${F.map((o, i) => rowHTML(o, "", i)).join("")}</ul>`;
+    return h;
+  }
+  function prevHTML(L) {
+    const o = L.find(x => x.id === ST.sel);
+    if (!o) return `<div class="vp-empty">${sv("guide", 34)}<b>Pick something on the left</b><span>Its details show here, with one button to open it.</span></div>`;
+    const T = tInfo(o.type); const pl = o.primary || T[2];
+    const primary = o.href && !o.open ? `<a class="vl-btn p big" href="${e_(o.href)}" target="_blank" rel="noopener" data-vxlib-go="${e_(o.id)}">${sv(o.type === "program" ? "ext" : "guide", 18)} ${e_(pl)}</a>` : `<button type="button" class="vl-btn p big" data-vxlib-go="${e_(o.id)}">${sv(o.type === "video" ? "video" : o.type === "module" ? "module" : o.type === "book" ? "book" : "guide", 18)} ${e_(pl)}</button>`;
+    const facts = [["Type", o.group && o.group !== T[0] ? T[0] + " · " + o.group : T[0]], ["Pages", o.pages ? String(o.pages) : ""], ["Length", o.type === "video" ? o.meta : ""], ["Contents", o.type === "coloring" ? o.meta : o.type === "program" ? o.meta : ""], ["NCLEX category", o.topics.map(CN).join(", ") || "General"], ["Status", [o.isNew ? "New" : o.opened ? "Opened" : "Not opened yet", o.done ? "Done" : "", o.saved ? "Saved" : "", o.assigned && !o.done ? (o.assigned.cart ? "In your order cart" : "Assigned by " + o.assigned.by + (o.assigned.due ? ", due " + fd(o.assigned.due) : "")) : ""].filter(Boolean).join(" · ")]].filter(f => f[1]);
+    const plates = o.plates ? `<details class="vp-pl"${ST.q.trim() ? " open" : ""}><summary>All ${o.plates.length} plates</summary>${PLATES.map(([sec]) => `<p class="vp-ps">${e_(sec)}</p><ol>${o.plates.filter(p => p.sec === sec).map(p => `<li value="${p.n}"><a href="${e_(o.href)}#page=${p.p}" target="_blank" rel="noopener">${e_(p.t)}</a> <small>p. ${p.p}</small></li>`).join("")}</ol>`).join("")}</details>` : "";
+    return `<div class="vp-in"><div class="vp-bar"><button type="button" class="vp-back" data-vxlib-back>${sv("back", 20)}<span>Library</span></button></div>
+      <p class="vp-k"><span class="vl-ic t-${e_(o.type)}">${sv(o.type, 16)}</span>${e_(T[0])}</p><h3 class="vp-t" tabindex="-1">${e_(o.title)}</h3>
+      ${o.label ? `<p class="vp-lab${o.ai ? " ai" : ""}">${e_(o.label)}</p>` : ""}${o.desc ? `<p class="vp-d">${e_(o.desc)}</p>` : ""}
+      <div class="vp-act">${primary}</div>
+      <div class="vp-sec">${o.download ? `<a class="vl-lk" href="${e_(o.download.href)}" download="${e_(o.download.name)}" data-vxlib-dl="${e_(o.id)}">${sv("dl", 16)} Download PDF</a>` : ""}${o.ext ? `<a class="vl-lk" href="${e_(o.ext)}" target="_blank" rel="noopener">${sv("ext", 16)} YouTube</a>` : ""}<button type="button" class="vl-lk" data-vxlib-save="${e_(o.id)}" aria-pressed="${o.saved}">${sv("star", 16)} ${o.saved ? "Saved" : "Save"}</button><button type="button" class="vl-lk" data-vxlib-done="${e_(o.id)}" aria-pressed="${o.done}">${sv("ok", 16)} ${o.done ? "Done" : "Mark as done"}</button></div>
+      ${o.type === "book" ? `<p class="vp-note">${sv("lock", 14)} The Review Book opens in the secure reader only. It can't be downloaded or printed.</p>` : ""}
+      <dl class="vp-f">${facts.map(([k, v]) => `<div><dt>${e_(k)}</dt><dd>${e_(v)}</dd></div>`).join("")}</dl>${plates}</div>`;
+  }
+  function paneHTML() {
+    const L = build(); kick();
+    return `<div class="vxlib" data-vxlib data-v="${V35}"><div class="vl-main"><div class="vl-top"><label class="vl-q">${sv("search", 18)}<span class="sr">Search the Library</span><input type="search" data-vxlib-q placeholder="Search" value="${e_(ST.q)}" autocomplete="off" enterkeyhint="search"></label>
+      <label class="vl-sel"><span class="sr">Sort</span><select data-vxlib-sort aria-label="Sort"><option value="rec"${ST.sort === "rec" ? " selected" : ""}>Recommended</option><option value="newest"${ST.sort === "newest" ? " selected" : ""}>Newest</option><option value="az"${ST.sort === "az" ? " selected" : ""}>A–Z</option></select></label></div>
+      <div class="vl-f" data-vxlib-chips>${chipsHTML(L)}</div><p class="vl-msg" role="status" aria-live="polite" data-vxlib-msg>${e_(ST.msg)}</p><div class="vl-list" data-vxlib-list>${listHTML(L)}</div></div>
+      <aside class="vl-prev${ST.pv ? " open" : ""}" data-vxlib-prev aria-label="Preview">${prevHTML(L)}</aside></div>`;
+  }
+  const root = () => document.querySelector('#c2 [data-vxlib]');
+  function paint(parts) {
+    const r = root(); if (!r) return; const L = build(); parts = parts || "clp";
+    const ae = document.activeElement, rowF = ae && ae.dataset && ae.dataset.vxlibRow;
+    if (parts.indexOf("c") >= 0) r.querySelector("[data-vxlib-chips]").innerHTML = chipsHTML(L);
+    if (parts.indexOf("l") >= 0) r.querySelector("[data-vxlib-list]").innerHTML = listHTML(L);
+    if (parts.indexOf("p") >= 0) { const p = r.querySelector("[data-vxlib-prev]"); p.innerHTML = prevHTML(L); p.classList.toggle("open", !!ST.pv) }
+    const m = r.querySelector("[data-vxlib-msg]"); if (m) m.textContent = ST.msg;
+    if (rowF) { const f = r.querySelector(`[data-vxlib-row="${CSS.escape(rowF)}"]`); if (f) f.focus({ preventScroll: true }) }
+    after(r);
+  }
+  /* hidden adapters: cards other modules inject into the pane are kept (their own code looks for them) but hidden; unknown ones become items */
+  function adopt(pane) {
+    let added = false;
+    pane.querySelectorAll(":scope > :not([data-vxlib])").forEach(c => {
+      c.setAttribute("data-vxlib-adopted", "1"); const btn = c.querySelector("button,a[href]"); if (!btn) return;
+      const known = ST.items.some(o => o.match && (btn.matches(o.match) || c.querySelector(o.match))); if (known || c.__vx35) return; c.__vx35 = 1;
+      const t = (c.querySelector("b,h3,h4") || {}).textContent || btn.textContent; const d = (c.querySelector("span,p") || {}).textContent || "";
+      const id = "card:" + t.trim().toLowerCase().replace(/[^a-z0-9]+/g, "-").slice(0, 40);
+      if (!REG.has(id)) { REG.set(id, norm({ id, type: "module", title: t.trim(), desc: d.trim(), topic: catOf(t + " " + d), primary: (btn.textContent || "Open").trim().slice(0, 30), open: () => btn.click(), keys: "module" })); added = true }
+    });
+    if (added) setTimeout(() => paint(), 0);
+  }
+  let RO = null;
+  function after(r) {
+    r = r || root(); if (!r) return; const w = r.getBoundingClientRect().width; r.classList.toggle("nar", w > 0 && w < 680);
+    if (!RO && window.ResizeObserver) { RO = new ResizeObserver(() => { const x = root(); if (x) { const ww = x.getBoundingClientRect().width; x.classList.toggle("nar", ww > 0 && ww < 680) } }) }
+    if (RO && !r.__ro) { r.__ro = 1; RO.observe(r) }
+    const pane = r.parentElement; if (pane) adopt(pane);
+    document.documentElement.classList.toggle("vxlib-pv", !!(ST.pv && r.classList.contains("nar") && !pane.hidden));
+    regLaunch();
+  }
+  function loadCurr(force) {
+    const CU = window.__CURR; if (!CU || !CU.load) return; if (!force && Date.now() - curLoad < 60000) return; curLoad = Date.now();
+    try { const p = CU.load(true); if (p && p.then) p.then(d => { if (d) { CU.__d35 = d; soon() } }); else if (p && p.schools) { CU.__d35 = p; soon() } } catch (e) { }
+  }
+  function kick(force) { loadHub(); loadBook(); loadCurr(force) }
+
+  /* ---------------- My Chart hook: GEN renderers + the two old sub-tabs ---------------- */
+  function hookC2() {
+    const c = C2(); if (!c || !c.GEN || c.GEN.__v35) return !!(c && c.GEN && c.GEN.__v35); const G = c.GEN;
+    Object.defineProperty(G, "__v35", { value: 1, enumerable: false });
+    const stub = () => `<p class="note">Opening the Library…</p>`;
+    const redirect = (k, type) => () => { setTimeout(() => { const el = document.querySelector(`#c2 [data-pane="${k}"]`); if (el && !el.hidden) { ST.type = type; ST.sel = null; ST.pv = false; saveUI(); try { c.select("library", "guides") } catch (e) { } } }, 0); return stub() };
+    G["library:guides"] = () => { const keepQ = document.activeElement && document.activeElement.matches && document.activeElement.matches("[data-vxlib-q]") ? document.activeElement.selectionStart : null; const h = paneHTML(); setTimeout(() => { const r = root(); if (r) { after(r); if (keepQ != null) { const q = r.querySelector("[data-vxlib-q]"); q.focus(); try { q.setSelectionRange(keepQ, keepQ) } catch (e) { } } } }, 0); return h };
+    G["library:videos"] = redirect("library:videos", "video"); G["library:program"] = redirect("library:program", "program");
+    try { const LT = c.TABS.find(t => t[0] === "library"); if (LT) { const g = LT[3].find(s => s[0] === "guides"); if (g) g[1] = "All items"; const i = LT[3].indexOf(g); if (i > 0) { LT[3].splice(i, 1); LT[3].unshift(g) } } } catch (e) { }
+    return true;
+  }
+  hookC2();
+  /* the program sub-tab is added by the chart block at boot; keep "All items" first whenever it is re-added */
+  try { if (SRV.ready && SRV.ready.then) SRV.ready.then(() => { hookC2(); kick() }) } catch (e) { }
+
+  /* ---------------- reader (in-app, for study-guide pages) ---------------- */
+  async function reader(o) {
+    let ov = document.getElementById("vxlib-rd"); if (ov) ov.remove();
+    ov = document.createElement("div"); ov.id = "vxlib-rd"; ov.className = "vxlib-rd"; ov.setAttribute("role", "dialog"); ov.setAttribute("aria-modal", "true"); ov.setAttribute("aria-label", o.title);
+    ov.innerHTML = `<header class="rd-h"><button type="button" class="rd-x" data-vxlib-rdx>${sv("back", 20)}<span>Library</span></button><b class="rd-t">${e_(o.title)}</b>${o.download ? `<a class="rd-dl" href="${e_(o.download.href)}" download="${e_(o.download.name)}">${sv("dl", 18)}<span>Download PDF</span></a>` : ""}</header><div class="rd-b"><div class="rd-s" data-vxlib-rds><p class="rd-msg">Opening…</p></div></div>`;
+    document.body.appendChild(ov); document.documentElement.classList.add("vxlib-rdon"); const x = ov.querySelector("[data-vxlib-rdx]"); x.focus(); RD.last = o.id;
+    const host = ov.querySelector("[data-vxlib-rds]");
+    try {
+      const r = await fetch(o.read, { credentials: "same-origin" }); if (!r.ok) throw new Error("" + r.status);
+      const d = new DOMParser().parseFromString(await r.text(), "text/html"); const main = d.querySelector("main"); if (!main) throw new Error("no main");
+      main.querySelectorAll("script,iframe,object,embed,form,nav.crumb,.cta,.gmore,section.band,link,meta,noscript").forEach(n => n.remove());
+      main.querySelectorAll("*").forEach(n => { [...n.attributes].forEach(a => { if (/^on/i.test(a.name) || (/^(href|src|xlink:href|action)$/i.test(a.name) && /^\s*javascript:/i.test(a.value))) n.removeAttribute(a.name) }) });
+      if (o.topics && !o.topics.length) { const k = d.querySelector(".gpx-k"); if (k) { const c = catByName(k.textContent.split("·").pop()); if (c.length) o.topics = c } }
+      const css = [...d.querySelectorAll("style")].map(s => s.textContent).join("\n").replace(/:root\b/g, ":host").replace(/(^|[},;\s])html(?=[\s,{.[:])/g, "$1:host").replace(/(^|[},;\s])body(?=[\s,{.[:])/g, "$1.rd-body");
+      const sh = host.attachShadow ? host.attachShadow({ mode: "open" }) : host;
+      sh.innerHTML = `<style>${css}\n:host{display:block;background:var(--bg,#fff);color:var(--ink,#1d2738)}.rd-body{margin:0;padding:8px 0 40px;font:400 17px/1.55 var(--fb,system-ui,-apple-system,"Segoe UI",sans-serif);overflow-wrap:anywhere}.rd-body .w{max-width:880px;margin:0 auto;padding:0 18px}.rd-body img,.rd-body svg,.rd-body table{max-width:100%}.rd-body .tw,.rd-body .vrow{overflow-x:auto}@media (max-width:640px){.rd-body .vrow{grid-template-columns:minmax(0,1fr)!important}}</style><div class="rd-body"></div>`;
+      const b = sh.querySelector(".rd-body"); [...main.childNodes].forEach(n => { if (n.nodeName !== "STYLE") b.appendChild(document.importNode(n, true)) });
+      sh.addEventListener("click", ev => { const a = ev.target.closest && ev.target.closest("a[href]"); if (!a) return; const m = (a.getAttribute("href") || "").match(/^\/study-guides\/([a-z0-9-]+)$/); if (m) { const it = ST.items.find(i => i.slug === m[1]); if (it) { ev.preventDefault(); mark(it.id, "r", 1); reader(it) } } else if (!a.hasAttribute("download")) a.target = "_blank" });
+      if (host.firstElementChild && host !== sh) host.querySelector(".rd-msg") && host.querySelector(".rd-msg").remove();
+    } catch (e) { host.innerHTML = `<div class="rd-msg"><b>This guide couldn't open here.</b><span>Open it as a web page or download the PDF instead.</span><a class="vl-btn p" href="${e_(o.read)}" target="_blank" rel="noopener">Open the page</a></div>` }
+  }
+  const RD = { last: null };
+  function closeReader() { const ov = document.getElementById("vxlib-rd"); if (ov) ov.remove(); document.documentElement.classList.remove("vxlib-rdon"); const r = root(); const f = r && RD.last && r.querySelector(`[data-vxlib-go="${CSS.escape(RD.last)}"]`); if (f) f.focus() }
+
+  /* ---------------- actions ---------------- */
+  function mark(id, k, v) { const S = stG(); if (v) S[k][id] = Date.now(); else delete S[k][id]; stS(S) }
+  function go(o) {
+    mark(o.id, "r", 1);
+    if (o.read) { reader(o); soon(); return }
+    if (o.open) { try { o.open() } catch (e) { } soon(); return }
+    if (o.type === "program" && o.setDone && !o.href) { o.setDone(true); ST.msg = "Marked done."; soon(); return }
+    soon();
+  }
+  function pick(id, openPv) { ST.sel = id; if (openPv) ST.pv = true; paint("lp"); const r = root(); if (r && r.classList.contains("nar") && ST.pv) { ST.scroll = window.scrollY; window.scrollTo(0, 0); const t = r.querySelector(".vp-t"); if (t) t.focus({ preventScroll: true }) } }
+  async function dlSelected() {
+    const L = ST.items.filter(o => ST.pick.has(o.id) && o.download); if (!L.length) return; let n = 0;
+    ST.msg = `Starting ${L.length} download${L.length === 1 ? "" : "s"}…`; paint("l");
+    for (const o of L) { const a = document.createElement("a"); a.href = o.download.href; a.download = o.download.name; a.setAttribute("data-vxlib-dlx", o.id); document.body.appendChild(a); a.click(); a.remove(); n++; await new Promise(r => setTimeout(r, 700)) }
+    ST.msg = `${n} download${n === 1 ? "" : "s"} started.${n > 1 ? " If your browser asks, allow multiple downloads." : ""}`; ST.selMode = false; ST.pick.clear(); paint();
+  }
+  document.addEventListener("click", ev => {
+    const t = ev.target; if (!t || !t.closest) return;
+    if (t.closest("[data-vxlib-rdx]")) { closeReader(); return }
+    const r = t.closest("[data-vxlib]"); if (!r) return; let b;
+    if ((b = t.closest("[data-vxlib-pick]"))) { const id = b.dataset.vxlibPick; if (b.checked) ST.pick.add(id); else ST.pick.delete(id); const d = r.querySelector("[data-vxlib-dlsel]"); if (d) { d.disabled = !ST.pick.size; d.lastChild.textContent = ` Download selected (${ST.pick.size})` } return }
+    if ((b = t.closest("[data-vxlib-type]"))) { ST.type = b.dataset.vxlibType; saveUI(); paint("cl"); return }
+    if ((b = t.closest("[data-vxlib-fl]"))) { const k = b.dataset.vxlibFl; ST.fl[k] = ST.fl[k] ? 0 : 1; saveUI(); paint("cl"); return }
+    if (t.closest("[data-vxlib-clear]")) { ST.q = ""; ST.type = ""; ST.topic = ""; ST.fl = { asg: 0, nw: 0, sv: 0, ur: 0 }; saveUI(); const q = r.querySelector("[data-vxlib-q]"); if (q) q.value = ""; paint("cl"); return }
+    if (t.closest("[data-vxlib-selmode]")) { ST.selMode = !ST.selMode; ST.pick.clear(); ST.msg = ""; paint("l"); return }
+    if (t.closest("[data-vxlib-dlsel]")) { dlSelected(); return }
+    if (t.closest("[data-vxlib-back]")) { ST.pv = false; paint("p"); after(r); const f = r.querySelector(`[data-vxlib-row="${CSS.escape(ST.sel || "")}"]`); window.scrollTo(0, ST.scroll || 0); if (f) f.focus({ preventScroll: true }); return }
+    if ((b = t.closest("[data-vxlib-save]"))) { const id = b.dataset.vxlibSave; const o = ST.items.find(x => x.id === id); mark(id, "s", !(o && o.saved)); paint(); return }
+    if ((b = t.closest("[data-vxlib-done]"))) { const id = b.dataset.vxlibDone; const o = ST.items.find(x => x.id === id); if (!o) return; if (o.setDone) o.setDone(!o.done); else mark(id, "d", !o.done); setTimeout(() => paint(), 0); return }
+    if ((b = t.closest("[data-vxlib-dl]"))) { mark(b.dataset.vxlibDl, "r", 1); setTimeout(() => paint("lp"), 0); return }
+    if ((b = t.closest("[data-vxlib-go]"))) { const o = ST.items.find(x => x.id === b.dataset.vxlibGo); if (!o) return; if (b.tagName === "A") { mark(o.id, "r", 1); setTimeout(() => paint("lp"), 0); return } ev.preventDefault(); go(o); return }
+    if ((b = t.closest("[data-vxlib-row]"))) { if (t.closest("input")) return; pick(b.dataset.vxlibRow, true); return }
+  });
+  /* leaving the Library (another tab, another page) closes the phone full-screen preview */
+  const pvOff = () => { if (!ST.pv) return; ST.pv = false; document.documentElement.classList.remove("vxlib-pv"); const p = document.querySelector("#c2 [data-vxlib-prev]"); if (p) p.classList.remove("open") };
+  window.addEventListener("hashchange", pvOff);
+  document.addEventListener("click", ev => { if (ev.target && ev.target.closest && ev.target.closest("[data-c2tab],[data-c2sub],[data-c2go]")) pvOff() }, true);
+  document.addEventListener("dblclick", ev => { const b = ev.target.closest && ev.target.closest("[data-vxlib-row]"); if (!b) return; const o = ST.items.find(x => x.id === b.dataset.vxlibRow); if (o && !o.href) go(o) });
+  document.addEventListener("input", ev => { const t = ev.target; if (!t || !t.matches) return; if (t.matches("[data-vxlib-q]")) { ST.q = t.value; paint("cl") } });
+  document.addEventListener("change", ev => { const t = ev.target; if (!t || !t.matches) return; if (t.matches("[data-vxlib-topic]")) { ST.topic = t.value; saveUI(); paint("cl") } else if (t.matches("[data-vxlib-sort]")) { ST.sort = t.value; saveUI(); paint("l") } });
+  document.addEventListener("keydown", ev => {
+    if (ev.key === "Escape" && document.getElementById("vxlib-rd")) { ev.preventDefault(); closeReader(); return }
+    const b = ev.target && ev.target.closest && ev.target.closest("[data-vxlib-row]"); if (!b) return;
+    if (ev.key === "ArrowDown" || ev.key === "ArrowUp") { ev.preventDefault(); const R = [...root().querySelectorAll("[data-vxlib-row]")]; const i = R.indexOf(b); const n = R[Math.max(0, Math.min(R.length - 1, i + (ev.key === "ArrowDown" ? 1 : -1)))]; if (n) { const nar = root().classList.contains("nar"); if (!nar) { ST.sel = n.dataset.vxlibRow; paint("lp"); const f = root().querySelectorAll(`[data-vxlib-row="${CSS.escape(ST.sel)}"]`)[R.filter(x => x.dataset.vxlibRow === n.dataset.vxlibRow).indexOf(n)] || root().querySelector(`[data-vxlib-row="${CSS.escape(ST.sel)}"]`); if (f) f.focus() } else n.focus() } return }
+    if (ev.key === "Enter" || ev.key === " ") { ev.preventDefault(); if (ST.sel === b.dataset.vxlibRow && ev.key === "Enter" && !root().classList.contains("nar")) { const o = ST.items.find(x => x.id === ST.sel); if (o) { if (o.href && !o.open) { const a = root().querySelector(`a[data-vxlib-go="${CSS.escape(o.id)}"]`); if (a) a.click() } else go(o) } } else pick(b.dataset.vxlibRow, true) }
+  });
+
+  /* ---------------- open an item from anywhere (launcher search, other modules) ---------------- */
+  function openItem(id, opt) {
+    const fn = () => { try { const c = C2(); if (c) c.select("library", "guides") } catch (e) { } setTimeout(() => { build(); if (ST.items.some(o => o.id === id)) { ST.sel = id; ST.pv = true; if (ST.type && !ST.items.find(o => o.id === id && o.type === ST.type)) ST.type = ""; paint(); if (opt && opt.go) { const o = ST.items.find(x => x.id === id); if (o) go(o) } } }, 60) };
+    if (document.getElementById("c2")) { fn(); return }
+    try { if (location.hash !== "#progress") location.hash = "progress"; else if (window.__nsProgRender) window.__nsProgRender() } catch (e) { }
+    let n = 0; const t = setInterval(() => { if (document.getElementById("c2") || ++n > 60) { clearInterval(t); if (document.getElementById("c2")) setTimeout(fn, 150) } }, 100);
+  }
+
+  /* ---------------- header search (v33 launcher registry), only when it exists ---------------- */
+  let regSig = "";
+  function regLaunch() {
+    const LA = window.__vxLaunch; if (!LA || !LA.add) return; const L = ST.items; const sig = L.map(o => o.id).join("|"); if (sig === regSig) return;
+    try { if (LA.list) LA.list({ all: true }).forEach(o => { if (String(o.id).indexOf("lib:") === 0 && !L.some(x => "lib:" + x.id === o.id)) LA.remove(o.id) }) } catch (e) { }
+    try { if (LA.group) LA.group("library", "Library", 55) } catch (e) { }
+    L.forEach((o, i) => { try { LA.add({ id: "lib:" + o.id, group: "library", groupLabel: "Library", order: i, icon: tInfo(o.type)[4], label: o.title, hint: tInfo(o.type)[0] + (o.pages ? " · " + o.pages + " page" + (o.pages === 1 ? "" : "s") : ""), keys: (o.keys || "") + " " + o.topics.map(CN).join(" ") + " library", run: () => openItem(o.id), more: false, roles: ["in"] }) } catch (e) { } });
+    regSig = sig;
+  }
+  try { if (SRV.ready && SRV.ready.then) SRV.ready.then(() => setTimeout(() => { if (window.__vxLaunch) { build(); regLaunch() } }, 400)) } catch (e) { }
+
+  /* ---------------- public API ---------------- */
+  const Q = window.__vxLibQ = window.__vxLibQ || [];
+  window.__vxLib = {
+    version: V35, add, remove, source, get: id => (build(), ST.items.find(o => o.id === String(id)) || null), list: () => build().slice(), open: openItem, refresh: () => { HUB.at = 0; BKD.at = 0; kick(true); soon() },
+    types: () => Object.assign({}, TYPES), type: (id, label, plural, primary, order) => { TYPES[id] = [label, plural || label, primary || "Open", order == null ? 8 : order, "guide"]; soon() },
+    state: () => ({ q: ST.q, type: ST.type, topic: ST.topic, fl: Object.assign({}, ST.fl), sort: ST.sort, sel: ST.sel, pv: ST.pv }), weak, recommended: () => recommended(build()).list.map(([o, w]) => ({ id: o.id, why: w })),
+    counts: () => ({ studyBook: STUDYBOOK.pages, coloringPages: COLORING.pages, plates: PLATE_LIST.length })
+  };
+  while (Q.length) { try { add(Q.shift()) } catch (e) { } }
+  try { const p0 = Q.push; Q.push = function () { const r = p0.apply(Q, arguments); while (Q.length) { try { add(Q.shift()) } catch (e) { } } return r } } catch (e) { }
+}
+/* </v35-library-js> */
 /* <v22-owner-js> */
 /* ---------- v22: owner workspace (#admin). One place per task, Epic-style: activity tabs across the top, program roster on the left,
    one selected-program header with its own tabs, and a "Needs you" work queue (In Basket) for everything waiting on the owner.
@@ -13752,6 +14472,456 @@ if(window.__vx32T&&window.__vx32T.test)Object.assign(window.__vx32,{RUN,CASES,CA
 }
 
 /* </v22-owner-js> */
+/* <v33-nomenu-js> */
+/* v33-nomenu-js: the slide-out "Menu" drawer is retired for signed-in users. Everything it held now lives in My Chart:
+   - the launcher toolbar (Home tiles, Brain toolbar) keeps the top practice actions;
+   - an Epic-style "More" overflow (dropdown on desktop/iPad, bottom sheet on phones) lists every other destination,
+     grouped and filterable, with the Display controls (text size, easy-read font, theme) built in;
+   - the header search ("Search practice, guides and sources") also finds every destination by name ("Go to" section);
+   - a small launcher registry, window.__vxLaunch, feeds both. Modules register with
+       (window.__vxLaunchQ = window.__vxLaunchQ || []).push({id, label, icon, group, run|attrs|href, roles, ...})
+     at any time (before or after this block runs) or window.__vxLaunch.add({...}) once it exists. See patches/launch-REGISTRY.md.
+   Old ways in redirect: every [data-menu="open"] button becomes a "More" button (header, band pages, Personalize note);
+   a click that still reaches one opens More; [data-menu-go] targets map to their My Chart equivalents; #menu and #more
+   (and #menu/<group>) open My Chart with More open. Signed-out visitors keep the public landing header unchanged (the
+   original drawer stays for them only). Phones: header More button, Brain toolbar More, and a More button in the Rover bar.
+   Orders: the My Chart Orders screen is gone; order entry is an "Orders" tab on the Brain side panel (window.__vxOrd).
+   Insert INSIDE the app's main IIFE directly after the closing v22-owner-js marker (see patches/nomenu-apply.js); it
+   uses the IIFE bindings SRV, store, K2, K3, prefs, applyPrefs, applyFont, themeIcon, SVG, deepLink, route, renderHome,
+   caseList and esc at run time only. No exact edits to app.html are needed. */
+{
+  const V33 = "v33";
+  const e_ = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+  const PH = () => { try { return matchMedia("(max-width: 760px)").matches } catch (e) { return false } };
+  const signedOut = () => { try { return !!(SRV.on && !SRV.me) } catch (e) { return false } };
+  const noMenu = () => { try { return !!(SRV.on && SRV.me) } catch (e) { return false } };
+  const S = { open: false, anchor: null, last: null, q: "" };
+
+  /* ---------------- icons (24px stroke set) ---------------- */
+  const IP = {
+    exam: '<path d="M6 3h9l3 3v15H6z"/><path d="M9 9h6M9 13h6M9 17h4"/>', quick: '<circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M10 2h4"/>',
+    td: '<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/><circle cx="12" cy="10" r="2.4"/>',
+    drill: '<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1"/>',
+    case: '<rect x="4" y="4" width="16" height="16" rx="2"/><path d="M12 8v8M8 12h8"/>', code: '<path d="M3 12h4l2-5 4 10 2-5h6"/>',
+    rounds: '<path d="M3 18V8M3 14h18v4M21 18v-5a3 3 0 0 0-3-3h-7v4"/><circle cx="7" cy="11" r="2"/>',
+    remed: '<rect x="4" y="5" width="16" height="12" rx="2"/><path d="M8 21h8M8 9h8M8 13h5"/>', daily: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M9 15l2 2 4-4"/>',
+    ekg: '<path d="M2 12h4l2-5 3 10 3-8 2 3h6"/>', steth: '<path d="M6 3v6a6 6 0 0 0 12 0V3"/><path d="M12 15v2a4 4 0 0 0 8 0v-3"/><circle cx="20" cy="12" r="2"/>',
+    ehr: '<path d="M4 5h16v14H4z"/><path d="M4 9h16M9 9v10"/>', home: '<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>',
+    board: '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16M15 4v16"/>', orders: '<path d="M9 4h6l1 2h3v15H5V6h3z"/><path d="M9 11h6M9 15h4"/>',
+    neworder: '<path d="M9 4h6l1 2h3v15H5V6h3z"/><path d="M9 13h6M12 10v6"/>', results: '<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>',
+    library: '<path d="M4 4v16M8 4v16M12 4l4 16M17 4l3 16"/>', coach: '<path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 15.6 7.1 18.2l.9-5.5-4-3.9 5.5-.8z"/>',
+    cart: '<path d="M3 4h2l2.5 11h11L21 7H7"/><circle cx="9.5" cy="19" r="1.5"/><circle cx="17.5" cy="19" r="1.5"/>', side: '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M15 4v16"/>',
+    pdf: '<path d="M6 3h9l3 3v15H6z"/><path d="M9 14h6M9 17h4"/>', scores: '<path d="M4 16l5-5 4 4 7-7"/><path d="M15 8h5v5"/>',
+    plan: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>', bell: '<path d="M6 16V11a6 6 0 1 1 12 0v5l2 2H4z"/><path d="M10 20a2 2 0 0 0 4 0"/>',
+    pz: '<path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/>', tips: '<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7h.01"/>',
+    refresh: '<path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 5v6h-6"/>', book: '<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/>',
+    sdoh: '<path d="M3 11l9-7 9 7v9H3z"/><circle cx="12" cy="13" r="2.5"/><path d="M8 20c.8-2.4 2.3-3.5 4-3.5s3.2 1.1 4 3.5"/>',
+    guide: '<path d="M6 3h9l3 3v15H6z"/><path d="M12 10v6M9.5 13.5 12 16l2.5-2.5"/>', qs: '<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .9-1 1.7M12 17h.01"/>',
+    lab: '<path d="M9 3h6M10 3v6L4 19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2l-6-10V3"/>', athome: '<path d="M3 11l9-7 9 7v9H3z"/><rect x="9" y="12" width="6" height="5"/>',
+    scale: '<path d="M12 3v18M5 7h14M7 7l-3 7h6zM17 7l-3 7h6z"/>', inst: '<path d="M3 8l9-4 9 4-9 4z"/><path d="M7 10v5c3 2 7 2 10 0v-5"/>',
+    live: '<circle cx="12" cy="12" r="2"/><path d="M7.8 16.2a6 6 0 0 1 0-8.4M16.2 7.8a6 6 0 0 1 0 8.4M4.9 19.1a10 10 0 0 1 0-14.2M19.1 4.9a10 10 0 0 1 0 14.2"/>',
+    content: '<path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h8M8 16h5"/>', school: '<path d="M4 20V9l8-5 8 5v11"/><path d="M9 20v-6h6v6"/>',
+    admin: '<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/>', user: '<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>',
+    phone: '<rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M12 8v6M9 11h6"/>', out: '<path d="M15 4h4v16h-4M10 8l-4 4 4 4M6 12h10"/>',
+    info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7h.01"/>', text: '<path d="M4 20l6-16 6 16M6.5 14h7M16 20l3-8 3 8M17 17.5h4"/>',
+    more: '<circle cx="5" cy="5" r="1.6"/><circle cx="12" cy="5" r="1.6"/><circle cx="19" cy="5" r="1.6"/><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/><circle cx="5" cy="19" r="1.6"/><circle cx="12" cy="19" r="1.6"/><circle cx="19" cy="19" r="1.6"/>',
+    search: '<circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/>', x: '<path d="M6 6l12 12M18 6L6 18"/>', chev: '<path d="M6 9l6 6 6-6"/>', star: '<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3 9.5l6.1-.9z"/>'
+  };
+  const sv = (k, n, cls) => `<svg${cls ? ` class="${cls}"` : ""} viewBox="0 0 24 24" width="${n || 18}" height="${n || 18}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${(k && k.charAt(0) === "<") ? k : (IP[k] || IP.info)}</svg>`;
+
+  /* ---------------- registry ---------------- */
+  const GROUPS = [["practice", "Practice", 10], ["modules", "Learning modules", 20], ["chart", "My chart", 30], ["work", "Workspaces", 40], ["guides", "Study guides and references", 50], ["account", "Account", 60], ["about", "About Vexcura", 90]];
+  const G = new Map(GROUPS.map(([id, label, order]) => [id, { id, label, order }]));
+  const REG = new Map(); let seq = 0;
+  /* roles: in (any signed-in), student (everyone with a chart), instructor, progadmin, admin (site owner), out (signed out) */
+  function roles() {
+    const r = new Set(); let me = null; try { me = SRV.on ? SRV.me : null } catch (e) { }
+    if (!me) { r.add("out"); return r }
+    r.add("in"); r.add("student"); if (me.role === "admin" && !me.mustReset) { r.add("admin"); r.add("instructor") }
+    try { const h = JSON.parse(localStorage.getItem("vx.roles." + String(me.id)) || "null"); if (h) { if (h.t) r.add("instructor"); if (h.a) r.add("progadmin"); if (h.s) r.add("admin") } } catch (e) { }
+    try { if (window.__vxSchLinks) window.__vxSchLinks((k, t, s, href) => { if (href === "#teach") r.add("instructor"); if (href === "#school") r.add("progadmin"); return "" }) } catch (e) { }
+    return r;
+  }
+  function add(x) {
+    if (Array.isArray(x)) return x.map(add);
+    if (!x || !x.id || !x.label) return null;
+    const o = Object.assign({ group: "modules", roles: ["in"], more: true, search: true }, x); o.id = String(o.id); o._s = REG.has(o.id) ? REG.get(o.id)._s : ++seq;
+    if (o.group && !G.has(o.group)) G.set(o.group, { id: o.group, label: o.groupLabel || o.group, order: 80 });
+    REG.set(o.id, o); if (S.open) paintList(); return o.id;
+  }
+  const remove = id => { const r = REG.delete(String(id)); if (S.open) paintList(); return r };
+  function avail(o, R) {
+    R = R || roles(); const rl = o.roles || ["in"];
+    if (!(rl.includes("any") || rl.some(k => R.has(k)))) return false;
+    try { if (o.when && !o.when()) return false } catch (e) { return false }
+    return true;
+  }
+  function list(opt) {
+    opt = opt || {}; const R = roles();
+    return [...REG.values()].filter(o => (opt.all || avail(o, R)) && (!opt.more || o.more !== false) && (!opt.search || o.search !== false))
+      .sort((a, b) => ((G.get(a.group) || {}).order || 80) - ((G.get(b.group) || {}).order || 80) || ((a.order == null ? 50 : a.order) - (b.order == null ? 50 : b.order)) || a._s - b._s);
+  }
+  const norm = s => String(s || "").toLowerCase().replace(/&amp;/g, "&").replace(/[^a-z0-9&]+/g, " ").trim();
+  function hay(o) { return norm([o.label, o.hint, o.keys, (G.get(o.group) || {}).label].join(" ")) }
+  function score(o, q) {
+    const w = norm(q).split(" ").filter(Boolean); if (!w.length) return 0; const h = " " + hay(o), l = " " + norm(o.label);
+    if (!w.every(x => h.includes(" " + x))) return 0;
+    return (l.trim().startsWith(w.join(" ")) ? 100 : 0) + w.filter(x => l.includes(" " + x)).length * 10 + 1;
+  }
+  function find(q) { return list({ search: true }).map(o => [o, score(o, q)]).filter(x => x[1] > 0).sort((a, b) => b[1] - a[1]).map(x => x[0]) }
+
+  /* ---------------- running an entry ---------------- */
+  function attrsOf(s) { const out = []; String(s || "").replace(/([\w-]+)="([^"]*)"/g, (m, k, v) => { out.push([k, v]); return m }); return out }
+  function forward(attrs) {
+    const host = document.getElementById("c2") || document.getElementById("app") || document.body;
+    const b = document.createElement("button"); b.type = "button"; b.hidden = true; b.setAttribute("data-vxl-fw", "1");
+    attrsOf(attrs).forEach(([k, v]) => b.setAttribute(k, v)); host.appendChild(b); try { b.click() } finally { b.remove() }
+  }
+  function toChart(fn) {
+    if (document.getElementById("c2")) { fn(); return }
+    try { if (location.hash !== "#progress") location.hash = "progress"; else if (window.__nsProgRender) window.__nsProgRender() } catch (e) { }
+    let n = 0; const t = setInterval(() => { const c = document.getElementById("c2"); if (c || ++n > 60) { clearInterval(t); if (c) setTimeout(fn, 150) } }, 100);
+  }
+  function go(href) {
+    if (/^#/.test(href)) { if (location.hash === href) { try { route() } catch (e) { } } else location.hash = href.slice(1); return }
+    location.href = href;
+  }
+  function run(id) {
+    const o = typeof id === "object" ? id : REG.get(String(id)); if (!o) return false; close(true);
+    const doit = () => { try { if (typeof o.run === "function") o.run(o); else if (o.attrs) forward(o.attrs); else if (o.href) go(o.href) } catch (e) { try { console.warn("vxLaunch run", o.id, e) } catch (er) { } } };
+    if (o.chart) toChart(doit); else doit();
+    return true;
+  }
+
+  /* ---------------- built-in destinations (everything the old Menu held, plus Chart tools) ---------------- */
+  const tab = t => () => toChart(() => forward(`data-c2tab="${t}"`));
+  const sub = s => () => toChart(() => forward(`data-c2go="${s}"`));
+  add([
+    /* Practice: the same actions as the Home tiles and the Brain launcher toolbar */
+    { id: "exam", group: "practice", order: 1, icon: "exam", label: "Full practice exam", hint: "85 to 150 questions, like the real NCLEX", attrs: 'data-ws-start="exam"', keys: "cat adaptive full exam test nclex" },
+    { id: "quick", group: "practice", order: 2, icon: "quick", label: "Quick round", hint: "30 questions, about 30 minutes", attrs: 'data-ws-start="quick"', keys: "short 30" },
+    { id: "td", group: "practice", order: 3, icon: "td", label: "Test-day exam", hint: "Proctored, at a test center or at home", attrs: 'data-ws-start="td"', keys: "test day proctored integrity webcam rehearsal" },
+    { id: "drill", group: "practice", order: 4, icon: "drill", label: "Topic drill", hint: "10 questions on one category", attrs: 'data-ws-pick="drill"', keys: "drill category topic practice one thing" },
+    { id: "case", group: "practice", order: 5, icon: "case", label: "Case study", hint: "One patient, six NGN questions", attrs: 'data-ws-start="case"', keys: "ngn next generation case", when: () => { try { return caseList().length > 0 } catch (e) { return true } } },
+    { id: "code", group: "practice", order: 6, icon: "code", label: "ACLS megacode", hint: "Run a code on a live monitor", attrs: 'data-ws-start="code"', keys: "megacode code blue arrest acls" },
+    { id: "rounds", group: "practice", order: 7, icon: "rounds", label: "Bedside rounds", hint: "A patient who changes in real time", attrs: 'data-ws-start="rounds"', keys: "rounds bedside simulation" },
+    { id: "remed", group: "practice", order: 8, icon: "remed", label: "Missed-question cards", hint: "Review what you got wrong", attrs: 'data-ws-start="remed"', keys: "missed remediation cards wrong review" },
+    { id: "daily", group: "practice", order: 9, icon: "daily", label: "Daily five", hint: "Five questions with instant rationales", attrs: 'data-ws-start="daily"', keys: "daily five habit streak" },
+    { id: "ehr", group: "practice", order: 10, icon: "ehr", label: "Clinical EHR", hint: "My Patients: MAR, orders, flowsheets, LDAs", href: "#ehr", keys: "ehr epic my patients mar flowsheet chart rover" },
+    /* Learning modules (registered here so they appear even though their own patches only add My Chart rows) */
+    { id: "tele", group: "modules", order: 1, icon: "ekg", label: "Telemetry & EKG", hint: "Read strips with calipers, central station, ACLS", attrs: 'data-tl-open="learn"', keys: "telemetry ekg ecg rhythm strip monitor", when: () => !!window.__vxTele },
+    { id: "ausc", group: "modules", order: 2, icon: "steth", label: "Assessment & Auscultation", hint: "Heart and lung sounds, head-to-toe", attrs: 'data-au-open="learn"', keys: "assessment auscultation stethoscope heart lung sounds physical", when: () => !!window.__vxAusc },
+    { id: "sdoh", group: "modules", order: 3, icon: "sdoh", label: "Social Drivers of Health", hint: "Screening, resources and practice", attrs: 'data-sdl-open="learn"', keys: "sdoh social drivers determinants health screening", when: () => !!window.__vxSDOH },
+    { id: "book", group: "modules", order: 4, icon: "book", label: "Review book", hint: "NCLEX-RN review by test-plan category", attrs: 'data-vxbk="open"', keys: "book review chapters reader", when: () => !!document.querySelector('[data-vxbk-card]') || typeof window.__vxbk !== "undefined" },
+    /* My chart: rail tabs are search-only (always on screen); the tools v25 moved out of the header are in More */
+    { id: "c2-home", group: "chart", order: 1, icon: "home", label: "Home", hint: "What's next, to do and practice tiles", run: tab("summary"), keys: "my chart summary overview", more: false },
+    { id: "c2-board", group: "chart", order: 2, icon: "board", label: "Worklist and Brain", hint: "Launcher, timeline and orders", run: tab("board"), keys: "worklist brain timeline storyboard notes", more: false },
+    { id: "c2-orders", group: "chart", order: 3, icon: "orders", label: "Orders", hint: "New order, order sets and cart, in the Brain side panel", run: () => ordOpen("new"), keys: "orders tasks order entry sign read back", more: false },
+    { id: "c2-results", group: "chart", order: 4, icon: "results", label: "Results", hint: "Scores, trends and past exams", run: sub("results:exams"), keys: "results scores exams my results kardex", more: false },
+    { id: "c2-library", group: "chart", order: 5, icon: "library", label: "Library", hint: "Guides, videos and program content", run: tab("library"), keys: "library", more: false },
+    { id: "c2-coach", group: "chart", order: 6, icon: "coach", label: "Coach", hint: "Advice on what to study next", run: tab("coach"), keys: "coach ai", more: false },
+    { id: "neworder", group: "chart", order: 10, icon: "neworder", label: "New order", hint: "Order practice for yourself", run: () => ordOpen("new"), keys: "new order add task" },
+    { id: "ordersets", group: "chart", order: 10.5, icon: "orders", label: "Order sets", hint: "Bundles of practice and downloads", run: () => ordOpen("sets"), keys: "order set bundle" },
+    { id: "cart", group: "chart", order: 11, icon: "cart", label: "Order cart", hint: "Downloads and practice to sign", run: () => ordOpen("cart"), keys: "cart order sign downloads" },
+    { id: "side", group: "chart", order: 12, icon: "side", label: "Side panel", hint: "Worklist, Brain, Orders and Required documentation", chart: true, attrs: 'data-sb-open="wl"', keys: "sidebar side panel worklist required documentation" },
+    { id: "pdf", group: "chart", order: 13, icon: "pdf", label: "Progress report PDF", hint: "Everything on your chart in one document", chart: true, attrs: 'data-ws-doc="progress:"', keys: "progress report pdf download print" },
+    { id: "scores", group: "chart", order: 14, icon: "scores", label: "Bring your scores", hint: "ATI, HESI, Kaplan, UWorld results into a plan", attrs: 'data-vxsc="open"', keys: "outside scores ati hesi kaplan uworld plan", when: () => !!document.querySelector("[data-vxsc-entry]") || !!window.__SCORES },
+    { id: "planner", group: "chart", order: 15, icon: "plan", label: "Test-day planner", hint: "Set your NCLEX date and countdown", chart: true, attrs: 'data-c2td="1"', keys: "nclex date countdown planner schedule test day" },
+    { id: "missed", group: "chart", order: 16, icon: "remed", label: "Missed cards in Results", hint: "Your remediation cards", run: sub("results:cards"), keys: "missed cards results", more: false },
+    { id: "program", group: "chart", order: 17, icon: "school", label: "From my program", hint: "Your program's content and curriculum", run: sub("library:program"), keys: "program curriculum school content", when: () => !!(window.__vxLib || document.querySelector('[data-c2sub="library:program"]')) },
+    { id: "reminder", group: "chart", order: 18, icon: "bell", label: "Daily reminder", hint: "A nudge at the time you pick", chart: true, attrs: 'data-rm="open"', keys: "reminder notification nudge" },
+    { id: "pz", group: "chart", order: 19, icon: "pz", label: "Personalize", hint: "Layout and sections", chart: true, attrs: 'data-pz="open"', keys: "personalize layout sections customize" },
+    { id: "tips", group: "chart", order: 20, icon: "tips", label: "Tips for this view", hint: "What everything here does", chart: true, attrs: 'data-tip="help"', keys: "tips help how" },
+    { id: "refresh", group: "chart", order: 21, icon: "refresh", label: "Refresh", hint: "Get your newest progress", chart: true, attrs: 'data-c2refresh="1"', keys: "refresh reload sync" },
+    /* Workspaces (role-gated; each workspace also has its own navigation) */
+    { id: "w-inst", group: "work", order: 1, icon: "inst", label: "Instructor workspace", hint: "Clinical days, groups and students", href: "#instructor", roles: ["instructor", "progadmin", "admin"], keys: "instructor teacher hub faculty" },
+    { id: "w-teach", group: "work", order: 2, icon: "live", label: "Live clinical groups", hint: "Watch shared practice charts update live", href: "#teach", roles: ["instructor", "admin"], keys: "instructor dashboard live clinical groups teach" },
+    { id: "w-curr", group: "work", order: 3, icon: "content", label: "Program content", hint: "Lectures, handouts and links", href: "#curriculum", roles: ["instructor", "progadmin", "admin"], keys: "curriculum program content lectures" },
+    { id: "w-school", group: "work", order: 4, icon: "school", label: "Program admin", hint: "Seats, codes, customization", href: "#school", roles: ["progadmin", "admin"], keys: "program admin school seats codes" },
+    { id: "w-admin", group: "work", order: 5, icon: "admin", label: "Admin workspace", hint: "Programs, people, content and settings", href: "#admin", roles: ["admin"], keys: "admin dashboard owner site students reports" },
+    /* Study guides and references (public pages, same as before) */
+    { id: "g-guides", group: "guides", order: 1, icon: "guide", label: "Free study guides", hint: "Printable PDFs, including studying with AI", href: "/nclex-study-guides", keys: "study guides pdf printable" },
+    { id: "g-qs", group: "guides", order: 2, icon: "qs", label: "Free practice questions", hint: "By NCLEX category", href: "/nclex-practice-questions", keys: "practice questions free" },
+    { id: "g-labs", group: "guides", order: 3, icon: "lab", label: "Lab values", hint: "Normal ranges to know", href: "/nclex-lab-values", keys: "lab values normal ranges" },
+    { id: "g-home", group: "guides", order: 4, icon: "athome", label: "NCLEX at home", hint: "What's coming, and how to rehearse", href: "/nclex-at-home", keys: "nclex online at home remote" },
+    { id: "g-cmp", group: "guides", order: 5, icon: "scale", label: "Compare NCLEX prep", hint: "Free vs paid programs", href: "/nclex-prep-comparison", keys: "compare prep programs" },
+    /* Account */
+    { id: "account", group: "account", order: 1, icon: "user", label: "My account", hint: "Profile, password, devices", href: "#account", keys: "account profile password devices settings" },
+    { id: "install", group: "account", order: 2, icon: "phone", label: "Install the app", hint: "Open it like an app", attrs: 'data-inst="1"', keys: "install app home screen dock", when: () => !!(window.__nsInstall && window.__nsInstall()), labelFn: () => (window.__nsInstall && window.__nsInstall()) || "Install the app" },
+    { id: "signout", group: "account", order: 3, icon: "out", label: "Sign out", hint: "", attrs: 'data-act="s-signout"', keys: "sign out log out logout" },
+    { id: "display", group: "account", order: 4, icon: "text", label: "Text size, font and theme", hint: "Larger text, easy-read font, light or dark", run: () => setTimeout(() => open({ group: "display" }), 0), keys: "display text size bigger larger font easy read dyslexia theme dark light mode accessibility", more: false },
+    /* About */
+    { id: "a-editorial", group: "about", order: 1, icon: "info", label: "How questions are checked", href: "#editorial", keys: "editorial sources review" },
+    { id: "a-privacy", group: "about", order: 2, icon: "info", label: "Privacy", href: "#privacy", keys: "privacy policy" },
+    { id: "a-terms", group: "about", order: 3, icon: "info", label: "Terms", href: "#terms", keys: "terms of use service" },
+    { id: "a-access", group: "about", order: 4, icon: "info", label: "Accessibility", href: "#accessibility", keys: "accessibility statement" }
+  ]);
+  /* drain registrations made before this block ran, and accept later pushes to the queue */
+  const Q = window.__vxLaunchQ = window.__vxLaunchQ || [];
+  const drain = () => { while (Q.length) { try { add(Q.shift()) } catch (e) { } } };
+  try { const p0 = Q.push; Q.push = function () { const r = p0.apply(Q, arguments); setTimeout(drain, 0); return r } } catch (e) { }
+
+  /* ---------------- the More overflow (dropdown / bottom sheet) ---------------- */
+  const labelOf = o => { try { return o.labelFn ? o.labelFn() : o.label } catch (e) { return o.label } };
+  function dispHTML() {
+    let p = { text: "md", theme: "auto" }, f = false, th = ["auto", "System theme"];
+    try { p = prefs(); f = store.get(K3.font, "std") === "easy"; th = themeIcon(p.theme) || th } catch (e) { }
+    const sz = [["md", "Standard"], ["lg", "Larger"], ["xl", "Largest"]];
+    return `<div class="vxl-disp" data-vxl-dispbox><div class="vxl-seg" role="group" aria-label="Text size">${sz.map(([v, l], i) => `<button type="button" class="vxl-sz vxl-sz${i + 1}" data-vxl-disp="text:${v}" aria-pressed="${p.text === v}" aria-label="${l} text" title="${l} text">A</button>`).join("")}</div>`
+      + `<button type="button" class="vxl-tg" data-vxl-disp="font" aria-pressed="${f}">Easy-read font</button>`
+      + `<button type="button" class="vxl-tg" data-vxl-disp="theme" aria-label="${e_(th[1])}. Change theme">${(typeof SVG !== "undefined" && SVG[th[0]]) || ""}<span>${e_(th[1])}</span></button></div>`;
+  }
+  function itemHTML(o) { const L = labelOf(o); return `<li><button type="button" class="vxl-i" data-vxl-run="${e_(o.id)}" data-vxl-h="${e_(hay(o))}" title="${e_(o.hint || L)}"><span class="vxl-ic">${sv(o.icon, 18)}</span><span class="vxl-t"><b>${e_(L)}</b>${o.hint ? `<small>${e_(o.hint)}</small>` : ""}</span></button></li>` }
+  function listHTML() {
+    const L = list({ more: true }); const by = new Map(); L.forEach(o => { if (o.group === "about") return; if (!by.has(o.group)) by.set(o.group, []); by.get(o.group).push(o) });
+    const groups = [...by.keys()].sort((a, b) => ((G.get(a) || {}).order || 80) - ((G.get(b) || {}).order || 80));
+    const ab = L.filter(o => o.group === "about");
+    return groups.map(g => `<section class="vxl-g" data-vxl-g="${e_(g)}"><h3>${e_((G.get(g) || {}).label || g)}</h3><ul>${by.get(g).map(itemHTML).join("")}</ul></section>`).join("")
+      + `<section class="vxl-g vxl-gd" data-vxl-g="display"><h3>Display</h3>${dispHTML()}</section>`
+      + `<p class="vxl-none" hidden>Nothing here matches. Press Enter to search questions, guides and sources instead.</p>`
+      + (ab.length ? `<nav class="vxl-f" aria-label="About Vexcura">${ab.map(o => `<button type="button" class="vxl-fl" data-vxl-run="${e_(o.id)}" data-vxl-h="${e_(hay(o))}">${e_(labelOf(o))}</button>`).join("")}</nav>` : "");
+  }
+  function paintList() { const l = document.getElementById("vxl-list"); if (!l) return; l.innerHTML = listHTML(); filter(S.q) }
+  function panelHTML() {
+    return `<div class="vxl-bg${PH() ? " vxl-dim" : ""}" data-vxl-bg></div><div class="vxl${PH() ? " vxl-sheet" : ""}" id="vxl33" role="dialog" aria-modal="${PH()}" aria-labelledby="vxl-h">
+      <div class="vxl-hd">${PH() ? '<span class="vxl-grab" aria-hidden="true"></span>' : ""}<h2 id="vxl-h">More</h2><button type="button" class="vxl-x" data-vxl="close" aria-label="Close More">${sv("x", 20)}</button></div>
+      <div class="vxl-sr0"><label class="vxl-sl" for="vxlq">${sv("search", 18)}<span class="sr">Find an activity</span></label><input id="vxlq" type="search" autocomplete="off" spellcheck="false" placeholder="Find an activity" aria-controls="vxl-list"></div>
+      <div class="vxl-l" id="vxl-list">${listHTML()}</div></div>`;
+  }
+  function place() {
+    const p = document.getElementById("vxl33"); if (!p || p.classList.contains("vxl-sheet")) return;
+    const a = S.anchor && document.contains(S.anchor) && S.anchor.getBoundingClientRect().width ? S.anchor : moreBtn();
+    const W = innerWidth, H = innerHeight, w = Math.min(680, W - 24);
+    let top = 64, right = 12;
+    if (a) { const r = a.getBoundingClientRect(); top = Math.round(r.bottom + 6); right = Math.max(12, Math.round(W - r.right)); if (W - right - w < 12) right = Math.max(12, W - w - 12) }
+    if (top > H - 240) top = Math.max(12, H - Math.min(H - 24, 560));
+    p.classList.toggle("vxl-one", w < 560); p.style.width = (w < 560 ? Math.min(w, 420) : w) + "px"; p.style.top = top + "px"; p.style.right = right + "px"; p.style.maxHeight = Math.max(240, H - top - 12) + "px";
+  }
+  function moreBtn() { return [...document.querySelectorAll('[data-vxl="more"]')].find(b => b.getBoundingClientRect().width > 0) || null }
+  function setExp(v) { document.querySelectorAll('[data-vxl="more"]').forEach(b => b.setAttribute("aria-expanded", String(v))) }
+  function open(opt) {
+    opt = opt || {}; drain();
+    if (S.open) close(true);
+    S.last = document.activeElement; S.anchor = opt.anchor || null; S.q = opt.q || "";
+    document.body.insertAdjacentHTML("beforeend", panelHTML()); S.open = true; setExp(true); place();
+    const pp = document.getElementById("vxl33"); if (pp) pp.addEventListener("keydown", onPanelKey);
+    const q = document.getElementById("vxlq"); if (q && S.q) { q.value = S.q; filter(S.q) }
+    if (PH()) document.documentElement.classList.add("vxl-lock");
+    const g = opt.group && document.querySelector(`#vxl33 [data-vxl-g="${CSS.escape(String(opt.group))}"]`);
+    if (g) { g.scrollIntoView({ block: "start" }); g.classList.add("vxl-hl"); const f = g.querySelector("button"); if (f) f.focus(); return }
+    if (q && !PH()) q.focus(); else { const x = document.querySelector("#vxl33 .vxl-x"); if (x) x.focus() }
+  }
+  function close(quiet) {
+    const p = document.getElementById("vxl33"), bg = document.querySelector("[data-vxl-bg]"); if (!p && !bg) { S.open = false; return }
+    if (p) p.remove(); if (bg) bg.remove(); S.open = false; setExp(false); document.documentElement.classList.remove("vxl-lock");
+    if (!quiet) { const f = S.last && S.last !== document.body && document.contains(S.last) && S.last.getBoundingClientRect().width ? S.last : moreBtn(); if (f) try { f.focus() } catch (e) { } }
+  }
+  function filter(q) {
+    S.q = q || ""; const p = document.getElementById("vxl33"); if (!p) return; const w = norm(q).split(" ").filter(Boolean); let any = 0;
+    p.querySelectorAll("[data-vxl-run]").forEach(b => { const h = " " + b.dataset.vxlH; const on = !w.length || w.every(x => h.includes(" " + x)); const li = b.closest("li") || b; li.hidden = !on; if (on) any++ });
+    p.querySelectorAll(".vxl-g").forEach(s => { if (s.dataset.vxlG === "display") { s.hidden = !!w.length && !w.some(x => "display text size larger bigger font easy read theme dark light mode".split(" ").some(k => k.startsWith(x))); if (!s.hidden) any++; return } s.hidden = !s.querySelector("li:not([hidden])") });
+    const f = p.querySelector(".vxl-f"); if (f) f.hidden = !f.querySelector("[data-vxl-run]:not([hidden])");
+    const n = p.querySelector(".vxl-none"); if (n) n.hidden = !!any;
+  }
+  const items = () => [...document.querySelectorAll("#vxl33 #vxlq, #vxl33 button")].filter(b => b.offsetParent !== null && !b.closest("[hidden]"));
+
+  /* ---------------- display controls (same stores as the band's A/A/A, Aa and theme buttons) ---------------- */
+  function disp(k) {
+    try {
+      if (k.startsWith("text:")) { const v = k.slice(5); store.set(K2.text, v); applyPrefs(); document.querySelectorAll('[data-act="text"]').forEach(x => x.setAttribute("aria-pressed", String(x.dataset.v === v))) }
+      else if (k === "font") { const on = store.get(K3.font, "std") !== "easy"; store.set(K3.font, on ? "easy" : "std"); applyFont(); document.querySelectorAll('[data-act="fontt"]').forEach(x => x.setAttribute("aria-pressed", String(on))) }
+      else if (k === "theme") { const o = ["auto", "light", "dark"]; const p = prefs(); const nx = o[(o.indexOf(p.theme) + 1) % 3]; store.set(K2.theme, nx); applyPrefs(); const th = themeIcon(nx); document.querySelectorAll('[data-act="theme"]').forEach(x => { if (x.classList.contains("iconbtn") && !x.classList.contains("fontbtn")) { x.innerHTML = SVG[th[0]]; x.title = th[1]; x.setAttribute("aria-label", th[1] + ". Change theme") } }) }
+    } catch (e) { }
+    document.querySelectorAll("[data-vxl-dispbox]").forEach(b => { b.outerHTML = dispHTML() });
+    const again = document.querySelector(`[data-vxl-disp="${k}"]`); if (again) again.focus(); place();
+  }
+
+  /* ---------------- events ---------------- */
+  /* capture: anything that would still open the old drawer for a signed-in user opens More instead */
+  document.addEventListener("click", e => {
+    const t = e.target; if (!t || !t.closest || !noMenu()) return; let b;
+    if ((b = t.closest('[data-menu="open"]'))) { e.preventDefault(); e.stopImmediatePropagation(); const g = b.getAttribute("data-vxl-g"); if (S.open && !g) close(); else open({ anchor: b, group: g }); return }
+    if ((b = t.closest("[data-menu-go]"))) { e.preventDefault(); e.stopImmediatePropagation(); const k = b.dataset.menuGo; close(true);
+      if (k === "planner") run("planner"); else if (k === "explore") run("drill"); else if (k === "kardex") run("c2-results"); else toChart(() => { }); return }
+    if ((b = t.closest('[data-ws-start="plan"]'))) { e.preventDefault(); e.stopImmediatePropagation(); const r = document.getElementById("wsres"); if (r) { r.innerHTML = ""; r.hidden = true } run("planner"); return }
+  }, true);
+  document.addEventListener("click", e => {
+    const t = e.target; if (!t || !t.closest) return; let b;
+    if ((b = t.closest('[data-vxl="more"]'))) { e.preventDefault(); const g = b.getAttribute("data-vxl-g"); if (S.open && !g && S.anchor === b) close(); else open({ anchor: b, group: g }); return }
+    if ((b = t.closest('[data-vxl="close"]'))) { e.preventDefault(); close(); return }
+    if (t.matches && t.matches("[data-vxl-bg]")) { close(); return }
+    if ((b = t.closest("[data-vxl-disp]"))) { e.preventDefault(); disp(b.dataset.vxlDisp); return }
+    if ((b = t.closest("[data-vxl-run]"))) { e.preventDefault(); const q = document.getElementById("wsq"); if (q && b.closest("#wsres")) { q.value = ""; const r = document.getElementById("wsres"); if (r) { r.innerHTML = ""; r.hidden = true } } run(b.dataset.vxlRun); return }
+    if (S.open && !t.closest("#vxl33") && !t.closest('[data-vxl="more"]')) close(true);
+  });
+  document.addEventListener("input", e => { if (e.target && e.target.id === "vxlq") filter(e.target.value) });
+  function onPanelKey(e) {
+    const p = document.getElementById("vxl33"); if (!p) return;
+    {
+      e.stopPropagation();
+      if (e.key === "Escape") { e.preventDefault(); close(); return }
+      const L = items(), i = L.indexOf(document.activeElement);
+      if (e.key === "ArrowDown" || e.key === "ArrowUp") { e.preventDefault(); const n = L.length; if (!n) return; const j = e.key === "ArrowDown" ? (i + 1) % n : (i - 1 + n) % n; L[j].focus(); return }
+      if (e.key === "Enter" && e.target.id === "vxlq") { e.preventDefault(); const f = p.querySelector("[data-vxl-run]:not([hidden])"); const first = [...p.querySelectorAll("li:not([hidden]) [data-vxl-run], .vxl-f [data-vxl-run]:not([hidden])")].find(x => !x.closest("[hidden]")) || f;
+        if (first) run(first.dataset.vxlRun); else { const v = e.target.value.trim(); close(true); toChart(() => { const q = document.getElementById("wsq"); if (q) { q.value = v; q.focus(); q.dispatchEvent(new Event("input", { bubbles: true })) } }) } return }
+      if (e.key === "Tab") { if (!L.length) return; if (e.shiftKey && document.activeElement === L[0]) { e.preventDefault(); L[L.length - 1].focus() } else if (!e.shiftKey && document.activeElement === L[L.length - 1]) { e.preventDefault(); L[0].focus() } return }
+      if (e.key.length === 1 && !e.ctrlKey && !e.metaKey && !e.altKey && e.target.id !== "vxlq" && /\S/.test(e.key)) { const q = document.getElementById("vxlq"); if (q) { q.focus(); q.value += e.key; filter(q.value); e.preventDefault() } }
+    }
+  }
+  document.addEventListener("keydown", e => {
+    if (S.open && e.key === "Escape") { e.preventDefault(); close(); return }
+    /* M opens More on My Chart (like / for search, O for cart, P for Personalize) */
+    if ((e.key === "m" || e.key === "M") && !e.altKey && !e.ctrlKey && !e.metaKey && noMenu() && document.getElementById("c2") && !document.querySelector(".smod-bg,.mnu,#vxl33")) {
+      const tg = e.target; if (tg && tg.closest && tg.closest("input,textarea,select,[contenteditable]")) return; e.preventDefault(); open({ anchor: moreBtn() });
+    }
+  });
+  addEventListener("resize", () => { if (!S.open) return; const sh = !!document.querySelector("#vxl33.vxl-sheet"); if (sh !== PH()) { const q = S.q; close(true); open({ q }) } else place() });
+  addEventListener("hashchange", () => close(true));
+
+  /* header search: a "Go to" section with every matching destination, above the practice results */
+  function paintSearch(r, q) {
+    r.querySelectorAll(".vxl-srr").forEach(x => x.remove()); if (!noMenu() || !String(q || "").trim()) return;
+    const L = find(q).slice(0, 6); if (!L.length) return;
+    const h = `<section class="vxl-srr" aria-label="Go to"><h5 class="wsh">Go to</h5>${L.map(o => `<div class="wr vxl-wr">${sv(o.icon, 20)}<div><b>${e_(labelOf(o))}</b><small>${e_([(G.get(o.group) || {}).label, o.hint].filter(Boolean).join(" · "))}</small></div><button type="button" class="btn2" data-vxl-run="${e_(o.id)}">Open</button></div>`).join("")}</section>`;
+    const f = r.querySelector(":scope>.wsf"); if (f) f.insertAdjacentHTML("afterend", h); else r.insertAdjacentHTML("afterbegin", h);
+    const none = [...r.querySelectorAll(":scope>p.note")].find(p => /Nothing matches/.test(p.textContent)); if (none) { const hh = none.previousElementSibling; none.remove(); if (hh && hh.matches("h5.wsh") && hh.textContent === "On Vexcura" && !hh.nextElementSibling) hh.remove() }
+    r.hidden = false;
+  }
+  document.addEventListener("input", e => { if (!e.target || e.target.id !== "wsq") return; const r = document.getElementById("wsres"); if (r) paintSearch(r, e.target.value) });
+
+  /* deep links: #menu, #more, #menu/<group>, #more/<group> open My Chart with More open */
+  try {
+    const _dl33 = deepLink;
+    deepLink = function (k) {
+      const m = /^(?:menu|more)(?:\/([a-z-]+))?$/.exec(k || ""); if (!m) return _dl33.apply(this, arguments);
+      const g = m[1] || "";
+      const goM = () => {
+        if (signedOut() || !SRV.on) { try { history.replaceState(null, "", location.pathname + location.search) } catch (e) { } try { renderHome() } catch (e) { } return }
+        toChart(() => open({ anchor: moreBtn(), group: g === "display" || G.has(g) ? g : "" }));
+      };
+      if (SRV.on && !SRV.loaded && SRV.ready && SRV.ready.then) SRV.ready.then(() => setTimeout(goM, 80)); else setTimeout(goM, 0);
+      return true;
+    };
+  } catch (e) { }
+
+  /* ---------------- turn the old Menu buttons into More buttons; add More to the Brain toolbar and the Rover bar ---------------- */
+  const MORE_IN = (lbl) => `${sv("more", 18, "vxl-mi")}<span>${lbl || "More"}</span>${sv("chev", 14, "vxl-cv")}`;
+  function convert() {
+    if (!noMenu()) return;
+    document.querySelectorAll('[data-menu="open"]').forEach(b => {
+      b.removeAttribute("data-menu"); b.setAttribute("data-vxl", "more"); b.setAttribute("aria-haspopup", "dialog"); b.setAttribute("aria-expanded", String(S.open));
+      if (b.classList.contains("lk")) { /* Personalize: "Text size, easy-read font and theme are in the Menu." -> the controls themselves */
+        const p = b.closest("p"); if (p && /Text size/.test(p.textContent)) { p.outerHTML = `<div class="vxl-pz"><p class="note">Text size, easy-read font and theme:</p>${dispHTML()}</div>` } else { b.textContent = "More"; b.setAttribute("data-vxl-g", "display") }
+        return;
+      }
+      b.classList.add("vxl-hb"); b.title = "More activities (M)"; b.setAttribute("aria-label", "More activities"); b.innerHTML = MORE_IN();
+    });
+    document.querySelectorAll(".ws-d p.note").forEach(p => { if (/are in the Menu under/.test(p.textContent)) p.innerHTML = 'These display settings are also in <button type="button" class="lk" data-vxl="more" data-vxl-g="display">More › Display</button>, everywhere in Vexcura.' });
+    document.querySelectorAll(".bn-ln").forEach(l => { if (!l.querySelector('[data-vxl="more"]')) l.insertAdjacentHTML("beforeend", `<button type="button" class="bn-lb vxl-bnm" data-vxl="more" aria-haspopup="dialog" aria-expanded="false" title="More activities (M)">${sv("more", 18)}<span>More</span></button>`) });
+    document.querySelectorAll(".rvbar").forEach(r => { if (r.querySelector('[data-vxl="more"]')) return; const sc = r.querySelector('[data-ex="rvscan"]'); const h = `<button type="button" class="rvb vxl-rvb" data-vxl="more" aria-haspopup="dialog" aria-expanded="false" aria-label="More activities">${sv("more", 22)}</button>`; if (sc) sc.insertAdjacentHTML("beforebegin", h); else r.insertAdjacentHTML("beforeend", h) });
+    if (document.querySelector(".mnu #mnuh")) { /* belt and braces: the drawer must never show for a signed-in user */
+      document.querySelectorAll(".mnu").forEach(m => { if (m.querySelector("#mnuh")) m.remove() }); if (!document.querySelector(".mnu")) document.documentElement.style.overflow = ""; open({ anchor: moreBtn() });
+    }
+  }
+  { let busy = false; const mo = new MutationObserver(() => { if (busy) return; busy = true; try { convert(); drain() } catch (e) { } try { catchCart(); ordMount(false) } catch (e) { } mo.takeRecords(); busy = false }); mo.observe(document.body, { childList: true, subtree: true }) }
+  try { if (SRV.ready && SRV.ready.then) SRV.ready.then(() => setTimeout(() => { try { convert() } catch (e) { } }, 0)) } catch (e) { }
+
+
+  /* ---------------- Orders: a tab on the collapsible Brain side panel (replaces the My Chart Orders screen) ----------------
+     The form, order sets and cart are the app's own generators (window.__nsCart.v33, exposed by an exact edit), so every
+     hook (#c2what search, quick pick, Start/Repeat/Priority, read-back, Sign, data-cset, data-cart sign) runs the same code
+     and writes the same data. The tab is added after each side-panel paint; its state rides on the panel's own state
+     (store "nclexsim.v1.sbar" tab "ord"), so data-sb-open="ord" works anywhere. */
+  const O = { sub: "new", ov: {}, det: false, msg: "", catchCart: 0, focus: 0 };
+  const OX = () => { try { return window.__nsCart && window.__nsCart.v33 } catch (e) { return null } };
+  const sbSt = () => { try { return Object.assign({ open: false, tab: "wl" }, store.get("nclexsim.v1.sbar", {})) } catch (e) { return { open: false, tab: "wl" } } };
+  const inChart = () => !document.querySelector("#app .ehw") && !!document.getElementById("c2");
+  const OIDS = ["c2what", "c2act", "c2by", "c2day", "c2freq", "c2pri", "c2note", "c2read"];
+  const QP = ["quick", "exam", "daily", "remed", "code", "rounds"];
+  function optTxt(sel) { return sel && sel.selectedIndex >= 0 ? (sel.options[sel.selectedIndex] || {}).text || "" : "" }
+  function detSum(root) {
+    const g = id => root.querySelector("#" + id); const by = (g("c2by") || {}).value || "Self-study";
+    const pri = optTxt(g("c2pri")); return [by, optTxt(g("c2day")) || "Today", optTxt(g("c2freq")) || "Once", /^STAT/.test(pri) ? "STAT" : "Routine"].join(" · ");
+  }
+  function formHTML(X) {
+    const t = document.createElement("template"); t.innerHTML = X.form(); const f = t.content.querySelector("form"); if (!f) return "";
+    const lab = id => { const i = f.querySelector("#" + id); return i ? i.closest("label") : null };
+    const what = lab("c2what"), quick = lab("c2quick"), o2s = f.querySelector(".o2s"); const det = ["c2by", "c2day", "c2freq", "c2pri", "c2note"].map(lab).filter(Boolean);
+    const qs = f.querySelector("#c2quick"); const chips = QP.map(id => { const o = qs && qs.querySelector(`option[value="${id}"]`); return o ? `<button type="button" class="vxo-chip" data-c2pick="${id}">${e_(o.textContent)}</button>` : "" }).join("");
+    if (quick) { const sp = quick.querySelector("span"); if (sp) sp.textContent = "More picks"; }
+    if (what) { const sp = what.querySelector("span"); if (sp) sp.textContent = "Order"; }
+    const rest = [...f.querySelectorAll(":scope>details.o2d")];
+    if (rest[0] && /Recent orders/.test(rest[0].textContent)) { rest[0].open = true; rest[0].classList.add("vxo-log"); const sm = rest[0].querySelector("summary"); if (sm) sm.textContent = sm.textContent.replace("Recent orders", "Signed orders") }
+    const box = document.createElement("div");
+    box.innerHTML = `<div class="vxo-w"></div><div class="vxo-qp" role="group" aria-label="Quick picks">${chips}</div><div class="vxo-q"></div><details class="vxo-det"${O.det ? " open" : ""}><summary><b>Details</b> <span class="vxo-ds"></span></summary><div class="vxo-dg"></div></details>`;
+    if (what) box.querySelector(".vxo-w").appendChild(what); if (quick) box.querySelector(".vxo-q").appendChild(quick); det.forEach(l => box.querySelector(".vxo-dg").appendChild(l));
+    const g = f.querySelector(".o2g"); if (g) g.replaceWith(...box.childNodes);
+    if (o2s) { const sum = o2s.querySelector("#c2sum"); if (sum) o2s.prepend(sum) }
+    f.classList.add("vxo-f"); const wrap = document.createElement("div"); wrap.appendChild(f);
+    const ds = wrap.querySelector(".vxo-ds"); if (ds) ds.textContent = detSum(wrap);
+    return wrap.innerHTML + `<p class="vxo-all"><button type="button" class="vxsb-lk" data-c2go="board:brain">See all orders in the Brain</button></p>`;
+  }
+  function ordHTML() {
+    const X = OX(); if (!X) return `<p class="vxsb-e">Orders are loading…</p>`; let n = 0; try { n = X.items().length } catch (e) { }
+    const T = [["new", "New order"], ["sets", "Order sets"], ["cart", "Cart" + (n ? " (" + n + ")" : "")]];
+    let body = ""; try { body = O.sub === "sets" ? X.sets() : O.sub === "cart" ? (O.msg ? `<div class="cmsg vxo-msg" role="status">${O.msg}</div>` : "") + X.cart() : formHTML(X) } catch (e) { body = `<p class="vxsb-e">Couldn't show orders.</p>` }
+    return `<div class="vxo" data-vxo><div class="vxo-seg" role="tablist" aria-label="Orders">${T.map(([k, l]) => `<button type="button" role="tab" class="vxo-s${O.sub === k ? " on" : ""}" data-vxo-sub="${k}" aria-selected="${O.sub === k}">${e_(l)}</button>`).join("")}</div><div class="vxo-b" data-vxo-b="${O.sub}">${body}</div></div>`;
+  }
+  function snap() { const r = document.querySelector("#vxsb [data-vxo]"); if (!r) return; OIDS.forEach(id => { const el = r.querySelector("#" + id); if (el) O.ov[id] = el.type === "checkbox" ? el.checked : el.value }); const d = r.querySelector(".vxo-det"); if (d) O.det = d.open }
+  function restore(r) {
+    OIDS.forEach(id => { const el = r.querySelector("#" + id); if (!el || !(id in O.ov)) return; if (el.type === "checkbox") el.checked = !!O.ov[id]; else el.value = O.ov[id] });
+    const ds = r.querySelector(".vxo-ds"); if (ds) ds.textContent = detSum(r); const X = OX(); try { if (X && r.querySelector("#c2sum")) X.summary() } catch (e) { }
+  }
+  function ordMount(force) {
+    const host = document.getElementById("vxsb"); if (!host || host.hidden) return; const tabs = host.querySelector(".vxsb-tabs"); if (!tabs) return;
+    let tb = tabs.querySelector('[data-sb-tab="ord"]');
+    if (!inChart()) { if (tb) tb.remove(); return }
+    if (!tb) { const br = tabs.querySelector('[data-sb-tab="brain"]'); const h = `<button type="button" role="tab" class="vxsb-tab2 vxo-tab" data-sb-tab="ord" aria-selected="false">${sv("orders", 15)}<span>Orders</span><b data-vxo-n hidden></b></button>`; if (br) br.insertAdjacentHTML("afterend", h); else tabs.insertAdjacentHTML("beforeend", h); tb = tabs.querySelector('[data-sb-tab="ord"]') }
+    const X = OX(); let n = 0; try { n = X ? X.items().length : 0 } catch (e) { } const nb = tb.querySelector("[data-vxo-n]"); if (nb) { const t = n ? String(n) : ""; if (nb.textContent !== t) nb.textContent = t; if (nb.hidden !== !n) nb.hidden = !n }
+    const st = sbSt(); if (st.tab !== "ord") return;
+    tabs.querySelectorAll(".vxsb-tab2").forEach(b => { const me = b === tb; if (b.classList.contains("on") !== me) b.classList.toggle("on", me); if (b.getAttribute("aria-selected") !== String(me)) b.setAttribute("aria-selected", String(me)) });
+    const p = host.querySelector(".vxsb-p"); if (p && p.getAttribute("aria-label") !== "Orders") p.setAttribute("aria-label", "Orders");
+    const body = host.querySelector(".vxsb-b"); if (!body) return;
+    if (force || !body.querySelector("[data-vxo]")) { body.innerHTML = ordHTML(); const r = body.querySelector("[data-vxo]"); if (r) restore(r) }
+    if (O.focus) { if (Date.now() - O.focus > 1500) O.focus = 0; else { const w = body.querySelector("#c2what"); const a = document.activeElement; if (w && a !== w && (!a || !a.closest || !a.closest("[data-vxo]"))) { try { w.focus({ preventScroll: true }) } catch (e) { } } } }
+  }
+  function ordOpen(sub) {
+    O.sub = sub === "sets" || sub === "cart" ? sub : "new"; if (O.sub !== "cart") O.msg = ""; O.focus = O.sub === "new" ? Date.now() : 0;
+    const go = () => { forward(`data-sb-open="ord" data-vxo-sub="${O.sub}"`); setTimeout(() => ordMount(true), 0); setTimeout(() => ordMount(false), 90) };
+    if (inChart()) go(); else toChart(go);
+  }
+  /* keep typed values across side-panel repaints; refresh the Details summary */
+  ["input", "change"].forEach(ev => document.addEventListener(ev, e => { const t = e.target; if (!t || !t.closest || !t.closest("#vxsb [data-vxo]")) return; snap(); const r = t.closest("[data-vxo]"); const ds = r.querySelector(".vxo-ds"); if (ds) ds.textContent = detSum(r) }));
+  document.addEventListener("toggle", e => { if (e.target && e.target.classList && e.target.classList.contains("vxo-det")) O.det = e.target.open }, true);
+  document.addEventListener("click", e => {
+    const t = e.target; if (!t || !t.closest) return; const b = t.closest("#vxsb [data-vxo-sub]");
+    if (b) { e.preventDefault(); snap(); O.sub = b.dataset.vxoSub; if (O.sub !== "cart") O.msg = ""; ordMount(true); const x = document.querySelector(`#vxsb [data-vxo-sub="${O.sub}"]`); if (x) x.focus(); return }
+    const so = t.closest('[data-sb-open="ord"]'); if (so && !so.closest("#vxsb")) { O.sub = so.dataset.vxoSub || "new"; if (O.sub !== "cart") O.msg = ""; if (O.sub === "new") O.focus = Date.now() }
+    if (t.closest("#vxsb [data-cset],#vxsb [data-cart],#vxsb [data-cart-rm]")) { O.catchCart = Date.now(); if (t.closest("[data-cset]")) { O.sub = "cart" } }
+  }, true);
+  /* after the app's own submit handler: a signed order clears the form (the screen version re-rendered itself) */
+  let logN = -1; const logLen = () => { try { const X = OX(); return X ? X.log().length + ":" + (X.log().slice(-1)[0] || {}).at : "" } catch (e) { return "" } };
+  document.addEventListener("submit", e => { const f = e.target; if (f && f.closest && f.closest("#vxsb [data-vxo]")) logN = logLen() }, true);
+  document.addEventListener("submit", e => { const f = e.target; if (!f || !f.closest || !f.closest("#vxsb [data-vxo]") || !f.dataset || f.dataset.form !== "c2order") return;
+    const before = logN; setTimeout(() => { if (logLen() === before) return; O.ov = {}; O.det = false; ordMount(true) }, 0) });
+  /* cart actions started in the tab: the app answers with its cart drawer; show the answer in the tab instead */
+  function catchCart() {
+    if (!O.catchCart) return; if (Date.now() - O.catchCart > 60000) { O.catchCart = 0; return }
+    const d = [...document.querySelectorAll(".mnu")].find(m => m.querySelector('.ws-d[aria-label="Order cart"]')); if (!d) return;
+    const m = d.querySelector(".cmsg"); O.msg = m ? m.innerHTML : ""; d.remove(); if (!document.querySelector(".mnu")) document.documentElement.style.overflow = "";
+    O.catchCart = Date.now() - 45000; O.sub = "cart"; ordMount(true);  /* keep listening 15 s more: sign() answers twice (Signing…, then Orders signed) */
+  }
+  window.__vxOrd = { open: ordOpen, state: O, mount: ordMount, html: ordHTML };
+
+  /* ---------------- public API ---------------- */
+  window.__vxLaunch = {
+    version: V33, add, remove, get: id => REG.get(String(id)) || null, list, find, run, open, close, isOpen: () => S.open,
+    group: (id, label, order) => { G.set(String(id), { id: String(id), label: label || String(id), order: order == null ? 80 : +order }); if (S.open) paintList() },
+    groups: () => [...G.values()].sort((a, b) => a.order - b.order), roles: () => [...roles()], icons: () => Object.keys(IP), dispHTML
+  };
+  drain();
+}
+/* </v33-nomenu-js> */
 /* <v22-daily-js> */
 /* <v22-daily-js> Daily AI questions + owner spot-check queue.
    Insert INSIDE the app's main IIFE in app.html (BANK/BY/itemHTML/qflagL are IIFE-scoped, not globals): directly after
