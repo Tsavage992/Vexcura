@@ -3695,7 +3695,7 @@ const BANK = (function(e){try{const P=">oVO^cd@ge#lJ'~wUTDiEY+LZx-K&hkt(/F0;G`N.
 let HIDQ=new Set();const CFG={c:null,bypass:false};try{const c=JSON.parse(localStorage.getItem("ns.cfg")||"null");if(c&&typeof c==="object"){CFG.c=c;HIDQ=new Set(c.hideQ||[])}}catch(e){}
 const featOn=k=>!CFG.c||!CFG.c.feat||CFG.c.feat[k]!==false;
 
-const APPV="7192de217e18131cf25fd13b7f2167b1e1608fca6298dda6f032da7af1cca58d";
+const APPV="a271aa80db0143c729d8452de48d5726d995108371f9141504f1fc2f900a2ae2";
 const CATS={
   MOC:{n:"Management of Care",lo:15,hi:21,w:18},
   SIC:{n:"Safety and Infection Prevention and Control",lo:10,hi:16,w:13},
@@ -6718,7 +6718,7 @@ zolpidem|Sedative-hypnotic|PO||Ambien`;
 (() => {
   const U = 5.1; /* avatar units per cm (viewBox 400 x 900, adult ~170 cm) */
   const CAT = t => LDACAT[t] || "drain";
-  const AI = "AI-generated · fact-checked · not yet reviewed by a registered nurse";
+  const AI = "AI-assisted · fact-checked · reviewed by a registered nurse (Nov 2026)";
   const SRC = {
     ins: "INS. Infusion Therapy Standards of Practice, 9th ed. J Infus Nurs. 2024;47(1S):S1-S285",
     clabsi: "CDC/HICPAC. Guidelines for the Prevention of Intravascular Catheter-Related Infections (2011; 2017 update)",
@@ -11955,10 +11955,10 @@ app.addEventListener("drop",e=>{const s2=e.target.closest&&e.target.closest(".sl
    severity, presentation, comorbidities, distractors and phrasing vary, and the physiology responds to what the student does.
    Progress: localStorage "nclexsim.v1.deter" (synced with the other nclexsim.v1.* keys). Drill state: p.dx32 on the EHR chart.
    Optional at run time: window.__vxTele (v30, rhythm strips), window.__vxAusc (v31, heart/lung sounds), window.__vx29chat (v29).
-   Clinical content: AI-generated · fact-checked · not yet reviewed by a registered nurse. Fictional patients only. */
+   Clinical content: AI-assisted · fact-checked · reviewed by a registered nurse (Nov 2026). Fictional patients only. */
 (function(){"use strict";
 const DV="v32";
-const LBL="AI-generated · fact-checked · not yet reviewed by a registered nurse";
+const LBL="AI-assisted · fact-checked · reviewed by a registered nurse (Nov 2026)";
 const e_=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c]);
 const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
 const r1=x=>Math.round(x*10)/10, r2=x=>Math.round(x*100)/100;
@@ -13719,17 +13719,28 @@ function fire(R,e){const D=R.D||{};const txt=String(e.txt||"").replace(/\{(\w+)\
   R.ev.push(ev);if(ev.key&&R.mark.cue1==null)R.mark.cue1=ev.t;if(e.set)Object.assign(R.flags,e.set);if(e.setx)Object.keys(e.setx).forEach(k=>R.x[k]=e.setx[k]);if(e.seizDur)R.seizDur=e.seizDur;
   if(e.lab)reqLab(R,e.lab,"auto");if(e.labNow){String(e.labNow).split(",").forEach(id=>{const L=LABS[id];if(!L)return;const z={id:"L"+R.labs.length,lab:id,n:L.n,tOrd:r1(R.t-45),tDraw:r1(R.t-40),tRes:r1(R.t),vals:L.res(R,R.D),drawn:1,out:1,by:"AM labs"};R.labs.push(z);const cr=(z.vals||[]).filter(v=>CRIT.some(c=>c[0]===v[0]&&c[1](+v[1])));z.crit=cr.map(v=>v[0]+" "+v[1]+" "+v[2]).join(", ");if(cr.length){R.critCalls=(R.critCalls||[]).concat([{t:R.t,txt:z.crit,lab:id}]);chatLabCall(R,z,cr[0])}})}if(e.o2)R.o=Object.assign({},R.o,e.o2);if(e.vit){updChartQ.push(q=>fileFS(q,R,vitVals(R),"Nursing assistant"))}RUN.dirty=1;RUN.newEv=(RUN.newEv||[]).concat([ev])}
 const updChartQ=[];
+/* alarm de-duplication: a case's own alarm/monitor event and the engine's generic monitor alarm for the same parameter must not both fire.
+   Tags: ml (BP/MAP), sp (SpO2), hh/hl (heart rate), rl (RR / capnography), rh (rhythm). Generic alarms are skipped for 10 sim-min after a
+   case alarm with the same tag; a case alarm is skipped if the generic one fired in the last 5 sim-min (unless it is marked crit). */
+function alTags(e){const k=e.k,t=String(e.txt&&Array.isArray(e.txt)?e.txt.join(" "):e.txt||"");if(e.obj||(k!=="alarm"&&k!=="monitor"))return [];const ala=k==="alarm"||/alarm/i.test(t);const T=[];
+  if(ala&&/\bMAP\b|\{map\}|\{bp\}|arterial line|NIBP|blood pressure/i.test(t))T.push("ml");if(ala&&/SpO2|\{spo2\}|saturation/i.test(t))T.push("sp");
+  if(ala&&/heart rate|\bHR\b/i.test(t)&&!/\bMAP\b|\{map\}/i.test(t))T.push("hh","hl");if(ala&&/capnograph|EtCO2|respiratory rate/i.test(t))T.push("rl");
+  if(/rhythm|fibrillation|tachycardia|ST elevation|ST depression|PVCs?\b|peaked T|QRS|wide complex|sine|heart block|asystole|V-fib|V-tach/i.test(t))T.push("rh");return T}
 function evTick(R){const c=R.case,D=R.D;
   (c.ev||[]).forEach((e,i)=>{const id=e.id||("e"+i);if(R.fired[id]!=null&&!e.rep)return;if(e.pres&&!R.f[e.pres])return;if(e.notIf&&cond(e.notIf,R))return;if(e.rep&&R.fired[id]!=null&&R.t-R.fired[id]<e.rep)return;
     if(e.p!=null&&R.fired["p_"+id]==null){R.fired["p_"+id]=rnd(R)<e.p?1:0}if(e.p!=null&&!R.fired["p_"+id])return;if(!cond(e.when,R))return;R.fired[id]=R.t;
-    const txt=Array.isArray(e.txt)?e.txt[R.txv[id]||0]:e.txt;fire(R,Object.assign({},e,{id,txt}))});
+    const txt=Array.isArray(e.txt)?e.txt[R.txv[id]||0]:e.txt;const tg=alTags(e);R.alC=R.alC||{};R.alG=R.alG||{};
+    if(tg.length&&!e.crit&&tg.every(g=>R.alG[g]!=null&&R.t-R.alG[g]<5))return;tg.forEach(g=>{R.alC[g]=R.t;if(g!=="rh")R.flags["al_"+g]=1});
+    fire(R,Object.assign({},e,{id,txt}))});
   R.herr.forEach((h,j)=>{if(h.done||R.t<h.at)return;h.done=1;const H=HERR[h.i];fire(R,{id:"h"+j,k:H.k,txt:H.txt,herr:1,dec:H.dec?H.dec.map(d=>d.slice(0,2)):null})});
   R.evq.splice(0).forEach(e=>fire(R,e));
   /* monitor alarms when monitored */
-  const al=(id,on,off,txt,key)=>{const a=R.flags["al_"+id];if(!a&&on){R.flags["al_"+id]=1;fire(R,{k:"alarm",txt,key:key?1:0,obj:1})}else if(a&&off)R.flags["al_"+id]=0};
+  R.alC=R.alC||{};R.alG=R.alG||{};const al=(id,on,off,txt,key)=>{const a=R.flags["al_"+id];if(!a&&on){R.flags["al_"+id]=1;if(R.alC[id]!=null&&R.t-R.alC[id]<10)return;R.alG[id]=R.t;fire(R,{k:"alarm",txt,key:key?1:0,obj:1})}else if(a&&off)R.flags["al_"+id]=0};
   if(R.mon>=2&&!D.arr){al("sp",D.spo2<88,D.spo2>91,"Monitor alarm: SpO2 "+D.spo2+"%.",1);al("hh",D.hr>130,D.hr<120,"Monitor alarm: heart rate "+D.hr+".",1);al("hl",D.hr<45,D.hr>52,"Monitor alarm: heart rate "+D.hr+".",1);
     al("rl",D.rr<8,D.rr>10,"Capnography alarm: respiratory rate "+D.rr+", EtCO2 "+D.etco2+" mmHg.",1);if(R.mon>=3||R.aline)al("ml",D.map<60,D.map>65,(R.aline?"Arterial line":"NIBP")+" alarm: BP "+D.sbp+"/"+D.dbp+" (MAP "+D.map+").",1)}
-  if(R.mon>=2&&R.lastRh&&R.lastRh!==D.rh&&!D.arr)fire(R,{k:"monitor",txt:"Monitor: rhythm change to "+(RHN[D.rh]||D.rh)+".",key:1,obj:1});R.lastRh=D.rh;
+  /* rhythm-change notices: only for a new non-sinus rhythm, or a return to sinus from a dangerous one (no chatter as the rate crosses 100 or PVCs come and go) */
+  {const SIN=/^(nsr|stach|sbrady)$/,BAD=/^(vt|tdp|vfc|avb3|svt|afrvr|hyperk|stemi)$/;const was=R.lastRh,nw=D.rh;
+   if(R.mon>=2&&was&&was!==nw&&!D.arr&&(!SIN.test(nw)||BAD.test(was))&&!(R.alC.rh!=null&&R.t-R.alC.rh<10)&&!(R.alG.rh!=null&&R.t-R.alG.rh<5&&R.lastRhN===nw)){R.alG.rh=R.t;R.lastRhN=nw;fire(R,{k:"monitor",txt:"Monitor: rhythm change to "+(RHN[nw]||nw)+".",key:1,obj:1})}}R.lastRh=D.rh;
   /* routine vitals from the nursing assistant (non-ICU), every 30 min unless you just took them */
   if(c.tier<4&&R.mon<3&&R.t>=14){const last=Math.max(R.lastVit||-99,R.techT||-99);if(R.t-last>=30){R.techT=R.t;fire(R,{k:"tech",txt:"Nursing assistant: routine vitals: "+vitTxt(R)+".",key:R.news>=3?1:0,vit:1})}}
   /* call light / family when the patient changes (generic) */
@@ -16744,11 +16755,11 @@ if(window.__vx32T&&window.__vx32T.test)Object.assign(window.__vx32,{RUN,CASES,CA
    sit between the closing v25-mychart-js marker and the opening v29-sdoh-js marker (tele-apply.js checks that the two are adjacent).
    Entry points: My Chart › More row and #assessment (no Menu entry: the Menu drawer is being removed) (also #assessment/learn|practice|full|challenge|progress[/id]).
    Progress: localStorage "nclexsim.v1.ausc" (synced to the account with the other nclexsim.v1.* keys via srvSyncSoon).
-   Clinical content: AI-generated · fact-checked · not yet reviewed by a registered nurse. Fictional patients only. No recordings: every
+   Clinical content: AI-assisted · fact-checked · reviewed by a registered nurse (Nov 2026). Fictional patients only. No recordings: every
    sound is synthesized at run time. */
 (function(){"use strict";
 const AUV="v31";
-const LBL="AI-generated · fact-checked · not yet reviewed by a registered nurse";
+const LBL="AI-assisted · fact-checked · reviewed by a registered nurse (Nov 2026)";
 const e_=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c]);
 const RM=()=>{try{return matchMedia("(prefers-reduced-motion: reduce)").matches||document.documentElement.classList.contains("reduce-motion")}catch(e){return false}};
 const TT=()=>Object.assign({bowelSec:20,prov:[1100,2000],chalSec:45},window.__vx31T||{});
@@ -18045,10 +18056,10 @@ window.__vxAusc={version:AUV,open,close,state:S,CH,FIND,FM,CASES,CASEL,FULLC,SIT
    Entry points: Menu › Practice one thing tile, My Chart › More row, #telemetry (also #telemetry/learn|practice|station|code|progress),
    and a telemetry strip card on the EHR Flowsheets activity for monitored patients (via window.__EHXpost; desktop only).
    Progress: localStorage "nclexsim.v1.tele" (synced to the account with the other nclexsim.v1.* keys via srvSyncSoon).
-   Clinical content: AI-generated · fact-checked · not yet reviewed by a registered nurse. Fictional patients only. */
+   Clinical content: AI-assisted · fact-checked · reviewed by a registered nurse (Nov 2026). Fictional patients only. */
 (function(){"use strict";
 const TLV="v30";
-const LBL="AI-generated · fact-checked · not yet reviewed by a registered nurse";
+const LBL="AI-assisted · fact-checked · reviewed by a registered nurse (Nov 2026)";
 const e_=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c]);
 const RM=()=>{try{return matchMedia("(prefers-reduced-motion: reduce)").matches||document.documentElement.classList.contains("reduce-motion")}catch(e){return false}};
 const TT=()=>Object.assign({alarm0:2500,alarmGap:7000,prov:[1200,2200],seed:0},window.__vx30T||{});
@@ -18372,7 +18383,7 @@ function calTools(){return `<div class="tl-ctl" role="group" aria-label="Caliper
 /* a full strip block: paper + caliper overlay + tools + readout */
 function stripBlock(st,o){o=o||{};return `<div class="tl-strip" data-zoom="1"><div class="tl-sw">${stripSVG(st,o)}</div>${o.nocal?"":calTools()+`<div class="tl-out" data-cal-out aria-live="polite"></div>${o.use?`<button type="button" class="tl-btn sec tl-use" data-ct="use">Use this measurement in my answers</button>`:""}`}</div>`}
 
-/* ================= teaching content (AI-generated · fact-checked · not yet reviewed by a registered nurse) =================
+/* ================= teaching content (AI-assisted · fact-checked · reviewed by a registered nurse (Nov 2026)) =================
    c: criteria · ca: common causes · as: what to assess · ac: priority nursing actions (RN scope) · pv: what the provider may order
    acl: ACLS card key · pri: correct priority action key · nx: correct next steps · nw: tempting but wrong next steps · sp: StatPearls search term */
 const SRC={
