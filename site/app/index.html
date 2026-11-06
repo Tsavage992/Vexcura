@@ -3482,6 +3482,208 @@ html.vxlib-rdon{overflow:hidden}
 .rd-msg{display:grid;gap:8px;justify-items:start;max-width:560px;margin:40px auto;padding:0 18px;color:var(--ink)}
 @media (max-width:560px){.rd-dl span{display:none}}
 /* </v35-library-css> */
+/* <v36-lda-css> */
+/* v36 LDA Avatar (Lines/Drains/Airways/Wounds). Scoped to .l36 and #l36ov. */
+.l36,#l36ov{--l36-ink:#1e2b37;--l36-mut:#5b6c7a;--l36-line:#d4dee6;--l36-soft:#f3f6f9;--l36-acc:#155e86;--l36-acc2:#0f4c6e;--l36-line-c:#2c9b56;--l36-drain-c:#c2447a;--l36-airway-c:#2f6fbf;--l36-wound-c:#c27a12;color:var(--l36-ink);font-size:13px;line-height:1.35}
+.l36{background:#fff;border:1px solid var(--l36-line);border-radius:8px;padding:10px 12px 8px;min-width:0;max-width:100%;box-sizing:border-box}
+.l36 *,#l36ov *{box-sizing:border-box}
+.l36 h2,.l36 h3,.l36 h4,#l36ov h4,#l36ov b{font-family:inherit}
+.l36,#l36ov{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.l36 button,#l36ov button{font:inherit;cursor:pointer}
+.l36-bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;border-bottom:1px solid var(--l36-line);padding-bottom:8px;margin-bottom:8px}
+.l36-t{font-size:16px;margin:0;font-weight:650;color:var(--l36-acc2)}.l36-t small{font-size:12px;color:var(--l36-mut);font-weight:500;margin-left:6px}
+.l36-cnt{color:var(--l36-mut);font-size:12px}.l36-cnt b{color:#b3261e}
+.l36-sp{flex:1}
+.l36-pmt{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--l36-mut);padding:4px 8px;border:1px solid var(--l36-line);border-radius:999px;background:var(--l36-soft)}
+.l36-pmt input{margin:0;accent-color:var(--l36-acc)}
+.l36-addb{background:var(--l36-acc);color:#fff;border:0;border-radius:6px;padding:8px 14px;font-weight:650;min-height:36px}
+.l36-addb:hover{background:var(--l36-acc2)}
+.l36-b1{background:var(--l36-acc);color:#fff;border:1px solid var(--l36-acc);border-radius:5px;padding:5px 11px;font-weight:600;min-height:30px}
+.l36-b2{background:#fff;color:var(--l36-acc2);border:1px solid #b8c8d4;border-radius:5px;padding:5px 11px;min-height:30px}
+.l36-b1:hover{background:var(--l36-acc2)}.l36-b2:hover{background:#eef4f8}
+.l36-lk{background:none;border:0;color:var(--l36-acc);text-decoration:underline;padding:2px 4px}
+.l36-x{background:none;border:0;font-size:22px;line-height:1;color:var(--l36-mut);padding:2px 8px;margin-left:auto;min-width:36px;min-height:36px}
+.l36-fine{font-size:11.5px;color:var(--l36-mut);margin:6px 0}
+.l36-main{display:grid;grid-template-columns:minmax(250px,36%) minmax(0,1fr);gap:14px;align-items:start}
+/* figure */
+.l36-fig{margin:0;background:linear-gradient(#f7f9fb,#eef3f6);border:1px solid var(--l36-line);border-radius:8px;padding:8px;position:relative;min-width:0}
+.l36-figbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px}
+.l36-seg{display:inline-flex;border:1px solid #b8c8d4;border-radius:6px;overflow:hidden;background:#fff}
+.l36-seg button{border:0;background:#fff;padding:5px 12px;color:var(--l36-acc2);min-height:32px}
+.l36-seg button[aria-pressed="true"]{background:var(--l36-acc);color:#fff;font-weight:600}
+.l36-oth{font-size:11.5px;color:var(--l36-mut)}
+.l36-stage{position:relative;min-height:200px}
+.l36-svg{display:block;width:100%;height:auto;max-height:min(68vh,620px);margin:0 auto;touch-action:manipulation}
+.l36-cap{font-size:11.5px;color:var(--l36-mut);text-align:center;margin-top:4px}
+.l36-lr{font:700 20px system-ui,sans-serif;fill:#5b6c7a}
+/* body drawing */
+.b36-body,.b36-head{stroke:#7f95a6;stroke-width:1.1;vector-effect:non-scaling-stroke;cursor:zoom-in}
+.adding .b36-body,.adding .b36-head{cursor:crosshair}
+.b36-ear{fill:#d6dfe6;stroke:#7f95a6;stroke-width:1;vector-effect:non-scaling-stroke}
+.b36-hl{pointer-events:none}.b36-lm{pointer-events:none}
+.b36-ln{fill:none;stroke:#8ea2b2;stroke-width:1;vector-effect:non-scaling-stroke;stroke-linecap:round}
+.b36-fn{fill:none;stroke:#a9b8c4;stroke-width:.8;vector-effect:non-scaling-stroke;stroke-linecap:round}
+.b36-fc{fill:none;stroke:#8597a6;stroke-width:.9;vector-effect:non-scaling-stroke;stroke-linecap:round}
+.b36-vn{fill:none;stroke:#6f93c2;stroke-width:1.2;vector-effect:non-scaling-stroke;stroke-linecap:round;opacity:0}
+.b36-dz{opacity:0}.z .b36-dz{opacity:1}.z .b36-vn{opacity:.75}
+.b36-um{fill:#9fb0bd}.b36-nar{fill:#6f8394}.b36-pt{fill:none;stroke:#b3c1cc;stroke-width:.8;vector-effect:non-scaling-stroke}
+.b36-q{fill:none;stroke:#7b93a8;stroke-width:1;stroke-dasharray:4 3;vector-effect:non-scaling-stroke;pointer-events:none}
+.b36-ol{fill:#4e6577;font-family:system-ui,sans-serif;font-weight:600;pointer-events:none}
+/* devices */
+.l36-dev{cursor:pointer;outline:none}
+.l36-halo{fill:currentColor;fill-opacity:.1;stroke:currentColor;stroke-opacity:.55;stroke-width:1.2;vector-effect:non-scaling-stroke}
+.l36-dev.c-line,.l36-ci.c-line{color:var(--l36-line-c)}.l36-dev.c-drain,.l36-ci.c-drain{color:var(--l36-drain-c)}.l36-dev.c-airway,.l36-ci.c-airway{color:var(--l36-airway-c)}.l36-dev.c-wound,.l36-ci.c-wound{color:var(--l36-wound-c)}
+.l36-dev.on .l36-halo,.l36-dev.l36-hov .l36-halo,.l36-dev:focus-visible .l36-halo{fill-opacity:.22;stroke-opacity:1;stroke-width:2.4;animation:l36p 1.6s ease-in-out infinite}
+@keyframes l36p{50%{stroke-width:4}}
+@media (prefers-reduced-motion:reduce){.l36-dev .l36-halo{animation:none!important}}
+.z .l36-halo{fill-opacity:.06;stroke-opacity:.35}
+.l36-rq circle{fill:#6a3fb0}.l36-rq text{fill:#fff;font:700 8px system-ui,sans-serif}
+.g-dr{fill:#fff;fill-opacity:.45;stroke:#7895ab;stroke-width:.7;vector-effect:non-scaling-stroke}
+.g-cath{fill:none;stroke:#9fb3c2;stroke-width:1.4;stroke-linecap:round}
+.g-hub{stroke:#4d5f6c;stroke-width:.5;vector-effect:non-scaling-stroke}
+.g-tube,.g-lum,.g-jp{fill:none;stroke:#dfe7ee;stroke-width:2.1;stroke-linecap:round;paint-order:stroke}
+.g-tube{stroke:#cfdbe4}.g-lum{stroke:#d7e1e9;stroke-width:1.8}
+.g-cap{stroke:#4d5f6c;stroke-width:.5;vector-effect:non-scaling-stroke}
+.g-chg{fill:#7f70c4;fill-opacity:.55}
+.g-sec,.g-conn{fill:#fff;stroke:#6f8597;stroke-width:.6;vector-effect:non-scaling-stroke}
+.g-port{fill:#9fb3c2;fill-opacity:.25;stroke:#5f7a8e;stroke-width:.9;stroke-dasharray:2 1.5;vector-effect:non-scaling-stroke}
+.g-sept{fill:#fff;stroke:#5f7a8e;stroke-width:.7;vector-effect:non-scaling-stroke}
+.g-fol{fill:none;stroke:#d9b45e;stroke-width:2.6;stroke-linecap:round;stroke-opacity:.9}
+.g-ng{fill:none;stroke:#d7c27c;stroke-width:1.9;stroke-linecap:round}.g-ng.thin{stroke:#e2c75b;stroke-width:1.1}
+.g-tape{fill:#f4f0e6;fill-opacity:.9;stroke:#b9ad8c;stroke-width:.4;vector-effect:non-scaling-stroke}
+.g-mark{fill:none;stroke:#34495a;stroke-width:.8;vector-effect:non-scaling-stroke}
+.g-bol{fill:#f1ead9;stroke:#a08d63;stroke-width:.7;vector-effect:non-scaling-stroke}.g-gt{fill:none;stroke:#e9dfc2;stroke-width:3;stroke-linecap:round}
+.g-ct{fill:none;stroke:#7f95a6;stroke-width:5;stroke-linecap:round}.g-ct2{fill:none;stroke:#e9c6bf;stroke-width:3.4;stroke-linecap:round}
+.g-bulb{fill:#f2f5f7;fill-opacity:.8;stroke:#7f95a6;stroke-width:.7;vector-effect:non-scaling-stroke}.g-fluid{fill:none;stroke:#c97a6e;stroke-width:2.2;stroke-linecap:round}
+.g-hv{fill:#eef2f5;stroke:#7f95a6;stroke-width:.7;vector-effect:non-scaling-stroke}.g-pen{fill:#f1e3b4;stroke:#b39a57;stroke-width:.5;vector-effect:non-scaling-stroke}
+.g-holder{fill:#f6f7f8;stroke:#9aa9b5;stroke-width:.5;vector-effect:non-scaling-stroke}.g-ett{fill:none;stroke:#cfe0ec;stroke-width:3.4;stroke-linecap:round}.g-ettx{fill:#e8f1f7;stroke:#5f7a8e;stroke-width:.7;vector-effect:non-scaling-stroke}
+.g-pilot{fill:none;stroke:#9fb3c2;stroke-width:.7}.g-pb{fill:#e8f1f7;stroke:#7f95a6;stroke-width:.5;vector-effect:non-scaling-stroke}
+.g-txt{font:600 4.6px system-ui,sans-serif;fill:#26394a}
+.g-flange{fill:#eef3f7;stroke:#5f7a8e;stroke-width:.8;vector-effect:non-scaling-stroke}.g-can{fill:#d9e5ee;stroke:#5f7a8e;stroke-width:.7;vector-effect:non-scaling-stroke}.g-can2{fill:#6a7f90}
+.g-tie{fill:none;stroke:#c2cdd6;stroke-width:1.6}
+.g-npa{fill:#f1c9a5;stroke:#a77a55;stroke-width:.6;vector-effect:non-scaling-stroke}.g-opa{fill:#fff;stroke:#5f7a8e;stroke-width:.7;vector-effect:non-scaling-stroke}
+.g-pouch{fill:#f3f0ea;fill-opacity:.75;stroke:#a69d8c;stroke-width:.7;vector-effect:non-scaling-stroke}.g-wafer{fill:#efe6d4;stroke:#a69d8c;stroke-width:.6;vector-effect:non-scaling-stroke}
+.g-stoma{fill:#d55d5a;stroke:#9d3833;stroke-width:.6;vector-effect:non-scaling-stroke}.g-stoma2{fill:#7d2621;opacity:.6}
+.g-wnd{stroke:#8a3b2e;stroke-width:.8;vector-effect:non-scaling-stroke}
+.g-wnd.w1{fill:#de7a72;fill-opacity:.45;stroke:#c25c55;stroke-dasharray:2 1.4}.g-wnd.wd{fill:#6e2a4f;fill-opacity:.62}.g-wnd.w2{fill:#efa3a0}.g-wnd.w3{fill:#c4453f}.g-wnd.ws{fill:#d8c47a}.g-wnd.wu{fill:#3e2c26}
+.g-flap{fill:none;stroke:#8a3b2e;stroke-width:.7;vector-effect:non-scaling-stroke}
+.g-inc{fill:none;stroke:#8a3b2e;stroke-width:1.4;stroke-linecap:round;vector-effect:non-scaling-stroke}.g-stp{fill:none;stroke:#6f8597;stroke-width:.9;vector-effect:non-scaling-stroke}
+/* hotspots */
+.l36-hs{cursor:pointer;outline:none}
+.l36-hs .hit{fill:transparent}
+.l36-hs .ld{stroke:#1d6b46;stroke-width:1;vector-effect:non-scaling-stroke;pointer-events:none}.l36-hs .pin{fill:#1d6b46;pointer-events:none}
+.l36-hs .dot{fill:#1d8a5a;fill-opacity:.25;stroke:#1d8a5a;stroke-width:2;vector-effect:non-scaling-stroke;animation:l36h 1.4s ease-in-out infinite}
+.l36-hs.warn .dot{fill:#d39b10;stroke:#b07d00}
+.l36-hs.any .dot{fill:#5b6c7a;stroke:#3e4f5d;fill-opacity:.2;animation:none}
+.l36-hs.cl .dot{fill:#155e86;stroke:#0f4c6e;fill-opacity:.85;animation:none}
+.l36-hs.cl text{fill:#fff;font:700 10px system-ui,sans-serif;pointer-events:none}
+.l36-hs:hover .dot,.l36-hs:focus-visible .dot{fill-opacity:.6;stroke-width:3}
+.l36-hs .lbl{fill:#14354d;font-family:system-ui,sans-serif;font-weight:600;paint-order:stroke;stroke:#fff;stroke-width:3px;stroke-linejoin:round;pointer-events:none}
+@keyframes l36h{50%{fill-opacity:.55}}
+@media (prefers-reduced-motion:reduce){.l36-hs .dot{animation:none}}
+/* zoom inset */
+.l36-zoom{position:absolute;left:0;right:0;top:0;max-height:100%;overflow:auto;background:rgba(255,255,255,.97);border:1px solid #b8c8d4;border-radius:8px;box-shadow:0 8px 28px rgba(20,40,60,.18);display:flex;flex-direction:column;z-index:2}
+.l36-zh{display:flex;align-items:center;gap:8px;padding:4px 4px 4px 10px;border-bottom:1px solid var(--l36-line)}
+.l36-zp{display:flex;gap:6px;padding:6px;align-items:flex-start}
+.l36-zp figure{margin:0;flex:1 1 0;min-width:0;display:flex;flex-direction:column;background:#f6f9fb;border-radius:6px;border:1px solid #e3eaf0}
+.l36-zp.n2 figure:first-child{flex:1.7 1 0}
+.l36-zp figcaption{font-size:11px;color:var(--l36-mut);text-align:center;padding:2px}
+.l36-psvg{width:100%;height:auto;max-height:min(66vh,600px);display:block}
+/* hint / placement */
+.l36-hint{border:1px solid #9cc6b1;background:#ecf7f1;border-radius:7px;padding:8px 10px;margin-bottom:8px}
+.l36-hrow{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.l36-hrow .l36-b2{margin-left:auto}
+.l36-step{font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;color:#1d6b46;font-weight:700;background:#d5efe1;border-radius:4px;padding:2px 6px}
+.l36-pm{font-size:11px;color:#7a4b00;background:#fff1cf;border-radius:4px;padding:2px 6px}
+.l36-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;align-items:center}
+.l36-chip{border:1px solid #9cc6b1;background:#fff;color:#164e35;border-radius:999px;padding:5px 11px;min-height:32px}
+.l36-chip.warn{border-color:#e0b74a;color:#6b4a00}
+.l36-chip:hover{background:#d9f0e4}
+.l36-fb{border-radius:6px;padding:7px 10px;margin:8px 0 0;font-size:12.5px}.l36-fb.ok{background:#e3f4ea;border:1px solid #8fcaa8}.l36-fb.no{background:#fdecea;border:1px solid #e6a39c}
+/* BPA prompts (Epic-style) */
+.l36-bpas{margin-bottom:8px;display:flex;flex-direction:column;gap:6px}
+.l36-bpa{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:10px;align-items:start;background:#fff9e6;border:1px solid #f0d58a;border-left:5px solid #e0a800;border-radius:6px;padding:8px 10px}
+.l36-bpa.k-site{background:#f4effb;border-color:#d4c3ef;border-left-color:#6a3fb0}
+.l36-bi{width:22px;height:22px;border-radius:50%;background:#e0a800;color:#fff;font-weight:800;display:grid;place-items:center;font-size:13px}.k-site .l36-bi{background:#6a3fb0}
+.l36-bt b{display:block;font-size:13px}.l36-bt p{margin:2px 0;font-size:12.5px;color:#3d4b57}.l36-bt small{font-size:10.5px;color:var(--l36-mut)}
+.l36-ba{display:flex;flex-direction:column;gap:4px;align-items:stretch}
+.l36-more{align-self:flex-start;font-size:12px}
+.l36-bpabar{display:flex;align-items:center;gap:10px;width:100%;text-align:left;background:#fff9e6;border:1px solid #f0d58a;border-left:5px solid #e0a800;border-radius:6px;padding:8px 10px;margin-bottom:8px;min-height:48px}.l36-bpabar>span:nth-child(2){flex:1;min-width:0}.l36-bpabar small{display:block;color:#3d4b57;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.l36-bpago{color:var(--l36-acc);font-weight:600}
+/* list */
+.l36-list{min-width:0}
+.l36-grp{margin-bottom:10px}
+.l36-gh{display:flex;align-items:center;gap:6px;font-size:12.5px;margin:0 0 2px;padding:5px 8px;border-radius:5px;background:var(--l36-soft);color:var(--l36-acc2)}
+.l36-gh span{margin-left:auto;background:#fff;border:1px solid var(--l36-line);border-radius:999px;padding:0 7px;font-size:11px;color:var(--l36-mut)}
+.l36-ci{width:18px;height:18px;flex:none}.l36-ci circle{fill:#fff;stroke:currentColor;stroke-width:2}.l36-ci g{fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round}
+.l36-th,.l36-row{display:grid;grid-template-columns:22px minmax(0,1fr) 54px minmax(92px,130px) auto;gap:8px;align-items:center}
+.l36-th span:nth-child(3){text-align:center}.l36-th{font-size:10.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--l36-mut);padding:3px 6px}
+.l36-row{padding:7px 6px;border-bottom:1px solid #e7edf2;cursor:pointer;border-left:3px solid transparent;outline:none}
+.l36-row:hover,.l36-row.l36-hov{background:#f2f7fb}
+.l36-row.on{background:#e7f1f8;border-left-color:var(--l36-acc)}
+.l36-row:focus-visible{box-shadow:inset 0 0 0 2px var(--l36-acc)}
+.l36-nm{min-width:0}.l36-nm b{font-weight:650}.l36-sz{color:#34495a;font-size:12px}
+.l36-nm small{display:block;color:var(--l36-mut);font-size:11.5px;overflow-wrap:anywhere}
+.l36-day{font-size:11.5px;color:var(--l36-mut);text-align:center}.l36-day b{display:block;font-size:15px;color:var(--l36-ink)}.l36-day.hi b{color:#a35a00}.l36-day small{display:block;font-size:10.5px}
+.l36-la{font-size:11.5px}.l36-la small{display:block;color:var(--l36-mut)}
+.l36-fl{display:inline-block;border-radius:4px;padding:0 5px;font-size:10.5px;font-weight:700;margin-left:3px;vertical-align:1px}
+.l36-fl.od{background:#fde3e0;color:#a3221a}.l36-fl.du{background:#fff1cf;color:#7a4b00}.l36-fl.rv{background:#efe7fb;color:#5a2fa0}
+.l36-acts{display:flex;gap:4px}
+.l36-det{background:#f7fafc;border:1px solid #dde7ee;border-top:0;border-radius:0 0 6px 6px;padding:8px 10px 8px 36px;margin-bottom:4px}
+.l36-det dl{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:4px 12px;margin:0}.l36-det dt{font-size:10.5px;color:var(--l36-mut)}.l36-det dd{margin:0;font-size:12px;overflow-wrap:anywhere}
+.l36-dbtn{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
+.l36-empty{border:1px dashed #b8c8d4;border-radius:8px;padding:18px;text-align:center;color:var(--l36-mut)}.l36-empty p{margin:4px 0}
+.l36-hist{margin-top:6px;border:1px solid var(--l36-line);border-radius:6px;padding:4px 8px;background:#fafcfd}
+.l36-hist summary{cursor:pointer;font-weight:600;color:var(--l36-acc2);padding:4px 0}
+.l36-hist ul{margin:4px 0;padding-left:18px}.l36-hist li{margin:3px 0}.l36-hist small{display:block;color:var(--l36-mut)}
+.l36-ai{font-size:11px;color:var(--l36-mut);margin:8px 0 0;border-top:1px solid #edf1f4;padding-top:6px}
+.l36-srcs{font-size:11px;color:var(--l36-mut);margin:2px 0 0;padding-left:18px}
+.l36-fsf,.l36-fsf th,.l36-fsf td{background-color:#fff8dc!important}
+/* overlay */
+.l36-ov{position:fixed;inset:0;z-index:9000;background:rgba(18,32,46,.42);display:grid;place-items:center;padding:16px;overflow:auto}
+.l36-dlg{background:#fff;border-radius:10px;box-shadow:0 18px 48px rgba(10,25,40,.3);width:min(620px,100%);max-height:calc(100vh - 32px);overflow:auto;padding:0 0 12px}
+.l36-dh{display:flex;align-items:center;gap:8px;padding:8px 8px 8px 14px;border-bottom:1px solid var(--l36-line);position:sticky;top:0;background:#fff;z-index:1}
+.l36-dh b{font-size:15px}
+.l36-q{display:block;width:calc(100% - 28px);margin:10px 14px 4px;padding:10px 12px;border:1px solid #b8c8d4;border-radius:7px;font-size:15px}
+.l36-pl{padding:0 14px}.l36-pl h4{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--l36-mut);margin:10px 0 4px;text-transform:uppercase;letter-spacing:.04em}
+.l36-pi{display:flex;flex-direction:column;align-items:flex-start;width:100%;text-align:left;border:1px solid transparent;border-radius:7px;background:none;padding:8px 10px;min-height:44px}
+.l36-pi:hover,.l36-pi:focus-visible{background:#eef5fa;border-color:#c9dbe7}.l36-pi small{color:var(--l36-mut);font-size:11.5px}
+.l36-form form{padding:0}
+.l36-fhead{display:flex;gap:12px;align-items:center;padding:10px 14px}
+.l36-prev{width:104px;height:104px;flex:none;border:1px solid var(--l36-line);border-radius:8px;background:#f4f7f9}
+.l36-fhead>div{flex:1;min-width:0}.l36-fhead small{display:block;font-size:11px;color:var(--l36-mut)}
+.l36-fhead select,.l36-fhead input{width:100%;font-size:14px;padding:7px 8px;border:1px solid #b8c8d4;border-radius:6px;background:#fff}
+.l36-fg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 12px;padding:0 14px}
+.l36-f{display:flex;flex-direction:column;gap:3px;min-width:0}.l36-f.w2,.l36-ck.w2{grid-column:1/-1}
+.l36-f span{font-size:11.5px;color:#3d4b57;font-weight:600}.l36-f span i{color:#b3261e;font-style:normal}
+.l36-f select,.l36-f input{width:100%;font-size:14px;padding:7px 8px;border:1px solid #b8c8d4;border-radius:6px;background:#fff;min-height:36px}
+.l36-ck{display:flex;align-items:center;gap:8px;font-size:13px}
+.l36-err,.l36-warn{font-style:normal;font-size:11.5px;margin:0}.l36-err{color:#b3261e}.l36-warn{color:#7a5200}
+.l36-err:empty,.l36-warn:empty{display:none}
+.l36-form .l36-fine,.l36-rmd .l36-fine{padding:0 14px}
+.l36-fbtn{display:flex;gap:8px;padding:10px 14px 0;flex-wrap:wrap}.l36-big{min-height:40px;padding:8px 18px;font-size:14px}
+.l36-figd .l36-hint{margin:8px 10px}.l36-figd .l36-fig{margin:8px 10px;border:0;background:none;padding:0}
+.l36-figd .l36-svg{max-height:60vh}
+/* phone (Rover) */
+.l36-ph{padding:8px;border-radius:0;border-left:0;border-right:0}
+.l36-ph .l36-bar{gap:6px}.l36-ph .l36-t small{display:block;margin:0}.l36-ph .l36-pmt{order:5;width:100%;justify-content:flex-start;border-radius:6px}
+.l36-ph .l36-addb{min-height:44px}
+.l36-thumb{display:flex;align-items:center;gap:6px;width:100%;border:1px solid var(--l36-line);border-radius:8px;background:linear-gradient(#f7f9fb,#eef3f6);padding:6px 10px;margin-bottom:8px;text-align:left}
+.l36-thumb svg{width:46px;height:108px;flex:none}.l36-thumb span{flex:1;min-width:0}.l36-thumb small{display:block;color:var(--l36-mut)}
+.l36-ph .l36-row{grid-template-columns:22px minmax(0,1fr) 46px;grid-template-areas:"i n d" "i l l" "i a a";row-gap:4px;padding:9px 4px}
+.l36-ph .l36-ic{grid-area:i;align-self:start}.l36-ph .l36-nm{grid-area:n}.l36-ph .l36-day{grid-area:d}.l36-ph .l36-la{grid-area:l}.l36-ph .l36-acts{grid-area:a}
+.l36-ph .l36-acts button{flex:1;min-height:40px}
+.l36-ph .l36-bpa{grid-template-columns:auto minmax(0,1fr)}.l36-ph .l36-ba{grid-column:1/-1;flex-direction:row;flex-wrap:wrap}.l36-ph .l36-ba button{flex:1 1 auto;min-height:40px}
+.l36-ph .l36-det{padding-left:10px}
+@media (max-width:760px){
+ .l36-ov{place-items:end stretch;padding:0}
+ .l36-dlg{width:100%;max-height:92vh;border-radius:14px 14px 0 0;padding-bottom:max(12px,env(safe-area-inset-bottom))}
+ .l36-fg{grid-template-columns:minmax(0,1fr)}
+ .l36-zp{flex-direction:column}.l36-zp.n2 figure:first-child{flex:2 1 0}
+ .l36-figd .l36-svg{max-height:62vh}
+ .l36-chip{min-height:40px}
+}
+@media (min-width:761px) and (max-width:1100px){.l36-main{grid-template-columns:minmax(230px,40%) minmax(0,1fr)}.l36-th,.l36-row{grid-template-columns:22px minmax(0,1fr) 46px minmax(80px,104px)}.l36-th span:last-child{display:none}.l36-row .l36-acts{grid-column:2/-1;justify-content:flex-end}}
+@media print{.l36-addb,.l36-acts,.l36-pmt,.l36-bpa .l36-ba{display:none}}
+/* </v36-lda-css> */
 </style>
 
 <div id="app"></div>
@@ -3493,7 +3695,7 @@ const BANK = (function(e){try{const P=">oVO^cd@ge#lJ'~wUTDiEY+LZx-K&hkt(/F0;G`N.
 let HIDQ=new Set();const CFG={c:null,bypass:false};try{const c=JSON.parse(localStorage.getItem("ns.cfg")||"null");if(c&&typeof c==="object"){CFG.c=c;HIDQ=new Set(c.hideQ||[])}}catch(e){}
 const featOn=k=>!CFG.c||!CFG.c.feat||CFG.c.feat[k]!==false;
 
-const APPV="b75e9703c44ba0579b564a19d47b9e12ddb206bf38865cea6400c365040ca254";
+const APPV="7192de217e18131cf25fd13b7f2167b1e1608fca6298dda6f032da7af1cca58d";
 const CATS={
   MOC:{n:"Management of Care",lo:15,hi:21,w:18},
   SIC:{n:"Safety and Infection Prevention and Control",lo:10,hi:16,w:13},
@@ -6499,6 +6701,684 @@ zolpidem|Sedative-hypnotic|PO||Ambien`;
   const CATC={line:"#2c9b56",drain:"#c2447a",airway:"#2f6fbf",wound:"#c27a12"};
   const CATN={line:"Lines",drain:"Drains/tubes",airway:"Airways",wound:"Wounds"};
   const CATG={line:'<path d="M5 15c3-6 11-6 14 0" /><path d="M12 4v7"/>',drain:'<path d="M12 4c3 4 5 7 5 10a5 5 0 0 1-10 0c0-3 2-6 5-10z"/>',airway:'<path d="M8 5v6a4 4 0 0 0 8 0V5M12 15v5"/>',wound:'<path d="M6 12h12M12 6v12"/>'};
+/* <v36-lda-js> */
+/* v36 LDA Avatar (Lines / Drains / Airways / Wounds), Epic-style. Applied by patches/lda-apply.js INSIDE the EHR closure, directly
+   after the `const CATG=...` line, so it can use the closure's LDA dictionary and helpers (LDA, LDACAT, CATC, CATN, REG, ROW, X, P,
+   upd, uid, go, draw, toastE, T, tHD, tMin, hhmm, tLbl, nowMin, toMin, curT, phiOK, fileVals, lineDay, isRover) and the app's esc().
+   What it does at load time (no other edits):
+     - rebinds ldaHTML (the "lda" activity on desktop, iPad and Rover) to the new avatar + list renderer;
+     - wraps draw() so numeric LDA flowsheet rows (output mL, cuff pressure) are typed before any flowsheet renders, and so the
+       "Assess" button can focus the device's rows after the Flowsheets activity draws;
+     - appends optional assessment rows to LDA[type].as (existing rows and option strings are unchanged);
+     - exposes window.__vxLDA (patches/lda-API.md).
+   Data: p.ldas entries keep every existing field (id, rt, type, site, props, hd, time, by, x, y, view, removed). New optional fields:
+   t36 (template key), s36 (site id), lat ("R"/"L"), d36 (extra details), removed.time. Old entries render as they are; a site that
+   does not fit the device (for example an NG tube at "Head") gets a "Review site" flag instead of being dropped.
+   Teaching text: AI-generated, fact-checked, not yet reviewed by a registered nurse (patches/lda-RN-REVIEW.md). */
+(() => {
+  const U = 5.1; /* avatar units per cm (viewBox 400 x 900, adult ~170 cm) */
+  const CAT = t => LDACAT[t] || "drain";
+  const AI = "AI-generated · fact-checked · not yet reviewed by a registered nurse";
+  const SRC = {
+    ins: "INS. Infusion Therapy Standards of Practice, 9th ed. J Infus Nurs. 2024;47(1S):S1-S285",
+    clabsi: "CDC/HICPAC. Guidelines for the Prevention of Intravascular Catheter-Related Infections (2011; 2017 update)",
+    cauti: "CDC/HICPAC. Guideline for Prevention of Catheter-Associated Urinary Tract Infections (2009; updated 2019)",
+    npiap: "NPIAP. Pressure Injury Stages (2016 staging definitions)",
+    tube: "AACN Practice Alert: Initial and Ongoing Verification of Feeding Tube Placement in Adults (2016); ASPEN NOVEL project",
+    air: "AACN Procedure Manual for High Acuity, Progressive, and Critical Care, 8th ed. (ETT care; cuff pressure 20-30 cm H2O)",
+    wocn: "WOCN Society. Core Curriculum: Ostomy Management; Wound Management (2nd ed.)",
+    ct: "Asciak R, et al. British Thoracic Society Clinical Statement on pleural procedures. Thorax. 2023;78(Suppl 3):s43-s68"
+  };
+
+  /* ---------- 1. optional assessment rows (appended; numeric rows are typed in prime()) ---------- */
+  const NUM = {};
+  const addAs = (t, rows) => { const D = LDA[t]; if (!D) return; rows.forEach(r => { if (!D.as.some(x => x[0] === r[0])) D.as.push([r[0], r[1], r[2] || []]); if (r[3]) NUM[t + ":" + r[0]] = r[3] }) };
+  const NEED = ["Yes, reviewed", "Question raised with provider"];
+  addAs("piv", [["phleb", "Phlebitis scale (0-4)", ["0 No symptoms", "1 Erythema at site, with or without pain", "2 Pain with erythema and/or edema", "3 Pain, erythema, streak formation, palpable cord", "4 As 3, cord > 1 in, purulent drainage"]],
+    ["infil", "Infiltration scale (0-4)", ["0 No symptoms", "1 Blanched, edema < 1 in, cool, with or without pain", "2 Blanched, edema 1-6 in, cool, with or without pain", "3 Blanched, translucent, edema > 6 in, cool, mild-moderate pain", "4 Tight, leaking, discolored, deep pitting edema, moderate-severe pain"]],
+    ["need", "Line still needed", NEED]]);
+  addAs("cvc", [["chg", "CHG bath", ["Done", "Refused", "Not indicated"]]]);
+  addAs("foley", [["urine", "Urine", ["Clear yellow", "Amber", "Cloudy", "Blood-tinged", "Sediment"]]]);
+  addAs("ng", [["naris", "Naris / skin at tube", ["Intact", "Redness", "Breakdown"]], ["out", "Output", [], { u: "mL", mn: 0, mx: 5000 }]]);
+  addAs("chest", [["crep", "Subcutaneous emphysema", ["None", "Present at site", "Spreading"]], ["out", "Output", [], { u: "mL", mn: 0, mx: 5000 }]]);
+  addAs("drain", [["out", "Output", [], { u: "mL", mn: 0, mx: 5000 }]]);
+  addAs("airway", [["cuffp", "Cuff pressure", [], { u: "cm H2O", mn: 0, mx: 60 }], ["depth", "Depth at lip/teeth", [], { u: "cm", mn: 5, mx: 35 }], ["skin", "Skin at device", ["Intact", "Redness", "Breakdown"]]]);
+  addAs("wound", [["peri", "Periwound", ["Intact", "Macerated", "Erythema", "Induration"]], ["odor", "Odor", ["None", "Present after cleansing"]]]);
+  addAs("ostomy", [["out", "Output", [], { u: "mL", mn: 0, mx: 5000 }]]);
+  function prime(p) { (p && p.ldas || []).forEach(l => { if (l.removed) return; const D = LDA[l.type]; if (!D) return; D.as.forEach(([k, lab]) => { const n = NUM[l.type + ":" + k]; if (!n) return; const id = "lda:" + l.id + ":" + k; const r = ROW[id]; if (!r || r.f.t !== "num") ROW[id] = { id, l: lab, f: { t: "num", u: n.u, mn: n.mn, mx: n.mx }, g: "lda" } }) }) }
+
+  /* ---------- 2. templates (what "Add LDA" offers) ---------- */
+  const TPL = {}; const TL = [];
+  const tp = (k, n, t, tag, o) => { const x = Object.assign({ k, n, t, tag, cat: CAT(t), kw: "", pre: {}, d: {} }, o); TPL[k] = x; TL.push(x); return x };
+  tp("piv", "Peripheral IV", "piv", "piv", { kw: "piv peripheral iv catheter cannula saline lock angiocath", pref: "armL", hint: "Forearm or hand vein", by: "RN",
+    why: "Peripheral IVs go in an arm or hand vein. Start distally, prefer the forearm (cephalic, basilic, median) and avoid areas of flexion, the volar wrist and, in adults, the legs and feet (INS 2024)." });
+  tp("picc", "PICC line", "cvc", "picc", { kw: "picc peripherally inserted central catheter central line", pre: { ctype: "PICC", lumens: "Double" }, d: { fr: "5 Fr", us: "Yes (ultrasound-guided)" }, pref: "armR", hint: "Upper-arm vein (basilic preferred)", by: "IV team / VAST",
+    why: "PICCs are placed with ultrasound in an upper-arm vein above the antecubital fossa; the basilic vein is usually preferred, then brachial, then cephalic (INS 2024)." });
+  tp("cvc", "Central venous catheter (non-tunneled)", "cvc", "cvc", { kw: "cvc central line triple lumen ij subclavian femoral cordis", pre: { ctype: "Non-tunneled CVC", lumens: "Triple" }, d: { fr: "7 Fr" }, hint: "Internal jugular, subclavian or femoral", by: "Provider",
+    why: "Non-tunneled CVCs go in the internal jugular, subclavian or femoral vein. CDC prefers the subclavian site in adults to lower infection risk and recommends avoiding the femoral vein in adults when possible." });
+  tp("tcvc", "Tunneled central catheter", "cvc", "tcvc", { kw: "tunneled hickman broviac groshong cvc", pre: { ctype: "Tunneled CVC", lumens: "Double" }, d: { fr: "9.5 Fr" }, hint: "Upper chest exit site", by: "Interventional radiology",
+    why: "Tunneled catheters enter a central vein (usually the internal jugular) and exit through a tunnel on the upper chest wall." });
+  tp("port", "Implanted port", "cvc", "port", { kw: "port portacath implanted port mediport huber", pre: { ctype: "Implanted port", lumens: "Single" }, d: { fr: "8 Fr" }, hint: "Upper chest wall", by: "Interventional radiology",
+    why: "Implanted ports sit in a subcutaneous pocket, usually on the upper chest below the clavicle; the catheter enters the subclavian or internal jugular vein." });
+  tp("hd", "Dialysis catheter", "cvc", "dial", { kw: "dialysis catheter hemodialysis quinton trialysis vascath", pre: { ctype: "Dialysis catheter", lumens: "Double" }, d: { fr: "13.5 Fr" }, hint: "Internal jugular (R preferred) or femoral", by: "Provider",
+    why: "Temporary dialysis catheters go in the internal jugular (right preferred) or femoral vein. CDC: avoid the subclavian vein in patients who need hemodialysis (central vein stenosis)." });
+  tp("foley", "Indwelling urinary catheter (Foley)", "foley", "urethral", { kw: "foley indwelling urinary catheter iuc urethral", d: { utype: "Urethral" }, hint: "Urethral meatus", by: "RN",
+    why: "A Foley catheter is inserted through the urethral meatus with sterile technique and secured to the thigh (CDC CAUTI guideline)." });
+  tp("spc", "Suprapubic catheter", "foley", "suprapubic", { kw: "suprapubic catheter spc", d: { utype: "Suprapubic" }, hint: "Midline above the pubic bone", by: "Provider",
+    why: "A suprapubic catheter enters the bladder through the abdominal wall in the midline just above the pubic symphysis." });
+  tp("ng", "Nasogastric tube (NG)", "ng", "nasal", { kw: "ng nasogastric salem sump levin tube", pre: { ttype: "NG (salem sump)" }, hint: "R or L naris", by: "RN",
+    why: "An NG tube enters through a naris (R or L). Pick the naris with better airflow and no trauma, deviated septum or recent nasal surgery." });
+  tp("fdt", "Small-bore feeding tube (nasal)", "ng", "nasal", { kw: "dobhoff small bore feeding tube nasoenteric corpak", pre: { ttype: "Small-bore feeding tube" }, hint: "R or L naris", by: "RN",
+    why: "Small-bore feeding tubes are usually placed through a naris. Confirm position with an X-ray before first use." });
+  tp("og", "Orogastric tube (OG)", "ng", "oral", { kw: "og orogastric tube", pre: { ttype: "OG" }, hint: "Mouth", by: "RN",
+    why: "An OG tube enters through the mouth; it is common in intubated patients and when a nasal tube is contraindicated (for example a basilar skull fracture)." });
+  tp("peg", "PEG / gastrostomy tube", "ng", "gtube", { kw: "peg g tube gastrostomy button mic-key", pre: { ttype: "PEG" }, hint: "Left upper quadrant", by: "Provider",
+    why: "A PEG or G tube enters the stomach through the abdominal wall, usually in the left upper quadrant." });
+  tp("jt", "Jejunostomy tube (J tube)", "ng", "jtube", { kw: "j tube jejunostomy feeding", pre: { ttype: "J tube" }, hint: "Left mid-abdomen", by: "Provider",
+    why: "A surgical J tube usually exits the left mid or upper abdomen, below the stomach." });
+  tp("chest", "Chest tube", "chest", "chest", { kw: "chest tube thoracostomy pleural pigtail mediastinal", hint: "Intercostal space or subxiphoid", by: "Provider",
+    why: "Chest tubes go over the top of a rib: 4th-5th intercostal space in the mid- or anterior axillary line (the \"safe triangle\") for fluid or air, 2nd ICS midclavicular line for some pneumothoraces, and subxiphoid (mediastinal) after cardiac surgery." });
+  tp("jp", "Jackson-Pratt drain", "drain", "drain", { kw: "jp jackson pratt bulb drain", pre: { dtype: "Jackson-Pratt" }, free: 1, hint: "Near the surgical site", by: "Provider", why: "Surgical drains exit through a separate stab wound near the operative site." });
+  tp("hv", "Hemovac drain", "drain", "drain", { kw: "hemovac drain", pre: { dtype: "Hemovac" }, free: 1, hint: "Near the surgical site", by: "Provider", why: "Surgical drains exit through a separate stab wound near the operative site." });
+  tp("blake", "Blake drain", "drain", "drain", { kw: "blake drain", pre: { dtype: "Blake" }, free: 1, hint: "Near the surgical site", by: "Provider", why: "Surgical drains exit through a separate stab wound near the operative site." });
+  tp("pen", "Penrose drain", "drain", "drain", { kw: "penrose drain", pre: { dtype: "Penrose" }, free: 1, hint: "Near the surgical site", by: "Provider", why: "A Penrose drain is a soft open drain that exits near the incision and drains into the dressing." });
+  tp("ett", "Endotracheal tube", "airway", "oral", { kw: "ett endotracheal tube intubated airway et tube", pre: { atype: "Endotracheal tube" }, hint: "Mouth", by: "Provider",
+    why: "An oral ETT is documented at the mouth with its depth in cm at the lip or teeth; confirm with end-tidal CO2 and a chest X-ray." });
+  tp("trach", "Tracheostomy", "airway", "trach", { kw: "trach tracheostomy shiley airway", pre: { atype: "Tracheostomy" }, hint: "Midline neck stoma", by: "Provider",
+    why: "A tracheostomy tube sits in a midline stoma in the anterior neck below the cricoid cartilage." });
+  tp("npa", "Nasopharyngeal airway", "airway", "nasal", { kw: "npa nasal trumpet nasopharyngeal airway", pre: { atype: "Nasal trumpet" }, hint: "R or L naris", by: "RN",
+    why: "A nasopharyngeal airway (nasal trumpet) is inserted through a naris." });
+  tp("opa", "Oropharyngeal airway", "airway", "oral", { kw: "opa oral airway oropharyngeal guedel", pre: { atype: "Oral airway" }, hint: "Mouth", by: "RN",
+    why: "An oropharyngeal airway is placed through the mouth in a patient without a gag reflex." });
+  tp("pi", "Pressure injury", "wound", "wound", { kw: "pressure injury ulcer bedsore decubitus sacral heel stage", pre: { wtype: "Pressure injury" }, any: 1, free: 1, view: "back", hint: "Over a bony prominence or under a device", by: "RN",
+    why: "Pressure injuries form over bony prominences (sacrum, coccyx, heels, ischium, occiput, elbows) or under medical devices (NPIAP)." });
+  tp("inc", "Surgical incision", "wound", "wound", { kw: "incision surgical wound sternotomy laparotomy staples sutures", pre: { wtype: "Surgical incision" }, any: 1, free: 1, hint: "Operative site", by: "Provider", why: "Document a surgical incision where the operation was done; measure its length and note the closure." });
+  tp("tear", "Skin tear", "wound", "wound", { kw: "skin tear", pre: { wtype: "Skin tear" }, any: 1, free: 1, hint: "Anywhere", by: "RN", why: "Skin tears are common on the arms and legs of older adults." });
+  tp("dfu", "Diabetic foot ulcer", "wound", "wound", { kw: "diabetic ulcer foot dfu neuropathic", pre: { wtype: "Diabetic ulcer" }, any: 1, free: 1, hint: "Plantar foot, toes", by: "RN", why: "Diabetic (neuropathic) ulcers form on pressure points of the foot." });
+  tp("vlu", "Venous leg ulcer", "wound", "wound", { kw: "venous ulcer leg stasis", pre: { wtype: "Venous ulcer" }, any: 1, free: 1, hint: "Gaiter area, medial malleolus", by: "RN", why: "Venous ulcers are typical in the gaiter area of the lower leg, often over the medial malleolus." });
+  tp("burn", "Burn", "wound", "wound", { kw: "burn", pre: { wtype: "Burn" }, any: 1, free: 1, hint: "Anywhere", by: "RN", why: "Document a burn where it is and measure it." });
+  tp("wo", "Wound (other)", "wound", "wound", { kw: "wound laceration abrasion other", pre: { wtype: "Other" }, any: 1, free: 1, hint: "Anywhere", by: "RN", why: "Document the wound at its location." });
+  tp("colo", "Colostomy", "ostomy", "ostomy", { kw: "colostomy stoma ostomy", pre: { otype: "Colostomy" }, typ: ["lq_l", "uq_l", "lmid"], hint: "Usually left lower quadrant", by: "Provider",
+    why: "Descending or sigmoid colostomies are usually in the left lower quadrant; a transverse colostomy is in the upper abdomen (WOCN)." });
+  tp("ileo", "Ileostomy", "ostomy", "ostomy", { kw: "ileostomy stoma ostomy", pre: { otype: "Ileostomy" }, typ: ["lq_r"], hint: "Usually right lower quadrant", by: "Provider", why: "Ileostomies are usually in the right lower quadrant (WOCN)." });
+  tp("uro", "Urostomy (ileal conduit)", "ostomy", "ostomy", { kw: "urostomy ileal conduit stoma", pre: { otype: "Urostomy" }, typ: ["lq_r"], hint: "Usually right lower quadrant", by: "Provider", why: "An ileal conduit urostomy is usually in the right lower quadrant (WOCN)." });
+  const GRP = [["line", "Lines"], ["drain", "Drains, tubes and ostomies"], ["airway", "Airways"], ["wound", "Wounds"]];
+  /* old entries carry no template: infer one from type + props */
+  function tplOf(l) {
+    if (l.t36 && TPL[l.t36]) return TPL[l.t36]; const pr = l.props || {}, t = l.type;
+    if (t === "piv") return TPL.piv;
+    if (t === "cvc") return { "PICC": TPL.picc, "Tunneled CVC": TPL.tcvc, "Implanted port": TPL.port, "Dialysis catheter": TPL.hd }[pr.ctype] || TPL.cvc;
+    if (t === "foley") return (l.d36 && l.d36.utype === "Suprapubic") ? TPL.spc : TPL.foley;
+    if (t === "ng") return { "OG": TPL.og, "Small-bore feeding tube": TPL.fdt, "G tube": TPL.peg, "PEG": TPL.peg, "J tube": TPL.jt }[pr.ttype] || TPL.ng;
+    if (t === "chest") return TPL.chest;
+    if (t === "drain") return { "Hemovac": TPL.hv, "Penrose": TPL.pen, "Blake": TPL.blake }[pr.dtype] || TPL.jp;
+    if (t === "airway") return { "Tracheostomy": TPL.trach, "Nasal trumpet": TPL.npa, "Oral airway": TPL.opa }[pr.atype] || TPL.ett;
+    if (t === "wound") return { "Surgical incision": TPL.inc, "Skin tear": TPL.tear, "Diabetic ulcer": TPL.dfu, "Venous ulcer": TPL.vlu, "Burn": TPL.burn, "Other": TPL.wo }[pr.wtype] || TPL.pi;
+    if (t === "ostomy") return { "Ileostomy": TPL.ileo, "Urostomy": TPL.uro }[pr.otype] || TPL.colo;
+    return TPL.wo;
+  }
+
+  /* ---------- 3. anatomical sites (anterior view: patient's R on the viewer's left; posterior: patient's L on the viewer's left) ---------- */
+  const SITE = [], SBY = {};
+  function S(id, n, v, x, y, a, z, tags, o) { const s = Object.assign({ id, n, sh: n, v, x, y, a, z, tags, lat: "" }, o || {}); SITE.push(s); SBY[id] = s; return s }
+  function S2(id, n, v, x, y, a, z, tags, o) {
+    o = o || {}; const A = v === "front" ? "R" : "L", B = A === "R" ? "L" : "R"; const sh = o.sh || n;
+    S(id + "_" + A.toLowerCase(), n.replace("{s}", A), v, x, y, a, z.replace("{s}", A), tags, Object.assign({}, o, { lat: A, sh: sh.replace("{s}", A) }));
+    S(id + "_" + B.toLowerCase(), n.replace("{s}", B), v, 400 - x, y, 180 - a, z.replace("{s}", B), tags, Object.assign({}, o, { lat: B, sh: sh.replace("{s}", B) }, o.h ? { h: [-o.h[0], o.h[1]] } : {}));
+  }
+  const W_FLEX = "INS 2024: avoid areas of flexion such as the antecubital fossa when another vein will do; the catheter kinks and dislodges as the arm bends.";
+  const W_LEG = "INS 2024: avoid lower-extremity veins in adults unless no other site is available (tissue damage and thrombophlebitis risk).";
+  S2("nar", "{s} naris", "front", 195.2, 100.6, 100, "head", ["nasal"], { h: [-11, 1] });
+  S("mouth", "Mouth (oral)", "front", 200, 112.5, 90, "head", ["oral"], { sh: "Mouth", h: [0, 6] });
+  S("trach", "Tracheostomy stoma (midline neck)", "front", 200, 151, 90, "head", ["trach"], { sh: "Trach stoma" });
+  S2("ij", "{s} internal jugular vein", "front", 185, 157, -112, "head", ["cvc", "tcvc", "dial"], { sh: "{s} IJ" });
+  S2("sc", "{s} subclavian vein (infraclavicular)", "front", 168, 186, 178, "chest", ["cvc", "dial"], { sh: "{s} subclavian", warn: { dial: "CDC: avoid the subclavian vein for hemodialysis catheters in patients with advanced kidney disease (risk of central vein stenosis)." } });
+  S2("port", "{s} upper chest wall (port pocket / tunnel exit)", "front", 150, 214, 120, "chest", ["port", "tcvc"], { sh: "{s} upper chest" });
+  S2("ics2", "{s} 2nd ICS, midclavicular line", "front", 166, 202, 170, "chest", ["chest"], { sh: "{s} 2nd ICS MCL" });
+  S2("ics4", "{s} 4th ICS, anterior axillary line", "front", 139, 249, 165, "chest", ["chest"], { sh: "{s} 4th ICS AAL" });
+  S2("ics5", "{s} 5th ICS, mid-axillary line", "front", 131.5, 266, 150, "chest", ["chest"], { sh: "{s} 5th ICS MAL" });
+  S("medi", "Mediastinal (subxiphoid)", "front", 200, 318, 90, "chest", ["chest", "drain"], { sh: "Subxiphoid" });
+  S("stern", "Sternum (midline)", "front", 200, 240, 90, "chest", ["wound"], { sh: "Sternum" });
+  S2("uq", "{s}UQ (upper quadrant)", "front", 172, 350, 90, "abd", ["drain", "ostomy", "wound"], { sh: "{s}UQ" });
+  S2("lq", "{s}LQ (lower quadrant)", "front", 172, 420, 90, "abd", ["drain", "ostomy", "wound"], { sh: "{s}LQ" });
+  SBY.uq_l.tags = SBY.uq_l.tags.concat(["gtube", "jtube"]);
+  S("lmid", "L mid-abdomen", "front", 228, 388, 90, "abd", ["jtube", "drain", "ostomy", "wound"], { lat: "L", sh: "L mid-abdomen" });
+  S("umb", "Periumbilical", "front", 200, 380, 90, "abd", ["wound", "drain"], { sh: "Periumbilical" });
+  S("supra", "Suprapubic (midline)", "front", 200, 464, 90, "groin", ["suprapubic", "wound"], { sh: "Suprapubic" });
+  S("ureth", "Urethral meatus", "front", 200, 496, 96, "groin", ["urethral"], { sh: "Urethral meatus" });
+  S2("fem", "{s} femoral vein", "front", 180, 470, 96, "groin", ["cvc", "dial"], { sh: "{s} femoral", warn: { cvc: "CDC: avoid the femoral vein for central venous access in adults when another site is possible (higher infection and thrombosis risk)." } });
+  S2("ing", "{s} groin (inguinal crease)", "front", 162, 458, 120, "groin", ["wound", "drain"], { sh: "{s} groin" });
+  S2("bas", "{s} basilic vein, upper arm", "front", 112, 288, 100, "arm{s}", ["picc"], { sh: "Basilic" });
+  S2("bra", "{s} brachial vein, upper arm", "front", 99, 296, 100, "arm{s}", ["picc"], { sh: "Brachial" });
+  S2("ceu", "{s} cephalic vein, upper arm", "front", 85, 280, 100, "arm{s}", ["picc"], { sh: "Cephalic (upper arm)", warn: { picc: "INS: the cephalic vein is smaller and more prone to thrombosis; the basilic vein is usually preferred for PICCs." } });
+  S2("ac", "{s} antecubital fossa (median cubital vein)", "front", 89, 347, 100, "arm{s}", ["piv"], { sh: "{s} AC", warn: { piv: W_FLEX } });
+  S2("fac", "{s} forearm, cephalic vein", "front", 64, 398, 99, "arm{s}", ["piv"], { sh: "Cephalic (forearm)" });
+  S2("fab", "{s} forearm, basilic vein", "front", 94, 404, 99, "arm{s}", ["piv"], { sh: "Basilic (forearm)" });
+  S2("fam", "{s} forearm, median antebrachial vein", "front", 79, 422, 99, "arm{s}", ["piv"], { sh: "Median antebrachial" });
+  S2("wri", "{s} volar wrist", "front", 70, 461, 95, "arm{s}", ["piv"], { sh: "Volar wrist", warn: { piv: "INS 2024: avoid the volar (inner) wrist; venipuncture there risks radial and median nerve injury." } });
+  S2("hand", "{s} hand, dorsal metacarpal vein", "back", 67, 502, 90, "arm{s}", ["piv"], { sh: "{s} dorsal hand" });
+  S2("thigh", "{s} anterior thigh", "front", 158, 548, 90, "leg{s}", ["wound", "drain"], { sh: "{s} thigh" });
+  S2("knee", "{s} knee", "front", 164, 628, 90, "leg{s}", ["wound"], { sh: "{s} knee" });
+  S2("shin", "{s} anterior lower leg", "front", 166, 724, 90, "leg{s}", ["wound"], { sh: "{s} lower leg" });
+  S2("mal", "{s} medial malleolus", "front", 186, 812, 90, "leg{s}", ["wound", "pivleg"], { sh: "{s} medial malleolus" });
+  S2("foot", "{s} dorsal foot", "front", 171, 843, 92, "leg{s}", ["wound", "pivleg"], { sh: "{s} dorsal foot" });
+  S("occ", "Occiput", "back", 200, 42, 90, "headB", ["wound"]);
+  S2("ear", "{s} ear", "front", 160, 82, 90, "head", ["wound"], { sh: "{s} ear" });
+  S("nose", "Nasal bridge", "front", 200, 86, 90, "head", ["wound"], { h: [0, -4] });
+  S2("scap", "{s} scapula", "back", 152, 246, 90, "back", ["wound"], { sh: "{s} scapula" });
+  S("tsp", "Thoracic spine", "back", 200, 300, 90, "back", ["wound"]);
+  S2("flank", "{s} flank", "back", 144, 372, 180, "back", ["drain", "wound"], { sh: "{s} flank" });
+  S("sac", "Sacrum", "back", 200, 458, 90, "back", ["wound"]);
+  S("coc", "Coccyx", "back", 200, 488, 90, "back", ["wound"]);
+  S2("glut", "{s} buttock", "back", 158, 494, 90, "back", ["wound", "drain"], { sh: "{s} buttock" });
+  S2("isch", "{s} ischial tuberosity", "back", 177, 527, 90, "back", ["wound"], { sh: "{s} ischium" });
+  S2("olec", "{s} elbow (olecranon)", "back", 76, 347, 90, "arm{s}", ["wound"], { sh: "{s} elbow" });
+  S2("calf", "{s} calf", "back", 164, 702, 90, "leg{s}", ["wound"], { sh: "{s} calf" });
+  S2("heel", "{s} heel", "back", 172, 859, 90, "leg{s}", ["wound"], { sh: "{s} heel" });
+
+  /* zoom regions: panes reuse the same body drawing with a cropped viewBox, so a site has one set of coordinates everywhere */
+  const ZONE = {
+    head: { n: "Head & neck", panes: [["front", [140, 6, 120, 196], "Anterior"]] },
+    headB: { n: "Head & neck (posterior)", panes: [["back", [140, 6, 120, 196], "Posterior"]] },
+    chest: { n: "Chest", panes: [["front", [92, 160, 216, 196], "Anterior chest"]] },
+    abd: { n: "Abdomen", panes: [["front", [112, 300, 176, 176], "Abdomen · quadrants"]] },
+    groin: { n: "Groin & perineum", panes: [["front", [128, 420, 144, 116], "Groin"]] },
+    armR: { n: "R arm & hand", pair: "armL", panes: [["front", [22, 176, 116, 404], "R arm · anterior"], ["back", [296, 452, 80, 124], "R hand · dorsal"]] },
+    armL: { n: "L arm & hand", pair: "armR", panes: [["front", [262, 176, 116, 404], "L arm · anterior"], ["back", [24, 452, 80, 124], "L hand · dorsal"]] },
+    legR: { n: "R leg & foot", pair: "legL", panes: [["front", [104, 470, 104, 404], "R leg · anterior"], ["back", [192, 770, 76, 104], "R heel · posterior"]] },
+    legL: { n: "L leg & foot", pair: "legR", panes: [["front", [192, 470, 104, 404], "L leg · anterior"], ["back", [132, 770, 76, 104], "L heel · posterior"]] },
+    back: { n: "Back & sacrum", panes: [["back", [92, 150, 216, 400], "Posterior trunk"]] }
+  };
+  function zoneAt(x, y, v) {
+    const f = v === "front", lo = y < 236 ? 108 : 126, hi = 400 - lo;
+    if (y < 176 && x > 136 && x < 264) return f ? "head" : "headB";
+    if (y >= 176 && y < 600 && x < lo) return f ? "armR" : "armL";
+    if (y >= 176 && y < 600 && x > hi) return f ? "armL" : "armR";
+    if (!f) return y < 540 ? "back" : (x < 200 ? "legL" : "legR");
+    if (y < 350) return "chest"; if (y < 440 && !(y > 430 && Math.abs(x - 200) < 60)) return "abd";
+    if (y < 520 && Math.abs(x - 200) < 72) return "groin"; return x < 200 ? "legR" : "legL";
+  }
+  function nameAt(x, y, v, z) {
+    const sd = (v === "front") === (x < 200) ? "R" : "L", pst = v === "back";
+    if (/^arm/.test(z)) return z.slice(3) + (y < 345 ? " upper arm" : y < 468 ? " forearm" : " hand") + (pst ? ", posterior" : "");
+    if (/^leg/.test(z)) return z.slice(3) + (y < 610 ? " thigh" : y < 660 ? " knee" : y < 805 ? " lower leg" : pst ? " heel" : " foot") + (pst && y < 805 ? ", posterior" : "");
+    if (z === "head") return y < 60 ? "Forehead / scalp" : y < 132 ? "Face" : sd + " neck";
+    if (z === "headB") return y < 140 ? "Occipital scalp" : "Posterior neck";
+    if (z === "chest") return Math.abs(x - 200) < 8 ? "Sternum" : sd + " chest";
+    if (z === "abd") return Math.abs(x - 200) < 8 && Math.abs(y - 390) < 14 ? "Periumbilical" : sd + (y < 392 ? "UQ" : "LQ");
+    if (z === "groin") return Math.abs(x - 200) < 14 ? "Perineum / pubic area" : sd + " groin";
+    if (z === "back") return y < 330 ? sd + " upper back" : y < 430 ? sd + " lower back" : Math.abs(x - 200) < 16 ? "Sacral area" : sd + " buttock";
+    return "Body";
+  }
+  /* sites from before v36 (pre-v36 REG region names); generic ones are placed at the region and keep the old label */
+  const OLD = { "Head": ["g", "front", 200, 58, "head", ["wound"]], "R neck": ["g", "front", 184, 146, "head", ["wound", "drain"]], "L neck": ["g", "front", 216, 146, "head", ["wound", "drain"]],
+    "R chest": ["g", "front", 160, 238, "chest", ["wound", "drain"]], "L chest": ["g", "front", 240, 238, "chest", ["wound", "drain"]], "Abdomen RUQ": "uq_r", "Abdomen LUQ": "uq_l", "Abdomen RLQ": "lq_r", "Abdomen LLQ": "lq_l",
+    "Groin/perineum": ["g", "front", 200, 478, "groin", ["wound", "drain"]], "R upper arm": ["g", "front", 99, 282, "armR", ["wound", "piv"]], "L upper arm": ["g", "front", 301, 282, "armL", ["wound", "piv"]], "R antecubital": "ac_r", "L antecubital": "ac_l",
+    "R forearm": ["g", "front", 80, 408, "armR", ["piv", "wound"]], "L forearm": ["g", "front", 320, 408, "armL", ["piv", "wound"]], "R hand": "hand_r", "L hand": "hand_l", "R thigh": "thigh_r", "L thigh": "thigh_l", "R lower leg": "shin_r", "L lower leg": "shin_l", "R foot": "foot_r", "L foot": "foot_l",
+    "Occiput": "occ", "Posterior neck": ["g", "back", 200, 150, "headB", ["wound"]], "L upper back": ["g", "back", 160, 240, "back", ["wound", "drain"]], "R upper back": ["g", "back", 240, 240, "back", ["wound", "drain"]], "Lower back": ["g", "back", 200, 380, "back", ["wound", "drain"]],
+    "Sacrum/coccyx": "sac", "L buttock": "glut_l", "R buttock": "glut_r", "L posterior arm": ["g", "back", 99, 282, "armL", ["wound", "piv"]], "R posterior arm": ["g", "back", 301, 282, "armR", ["wound", "piv"]], "L elbow": "olec_l", "R elbow": "olec_r",
+    "L posterior forearm": ["g", "back", 80, 408, "armL", ["piv", "wound"]], "R posterior forearm": ["g", "back", 320, 408, "armR", ["piv", "wound"]], "L hand (dorsal)": "hand_l", "R hand (dorsal)": "hand_r",
+    "L posterior thigh": ["g", "back", 162, 572, "legL", ["wound", "drain"]], "R posterior thigh": ["g", "back", 238, 572, "legR", ["wound", "drain"]], "L calf": "calf_l", "R calf": "calf_r", "L heel": "heel_l", "R heel": "heel_r", "Body": ["g", "front", 200, 300, "chest", ["wound"]] };
+  const SPECIFIC = { cvc: 1, picc: 1, tcvc: 1, port: 1, dial: 1, nasal: 1, oral: 1, trach: 1, urethral: 1, suprapubic: 1, chest: 1, gtube: 1, jtube: 1 };
+  /* where an LDA sits: {s: site-like object, review: bool, why} */
+  function siteOf(l) {
+    const tpl = tplOf(l); let s = null;
+    if (l.s36 && SBY[l.s36]) s = SBY[l.s36];
+    else if (l.s36 === "free" && l.d36 && l.d36.fx) { const f = l.d36.fx; s = { id: "free", n: l.site || nameAt(f.x, f.y, f.v, f.z), sh: l.site, v: f.v, x: f.x, y: f.y, a: 90, z: f.z, tags: ["wound", "drain"], lat: "", free: 1 } }
+    if (!s) { const lab = String(l.site || "").trim(); s = SITE.find(q => q.n.toLowerCase() === lab.toLowerCase() || q.sh.toLowerCase() === lab.toLowerCase()) || null;
+      if (!s) { const o = OLD[lab]; if (typeof o === "string") s = SBY[o]; else if (o) s = { id: "g", n: lab, sh: lab, v: o[1], x: o[2], y: o[3], a: 90, z: o[4], tags: o[5], lat: (/^([RL]) /.exec(lab) || [])[1] || "", gen: 1 } }
+      if (!s) { const v = l.view === "back" ? "back" : "front"; const x = l.x != null ? Math.max(40, Math.min(360, l.x * 2)) : 200, y = l.y != null ? Math.max(20, Math.min(860, l.y / 0.478)) : 300; s = { id: "g", n: lab || "Site not recorded", sh: lab || "?", v, x, y, a: 90, z: zoneAt(x, y, v), tags: ["wound"], lat: "", gen: 1 } } }
+    if (s.gen && siteErr(tpl, s)) { const only = validSites(tpl); if (only.length === 1 && only[0].v === s.v && Math.hypot(only[0].x - s.x, only[0].y - s.y) < 60) s = only[0] } /* unambiguous: e.g. a Foley at "Groin/perineum" is at the urethral meatus */
+    const bad = siteErr(tpl, s); return { s, tpl, review: !!bad, why: bad || "" };
+  }
+  function siteErr(tpl, s) {
+    if (!s) return "Choose a site.";
+    if (tpl.any) return (s.tags.some(t => t === "nasal" || t === "oral" || t === "urethral") && !s.tags.includes("wound")) ? `${tpl.n}: choose a skin site, not an opening.` : "";
+    if (s.tags.includes(tpl.tag)) return ""; if (tpl.t === "piv" && s.tags.includes("pivleg")) return "";
+    if ((tpl.free) && (s.free || s.gen) && !SPECIFIC[tpl.tag]) return "";
+    const right = SITE.filter(q => q.tags.includes(tpl.tag)).map(q => q.sh); const uniq = [...new Set(right)];
+    return `${s.gen ? `"${s.n}" is not specific enough for a ${tpl.n.toLowerCase()}. ` : `${s.n} is not a site for a ${tpl.n.toLowerCase()}. `}${tpl.why}${uniq.length && uniq.length <= 8 ? " Valid sites: " + uniq.join(", ") + "." : ""}`;
+  }
+  function siteWarn(tpl, s) { if (!s) return ""; if (s.warn && s.warn[tpl.tag]) return s.warn[tpl.tag]; if (tpl.t === "piv" && s.tags.includes("pivleg")) return W_LEG; if (tpl.typ && !tpl.typ.includes(s.id)) return `Unusual location: ${tpl.why}`; return "" }
+  const validSites = tpl => SITE.filter(s => !siteErr(tpl, s) && (!tpl.any || s.tags.includes("wound")));
+  const COMMON = { pi: ["sac", "coc", "heel_r", "heel_l", "isch_r", "isch_l", "glut_r", "glut_l", "occ", "scap_r", "scap_l", "olec_r", "olec_l", "ear_r", "ear_l", "nose"], inc: ["stern", "umb", "uq_r", "uq_l", "lq_r", "lq_l", "ing_r", "ing_l", "knee_r", "knee_l", "thigh_r", "thigh_l"],
+    tear: ["olec_r", "olec_l", "shin_r", "shin_l", "knee_r", "knee_l"], dfu: ["foot_r", "foot_l", "heel_r", "heel_l"], vlu: ["mal_r", "mal_l", "shin_r", "shin_l"] };
+  const chipSites = (tpl, v) => COMMON[tpl.k] ? COMMON[tpl.k].map(id => SBY[id]) : tpl.any ? validSites(tpl).filter(s => s.v === v) : validSites(tpl);
+
+  /* ---------- 4. the body drawing (refined, neutral adult in anatomical position; gray-blue clinical tones) ---------- */
+  const f1 = n => Math.round(n * 10) / 10;
+  function smooth(P, z) {
+    const n = P.length; const g = i => z ? P[(i + n) % n] : P[Math.max(0, Math.min(n - 1, i))]; let d = "M" + f1(P[0][0]) + " " + f1(P[0][1]);
+    for (let i = 0; i < (z ? n : n - 1); i++) { const p0 = g(i - 1), p1 = g(i), p2 = g(i + 1), p3 = g(i + 2); const t = p1[2] != null ? p1[2] : 6;
+      d += "C" + f1(p1[0] + (p2[0] - p0[0]) / t) + " " + f1(p1[1] + (p2[1] - p0[1]) / t) + " " + f1(p2[0] - (p3[0] - p1[0]) / t) + " " + f1(p2[1] - (p3[1] - p1[1]) / t) + " " + f1(p2[0]) + " " + f1(p2[1]) }
+    return d + (z ? "Z" : "");
+  }
+  const mir = P => P.map(p => [400 - p[0], p[1], p[2]]);
+  const HALF = [[180, 112], [178, 134], [175, 150], [164, 161, 7], [150, 166], [128, 172], [112, 180], [101, 192], [95, 210], [89, 236], [82, 268], [75, 300], [70, 330], [66, 352], [62, 378], [58, 404], [55, 430], [54, 452], [54, 466, 8],
+    [48, 474], [40, 486], [35, 502], [34, 516, 9], [39, 518, 9], [45, 506], [51, 496], [53, 512], [51, 534], [53, 556], [60, 568, 8], [70, 570], [79, 562], [84, 540], [87, 516], [88, 492], [86, 474, 8], [89, 458], [94, 432], [99, 404], [104, 378], [107, 360], [108, 344],
+    [112, 312], [117, 280], [121, 254], [124, 236, 9], [127, 233, 10], [130, 246], [131, 270], [134, 300], [139, 330], [141, 352], [139, 376], [133, 402], [126, 430], [121, 458], [119, 486], [121, 520], [126, 560], [132, 598], [138, 628], [140, 648],
+    [138, 672], [138, 700], [143, 736], [150, 772], [156, 800, 8], [154, 818], [150, 836], [151, 852], [158, 864], [172, 868], [184, 864], [190, 850], [190, 830], [188, 812], [186, 790], [189, 752], [193, 712], [194, 680], [192, 652], [192, 628], [194, 590], [196, 548], [198, 514], [200, 502, 9]];
+  const BODYP = smooth(HALF.concat(mir(HALF.slice(0, -1)).reverse()), true);
+  const HEADH = [[200, 14], [176, 20], [162, 40], [158, 66], [160, 86], [166, 104], [175, 118], [188, 129], [200, 132]];
+  const HEADP = smooth(HEADH.concat(mir(HEADH.slice(1, -1)).reverse()), true);
+  const EAR = x => { const s = x < 200 ? 1 : -1; return smooth([[x, 70], [x - 7 * s, 66], [x - 9 * s, 78], [x - 6 * s, 92], [x, 96]], false) };
+  const both = P => smooth(P, false) + " " + smooth(mir(P), false);
+  const pth = (c, d) => `<path class="${c}" d="${d}"/>`;
+  const RIBS = (() => { const P = []; for (let k = 1; k <= 9; k++) { const y0 = 176 + k * 13.5; P.push([[194, y0], [178, y0 + 3], [158, y0 + 10 + k * 1.2], [137, y0 + 22 + k * 1.4]]) } return P.map(both).join(" ") })();
+  const ANT = [
+    pth("b36-ln", both([[196, 172], [184, 174], [164, 172], [140, 176], [116, 182]])), pth("b36-ln", smooth([[193, 168], [200, 175], [207, 168]], false)), pth("b36-fn", "M200 176V300"),
+    pth("b36-fn b36-dz", RIBS), pth("b36-ln", both([[200, 300], [186, 312], [168, 330], [148, 350]])), pth("b36-fn", both([[130, 252], [150, 268], [176, 272], [196, 262]])), pth("b36-fn", both([[99, 196], [108, 222], [118, 238]])),
+    pth("b36-fn", "M200 304V480"), pth("b36-fn", both([[166, 330], [160, 380], [164, 430], [180, 470]])), `<ellipse class="b36-um" cx="200" cy="392" rx="2.6" ry="3.4"/>`,
+    pth("b36-ln", both([[140, 386], [146, 406], [150, 428]])), pth("b36-ln", both([[151, 431], [164, 446], [180, 462], [192, 474]])), pth("b36-fn", both([[126, 562], [150, 570], [174, 566]])),
+    `<ellipse class="b36-pt" cx="164" cy="628" rx="11" ry="13"/><ellipse class="b36-pt" cx="236" cy="628" rx="11" ry="13"/>`, pth("b36-fn", both([[166, 660], [164, 720], [168, 790]])),
+    pth("b36-fn", both([[110, 342], [100, 348], [90, 344]])), pth("b36-fn", both([[60, 466], [72, 470], [84, 466]])), pth("b36-fn", both([[186, 818], [184, 812]])),
+    pth("b36-fn", both([[178, 66], [186, 63], [194, 66]])), pth("b36-fc", both([[179, 76], [186, 73], [193, 76], [186, 78], [179, 76]])), pth("b36-fn", smooth([[198, 78], [197, 90], [194, 98]], false)),
+    pth("b36-fc", both([[190, 99], [194, 96], [199, 100]])), `<ellipse class="b36-nar" cx="195.2" cy="100.6" rx="2.4" ry="1.4"/><ellipse class="b36-nar" cx="204.8" cy="100.6" rx="2.4" ry="1.4"/>`,
+    pth("b36-fc", smooth([[188, 111], [194, 112.5], [200, 112], [206, 112.5], [212, 111]], false)), pth("b36-fn", smooth([[194, 119], [200, 120.5], [206, 119]], false)),
+    pth("b36-fn", both([[166, 104], [174, 132], [188, 158], [195, 170]])), pth("b36-fn b36-dz", both([[176, 140], [182, 158], [184, 172]])), pth("b36-fn b36-dz", "M196 128H204M195.5 136H204.5M195 144H205M195 152H205M195 160H205"),
+    pth("b36-fn", smooth([[195, 126], [200, 129], [205, 126]], false)),
+    pth("b36-vn", both([[100, 200], [92, 246], [83, 298], [76, 338], [68, 380], [62, 424], [59, 460]])), pth("b36-vn", both([[123, 244], [116, 280], [110, 316], [104, 346], [100, 380], [92, 420], [84, 460]])),
+    pth("b36-vn", both([[78, 352], [92, 344], [104, 340]])), pth("b36-vn", both([[90, 350], [84, 400], [74, 450]])), pth("b36-vn", both([[118, 246], [104, 290], [100, 332]])),
+    pth("b36-vn", both([[186, 830], [176, 838], [166, 846]]) + " " + both([[182, 478], [180, 520]]))
+  ].join("");
+  const POST = [
+    pth("b36-ln", both([[200, 170], [186, 176], [160, 178], [130, 182], [112, 188]])), pth("b36-ln", both([[176, 206], [150, 202], [124, 198], [110, 194]])),
+    pth("b36-ln", both([[172, 204], [170, 240], [166, 280], [158, 298], [146, 286], [134, 262], [128, 244]])), pth("b36-fn", "M200 172V470"), `<circle class="b36-um" cx="200" cy="176" r="2.2"/>`,
+    pth("b36-fn b36-dz", "M196 196h8M196 212h8M196 228h8M196 244h8M196 260h8M196 276h8M196 292h8M196 308h8M196 324h8M196 340h8M196 356h8M196 372h8M196 388h8M196 404h8M196 420h8"),
+    pth("b36-ln", both([[140, 392], [156, 410], [176, 422], [188, 430]])), `<circle class="b36-um" cx="186" cy="436" r="2"/><circle class="b36-um" cx="214" cy="436" r="2"/>`,
+    pth("b36-fn", smooth([[186, 436], [200, 486], [214, 436]], false) + "M186 436H214"), pth("b36-fn", "M200 486V522"), pth("b36-ln", both([[126, 528], [150, 540], [176, 540], [196, 528]])),
+    pth("b36-fn", both([[150, 640], [166, 646], [182, 640]])), pth("b36-fn", both([[162, 760], [166, 800], [170, 830]])), pth("b36-fn", both([[80, 346], [72, 350]])), pth("b36-fn", both([[94, 434], [78, 440]])),
+    pth("b36-vn", both([[78, 488], [70, 510], [66, 532]]) + " " + both([[84, 486], [80, 512], [80, 538]]) + " " + both([[72, 506], [80, 512], [86, 520]])),
+    pth("b36-fn", both([[176, 74], [172, 86]])), pth("b36-fn", both([[166, 846], [172, 856], [180, 846]]))
+  ].join("");
+  let SEQ = 0;
+  function bodySVG(v) {
+    const u = "b36x" + (++SEQ);
+    const hl = v === "front" ? [[160, 236, 30, 34], [240, 236, 30, 34], [200, 370, 34, 60], [160, 540, 22, 60], [240, 540, 22, 60], [100, 280, 12, 50], [300, 280, 12, 50]] : [[160, 240, 30, 50], [240, 240, 30, 50], [165, 492, 30, 36], [235, 492, 30, 36], [164, 700, 16, 40], [236, 700, 16, 40]];
+    return `<defs><linearGradient id="${u}g" x1="0" x2="1"><stop offset="0" stop-color="#c6d2dc"/><stop offset=".22" stop-color="#e1e8ee"/><stop offset=".5" stop-color="#f0f4f7"/><stop offset=".78" stop-color="#e1e8ee"/><stop offset="1" stop-color="#c6d2dc"/></linearGradient>` +
+      `<radialGradient id="${u}h" cx=".42" cy=".38" r=".75"><stop offset="0" stop-color="#f4f7f9"/><stop offset=".7" stop-color="#e0e7ec"/><stop offset="1" stop-color="#c9d4dd"/></radialGradient>` +
+      `<radialGradient id="${u}m"><stop offset="0" stop-color="#fff" stop-opacity=".6"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient></defs>` +
+      `<g class="b36-fig">${pth("b36-ear", EAR(160) + " " + EAR(240))}<path class="b36-body" data-l36body="1" d="${BODYP}" fill="url(#${u}g)"/><path class="b36-head" data-l36body="1" d="${HEADP}" fill="url(#${u}h)"/></g>` +
+      `<g class="b36-hl">${hl.map(e => `<ellipse cx="${e[0]}" cy="${e[1]}" rx="${e[2]}" ry="${e[3]}" fill="url(#${u}m)"/>`).join("")}</g><g class="b36-lm">${v === "front" ? ANT : POST}</g>`;
+  }
+  /* zoom-only teaching overlays: abdominal quadrants, midclavicular / axillary lines */
+  function overlay(z) {
+    const t = (x, y, s, fs) => `<text class="b36-ol" x="${x}" y="${y}" font-size="${fs}" text-anchor="middle">${s}</text>`;
+    if (z === "abd") return `<path class="b36-q" d="M200 302V472M118 392H282"/>` + t(160, 324, "RUQ", 7) + t(240, 324, "LUQ", 7) + t(160, 462, "RLQ", 7) + t(240, 462, "LLQ", 7);
+    if (z === "chest") return `<path class="b36-q" d="M160 178V330M240 178V330M131 226V300M269 226V300"/>` + t(160, 340, "MCL", 6) + t(240, 340, "MCL", 6) + t(131, 310, "MAL", 6) + t(269, 310, "MAL", 6);
+    return "";
+  }
+
+  /* ---------- 5. device glyphs, drawn at the site in body units (about 5 units per cm) ---------- */
+  const GC = { "24 g": "#f2cf2c", "22 g": "#2f7fd1", "20 g": "#e47ca9", "18 g": "#3aa35b", "16 g": "#8a9299", "14 g": "#e8822b" };
+  const LC = ["#7b4a2a", "#2f6fbf", "#f4f4f4", "#8f8f8f"];
+  const num = v => { const n = parseFloat(String(v == null ? "" : v).replace(",", ".")); return isNaN(n) ? null : n };
+  function rnd(seed) { let h = 2166136261; for (const c of String(seed)) { h ^= c.charCodeAt(0); h = Math.imul(h, 16777619) } return () => { h ^= h << 13; h ^= h >>> 17; h ^= h << 5; return ((h >>> 0) % 1000) / 1000 } }
+  function blob(rx, ry, seed, j) { const r = rnd(seed), P = []; for (let i = 0; i < 12; i++) { const a = i / 12 * Math.PI * 2, k = 1 - j / 2 + r() * j; P.push([Math.cos(a) * rx * k, Math.sin(a) * ry * k]) } return smooth(P, true) }
+  function glyph(l, s) {
+    const tpl = tplOf(l), pr = l.props || {}, d = l.d36 || {}, t = l.type; const x = f1(s.x), y = f1(s.y); const sd = (s.v === "front") === (s.x <= 200) ? -1 : 1; /* -1: device drifts to the viewer's left */
+    const R = (a, body) => `<g transform="translate(${x} ${y}) rotate(${f1(a)})">${body}</g>`, A = body => `<g transform="translate(${x} ${y})">${body}</g>`;
+    if (t === "piv") { const gc = GC[pr.gauge] || "#e47ca9"; return R(s.a, `<rect class="g-dr" x="-5" y="-7.5" width="26" height="15" rx="2.5"/><path class="g-cath" d="M0 0H9"/><rect x="8" y="-2.4" width="7.5" height="4.8" rx="1.2" fill="${gc}" class="g-hub"/><path class="g-tube" d="M15.5 0C21 0 23 5 32 6"/>`) }
+    if (t === "cvc") {
+      if (tpl.k === "port") return A(`<circle class="g-port" r="8.5"/><circle class="g-sept" r="4"/><path class="g-cath" d="M0 -8.5C2 -16 6 -24 10 -30"/>`);
+      const n = tpl.k === "hd" ? 2 : ({ Single: 1, Double: 2, Triple: 3 }[pr.lumens] || 2); const cols = tpl.k === "hd" ? ["#c0392b", "#2f6fbf"] : LC;
+      let lum = ""; for (let i = 0; i < n; i++) { const yy = f1((i - (n - 1) / 2) * 6); lum += `<path class="g-lum" d="M17 0C21 0 23 ${yy} 29 ${yy}"/><circle class="g-cap" cx="30.5" cy="${yy}" r="2.3" fill="${cols[i % cols.length]}"/>` }
+      return R(s.a, `<rect class="g-dr" x="-7" y="-9" width="25" height="18" rx="3"/><circle class="g-chg" r="3.8"/><path class="g-cath" d="M0 0H17"/><rect class="g-sec" x="7.5" y="-4.8" width="6" height="9.6" rx="2"/>${lum}`);
+    }
+    if (t === "foley") { if (tpl.k === "spc") return R(s.a, `<rect class="g-dr" x="-5" y="-5" width="10" height="10" rx="1.5"/><path class="g-fol" d="M0 0C8 0 16 2 30 5"/>`);
+      return R(s.a, `<path class="g-fol" d="M0 0C8 0 22 ${3 * -sd} 44 ${8 * -sd}"/><rect class="g-sec" x="40" y="${f1(8 * -sd - 4)}" width="9" height="8" rx="2"/>`) }
+    if (t === "ng") {
+      if (tpl.tag === "gtube" || tpl.tag === "jtube") return R(s.a + 70 * sd, `<circle class="g-bol" r="6.5"/><circle class="g-cap" r="2.6" fill="#f4efe0"/><path class="g-gt" d="M2 0C10 0 16 3 26 6"/><path class="g-lum" d="M24 5L30 2M24 6L30 10"/>`);
+      if (tpl.tag === "oral") return A(`<path class="g-ng" d="M${6 * sd} 1C${10 * sd} 2 ${14 * sd} 6 ${15 * sd} 16S${17 * sd} 30 ${18 * sd} 40"/>`);
+      const thin = tpl.k === "fdt"; const P = [[0, 0], [0.6, 4], [6, 8], [15, 9.5], [24, 13], [29, 22], [31, 40]].map(p => [p[0] * sd, p[1]]);
+      return A(`<path class="g-ng${thin ? " thin" : ""}" d="${smooth(P, false)}"/><rect class="g-tape" x="${f1(-3 * sd - 3)}" y="-9" width="6" height="9" rx="1.5"/><path class="g-mark" d="M${f1(0.3 * sd - 1.6)} 3.2h3.2"/>`);
+    }
+    if (t === "airway") {
+      if (tpl.k === "trach") return A(`<path class="g-tie" d="M-20 0C-28 -2 -34 -8 -36 -16M20 0C28 -2 34 -8 36 -16"/><path class="g-flange" d="M-20 -3Q-10 -6.5 0 -6.5Q10 -6.5 20 -3L20 3Q10 6.5 0 6.5Q-10 6.5 -20 3Z"/><circle class="g-can" r="4.6"/><circle class="g-can2" r="2.6"/>`);
+      if (tpl.k === "npa") return A(`<ellipse class="g-npa" rx="3.4" ry="2.2"/>`);
+      if (tpl.k === "opa") return A(`<rect class="g-opa" x="-8" y="-2.8" width="16" height="5.6" rx="2.8"/>`);
+      const dep = num(pr.mark); return A(`<rect class="g-holder" x="-22" y="-5.5" width="44" height="4.5" rx="2"/><path class="g-ett" d="M0 0C${-6 * -sd} 4 ${-14 * -sd} 9 ${-22 * -sd} 19L${-25 * -sd} 30"/><rect class="g-conn" x="${f1(-25 * -sd - 3)}" y="29" width="6" height="6" rx="1"/><path class="g-pilot" d="M${-7 * -sd} 6C${-11 * -sd} 7 ${-14 * -sd} 9 ${-15 * -sd} 13"/><ellipse class="g-pb" cx="${-15.5 * -sd}" cy="15.5" rx="1.8" ry="2.6"/><circle class="g-ettx" r="3.6"/>${dep ? `<text class="g-txt" x="${10 * -sd}" y="-9" text-anchor="middle">${esc(dep)} cm</text>` : ""}`);
+    }
+    if (t === "chest") return R(s.a, `<rect class="g-dr" x="-7" y="-7" width="14" height="14" rx="2"/><path class="g-ct" d="M0 0C10 0 24 4 46 11"/><path class="g-ct2" d="M0 0C10 0 24 4 46 11"/><path class="g-mark" d="M14 -1v4M22 1v4M30 3v4"/>`);
+    if (t === "drain") { const dt = pr.dtype || "Jackson-Pratt";
+      if (dt === "Penrose") return R(s.a, `<rect class="g-dr" x="-6" y="-6" width="12" height="12" rx="2"/><rect class="g-pen" x="0" y="-2.4" width="17" height="4.8" rx="1.2"/><path class="g-mark" d="M12 -4v8"/>`);
+      if (dt === "Hemovac") return R(s.a, `<rect class="g-dr" x="-4" y="-4" width="8" height="8" rx="1.5"/><path class="g-jp" d="M0 0C10 0 18 2 28 4"/><rect class="g-hv" x="28" y="-5" width="20" height="16" rx="3"/><path class="g-mark" d="M33 -5v16M38 -5v16M43 -5v16"/>`);
+      return R(s.a, `<rect class="g-dr" x="-4" y="-4" width="8" height="8" rx="1.5"/><path class="g-jp" d="M0 0C10 0 18 3 28 6"/><ellipse class="g-bulb" cx="${dt === "Blake" ? 39 : 37}" cy="8" rx="${dt === "Blake" ? 11 : 9}" ry="${dt === "Blake" ? 7.5 : 6.5}" transform="rotate(14 37 8)"/><path class="g-fluid" d="M30 10Q37 13 45 11"/>`) }
+    if (t === "ostomy") { const mm = num(d.mm) || (tpl.k === "uro" ? 25 : 30); const r = Math.max(3.5, mm / 10 * U / 2); const w = r * 2.6;
+      return A(`<path class="g-pouch" d="M${f1(-w * .55)} ${f1(-w * .3)}C${f1(-w * .7)} ${f1(w * 1.2)} ${f1(-w * .2)} ${f1(w * 1.9)} 0 ${f1(w * 1.9)}C${f1(w * .2)} ${f1(w * 1.9)} ${f1(w * .7)} ${f1(w * 1.2)} ${f1(w * .55)} ${f1(-w * .3)}Z"/><rect class="g-wafer" x="${f1(-w / 2)}" y="${f1(-w / 2)}" width="${f1(w)}" height="${f1(w)}" rx="${f1(w * .3)}"/><circle class="g-stoma" r="${f1(r)}"/><circle class="g-stoma2" r="${f1(r * .35)}"/>`) }
+    if (t === "wound") {
+      const L = num(d.L) || num((String(pr.size || "").split(/x|×/i)[0])) || (tpl.k === "inc" ? 8 : 2), Wd = num(d.W) || num((String(pr.size || "").split(/x|×/i)[1])) || (tpl.k === "inc" ? 0.3 : 2);
+      if (tpl.k === "inc") { const len = Math.max(8, L * U); let tk = ""; for (let i = -len / 2 + 2; i < len / 2; i += 3.2) tk += `M${f1(i)} -2.2v4.4`; return R(s.a, `<path class="g-inc" d="M${f1(-len / 2)} 0H${f1(len / 2)}"/><path class="g-stp" d="${tk}"/>`) }
+      const st = pr.stage || ""; const bed = { g: num(d.gran) || 0, s: num(d.slough) || 0, e: num(d.eschar) || 0 };
+      const cls = /Stage 1/.test(st) ? "w1" : /Deep/.test(st) ? "wd" : /Unstage/.test(st) || bed.e > 40 ? "wu" : bed.s > 40 ? "ws" : /Stage 2/.test(st) ? "w2" : "w3";
+      return A(`<path class="g-wnd ${cls}" d="${blob(Math.max(2.4, Wd * U / 2), Math.max(2.4, L * U / 2), l.id || "w", .35)}"/>${tpl.k === "tear" ? `<path class="g-flap" d="M${f1(-Wd * U / 3)} ${f1(-L * U / 4)}q${f1(Wd * U / 3)} ${f1(-L * U / 6)} ${f1(Wd * U / 1.6)} 0"/>` : ""}`);
+    }
+    return A(`<circle class="g-port" r="5"/>`);
+  }
+
+  /* ---------- 6. clinical state: day count, dwell, last assessment, due/overdue, prompts ---------- */
+  const st0 = () => X.l36 || (X.l36 = { view: "front", zoom: null, sel: null, add: null, chk: false, dis: {}, fb: null, ov: null, hov: null, more: false });
+  const act = p => (p.ldas || []).filter(l => !l.removed);
+  const placedT = l => T(l.hd || 1, toMin(l.time) != null ? toMin(l.time) : 0);
+  const dwellH = (p, l) => Math.max(0, (curT(p) - placedT(l)) / 60);
+  function lastA(p, l) { let b = null; (p.flow || []).forEach(x => { if (String(x.r).indexOf("lda:" + l.id + ":") === 0 && (!b || x.t > b.t)) b = x }); return b }
+  function lastRow(p, l, k) { let b = null; (p.flow || []).forEach(x => { if (x.r === "lda:" + l.id + ":" + k && (!b || x.t > b.t)) b = x }); return b }
+  const IVL = l => l.type === "piv" ? 240 : l.type === "wound" ? 1440 : 720;
+  function status(p, l) { const la = lastA(p, l), now = curT(p), due = (la ? la.t : placedT(l)) + IVL(l); return { s: now >= due ? "overdue" : now >= due - 60 ? "due" : "ok", due, la } }
+  const ago = m => m < 60 ? Math.max(0, Math.round(m)) + " min ago" : m < 2880 ? Math.round(m / 60) + " h ago" : Math.round(m / 1440) + " d ago";
+  const nm = l => tplOf(l).n;
+  function sizeOf(l) { const pr = l.props || {}, d = l.d36 || {};
+    if (l.type === "piv") return [pr.gauge, d.len && d.len.split(" (")[0]].filter(Boolean).join(" · ");
+    if (l.type === "cvc") return [d.fr, pr.lumens && pr.lumens + " lumen"].filter(Boolean).join(" · ");
+    if (l.type === "foley" || l.type === "ng" || l.type === "chest") return [pr.fr, l.type === "foley" && pr.balloon ? pr.balloon + " balloon" : "", l.type === "ng" && pr.mark ? pr.mark + " cm at " + (tplOf(l).tag === "oral" ? "lip" : tplOf(l).tag === "nasal" ? "naris" : "skin") : "", l.type === "chest" && pr.suction].filter(Boolean).join(" · ");
+    if (l.type === "drain") return d.fr || ""; if (l.type === "airway") return [pr.size && pr.size + (/Endo/.test(pr.atype || "Endo") ? " mm" : ""), pr.mark && pr.mark + " cm at lip/teeth"].filter(Boolean).join(" · ");
+    if (l.type === "wound") return [pr.stage && pr.stage !== "N/A" ? pr.stage : "", (d.L || d.W) ? [d.L, d.W, d.D].filter(v => v !== "" && v != null).join(" × ") + " cm" : pr.size].filter(Boolean).join(" · ");
+    if (l.type === "ostomy") return d.mm ? d.mm + " mm stoma" : ""; return "" }
+  const srcOf = tpl => ({ line: SRC.ins, wound: SRC.npiap, airway: SRC.air }[tpl.cat]) || ({ foley: SRC.cauti, ng: SRC.tube, chest: SRC.ct, ostomy: SRC.wocn }[tpl.t]) || SRC.wocn;
+  function bpas(p) {
+    const st = st0(), out = [], now = curT(p); const recent = (l, k, h) => { const r = lastRow(p, l, k); return r && r.t >= now - h * 60 };
+    act(p).forEach(l => { const so = siteOf(l), tpl = so.tpl, dd = lineDay(p, l), n = nm(l), d = l.d36 || {}, pr = l.props || {};
+      const add = (k, t, x, acts, src) => { if (!st.dis[k + ":" + l.id]) out.push({ k, id: l.id, t, x, acts, src }) };
+      if (so.review) add("site", `Review site: ${n}`, `The recorded site "${l.site || "none"}" does not fit this device. ${tpl.why}`, [["fix", "Fix site"], ["dis", "Not now"]], srcOf(tpl));
+      if (l.type === "foley" && dd >= 3 && !recent(l, "need", 24)) add("cauti", `Urinary catheter day ${dd}: review the indication`, `${d.indic ? `Documented indication: ${d.indic}. ` : "No indication is documented. "}Keep an indwelling catheter only while an appropriate indication exists, review the need every day, and remove it as soon as it is no longer needed (nurse-driven removal protocols reduce CAUTI).`, [[d.indic ? "need" : "edit", d.indic ? "Indication still met" : "Document indication"], ["rm", "Remove catheter"], ["dis", "Not now"]], SRC.cauti);
+      if (l.type === "cvc" && (!recent(l, "need", 24) || !recent(l, "chg", 24))) add("clabsi", `${n} day ${dd}: daily necessity and CHG bathing`, "Review every day whether the central line is still essential and remove it promptly when it is not. Bathe ICU patients over 2 months of age with chlorhexidine (CHG) every day; keep the dressing clean, dry and intact.", [!recent(l, "need", 24) ? ["need", "Necessity reviewed"] : null, !recent(l, "chg", 24) ? ["chg", "CHG bath done"] : null, ["dis", "Not now"]].filter(Boolean), SRC.clabsi);
+      if (l.type === "cvc" && tpl.k !== "port" && /^Pending/.test(d.tip || "")) add("tip", `${n}: tip position not confirmed`, "Do not use a new central line until the tip position is confirmed per policy (chest X-ray, or ECG-based tip confirmation for PICCs).", [["edit", "Document tip confirmation"], ["dis", "Not now"]], SRC.ins);
+      if (l.type === "ng" && /^Pending/.test(pr.verify || "")) add("ngv", `${n}: placement not verified`, "Confirm the position of a blindly inserted tube with an X-ray before the first feeding or medication. Do not rely on auscultation of an air bolus. Recheck the external cm mark every shift and before each use.", [["edit", "Document verification"], ["dis", "Not now"]], SRC.tube);
+      if (l.type === "piv" && dwellH(p, l) >= 96) add("piv96", `Peripheral IV in place ${Math.floor(dwellH(p, l))} h`, "Assess the site and whether the IV is still needed. INS 2024: remove a peripheral catheter when it is no longer needed or clinically indicated (for example phlebitis or infiltration), not on a fixed schedule. CDC (2011): routine replacement more often than every 72-96 h is not needed in adults. Follow your facility's policy.", [["assess", "Assess site"], ["rm", "Remove"], ["dis", "Not now"]], SRC.ins + "; " + SRC.clabsi);
+    });
+    const od = act(p).filter(l => status(p, l).s === "overdue" && !st.dis["due:" + l.id]);
+    if (od.length) { const f = od[0], S2t = status(p, f); out.push({ k: "due", id: f.id, ids: od.map(l => l.id), t: od.length === 1 ? `${nm(f)} assessment overdue` : `${od.length} LDA assessments overdue`,
+      x: `${od.slice(0, 3).map(l => nm(l) + " (" + (status(p, l).la ? "last " + tLbl(status(p, l).la.t) : "not assessed since placement") + ")").join("; ")}${od.length > 3 ? "; and " + (od.length - 3) + " more" : ""}. Teaching default: peripheral IV sites at least every 4 h (more often if critically ill, sedated or receiving vesicants), other devices every shift, wounds daily; follow your facility's policy.`,
+      acts: [["assess", od.length === 1 ? "Assess now" : "Assess " + nm(f).split(" (")[0]], ["dis", "Not now"]], src: SRC.ins }) }
+    return out;
+  }
+
+  /* ---------- 7. rendering ---------- */
+  const catIc = c => `<svg viewBox="0 0 24 24" class="l36-ci c-${c}" aria-hidden="true"><circle cx="12" cy="12" r="10"/><g transform="translate(5.4 5.4) scale(.55)">${CATG[c] || ""}</g></svg>`;
+  function devs(p, v, vb) { const L = act(p), st = st0(), seen = {};
+    return L.map(l => { const so = siteOf(l), s = so.s; if (s.v !== v) return ""; if (vb && (s.x < vb[0] - 20 || s.x > vb[0] + vb[2] + 20 || s.y < vb[1] - 20 || s.y > vb[1] + vb[3] + 20)) return "";
+      const key = Math.round(s.x / 6) + ":" + Math.round(s.y / 6); const k = seen[key] = (seen[key] || 0) + 1; const s2 = k > 1 ? Object.assign({}, s, { x: s.x + (k - 1) * 9, y: s.y + (k - 1) * 7 }) : s;
+      const c = CAT(l.type); return `<g class="l36-dev c-${c}${st.sel === l.id ? " on" : ""}${so.review ? " rv" : ""}" data-l36="sel" data-v="${l.id}" data-l36id="${l.id}" tabindex="0" role="button" aria-label="${esc(nm(l) + " at " + s.n)}"><circle class="l36-halo" cx="${f1(s2.x)}" cy="${f1(s2.y)}" r="14"/>${glyph(l, s2)}${so.review ? `<g class="l36-rq" transform="translate(${f1(s2.x + 11)} ${f1(s2.y - 11)})"><circle r="6"/><text y="2.6" text-anchor="middle">?</text></g>` : ""}</g>` }).join("") }
+  /* hotspots: in placement mode only (valid sites, or every site in "Check my placement") */
+  function hots(v, vb, main) {
+    const st = st0(); if (!st.add) return ""; const tpl = TPL[st.add.tpl]; const all = st.chk;
+    let L = all ? SITE.filter(s => s.v === v && !main) : (main && COMMON[tpl.k] ? COMMON[tpl.k].map(id => SBY[id]) : validSites(tpl)).filter(s => s.v === v);
+    if (vb) L = L.filter(s => s.x >= vb[0] && s.x <= vb[0] + vb[2] && s.y >= vb[1] && s.y <= vb[1] + vb[3]);
+    const sc = vb ? vb[2] / 200 : 1; const r = f1(main ? 7.5 : Math.max(3.2, 7 * sc)); const fs = f1(vb ? vb[2] / 26 : 9);
+    if (main) { /* merge sites closer than ~22 units into one tap target that opens the zoom */
+      const out = [], used = new Set(); (all ? [] : L).forEach(s => { if (used.has(s.id)) return; const near = L.filter(q => !used.has(q.id) && q.z === s.z && Math.hypot(q.x - s.x, q.y - s.y) < 22); near.forEach(q => used.add(q.id)); out.push(near) });
+      if (all) { const zs = {}; SITE.filter(s => s.v === v).forEach(s => { (zs[s.z] = zs[s.z] || []).push(s) }); Object.values(zs).forEach(g => out.push(g)) }
+      return out.map(g => { if (g.length === 1 && !all) { const s = g[0], w = siteWarn(tpl, s); return `<g class="l36-hs${w ? " warn" : ""}" data-l36="site" data-v="${s.id}" tabindex="0" role="button" aria-label="${esc(s.n)}"><circle class="hit" cx="${s.x}" cy="${s.y}" r="15"/><circle class="dot" cx="${s.x}" cy="${s.y}" r="${r}"/></g>` }
+        const cx = f1(g.reduce((a, s) => a + s.x, 0) / g.length), cy = f1(g.reduce((a, s) => a + s.y, 0) / g.length); const z = g[0].z;
+        return `<g class="l36-hs cl" data-l36="zoom" data-v="${z}" tabindex="0" role="button" aria-label="${esc(ZONE[z].n)}: ${g.length} sites, zoom in"><circle class="hit" cx="${cx}" cy="${cy}" r="17"/><circle class="dot" cx="${cx}" cy="${cy}" r="9"/><text x="${cx}" y="${f1(cy + 3.4)}" text-anchor="middle">${all ? "+" : g.length}</text></g>` }).join("");
+    }
+    return L.map(s => { const w = all ? "" : siteWarn(tpl, s); const hx = f1(s.x + (s.h ? s.h[0] : 0)), hy = f1(s.y + (s.h ? s.h[1] : 0)); const left = hx < 200 || hx > vb[0] + vb[2] * .8; const ld = s.h ? `<path class="ld" d="M${s.x} ${s.y}L${hx} ${hy}"/><circle class="pin" cx="${s.x}" cy="${s.y}" r="${f1(r * .3)}"/>` : "";
+      return `<g class="l36-hs${all ? " any" : ""}${w ? " warn" : ""}" data-l36="site" data-v="${s.id}" tabindex="0" role="button" aria-label="${esc(s.n)}">${ld}<circle class="hit" cx="${hx}" cy="${hy}" r="${f1(r * 1.6)}"/><circle class="dot" cx="${hx}" cy="${hy}" r="${r}"/><text class="lbl" x="${f1(+hx + (left ? -r * 1.5 : r * 1.5))}" y="${f1(+hy + fs * .35)}" font-size="${fs}" text-anchor="${left ? "end" : "start"}">${esc(s.sh)}</text></g>` }).join("");
+  }
+  function figHTML(p, ph) {
+    const st = st0(), v = st.view, L = act(p); const other = L.filter(l => siteOf(l).s.v !== v).length;
+    const lr = v === "front" ? ["R", "L"] : ["L", "R"];
+    const main = `<svg class="l36-svg${st.add ? " adding" : ""}" viewBox="14 4 372 874" data-l36svg="main" data-view="${v}" role="img" aria-label="${v === "front" ? "Anterior" : "Posterior"} body diagram with ${L.length} device${L.length === 1 ? "" : "s"}">${bodySVG(v)}<text class="l36-lr" x="40" y="40">${lr[0]}</text><text class="l36-lr" x="360" y="40" text-anchor="end">${lr[1]}</text>${devs(p, v)}${hots(v, null, true)}</svg>`;
+    let zoom = ""; if (st.zoom && ZONE[st.zoom]) { const Z = ZONE[st.zoom];
+      zoom = `<div class="l36-zoom" role="dialog" aria-label="${esc(Z.n)} close-up"><div class="l36-zh"><b>${esc(Z.n)}</b>${Z.pair ? `<button class="l36-lk" data-l36="zoom" data-v="${Z.pair}">${/^arm/.test(st.zoom) ? "Other arm" : "Other leg"}</button>` : ""}<button class="l36-x" data-l36="zclose" aria-label="Close close-up">×</button></div><div class="l36-zp n${Z.panes.length}">${Z.panes.map(([pv, vb, ttl], i) => `<figure><svg viewBox="${vb.join(" ")}" data-l36svg="pane" data-view="${pv}" data-zone="${st.zoom}" class="l36-psvg z" role="img" aria-label="${esc(ttl)}">${bodySVG(pv)}${overlay(st.zoom)}${devs(p, pv, vb)}${hots(pv, vb, false)}</svg><figcaption>${esc(ttl)}</figcaption></figure>`).join("")}</div></div>` }
+    return `<figure class="l36-fig"><div class="l36-figbar"><div class="l36-seg" role="group" aria-label="Body view"><button data-l36="view" data-v="front" aria-pressed="${v === "front"}">Anterior</button><button data-l36="view" data-v="back" aria-pressed="${v === "back"}">Posterior</button></div>${other ? `<span class="l36-oth">${other} on ${v === "front" ? "posterior" : "anterior"}</span>` : ""}</div>
+      <div class="l36-stage">${main}${zoom}</div><figcaption class="l36-cap">${v === "front" ? "Anterior view: the patient's right is on your left." : "Posterior view: the patient's left is on your left."} ${st.add ? "" : "Tap a body area to zoom."}</figcaption></figure>`;
+  }
+  function hintHTML() {
+    const st = st0(); if (!st.add) return ""; const tpl = TPL[st.add.tpl]; const fx = st.add.fix; const vs = chipSites(tpl, st.view);
+    const chips = st.chk ? "" : `<div class="l36-chips" role="list" aria-label="Valid sites">${vs.map(s => `<button role="listitem" class="l36-chip${siteWarn(tpl, s) ? " warn" : ""}" data-l36="site" data-v="${s.id}">${esc(s.n)}</button>`).join("")}${tpl.free ? `<span class="l36-fine">or tap the exact spot on the body (zoom in first)</span>` : ""}</div>`;
+    const fb = st.fb ? `<div class="l36-fb ${st.fb.ok ? "ok" : "no"}" role="status"><b>${st.fb.ok ? "Correct site." : "Not quite."}</b> ${esc(st.fb.msg)}</div>` : "";
+    return `<div class="l36-hint" role="status"><div class="l36-hrow"><span class="l36-step">${fx ? "Change site" : "Step 2 of 3"}</span><b>${fx ? "Tap the correct site" : "Tap the site"} for the ${esc(/^[A-Z][a-z]/.test(tpl.n) ? tpl.n[0].toLowerCase() + tpl.n.slice(1) : tpl.n)}</b>${st.chk ? `<span class="l36-pm">Check my placement is on</span>` : ""}<button class="l36-b2" data-l36="cancel">Cancel</button></div>${fb}${chips}</div>`;
+  }
+  function rowHTML(p, l, ph) {
+    const st = st0(), so = siteOf(l), c = CAT(l.type), dd = lineDay(p, l), S0 = status(p, l), sz = sizeOf(l), on = st.sel === l.id, now = curT(p), d = l.d36 || {};
+    const flag = so.review ? `<span class="l36-fl rv">Review site</span>` : ""; const sf = S0.s === "overdue" ? `<span class="l36-fl od">Overdue</span>` : S0.s === "due" ? `<span class="l36-fl du">Due</span>` : "";
+    const dayc = (l.type === "foley" && dd >= 3) || (l.type === "cvc") ? " hi" : ""; const pivh = l.type === "piv" ? `<small>${Math.floor(dwellH(p, l))} h</small>` : "";
+    const det = on ? `<div class="l36-det"><dl>${[["Site", so.s.n + (so.review ? " (review)" : "")], ["Placed", `HD ${l.hd || 1}${l.time ? " " + l.time : ""}${l.by ? " · " + l.by : ""}`], ...Object.entries(l.props || {}).filter(([k, v]) => v).map(([k, v]) => [PL[k] || k, v]), ...Object.entries(d).filter(([k, v]) => v !== "" && v != null && typeof v !== "object" && DL[k]).map(([k, v]) => [DL[k], v])].map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl><div class="l36-dbtn"><button class="l36-b2" data-l36="edit" data-v="${l.id}">Edit details</button><button class="l36-b2" data-l36="fix" data-v="${l.id}">Change site</button></div></div>` : "";
+    return `<div class="l36-row${on ? " on" : ""} s-${S0.s}" data-l36="sel" data-v="${l.id}" data-l36id="${l.id}" tabindex="0" role="button" aria-pressed="${on}"><span class="l36-ic">${catIc(c)}</span>
+      <span class="l36-nm"><b>${esc(nm(l))}</b>${sz ? ` <span class="l36-sz">${esc(sz)}</span>` : ""}<small>${esc(so.s.n)} ${flag}</small></span>
+      <span class="l36-day${dayc}" title="Device day (day of placement = day 1)">Day <b>${dd}</b>${pivh}</span>
+      <span class="l36-la">${S0.la ? `${esc(tLbl(S0.la.t))}<small>${esc(ago(now - S0.la.t))}</small>` : `<small>Not assessed</small>`}${sf}</span>
+      <span class="l36-acts"><button class="l36-b1" data-l36="assess" data-v="${l.id}">Assess</button><button class="l36-b2" data-l36="rm" data-v="${l.id}">Remove</button></span></div>${det}`;
+  }
+  const PL = { gauge: "Gauge", dress: "Dressing", ctype: "Type", lumens: "Lumens", ext: "External length (cm)", fr: "Size", balloon: "Balloon", ttype: "Type", mark: "External mark / depth (cm)", verify: "Placement verified by", suction: "Suction", dtype: "Type", atype: "Type", size: "Size", wtype: "Type", stage: "Stage", otype: "Type" };
+  const DL = { len: "Catheter length", att: "Attempts", us: "Ultrasound-guided", fr: "French size", tip: "Tip confirmation", dress: "Dressing", utype: "Catheter route", indic: "Indication", use: "Use", cmh: "Suction (cm H2O)", ind: "Indication", sys: "Drainage system", to: "Drains to", cuff: "Cuff", conf: "Placement confirmed by", L: "Length (cm)", W: "Width (cm)", D: "Depth (cm)", tun: "Tunneling", und: "Undermining", gran: "Granulation %", slough: "Slough %", eschar: "Eschar %", epi: "Epithelial %", amt: "Drainage amount", dtyp: "Drainage type", poa: "Present on admission", mm: "Stoma size (mm)", appl: "Pouching system" };
+  function listHTML(p, ph) {
+    const L = act(p), rem = (p.ldas || []).filter(l => l.removed);
+    const groups = GRP.map(([c, n]) => { const g = L.filter(l => CAT(l.type) === c); return g.length ? `<section class="l36-grp c-${c}"><h3 class="l36-gh">${catIc(c)}${esc(n)} <span>${g.length}</span></h3>${ph ? "" : `<div class="l36-th" aria-hidden="true"><span></span><span>Device · site</span><span>Day</span><span>Last assessed</span><span></span></div>`}${g.map(l => rowHTML(p, l, ph)).join("")}</section>` : "" }).join("");
+    return `<section class="l36-list" aria-label="Active lines, drains, airways and wounds">${groups || `<div class="l36-empty"><p><b>No lines, drains, airways or wounds.</b></p><p>Tap <b>Add LDA</b>, pick the device, then tap the site.</p></div>`}
+      ${rem.length ? `<details class="l36-hist"><summary>Removed (${rem.length})</summary><ul>${rem.map(l => `<li><b>${esc(nm(l))}</b> · ${esc(siteOf(l).s.n)}<small>HD ${l.hd || 1}${l.time ? " " + esc(l.time) : ""} to HD ${l.removed.hd || "?"}${l.removed.time ? " " + esc(l.removed.time) : ""} · ${esc(l.removed.why || "")}${l.removed.tip === true ? " · tip intact" : l.removed.tip === false ? " · tip NOT intact" : ""} · ${lineDay({ hd: l.removed.hd || 1 }, l)} device day${lineDay({ hd: l.removed.hd || 1 }, l) === 1 ? "" : "s"}</small></li>`).join("")}</ul></details>` : ""}</section>`;
+  }
+  function bpaHTML(p, ph) { const B = bpas(p), st = st0(); if (!B.length) return "";
+    if (ph && !st.more) return `<button class="l36-bpabar" data-l36="more" aria-expanded="false"><span class="l36-bi" aria-hidden="true">!</span><span><b>${B.length} teaching prompt${B.length === 1 ? "" : "s"}</b><small>${esc(B[0].t)}${B.length > 1 ? " and more" : ""}</small></span><span class="l36-bpago">Show</span></button>`;
+    const show = st.more || ph ? B : B.slice(0, 2);
+    return `<section class="l36-bpas" aria-label="Teaching prompts">${show.map(b => `<div class="l36-bpa k-${b.k}" role="alert"><span class="l36-bi" aria-hidden="true">!</span><div class="l36-bt"><b>${esc(b.t)}</b><p>${esc(b.x)}</p>${b.src ? `<small>${esc(b.src)} · ${AI}</small>` : ""}</div><div class="l36-ba">${b.acts.map(([a, lab], i) => `<button class="${i ? "l36-b2" : "l36-b1"}" data-l36="bpa" data-v="${a}|${b.id}|${b.k}">${esc(lab)}</button>`).join("")}</div></div>`).join("")}${B.length > 2 || ph ? `<button class="l36-lk l36-more" data-l36="more">${st.more ? "Show fewer" : `Show ${B.length - 2} more prompt${B.length - 2 === 1 ? "" : "s"}`}</button>` : ""}</section>` }
+  function thumbHTML(p) { const L = act(p); return `<button class="l36-thumb" data-l36="full" aria-label="Open the body diagram"><svg viewBox="14 4 372 874" aria-hidden="true">${bodySVG("front")}${devs(p, "front")}</svg><svg viewBox="14 4 372 874" aria-hidden="true">${bodySVG("back")}${devs(p, "back")}</svg><span><b>Body diagram</b><small>${L.length ? L.length + " device" + (L.length === 1 ? "" : "s") + " · tap to zoom" : "Tap to view"}</small></span></button>` }
+  function render(m, p) {
+    const st = st0(); prime(p); const ph = isRover(); const L = act(p); const od = L.filter(l => status(p, l).s === "overdue").length;
+    if (st.sel && !L.some(l => l.id === st.sel)) st.sel = null;
+    const bar = `<div class="l36-bar"><h2 class="l36-t">LDAs <small>Lines · Drains · Airways · Wounds</small></h2><span class="l36-cnt">${L.length} active${od ? ` · <b>${od} overdue</b>` : ""}</span><span class="l36-sp"></span><label class="l36-pmt"><input type="checkbox" data-l36c="chk" ${st.chk ? "checked" : ""}> Check my placement</label><button class="l36-addb" data-l36="add" aria-haspopup="dialog">+ Add LDA</button></div>`;
+    const foot = `<p class="l36-ai">Teaching prompts and placement tips: ${AI}. Follow your facility's policy. <button class="l36-lk" data-l36="srcs">Sources</button></p>${st.srcs ? `<ul class="l36-srcs">${Object.values(SRC).map(s => `<li>${esc(s)}</li>`).join("")}</ul>` : ""}`;
+    if (ph) m.innerHTML = `<div class="l36 l36-ph">${bar}${bpaHTML(p, true)}${st.add ? "" : thumbHTML(p)}${listHTML(p, true)}${foot}</div>`;
+    else m.innerHTML = `<div class="l36">${bar}${hintHTML()}${bpaHTML(p)}<div class="l36-main">${figHTML(p, false)}${listHTML(p, false)}</div>${foot}</div>`;
+    if (st.ov) renderOv(); applyHov();
+  }
+
+  /* ---------- 8. overlay (picker, phone sheets, forms) ---------- */
+  function ovEl() { let o = document.getElementById("l36ov"); if (!o) { o = document.createElement("div"); o.id = "l36ov"; o.className = "l36-ov"; document.body.appendChild(o) } return o }
+  function closeOv() { const st = st0(); st.ov = null; const o = document.getElementById("l36ov"); if (o) o.remove() }
+  function renderOv() {
+    const st = st0(), o = st.ov; if (!o) return closeOv(); const p = P(); if (!p) return closeOv(); const el = ovEl(); const ph = isRover(); el.classList.toggle("ph", ph);
+    let h = "";
+    if (o.k === "pick") { const q = (o.q || "").toLowerCase().trim(); const hit = t => !q || (t.n + " " + t.kw + " " + t.hint).toLowerCase().indexOf(q) >= 0;
+      h = `<div class="l36-dlg l36-pick" role="dialog" aria-modal="true" aria-label="Add LDA"><div class="l36-dh"><b>Add LDA</b><span class="l36-step">Step 1 of 3</span><button class="l36-x" data-l36="ovx" aria-label="Close">×</button></div><input type="search" class="l36-q" data-l36q="1" placeholder="Search: PICC, Foley, NG, JP, trach, pressure injury..." value="${esc(o.q || "")}" aria-label="Search LDA types" autocomplete="off">
+        <div class="l36-pl">${GRP.map(([c, n]) => { const g = TL.filter(t => t.cat === c && hit(t)); return g.length ? `<h4>${catIc(c)}${esc(n)}</h4>${g.map(t => `<button class="l36-pi" data-l36="pick" data-v="${t.k}"><b>${esc(t.n)}</b><small>${esc(t.hint)}</small></button>`).join("")}` : "" }).join("") || `<p class="l36-fine">No match. Try "IV", "drain" or "wound".</p>`}</div></div>` }
+    else if (o.k === "fig") h = `<div class="l36-dlg l36-figd" role="dialog" aria-modal="true" aria-label="Body diagram"><div class="l36-dh"><b>${st.add ? "Tap the site" : "Body diagram"}</b><button class="l36-x" data-l36="${st.add ? "cancel" : "ovx"}" aria-label="Close">×</button></div>${hintHTML()}${figHTML(p, true)}</div>`;
+    else if (o.k === "form") h = formHTML(p, o);
+    else if (o.k === "rm") h = rmHTML(p, o);
+    el.innerHTML = h; applyHov();
+    const q = el.querySelector("[data-l36q]"); if (q && !o.typed && !ph) { try { q.focus() } catch (e) { } }
+    if (o.k === "form") { const f = el.querySelector("form"); if (f) syncForm(f) }
+  }
+  /* ---------- 9. forms: type-specific fields with smart defaults ---------- */
+  const BY = ["RN", "Provider", "IV team / VAST", "Interventional radiology", "Anesthesia", "Present on admission"];
+  const FR = a => a.map(n => n + " Fr");
+  function fields(tpl, p) {
+    const F = [], f = (k, l, kind, o) => F.push(Object.assign({ k, l, kind, st: "d" }, o || {})); const sexF = /^f/i.test(p.sex || "");
+    if (tpl.t === "piv") { f("gauge", "Gauge", "sel", { st: "p", o: ["24 g", "22 g", "20 g", "18 g", "16 g", "14 g"], def: "20 g", req: 1 }); f("len", "Catheter length", "sel", { o: ["0.75 in (19 mm)", "1 in (25 mm)", "1.25 in (32 mm)", "1.75 in (45 mm) long PIVC"], def: "1 in (25 mm)" }); f("att", "Insertion attempts", "sel", { o: ["1", "2", "3 or more"], def: "1" }); f("us", "Ultrasound-guided", "sel", { o: ["No", "Yes (ultrasound-guided)"], def: "No" }); f("dress", "Dressing", "sel", { st: "p", o: ["Transparent", "CHG-impregnated transparent", "Securement device", "Gauze"], def: "Transparent" }) }
+    if (tpl.t === "cvc") { f("ctype", "Type", "sel", { st: "p", o: ["PICC", "Non-tunneled CVC", "Tunneled CVC", "Implanted port", "Dialysis catheter"], def: tpl.pre.ctype, req: 1 }); f("lumens", "Lumens", "sel", { st: "p", o: ["Single", "Double", "Triple"], def: tpl.pre.lumens, req: 1 });
+      f("fr", "French size", "sel", { o: FR(["3", "4", "5", "6", "7", "8", "9.5", "12", "13.5", "14.5"]), def: tpl.d.fr }); if (tpl.k === "picc") f("ext", "External length (cm)", "num", { st: "p", mn: 0, mx: 30, ph: "e.g. 1" });
+      if (tpl.k !== "port") f("tip", "Tip position confirmed by", "sel", { o: ["Pending - do not use until confirmed", "Chest X-ray: cavoatrial junction", "ECG tip confirmation", "Fluoroscopy (interventional radiology)"], def: "Pending - do not use until confirmed", req: 1 });
+      f("us", "Ultrasound-guided", "sel", { o: ["No", "Yes (ultrasound-guided)"], def: tpl.k === "picc" || tpl.k === "cvc" || tpl.k === "hd" ? "Yes (ultrasound-guided)" : "No" }); f("dress", "Dressing", "sel", { o: ["CHG-impregnated transparent", "Transparent", "Gauze"], def: "CHG-impregnated transparent" }) }
+    if (tpl.t === "foley") { f("fr", "Size", "sel", { st: "p", o: FR(["12", "14", "16", "18", "20", "22", "24"]), def: "16 Fr", req: 1 }); f("balloon", "Balloon", "sel", { st: "p", o: ["5 mL", "10 mL", "30 mL"], def: "10 mL", req: 1 });
+      f("indic", "Indication (CDC CAUTI criteria)", "sel", { w2: 1, req: 1, o: ["Acute urinary retention or bladder outlet obstruction", "Accurate urine output in a critically ill patient", "Perioperative: urologic or prolonged surgery, large-volume infusions or diuretics, intraoperative output monitoring", "Healing of open sacral or perineal wounds in an incontinent patient", "Prolonged immobilization (unstable spine, pelvic fracture)", "Comfort at end of life", "Incontinence (no other indication)", "Urine specimen (patient can void)"] }) }
+    if (tpl.t === "ng") { const g = tpl.tag === "gtube" || tpl.tag === "jtube", sb = tpl.k === "fdt";
+      f("ttype", "Type", "sel", { st: "p", o: ["NG (salem sump)", "OG", "Small-bore feeding tube", "G tube", "PEG", "J tube"], def: tpl.pre.ttype, req: 1 }); f("fr", "Size", "sel", { st: "p", o: FR(["8", "10", "12", "14", "16", "18", "20", "24"]), def: sb ? "10 Fr" : g ? "20 Fr" : "16 Fr", req: 1 });
+      f("mark", g ? "External bolster mark (cm)" : tpl.tag === "oral" ? "External length at lip (cm)" : "External length at naris (cm)", "num", { st: "p", mn: 0, mx: 120, req: !g, ph: g ? "e.g. 3" : "e.g. 55" });
+      f("verify", "Placement verified by", "sel", { st: "p", req: 1, o: g ? ["Placed under direct visualization", "Per policy"] : ["Pending X-ray - hold feeds and meds", "Abdominal X-ray confirmed", "pH of aspirate 5 or below (adjunct)", "Auscultation of air bolus"], def: g ? "Placed under direct visualization" : "Pending X-ray - hold feeds and meds" });
+      f("use", "Use", "sel", { o: ["Low intermittent suction", "Gravity drainage", "Clamped", "Feeding", "Medications only"], def: sb || g ? "Feeding" : "Low intermittent suction" }) }
+    if (tpl.t === "chest") { f("fr", "Size", "sel", { st: "p", o: FR(["12", "14", "20", "24", "28", "32", "36"]), def: "24 Fr", req: 1 }); f("suction", "Suction", "sel", { st: "p", o: ["-20 cm H2O", "Water seal"], def: "-20 cm H2O", req: 1 }); f("ind", "Indication", "sel", { o: ["Pneumothorax", "Hemothorax", "Pleural effusion", "Empyema", "Post-operative (cardiac/thoracic)"], req: 1 }); f("sys", "Drainage system", "sel", { o: ["Dry suction control", "Wet (water) suction control"], def: "Dry suction control" }) }
+    if (tpl.t === "drain") { f("dtype", "Type", "sel", { st: "p", o: ["Jackson-Pratt", "Hemovac", "Penrose", "Blake"], def: tpl.pre.dtype, req: 1 }); f("fr", "Size", "sel", { o: tpl.pre.dtype === "Penrose" ? ["1/4 in", "1/2 in", "1 in"] : FR(["7", "10", "15", "19"]), def: tpl.pre.dtype === "Penrose" ? "1/2 in" : "15 Fr" }); f("to", "Drains to", "sel", { o: tpl.pre.dtype === "Penrose" ? ["Dressing"] : ["Bulb suction", "Gravity", "Low wall suction"], def: tpl.pre.dtype === "Penrose" ? "Dressing" : tpl.pre.dtype === "Hemovac" ? "Gravity" : "Bulb suction" }) }
+    if (tpl.t === "airway") { const k = tpl.k;
+      f("atype", "Type", "sel", { st: "p", o: ["Endotracheal tube", "Tracheostomy", "Nasal trumpet", "Oral airway"], def: tpl.pre.atype, req: 1 });
+      f("size", k === "ett" ? "Size (internal diameter, mm)" : k === "trach" ? "Size" : "Size", "sel", { st: "p", req: 1, o: k === "ett" ? ["6.0", "6.5", "7.0", "7.5", "8.0", "8.5"] : k === "trach" ? ["4", "5", "6", "7", "8"] : k === "npa" ? FR(["24", "26", "28", "30", "32"]) : ["80 mm", "90 mm", "100 mm"], def: k === "ett" ? (sexF ? "7.0" : "7.5") : k === "trach" ? "6" : k === "npa" ? "28 Fr" : "90 mm" });
+      if (k === "ett") { f("mark", "Depth at lip/teeth (cm)", "num", { st: "p", mn: 10, mx: 32, def: sexF ? "21" : "23", req: 1 }); f("conf", "Placement confirmed by", "sel", { o: ["End-tidal CO2 + chest X-ray", "End-tidal CO2 (X-ray pending)"], def: "End-tidal CO2 (X-ray pending)" }) }
+      if (k === "ett" || k === "trach") f("cuff", "Cuff", "sel", { o: ["Cuffed", "Uncuffed"], def: "Cuffed" }) }
+    if (tpl.t === "wound") { const pi = tpl.k === "pi";
+      if (pi) f("stage", "Stage (NPIAP)", "sel", { st: "p", req: 1, w2: 1, o: ["Stage 1", "Stage 2", "Stage 3", "Stage 4", "Unstageable", "Deep tissue pressure injury", "Mucosal membrane pressure injury"] });
+      f("L", "Length (cm, head to toe)", "num", { mn: 0, mx: 100, req: 1 }); f("W", tpl.k === "inc" ? "Width (cm)" : "Width (cm, side to side)", "num", { mn: 0, mx: 100, req: tpl.k !== "inc" }); f("D", "Depth (cm)", "num", { mn: 0, mx: 30 });
+      if (tpl.k !== "inc") { f("tun", "Tunneling", "text", { def: "None", ph: "e.g. 2 cm at 12 o'clock" }); f("und", "Undermining", "text", { def: "None", ph: "e.g. 1 cm from 3 to 6 o'clock" });
+        f("gran", "Granulation %", "num", { mn: 0, mx: 100 }); f("slough", "Slough %", "num", { mn: 0, mx: 100 }); f("eschar", "Eschar %", "num", { mn: 0, mx: 100 }); f("epi", "Epithelial %", "num", { mn: 0, mx: 100 }) }
+      else f("close", "Closure", "sel", { o: ["Staples", "Sutures", "Skin adhesive", "Steri-Strips", "Open"], def: "Staples" });
+      f("amt", "Drainage amount", "sel", { o: ["None", "Scant", "Small", "Moderate", "Large"], def: "None" }); f("dtyp", "Drainage type", "sel", { o: ["None", "Serous", "Serosanguineous", "Sanguineous", "Purulent"], def: "None" }); f("poa", "Present on admission", "sel", { o: ["No", "Yes"], def: tpl.k === "inc" ? "No" : "No" }) }
+    if (tpl.t === "ostomy") { f("otype", "Type", "sel", { st: "p", o: ["Colostomy", "Ileostomy", "Urostomy"], def: tpl.pre.otype, req: 1 }); f("mm", "Stoma size (mm)", "num", { mn: 5, mx: 80, def: tpl.k === "uro" ? "25" : "30", req: 1 }); f("appl", "Pouching system", "sel", { o: ["1-piece", "2-piece"], def: "2-piece" }) }
+    return F;
+  }
+  DL.close = "Closure";
+  function vget(F, l, fd) { if (!l) return fd.def != null ? fd.def : ""; const src = fd.st === "p" ? (l.props || {}) : (l.d36 || {}); return src[fd.k] != null ? src[fd.k] : "" }
+  /* validation: errors block, warnings inform; also used by window.__vxLDA.validate */
+  function check(tpl, s, V, p) {
+    const e = {}, w = {}; const se = siteErr(tpl, s); if (se) e.site = se; else { const sw = siteWarn(tpl, s); if (sw) w.site = sw }
+    fields(tpl, p).forEach(fd => { const v = V[fd.k]; if (fd.req && (v == null || String(v).trim() === "")) e[fd.k] = "Required."; if (fd.kind === "num" && v !== "" && v != null) { const n = num(v); if (n == null || n < fd.mn || n > fd.mx) e[fd.k] = `Enter a number from ${fd.mn} to ${fd.mx}.` } });
+    const n = k => num(V[k]);
+    if (tpl.t === "ng" && /Auscultation/.test(V.verify || "")) e.verify = "Auscultation of an air bolus cannot tell gastric from respiratory placement. Use an X-ray for a blindly inserted tube (pH testing is an adjunct).";
+    if (tpl.t === "ng" && tpl.tag === "nasal" && s && !s.tags.includes("nasal") && !e.site) e.site = "A nasal tube must be at the R or L naris.";
+    if (tpl.t === "foley" && /^Incontinence|^Urine specimen/.test(V.indic || "")) e.indic = "Not an appropriate indication (CDC): an indwelling catheter is not a substitute for incontinence care, and urine for testing should be collected by voiding when the patient can void.";
+    if (tpl.t === "airway" && tpl.k === "ett" && n("mark") != null && (n("mark") < 18 || n("mark") > 26)) w.mark = "Typical oral ETT depth in adults is about 21 cm (women) to 23 cm (men) at the teeth. Confirm with a chest X-ray.";
+    if (tpl.t === "wound") { const st = V.stage || ""; const pc = ["gran", "slough", "eschar", "epi"].map(k => n(k)); const anyp = pc.some(x => x != null); const sum = pc.reduce((a, x) => a + (x || 0), 0);
+      if (anyp && Math.round(sum) !== 100) e.gran = `Wound bed percentages add up to ${sum}%; they must total 100%.`;
+      if (/Stage 1|Deep tissue/.test(st) && (n("D") || 0) > 0) e.D = `${st} is intact (or, for a DTPI, possibly non-intact) skin without measurable depth; record depth 0 or restage.`;
+      if (/Stage 1/.test(st) && ((n("gran") || 0) + (n("slough") || 0) + (n("eschar") || 0)) > 0) e.gran = "Stage 1 is intact skin: there is no wound bed tissue to record.";
+      if (/Stage 2/.test(st) && ((n("slough") || 0) > 0 || (n("eschar") || 0) > 0)) e.slough = "Stage 2 has no slough or eschar (NPIAP). If slough or eschar is present, it is Stage 3, Stage 4 or unstageable.";
+      if (/Stage 2/.test(st) && (n("gran") || 0) > 0) w.gran = "Granulation tissue is not present in Stage 2 (NPIAP); consider Stage 3.";
+      if (/Unstageable/.test(st) && anyp && ((n("slough") || 0) + (n("eschar") || 0)) === 0) w.slough = "Unstageable means the base is obscured by slough or eschar; record their percentage.";
+      if (/Stage [34]/.test(st) && n("D") === 0) w.D = "Stage 3 and 4 are full-thickness: depth is usually greater than 0 cm." }
+    if (tpl.t === "ostomy" && tpl.typ && s && !tpl.typ.includes(s.id) && !se) w.site = siteWarn(tpl, s);
+    return { ok: !Object.keys(e).length, e, w };
+  }
+  function formHTML(p, o) {
+    const tpl = TPL[o.tpl], l = o.id ? (p.ldas || []).find(x => x.id === o.id) : null; const s = o.site; const F = fields(tpl, p);
+    const fb = o.fb ? `<div class="l36-fb ok" role="status"><b>Correct site.</b> ${esc(o.fb)}</div>` : "";
+    const ctl = fd => { const v = o.vals && o.vals[fd.k] != null ? o.vals[fd.k] : vget(F, l, fd);
+      if (fd.kind === "sel") { const opts = fd.o.slice(); if (v && opts.indexOf(v) < 0) opts.unshift(v); return `<select name="${fd.k}" ${fd.req ? "required" : ""}><option value="">-</option>${opts.map(x => `<option ${x === v ? "selected" : ""}>${esc(x)}</option>`).join("")}</select>` }
+      return `<input name="${fd.k}" ${fd.kind === "num" ? `inputmode="decimal"` : ""} value="${esc(v)}" ${fd.ph ? `placeholder="${esc(fd.ph)}"` : ""} maxlength="60" autocomplete="off">` };
+    const vs = validSites(tpl); const siteCtl = s.free || (s.gen && !SPECIFIC[tpl.tag]) ? `<input name="site" value="${esc(o.siteLabel != null ? o.siteLabel : s.n)}" maxlength="60">` : `<select name="site">${(vs.some(q => q.id === s.id) ? vs : [s].concat(vs)).map(q => `<option value="${q.id}" ${q.id === s.id ? "selected" : ""}>${esc(q.n)}${q.gen ? " (review)" : ""}</option>`).join("")}</select>`;
+    const ov = o.vals || {}; const hdv = ov.hd != null ? ov.hd : l ? (l.hd || 1) : (p.hd || 1), tv = ov.time != null ? ov.time : l ? (l.time || "") : hhmm(nowMin()), byv = ov.by != null ? ov.by : l ? (l.by || "") : tpl.by;
+    const pv = prevVB(s);
+    return `<div class="l36-dlg l36-form" role="dialog" aria-modal="true" aria-label="${esc((l ? "Edit " : "Place ") + tpl.n)}"><form data-l36f="lda" novalidate>
+      <div class="l36-dh"><b>${l ? "Edit" : "Place"} ${esc(tpl.n)}</b><span class="l36-step">${l ? "" : "Step 3 of 3"}</span><button type="button" class="l36-x" data-l36="ovx" aria-label="Close">×</button></div>${fb}
+      <div class="l36-fhead"><svg class="l36-prev z" viewBox="${pv}" aria-hidden="true">${prevInner(p, o)}</svg><div><small>Site</small>${siteCtl}<p class="l36-err" data-e="site"></p><p class="l36-warn" data-w="site"></p></div></div>
+      <div class="l36-fg">${F.map(fd => `<label class="l36-f${fd.w2 ? " w2" : ""}"><span>${esc(fd.l)}${fd.req ? ` <i aria-label="required">*</i>` : ""}</span>${ctl(fd)}<em class="l36-err" data-e="${fd.k}"></em><em class="l36-warn" data-w="${fd.k}"></em></label>`).join("")}
+        <label class="l36-f"><span>${tpl.t === "wound" ? "Identified" : "Placed"} on hospital day</span><input name="hd" inputmode="numeric" value="${hdv}"></label><label class="l36-f"><span>Time</span><input name="time" value="${esc(tv)}" placeholder="HH:MM"></label>
+        <label class="l36-f"><span>${tpl.t === "wound" ? "Identified by" : "Placed by"}</span><select name="by">${(BY.indexOf(byv) < 0 && byv ? [byv] : []).concat(BY).map(x => `<option ${x === byv ? "selected" : ""}>${esc(x)}</option>`).join("")}</select></label></div>
+      <p class="l36-fine">${esc(tpl.why)} <span>${AI}.</span></p>
+      <div class="l36-fbtn"><button class="l36-b1 l36-big" type="submit">${l ? "Save" : "Place " + esc(tpl.n.split(" (")[0])}</button><button type="button" class="l36-b2" data-l36="${l ? "ovx" : "back"}">${l ? "Cancel" : "Back"}</button></div></form></div>`;
+  }
+  const prevVB = s => [s.x - 34, s.y - 34, 68, 68].map(f1).join(" ");
+  function prevInner(p, o) { const tpl = TPL[o.tpl], l = o.id ? (p.ldas || []).find(x => x.id === o.id) : null, s = o.site, F = fields(tpl, p), ov = o.vals || {};
+    const draft = { id: o.id || "draft", type: tpl.t, t36: tpl.k, props: Object.assign({}, l ? l.props : tpl.pre), d36: Object.assign({}, l ? l.d36 : tpl.d) };
+    F.forEach(fd => { const v = ov[fd.k] != null ? ov[fd.k] : vget(F, l, fd); if (v !== "") (fd.st === "p" ? draft.props : draft.d36)[fd.k] = v });
+    return `${bodySVG(s.v)}<g class="l36-dev c-${tpl.cat} on">${glyph(draft, s)}</g>` }
+  function updPrev(f) { const o = st0().ov, p = P(); const sv = f.querySelector(".l36-prev"); if (!o || !sv || !p) return; sv.setAttribute("viewBox", prevVB(o.site)); sv.innerHTML = prevInner(p, o) }
+  function readForm(f) { const V = {}; [...f.elements].forEach(x => { if (x.name) V[x.name] = String(x.value || "").trim() }); return V }
+  function formSite(f, o) { const s = o.site; if (s.free || s.gen) return s; const id = f.elements.site && f.elements.site.value; return SBY[id] || s }
+  function syncForm(f) { const st = st0(), o = st.ov; if (!o || o.k !== "form") return; const tpl = TPL[o.tpl], p = P(); const V = readForm(f); const r = check(tpl, formSite(f, o), V, p);
+    f.querySelectorAll("[data-e]").forEach(x => { x.textContent = o.tried ? (r.e[x.dataset.e] || "") : "" }); f.querySelectorAll("[data-w]").forEach(x => { x.textContent = r.w[x.dataset.w] || "" }); return r }
+  function saveForm(f) {
+    const st = st0(), o = st.ov, tpl = TPL[o.tpl], p = P(); o.tried = true; const r = syncForm(f); if (!r.ok) { const x = f.querySelector(".l36-err:not(:empty)"); if (x) x.scrollIntoView({ block: "center" }); return }
+    const V = readForm(f), s = formSite(f, o); const lab = (s.free || s.gen) ? (V.site || s.n) : s.n; if (!phiOK([lab, V.tun || "", V.und || ""])) return;
+    const old = o.id ? (p.ldas || []).find(x => x.id === o.id) : null; const props = Object.assign({}, old ? old.props : tpl.pre), d36 = Object.assign({}, old ? old.d36 : tpl.d); delete d36.fx; fields(tpl, p).forEach(fd => { const v = V[fd.k]; if (fd.st === "p") props[fd.k] = v; else d36[fd.k] = v });
+    if (tpl.t === "wound") props.size = [V.L, V.W, V.D].filter(v => v !== "").join(" x ");
+    const site = { s36: s.free ? "free" : s.gen ? undefined : s.id, site: lab, lat: s.lat || "", view: s.v, x: Math.round(s.x / 2), y: Math.round(s.y * 0.478) };
+    if (s.free) d36.fx = { x: f1(s.x), y: f1(s.y), v: s.v, z: s.z };
+    let id = o.id;
+    upd(q => { q.ldas = q.ldas || []; const base = { t36: tpl.k, props, d36, hd: Math.max(1, parseInt(V.hd, 10) || q.hd || 1), time: V.time, by: V.by };
+      if (id) { const l = q.ldas.find(x => x.id === id); if (l) { const keepD = l.d36 && l.d36.fx && !d36.fx ? { fx: l.d36.fx } : {}; Object.assign(l, base, { d36: Object.assign(keepD, d36) }); if (o.siteChanged || !l.s36 || s.free) Object.assign(l, site) } }
+      else { id = uid(); q.ldas.push(Object.assign({ id, rt: Date.now(), type: tpl.t }, site, base)) } });
+    const was = !!o.id; st.add = null; st.fb = null; st.sel = id; closeOv(); const so = SBY[site.s36]; if (so) { st.view = so.v } draw(); toastE(was ? "LDA updated" : nm({ type: tpl.t, t36: tpl.k, props }) + " placed");
+  }
+  function rmHTML(p, o) { const l = (p.ldas || []).find(x => x.id === o.id); if (!l) return ""; const c = l.type, tipq = c === "piv" || c === "cvc" || c === "chest" || c === "drain" || c === "ng" || c === "foley";
+    const why = c === "wound" ? ["Healed / closed", "Resolved", "Reclassified", "Discharged / transferred", "Documentation error"] : ["No longer needed", "Site rotation / change", c === "piv" ? "Infiltration / phlebitis" : "Occluded / malfunction", "Dislodged / accidental removal", "Suspected infection", "Patient discharged", "Documentation error"];
+    return `<div class="l36-dlg l36-rmd" role="dialog" aria-modal="true" aria-label="Remove ${esc(nm(l))}"><form data-l36f="rm" data-v="${l.id}"><div class="l36-dh"><b>${c === "wound" ? "Resolve" : "Remove"} ${esc(nm(l))}</b><button type="button" class="l36-x" data-l36="ovx" aria-label="Close">×</button></div><p class="l36-fine">${esc(siteOf(l).s.n)} · placed HD ${l.hd || 1}${l.time ? " " + esc(l.time) : ""} · day ${lineDay(p, l)}</p>
+      <div class="l36-fg"><label class="l36-f w2"><span>Reason</span><select name="why">${why.map(x => `<option>${x}</option>`).join("")}</select></label><label class="l36-f"><span>Hospital day</span><input name="hd" inputmode="numeric" value="${p.hd || 1}"></label><label class="l36-f"><span>Time</span><input name="time" value="${hhmm(nowMin())}"></label>
+      ${tipq ? `<label class="l36-ck w2"><input type="checkbox" name="tip" checked> ${c === "foley" ? "Balloon deflated fully; catheter intact" : c === "wound" ? "" : "Catheter / tube tip intact"}</label>` : ""}</div>
+      ${c === "foley" ? `<p class="l36-fine">After removal: monitor for a void (many protocols use 4-6 h) and bladder-scan per protocol.</p>` : c === "cvc" ? `<p class="l36-fine">Remove with the patient flat or in Trendelenburg (supine for a PICC), have them hold their breath or exhale, then apply an occlusive dressing to prevent air embolism.</p>` : c === "chest" ? `<p class="l36-fine">Apply an occlusive dressing and watch for respiratory distress; a chest X-ray usually follows.</p>` : ""}
+      <div class="l36-fbtn"><button class="l36-b1 l36-big" type="submit">${c === "wound" ? "Resolve" : "Remove"}</button><button type="button" class="l36-b2" data-l36="ovx">Cancel</button></div></form></div>` }
+
+  /* ---------- 10. actions ---------- */
+  const isPh = () => isRover();
+  function startAdd(k, fix) { const st = st0(), tpl = TPL[k]; st.add = { tpl: k, fix: fix || null }; st.fb = null; st.sel = fix || st.sel;
+    const vs = validSites(tpl); const zs = [...new Set(vs.map(s => s.z))]; const views = [...new Set(vs.map(s => s.v))];
+    if (tpl.view) st.view = tpl.view; else if (views.length === 1) st.view = views[0];
+    st.zoom = st.chk ? null : zs.length === 1 && !tpl.free ? zs[0] : (tpl.pref && !tpl.free ? tpl.pref : null); if (st.zoom) { const pv = ZONE[st.zoom].panes[0][0]; if (views.length === 1 || !tpl.view) st.view = pv }
+    st.ov = isPh() ? { k: "fig" } : null; if (!isPh()) { const o = document.getElementById("l36ov"); if (o) o.remove() } draw(); if (isPh()) renderOv() }
+  function cancelAdd() { const st = st0(); st.add = null; st.fb = null; st.zoom = null; if (st.ov && st.ov.k === "fig") closeOv(); draw() }
+  function pickSite(s) {
+    const st = st0(); if (!st.add || !s) return; const tpl = TPL[st.add.tpl]; const err = siteErr(tpl, s);
+    if (err) { st.fb = { ok: false, msg: err }; draw(); if (st.ov) renderOv(); return }
+    const fb = st.chk ? tpl.why + (siteWarn(tpl, s) ? " Caution: " + siteWarn(tpl, s) : "") : "";
+    if (st.add.fix) { const id = st.add.fix; const so = { s36: s.free ? "free" : s.id, site: s.n, lat: s.lat || "", view: s.v, x: Math.round(s.x / 2), y: Math.round(s.y * 0.478) };
+      if (!phiOK([s.n])) return; upd(q => { const l = (q.ldas || []).find(x => x.id === id); if (l) { Object.assign(l, so); if (s.free) { l.d36 = Object.assign({}, l.d36, { fx: { x: s.x, y: s.y, v: s.v, z: s.z } }) } } });
+      st.add = null; st.fb = null; st.zoom = null; if (st.ov) closeOv(); draw(); toastE("Site updated" + (fb ? ". " + fb : "")); return }
+    st.ov = { k: "form", tpl: tpl.k, site: s, fb }; renderOv();
+  }
+  function fileNow(id, vals) { const p = P(); const t = T(p.hd || 1, Math.floor(nowMin() / 15) * 15); upd(q => fileVals(q, t, vals)) }
+  function assess(id) { const p = P(); if (!p) return; const l = (p.ldas || []).find(x => x.id === id); if (!l) return; const st = st0(); prime(p);
+    X.fsT = "lda"; X.fsQ = ""; if (X.fsHide) X.fsHide.lda = false; st.focus = { id, k: (LDA[l.type].as[0] || [])[0], until: Date.now() + 5000 }; closeOv(); go(p.id, "flow"); setTimeout(focusTry, 60) }
+  function focusTry() { const st = st0(), f = st.focus; if (!f) return; if (Date.now() > f.until) { st.focus = null; return } if (X.act === "flow" && doFocus(f)) { st.focus = null; return } setTimeout(focusTry, 90) }
+  function doFocus(f) { const rid = "lda:" + f.id + ":" + f.k; const sel = `[data-r="${rid.replace(/"/g, "")}"]`;
+    const mark0 = () => document.querySelectorAll(`#ehm [data-r^="lda:${f.id}:"]`).forEach(c => { const r = c.closest("tr,.rvrow") || c; r.classList.add("l36-fsf") });
+    const mark = () => { mark0(); [60, 250, 700].forEach(ms => setTimeout(mark0, ms)) };
+    const rv = document.querySelector("#ehm .rvrow" + sel); if (rv) { rv.scrollIntoView({ block: "center" }); mark(); return true }
+    const FSa = window.__vxFS; if (FSa && typeof FSa.select === "function" && FSa.cols && FSa.cols().length) { const t = FSa.nowCol(); if (t != null && FSa.select(rid, t)) { const td = document.querySelector("#ehm td" + sel + `[data-t="${t}"]`); if (td) td.scrollIntoView({ block: "center", inline: "nearest" }); mark(); return true } }
+    const td = document.querySelector("#ehm td.fsnowc" + sel) || document.querySelector("#ehm td" + sel); if (td) { td.click(); td.scrollIntoView({ block: "center", inline: "nearest" }); mark(); return true } return false }
+  function bpaAct(a, id, k) { const st = st0(), p = P(); const l = (p.ldas || []).find(x => x.id === id); if (!l) return;
+    if (a === "dis") { if (k === "due") act(p).forEach(x => { if (status(p, x).s === "overdue") st.dis["due:" + x.id] = 1 }); else st.dis[k + ":" + id] = 1; draw(); return } if (a === "assess") return assess(id); if (a === "rm") { st.ov = { k: "rm", id }; renderOv(); return } if (a === "fix") return startAdd(tplOf(l).k, id);
+    if (a === "edit") return openEdit(id); if (a === "need") { fileNow(id, { ["lda:" + id + ":need"]: "Yes, reviewed" }); draw(); toastE("Necessity reviewed and filed"); return }
+    if (a === "chg") { fileNow(id, { ["lda:" + id + ":chg"]: "Done" }); draw(); toastE("CHG bath filed"); return } }
+  function openEdit(id) { const p = P(), l = (p.ldas || []).find(x => x.id === id); if (!l) return; const so = siteOf(l); st0().ov = { k: "form", tpl: so.tpl.k, site: so.s, id, siteLabel: l.site }; renderOv() }
+  function svgTap(svg, e) { const st = st0(); const pt = svg.createSVGPoint(); pt.x = e.clientX; pt.y = e.clientY; const m = svg.getScreenCTM(); if (!m) return; const c = pt.matrixTransform(m.inverse()); const v = svg.dataset.view;
+    const body = [...svg.querySelectorAll("[data-l36body]")]; let inside = true; try { inside = body.some(b => b.isPointInFill(new DOMPoint(c.x, c.y))) } catch (er) { }
+    if (!inside) return; const z = svg.dataset.zone || zoneAt(c.x, c.y, v);
+    if (svg.dataset.l36svg === "pane" && st.add && TPL[st.add.tpl].free) { pickSite({ id: "free", free: 1, n: nameAt(c.x, c.y, v, z), sh: "", v, x: f1(c.x), y: f1(c.y), a: 90, z, tags: ["wound", "drain"], lat: "" }); return }
+    if (svg.dataset.l36svg === "main") { st.zoom = z; draw(); if (st.ov && st.ov.k === "fig") renderOv() } }
+  function applyHov() { const id = st0().hov; document.querySelectorAll(".l36-hov").forEach(x => x.classList.remove("l36-hov")); if (id) document.querySelectorAll(`[data-l36id="${id}"]`).forEach(x => x.classList.add("l36-hov")) }
+  const inL36 = el => el && el.closest && el.closest(".l36,#l36ov");
+  document.addEventListener("click", e => { const t = e.target; if (!inL36(t)) return; const b = t.closest("[data-l36]"); const st = st0();
+    if (!b) { const svg = t.closest("svg[data-l36svg]"); if (svg) svgTap(svg, e); else if (t.id === "l36ov") { if (!st.add) closeOv() } return }
+    const k = b.dataset.l36, v = b.dataset.v; e.preventDefault();
+    if (k === "add") { if (st.add) { st.add = null; st.zoom = null } st.ov = { k: "pick", q: "" }; renderOv(); return }
+    if (k === "pick") { startAdd(v); return } if (k === "cancel") { cancelAdd(); return } if (k === "back") { st.ov = isPh() ? { k: "fig" } : null; if (!st.ov) closeOv(); else renderOv(); draw(); return }
+    if (k === "ovx") { if (st.ov && st.ov.k === "fig" && st.add) { cancelAdd(); return } closeOv(); return }
+    if (k === "view") { st.view = v; st.zoom = null; draw(); if (st.ov && st.ov.k === "fig") renderOv(); return }
+    if (k === "zoom") { st.zoom = v; const pv = ZONE[v].panes[0][0]; st.view = pv; draw(); if (st.ov && st.ov.k === "fig") renderOv(); return }
+    if (k === "zclose") { st.zoom = null; draw(); if (st.ov && st.ov.k === "fig") renderOv(); return }
+    if (k === "site") { pickSite(SBY[v]); return }
+    if (k === "sel") { if (st.add) { const svg = t.closest("svg[data-l36svg]"); if (svg) svgTap(svg, e); return } const was = st.sel === v; st.sel = was ? null : v;
+      if (!was && b.tagName.toLowerCase() === "g") { const so = siteOf((P().ldas || []).find(l => l.id === v) || {}); if (so && so.s && !b.closest("[data-l36svg='pane']")) { st.zoom = so.s.z; st.view = so.s.v } }
+      else if (!was) { const l = (P().ldas || []).find(x => x.id === v); if (l) { const s = siteOf(l).s; st.view = s.v } }
+      draw(); if (st.ov && st.ov.k === "fig") renderOv(); if (!was) setTimeout(() => { const r = document.querySelector(`.l36-list [data-l36id="${v}"]`); if (r && b.tagName.toLowerCase() === "g" && r.scrollIntoView) r.scrollIntoView({ block: "nearest" }) }, 0); return }
+    if (k === "assess") { e.stopPropagation(); assess(v); return } if (k === "rm") { st.ov = { k: "rm", id: v }; renderOv(); return } if (k === "edit") { openEdit(v); return }
+    if (k === "fix") { const l = (P().ldas || []).find(x => x.id === v); if (l) startAdd(tplOf(l).k, v); return }
+    if (k === "bpa") { const [a, id, kk] = v.split("|"); bpaAct(a, id, kk); return } if (k === "more") { st.more = !st.more; draw(); return } if (k === "srcs") { st.srcs = !st.srcs; draw(); return }
+    if (k === "full") { st.ov = { k: "fig" }; renderOv(); return }
+  }, true);
+  document.addEventListener("change", e => { const t = e.target; if (!inL36(t)) return; if (t.dataset && t.dataset.l36c === "chk") { const st = st0(); st.chk = t.checked; st.fb = null; if (st.add) { st.zoom = null } draw(); if (st.ov) renderOv(); return }
+    const f = t.closest && t.closest("form[data-l36f='lda']"); if (f) { const o = st0().ov; if (t.name === "site") { o.siteChanged = 1; if (SBY[t.value]) o.site = SBY[t.value] } o.vals = readForm(f); updPrev(f); syncForm(f) } }, true);
+  document.addEventListener("input", e => { const t = e.target; if (!inL36(t)) return; if (t.dataset && t.dataset.l36q) { const o = st0().ov; o.q = t.value; o.typed = 1; const pos = t.selectionStart; renderOv(); const n = document.querySelector("#l36ov [data-l36q]"); if (n) { n.focus(); try { n.setSelectionRange(pos, pos) } catch (er) { } } return }
+    const f = t.closest && t.closest("form[data-l36f='lda']"); if (f) { st0().ov.vals = readForm(f); if (/^(L|W|mm|mark)$/.test(t.name)) updPrev(f); syncForm(f) } }, true);
+  document.addEventListener("submit", e => { const f = e.target.closest && e.target.closest("form[data-l36f]"); if (!f) return; e.preventDefault(); e.stopPropagation();
+    if (f.dataset.l36f === "lda") { saveForm(f); return }
+    if (f.dataset.l36f === "rm") { const V = readForm(f), id = f.dataset.v; const tip = f.elements.tip ? !!f.elements.tip.checked : null; upd(q => { const l = (q.ldas || []).find(x => x.id === id); if (l) l.removed = { hd: Math.max(1, parseInt(V.hd, 10) || q.hd || 1), why: V.why, tip, time: V.time } }); const st = st0(); if (st.sel === id) st.sel = null; closeOv(); draw(); toastE("Moved to removed history") } }, true);
+  document.addEventListener("keydown", e => { const t = e.target; const st = X.l36;
+    if (e.key === "Escape" && st && (st.ov || st.add || st.zoom)) { if (st.ov && !(st.ov.k === "fig" && st.add)) closeOv(); else if (st.add) cancelAdd(); else if (st.zoom) { st.zoom = null; draw() } e.stopPropagation(); return }
+    if ((e.key === "Enter" || e.key === " ") && t && t.matches && t.matches("[data-l36]:not(button)") && inL36(t)) { e.preventDefault(); t.dispatchEvent(new MouseEvent("click", { bubbles: true })) } }, true);
+  document.addEventListener("mouseover", e => { const t = e.target.closest && e.target.closest("[data-l36id]"); const st = X.l36; if (!st) return; const id = t && inL36(t) ? t.dataset.l36id : null; if (id !== st.hov) { st.hov = id; applyHov() } });
+  document.addEventListener("focusin", e => { const t = e.target.closest && e.target.closest("[data-l36id]"); const st = X.l36; if (st && t && inL36(t)) { st.hov = t.dataset.l36id; applyHov() } });
+
+  /* ---------- 11. wiring: renderer, draw wrapper, public API ---------- */
+  ldaHTML = render;
+  { const _d36 = draw; draw = function () { try { const p = P(); if (p) prime(p); if (X.act !== "lda" && X.l36 && X.l36.ov && X.l36.ov.k !== "pick") closeOv() } catch (e) { } const r = _d36.apply(this, arguments); try { if (X.l36 && X.l36.focus) setTimeout(focusTry, 0) } catch (e) { } return r } }
+  const pub = l => { const p = P(); const so = siteOf(l), S0 = status(p, l); return { id: l.id, type: l.type, template: so.tpl.k, name: nm(l), site: so.s.n, siteId: so.s.id === "g" ? null : so.s.id, view: so.s.v, region: so.s.z, lat: so.s.lat || "", review: so.review, day: lineDay(p, l), dwellHours: Math.floor(dwellH(p, l)), lastAssessed: S0.la ? S0.la.t : null, status: S0.s, size: sizeOf(l), removed: l.removed || null } };
+  window.__vxLDA = {
+    version: "v36",
+    types: () => TL.map(t => ({ key: t.k, name: t.n, type: t.t, category: t.cat, hint: t.hint })),
+    sites: k => (k && TPL[k] ? validSites(TPL[k]) : SITE).map(s => ({ id: s.id, label: s.n, short: s.sh, view: s.v, region: s.z, lat: s.lat, x: s.x, y: s.y, warn: k && TPL[k] ? siteWarn(TPL[k], s) : "" })),
+    regions: () => Object.entries(ZONE).map(([id, z]) => ({ id, name: z.n, views: z.panes.map(q => q[0]) })),
+    fields: k => TPL[k] ? fields(TPL[k], P() || {}).map(f => ({ key: f.k, label: f.l, kind: f.kind, options: f.o || null, required: !!f.req, default: f.def != null ? f.def : null })) : [],
+    validate: (k, siteId, vals) => { const tpl = TPL[k]; if (!tpl) return { ok: false, errors: { type: "Unknown type" }, warnings: {} }; const p = P() || {}; const V = {}; fields(tpl, p).forEach(fd => V[fd.k] = vals && vals[fd.k] != null ? String(vals[fd.k]) : (fd.def != null ? fd.def : "")); const r = check(tpl, SBY[siteId], V, p); return { ok: r.ok, errors: r.e, warnings: r.w } },
+    list: o => { const p = P(); if (!p) return []; return (p.ldas || []).filter(l => o && o.removed ? !!l.removed : !l.removed).map(pub) },
+    prompts: () => { const p = P(); return p ? bpas(p).map(b => ({ kind: b.k, id: b.id, title: b.t, text: b.x, source: b.src || "" })) : [] },
+    siteOf: l => { const so = siteOf(l || {}); return { label: so.s.n, siteId: so.s.id === "g" ? null : so.s.id, view: so.s.v, region: so.s.z, lat: so.s.lat || "", review: so.review, why: so.why } },
+    add: (k, siteId, vals) => { const tpl = TPL[k], s = SBY[siteId]; const r = window.__vxLDA.validate(k, siteId, vals); if (!r.ok) return { ok: false, errors: r.errors }; const p = P(); if (!p) return { ok: false, errors: { patient: "No open patient" } };
+      const props = Object.assign({}, tpl.pre), d36 = Object.assign({}, tpl.d); fields(tpl, p).forEach(fd => { const v = vals && vals[fd.k] != null ? String(vals[fd.k]) : (fd.def != null ? fd.def : ""); if (fd.st === "p") props[fd.k] = v; else d36[fd.k] = v }); if (tpl.t === "wound") props.size = [d36.L, d36.W, d36.D].filter(v => v).join(" x ");
+      const id = uid(); upd(q => { q.ldas = q.ldas || []; q.ldas.push({ id, rt: Date.now(), type: tpl.t, t36: k, s36: s.id, site: s.n, lat: s.lat || "", view: s.v, x: Math.round(s.x / 2), y: Math.round(s.y * 0.478), props, d36, hd: vals && vals.hd ? +vals.hd : (q.hd || 1), time: vals && vals.time || hhmm(nowMin()), by: vals && vals.by || tpl.by }) }); draw(); return { ok: true, id } },
+    remove: (id, o) => { o = o || {}; let ok = false; upd(q => { const l = (q.ldas || []).find(x => x.id === id && !x.removed); if (l) { l.removed = { hd: o.hd || q.hd || 1, why: o.why || "No longer needed", tip: o.tip != null ? !!o.tip : null, time: o.time || hhmm(nowMin()) }; ok = true } }); draw(); return ok },
+    assess: id => assess(id), select: id => { st0().sel = id || null; draw() }, view: v => { st0().view = v === "back" ? "back" : "front"; st0().zoom = null; draw() }, zoom: z => { st0().zoom = ZONE[z] ? z : null; draw() },
+    startAdd: k => TPL[k] ? (startAdd(k), true) : false, state: () => { const s = st0(); return { view: s.view, zoom: s.zoom, selected: s.sel, adding: s.add ? s.add.tpl : null, check: s.chk, overlay: s.ov ? s.ov.k : null } }
+  };
+})();
+/* </v36-lda-js> */
 
   /* ---- shell ---- */
   function openEHR(k){if(SRV.on&&!SRV.me){try{GATE_VERB.ehr="open the clinical EHR"}catch(e){}if(SRV.loaded){gateWall("ehr","ehr")}else SRV.ready.then(()=>{if(!SRV.me)gateWall("ehr","ehr");else openEHR(k)});if(view!=="home")renderHome();return}
