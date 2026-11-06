@@ -2951,6 +2951,193 @@ html.reduce-motion #au31 *{animation:none!important;transition:none!important}
 #au31 .au-tg span{color:#103a4f}
 .au-sd{position:absolute;top:6px;font-size:11.5px;font-weight:800;color:var(--au-mut);background:var(--au-cd);border:1px solid var(--au-line);border-radius:999px;padding:2px 8px;pointer-events:none}.au-sd.l{left:6px}.au-sd.r{right:6px}
 /* </v31-ausc-css> */
+/* <v34-fsgrid-css> */
+/* v34 Flowsheet grid (Sheets/Excel feel, Epic skin). Everything is scoped to .fg-* classes; a few legacy class names
+   (.fsb, .fswrap, .fsdr, .fstr, .fsnowc, .fsnowh, .fsp, .fscalc, .fsf-H/L) are kept on the new markup so other modules and
+   older tests can still find the grid, and are overridden here where the legacy rules would fight the new layout. */
+.fg-tb{gap:6px;padding:6px 0 8px;margin-bottom:0}
+.fg-tb .mtt{font-size:17px;margin-right:4px}
+.fg-b{display:inline-flex;align-items:center;gap:5px;height:30px;padding:0 9px;border:1px solid transparent;border-radius:6px;background:none;font:600 12.5px var(--f-body);color:#123e74;cursor:pointer;white-space:nowrap}
+.fg-b:hover:not(:disabled){background:#eef4fa;border-color:#c6d6e4}
+.fg-b:focus-visible{outline:2px solid #1a73e8;outline-offset:1px}
+.fg-b:disabled{opacity:.42;cursor:default}
+.fg-b.fg-i{width:30px;padding:0;justify-content:center}
+.fg-b[aria-pressed="true"]{background:#dbe8f6;border-color:#9fbbd8;color:#0d3561}
+.fg-grp{display:inline-flex;gap:2px;padding-left:6px;border-left:1px solid #d3dee6}
+.fg-file{background:#e9eef2;color:#5b6b74;border-color:#d3dde4}
+.fg-file.on{background:#1f6e44;color:#fff;border-color:#1f6e44;box-shadow:0 1px 2px rgba(0,0,0,.16)}
+.fg-file.on:hover:not(:disabled){background:#185a37;border-color:#185a37;color:#fff}
+.fg-n{display:inline-block;min-width:18px;padding:0 5px;border-radius:9px;background:#fff;color:#1f6e44;font:800 11px/18px var(--f-body);text-align:center;box-sizing:border-box}
+.fg-iv{display:inline-flex;align-items:center;gap:5px;font:600 12px var(--f-body);color:#4a5a64;padding-left:6px;border-left:1px solid #d3dee6}
+.fg-iv select{height:30px;border:1px solid #c6d6e4;border-radius:6px;background:#fff;font:600 12.5px var(--f-body);padding:0 6px;color:#14313f}
+.fg-q{height:30px;width:150px;border:1px solid #c6d6e4;border-radius:6px;padding:0 8px;font:500 12.5px var(--f-body);box-sizing:border-box;min-width:0}
+.fg-sp{flex:1 1 0;min-width:0}
+.fg-hd{display:inline-flex;align-items:center;gap:2px}.fg-hd b{font-size:13px;color:#14313f;padding:0 4px;white-space:nowrap}
+
+/* template tabs (Epic-style tabs over the sheet) */
+.fg-tabs{display:flex;gap:2px;margin:10px 0 0;padding:0 4px;border-bottom:1px solid #b9c9d5;overflow-x:auto;scrollbar-width:none}
+.fg-tabs::-webkit-scrollbar{display:none}
+.fg-tabs button{border:1px solid transparent;border-bottom:0;background:none;padding:7px 14px 6px;font:700 12.5px var(--f-body);color:#3a4d58;border-radius:6px 6px 0 0;cursor:pointer;white-space:nowrap;margin-bottom:-1px}
+.fg-tabs button:hover{background:#e8eff4}
+.fg-tabs button[aria-selected="true"]{background:#fff;border-color:#b9c9d5;color:#0f3a50;box-shadow:inset 0 3px 0 #1d5670}
+
+/* sheet frame + formula bar */
+.fsb.fg34{--fgL:240px;--fgF:104px;display:block;background:#fff;border:1px solid #b9c9d5;border-top:0;border-radius:0 0 8px 8px;min-width:0}
+.fg-fx{display:flex;align-items:center;gap:8px;min-height:34px;padding:4px 8px;border-bottom:1px solid #d5dee5;background:#fbfcfd;font-size:12.5px;flex-wrap:wrap}
+.fg-nb{flex:none;min-width:170px;max-width:300px;padding:3px 8px;border:1px solid #d5dee5;border-radius:4px;background:#fff;font-weight:700;color:#14313f;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;box-sizing:border-box}
+.fg-fxi{font:italic 700 14px Georgia,"Times New Roman",serif;color:#7a8b93}
+.fg-fv{flex:1 1 160px;min-width:0;color:#14232b;overflow-wrap:anywhere}
+.fg-fv b{font-weight:700}.fg-un{color:#6a2fb0;font-size:11.5px}
+.fg-lfv{color:#5b6b74;font-size:11.5px;margin-left:6px}
+.fg-cmv{color:#8a4b00;font-size:11.5px;margin-left:6px;display:inline-flex;gap:3px;align-items:center}
+.fg-ref{color:#4a5a64;font-size:11.5px;flex:0 1 auto;max-width:46%;text-align:right}
+.fg34 .fswrap.fg-w{position:relative;overflow:auto;border:0;border-radius:0 0 8px 8px;background:#fff;max-height:calc(100vh - 230px);min-height:280px;outline:none;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+.fg34 .fswrap.fg-w:focus-visible{box-shadow:inset 0 0 0 2px #8ab4f8}
+
+/* the grid */
+.fg-t{border-collapse:separate;border-spacing:0;font:13px/1.25 var(--f-body);font-variant-numeric:tabular-nums;user-select:none;-webkit-user-select:none;min-width:100%;margin:0}
+.fg-t th,.fg-t td{border-right:1px solid #e1e7ec;border-bottom:1px solid #e1e7ec;padding:0 8px;height:26px;box-sizing:border-box;white-space:nowrap}
+.fg-t thead th{position:sticky;background:#eef2f5;color:#33454f;font-weight:700;z-index:3}
+.fg-t tr.fsdr th{top:0;height:24px;font-size:11.5px;text-align:left;background:#dde6ec;color:#14313f;border-left:2px solid #9fb4c4;letter-spacing:.02em}
+.fg-t tr.fsdr th.fsdayv{background:#cddce6}
+.fg-t tr.fstr th{top:24px;height:26px;min-width:74px;text-align:center;font-size:12.5px;cursor:pointer}
+.fg-t tr.fstr th.fsdb{border-left:2px solid #9fb4c4}
+.fg-t thead th.fsnowh{background:#1f6e44;color:#fff}
+.fg-t thead th.fg-ch{background:#c9dcf6;color:#0d3561}
+.fg-t thead th.fsnowh.fg-ch{background:#17573a;color:#fff;box-shadow:inset 0 -3px 0 #8ab4f8}
+.fg-pd{display:inline-block;width:6px;height:6px;border-radius:50%;background:#8b5cf6;margin-left:4px;vertical-align:middle}
+.fg-t thead th.fg-cn{left:0;top:0;z-index:5;width:var(--fgL);min-width:var(--fgL);max-width:var(--fgL);text-align:left;vertical-align:middle;background:#e3eaee;border-left:0;border-right:2px solid #b9c9d5;padding:4px 60px 4px 8px;white-space:normal}
+.fg-cnl{display:block;font-size:12px}.fg-cnl small{display:block;font-weight:500;color:#4c6470;font-size:11px}
+.fg-cnb{position:absolute;right:6px;top:50%;transform:translateY(-50%);display:flex;gap:3px}
+.fg-cnb button{width:24px;height:24px;border:1px solid #c6d6e4;border-radius:4px;background:#fff;color:#123e74;font:700 15px/1 var(--f-body);cursor:pointer;padding:0}
+.fg-cnb button:hover{background:#e8f0fe}
+.fg-t thead th.fg-lfh{left:var(--fgL);top:0;z-index:5;width:var(--fgF);min-width:var(--fgF);background:#eef2f5;border-left:0;border-right:2px solid #b9c9d5;font-size:11.5px;text-align:left}
+.fg-t tbody th{position:sticky;left:0;z-index:2;background:#fff;text-align:left;font-weight:500;color:#22343d;width:var(--fgL);min-width:var(--fgL);max-width:var(--fgL);overflow:hidden;text-overflow:ellipsis;border-right:2px solid #b9c9d5;cursor:default}
+.fg-t tbody th.fsi{padding-left:28px}
+.fg-t tbody th small{color:#7a8b93;font-weight:500;margin-left:2px}
+.fg-t td.fg-lf{position:sticky;left:var(--fgL);z-index:1;background:#f6f8fa;color:#33454f;width:var(--fgF);min-width:var(--fgF);max-width:var(--fgF);overflow:hidden;text-overflow:ellipsis;border-right:2px solid #b9c9d5;font-size:12px}
+.fg-lf small{color:#7a8b93;font-size:10.5px}
+.fg-t td{background:#fff}
+.fg-t tr.fstr th{width:88px}.fg-t .fg-fill{width:100%;min-width:0;padding:0;background:#fff;border-right:0}.fg-t thead th.fg-fill{background:#eef2f5}.fg-t tr.fsnowc .fg-fill{background:#fff}
+.fg-t td.fgc{min-width:88px;max-width:220px;overflow:hidden;text-overflow:ellipsis;cursor:cell;position:relative;color:#14232b}
+.fg-t td.fsnowc{background:#effaf2}
+.fg-t td.fsp{color:#6a2fb0;font-style:italic;background:#f7f1fd}
+.fg-t td.fscalc{background:#f1f3f5;color:#4f5f68;font-weight:700;cursor:default}
+.fg-t td.fsf-H,.fg-t td.fsf-L{color:#b3261e;font-weight:800}
+.fg-t td sup{font-size:9px;margin-left:2px;font-style:normal}
+.fg-t td.fg-clr s{color:#8b6fb0}
+.fg-t td.fg-cm::after{content:"";position:absolute;top:0;right:0;border-style:solid;border-width:0 7px 7px 0;border-color:transparent #e8710a transparent transparent}
+.fg-t td.fg-cmp::after{border-right-color:#8b5cf6}
+.fg-fxm{font:italic 700 11px Georgia,"Times New Roman",serif;color:#7a8b93;margin-left:4px}
+
+/* row groups */
+.fg-t tr.fg-gh th{background:#e9eff3;font-weight:700;color:#103a4f;padding-left:4px;padding-right:58px}
+.fg-t tr.fg-gh td.fg-gx{background:#f3f6f8}
+.fg-t tr.fg-gh td.fg-gc{font-weight:700;background:#fbfcfd}
+.fg-t tr.fg-gh td.fg-gc.fsp{background:#f7f1fd}
+.fg-t tr.fg-gh td.fg-gc.fsnowc{background:#effaf2}
+.fg-t tr.fg-gh td.fg-gc.fsnowc.fsp{background:#f1ecfb}
+.fg-gt{display:inline-flex;align-items:center;gap:4px;min-width:0;max-width:100%;overflow:hidden}
+.fg-gt b{overflow:hidden;text-overflow:ellipsis}
+.fg-gt small{color:#7a8b93;font-weight:600!important;font-size:10.5px;background:#fff;border:1px solid #d5dee5;border-radius:8px;padding:0 5px;margin-left:2px}
+.fg-gt .fswdl{font-weight:600;color:#4c6470;font-size:11.5px}
+.fg-tog{width:22px;height:22px;flex:none;border:0;background:none;color:#1d5670;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;border-radius:4px;padding:0}
+.fg-tog svg{transition:transform .15s}.fg-tog[aria-expanded="true"] svg{transform:rotate(90deg)}
+.fg-tog:hover{background:#d5e2ea}
+.fg-wdlb{position:absolute;right:6px;top:50%;transform:translateY(-50%);height:20px;padding:0 8px;border:1px solid #9fc5ae;border-radius:10px;background:#fff;color:#1f6e44;font:800 10.5px var(--f-body);cursor:pointer;letter-spacing:.04em}
+.fg-wdlb:hover{background:#1f6e44;border-color:#1f6e44;color:#fff}
+.fg-hc{display:inline-block;min-width:16px;padding:0 4px;border-radius:8px;background:#dfe7ed;color:#4c6470;font:700 10.5px/16px var(--f-body);text-align:center}
+.fg-t tr.fg-sub th{background:#f6f9fb;font-weight:700;color:#1d5670;padding-left:14px}
+.fg-t tr.fg-sub th.note{font-weight:500;color:#4a5a64;white-space:normal}
+
+/* selection (Sheets blue) */
+.fg-t tbody th.fg-rh{background:#dbe8fa;color:#0d3561}
+.fg-t tr.fg-gh th.fg-rh{background:#d3e3f8}
+.fg-t td.fg-in{background-color:#d3e3fb}
+.fg-t td.fg-in.fsp{background-color:#dcd3f7}
+.fg-t td.fg-act{outline:2px solid #1a73e8;outline-offset:-2px}
+.fg-t td.fg-fp{background:#e9f2ff;outline:1px dashed #1a73e8;outline-offset:-2px}
+.fg-t td.fg-cp{animation:fgcp .9s ease}
+@keyframes fgcp{0%{box-shadow:inset 0 0 0 2px #1a73e8}100%{box-shadow:inset 0 0 0 0 transparent}}
+.fg-fh{position:absolute;right:0;bottom:0;width:8px;height:8px;background:#1a73e8;border:1px solid #fff;box-sizing:border-box;cursor:crosshair;z-index:2;touch-action:none}
+.fg-t td.fg-editing{padding:0;outline:2px solid #1a73e8;outline-offset:-2px;background:#fff;overflow:visible;font-style:normal}
+.fg-t td.fg-bad{outline:2px solid #d93025;outline-offset:-2px;background:#fce8e6}
+.fg-inp{width:100%;height:24px;border:0;outline:0;padding:0 7px;font:600 13px var(--f-body);background:transparent;color:#14232b;box-sizing:border-box;min-width:70px}
+.fg-inp::placeholder{color:#9aa8b0;font-weight:500}
+
+/* pick-list dropdown */
+.fg-dd{position:fixed;z-index:9000;background:#fff;border:1px solid #b9c9d5;border-radius:8px;box-shadow:0 8px 24px rgba(16,40,56,.18);max-width:340px;font:13px var(--f-body);overflow:hidden;box-sizing:border-box}
+.fg-ddh{padding:6px 10px;font-size:11px;font-weight:700;color:#4c6470;background:#f6f9fb;border-bottom:1px solid #e1e7ec;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fg-ddl{max-height:260px;overflow:auto;padding:4px 0}
+.fg-ddo{display:flex;align-items:center;gap:8px;padding:6px 10px;cursor:pointer;color:#14232b}
+.fg-ddo kbd{min-width:14px;font:700 10px ui-monospace,Menlo,Consolas,monospace;color:#7a8b93;text-align:center}
+.fg-ddo:hover{background:#f1f5fb}.fg-ddo.hi{background:#e8f0fe}.fg-ddo.on{font-weight:700;color:#0d3561}
+.fg-ck{width:15px;height:15px;border:1.5px solid #7a8b93;border-radius:3px;flex:none;box-sizing:border-box;background:#fff}
+.on>.fg-ck{background:#1a73e8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 6.2 5 8.6 9.6 3.6' fill='none' stroke='white' stroke-width='2'/%3E%3C/svg%3E") center/11px no-repeat;border-color:#1a73e8}
+.fg-ddn{padding:8px 10px;color:#7a8b93}
+.fg-ddf{display:flex;gap:4px;padding:6px;border-top:1px solid #e1e7ec;background:#fbfcfd;flex-wrap:wrap}
+.fg-ddf button{border:1px solid #c6d6e4;background:#fff;border-radius:5px;padding:4px 8px;font:600 12px var(--f-body);cursor:pointer;color:#123e74}
+.fg-ddf .fg-ddok{background:#1d5670;color:#fff;border-color:#1d5670}
+.fg-ddf kbd{font:700 10px ui-monospace,Menlo,Consolas,monospace;opacity:.75;margin-left:2px}
+
+/* inline validation tooltip */
+.fg-tip{position:fixed;z-index:9001;max-width:300px;padding:6px 9px;border-radius:6px;background:#14313f;color:#fff;font:600 12px/1.35 var(--f-body);box-shadow:0 4px 14px rgba(0,0,0,.2);pointer-events:none;box-sizing:border-box}
+.fg-tip.bad{background:#b3261e}
+
+/* popovers: insert column, comment, shortcuts */
+.fg-pop{position:fixed;z-index:9000;background:#fff;border:1px solid #b9c9d5;border-radius:10px;box-shadow:0 10px 30px rgba(16,40,56,.2);padding:12px;width:300px;max-width:calc(100vw - 16px);font:13px var(--f-body);box-sizing:border-box;color:#14232b}
+.fg-pop>b,.fg-pop form>b{display:block;margin-bottom:8px;color:#103a4f}
+.fg-pop label{display:flex;align-items:center;gap:8px;margin-bottom:4px}
+.fg-pop input[type=time]{height:36px;font:600 15px var(--f-body);padding:0 8px;border:1px solid #c6d6e4;border-radius:6px}
+.fg-pop textarea{width:100%;box-sizing:border-box;font:13px var(--f-body);border:1px solid #c6d6e4;border-radius:6px;padding:6px}
+.fg-popb{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.fg-popb button{height:32px;border:1px solid #c6d6e4;background:#fff;border-radius:6px;padding:0 10px;font:600 12.5px var(--f-body);cursor:pointer;color:#123e74}
+.fg-popb .fg-pri{background:#1d5670;border-color:#1d5670;color:#fff}
+.fg-pop-help{width:400px}
+.fg-kt{width:100%;border-collapse:collapse;font-size:12.5px}.fg-kt th{text-align:left;padding:3px 10px 3px 0;white-space:nowrap;font-weight:500;vertical-align:top}.fg-kt td{padding:3px 0;color:#33454f}
+.fg-kt kbd,.fg-popb kbd{display:inline-block;font:700 10.5px ui-monospace,Menlo,Consolas,monospace;border:1px solid #b7c9d9;border-bottom-width:2px;border-radius:3px;padding:0 4px;background:#fff;color:#103a4f}
+.fg-popb .fg-pri kbd{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
+.fg-leg{margin-top:6px}.fg-lp{color:#6a2fb0;font-style:italic}.fg-lc{color:#4f5f68;background:#f1f3f5;padding:0 4px;font-weight:700}
+.fg-lt{display:inline-block;width:0;height:0;border-style:solid;border-width:0 8px 8px 0;border-color:transparent #e8710a transparent transparent;vertical-align:top;margin-top:3px}
+
+/* touch bottom sheet (iPad grid and phone Rover) */
+.fg-sh{position:fixed;left:50%;bottom:0;transform:translateX(-50%);width:min(720px,100vw);z-index:8500;background:#fff;border-radius:16px 16px 0 0;box-shadow:0 -8px 30px rgba(16,40,56,.22);padding:6px 16px calc(14px + env(safe-area-inset-bottom));box-sizing:border-box;max-height:80vh;overflow:auto;font:15px var(--f-body);color:#14232b;touch-action:pan-y;animation:fgup .18s ease-out}
+@keyframes fgup{from{transform:translate(-50%,30px);opacity:.4}to{transform:translate(-50%,0);opacity:1}}
+html.fg-shon body{padding-bottom:52vh}
+.fg-shgrip{width:40px;height:4px;border-radius:2px;background:#c6d1d8;margin:4px auto 8px}
+.fg-shh{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.fg-shh small{color:#2e7d4f;font-weight:800;font-size:12px}
+.fg-shh h3{margin:2px 0 0;font:800 18px/1.25 var(--f-body);color:#103a4f;line-height:1.25}.fg-shh h3 small{color:#7a8b93;font-weight:600;font-size:13px}
+.fg-shx{width:44px;height:44px;border:0;background:#eef2f5;border-radius:22px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#33454f;flex:none}
+.fg-shc{display:flex;gap:6px;align-items:center;margin:10px 0 4px;overflow-x:auto;scrollbar-width:none}
+.fg-shc button{flex:none;min-width:44px;height:38px;border:1px solid #c6d6e4;border-radius:19px;background:#fff;font:700 13px var(--f-body);color:#33454f;padding:0 12px;display:inline-flex;align-items:center;justify-content:center;cursor:pointer}
+.fg-shc button.on{background:#1f6e44;border-color:#1f6e44;color:#fff}.fg-shc button:disabled{opacity:.35}
+.fg-shr{margin:4px 0 8px;font-size:12.5px;color:#4a5a64}
+.fg-sho{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin:6px 0 10px}
+.fg-sho button{min-height:48px;border:1px solid #c6d6e4;border-radius:10px;background:#fff;text-align:left;padding:8px 12px;font:600 15px var(--f-body);color:#103a4f;display:flex;align-items:center;gap:8px;cursor:pointer}
+.fg-sho button.on{background:#dcecff;border-color:#2f6fbf}
+.fg-shd{display:flex;align-items:baseline;justify-content:center;gap:6px;min-height:54px;padding:6px;border:2px solid #c6d6e4;border-radius:12px;font:800 28px var(--f-body);color:#14232b;margin:6px 0 2px;font-variant-numeric:tabular-nums;box-sizing:border-box}
+.fg-shd em{color:#a9b6bf;font-style:normal;font-weight:600}.fg-shd small{font-size:14px;color:#7a8b93;font-weight:600}
+.fg-shd.bad{border-color:#d93025;background:#fce8e6}.fg-shd.calc{background:#f1f3f5;border-style:dashed}
+.fg-shmsg{min-height:18px;margin:2px 0 6px;color:#b3261e;font-size:13px;font-weight:600;text-align:center}
+.fg-kp{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px}
+.fg-kp button{height:52px;border:1px solid #d3dde4;border-radius:12px;background:#f6f9fb;font:700 22px var(--f-body);color:#14232b;cursor:pointer;touch-action:manipulation}
+.fg-kp button:active{background:#dbe8f6}
+.fg-sht,.fg-shcm{display:block;width:100%;box-sizing:border-box;font:16px var(--f-body);border:1px solid #c6d6e4;border-radius:10px;padding:10px;margin:6px 0 10px}
+.fg-shcm{border-color:#e8a25c;background:#fffaf3}
+.fg-shf{display:flex;gap:8px;flex-wrap:wrap}
+.fg-shf button{flex:1 1 0;min-height:48px;border:1px solid #c6d6e4;border-radius:12px;background:#fff;font:700 15px var(--f-body);color:#123e74;display:inline-flex;align-items:center;justify-content:center;gap:4px;cursor:pointer;min-width:72px;touch-action:manipulation}
+.fg-shf button:disabled{opacity:.4}
+.fg-shf .fg-pri{background:#1d5670;border-color:#1d5670;color:#fff}
+.fg-shf button[aria-pressed="true"]{background:#fff4e5;border-color:#e8a25c;color:#8a4b00}
+.fg-rvc{flex:none;width:44px;height:44px;border:1px solid #c6d6e4;border-radius:22px;background:#fff;color:#123e74;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0}
+
+/* touch: large targets */
+@media (pointer:coarse){.fg-t th,.fg-t td{height:40px}.fg-t tr.fsdr th{height:28px}.fg-t tr.fstr th{top:28px;height:38px}.fg-b{height:40px}.fg-b.fg-i{width:40px}.fg-iv select,.fg-q{height:40px}.fg-tog{width:32px;height:32px}.fg-wdlb{height:30px;padding:0 12px;font-size:12px}.fg-cnb button{width:32px;height:32px}.fg-tabs button{padding:10px 16px 9px}}
+@media (max-width:1180px){.fsb.fg34{--fgL:190px;--fgF:92px}.fg-q{width:120px}}
+@media (max-width:900px){.fg-ref{max-width:none;text-align:left;flex-basis:100%}.fg-nb{max-width:60%}}
+@media (prefers-reduced-motion:reduce){.fg-sh{animation:none}.fg-t td.fg-cp{animation:none}.fg-tog svg{transition:none}}
+/* </v34-fsgrid-css> */
 /* <v25b-search-css> */
 /* v25b: header search as a clear pill field; drops to its own row when the header is tight */
 #c2.v25 .c2h .c2tools{flex-wrap:wrap;row-gap:10px}
@@ -2973,7 +3160,7 @@ const BANK = (function(e){try{const P=">oVO^cd@ge#lJ'~wUTDiEY+LZx-K&hkt(/F0;G`N.
 let HIDQ=new Set();const CFG={c:null,bypass:false};try{const c=JSON.parse(localStorage.getItem("ns.cfg")||"null");if(c&&typeof c==="object"){CFG.c=c;HIDQ=new Set(c.hideQ||[])}}catch(e){}
 const featOn=k=>!CFG.c||!CFG.c.feat||CFG.c.feat[k]!==false;
 
-const APPV="6cd161ba53b7ce9bfd5ed9accb87d01cdca204cefb1f40ab457a50728263af08";
+const APPV="7ce160b5247c487e37c712336b9329062a357060b41917cba5e31b340adb2fc2";
 const CATS={
   MOC:{n:"Management of Care",lo:15,hi:21,w:18},
   SIC:{n:"Safety and Infection Prevention and Control",lo:10,hi:16,w:13},
@@ -7643,9 +7830,599 @@ zolpidem|Sedative-hypnotic|PO||Ambien`;
   new MutationObserver(sync).observe(document.getElementById("app")||document.body,{childList:true,subtree:true});window.addEventListener("hashchange",()=>setTimeout(sync,0));
   {const _d29=draw;draw=function(){const r=_d29.apply(this,arguments);try{(window.__EHXpost||[]).forEach(f=>f())}catch(e){}return r}}
   window.__EHX={get:()=>({db,X,FS,FREQ,doses,doseState,dueNow,curT,T,tHD,tMin,hhmm,go,upd,dxAct,v29:{ACTS,RACTS,ACTN,IC,draw:()=>draw(),P,uid,save,toastE,tLbl,phiFind,isRover,chartCtx,ai,ordersHTML,SCN,scStage,scnOn,scAccept,hhmm}})};
+  window.__EHX34={ROW,FST,LDA,FLAG,valAt,calcAt,flagOf,fileAll,fileVals,fsCols,lineDay,nowMin,fmtV,phiOK};
   window.__nsEHR={open:()=>{location.hash="#ehr"}};
 })();
 
+/* <v34-fsgrid-js> */
+/* v34 Flowsheet grid: spreadsheet-style charting (Google Sheets / Excel feel, Epic semantics) for the EHR Flowsheets activity.
+   - Desktop and iPad (wider than 760 px): replaces the Flowsheets renderer through window.__EHXF("flow"). Frozen row names and
+     time headers, click or tap a cell and type, Enter/Tab commit and move down (Epic: columns are times), arrows move,
+     pick lists filter as you type, numbers are validated inline, multi-select rows, cell comments, copy/paste, Copy previous,
+     fill handle, undo/redo, group WDL, formula bar, calculated cells, Last Filed column, touch bottom sheet with number pad.
+   - Phone (Rover, 760 px and narrower): keeps the column-at-a-time Rover list; tapping a row opens the same bottom sheet,
+     and swiping (or the ‹ › buttons) moves between charting times.
+   - Data model unchanged: filed values are p.flow [{t,r,v,rt}], unfiled values are X.pend["<t>|<row id>"], filing goes through
+     the EHR's own fileAll(), so the MAR, notes, handoff, SDOH, telemetry and other modules keep working. One new optional
+     patient field: p.fsc {"<t>|<row id>": {c, rt}} holds filed cell comments.
+   - Talks to the EHR only through window.__EHX.get() (v29) and window.__EHX34 (added by fsgrid-apply.js). Public API for other
+     modules: window.__vxFS (documented in patches/fs-API.md). */
+(function () {
+  "use strict";
+  if (window.__vxFS) return;
+  const EH = () => { try { return window.__EHX && window.__EHX.get() } catch (e) { return null } };
+  const KK = () => window.__EHX34 || null;
+  const e_ = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+  const S = { a: null, e: null, ed: null, dd: null, sh: null, pop: null, undo: [], redo: [], clip: null, focus: null, scroll: {}, M: null, c: null, pid: null, drag: null, ptype: "mouse", off: false, tip: null, lastDown: null, subs: [] };
+  const IC = {
+    file: '<path d="M5 4h11l3 3v13H5z"/><path d="M8 4v5h8V4M8 20v-6h8v6"/>', undo: '<path d="M9 14 4 9l5-5"/><path d="M4 9h10a6 6 0 0 1 0 12h-3"/>', redo: '<path d="m15 14 5-5-5-5"/><path d="M20 9H10a6 6 0 0 0 0 12h3"/>',
+    ins: '<path d="M12 5v14M5 12h14"/>', prev: '<path d="M4 6h6v12H4zM14 6h6v12h-6z"/><path d="m11 12 2 0"/>', cmt: '<path d="M4 5h16v11H9l-5 4z"/>', last: '<circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/>',
+    disc: '<path d="M6 6l12 12M18 6 6 18"/>', ref: '<path d="M20 11a8 8 0 1 0-2.3 5.7M20 5v6h-6"/>', help: '<circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .8-1 1.5V14M12 17.5v.01"/>',
+    lda: '<circle cx="12" cy="5" r="2"/><path d="M12 7v7M8 10h8M10 21l2-7 2 7"/>', chev: '<path d="m9 6 6 6-6 6"/>', x: '<path d="M6 6l12 12M18 6 6 18"/>', back: '<path d="m15 6-6 6 6 6"/>'
+  };
+  const ic = (k, n) => `<svg viewBox="0 0 24 24" width="${n || 16}" height="${n || 16}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${IC[k] || ""}</svg>`;
+
+  /* ---------- EHR context ---------- */
+  function ctx() { const E = EH(), K = KK(); if (!E || !E.v29 || !K) return null; let p = null; try { p = E.v29.P() } catch (e) { } if (!p) return null; const X = E.X; if (S.pid !== p.id) { S.pid = p.id; S.a = S.e = null; S.undo = []; S.redo = []; } return { E, K, X, p } }
+  const rover = () => { const E = EH(); try { return !!(E && E.v29 && E.v29.isRover && E.v29.isRover()) } catch (e) { return false } };
+  const hm = (E, t) => E.hhmm(E.tMin(t)).replace(":", "");
+  const fmt = v => Array.isArray(v) ? v.join(", ") : String(v == null ? "" : v);
+  const same = (a, b) => JSON.stringify(a == null ? "" : a) === JSON.stringify(b == null ? "" : b);
+  const key = (r, t) => t + "|" + r;
+  const pc = X => { if (!X.pendC || X.pendC.pid !== S.pid) X.pendC = { pid: S.pid, m: {} }; return X.pendC.m };
+  const toast = m => { const E = EH(); try { E.v29.toastE(m) } catch (e) { } };
+
+  /* ---------- template additions: Weight/Height rows (stored like every other row) and two formula rows (grid only) ---------- */
+  function extendTemplate() {
+    const E = EH(), K = KK(); if (!E || !K || extendTemplate.done) return; extendTemplate.done = true;
+    const vit = E.FS.find(g => g.g === "vitals");
+    if (vit && !K.ROW.wt) { const at = vit.rows.findIndex(r => r[0] === "bg"); const add = [["wt", "Weight", { t: "num", u: "kg", mn: 0.5, mx: 500 }], ["ht", "Height", { t: "num", u: "cm", mn: 20, mx: 250 }]]; vit.rows.splice(at >= 0 ? at + 1 : vit.rows.length, 0, ...add); add.forEach(r => K.ROW[r[0]] = { id: r[0], l: r[1], f: r[2], g: "vitals" }) }
+  }
+  const VIRT = { bmi: { id: "bmi", l: "BMI", f: { t: "calc", u: "kg/m²" }, g: "vitals", virt: 1, after: "ht" }, painre: { id: "painre", l: "Pain reassessment due", f: { t: "calc" }, g: "pain", virt: 1, after: "painint" } };
+  const FORM = { map: "MAP = (systolic + 2 × diastolic) ÷ 3", gcs: "GCS total = eye + verbal + motor (3–15; T = intubated, verbal not testable)", braden: "Braden total = sum of the 6 subscales (6–23; 18 or less = at risk)", inT: "Intake total = PO + IV + tube feeding", outT: "Output total = urine + emesis + drain", net: "Net = intake total − output total", bmi: "BMI = weight (kg) ÷ height (m)²; uses the latest charted height", painre: "Reassess within 60 minutes of a pain intervention (often 30 minutes after IV medication). Follow facility policy." };
+  const RW = rid => VIRT[rid] || (KK() && KK().ROW[rid]) || null;
+  const isCalc = r => !!r && r.f && r.f.t === "calc";
+
+  /* ---------- values ---------- */
+  function pendV(c, rid, t) { const v = c.X.pend[key(rid, t)]; return v == null ? null : v }
+  function filedV(c, rid, t) { return c.K.valAt(c.p, rid, t) }
+  function curV(c, rid, t) { const pv = pendV(c, rid, t); return pv != null ? pv : filedV(c, rid, t) }
+  function calcV(c, rid, t) {
+    if (rid === "bmi") { const w = parseFloat(curV(c, "wt", t)); if (!(w > 0)) return ""; let h = parseFloat(curV(c, "ht", t)); if (!(h > 0)) { const L = (c.p.flow || []).filter(x => x.r === "ht" && x.t <= t && +x.v > 0).sort((a, b) => b.t - a.t)[0]; const P = Object.entries(c.X.pend).filter(([k, v]) => /\|ht$/.test(k) && +k.split("|")[0] <= t && +v > 0).sort((a, b) => +b[0].split("|")[0] - +a[0].split("|")[0])[0]; h = P && (!L || +P[0].split("|")[0] >= L.t) ? +P[1] : L ? +L.v : NaN } return h > 0 ? (w / Math.pow(h / 100, 2)).toFixed(1) : "" }
+    if (rid === "painre") { const iv = curV(c, "painint", t); const L = Array.isArray(iv) ? iv : iv ? [iv] : []; if (!L.filter(x => x !== "Declined").length) return ""; const due = t + 60; const later = laterPain(c, t); if (later != null) return "Done " + hm(c.E, later); return (c.E.curT(c.p) > due ? "Overdue " : "By ") + hm(c.E, due) }
+    try { return c.K.calcAt(c.p, rid, t, c.X.pend) } catch (e) { return "" }
+  }
+  function laterPain(c, t) { const ts = new Set(); (c.p.flow || []).forEach(x => { if (x.r === "pain" && x.t > t && x.t <= t + 120) ts.add(x.t) }); Object.keys(c.X.pend).forEach(k => { const [a, r] = [+k.split("|")[0], k.split("|").slice(1).join("|")]; if (r === "pain" && a > t && a <= t + 120 && c.X.pend[k] !== "") ts.add(a) }); const L = [...ts].sort((a, b) => a - b); return L.length ? L[0] : null }
+  function valOf(c, rid, t) { const r = RW(rid); return isCalc(r) ? calcV(c, rid, t) : curV(c, rid, t) }
+  function flagFor(c, rid, v) { if (v === "" || v == null) return ""; if (rid === "painre") return /^Overdue/.test(v) ? "H" : ""; try { return c.K.flagOf(rid === "bp" ? "bp" : rid, v) || "" } catch (e) { return "" } }
+  function cmtOf(c, k) { const m = pc(c.X); if (m[k] != null) return m[k]; const f = (c.p.fsc || {})[k]; return f ? f.c : "" }
+  function lastFiled(c, rid, before) { return (c.p.flow || []).filter(x => x.r === rid && (before == null || x.t < before) && x.v !== "" && x.v != null).sort((a, b) => b.t - a.t)[0] || null }
+  const npend = c => Object.keys(c.X.pend).length + Object.keys(pc(c.X)).length;
+
+  /* ---------- validation ---------- */
+  function validate(r, raw, silent) {
+    if (!r) return { ok: false, msg: "Unknown row" };
+    const f = r.f; if (isCalc(r)) return { ok: false, msg: "Calculated from other rows. Chart the rows it uses." };
+    if (raw == null || raw === "" || (Array.isArray(raw) && !raw.length)) return { ok: true, v: "" };
+    if (f.t === "num") { const s = String(raw).trim(); if (!/^-?\d+(\.\d+)?$|^-?\.\d+$/.test(s)) return { ok: false, msg: `${r.l}: enter a number${f.mn != null ? ` from ${f.mn} to ${f.mx}${f.u ? " " + f.u : ""}` : ""}.` }; const n = parseFloat(s); if (f.mn != null && (n < f.mn || n > f.mx)) return { ok: false, msg: `${r.l} must be ${f.mn}–${f.mx}${f.u ? " " + f.u : ""}. Check the value.` }; return { ok: true, v: String(n) } }
+    if (f.t === "bp") { const s = String(raw).replace(/\s+/g, ""); const m = /^(\d{2,3})\/(\d{2,3})$/.exec(s); if (!m) return { ok: false, msg: "Enter BP as systolic/diastolic, like 120/80." }; const a = +m[1], b = +m[2]; if (a < 40 || a > 300 || b < 20 || b > 200 || b >= a) return { ok: false, msg: "BP " + s + " isn't possible. Systolic 40–300, diastolic 20–200 and lower than systolic." }; return { ok: true, v: a + "/" + b } }
+    if (f.t === "pick") { const s = String(Array.isArray(raw) ? raw.join(", ") : raw).trim(); const lo = s.toLowerCase(); let o = f.o.find(x => x.toLowerCase() === lo); if (!o) { const L = f.o.filter(x => x.toLowerCase().indexOf(lo) === 0); if (L.length === 1) o = L[0] } return o ? { ok: true, v: o } : { ok: false, msg: `${r.l}: pick one of ${f.o.slice(0, 6).join(", ")}${f.o.length > 6 ? "…" : ""}.` } }
+    if (f.t === "multi") { const L = (Array.isArray(raw) ? raw : String(raw).split(/\s*[,;]\s*/)).map(x => String(x).trim()).filter(Boolean); const out = []; for (const x of L) { const o = f.o.find(y => y.toLowerCase() === x.toLowerCase()); if (!o) return { ok: false, msg: `${r.l}: "${x}" isn't an option.` }; if (out.indexOf(o) < 0) out.push(o) } return { ok: true, v: f.o.filter(o => out.indexOf(o) >= 0) } }
+    if (f.t === "text") { const s = String(raw).trim().slice(0, 200); const E = EH(); if (silent) { let hits = []; try { hits = E.v29.phiFind(s) } catch (e) { } if (hits.length) return { ok: false, msg: "Looks like an identifier (name, date, number). Not entered." } } return { ok: true, v: s } }
+    return { ok: true, v: String(raw) }
+  }
+
+  /* ---------- undo / pending ---------- */
+  function snap(c) { return { p: JSON.parse(JSON.stringify(c.X.pend)), c: JSON.parse(JSON.stringify(pc(c.X))) } }
+  function change(c, fn) { const s = snap(c); const n = fn(); if (n === false) return false; if (JSON.stringify(s) !== JSON.stringify(snap(c))) { S.undo.push(s); if (S.undo.length > 150) S.undo.shift(); S.redo = []; notify() } return n }
+  function putV(c, rid, t, v) { const k = key(rid, t); const fv = filedV(c, rid, t); if (same(v, fv) || (v === "" && (fv === "" || fv == null))) delete c.X.pend[k]; else c.X.pend[k] = v }
+  function restore(c, s) { Object.keys(c.X.pend).forEach(k => delete c.X.pend[k]); Object.assign(c.X.pend, s.p); const m = pc(c.X); Object.keys(m).forEach(k => delete m[k]); Object.assign(m, s.c) }
+  function undo(redo) { const c = ctx(); if (!c) return; const A = redo ? S.redo : S.undo, B = redo ? S.undo : S.redo; const s = A.pop(); if (!s) { toast(redo ? "Nothing to redo" : "Nothing to undo"); return } B.push(snap(c)); restore(c, s); notify(); soft(); toast(redo ? "Redo" : "Undo") }
+  const notify = () => S.subs.forEach(f => { try { f() } catch (e) { } });
+
+  /* ---------- model ---------- */
+  function model(c) {
+    const { E, K, X, p } = c; const hd = X.marDay || p.hd || 1; X.marDay = hd;
+    const tpl = K.FST.find(x => x[0] === (X.fsT || "assess")) || K.FST[1];
+    let cols = K.fsCols(p); const iv = X.fsI || "filed";
+    if (iv !== "filed") { const step = iv === "15m" ? 15 : iv === "1h" ? 60 : iv === "4h" ? 240 : iv === "8h" ? 480 : 30; const base = hd === (p.hd || 1) ? K.nowMin() : 12 * 60; const set = new Set(cols); for (let mm = Math.max(0, Math.floor((base - 6 * 60) / step) * step); mm <= Math.min(1439, base + 2 * 60); mm += step)set.add(E.T(hd, mm)); cols = [...set].sort((a, b) => a - b) }
+    const nowCol = (X.insT != null && X.insPid === p.id && E.tHD(X.insT) === hd) ? X.insT : hd === (p.hd || 1) ? E.T(hd, Math.floor(K.nowMin() / 15) * 15) : null;
+    if (nowCol != null && cols.indexOf(nowCol) < 0) { cols.push(nowCol); cols.sort((a, b) => a - b) }
+    const q = (X.fsQ || "").trim().toLowerCase(); const hid = X.fsHide || (X.fsHide = {});
+    const groups = E.FS.concat([{ g: "lda", n: "LDAs", rows: [] }]).filter(x => !tpl[2] || tpl[2].indexOf(x.g) >= 0);
+    const GR = [], R = [];
+    const L = (p.ldas || []).filter(l => !l.removed);
+    groups.forEach(g => {
+      let wr = null, rows = [];
+      if (g.g === "lda") { L.forEach(l => { const D = K.LDA[l.type]; if (!D) return; rows.push({ sub: 1, l: D.n + " " + (l.site || ""), day: K.lineDay(p, l), id: "ldah:" + l.id }); D.as.forEach(([k, lab, opts]) => { const id = "lda:" + l.id + ":" + k; K.ROW[id] = K.ROW[id] || { id, l: lab, f: { t: "pick", o: opts }, g: "lda" }; rows.push(K.ROW[id]) }) }) }
+      else g.rows.forEach(rr => { const r = K.ROW[rr[0]]; if (!r) return; if (r.id === g.g + "_wdl") wr = r; else { rows.push(r); Object.values(VIRT).forEach(v => { if (v.after === r.id) rows.push(v) }) } });
+      const gm = q && g.n.toLowerCase().indexOf(q) >= 0;
+      if (q && !gm) { rows = rows.filter(r => !r.sub && r.l.toLowerCase().indexOf(q) >= 0); if (!rows.length && !(wr && wr.l.toLowerCase().indexOf(q) >= 0)) return }
+      const col = !!hid[g.g] && !q;
+      GR.push({ g: g.g, n: g.n, wdl: g.wdl, wr, rows, col, lda: g.g === "lda", empty: g.g === "lda" && !L.length });
+      if (wr) R.push(wr.id); if (!col) rows.forEach(r => { if (!r.sub) R.push(r.id) });
+    });
+    return { hd, tpl, cols, nowCol, GR, R, q, iv, cur: p.hd || 1 };
+  }
+
+  /* ---------- rendering ---------- */
+  const cid = (r, t) => "fgc-" + t + "-" + String(r).replace(/[^A-Za-z0-9_-]/g, "_");
+  function cellHTML(c, M, r, t, extra) {
+    const k = key(r.id, t); const calc = isCalc(r); const pv = calc ? null : pendV(c, r.id, t); const fv = calc ? "" : filedV(c, r.id, t);
+    const v = calc ? calcV(c, r.id, t) : (pv != null ? pv : fv); const cleared = pv === "" && fv !== "" && fv != null;
+    const fl = cleared ? "" : flagFor(c, r.id, v); const cm = calc ? "" : cmtOf(c, k); const cmP = !calc && pc(c.X)[k] != null;
+    const cls = ["fgc", extra || "", pv != null ? "fsp" : "", calc ? "fscalc" : "", fl ? "fsf-" + fl : "", t === M.nowCol ? "fsnowc" : "", cm ? "fg-cm" : "", cmP ? "fg-cmp" : "", cleared ? "fg-clr" : ""].filter(Boolean).join(" ");
+    const txt = cleared ? `<s>${e_(fmt(fv))}</s>` : e_(fmt(v)) + (fl ? `<sup>${fl}</sup>` : "");
+    const tip = [cm ? "Comment: " + cm : "", pv != null ? (cleared ? "Cleared, not filed yet" : "Not filed yet") : "", calc ? "Calculated" : ""].filter(Boolean).join(" · ");
+    return `<td class="${cls}" data-r="${e_(r.id)}" data-t="${t}" id="${cid(r.id, t)}" role="gridcell"${calc ? ' aria-readonly="true"' : ""}${tip ? ` title="${e_(tip)}"` : ""}>${txt}</td>`;
+  }
+  function lastTd(c, r) { if (!S.last()) return ""; if (!r || r.sub || isCalc(r)) return `<td class="fg-lf"></td>`; const x = lastFiled(c, r.id); return `<td class="fg-lf">${x ? `${e_(fmt(x.v))} <small>${e_(hm(c.E, x.t))}${c.E.tHD(x.t) !== (c.p.hd || 1) ? " HD" + c.E.tHD(x.t) : ""}</small>` : ""}</td>` }
+  S.last = () => { const E = EH(); return !!(E && E.X.fg34Last) };
+  function headHTML(c, M) {
+    const { E } = c; const days = []; M.cols.forEach(t => { const d = E.tHD(t); const l = days[days.length - 1]; if (l && l.d === d) l.n++; else days.push({ d, n: 1 }) });
+    const lab = d => `HD ${d}${d === 1 ? " · Admission" : ""}${d === M.cur ? " · Today" : ""}`;
+    const pendCol = t => Object.keys(c.X.pend).some(k => +k.split("|")[0] === t);
+    return `<thead><tr class="fsdr"><th class="fg-cn" rowspan="2" scope="col"><span class="fg-cnl">Hospital day<small>Admitted HD 1 · Today HD ${M.cur}</small></span><span class="fg-cnb"><button type="button" data-fg="xall" title="Expand all groups" aria-label="Expand all groups">+</button><button type="button" data-fg="call" title="Collapse all groups" aria-label="Collapse all groups">−</button></span></th>${S.last() ? `<th class="fg-lfh" rowspan="2" scope="col">Last filed</th>` : ""}${days.map(x => `<th colspan="${x.n}" class="fsday${x.d === M.hd ? " fsdayv" : ""}" data-fsday="${x.d}">${e_(lab(x.d))}</th>`).join("")}<th class="fg-fill" rowspan="2" aria-hidden="true"></th></tr>
+     <tr class="fstr">${M.cols.map((t, i) => `<th scope="col" class="fg-th${t === M.nowCol ? " fsnowh" : ""}${i && E.tHD(M.cols[i - 1]) !== E.tHD(t) ? " fsdb" : ""}" data-t="${t}" data-fshd="${E.tHD(t)}" title="Select the ${e_(hm(E, t))} column">${e_(hm(E, t))}${pendCol(t) ? '<i class="fg-pd" title="Unfiled values"></i>' : ""}</th>`).join("")}</tr></thead>`;
+  }
+  function bodyHTML(c, M) {
+    const out = [];
+    M.GR.forEach(g => {
+      const exp = !g.col;
+      const hidden = g.col ? M.cols.map(t => g.rows.filter(r => !r.sub && !isCalc(r) && curV(c, r.id, t) !== "" && curV(c, r.id, t) != null).length) : null;
+      out.push(`<tr class="fsg fg-gh${g.col ? " fg-col" : ""}" data-g="${g.g}"${g.wr ? ` data-r="${e_(g.wr.id)}"` : ""}><th scope="row" title="${e_(g.n)}${g.wdl ? " (WDL): " + e_(g.wdl) : ""}"><span class="fg-gt"><button type="button" class="fg-tog" data-fg="gtog" data-g="${g.g}" aria-expanded="${exp}" aria-label="${exp ? "Collapse" : "Expand"} ${e_(g.n)}">${ic("chev", 14)}</button><b>${e_(g.n)}</b></span>${g.wdl ? `<button type="button" class="fg-wdlb" data-fg="gwdl" data-g="${g.g}" title="Mark ${e_(g.n)} within defined limits for the selected time (W)">WDL</button>` : ""}</th>${lastTd(c, g.wr || { sub: 1 })}${M.cols.map((t, i) => g.wr ? cellHTML(c, M, g.wr, t, "fg-gc") : `<td class="fg-gx${t === M.nowCol ? " fsnowc" : ""}">${hidden && hidden[i] ? `<span class="fg-hc" title="${hidden[i]} charted value${hidden[i] === 1 ? "" : "s"} in this collapsed group">${hidden[i]}</span>` : ""}</td>`).join("")}<td class="fg-fill"></td></tr>`);
+      if (g.col) return;
+      if (g.empty) { out.push(`<tr class="fg-sub"><th scope="row" class="fsi note">No active LDAs. <button type="button" class="lk" data-ex="act" data-v="lda">Place one on the avatar</button></th>${S.last() ? "<td class=\"fg-lf\"></td>" : ""}${M.cols.map(() => "<td></td>").join("")}<td class="fg-fill"></td></tr>`); return }
+      g.rows.forEach(r => {
+        if (r.sub) { out.push(`<tr class="fg-sub fsrg"><th scope="row">${e_(r.l)} <small>day ${r.day}</small></th>${S.last() ? "<td class=\"fg-lf\"></td>" : ""}${M.cols.map(t => `<td class="${t === M.nowCol ? "fsnowc" : ""}"></td>`).join("")}<td class="fg-fill"></td></tr>`); return }
+        out.push(`<tr class="fg-r${isCalc(r) ? " fg-calcr" : ""}" data-r="${e_(r.id)}"><th scope="row" class="fsi" title="${e_(r.l)}">${e_(r.l)}${r.f.u ? ` <small>${e_(r.f.u)}</small>` : ""}${isCalc(r) ? ' <i class="fg-fxm" aria-label="calculated">ƒx</i>' : ""}</th>${lastTd(c, r)}${M.cols.map(t => cellHTML(c, M, r, t)).join("")}<td class="fg-fill"></td></tr>`);
+      });
+    });
+    if (!M.GR.length) out.push(`<tr><th scope="row" class="fsi note">No rows match “${e_(M.q)}”.</th>${M.cols.map(() => "<td></td>").join("")}</tr>`);
+    return `<tbody>${out.join("")}</tbody>`;
+  }
+  const tableHTML = (c, M) => `<table class="fg-t" role="grid" aria-label="Flowsheet ${e_(M.tpl[1])}" aria-multiselectable="true">${headHTML(c, M)}${bodyHTML(c, M)}</table>`;
+  function tbHTML(c, M) {
+    const n = npend(c); const X = c.X;
+    return `<div class="mtool fg-tb" role="toolbar" aria-label="Flowsheet tools"><b class="mtt">Flowsheets</b>
+     <button type="button" class="fg-b fg-file${n ? " on" : ""}" data-ex="file" ${n ? "" : "disabled"} title="File unfiled values (Ctrl+S)">${ic("file")}<span>File</span>${n ? `<b class="fg-n">${n}</b>` : ""}</button>
+     <span class="fg-grp"><button type="button" class="fg-b fg-i" data-fg="undo" ${S.undo.length ? "" : "disabled"} title="Undo (Ctrl+Z)" aria-label="Undo">${ic("undo")}</button><button type="button" class="fg-b fg-i" data-fg="redo" ${S.redo.length ? "" : "disabled"} title="Redo (Ctrl+Y)" aria-label="Redo">${ic("redo")}</button></span>
+     <span class="fg-grp"><button type="button" class="fg-b" data-fg="ins" title="Insert a time column (Alt+I inserts the current time)">${ic("ins")}<span>Insert column</span></button><button type="button" class="fg-b" data-fg="prev" title="Copy the previous column's values into the selected column, then change the exceptions">${ic("prev")}<span>Copy previous</span></button><button type="button" class="fg-b fg-i" data-fg="cmt" title="Comment on the selected cell (Shift+F2)" aria-label="Comment">${ic("cmt")}</button></span>
+     <span class="fg-grp"><button type="button" class="fg-b" data-fg="lastcol" aria-pressed="${!!X.fg34Last}" title="Show each row's last filed value">${ic("last")}<span>Last Filed</span></button><button type="button" class="fg-b" data-ex="discard" ${n ? "" : "disabled"} title="Discard unfiled values">${ic("disc")}<span>Discard</span></button><button type="button" class="fg-b fg-i" data-ex="act" data-v="flow" title="Refresh" aria-label="Refresh">${ic("ref")}</button></span>
+     <label class="fg-iv"><span>Interval</span><select data-fg="iv" aria-label="Column interval">${[["filed", "Filed"], ["15m", "15 min"], ["30m", "30 min"], ["1h", "1 hr"], ["4h", "4 hr"], ["8h", "8 hr"]].map(([k, l]) => `<option value="${k}" ${M.iv === k ? "selected" : ""}>${l}</option>`).join("")}</select></label>
+     <input type="search" class="fg-q" data-fg="q" placeholder="Filter rows" aria-label="Filter rows" value="${e_(X.fsQ || "")}">
+     <span class="fg-sp"></span>
+     <span class="fg-hd"><button type="button" class="fg-b fg-i" data-ex="marday" data-v="-1" aria-label="Previous hospital day" title="Previous hospital day">${ic("back", 14)}</button><b>HD ${M.hd}</b><button type="button" class="fg-b fg-i" data-ex="marday" data-v="1" aria-label="Next hospital day" title="Next hospital day">${ic("chev", 14)}</button></span>
+     <button type="button" class="fg-b fg-i" data-fg="help" title="Keyboard shortcuts" aria-label="Keyboard shortcuts">${ic("help")}</button></div>`;
+  }
+  function render(m, p) {
+    closeFloat(); const c = ctx(); if (!c) return; S.c = c; const M = model(c); S.M = M; fixSel(M);
+    m.innerHTML = `${tbHTML(c, M)}<div class="fg-tabs" role="tablist" aria-label="Flowsheet templates">${c.K.FST.map(([k, l]) => `<button type="button" role="tab" aria-selected="${M.tpl[0] === k}" data-ex="fst" data-v="${k}">${e_(l)}</button>`).join("")}</div>
+     <div class="fsb fg34"><div class="fg-fx" id="fgfx"><span class="fg-nb" id="fgnb"></span><i class="fg-fxi" aria-hidden="true">ƒx</i><span class="fg-fv" id="fgfv" aria-live="polite"></span><span class="fg-ref" id="fgref"></span></div>
+     <div class="fswrap fg-w" id="fswrap" tabindex="0" role="application" aria-label="Flowsheet grid. Arrow keys move, type to chart, Enter or Tab moves down.">${tableHTML(c, M)}</div></div>
+     <p class="fine fg-leg"><span class="fg-lp">Purple italics</span> = entered, not filed · <span class="fg-lc">gray ƒx</span> = calculated · <span class="fg-lt"></span> = comment · H/L flags use common adult ranges; follow your facility's parameters. WDL definitions are examples and vary by facility.</p>`;
+    const w = document.getElementById("fswrap"); const sk = p.id + "|" + M.hd + "|" + M.tpl[0];
+    const sv = S.scroll[sk]; if (sv) { w.scrollLeft = sv.l; w.scrollTop = sv.t } else defScroll(c, M, w);
+    w.addEventListener("scroll", () => { S.scroll[sk] = { l: w.scrollLeft, t: w.scrollTop }; placeFloat() }, { passive: true });
+    paint();
+    const ae = document.activeElement; if (S.focus === "filter") { const q = m.querySelector(".fg-q"); if (q) { q.focus(); const n = q.value.length; try { q.setSelectionRange(n, n) } catch (e) { } } }
+    else if (S.focus === "grid" || !ae || ae === document.body) { w.focus({ preventScroll: true }); if (S.focus === "grid") vis() }
+  }
+  function soft() { const c = ctx(); const w = document.getElementById("fswrap"); if (!c || !w || !w.closest(".fg34")) { if (rover()) { const E = EH(); E && E.v29.draw() } return } closeTip(); S.c = c; const M = model(c); S.M = M; fixSel(M); const hadF = document.activeElement && (w.contains(document.activeElement) || document.activeElement === w); w.innerHTML = tableHTML(c, M); updTb(c); paint(); if (hadF || S.focus === "grid") w.focus({ preventScroll: true }) }
+  function updTb(c) {
+    const tb = document.querySelector(".fg-tb"); if (!tb) return; const n = npend(c);
+    const f = tb.querySelector(".fg-file"); if (f) { f.disabled = !n; f.classList.toggle("on", !!n); const b = f.querySelector(".fg-n"); if (n) { if (b) b.textContent = n; else f.insertAdjacentHTML("beforeend", `<b class="fg-n">${n}</b>`) } else if (b) b.remove() }
+    const d = tb.querySelector('[data-ex="discard"]'); if (d) d.disabled = !n; const u = tb.querySelector('[data-fg="undo"]'); if (u) u.disabled = !S.undo.length; const r = tb.querySelector('[data-fg="redo"]'); if (r) r.disabled = !S.redo.length;
+  }
+  function defScroll(c, M, w) { const ths = [...w.querySelectorAll('.fstr th[data-fshd="' + M.hd + '"]')]; const last = ths[ths.length - 1]; if (!last) { w.scrollLeft = w.scrollWidth; return } const fix = fixedW(w); const right = last.offsetLeft + last.offsetWidth; w.scrollLeft = Math.max(0, right - w.clientWidth + 8); if (ths[0] && ths[0].offsetLeft - fix < w.scrollLeft) w.scrollLeft = Math.max(0, Math.min(w.scrollLeft, ths[0].offsetLeft - fix)) }
+  function fixedW(w) { const a = w.querySelector(".fg-cn"), b = w.querySelector(".fg-lfh"); return (a ? a.offsetWidth : 0) + (b ? b.offsetWidth : 0) }
+
+  /* ---------- selection ---------- */
+  const rI = r => S.M ? S.M.R.indexOf(r) : -1, cI = t => S.M ? S.M.cols.indexOf(+t) : -1;
+  function fixSel(M) { const ok = x => x && M.R.indexOf(x.r) >= 0 && M.cols.indexOf(+x.t) >= 0; if (!ok(S.a)) S.a = null; if (!ok(S.e)) S.e = null; if (!S.a) { const t = M.nowCol != null ? M.nowCol : M.cols[M.cols.length - 1]; const r = M.R.find(x => !isCalc(RW(x))); if (t != null && r) { S.a = { r, t }; S.e = null } } }
+  function rect() { if (!S.a || !S.M) return null; const e = S.e || S.a; const a1 = rI(S.a.r), a2 = rI(e.r), b1 = cI(S.a.t), b2 = cI(e.t); if (a1 < 0 || b1 < 0 || a2 < 0 || b2 < 0) return null; return { r0: Math.min(a1, a2), r1: Math.max(a1, a2), c0: Math.min(b1, b2), c1: Math.max(b1, b2) } }
+  function cellsOf(rc) { const L = []; if (!rc) return L; for (let i = rc.r0; i <= rc.r1; i++)for (let j = rc.c0; j <= rc.c1; j++)L.push({ r: S.M.R[i], t: S.M.cols[j] }); return L }
+  const td = (r, t) => document.getElementById(cid(r, t));
+  function paint() {
+    const w = document.getElementById("fswrap"); if (!w || !S.M) return;
+    w.querySelectorAll(".fg-act,.fg-in,.fg-rh,.fg-ch").forEach(x => x.classList.remove("fg-act", "fg-in", "fg-rh", "fg-ch")); w.querySelectorAll(".fg-fh").forEach(x => x.remove());
+    const rc = rect(); if (!rc) { updFx(); return }
+    const multi = rc.r0 !== rc.r1 || rc.c0 !== rc.c1;
+    if (multi) cellsOf(rc).forEach(x => { const d = td(x.r, x.t); if (d) d.classList.add("fg-in") });
+    for (let i = rc.r0; i <= rc.r1; i++) { const tr = w.querySelector(`tr[data-r="${CSS.escape(S.M.R[i])}"] > th`); if (tr) tr.classList.add("fg-rh") }
+    for (let j = rc.c0; j <= rc.c1; j++) { const th = w.querySelector(`.fstr th[data-t="${S.M.cols[j]}"]`); if (th) th.classList.add("fg-ch") }
+    const a = td(S.a.r, S.a.t); if (a) { a.classList.add("fg-act"); w.setAttribute("aria-activedescendant", a.id) }
+    const br = td(S.M.R[rc.r1], S.M.cols[rc.c1]); if (br && S.ptype !== "touch" && !S.ed && !S.dd) br.insertAdjacentHTML("beforeend", '<span class="fg-fh" data-fg="fh" title="Drag to fill down or right" aria-hidden="true"></span>');
+    updFx();
+  }
+  function sel(r, t, ext) { if (r == null || t == null) return; if (ext) S.e = { r, t: +t }; else { S.a = { r, t: +t }; S.e = null } paint(); vis(ext ? S.e : S.a); if (S.sh && !ext) openSheet(r, +t, S.sh.mode) }
+  function vis(x) {
+    x = x || S.a; if (!x) return; const w = document.getElementById("fswrap"); const d = td(x.r, x.t); if (!w || !d) return;
+    const fx = fixedW(w); const hh = (w.querySelector("thead") || {}).offsetHeight || 0;
+    const L = d.offsetLeft, R = L + d.offsetWidth, T = d.offsetTop, B = T + d.offsetHeight;
+    if (L - fx < w.scrollLeft) w.scrollLeft = Math.max(0, L - fx); else if (R > w.scrollLeft + w.clientWidth) w.scrollLeft = R - w.clientWidth;
+    if (T - hh < w.scrollTop) w.scrollTop = Math.max(0, T - hh); else if (B > w.scrollTop + w.clientHeight) w.scrollTop = B - w.clientHeight;
+    const sh = document.querySelector(".fg-sh"); if (sh) { const r = d.getBoundingClientRect(), top = sh.getBoundingClientRect().top; if (r.bottom > top - 8) window.scrollBy(0, r.bottom - top + 16); if (r.bottom > top - 8) { const r2 = d.getBoundingClientRect(); if (r2.bottom > top - 8) w.scrollTop += r2.bottom - top + 16 } }
+  }
+  function move(dr, dc, ext) { if (!S.M) return; if (!S.a) { fixSel(S.M); paint(); return } const base = ext ? (S.e || S.a) : S.a; let i = rI(base.r) + dr, j = cI(base.t) + dc; i = Math.max(0, Math.min(S.M.R.length - 1, i)); j = Math.max(0, Math.min(S.M.cols.length - 1, j)); sel(S.M.R[i], S.M.cols[j], ext) }
+  function step(dir) { if (!S.M || !S.a) return; let i = rI(S.a.r); const d = dir === "up" ? -1 : 1; for (let k = i + d; k >= 0 && k < S.M.R.length; k += d) { if (!isCalc(RW(S.M.R[k]))) { sel(S.M.R[k], S.a.t); return } } paint() }
+  const after = dir => { if (dir === "down" || dir === "up") step(dir); else if (dir === "left") move(0, -1); else if (dir === "right") move(0, 1); else paint() };
+
+  /* ---------- formula bar ---------- */
+  function help(c, r) {
+    if (!r) return ""; const f = r.f; const g = c.E.FS.find(x => x.g === r.g);
+    if (/_wdl$/.test(r.id)) return g && g.wdl ? "WDL: " + g.wdl : "";
+    if (isCalc(r)) return FORM[r.id] || "Calculated";
+    if (f.t === "num") { const fl = c.K.FLAG[r.id]; return `Allowed ${f.mn}–${f.mx}${f.u ? " " + f.u : ""}${fl && r.id !== "pain" ? ` · expected ${fl[0]}–${fl[1]}` : ""}`; }
+    if (f.t === "bp") return "Systolic/diastolic, like 120/80 · expected systolic 90–140";
+    if (f.t === "pick") return `Pick list (${f.o.length}): type to filter${f.o.some(o => /\d/.test(o)) ? "" : " or press 1–" + Math.min(9, f.o.length)}, Enter or Tab to choose`;
+    if (f.t === "multi") return "Select all that apply: type to filter, Space or a number to check, Enter to accept";
+    if (f.t === "text") return "Free text. No names, dates or identifiers.";
+    return "";
+  }
+  function shHelp(c, r) { const f = r.f; if (/_wdl$/.test(r.id) || isCalc(r) || f.t === "num" || f.t === "bp") return help(c, r); if (f.t === "pick") return "Tap a choice to chart it and go to the next row"; if (f.t === "multi") return "Tap all that apply, then Next"; return help(c, r) }
+  function updFx() {
+    const nb = document.getElementById("fgnb"), fv = document.getElementById("fgfv"), rf = document.getElementById("fgref"); if (!nb) return; const c = S.c || ctx(); if (!c) return;
+    const rc = rect(); if (!rc || !S.a) { nb.textContent = "No cell selected"; fv.textContent = "Click a cell, then type. Enter or Tab moves down."; rf.textContent = ""; return }
+    const r = RW(S.a.r); const E = c.E; const n = (rc.r1 - rc.r0 + 1) * (rc.c1 - rc.c0 + 1);
+    if (n > 1) { nb.textContent = `${(RW(S.M.R[rc.r0]) || {}).l || ""} → ${(RW(S.M.R[rc.r1]) || {}).l || ""} · ${hm(E, S.M.cols[rc.c0])}${rc.c1 > rc.c0 ? "–" + hm(E, S.M.cols[rc.c1]) : ""}`; fv.textContent = n + " cells selected · Ctrl+C copy · Delete clear · drag the corner to fill"; rf.textContent = ""; return }
+    const k = key(S.a.r, S.a.t); const v = valOf(c, S.a.r, S.a.t); const pv = isCalc(r) ? null : pendV(c, S.a.r, S.a.t); const lf = isCalc(r) ? null : lastFiled(c, S.a.r, S.a.t); const cm = isCalc(r) ? "" : cmtOf(c, k);
+    nb.textContent = `${r ? r.l : ""} · HD${E.tHD(S.a.t)} ${hm(E, S.a.t)}`;
+    fv.innerHTML = (isCalc(r) ? `<b>${e_(fmt(v)) || "—"}</b>` : `<b>${e_(fmt(v))}</b>${pv != null ? ` <em class="fg-un">${pv === "" ? "cleared · " : ""}unfiled</em>` : ""}`) + (lf ? ` <span class="fg-lfv">Last filed ${e_(fmt(lf.v))} at HD${E.tHD(lf.t)} ${e_(hm(E, lf.t))}</span>` : "") + (cm ? ` <span class="fg-cmv">${ic("cmt", 13)} ${e_(cm)}</span>` : "");
+    rf.textContent = help(c, r);
+  }
+
+  /* ---------- in-cell editing (num, bp, text) ---------- */
+  function startEdit(seed, mode) {
+    const c = ctx(); if (!c || !S.a) return; const r = RW(S.a.r); if (!r) return; closeFloat();
+    if (isCalc(r)) { tipAt(S.a, "Calculated: " + (FORM[r.id] || "from other rows") + "."); return }
+    if (r.f.t === "pick" || r.f.t === "multi") { openDD(seed); return }
+    const d = td(S.a.r, S.a.t); if (!d) return; const cur = curV(c, S.a.r, S.a.t);
+    S.e = null; paint(); S.ed = { r: S.a.r, t: S.a.t, mode: seed != null ? "enter" : (mode || "edit"), orig: d.innerHTML };
+    d.classList.add("fg-editing"); d.querySelectorAll(".fg-fh").forEach(x => x.remove());
+    d.innerHTML = `<input class="fg-inp" aria-label="${e_(r.l)}" autocomplete="off" spellcheck="false" ${r.f.t === "num" ? 'inputmode="decimal"' : ""} ${r.f.t === "text" ? 'maxlength="200"' : ""} placeholder="${r.f.t === "bp" ? "120/80" : e_(r.f.u || "")}">`;
+    const i = d.querySelector("input"); i.value = seed != null ? seed : fmt(cur); i.focus({ preventScroll: true }); const n = i.value.length; try { i.setSelectionRange(n, n) } catch (e) { }
+    i.addEventListener("input", () => live(i, r));
+    if (seed != null) live(i, r);
+  }
+  function live(i, r) { const s = i.value.trim(); let bad = ""; if (s && r.f.t === "num") { if (!/^-?\d*\.?\d*$/.test(s)) bad = `${r.l}: numbers only`; else { const n = parseFloat(s); if (!isNaN(n) && r.f.mx != null && n > r.f.mx) bad = `${r.l} must be ${r.f.mn}–${r.f.mx}${r.f.u ? " " + r.f.u : ""}` } } if (s && r.f.t === "bp" && !/^\d{0,3}(\/\d{0,3})?$/.test(s)) bad = "Enter BP like 120/80"; markBad(bad); const fb = document.querySelector(".fg-tb .fg-file"); if (fb && fb.disabled && s && !bad) fb.disabled = false }
+  function markBad(msg) { const d = S.ed && td(S.ed.r, S.ed.t); if (!d) return; d.classList.toggle("fg-bad", !!msg); if (msg) tipAt(S.ed, msg, true); else closeTip() }
+  function commitEdit(dir) {
+    const c = ctx(); if (!c || !S.ed) return true; const d = td(S.ed.r, S.ed.t); const i = d && d.querySelector("input"); if (!i) { S.ed = null; return true }
+    const r = RW(S.ed.r); const res = validate(r, i.value);
+    if (!res.ok) { markBad(res.msg); i.focus(); return false }
+    if (r.f.t === "text" && res.v && !c.K.phiOK([res.v])) { return false }
+    const at = { r: S.ed.r, t: S.ed.t }; S.ed = null; closeTip();
+    change(c, () => putV(c, at.r, at.t, res.v)); S.a = at; S.e = null; soft(); after(dir); return true;
+  }
+  function cancelEdit() { if (!S.ed) return; const d = td(S.ed.r, S.ed.t); if (d) { d.classList.remove("fg-editing", "fg-bad"); d.innerHTML = S.ed.orig } S.ed = null; closeTip(); const w = document.getElementById("fswrap"); if (w) w.focus({ preventScroll: true }); paint() }
+
+  /* ---------- pick-list dropdown (pick, multi) ---------- */
+  function openDD(seed) {
+    const c = ctx(); if (!c || !S.a) return; const r = RW(S.a.r); const d = td(S.a.r, S.a.t); if (!d) return; S.e = null; paint();
+    const cur = curV(c, S.a.r, S.a.t); const multi = r.f.t === "multi"; const nodig = !r.f.o.some(o => /\d/.test(o));
+    if (seed != null && /_wdl$/.test(r.id) && /^[wx]$/i.test(seed)) { commitVal(c, r, seed.toLowerCase() === "w" ? "WDL" : "Exceptions to WDL", "down"); return }
+    if (seed != null && /^[0-9]$/.test(seed)) { const ex = r.f.o.find(o => o === seed); if (ex && !multi) { commitVal(c, r, ex, "down"); return } if (nodig && +seed >= 1 && +seed <= r.f.o.length) { if (!multi) { commitVal(c, r, r.f.o[+seed - 1], "down"); return } } }
+    const set = new Set(multi ? (Array.isArray(cur) ? cur : cur ? [cur] : []) : []);
+    if (multi && seed != null && nodig && /^[1-9]$/.test(seed) && +seed <= r.f.o.length) { const o = r.f.o[+seed - 1]; set.has(o) ? set.delete(o) : set.add(o); seed = null }
+    S.dd = { r: S.a.r, t: S.a.t, multi, set, q: seed != null ? seed : "", hi: 0, orig: d.innerHTML, nodig };
+    d.classList.add("fg-editing"); d.querySelectorAll(".fg-fh").forEach(x => x.remove());
+    d.innerHTML = `<input class="fg-inp fg-ddq" role="combobox" aria-expanded="true" aria-controls="fgdd" aria-autocomplete="list" aria-label="${e_(r.l)}: type to filter" autocomplete="off" spellcheck="false" placeholder="${e_(fmt(cur)) || "Type to filter"}">`;
+    const i = d.querySelector("input"); i.value = S.dd.q; i.focus({ preventScroll: true });
+    if (!S.dd.q && !multi) { const k = r.f.o.indexOf(cur); if (k >= 0) S.dd.hi = k }
+    i.addEventListener("input", () => { if (!S.dd) return; S.dd.q = i.value; S.dd.hi = 0; if (/_wdl$/.test(r.id) && /^[wx]$/i.test(i.value)) { closeDDel(); commitVal(c, r, i.value.toLowerCase() === "w" ? "WDL" : "Exceptions to WDL", "down"); return } ddPaint() });
+    const box = document.createElement("div"); box.className = "fg-dd" + (multi ? " fg-ddm" : ""); box.id = "fgdd"; box.setAttribute("role", "listbox"); if (multi) box.setAttribute("aria-multiselectable", "true"); document.body.appendChild(box); ddPaint(); placeFloat();
+  }
+  function ddList() { const r = RW(S.dd.r); const q = S.dd.q.trim().toLowerCase(); return r.f.o.map((o, i) => ({ o, i })).filter(x => !q || x.o.toLowerCase().indexOf(q) >= 0).sort((a, b) => q ? (a.o.toLowerCase().indexOf(q) === 0 ? 0 : 1) - (b.o.toLowerCase().indexOf(q) === 0 ? 0 : 1) || a.i - b.i : a.i - b.i) }
+  function ddPaint() {
+    const box = document.getElementById("fgdd"); if (!box || !S.dd) return; const c = S.c || ctx(); const r = RW(S.dd.r); const L = ddList(); if (S.dd.hi >= L.length) S.dd.hi = Math.max(0, L.length - 1); const cur = curV(c, S.dd.r, S.dd.t);
+    box.innerHTML = `<div class="fg-ddh">${e_(r.l)}${S.dd.multi ? " · select all that apply" : ""}</div><div class="fg-ddl">${L.map((x, j) => `<div role="option" id="fgdo-${j}" class="fg-ddo${j === S.dd.hi ? " hi" : ""}${(S.dd.multi ? S.dd.set.has(x.o) : cur === x.o) ? " on" : ""}" aria-selected="${S.dd.multi ? S.dd.set.has(x.o) : cur === x.o}" data-fg="ddo" data-v="${e_(x.o)}">${S.dd.multi ? `<i class="fg-ck" aria-hidden="true"></i>` : ""}<kbd>${/_wdl$/.test(r.id) ? (x.o === "WDL" ? "W" : "X") : S.dd.nodig && x.i < 9 ? x.i + 1 : ""}</kbd><span>${e_(x.o)}</span></div>`).join("") || `<div class="fg-ddn">No match. Backspace to see all options.</div>`}</div>
+     <div class="fg-ddf">${S.dd.multi ? `<button type="button" data-fg="ddok" class="fg-ddok">Accept <kbd>Enter</kbd></button>` : ""}<button type="button" data-fg="ddclr">Clear <kbd>Del</kbd></button><button type="button" data-fg="ddx">Cancel <kbd>Esc</kbd></button></div>`;
+    const i = document.querySelector(".fg-ddq"); if (i) i.setAttribute("aria-activedescendant", L.length ? "fgdo-" + S.dd.hi : "");
+    const h = box.querySelector(".fg-ddo.hi"); if (h) h.scrollIntoView({ block: "nearest" });
+  }
+  function closeDDel() { const b = document.getElementById("fgdd"); if (b) b.remove() }
+  function cancelDD() { if (!S.dd) return; const d = td(S.dd.r, S.dd.t); if (d) { d.classList.remove("fg-editing"); d.innerHTML = S.dd.orig } S.dd = null; closeDDel(); const w = document.getElementById("fswrap"); if (w) w.focus({ preventScroll: true }); paint() }
+  function ddPick(o, dir) { const c = ctx(); if (!c || !S.dd) return; const r = RW(S.dd.r); if (S.dd.multi) { S.dd.set.has(o) ? S.dd.set.delete(o) : S.dd.set.add(o); ddPaint(); const i = document.querySelector(".fg-ddq"); if (i) i.focus(); return } const at = { r: S.dd.r, t: S.dd.t }; S.dd = null; closeDDel(); S.a = at; commitVal(c, r, o, dir || "down") }
+  function ddAccept(dir) { const c = ctx(); if (!c || !S.dd) return; const r = RW(S.dd.r); const L = ddList(); if (S.dd.multi) { if (S.dd.q.trim() && L[S.dd.hi]) S.dd.set.add(L[S.dd.hi].o); const v = r.f.o.filter(o => S.dd.set.has(o)); const at = { r: S.dd.r, t: S.dd.t }; S.dd = null; closeDDel(); S.a = at; commitVal(c, r, v.length ? v : "", dir); return } if (!L.length) { tipAt(S.dd, "No option matches. Pick from the list."); return } ddPick(L[S.dd.hi].o, dir) }
+  function commitVal(c, r, v, dir) {
+    const res = validate(r, v); if (!res.ok) { tipAt(S.a, res.msg); return false }
+    const at = { r: r.id, t: S.a.t }; S.ed = null;
+    change(c, () => putV(c, at.r, at.t, res.v)); S.a = at; S.e = null;
+    if (/_wdl$/.test(r.id) && (res.v === "WDL" || res.v === "Exceptions to WDL")) { wdlFlow(c, r, res.v); return true }
+    soft(); after(dir); return true;
+  }
+  /* Epic-style: WDL collapses the group and moves to the next group; Exceptions opens the group's rows */
+  function wdlFlow(c, r, v) { const g = r.g; const hid = c.X.fsHide || (c.X.fsHide = {}); const t = S.a.t; if (v === "WDL") hid[g] = true; else delete hid[g]; soft(); if (v === "WDL") { const i = S.M.R.indexOf(r.id); const nx = S.M.R.slice(i + 1).find(x => !isCalc(RW(x))); if (nx) sel(nx, t) } else { const G = S.M.GR.find(x => x.g === g); const f = G && G.rows.find(x => !x.sub && !isCalc(x)); if (f) sel(f.id, t) } }
+  function groupWDL(g) { const c = ctx(); if (!c || !S.M) return; const t = S.a && S.M.cols.indexOf(S.a.t) >= 0 ? S.a.t : S.M.nowCol != null ? S.M.nowCol : S.M.cols[S.M.cols.length - 1]; const r = RW(g + "_wdl"); if (!r || t == null) return; S.a = { r: r.id, t }; S.e = null; commitVal(c, r, "WDL", "down"); toast((c.E.FS.find(x => x.g === g) || {}).n + " WDL at " + hm(c.E, t)) }
+
+  /* ---------- bulk operations: clear, copy/paste, copy previous, fill ---------- */
+  function editable(r) { return r && !isCalc(r) && !r.sub }
+  function clearRange() { const c = ctx(); const rc = rect(); if (!c || !rc) return; let n = 0; change(c, () => cellsOf(rc).forEach(x => { const r = RW(x.r); if (!editable(r)) return; if (curV(c, x.r, x.t) !== "" && curV(c, x.r, x.t) != null) { putV(c, x.r, x.t, ""); n++ } })); soft(); if (n > 1) toast(n + " cells cleared (not filed yet)") }
+  function copyRange(cut) { const c = ctx(); const rc = rect(); if (!c || !rc) return null; const m = []; for (let i = rc.r0; i <= rc.r1; i++) { const row = []; for (let j = rc.c0; j <= rc.c1; j++)row.push(valOf(c, S.M.R[i], S.M.cols[j])); m.push(row) } const text = m.map(r => r.map(fmt).join("\t")).join("\n"); S.clip = { m, text }; try { navigator.clipboard && navigator.clipboard.writeText(text).catch(() => { }) } catch (e) { } flashRange(rc); if (cut) clearRange(); toast((cut ? "Cut " : "Copied ") + (m.length * m[0].length) + " cell" + (m.length * m[0].length === 1 ? "" : "s")); return text }
+  function flashRange(rc) { cellsOf(rc).forEach(x => { const d = td(x.r, x.t); if (d) { d.classList.add("fg-cp"); setTimeout(() => d.classList.remove("fg-cp"), 900) } }) }
+  function pasteMatrix(m) {
+    const c = ctx(); const rc = rect(); if (!c || !rc || !m || !m.length) return; let n = 0, skip = 0;
+    const one = m.length === 1 && m[0].length === 1; const big = rc.r1 > rc.r0 || rc.c1 > rc.c0;
+    change(c, () => { const put = (i, j, v) => { const rid = S.M.R[i], t = S.M.cols[j]; if (rid == null || t == null) return; const r = RW(rid); if (!editable(r)) { skip++; return } const res = validate(r, v, true); if (!res.ok) { skip++; return } putV(c, rid, t, res.v); n++ };
+      if (one && big) { for (let i = rc.r0; i <= rc.r1; i++)for (let j = rc.c0; j <= rc.c1; j++)put(i, j, m[0][0]) } else m.forEach((row, a) => row.forEach((v, b) => put(rc.r0 + a, rc.c0 + b, v))) });
+    soft(); toast(`Pasted ${n} value${n === 1 ? "" : "s"}${skip ? ` · ${skip} skipped (calculated, or not valid for that row)` : ""}. Not filed yet.`);
+  }
+  function pasteText(text) { if (S.clip && (text == null || text === "" || text === S.clip.text)) { pasteMatrix(S.clip.m); return } if (!text) { toast("Nothing to paste. Copy cells first (Ctrl+C)."); return } pasteMatrix(text.replace(/\r/g, "").replace(/\n$/, "").split("\n").map(l => l.split("\t"))) }
+  function copyPrev() {
+    const c = ctx(); if (!c || !S.M) return; const t = S.a ? S.a.t : S.M.nowCol; if (t == null) return; const { K, p } = c; const tpl = S.M.tpl;
+    const ids = []; c.E.FS.filter(g => !tpl[2] || tpl[2].indexOf(g.g) >= 0).forEach(g => g.rows.forEach(rr => { const r = K.ROW[rr[0]]; if (editable(r)) ids.push(r.id) })); if (!tpl[2] || tpl[2].indexOf("lda") >= 0) Object.keys(K.ROW).filter(k => /^lda:/.test(k)).forEach(k => ids.push(k));
+    const has = (rid, tt) => { const v = curV(c, rid, tt); return v !== "" && v != null };
+    const ts = new Set(); (p.flow || []).forEach(x => { if (x.t < t) ts.add(x.t) }); Object.keys(c.X.pend).forEach(k => { const a = +k.split("|")[0]; if (a < t) ts.add(a) });
+    const src = [...ts].sort((a, b) => b - a).find(tt => ids.some(id => has(id, tt)));
+    if (src == null) { toast("Nothing to copy: no earlier column has values on this template"); return }
+    let n = 0, first = null; change(c, () => ids.forEach(id => { if (has(id, src) && !has(id, t)) { putV(c, id, t, curV(c, id, src)); n++; if (first == null) first = id } }));
+    S.a = { r: S.a ? S.a.r : S.M.R[0], t }; S.e = null; soft();
+    if (!n) { toast("This column already has every value from " + hm(c.E, src)); return }
+    const fr = S.M.R.find(id => pendV(c, id, t) != null); if (fr) sel(fr, t);
+    toast(`Copied ${n} value${n === 1 ? "" : "s"} from ${hm(c.E, src)}. Purple = not filed: change the exceptions, then File.`);
+  }
+  function fill(rc, to) {
+    const c = ctx(); if (!c || !rc || !to) return; let n = 0, skip = 0;
+    change(c, () => { const put = (i, j, v) => { const rid = S.M.R[i], t = S.M.cols[j]; const r = RW(rid); if (!editable(r)) { skip++; return } if (v === "" || v == null) return; const res = validate(r, v, true); if (!res.ok) { skip++; return } putV(c, rid, t, res.v); n++ };
+      if (to.dir === "down") { const h = rc.r1 - rc.r0 + 1; for (let i = rc.r1 + 1; i <= to.i; i++)for (let j = rc.c0; j <= rc.c1; j++)put(i, j, valOf(c, S.M.R[rc.r0 + (i - rc.r0) % h], S.M.cols[j])) }
+      else { const w = rc.c1 - rc.c0 + 1; for (let j = rc.c1 + 1; j <= to.j; j++)for (let i = rc.r0; i <= rc.r1; i++)put(i, j, valOf(c, S.M.R[i], S.M.cols[rc.c0 + (j - rc.c0) % w])) } });
+    if (to.dir === "down") S.e = { r: S.M.R[to.i], t: S.M.cols[rc.c1] }; else S.e = { r: S.M.R[rc.r1], t: S.M.cols[to.j] };
+    soft(); toast(`Filled ${n} cell${n === 1 ? "" : "s"}${skip ? ` · ${skip} skipped (not valid for that row)` : ""}. Not filed yet.`);
+  }
+  function fillKey(dir) { const rc = rect(); if (!rc) return; if (dir === "down") { if (rc.r1 === rc.r0) { if (rc.r0 === 0) return; const src = { r0: rc.r0 - 1, r1: rc.r0 - 1, c0: rc.c0, c1: rc.c1 }; fill(src, { dir: "down", i: rc.r1 }); return } fill({ r0: rc.r0, r1: rc.r0, c0: rc.c0, c1: rc.c1 }, { dir: "down", i: rc.r1 }) } else { if (rc.c1 === rc.c0) { if (rc.c0 === 0) return; fill({ r0: rc.r0, r1: rc.r1, c0: rc.c0 - 1, c1: rc.c0 - 1 }, { dir: "right", j: rc.c1 }); return } fill({ r0: rc.r0, r1: rc.r1, c0: rc.c0, c1: rc.c0 }, { dir: "right", j: rc.c1 }) } }
+
+  /* ---------- filing ---------- */
+  function fileComments(c) { const m = pc(c.X); const ks = Object.keys(m); if (!ks.length) return 0; c.E.upd(q => { q.fsc = q.fsc || {}; ks.forEach(k => { if (m[k]) q.fsc[k] = { c: m[k], rt: Date.now() }; else delete q.fsc[k] }); if (!Object.keys(q.fsc).length) delete q.fsc }); ks.forEach(k => delete m[k]); return ks.length }
+  function doFile() { const c = ctx(); if (!c) return; closeFloat(); const nc = fileComments(c); S.undo = []; S.redo = []; if (Object.keys(c.X.pend).length) c.K.fileAll(); else { c.E.v29.draw(); toast(nc ? nc + " comment" + (nc === 1 ? "" : "s") + " filed" : "Nothing to file") } notify() }
+
+  /* ---------- floating bits: tooltip, popovers ---------- */
+  function tipAt(x, msg, bad) { closeTip(); const d = x && td(x.r, x.t); if (!d) { toast(msg); return } const t = document.createElement("div"); t.className = "fg-tip" + (bad !== false ? " bad" : ""); t.id = "fgtip"; t.setAttribute("role", "alert"); t.textContent = msg; document.body.appendChild(t); S.tip = { x, el: t }; placeFloat(); if (!S.ed) setTimeout(() => { if (S.tip && S.tip.el === t) closeTip() }, 3200) }
+  function closeTip() { if (S.tip) { S.tip.el.remove(); S.tip = null } document.querySelectorAll(".fg-bad").forEach(x => { if (!x.classList.contains("fg-editing")) x.classList.remove("fg-bad") }) }
+  function placeFloat() {
+    const pos = (el, a, below) => { if (!el || !a) return; const r = a.getBoundingClientRect(); const W = innerWidth, H = innerHeight; el.style.minWidth = Math.max(r.width, 180) + "px"; const h = el.offsetHeight, w = el.offsetWidth; let top = r.bottom + 2; if (top + h > H - 8 && r.top - h - 2 > 8) top = r.top - h - 2; let left = Math.min(r.left, W - w - 8); el.style.top = Math.max(8, top) + "px"; el.style.left = Math.max(8, left) + "px" };
+    if (S.dd) pos(document.getElementById("fgdd"), td(S.dd.r, S.dd.t));
+    if (S.tip) pos(S.tip.el, td(S.tip.x.r, S.tip.x.t));
+    if (S.pop && S.pop.anchor) pos(S.pop.el, S.pop.anchor());
+  }
+  function closePop() { if (S.pop) { S.pop.el.remove(); S.pop = null } }
+  function closeFloat() { if (S.ed) { S.ed = null } if (S.dd) { S.dd = null; closeDDel() } closeTip(); closePop() }
+  function pop(kind, html, anchor) { closePop(); const el = document.createElement("div"); el.className = "fg-pop fg-pop-" + kind; el.setAttribute("role", "dialog"); el.innerHTML = html; document.body.appendChild(el); S.pop = { kind, el, anchor }; placeFloat(); const f = el.querySelector("textarea,input,select,button"); if (f) setTimeout(() => f.focus(), 0); return el }
+  function insPop() { const c = ctx(); if (!c) return; const now = c.K.nowMin(); const r5 = Math.round(now / 5) * 5 % 1440; const v = String(Math.floor(r5 / 60)).padStart(2, "0") + ":" + String(r5 % 60).padStart(2, "0");
+    pop("ins", `<form data-fgf="ins"><b>Insert a time column · HD ${S.M ? S.M.hd : ""}</b><label><span>Time</span><input name="t" type="time" step="300" value="${v}" required></label><div class="fg-popb"><button type="submit" class="fg-pri">Insert</button><button type="button" data-fg="insnow">Now (exact)</button><button type="button" data-fg="popx">Cancel</button></div><p class="fine">Defaults to now, rounded to 5 minutes. Alt+I inserts the exact current time.</p></form>`, () => document.querySelector('.fg-tb [data-fg="ins"]')) }
+  function insCol(min) { const c = ctx(); if (!c) return; const hd = c.X.marDay || c.p.hd || 1; const t = c.E.T(hd, min); const L = (c.X.cols[c.p.id] = c.X.cols[c.p.id] || []); if (L.indexOf(t) < 0) L.push(t); c.X.insT = t; c.X.insPid = c.p.id; c.X.fsI = "filed"; closePop(); S.focus = "grid"; const r = S.a ? S.a.r : null; S.a = r ? { r, t } : null; S.e = null; c.E.v29.draw(); const M = S.M; if (M && (!S.a || M.R.indexOf(S.a.r) < 0)) { const f = M.R.find(x => !isCalc(RW(x))); if (f) sel(f, t) } else if (S.a) sel(S.a.r, t); vis(); toast("Column inserted at " + hm(c.E, t)) }
+  function cmtPop() { const c = ctx(); if (!c || !S.a) return; const r = RW(S.a.r); if (!editable(r)) { tipAt(S.a, "Comments go on charted rows, not calculated ones."); return } const k = key(S.a.r, S.a.t); const cur = cmtOf(c, k);
+    pop("cmt", `<form data-fgf="cmt" data-k="${e_(k)}"><b>Comment · ${e_(r.l)} · ${e_(hm(c.E, S.a.t))}</b><textarea name="c" maxlength="200" rows="3" placeholder="e.g. Patient asleep; recheck at 1300">${e_(cur)}</textarea><div class="fg-popb"><button type="submit" class="fg-pri">Save <kbd>Ctrl+Enter</kbd></button>${cur ? `<button type="button" data-fg="cmdel">Delete</button>` : ""}<button type="button" data-fg="popx">Cancel</button></div><p class="fine">No names, dates or identifiers. Files with the values.</p></form>`, () => td(S.a.r, S.a.t)) }
+  function setCmt(k, text) { const c = ctx(); if (!c) return false; text = String(text || "").trim().slice(0, 200); if (text && !c.K.phiOK([text])) return false; const filed = ((c.p.fsc || {})[k] || {}).c || ""; change(c, () => { const m = pc(c.X); if (text === filed) delete m[k]; else m[k] = text }); return true }
+  function helpPop() { const K = [["Click / tap", "Select a cell (tap opens the touch keypad)"], ["Type", "Start charting; pick lists filter as you type"], ["Enter / Tab", "Commit and move down"], ["Shift+Enter / Shift+Tab", "Commit and move up"], ["← →", "Previous / next time column"], ["F2 or double-click", "Edit the cell"], ["Esc", "Cancel the edit"], ["Delete", "Clear the selection"], ["W / X", "WDL / Exceptions on a group row"], ["1–9", "Choose that option in a pick list"], ["Shift+arrows, drag", "Select a range"], ["Ctrl+C / Ctrl+V", "Copy / paste cells"], ["Ctrl+D / Ctrl+R", "Fill down / fill right"], ["Ctrl+Z / Ctrl+Y", "Undo / redo"], ["Shift+F2", "Comment"], ["Alt+I", "Insert a column at the current time"], ["Ctrl+S", "File"]];
+    pop("help", `<b>Keyboard shortcuts</b><table class="fg-kt">${K.map(([a, b]) => `<tr><th>${a.split(" / ").map(x => `<kbd>${e_(x)}</kbd>`).join(" / ")}</th><td>${e_(b)}</td></tr>`).join("")}</table><p class="fine">On a Mac use Cmd instead of Ctrl.</p><div class="fg-popb"><button type="button" data-fg="popx">Close</button></div>`, () => document.querySelector('.fg-tb [data-fg="help"]')) }
+
+  /* ---------- touch bottom sheet (iPad grid and phone Rover) ---------- */
+  function shRows(mode) { if (mode === "rv") return [...document.querySelectorAll("#ehm .rvrow[data-r]")].map(b => b.dataset.r); return S.M ? S.M.R.filter(x => !isCalc(RW(x))) : [] }
+  function shCols(c, mode) { if (mode === "rv") { const hd = c.p.hd || 1; const set = new Set(c.K.fsCols(c.p).filter(t => c.E.tHD(t) === hd)); if (c.X.rvT != null) set.add(c.X.rvT); return [...set].sort((a, b) => a - b) } return S.M ? S.M.cols : [] }
+  function openSheet(rid, t, mode) {
+    const c = ctx(); if (!c) return; const r = RW(rid); if (!r) return; closeFloat();
+    if (mode !== "rv") { S.a = { r: rid, t }; S.e = null; paint() }
+    const prev = S.sh && S.sh.r === rid && S.sh.t === t ? S.sh : null;
+    S.sh = { r: rid, t, mode: mode || "grid", buf: prev ? prev.buf : null, set: prev ? prev.set : null, cm: prev ? prev.cm : false, msg: "" };
+    if (r.f.t === "multi" && !S.sh.set) { const cur = curV(c, rid, t); S.sh.set = new Set(Array.isArray(cur) ? cur : cur ? [cur] : []) }
+    shPaint(); if (mode !== "rv") vis();
+  }
+  function shPaint() {
+    const c = ctx(); const sh = S.sh; if (!c || !sh) return; const r = RW(sh.r); const f = r.f; const E = c.E; const k = key(sh.r, sh.t);
+    const cur = valOf(c, sh.r, sh.t); const lf = isCalc(r) ? null : lastFiled(c, sh.r, sh.t); const cols = shCols(c, sh.mode); const ci = cols.indexOf(sh.t); const rows = shRows(sh.mode); const ri = rows.indexOf(sh.r);
+    let body = "";
+    if (isCalc(r)) body = `<div class="fg-shd calc"><span>${e_(fmt(cur)) || "—"}</span></div><p class="fg-shr">${e_(FORM[r.id] || "Calculated from other rows")}</p>`;
+    else if (f.t === "pick") body = `<div class="fg-sho">${f.o.map(o => `<button type="button" data-fg="shpick" data-v="${e_(o)}" class="${cur === o ? "on" : ""}" aria-pressed="${cur === o}">${e_(o)}</button>`).join("")}</div>`;
+    else if (f.t === "multi") body = `<div class="fg-sho fg-shm">${f.o.map(o => `<button type="button" data-fg="shtog" data-v="${e_(o)}" class="${sh.set.has(o) ? "on" : ""}" aria-pressed="${sh.set.has(o)}"><i class="fg-ck" aria-hidden="true"></i>${e_(o)}</button>`).join("")}</div>`;
+    else if (f.t === "text") body = `<textarea class="fg-sht" maxlength="200" rows="2" aria-label="${e_(r.l)}" placeholder="Type here. No names, dates or identifiers.">${e_(sh.buf != null ? sh.buf : fmt(cur))}</textarea>`;
+    else { const b = sh.buf != null ? sh.buf : fmt(cur); const keys = ["1", "2", "3", "4", "5", "6", "7", "8", "9", f.t === "bp" ? "/" : ".", "0", "bs"]; body = `<div class="fg-shd${sh.msg ? " bad" : ""}" aria-live="polite"><span>${e_(b) || `<em>${f.t === "bp" ? "120/80" : "—"}</em>`}</span><small>${e_(f.u || "")}</small></div><p class="fg-shmsg" role="alert">${e_(sh.msg)}</p><div class="fg-kp">${keys.map(x => `<button type="button" data-fg="shk" data-v="${x}" aria-label="${x === "bs" ? "Backspace" : x}">${x === "bs" ? "⌫" : x}</button>`).join("")}</div>` }
+    const html = `<div class="fg-shgrip" aria-hidden="true"></div>
+     <header class="fg-shh"><div><small>${e_(c.E.v29.tLbl ? c.E.v29.tLbl(sh.t) : hm(E, sh.t))}${pendV(c, sh.r, sh.t) != null ? " · unfiled" : ""}</small><h3>${e_(r.l)}${f.u ? ` <small>${e_(f.u)}</small>` : ""}</h3></div><button type="button" class="fg-shx" data-fg="shx" aria-label="Close keypad">${ic("x", 20)}</button></header>
+     <nav class="fg-shc" aria-label="Time column (swipe left or right)"><button type="button" data-fg="shcol" data-v="-1" ${ci > 0 ? "" : "disabled"} aria-label="Previous time">${ic("back", 16)}</button>${cols.slice(Math.max(0, ci - 2), ci + 3).map(t => `<button type="button" data-fg="shcolt" data-v="${t}" class="${t === sh.t ? "on" : ""}" aria-pressed="${t === sh.t}">${e_(hm(E, t))}</button>`).join("")}<button type="button" data-fg="shcol" data-v="1" ${ci >= 0 && ci < cols.length - 1 ? "" : "disabled"} aria-label="Next time">${ic("chev", 16)}</button></nav>
+     <p class="fg-shr">${e_(shHelp(c, r))}${lf ? ` · Last filed ${e_(fmt(lf.v))} at ${e_(hm(E, lf.t))}` : ""}</p>
+     ${body}
+     ${sh.cm ? `<textarea class="fg-shcm" maxlength="200" rows="2" aria-label="Comment" placeholder="Comment (no names, dates or identifiers)">${e_(cmtOf(c, k))}</textarea>` : ""}
+     <div class="fg-shf"><button type="button" data-fg="shmv" data-v="-1" ${ri > 0 ? "" : "disabled"}>${ic("back", 16)} Prev</button>${isCalc(r) ? "" : `<button type="button" data-fg="shclr">Clear</button><button type="button" data-fg="shcm" aria-pressed="${!!sh.cm}">${ic("cmt", 15)} Comment</button>`}<button type="button" class="fg-pri" data-fg="shnext">${ri >= 0 && ri < rows.length - 1 ? "Next" : "Done"} ${ic("chev", 16)}</button></div>`;
+    let el = document.querySelector(".fg-sh"); if (!el) { el = document.createElement("div"); el.className = "fg-sh"; el.setAttribute("role", "dialog"); el.setAttribute("aria-modal", "false"); document.body.appendChild(el); document.documentElement.classList.add("fg-shon") }
+    el.setAttribute("aria-label", "Chart " + r.l); el.innerHTML = html;
+  }
+  function closeSheet() { const el = document.querySelector(".fg-sh"); if (el) el.remove(); S.sh = null; document.documentElement.classList.remove("fg-shon"); paint() }
+  function shCommit(v) { const c = ctx(); const sh = S.sh; if (!c || !sh) return false; const r = RW(sh.r); const res = validate(r, v); if (!res.ok) { sh.msg = res.msg; shPaint(); return false } if (r.f.t === "text" && res.v && !c.K.phiOK([res.v])) return false; change(c, () => putV(c, sh.r, sh.t, res.v)); return true }
+  function shSaveCm() { const sh = S.sh; const ta = document.querySelector(".fg-shcm"); if (!sh || !ta) return true; return setCmt(key(sh.r, sh.t), ta.value) }
+  function shNext(d) { const c = ctx(); const sh = S.sh; if (!c || !sh) return; const r = RW(sh.r);
+    if (!shSaveCm()) return;
+    if (!isCalc(r)) { if (r.f.t === "multi") { const v = r.f.o.filter(o => sh.set.has(o)); if (!same(v, curV(c, sh.r, sh.t)) && !(v.length === 0 && (curV(c, sh.r, sh.t) === "" || curV(c, sh.r, sh.t) == null))) if (!shCommit(v.length ? v : "")) return } else if (r.f.t === "text") { const ta = document.querySelector(".fg-sht"); if (ta && ta.value.trim() !== fmt(curV(c, sh.r, sh.t))) if (!shCommit(ta.value)) return } else if ((r.f.t === "num" || r.f.t === "bp") && sh.buf != null) { if (!shCommit(sh.buf)) return } }
+    shGo(d) }
+  function shGo(d) { const c = ctx(); const sh = S.sh; if (!c || !sh) return; refreshAfterSheet(); const rows = shRows(sh.mode); const i = rows.indexOf(sh.r); const j = i + d; if (j < 0 || j >= rows.length) { if (d > 0) { closeSheet(); toast("End of the column. Tap File to file it.") } else shPaint(); return } S.sh = null; openSheet(rows[j], sh.t, sh.mode); if (sh.mode === "rv") { const b = document.querySelector(`#ehm .rvrow[data-r="${CSS.escape(rows[j])}"]`); if (b) b.scrollIntoView({ block: "center" }) } }
+  function refreshAfterSheet() { if (S.sh && S.sh.mode === "rv") { const E = EH(); E && E.v29.draw() } else soft() }
+  function shCol(d, abs) { const c = ctx(); const sh = S.sh; if (!c || !sh) return; if (!shSaveCm()) return; const cols = shCols(c, sh.mode); const i = cols.indexOf(sh.t); const t = abs != null ? abs : cols[i + d]; if (t == null) return;
+    if (sh.mode === "rv") { c.X.rvT = t; c.X.rvPid = c.p.id; c.E.v29.draw(); const rows = shRows("rv"); const r = rows.indexOf(sh.r) >= 0 ? sh.r : rows[0]; S.sh = null; if (r) openSheet(r, t, "rv"); return }
+    S.sh = null; openSheet(sh.r, t, "grid") }
+  function rvCol(d) { const c = ctx(); if (!c) return; const cols = shCols(c, "rv"); const i = cols.indexOf(c.X.rvT); const t = cols[i + d]; if (t == null) { toast(d > 0 ? "This is the latest charting time" : "No earlier charting time today"); return } c.X.rvT = t; c.X.rvPid = c.p.id; c.E.v29.draw() }
+  function rvDecorate() { if (!rover()) return; const h = document.querySelector("#ehm .rvfh"); if (!h || h.querySelector("[data-fg=rvcol]")) return; h.insertAdjacentHTML("afterbegin", `<button type="button" class="fg-rvc" data-fg="rvcol" data-v="-1" aria-label="Previous charting time">${ic("back", 18)}</button>`); const b = h.querySelector("div"); if (b) b.insertAdjacentHTML("afterend", `<button type="button" class="fg-rvc" data-fg="rvcol" data-v="1" aria-label="Next charting time">${ic("chev", 18)}</button>`) }
+
+  /* ---------- events ---------- */
+  const inGrid = el => !!(el && el.closest && el.closest(".fg34"));
+  const gridOn = () => !!document.querySelector(".fg34 #fswrap");
+  document.addEventListener("focusin", e => { const t = e.target; S.focus = t && t.closest && t.closest("#fswrap") ? "grid" : t && t.matches && t.matches(".fg-q") ? "filter" : (t && t.closest && t.closest(".fg-dd,.fg-pop,.fg-sh")) ? S.focus : null }, true);
+  document.addEventListener("pointerdown", e => {
+    S.ptype = e.pointerType || "mouse"; const t = e.target;
+    if (S.pop && !S.pop.el.contains(t) && !(t.closest && t.closest('[data-fg="ins"],[data-fg="help"],[data-fg="cmt"]'))) closePop();
+    if (S.sh && t.closest && t.closest(".fg-sh")) { S.swipe = { x: e.clientX, y: e.clientY, id: e.pointerId }; return }
+    if (S.ed && !(t.closest && (t.closest(".fg-editing") || t.closest("#fgtip")))) { if (!commitEdit(null)) { const msg = S.tip ? S.tip.el.textContent : ""; cancelEdit(); if (msg) toast("Not entered: " + msg) } }
+    if (S.dd && !(t.closest && (t.closest(".fg-editing") || t.closest("#fgdd")))) { if (S.dd.multi && S.dd.set.size) ddAccept(null); else cancelDD() }
+    if (t.closest && t.closest("#fgdd")) { e.preventDefault(); return }
+    if (!inGrid(t)) return;
+    const fh = t.closest(".fg-fh"); if (fh && e.button === 0) { e.preventDefault(); S.drag = { k: "fill", rc: rect(), to: null }; try { fh.setPointerCapture(e.pointerId) } catch (x) { } return }
+    const cell = t.closest("td.fgc"); const w = document.getElementById("fswrap");
+    if (cell && e.button === 0 && S.ptype !== "touch") { e.preventDefault(); if (w) w.focus({ preventScroll: true }); S.focus = "grid"; const r = cell.dataset.r, tt = +cell.dataset.t; const dbl = S.lastDown && S.lastDown.r === r && S.lastDown.t === tt && Date.now() - S.lastDown.at < 420; S.lastDown = { r, t: tt, at: Date.now() };
+      if (e.shiftKey && S.a) sel(r, tt, true); else { if (!(S.a && S.a.r === r && S.a.t === tt && !S.e)) sel(r, tt); S.drag = { k: "sel" } }
+      if (dbl) { S.drag = null; startEdit(null, "edit") } return }
+    const th = t.closest(".fstr th[data-t]"); if (th && e.button === 0 && S.ptype !== "touch" && S.M && S.M.R.length) { e.preventDefault(); if (w) w.focus({ preventScroll: true }); const tt = +th.dataset.t; if (e.shiftKey && S.a) { S.e = { r: S.M.R[S.M.R.length - 1], t: tt }; paint(); return } S.a = { r: S.M.R.find(x => !isCalc(RW(x))) || S.M.R[0], t: tt }; S.e = { r: S.M.R[S.M.R.length - 1], t: tt }; paint(); return }
+    const rh = t.closest("tr[data-r] > th"); if (rh && e.button === 0 && S.ptype !== "touch" && !t.closest("button") && S.M && S.M.cols.length) { e.preventDefault(); if (w) w.focus({ preventScroll: true }); const r = rh.parentElement.dataset.r; const t0 = S.a ? S.a.t : S.M.nowCol; S.a = { r, t: t0 != null ? t0 : S.M.cols[0] }; S.e = { r, t: S.M.cols[S.M.cols.length - 1] }; if (S.a.t === S.e.t) S.e = null; paint() }
+  }, true);
+  document.addEventListener("pointermove", e => {
+    if (!S.drag) return; const el = document.elementFromPoint(e.clientX, e.clientY); const cell = el && el.closest && el.closest("td.fgc"); if (!cell) return; const r = cell.dataset.r, t = +cell.dataset.t;
+    if (S.drag.k === "sel") { if (!S.e || S.e.r !== r || S.e.t !== t) { S.e = { r, t }; if (S.e.r === S.a.r && S.e.t === S.a.t) S.e = null; paint() } return }
+    if (S.drag.k === "fill" && S.drag.rc) { const rc = S.drag.rc; const i = rI(r), j = cI(t); const dn = i - rc.r1, rt = j - rc.c1; document.querySelectorAll(".fg-fp").forEach(x => x.classList.remove("fg-fp")); S.drag.to = null; if (dn <= 0 && rt <= 0) return; if (dn >= rt) { S.drag.to = { dir: "down", i }; for (let a = rc.r1 + 1; a <= i; a++)for (let b = rc.c0; b <= rc.c1; b++) { const d = td(S.M.R[a], S.M.cols[b]); if (d) d.classList.add("fg-fp") } } else { S.drag.to = { dir: "right", j }; for (let b = rc.c1 + 1; b <= j; b++)for (let a = rc.r0; a <= rc.r1; a++) { const d = td(S.M.R[a], S.M.cols[b]); if (d) d.classList.add("fg-fp") } } }
+  }, true);
+  document.addEventListener("pointerup", e => {
+    if (S.swipe && S.sh && e.pointerId === S.swipe.id) { const dx = e.clientX - S.swipe.x, dy = e.clientY - S.swipe.y; S.swipe = null; if (Math.abs(dx) > 60 && Math.abs(dy) < 50 && !(e.target.closest && e.target.closest(".fg-kp,textarea"))) { shCol(dx < 0 ? 1 : -1); S.noClick = Date.now() } return }
+    const d = S.drag; S.drag = null; if (!d) return; if (d.k === "fill") { document.querySelectorAll(".fg-fp").forEach(x => x.classList.remove("fg-fp")); if (d.to) fill(d.rc, d.to) }
+  }, true);
+  /* phone Rover: swipe the list to change the charting time */
+  let rvSw = null;
+  document.addEventListener("touchstart", e => { if (!rover() || !e.touches[0] || !(e.target.closest && e.target.closest("#ehm")) || !document.querySelector("#ehm .rvfh") || e.target.closest(".rvchipsel,.fg-sh")) { rvSw = null; return } rvSw = { x: e.touches[0].clientX, y: e.touches[0].clientY } }, { passive: true, capture: true });
+  document.addEventListener("touchend", e => { if (!rvSw || !e.changedTouches[0]) return; const dx = e.changedTouches[0].clientX - rvSw.x, dy = e.changedTouches[0].clientY - rvSw.y; rvSw = null; if (Math.abs(dx) > 70 && Math.abs(dy) < 40) { S.noClick = Date.now(); rvCol(dx < 0 ? 1 : -1) } }, { passive: true, capture: true });
+
+  document.addEventListener("click", e => {
+    const t = e.target; if (S.noClick && Date.now() - S.noClick < 400) { if (t.closest && t.closest(".fg-sh,#ehm")) { e.preventDefault(); e.stopPropagation(); return } }
+    const rv = t.closest && t.closest('[data-ex="rvcell"]'); if (rv && ctx()) { e.preventDefault(); e.stopPropagation(); const c = ctx(); if (c.X.rvT == null) return; openSheet(rv.dataset.r, c.X.rvT, "rv"); return }
+    const fileB = t.closest && t.closest('[data-ex="file"]'); if (fileB && !fileB.disabled) { const c = ctx(); if (c) { const nc = Object.keys(pc(c.X)).length; if (nc) fileComments(c); S.undo = []; S.redo = []; if (S.sh) closeSheet(); if (!Object.keys(c.X.pend).length) { e.preventDefault(); e.stopPropagation(); c.E.v29.draw(); toast(nc ? nc + " comment" + (nc === 1 ? "" : "s") + " filed" : "Nothing to file") } setTimeout(notify, 0) } return }
+    const disc = t.closest && t.closest('[data-ex="discard"]'); if (disc && !disc.disabled) { const c = ctx(); if (c) { change(c, () => { Object.keys(c.X.pend).forEach(k => delete c.X.pend[k]); const m = pc(c.X); Object.keys(m).forEach(k => delete m[k]) }); if (S.sh) closeSheet(); setTimeout(() => toast("Unfiled values discarded · Ctrl+Z to undo"), 0) } return }
+    const b = t.closest && t.closest("[data-fg]");
+    if (!b) { const cell = t.closest && t.closest(".fg34 td.fgc"); if (cell && (e.pointerType === "touch" || S.ptype === "touch")) { e.preventDefault(); openSheet(cell.dataset.r, +cell.dataset.t, "grid") } return }
+    const k = b.dataset.fg, v = b.dataset.v; const c = ctx();
+    if (k === "ddo") { ddPick(v, "down"); return }
+    if (k === "ddok") { ddAccept("down"); return }
+    if (k === "ddclr") { const at = S.dd && { r: S.dd.r, t: S.dd.t }; S.dd = null; closeDDel(); if (at && c) { S.a = at; commitVal(c, RW(at.r), "", "stay") } return }
+    if (k === "ddx") { cancelDD(); return }
+    if (k === "gtog") { if (!c) return; const g = b.dataset.g; const hid = c.X.fsHide || (c.X.fsHide = {}); hid[g] = !hid[g]; soft(); return }
+    if (k === "gwdl") { groupWDL(b.dataset.g); return }
+    if (k === "xall" || k === "call") { if (!c) return; c.X.fsHide = {}; if (k === "call") c.E.FS.concat([{ g: "lda" }]).forEach(g => c.X.fsHide[g.g] = true); soft(); return }
+    if (k === "undo") { undo(false); return } if (k === "redo") { undo(true); return }
+    if (k === "ins") { if (S.pop && S.pop.kind === "ins") { closePop(); return } insPop(); return }
+    if (k === "insnow") { if (c) insCol(c.K.nowMin()); return }
+    if (k === "prev") { copyPrev(); return }
+    if (k === "cmt") { if (S.pop && S.pop.kind === "cmt") { closePop(); return } cmtPop(); return }
+    if (k === "cmdel") { const f = b.closest("form"); if (f && setCmt(f.dataset.k, "")) { closePop(); soft(); toast("Comment removed (file to save)") } return }
+    if (k === "lastcol") { if (!c) return; c.X.fg34Last = !c.X.fg34Last; c.E.v29.draw(); return }
+    if (k === "help") { if (S.pop && S.pop.kind === "help") { closePop(); return } helpPop(); return }
+    if (k === "popx") { closePop(); const w = document.getElementById("fswrap"); if (w) w.focus({ preventScroll: true }); return }
+    if (k === "shx") { if (shSaveCm()) { closeSheet(); refreshAfterSheet() } return }
+    if (k === "shpick") { if (shCommit(v)) shGo(1); return }
+    if (k === "shtog") { const sh = S.sh; if (!sh) return; sh.set.has(v) ? sh.set.delete(v) : sh.set.add(v); shPaint(); return }
+    if (k === "shk") { const sh = S.sh; if (!sh || !c) return; let s = sh.buf != null ? sh.buf : ""; if (sh.buf == null) s = ""; if (v === "bs") s = (sh.buf != null ? sh.buf : fmt(curV(c, sh.r, sh.t))).slice(0, -1); else s = (s + v).slice(0, 7); sh.buf = s; sh.msg = ""; const r = RW(sh.r); if (s && r.f.t === "num" && r.f.mx != null && parseFloat(s) > r.f.mx) sh.msg = `${r.l} must be ${r.f.mn}–${r.f.mx}${r.f.u ? " " + r.f.u : ""}`; shPaint(); return }
+    if (k === "shclr") { const sh = S.sh; if (!sh || !c) return; if (shCommit("")) { sh.buf = null; if (sh.set) sh.set.clear(); refreshAfterSheet(); shPaint() } return }
+    if (k === "shcm") { const sh = S.sh; if (!sh) return; if (sh.cm) { if (!shSaveCm()) return; refreshAfterSheet() } const ta = document.querySelector(".fg-sht"); if (ta) sh.buf = ta.value; sh.cm = !sh.cm; shPaint(); const x = document.querySelector(".fg-shcm"); if (x) x.focus(); return }
+    if (k === "shnext") { shNext(1); return }
+    if (k === "shmv") { shNext(+v); return }
+    if (k === "shcol") { shCol(+v); return }
+    if (k === "shcolt") { shCol(0, +v); return }
+    if (k === "rvcol") { rvCol(+v); return }
+  }, true);
+  document.addEventListener("change", e => { const t = e.target; if (t && t.matches && t.matches('.fg-tb [data-fg="iv"]')) { const c = ctx(); if (!c) return; c.X.fsI = t.value; c.E.v29.draw() } }, true);
+  document.addEventListener("input", e => { const t = e.target; if (t && t.matches && t.matches(".fg-q")) { const c = ctx(); if (!c) return; c.X.fsQ = t.value; S.focus = "filter"; soft() } }, true);
+  document.addEventListener("submit", e => {
+    const f = e.target.closest && e.target.closest("[data-fgf]"); if (!f) return; e.preventDefault(); e.stopPropagation(); const c = ctx(); if (!c) return;
+    if (f.dataset.fgf === "ins") { const v = String(f.elements.t.value || ""); const m = /^(\d{1,2}):(\d{2})/.exec(v); if (!m) return; insCol(+m[1] * 60 + +m[2]); return }
+    if (f.dataset.fgf === "cmt") { if (setCmt(f.dataset.k, f.elements.c.value)) { closePop(); soft(); toast("Comment added (files with the values)") } }
+  }, true);
+  document.addEventListener("copy", e => { if (!gridOn() || S.ed || S.dd || S.focus !== "grid") return; const text = S.copyText != null ? S.copyText : copyRange(false); S.copyText = null; if (text != null && e.clipboardData) { e.clipboardData.setData("text/plain", text); e.preventDefault(); e.stopImmediatePropagation() } }, true);
+  document.addEventListener("paste", e => { if (!gridOn() || S.ed || S.dd || S.focus !== "grid") return; e.preventDefault(); e.stopImmediatePropagation(); clearTimeout(S.pasteT); S.pasteT = null; const text = e.clipboardData ? e.clipboardData.getData("text/plain") : ""; pasteText(text) }, true);
+
+  document.addEventListener("keydown", e => {
+    if (document.querySelector(".smod-bg")) return;
+    const k = e.key, mod = e.ctrlKey || e.metaKey, tg = e.target;
+    const stop = () => { e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation && e.stopImmediatePropagation() };
+    /* popovers */
+    if (S.pop) { if (k === "Escape") { stop(); closePop(); const w = document.getElementById("fswrap"); if (w) w.focus({ preventScroll: true }); return } if (S.pop.kind === "cmt" && k === "Enter" && mod) { stop(); const f = S.pop.el.querySelector("form"); if (f) f.requestSubmit ? f.requestSubmit() : f.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true })); return } if (S.pop.el.contains(tg)) return }
+    /* touch sheet with a hardware keyboard */
+    if (S.sh) { if (k === "Escape") { stop(); if (shSaveCm()) { closeSheet(); refreshAfterSheet() } return } const r = RW(S.sh.r); const inTa = tg && tg.matches && tg.matches("textarea"); if (!inTa && r && (r.f.t === "num" || r.f.t === "bp")) { if (/^[0-9./]$/.test(k)) { stop(); const b = document.querySelector(`.fg-kp [data-v="${k === "/" && r.f.t !== "bp" ? "." : k}"]`); if (b) b.click(); return } if (k === "Backspace") { stop(); const b = document.querySelector('.fg-kp [data-v="bs"]'); if (b) b.click(); return } } if (k === "Enter" && !(inTa && e.shiftKey)) { stop(); shNext(1); return } if (inTa) return }
+    if (!gridOn()) return;
+    /* global flowsheet keys */
+    if (mod && !e.altKey && (k === "s" || k === "S")) { stop(); if (S.ed && !commitEdit(null)) return; if (S.dd) ddAccept(null); const c = ctx(); if (c && npend(c)) doFile(); return }
+    if (e.altKey && !mod && e.code === "KeyI") { stop(); const c = ctx(); if (c) insCol(c.K.nowMin()); return }
+    /* dropdown */
+    if (S.dd && tg && tg.matches && tg.matches(".fg-ddq")) {
+      const L = ddList();
+      if (k === "ArrowDown") { stop(); S.dd.hi = Math.min(L.length - 1, S.dd.hi + 1); ddPaint(); return }
+      if (k === "ArrowUp") { stop(); S.dd.hi = Math.max(0, S.dd.hi - 1); ddPaint(); return }
+      if (k === "Enter" || k === "Tab") { stop(); ddAccept(e.shiftKey ? "up" : "down"); return }
+      if (k === "Escape") { stop(); cancelDD(); return }
+      if ((k === "Delete" || k === "Backspace") && !S.dd.q) { stop(); const at = { r: S.dd.r, t: S.dd.t }; S.dd = null; closeDDel(); const c = ctx(); S.a = at; commitVal(c, RW(at.r), "", "stay"); return }
+      if (S.dd.multi && k === " ") { stop(); if (L[S.dd.hi]) ddPick(L[S.dd.hi].o); return }
+      if (/^[1-9]$/.test(k) && S.dd.nodig && !S.dd.q) { stop(); const r = RW(S.dd.r); const o = r.f.o[+k - 1]; if (o) ddPick(o, "down"); return }
+      if (k === "ArrowLeft" || k === "ArrowRight") { if (!S.dd.q) { stop(); if (S.dd.multi && S.dd.set.size) ddAccept(k === "ArrowLeft" ? "left" : "right"); else { cancelDD(); move(0, k === "ArrowLeft" ? -1 : 1) } } return }
+      return;
+    }
+    /* in-cell editor */
+    if (S.ed && tg && tg.matches && tg.matches(".fg-inp")) {
+      if (k === "Enter") { stop(); commitEdit(e.shiftKey ? "up" : "down"); return }
+      if (k === "Tab") { stop(); commitEdit(e.shiftKey ? "up" : "down"); return }
+      if (k === "Escape") { stop(); cancelEdit(); return }
+      if (k === "ArrowDown" || k === "ArrowUp") { stop(); commitEdit(k === "ArrowDown" ? "down" : "up"); return }
+      if ((k === "ArrowLeft" || k === "ArrowRight") && S.ed.mode === "enter") { stop(); commitEdit(k === "ArrowLeft" ? "left" : "right"); return }
+      return;
+    }
+    /* grid navigation */
+    if (S.focus !== "grid" || !(tg && tg.closest && tg.closest("#fswrap"))) return;
+    if (!S.a && S.M) { fixSel(S.M); paint() }
+    if (!S.a) return;
+    const sh = e.shiftKey;
+    if (k === "ArrowDown" || k === "ArrowUp" || k === "ArrowLeft" || k === "ArrowRight") { stop(); if (e.altKey && k === "ArrowDown") { startEdit(null, "edit"); return } const dr = k === "ArrowDown" ? 1 : k === "ArrowUp" ? -1 : 0, dc = k === "ArrowRight" ? 1 : k === "ArrowLeft" ? -1 : 0; if (mod) { const base = sh ? (S.e || S.a) : S.a; const i = dr ? (dr > 0 ? S.M.R.length - 1 : 0) : rI(base.r), j = dc ? (dc > 0 ? S.M.cols.length - 1 : 0) : cI(base.t); sel(S.M.R[i], S.M.cols[j], sh); return } move(dr, dc, sh); return }
+    if (k === "Tab") { stop(); step(sh ? "up" : "down"); return }
+    if (k === "Enter") { stop(); if (sh) { step("up"); return } startEdit(null, "edit"); return }
+    if (k === "Home" || k === "End") { stop(); sel(mod ? S.M.R[k === "Home" ? 0 : S.M.R.length - 1] : S.a.r, S.M.cols[k === "Home" ? 0 : S.M.cols.length - 1], sh); return }
+    if (k === "F2") { stop(); if (sh) cmtPop(); else startEdit(null, "edit"); return }
+    if (k === "Escape") { stop(); S.e = null; closeTip(); paint(); return }
+    if (k === "Delete" || k === "Backspace") { stop(); clearRange(); return }
+    if (mod && !e.altKey) {
+      const l = k.toLowerCase();
+      if (l === "c" || l === "x") { e.stopPropagation(); e.stopImmediatePropagation(); S.copyText = copyRange(l === "x"); setTimeout(() => { S.copyText = null }, 300); return }
+      if (l === "v") { e.stopPropagation(); e.stopImmediatePropagation(); clearTimeout(S.pasteT); S.pasteT = setTimeout(() => { if (S.pasteT) { S.pasteT = null; pasteText("") } }, 80); return }
+      if (l === "z") { stop(); undo(sh); return }
+      if (l === "y") { stop(); undo(true); return }
+      if (l === "d") { stop(); fillKey("down"); return }
+      if (l === "r") { stop(); fillKey("right"); return }
+      if (l === "a") { stop(); S.a = { r: S.M.R[0], t: S.M.cols[0] }; S.e = { r: S.M.R[S.M.R.length - 1], t: S.M.cols[S.M.cols.length - 1] }; paint(); return }
+      return;
+    }
+    if (k === " ") { stop(); startEdit(null, "edit"); return }
+    if (k.length === 1 && !e.altKey) { stop(); startEdit(k, "enter"); return }
+  }, true);
+  window.addEventListener("resize", () => { if (S.dd || S.pop || S.tip) placeFloat() });
+  window.addEventListener("scroll", () => { if (S.dd || S.pop || S.tip) placeFloat() }, { passive: true });
+
+  /* ---------- hook into the EHR: own the "flow" renderer on desktop/iPad (window.__EHXF is set later by v29) ---------- */
+  {
+    const chain = []; let cur = null; const own = window.__EHXF; if (typeof own === "function") chain.push(own);
+    const W = k => { if (k === "flow" && !S.off && KK() && !rover()) return render; const i = cur == null ? chain.length - 1 : cur - 1; if (i < 0) return null; const sv = cur; cur = i; try { return chain[i](k) } finally { cur = sv } };
+    try { Object.defineProperty(window, "__EHXF", { configurable: true, get: () => W, set: f => { if (typeof f === "function" && f !== W) chain.push(f) } }) } catch (e) { window.__EHXF = W }
+    const POST = window.__EHXpost = window.__EHXpost || [];
+    POST.push(() => { try { if (!document.querySelector(".fg34")) { closeFloat(); if (S.sh && S.sh.mode === "grid") closeSheet() } if (S.sh && S.sh.mode === "rv" && !document.querySelector("#ehm .rvfh")) closeSheet(); rvDecorate() } catch (e) { } });
+  }
+  extendTemplate();
+
+  /* ---------- public API (patches/fs-API.md) ---------- */
+  function apiCtx(o) { const c = ctx(); if (!c) return null; if (o && o.pid && o.pid !== c.p.id) return null; return c }
+  window.__vxFS = {
+    version: "v34",
+    rows: () => { const K = KK(), E = EH(); if (!K || !E) return []; return E.FS.flatMap(g => g.rows.map(rr => K.ROW[rr[0]]).filter(Boolean).map(r => ({ id: r.id, label: r.l, group: g.g, type: r.f.t, unit: r.f.u || "", min: r.f.mn, max: r.f.mx, options: r.f.o ? r.f.o.slice() : null }))).concat(Object.values(VIRT).map(r => ({ id: r.id, label: r.l, group: r.g, type: "calc", unit: r.f.u || "", virtual: true }))) },
+    validate: (rid, v) => { const r = RW(rid); const x = validate(r, v, true); return { ok: x.ok, value: x.v, msg: x.msg || "" } },
+    get: (rid, t, o) => { const c = apiCtx(o); if (!c) return undefined; o = o || {}; const r = RW(rid); if (isCalc(r)) return calcV(c, rid, +t); return o.filed ? filedV(c, rid, +t) : curV(c, rid, +t) },
+    calc: (rid, t) => { const c = ctx(); return c ? calcV(c, rid, +t) : undefined },
+    set: (rid, t, v, o) => { const c = apiCtx(o); if (!c) return { ok: false, msg: "No open patient" }; const r = RW(rid); const x = validate(r, v, true); if (!x.ok) return { ok: false, msg: x.msg }; change(c, () => putV(c, rid, +t, x.v)); if (!(o && o.quiet)) soft(); return { ok: true, value: x.v } },
+    setMany: (t, vals, o) => { const c = apiCtx(o); if (!c) return { ok: false, msg: "No open patient", bad: [] }; const bad = []; change(c, () => Object.entries(vals || {}).forEach(([rid, v]) => { const x = validate(RW(rid), v, true); if (!x.ok) bad.push({ id: rid, msg: x.msg }); else putV(c, rid, +t, x.v) })); if (!(o && o.quiet)) soft(); return { ok: !bad.length, bad } },
+    pending: () => { const c = ctx(); return c ? JSON.parse(JSON.stringify(c.X.pend)) : {} },
+    comment: (rid, t, text) => { const ok = setCmt(key(rid, +t), text); if (ok) soft(); return ok },
+    comments: () => { const c = ctx(); if (!c) return {}; const o = {}; Object.entries(c.p.fsc || {}).forEach(([k, v]) => o[k] = v.c); Object.entries(pc(c.X)).forEach(([k, v]) => { if (v) o[k] = v; else delete o[k] }); return o },
+    file: () => { const c = ctx(); if (!c || !npend(c)) return 0; const n = npend(c); doFile(); return n },
+    discard: () => { const c = ctx(); if (!c) return; change(c, () => { Object.keys(c.X.pend).forEach(k => delete c.X.pend[k]); const m = pc(c.X); Object.keys(m).forEach(k => delete m[k]) }); soft() },
+    fileNow: (t, vals) => { const E = EH(), K = KK(); if (!E || !K) return false; const ok = {}; Object.entries(vals || {}).forEach(([rid, v]) => { const x = validate(RW(rid), v, true); if (x.ok) ok[rid] = x.v }); E.upd(q => K.fileVals(q, +t, ok)); E.v29.draw(); notify(); return Object.keys(ok).length },
+    lastFiled: (rid, before) => { const c = ctx(); if (!c) return null; const x = lastFiled(c, rid, before == null ? null : +before); return x ? { t: x.t, v: x.v } : null },
+    cols: () => S.M ? S.M.cols.slice() : [],
+    nowCol: () => S.M ? S.M.nowCol : null,
+    select: (rid, t) => { if (!S.M) return false; if (S.M.R.indexOf(rid) < 0 || S.M.cols.indexOf(+t) < 0) return false; S.focus = "grid"; sel(rid, +t); const w = document.getElementById("fswrap"); if (w) w.focus({ preventScroll: true }); return true },
+    selection: () => { const rc = rect(); return { active: S.a ? Object.assign({}, S.a) : null, cells: cellsOf(rc), editing: !!(S.ed || S.dd), sheet: S.sh ? { r: S.sh.r, t: S.sh.t, mode: S.sh.mode } : null } },
+    copyPrevious: () => copyPrev(), insertColumn: min => insCol(min == null ? KK().nowMin() : min), undo: () => undo(false), redo: () => undo(true), groupWDL: g => groupWDL(g),
+    onChange: fn => { if (typeof fn === "function") S.subs.push(fn); return () => { S.subs = S.subs.filter(f => f !== fn) } },
+    classic: on => { S.off = !!on; const E = EH(); if (E && E.X.act === "flow") E.v29.draw(); return S.off },
+    _S: S
+  };
+})();
+/* </v34-fsgrid-js> */
 /* ---------- request access (invite-only mode), invite codes, sample questions ---------- */
 const accessMode=()=>(CFG.c&&CFG.c.access)||(SRV.signups===false?"closed":"open");
 const PRICE_OPTS=[["","Prefer not to say"],["0","I'd only use it free"],["lt20","Under $20 a month"],["20-39","$20–39 a month"],["40-59","$40–59 a month"],["60+","$60+ a month"],["unsure","Not sure yet"]];
