@@ -3779,6 +3779,169 @@ body.vxr-ddon .vxr-m{max-width:1240px}
 .vxr-toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(20px);background:#103a4f;color:#fff;padding:10px 16px;border-radius:10px;font-weight:700;opacity:0;pointer-events:none;transition:.2s;z-index:90;max-width:calc(100vw - 32px);box-sizing:border-box}.vxr-toast.on{opacity:1;transform:translateX(-50%)}
 @media(max-width:640px){.vxr-m{padding:12px}.vxr-ban{padding:12px 14px}.vxr-ban-t{font-size:20px}.vxr-row{flex-wrap:wrap;gap:8px}.vxr-row .vxr-chip{min-width:0}.vxr-rt{flex-basis:calc(100% - 4px)}.vxr-rf{width:100%}.vxr-t{font-size:15px}.vxr-ban-r{width:100%}.vxr-ban-r .vxr-btn{width:100%}.vxr-h{gap:8px}.vxr-pick select{max-width:46vw}}
 /* </v37-regs-css> */
+/* <v38-eorders-css> */
+/* v38 unified order entry: main Orders activity (EHR light palette) + Orders tab on the EHR side panel (side-panel tokens) */
+.eo{--eo-ink:#14232b;--eo-mute:#5b6f79;--eo-line:#c9d6dd;--eo-bg:#fff;--eo-soft:#f5f8fa;--eo-acc:#103a4f;--eo-red:#b3261e;--eo-amb:#8a5a00;--eo-ok:#2f7a4f;min-width:0}
+.vxsb .eo{--eo-ink:var(--sbi);--eo-mute:var(--sbm);--eo-line:var(--sbl);--eo-bg:var(--sb);--eo-soft:var(--sbs);--eo-acc:var(--sbh);--eo-red:var(--sbr);--eo-ok:var(--sbg)}
+html[data-theme="dark"] .vxsb .eo{--eo-amb:#f3c26b;--eo-acc:#2d5b78}
+.eo *{box-sizing:border-box}
+.eo-entry{display:flex;flex-direction:column;gap:10px;min-width:0}
+.eo-main{background:#fff;border:1px solid var(--eh-line,#c9d6dd);border-radius:8px;padding:12px;margin:0 0 14px;max-width:980px}
+.eo-sw{position:relative;display:flex;align-items:center}
+.eo-si{position:absolute;left:11px;top:50%;transform:translateY(-50%);color:var(--eo-mute);display:flex;pointer-events:none}
+.eo-q{width:100%;min-height:44px;border:2px solid var(--eo-acc);border-radius:8px;background:var(--eo-bg);color:var(--eo-ink);font:inherit;font-size:15.5px;padding:0 12px 0 36px}
+.eo-q:focus{outline:3px solid #f8c27a;outline-offset:0}
+.eo-q::placeholder{color:var(--eo-mute);font-size:14px}
+.eo-cats{display:flex;flex-wrap:wrap;gap:6px}
+.eo-cat{display:inline-flex;align-items:center;gap:5px;min-height:32px;border:1px solid var(--eo-line);background:var(--eo-soft);color:var(--eo-ink);border-radius:16px;padding:3px 10px 3px 4px;font:inherit;font-size:13px;cursor:pointer}
+.eo-cat.on{background:var(--eo-acc);border-color:var(--eo-acc);color:#fff}
+.eo-cat.on .eo-ic{background:rgb(255 255 255/.18);color:#fff}
+.eo-ic{flex:none;display:inline-grid;place-items:center;width:26px;height:26px;border-radius:6px;background:#e6eef3;color:#2c3e57}
+.eo-cat .eo-ic{width:22px;height:22px;border-radius:11px}
+.eo-ic.c-med{background:#e3eef8;color:#245f8c}.eo-ic.c-iv{background:#dff2f1;color:#1f6f6c}.eo-ic.c-lab{background:#efe8f7;color:#62408f}.eo-ic.c-img{background:#e7ebf2;color:#3d5271}
+.eo-ic.c-nurse{background:#e2f2e8;color:#246b45}.eo-ic.c-resp{background:#e2eff7;color:#2c6a8f}.eo-ic.c-ther{background:#f3eddd;color:#6f5520}.eo-ic.c-diet{background:#f8ebdf;color:#8b4f1c}
+.eo-ic.c-consult{background:#eceff1;color:#46545e}.eo-ic.c-code{background:#f8e4e6;color:#9b2c3a}.eo-ic.c-set{background:#e4e8ef;color:#2c3e57}
+html[data-theme="dark"] .vxsb .eo-ic{filter:saturate(.9) brightness(.95)}
+.eo-rw:empty{display:none}
+.eo-res{list-style:none;margin:0;padding:0;display:grid;gap:4px;max-height:min(52vh,420px);overflow:auto;border:1px solid var(--eo-line);border-radius:8px;padding:4px;background:var(--eo-bg)}
+.eo-r{width:100%;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:10px;align-items:center;text-align:left;border:1px solid transparent;border-radius:6px;background:none;color:var(--eo-ink);font:inherit;padding:6px 8px;cursor:pointer;min-height:44px}
+.eo-r:hover,.eo-r.hi,.eo-r:focus-visible{background:var(--eo-soft);border-color:var(--eo-line)}
+.eo-r:focus-visible{outline:2px solid #f8c27a}
+.eo-rt{min-width:0;display:grid}
+.eo-rt b{font-weight:600;font-size:14px;overflow-wrap:anywhere}
+.eo-rt small{color:var(--eo-mute);font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.eo-ty{font-size:11.5px;color:var(--eo-mute);border:1px solid var(--eo-line);border-radius:10px;padding:1px 7px;white-space:nowrap}
+.eo-none,.eo-e{color:var(--eo-mute);font-size:13.5px;margin:4px 0}
+/* composer */
+.eo-cmp{border:1px solid var(--eo-acc);border-left:5px solid var(--eo-acc);border-radius:8px;background:var(--eo-bg);padding:10px 12px 12px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.eo-ch{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:10px;align-items:center}
+.eo-ch b{font-size:15.5px;overflow-wrap:anywhere}.eo-ch small{display:block;color:var(--eo-mute);font-size:12.5px}
+.eo-x{border:0;background:none;color:var(--eo-mute);cursor:pointer;padding:6px;border-radius:6px;min-width:36px;min-height:36px;display:inline-grid;place-items:center}
+.eo-x:hover{background:var(--eo-soft);color:var(--eo-ink)}
+.eo-body{display:flex;flex-direction:column;gap:10px;min-width:0}
+.eo-f{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--eo-mute);min-width:0}
+.eo-f>span{font-weight:600}
+.eo-req>span::after{content:" *";color:var(--eo-red)}
+.eo-f input,.eo-f select{width:100%;min-width:0;min-height:40px;border:1px solid var(--eo-line);border-radius:6px;background:var(--eo-bg);color:var(--eo-ink);font:inherit;font-size:14.5px;padding:0 9px}
+.eo-f input:focus,.eo-f select:focus{outline:2px solid #f8c27a;outline-offset:0;border-color:var(--eo-acc)}
+.eo-g2,.eo-g3{display:grid;gap:10px;min-width:0}
+.eo-g2{grid-template-columns:repeat(2,minmax(0,1fr))}.eo-g3{grid-template-columns:minmax(0,1fr) minmax(0,.8fr) minmax(0,1fr)}
+.eo-chips{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.eo-chip{border:1px solid var(--eo-line);background:var(--eo-soft);color:var(--eo-ink);border-radius:16px;padding:4px 11px;font:inherit;font-size:13px;min-height:32px;cursor:pointer}
+.eo-chip.on{background:var(--eo-acc);border-color:var(--eo-acc);color:#fff;font-weight:600}
+.eo-fsel{width:auto!important;min-height:32px!important;border-radius:16px!important;font-size:13px!important;padding:0 8px!important;max-width:150px}
+.eo-seg{display:flex;border:1px solid var(--eo-line);border-radius:6px;overflow:hidden;min-height:40px}
+.eo-seg button{flex:1 1 0;min-width:0;border:0;border-right:1px solid var(--eo-line);background:var(--eo-soft);color:var(--eo-ink);font:inherit;font-size:13.5px;font-weight:600;cursor:pointer;padding:0 4px}
+.eo-seg button:last-child{border-right:0}.eo-seg button.on{background:var(--eo-acc);color:#fff}
+.eo-seg button[data-v="STAT"].on{background:#b3261e}
+.eo-st{display:flex;align-items:center;gap:6px;color:var(--eo-ink);font-weight:400}
+.eo-st input{min-height:40px}.eo-st .eo-hd{width:52px;flex:none}.eo-st .eo-tm{width:76px;flex:none}
+.eo-lk{border:0;background:none;color:#1d5670;text-decoration:underline;cursor:pointer;font:inherit;font-size:13.5px;padding:6px 2px;min-height:32px}
+.vxsb .eo-lk{color:#1d5670}html[data-theme="dark"] .vxsb .eo-lk{color:#8fd0ee}
+.eo-one{margin:0;font-size:13.5px;color:var(--eo-mute)}.eo-one b{color:var(--eo-ink)}
+.eo-ck{display:flex;gap:8px;align-items:flex-start;font-size:13.5px;color:var(--eo-ink);cursor:pointer}
+.eo-ck input{width:20px;height:20px;flex:none;margin:1px 0 0}
+.eo-ck small{display:block;color:var(--eo-mute);font-size:12px}
+.eo-rb{border:1px solid var(--eo-line);border-radius:6px;padding:8px 10px;background:var(--eo-soft);flex-wrap:wrap}
+.eo-rb.need{border-color:#d08a00;background:#fff8e6}html[data-theme="dark"] .vxsb .eo-rb.need{background:#3a2f12}
+.eo-more{border-top:1px solid var(--eo-line);padding-top:6px}
+.eo-more summary{cursor:pointer;font-size:13.5px;font-weight:600;color:var(--eo-ink);padding:4px 0;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.eo-more summary small{font-weight:400;color:var(--eo-mute)}
+.eo-more .eo-g2{margin-top:6px}
+.eo-cta{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.eo-cta .btn2{min-height:42px}
+.eo-acc[aria-disabled="true"]{opacity:.55;cursor:not-allowed}
+.eo-miss{flex-basis:100%;color:var(--eo-red);font-size:13px;font-weight:600}
+.eo-miss.shake{animation:eoSh .3s}
+@keyframes eoSh{0%,100%{transform:none}30%{transform:translateX(-4px)}70%{transform:translateX(4px)}}
+@media (prefers-reduced-motion:reduce){.eo-miss.shake{animation:none}}
+.eo-ready{flex-basis:100%;display:flex;gap:6px;align-items:center;color:var(--eo-ok);font-size:13px;font-weight:600;overflow-wrap:anywhere}
+.eo-fine{margin:0;font-size:12px;color:var(--eo-mute)}
+.eo-sd{margin:0;font-size:13.5px;color:var(--eo-mute)}
+.eo-setl{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.eo-setl .eo-ck{align-items:center;border:1px solid var(--eo-line);border-radius:6px;padding:6px 8px;background:var(--eo-soft);min-height:42px}
+.eo-setl .eo-ic{width:22px;height:22px}
+/* BPA-style alerts */
+.eo-bpa{display:grid;gap:8px}
+.eo-al{border:1px solid var(--eo-line);border-left:5px solid #5b7fa3;border-radius:6px;padding:8px 10px;background:#f3f7fb;color:#14232b;font-size:13.5px;display:grid;gap:6px}
+.eo-al b{display:flex;gap:6px;align-items:center}.eo-al p{margin:0}
+.eo-al.eo-stop{border-left-color:#b3261e;background:#fdeceb}.eo-al.eo-stop b{color:#8c1d16}
+.eo-al.eo-warn{border-left-color:#d08a00;background:#fff6e0}.eo-al.eo-warn b{color:#7a4d00}
+.eo-al .eo-f{color:#3c4c55}.eo-al .eo-f select{background:#fff;color:#14232b}
+.eo-lab{font-size:12.5px;color:#3c4c55;font-weight:600}
+/* pending (cart) */
+.eo-pend{border:1px solid var(--eo-line);border-radius:8px;background:var(--eo-soft);padding:10px 12px;display:flex;flex-direction:column;gap:8px}
+.eo-pend h4{margin:0;display:flex;align-items:center;gap:6px;font-size:14px;color:var(--eo-ink)}
+.eo-pend h4 i{font-style:normal;background:var(--eo-acc);color:#fff;border-radius:10px;padding:0 7px;font-size:12px;line-height:18px}
+.eo-pend h4 .eo-lk{margin-left:auto;font-weight:400}
+.eo-pend.eo-empty{background:none;border-style:dashed}
+.eo-pl{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.eo-pl li{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:8px;align-items:center;background:var(--eo-bg);border:1px solid var(--eo-line);border-left:4px solid var(--eo-ok);border-radius:6px;padding:4px 4px 4px 8px}
+.eo-pl li.bad{border-left-color:var(--eo-red)}
+.eo-pt{text-align:left;border:0;background:none;color:var(--eo-ink);font:inherit;cursor:pointer;padding:4px 0;min-width:0;min-height:40px}
+.eo-pt b{display:block;font-size:13.5px;font-weight:600;overflow-wrap:anywhere}.eo-pt small{display:block;color:var(--eo-mute);font-size:12px}.eo-pt em{color:var(--eo-red);font-style:normal;font-weight:600}
+.eo-sign{justify-content:center;min-height:46px;font-size:15px!important;width:100%}
+.eo-sign[aria-disabled="true"]{opacity:.55}
+.eo-msg{margin:0;color:var(--eo-red);font-size:13px;font-weight:600}
+/* active orders (main) */
+.eo-h3{margin:4px 0 8px;font-size:15px}
+.eo-tbl .eo-gh th{background:#f0f4f6;font-size:12.5px;color:#26363f;display:table-cell}
+.eo-tbl .eo-gh th .eo-ic{width:20px;height:20px;vertical-align:middle;margin-right:4px}
+.eo-tbl .eo-gh i{font-style:normal;color:#5b6f79;font-weight:400}
+.eo-tbl td:first-child{overflow-wrap:anywhere}
+.eo-pri{display:inline-block;background:#b3261e;color:#fff;border-radius:3px;font-size:10.5px;font-weight:700;padding:1px 5px;vertical-align:1px;letter-spacing:.03em}
+.eo-hd summary,.eo-dc summary{display:flex;gap:6px;align-items:center}
+.eo-hist{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:4px;font-size:13px}
+.eo-hist li{display:grid;grid-template-columns:92px minmax(0,1fr);gap:8px;border-top:1px solid var(--eo-line,#e3eaee);padding:4px 0}
+.eo-hist time{color:var(--eo-mute,#5b6f79);font-variant-numeric:tabular-nums}.eo-hist small{color:var(--eo-mute,#5b6f79)}
+.eo-lbl{margin-top:12px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* flowsheet banner */
+.eo-fsb{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;background:#eef5f0;border:1px solid #cfe3d6;border-radius:6px;padding:6px 10px;margin:0 0 8px;font-size:13px;color:#14232b}
+.eo-fsb>span:first-of-type{font-weight:600}
+.eo-fsi{background:#fff;border:1px solid #cfe3d6;border-radius:12px;padding:2px 9px}.eo-fsi.over{border-color:#d9a3a0;background:#fdeceb}
+/* side panel */
+@media (min-width:761px){.vxsb.eo-on .vxsb-p{width:min(440px,92vw)}}
+@media (min-width:1100px){html.vxsb-on.eo-sbw #app{margin-right:min(440px,92vw)}html.vxsb-on.eo-sbw body.ehrmode .ehw{right:min(440px,92vw);transition:right .2s}}
+/* (the EHR is position:fixed, so the sidebar's #app margin does not move it; with the Orders tab open on a wide screen it makes room) */
+.eo-panel{display:flex;flex-direction:column;gap:12px}
+.eo-panel .vxsb-sub{margin:0}
+.eo-panel .eo-g3{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.eo-panel .eo-g3 .eo-f:last-child{grid-column:1/-1}
+.eo-panel .eo-cats{gap:5px}
+.eo-panel .eo-cat{font-size:12.5px;min-height:30px}
+.eo-panel .eo-res{max-height:min(46vh,380px)}
+.eo-panel .btn2{padding:9px 14px;font-size:14px}
+.eo-act h4{margin:0 0 6px;font-size:14px;display:flex;gap:6px;align-items:center}
+.eo-act h4 i,.eo-grp summary i{font-style:normal;color:var(--sbm);font-weight:400}
+.eo-grp{border:1px solid var(--sbl);border-radius:6px;background:var(--sbs);margin-bottom:6px}
+.eo-grp summary{cursor:pointer;display:flex;gap:6px;align-items:center;padding:6px 8px;font-size:13.5px;font-weight:600;min-height:40px}
+.eo-grp summary .eo-ic{width:22px;height:22px}
+.eo-al2{list-style:none;margin:0;padding:0 6px 6px;display:grid;gap:4px}
+.eo-al2 li{background:var(--sb);border:1px solid var(--sbl);border-radius:6px;padding:5px 8px 2px;display:grid;gap:0}
+.eo-ot b{font-size:13.5px;font-weight:600;overflow-wrap:anywhere}.eo-ot small{display:block;color:var(--sbm);font-size:12px;overflow-wrap:anywhere}
+.eo-ot .sc-vo{display:block;margin-top:2px}
+.eo-oa{display:flex;flex-wrap:wrap;gap:0 12px}.eo-oa .eo-lk{font-size:12.5px;min-height:30px;padding:4px 2px}
+.eo-hh{padding-bottom:4px}.eo-hh .eo-hist{padding:0 8px}
+.eo-hh .eo-e{padding:0 8px}
+/* read-back sheet and modal host */
+.eo-rbl{margin:8px 0 12px;padding-left:20px;display:grid;gap:8px}
+.eo-mod .eo-modal{margin-top:6px}
+@media (max-width:760px){
+  .eo-main{padding:10px;border-radius:6px}
+  .eo-g2{grid-template-columns:minmax(0,1fr)}
+  .eo-g3{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.eo-g3 .eo-f:last-child{grid-column:1/-1}
+  .eo-tbl thead{display:none}
+  .eo-tbl,.eo-tbl tbody,.eo-tbl tr,.eo-tbl td{display:block;width:100%}
+  .eo-tbl tr{border-top:1px solid #e3eaee;padding:6px 0}.eo-tbl td{border:0;padding:2px 8px}
+  .eo-tbl .eo-gh th{display:block;padding:6px 8px}
+  .eo-cta .btn2{flex:1 1 auto;justify-content:center}
+  .eo-hist li{grid-template-columns:76px minmax(0,1fr)}
+}
+.eo-st{flex-wrap:wrap}
+.eo-panel .eo-g2{grid-template-columns:minmax(0,1fr)}
+/* </v38-eorders-css> */
+.areqp{border:1px solid var(--line,#cfd8e0);border-radius:10px;padding:10px 14px 4px;margin:6px 0 10px}.areqp legend{font-weight:700;padding:0 6px}.agrid input[type=date],.agrid input[type=month]{width:100%;min-width:0;max-width:100%;box-sizing:border-box;-webkit-appearance:none;appearance:none}.agrid .aip{min-width:0;max-width:100%}
 </style>
 
 <div id="app"></div>
@@ -3790,7 +3953,7 @@ const BANK = (function(e){try{const P=">oVO^cd@ge#lJ'~wUTDiEY+LZx-K&hkt(/F0;G`N.
 let HIDQ=new Set();const CFG={c:null,bypass:false};try{const c=JSON.parse(localStorage.getItem("ns.cfg")||"null");if(c&&typeof c==="object"){CFG.c=c;HIDQ=new Set(c.hideQ||[])}}catch(e){}
 const featOn=k=>!CFG.c||!CFG.c.feat||CFG.c.feat[k]!==false;
 
-const APPV="4c4de7fedb0e34993252b5fb96a09a62bf1219ecc0c5b2c9f8bcf46887634857";
+const APPV="d51e346e2e4065b4f373cf5d32dd842c00e1c42f721390470c07a6e091739588";
 const CATS={
   MOC:{n:"Management of Care",lo:15,hi:21,w:18},
   SIC:{n:"Safety and Infection Prevention and Control",lo:10,hi:16,w:13},
@@ -6070,11 +6233,14 @@ function renderSignin(admin){if(SRV.me&&!admin){location.hash="#progress";return
   const f=app.querySelector(uid?"#f-password":"#f-email");if(f)try{f.focus({preventScroll:true})}catch(e){}}
 document.addEventListener("click",e=>{const b=e.target.closest&&e.target.closest("[data-wsxz]");if(!b)return;const o=["md","lg","xl"];const c=store.get(K2.text,"md");store.set(K2.text,o[(o.indexOf(c)+1)%o.length]);applyPrefs()});
 document.addEventListener("submit",e=>{const f=e.target;if(!f||!f.dataset||f.dataset.form!=="signin")return;const r=document.getElementById("wslrem");if(!r)return;try{if(r.checked)localStorage.setItem("nclexsim.v1.rememberid",(f.querySelector("#f-email")||{}).value||"");else localStorage.removeItem("nclexsim.v1.rememberid")}catch(x){}},true);
+function signupProfileFields(){const sel=(label,name,opts)=>`<label class="afld" for="f-${name}"><span>${label}</span><select id="f-${name}" name="${name}" required>${opts}</select></label>`;
+  return `<div class="agrid">${sel("Nursing program","program",progOpts(""))}${fld("School","school",{req:1,max:120,ac:"organization"})}${fld("Expected graduation","gradDate",{req:1,type:"month"})}<label class="afld" for="f-examDate"><span>Planned NCLEX date</span><span class="aip"><input id="f-examDate" name="examDate" type="date" required></span><small><label class="achk"><input type="checkbox" data-nodate> Not scheduled yet</label></small></label>${fld("State you'll be licensed in","state",{req:1,max:40,list:"usstates"})}${fld("Phone","phone",{opt:1,type:"tel",max:30,ac:"tel",im:"tel"})}</div>${statesList}`}
+document.addEventListener("change",e=>{const c=e.target.closest&&e.target.closest("[data-nodate]");if(!c)return;const f=c.closest("form");const d=f&&f.elements.examDate;if(!d)return;d.required=!c.checked;d.disabled=c.checked;if(c.checked)d.value=""});
 function renderSignup(){if(SRV.me){location.hash="#progress";return}
   if(!SRV.signups){wsxPage(`<div class="acard"><h1>Create an account</h1><p>New sign-ups are closed right now. Ask the site administrator to create an account for you.</p><p class="alinks"><a href="#signin">Sign in</a></p></div>`);return}
   wsxPage(`<div class="acard"><h1>Create your account</h1><p class="note">Free. Your progress saves to your account so you can study on your phone, tablet, and computer. Anything you've already done in this browser comes with you.</p>
    <form class="aform" data-form="signup">${fld("Full name","name",{req:1,max:80,ac:"name"})}${fld("Email","email",{type:"email",req:1,max:254,ac:"email",im:"email"})}${fld("Password","password",{type:"password",req:1,min:8,max:200,ac:"new-password",hint:"At least 8 characters. A short phrase is easy to remember and hard to guess."})}
-    <details class="adet"><summary>About your program <em>optional</em></summary>${profileFields({})}</details>
+    <fieldset class="adet areqp"><legend>About your program</legend><p class="note">Required. This sets up your study plan and NCLEX countdown.</p>${signupProfileFields()}</fieldset>
     <label class="achk"><input type="checkbox" name="agree" required> <span>I agree to the <a href="#terms" target="_blank">Terms of Use</a> and <a href="#privacy" target="_blank">Privacy Policy</a>.</span></label>
     ${formMsg()}<button class="btn2" type="submit">Create account</button></form><p class="alinks">Already have one? <a href="#signin">Sign in</a></p></div>`)}
 function renderForgot(){wsxPage(`<div class="acard"><h1>Reset your password</h1><p class="note">Enter the email on your account. The site administrator will get your request and send you a secure reset link.</p>
@@ -9131,6 +9297,670 @@ zolpidem|Sedative-hypnotic|PO||Ambien`;
     if(fsKeydown(e))return;
     if((e.key==="Enter"||e.key===" ")&&tg.matches&&tg.matches('g.ldapin,.ldaitem')){e.preventDefault();tg.dispatchEvent(new MouseEvent("click",{bubbles:true}))}});
 
+/* <v38-eorders-js> */
+/* v38-eorders-js: one Epic-style order entry for the Clinical EHR, plus an "Orders" tab on the EHR side panel.
+   - Replaces the separate "+ Medication order" / "+ Nursing order" buttons with ONE search ("Add order") that finds everything
+     orderable: medications (from the EHR's MEDS list), IV fluids and drips, labs, imaging/diagnostics, nursing orders, diet,
+     respiratory, therapy, consults, code status and order sets. Each result shows its category icon and type.
+   - Picking one opens a compact composer with smart defaults for that type (frequency chips, start, duration, priority
+     Routine/STAT/Now, indication, comment, order mode). "Accept" puts it on a Pending orders list (shopping cart); "Sign orders"
+     signs them all. Verbal and telephone orders need "Read back and confirmed" before they can be accepted (and are listed again
+     at Sign for the read-back), and keep the v29 verbal-order badge (pending provider signature).
+   - Uses the existing order data model and code paths: medications and IV fluids are kind:"med" (MAR, med quiz, barcodes, handoff
+     and PDF read them as before); everything else is kind:"nurse" with a text line (Worklist tasks, the Brain timeline's
+     q<N>h parsing, Summary, handoff), plus extra fields (cat, ref, pri, freq, ind, mode, eo) that older code ignores.
+     Code-status, isolation and fall-precaution orders also update the storyboard fields (p.code, p.iso, p.fall).
+   - Light-touch teaching checks, like Epic BPAs: allergy (the EHR's own alHit, plus contrast and latex), duplicate order /
+     duplicate therapy, ISMP high-alert flag (the EHR's isHA), hold-parameter and kidney-function prompts. No dosing guidance.
+   - Side panel: an "Orders" tab (Worklist / Brain / Orders / Required Doc) in the EHR with the same search, pending + Sign, active
+     orders grouped Epic-style with Modify / Discontinue / Reorder, and recent order history. It coexists with the v33 My Chart
+     Orders tab (data-sb-tab="ord"): this one is data-sb-tab="eord", shown only in the EHR; a stored "ord" tab opens it too.
+   - Placement: INSIDE the EHR module's closure, directly before its "wiring into the app" comment (see patches/eorders-apply.js).
+     It rebinds the closure's own ordersHTML (the "orders" activity for desktop, iPad and Rover; v29 window.__EHXF("orders")
+     calls it through window.__EHX) and orderForm (Modify / Reorder / the old "+ Medication order" path all open the composer).
+     The old "+ Nursing order" path ([data-ex="newnurse"]) is caught in the capture phase and opens the search instead.
+   - Programmatic orders from v29 Secure Chat, v32 drills, RRT/code teams and scenarios still push straight into p.orders and show
+     here unchanged.
+   Content label: order catalog, order sets and safety prompts are AI-assisted · fact-checked · not yet reviewed by a registered
+   nurse (patches/eorders-RN-REVIEW.md). Practice charting only; fictional patients. */
+{
+  const V38 = "v38";
+  const LBL38 = "Order catalog, order sets and safety prompts: AI-assisted · fact-checked · not yet reviewed by a registered nurse. Practice charting, not a real order. Follow your facility's policy.";
+  const e_ = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+  const SV = {
+    med: '<path d="M10.5 20.5l10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7z"/><path d="M8.5 8.5l7 7"/>',
+    iv: '<path d="M8 3h8v9a4 4 0 0 1-8 0z"/><path d="M8 7h8M12 16v3M12 19c0 1.5 1 2 2.5 2"/>',
+    lab: '<path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3"/><path d="M7.5 15h9"/>',
+    img: '<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="12" cy="12" r="3.5"/><path d="M7 9h.01"/>',
+    nurse: '<path d="M9 3h6v3H9z"/><path d="M9 4H6v17h12V4h-3"/><path d="M9 13l2 2 4-4"/>',
+    diet: '<path d="M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10M17 3c-2 0-3 2.5-3 6h3v12"/>',
+    resp: '<path d="M3 8h11a3 3 0 1 0-3-3M3 12h15a3 3 0 1 1-3 3M3 16h7"/>',
+    ther: '<circle cx="13" cy="4" r="2"/><path d="M10 21l2-6 3 3v3M8 12l3-4 3 2 3 1M12 15l-1-4"/>',
+    consult: '<path d="M4 5h16v11H9l-5 4z"/><path d="M8 9h8M8 12h5"/>',
+    code: '<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>',
+    set: '<rect x="4" y="4" width="16" height="5" rx="1"/><rect x="4" y="11" width="16" height="4" rx="1"/><path d="M4 19h16"/>',
+    q: '<circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/>', x: '<path d="M6 6l12 12M18 6L6 18"/>', ok: '<path d="M5 12l4 4 10-10"/>',
+    warn: '<path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17v.01"/>', stop: '<path d="M8 3h8l5 5v8l-5 5H8l-5-5V8z"/><path d="M12 8v5M12 16v.01"/>',
+    info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8v.01"/>', cart: '<path d="M3 4h2l2.4 11h10.2L20 8H6.2"/><circle cx="9" cy="19" r="1.5"/><circle cx="17" cy="19" r="1.5"/>',
+    orders: '<path d="M6 3h9l4 4v14H6z"/><path d="M9 12h7M9 16h5M14 3v5h5"/>', plus: '<path d="M12 5v14M5 12h14"/>', hist: '<path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5M12 7v5l3 2"/>'
+  };
+  const sv = (k, n) => `<svg viewBox="0 0 24 24" width="${n || 16}" height="${n || 16}" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${SV[k] || ""}</svg>`;
+
+  /* ---------------- categories ---------------- */
+  const CATS = {
+    med: { n: "Medication", pl: "Medications" }, iv: { n: "IV fluid / drip", pl: "IV fluids & drips" }, lab: { n: "Lab", pl: "Labs" },
+    img: { n: "Imaging / diagnostic", pl: "Imaging & diagnostics" }, nurse: { n: "Nursing", pl: "Nursing" }, resp: { n: "Respiratory", pl: "Respiratory" },
+    ther: { n: "Therapy", pl: "Therapy" }, diet: { n: "Diet", pl: "Diet" }, consult: { n: "Consult", pl: "Consults" }, code: { n: "Code status", pl: "Code status" },
+    set: { n: "Order set", pl: "Order sets" }
+  };
+  const CORD = ["med", "iv", "lab", "img", "nurse", "resp", "ther", "diet", "consult", "code", "set"];
+  const BROWSE = [["med", "Meds"], ["iv", "IV fluids"], ["lab", "Labs"], ["img", "Imaging"], ["nurse", "Nursing"], ["diet", "Diet"], ["resp", "Respiratory"], ["ther", "Therapy"], ["consult", "Consults"], ["code", "Code status"], ["set", "Order sets"]];
+  const PRI = ["Routine", "STAT", "Now"];
+  const DUR = [["", "Until discontinued"], ["1", "24 hours"], ["3", "3 days"], ["5", "5 days"], ["7", "7 days"], ["10", "10 days"], ["14", "14 days"]];
+  const MODES = [["written", "Written order (from the chart)"], ["verbal", "Verbal order (read back)"], ["phone", "Telephone order (read back)"]];
+
+  /* ---------------- catalog (non-medication). [cat, name, keywords, spec]
+     spec: f = frequency choices, df = default, opt = {l, o, d} pick list, det = {l, ph, req} free text, pre = text prefix,
+     iso / code / fall / diet = side effects on sign, ctr = iodinated or gadolinium contrast, latex = latex-containing supplies */
+  const FV = ["q1h", "q2h", "q4h", "q8h", "q shift"], FN = ["q1h", "q2h", "q4h"], FLAB = ["Once", "Daily (AM draw)", "q3h", "q4h", "q6h", "q8h", "q12h"];
+  const FCARE = ["q shift", "Daily", "BID", "q4h", "PRN"], FC = ["Continuous"], FO = ["Once"];
+  const NON = [
+    /* nursing */
+    ["nurse", "Vital signs", "vs vitals bp pulse temp", { f: FV, df: "q4h" }],
+    ["nurse", "Neuro checks", "neuro gcs pupils loc neurological", { f: FN, df: "q2h" }],
+    ["nurse", "Intake and output", "i&o io intake output strict", { f: ["q shift", "q1h", "q4h"], df: "q shift", opt: { l: "Type", o: ["Standard", "Strict"], d: "Standard" } }],
+    ["nurse", "Daily weight", "weight wt scale", { f: ["Daily"], df: "Daily", det: { l: "Instructions", ph: "e.g. same scale, before breakfast" } }],
+    ["nurse", "Fingerstick blood glucose (POC)", "fsbs cbg accucheck accu-chek poc glucose bg sugar", { f: ["AC & HS", "q4h", "q6h", "Once"], df: "AC & HS" }],
+    ["nurse", "Telemetry (cardiac monitoring)", "tele cardiac monitor ecg monitoring", { f: FC, df: "Continuous" }],
+    ["nurse", "Fall precautions", "falls safety bed alarm", { f: FC, df: "Continuous", fall: 1 }],
+    ["nurse", "Aspiration precautions", "aspiration hob swallow", { f: FC, df: "Continuous" }],
+    ["nurse", "Seizure precautions", "seizure padded rails", { f: FC, df: "Continuous" }],
+    ["nurse", "Bleeding precautions", "bleeding thrombocytopenia anticoagulation", { f: FC, df: "Continuous" }],
+    ["nurse", "Neutropenic precautions", "neutropenic protective isolation anc", { f: FC, df: "Continuous" }],
+    ["nurse", "Isolation: Contact", "isolation contact mrsa vre gown gloves", { f: FC, df: "Continuous", iso: "Contact", det: { l: "Reason", ph: "e.g. MRSA wound culture" } }],
+    ["nurse", "Isolation: Droplet", "isolation droplet flu influenza mask", { f: FC, df: "Continuous", iso: "Droplet", det: { l: "Reason", ph: "e.g. influenza" } }],
+    ["nurse", "Isolation: Airborne", "isolation airborne tb tuberculosis measles n95 aiir", { f: FC, df: "Continuous", iso: "Airborne", det: { l: "Reason", ph: "e.g. rule out TB" } }],
+    ["nurse", "Isolation: Contact plus (enteric)", "isolation contact plus enteric c diff cdiff bleach soap water", { f: FC, df: "Continuous", iso: "Contact plus", det: { l: "Reason", ph: "e.g. C. difficile" } }],
+    ["nurse", "Activity: Bed rest", "activity bedrest bed rest", { f: FC, df: "Continuous" }],
+    ["nurse", "Activity: Bed rest with bathroom privileges", "activity brp bathroom privileges", { f: FC, df: "Continuous" }],
+    ["nurse", "Activity: Up with assistance", "activity oob out of bed assist chair", { f: FC, df: "Continuous" }],
+    ["nurse", "Activity: Ambulate", "activity ambulate walk hallway", { f: ["TID", "QID", "BID", "q shift"], df: "TID", det: { l: "Instructions", ph: "e.g. in hallway with assistance" } }],
+    ["nurse", "Activity: Up ad lib", "activity ad lib as tolerated independent", { f: FC, df: "Continuous" }],
+    ["nurse", "Turn and reposition", "turn reposition pressure injury prevention", { f: ["q2h", "q4h"], df: "q2h" }],
+    ["nurse", "Sequential compression devices (SCDs)", "scd scds sequential compression vte dvt prophylaxis", { f: ["Continuous"], df: "Continuous", det: { l: "Instructions", ph: "e.g. while in bed" } }],
+    ["nurse", "Head of bed elevation", "hob head of bed elevate 30", { f: FC, df: "Continuous", opt: { l: "Angle", o: ["30 degrees", "45 degrees", "Other (see comment)"], d: "30 degrees" } }],
+    ["nurse", "Wound care", "wound dressing change incision", { f: ["Daily", "BID", "q shift", "PRN"], df: "Daily", det: { l: "Wound care instructions (as written)", ph: "Site, cleanse, dressing", req: 1 } }],
+    ["nurse", "Pressure injury care", "pressure injury ulcer wound stage", { f: ["Daily", "BID", "q shift"], df: "Daily", det: { l: "Instructions (as written)", ph: "Site and treatment", req: 1 } }],
+    ["nurse", "NG tube insertion", "ngt ng nasogastric tube insert", { f: FO, df: "Once", det: { l: "Size / purpose", ph: "e.g. 16 Fr, decompression" } }],
+    ["nurse", "NG tube to suction", "ngt ng nasogastric suction liws low intermittent", { f: FC, df: "Continuous", opt: { l: "Suction", o: ["Low intermittent suction", "Low continuous suction", "Gravity", "Clamped"], d: "Low intermittent suction" } }],
+    ["nurse", "NG tube care and flush", "ngt ng nasogastric flush patency", { f: ["q4h", "q shift", "PRN"], df: "q4h", det: { l: "Flush (as written)", ph: "Volume and solution as written" } }],
+    ["nurse", "Foley catheter insertion", "foley indwelling urinary catheter insert", { f: FO, df: "Once", det: { l: "Indication", ph: "e.g. strict output in critical illness", req: 1 }, latex: 1 }],
+    ["nurse", "Foley catheter care", "foley catheter care cauti perineal", { f: ["q shift", "BID", "Daily"], df: "q shift" }],
+    ["nurse", "Foley catheter removal", "foley remove discontinue dc catheter void trial", { f: FO, df: "Once", det: { l: "Instructions", ph: "e.g. notify if no void in 6 hours" } }],
+    ["nurse", "Bladder scan", "bladder scan pvr post void residual", { f: ["q6h PRN", "Once", "q shift"], df: "q6h PRN", det: { l: "Notify / cath parameters (as written)", ph: "As written on the order" } }],
+    ["nurse", "Intermittent straight catheterization", "straight cath in and out catheterization", { f: ["PRN", "q6h", "Once"], df: "PRN", det: { l: "Parameters (as written)", ph: "As written on the order", req: 1 }, latex: 1 }],
+    ["nurse", "Peripheral IV insertion", "piv iv start insert saline lock", { f: FO, df: "Once", det: { l: "Gauge / site", ph: "e.g. 20 g, forearm" }, latex: 1 }],
+    ["nurse", "Saline lock and flush", "saline lock hep lock flush piv", { f: ["q8h", "q12h", "q shift"], df: "q8h", det: { l: "Flush (as written)", ph: "Volume as written" } }],
+    ["nurse", "Notify provider", "notify call provider parameters md", { f: FC, df: "Continuous", det: { l: "Notify for (as written)", ph: "e.g. SBP or HR outside the ordered range", req: 1 } }],
+    ["nurse", "Bedside swallow screen", "swallow screen dysphagia stroke npo", { f: FO, df: "Once", det: { l: "Instructions", ph: "e.g. before any oral intake" } }],
+    ["nurse", "Alcohol withdrawal assessment (CIWA-Ar)", "ciwa ciwa-ar alcohol withdrawal etoh", { f: ["q1h", "q2h", "q4h"], df: "q4h" }],
+    ["nurse", "Oral care", "oral care mouth care vap", { f: ["q4h", "q shift", "BID"], df: "q4h" }],
+    ["nurse", "1:1 observation (sitter)", "sitter 1:1 one to one observation safety", { f: FC, df: "Continuous", det: { l: "Reason", ph: "Reason as written", req: 1 } }],
+    /* respiratory */
+    ["resp", "Oxygen therapy", "o2 oxygen nasal cannula nc mask venturi non-rebreather", { f: ["Continuous", "PRN"], df: "Continuous", opt: { l: "Device", o: ["Nasal cannula", "Simple mask", "Venturi mask", "Non-rebreather", "High-flow nasal cannula"], d: "Nasal cannula" }, det: { l: "Flow and SpO2 goal (as written)", ph: "e.g. 2 L/min, titrate to the ordered SpO2 goal", req: 1 } }],
+    ["resp", "Continuous pulse oximetry", "spo2 pulse ox oximetry sat", { f: FC, df: "Continuous" }],
+    ["resp", "Incentive spirometry", "is incentive spirometer spirometry atelectasis", { f: ["10x/hr while awake", "q1h while awake", "q2h while awake"], df: "10x/hr while awake" }],
+    ["resp", "Cough and deep breathe", "cdb cough deep breathe", { f: ["q2h while awake", "q4h"], df: "q2h while awake" }],
+    ["resp", "CPAP / BiPAP", "cpap bipap niv noninvasive ventilation", { f: ["Continuous", "At night", "PRN"], df: "Continuous", det: { l: "Settings (as written)", ph: "Mode and settings as written", req: 1 } }],
+    ["resp", "Chest physiotherapy", "cpt chest physiotherapy percussion", { f: ["q4h", "BID", "TID"], df: "q4h" }],
+    ["resp", "Suctioning", "suction oral nasotracheal oropharyngeal", { f: ["PRN"], df: "PRN", opt: { l: "Type", o: ["Oropharyngeal", "Nasotracheal", "Tracheostomy"], d: "Oropharyngeal" } }],
+    /* therapy */
+    ["ther", "Physical therapy: evaluate and treat", "pt physical therapy eval mobility", { f: ["Once", "Daily", "BID"], df: "Once", det: { l: "Reason", ph: "e.g. deconditioning, fall risk" } }],
+    ["ther", "Occupational therapy: evaluate and treat", "ot occupational therapy adl eval", { f: ["Once", "Daily"], df: "Once", det: { l: "Reason", ph: "e.g. ADLs" } }],
+    ["ther", "Speech therapy: swallow evaluation", "slp speech swallow dysphagia eval bedside", { f: FO, df: "Once", det: { l: "Reason", ph: "e.g. failed bedside swallow screen" } }],
+    ["ther", "Speech therapy: modified barium swallow study", "mbs mbss slp video fluoroscopic swallow", { f: FO, df: "Once", det: { l: "Reason", ph: "Reason as written" } }],
+    /* diet */
+    ["diet", "Diet: NPO", "npo nothing by mouth", { f: FC, df: "Continuous", diet: 1, det: { l: "Exceptions (as written)", ph: "e.g. sips with meds" } }],
+    ["diet", "Diet: NPO after midnight", "npo midnight procedure surgery", { f: FO, df: "Once", diet: 1, det: { l: "Reason", ph: "e.g. procedure in the morning" } }],
+    ["diet", "Diet: Clear liquid", "clear liquids", { f: FC, df: "Continuous", diet: 1 }],
+    ["diet", "Diet: Full liquid", "full liquids", { f: FC, df: "Continuous", diet: 1 }],
+    ["diet", "Diet: Regular", "regular general house", { f: FC, df: "Continuous", diet: 1 }],
+    ["diet", "Diet: Heart healthy (2 g sodium)", "cardiac low sodium 2g na heart healthy", { f: FC, df: "Continuous", diet: 1 }],
+    ["diet", "Diet: Consistent carbohydrate", "diabetic carb controlled consistent carbohydrate cho", { f: FC, df: "Continuous", diet: 1 }],
+    ["diet", "Diet: Renal", "renal kidney low potassium phosphorus", { f: FC, df: "Continuous", diet: 1 }],
+    ["diet", "Diet: Mechanical soft", "mechanical soft dysphagia", { f: FC, df: "Continuous", diet: 1 }],
+    ["diet", "Diet: Pureed", "pureed dysphagia", { f: FC, df: "Continuous", diet: 1 }],
+    ["diet", "Diet: Advance as tolerated", "advance diet as tolerated", { f: FC, df: "Continuous", diet: 1, det: { l: "Starting diet (as written)", ph: "e.g. clear liquids" } }],
+    ["diet", "Liquid consistency (IDDSI)", "thickened liquids nectar honey iddsi", { f: FC, df: "Continuous", opt: { l: "Liquids", o: ["Thin (IDDSI 0)", "Slightly thick (IDDSI 1)", "Mildly thick (IDDSI 2)", "Moderately thick (IDDSI 3)", "Extremely thick (IDDSI 4)"], d: "Mildly thick (IDDSI 2)" } }],
+    ["diet", "Fluid restriction", "fluid restriction limit", { f: FC, df: "Continuous", det: { l: "Amount (as written)", ph: "e.g. 1500 mL per 24 hours", req: 1 } }],
+    ["diet", "Tube feeding", "tube feeding enteral peg ngt formula", { f: ["Continuous", "Bolus", "Cyclic"], df: "Continuous", det: { l: "Formula, rate and flushes (as written)", ph: "As written on the order", req: 1 } }],
+    /* consults */
+    ...[["Cardiology", "cards heart"], ["Nephrology", "renal kidney"], ["Pulmonology", "pulm lung"], ["Gastroenterology", "gi"], ["Infectious disease", "id"], ["Neurology", "neuro"],
+      ["Endocrinology", "endo diabetes"], ["Psychiatry", "psych"], ["Palliative care", "palliative comfort goals of care"], ["Wound ostomy nurse (WOC)", "wound ostomy woc wocn"],
+      ["Dietitian (nutrition)", "nutrition dietitian rd"], ["Case management", "case manager discharge planning cm"], ["Social work", "social worker sw"],
+      ["Spiritual care (chaplain)", "chaplain spiritual"], ["Diabetes educator", "diabetes education cde"], ["Pharmacy", "pharmacist medication review"]]
+      .map(([n, k]) => ["consult", "Consult: " + n, "consult " + k, { f: FO, df: "Once", det: { l: "Reason for consult", ph: "Reason as written", req: 1 } }]),
+    /* labs */
+    ...[["CBC with differential", "cbc blood count hgb wbc plt", "Blood"], ["Basic metabolic panel (BMP)", "bmp chem 7 bmp lytes electrolytes", "Blood"], ["Comprehensive metabolic panel (CMP)", "cmp chem 14", "Blood"],
+      ["Magnesium", "mg mag", "Blood"], ["Phosphorus", "phos", "Blood"], ["PT/INR", "pt inr protime coag", "Blood"], ["aPTT", "ptt aptt coag", "Blood"], ["Anti-Xa (heparin level)", "anti xa heparin", "Blood"],
+      ["Troponin", "trop troponin hs-troponin cardiac", "Blood"], ["BNP", "bnp nt-probnp natriuretic", "Blood"], ["Lactic acid (lactate)", "lactate lactic sepsis", "Blood"],
+      ["Blood cultures x2", "blood cx culture sepsis", "Blood"], ["Urinalysis with reflex culture", "ua urinalysis urine", "Urine"], ["Urine culture", "urine cx culture", "Urine"],
+      ["Sputum culture", "sputum cx", "Sputum"], ["Wound culture", "wound cx", "Wound swab"], ["C. difficile toxin", "c diff cdiff stool", "Stool"],
+      ["Arterial blood gas (ABG)", "abg blood gas", "Arterial blood"], ["Venous blood gas (VBG)", "vbg blood gas", "Blood"], ["Hemoglobin A1c", "a1c hba1c", "Blood"],
+      ["Lipid panel", "lipids cholesterol", "Blood"], ["TSH", "thyroid tsh", "Blood"], ["Hepatic function panel", "lft lfts liver", "Blood"], ["Lipase", "lipase pancreatitis", "Blood"],
+      ["Ammonia", "ammonia nh3", "Blood"], ["C-reactive protein (CRP)", "crp", "Blood"], ["Procalcitonin", "procal pct", "Blood"], ["Type and screen", "type screen t&s blood bank", "Blood"],
+      ["Type and crossmatch", "crossmatch t&c blood bank transfusion", "Blood"], ["Digoxin level", "dig level", "Blood"], ["Vancomycin level", "vanc trough level", "Blood"],
+      ["Hemoglobin and hematocrit (H&H)", "h&h hgb hct", "Blood"], ["D-dimer", "ddimer d dimer", "Blood"], ["Fibrinogen", "fibrinogen coag", "Blood"],
+      ["Respiratory viral panel", "covid flu rsv viral swab", "Nasal swab"], ["MRSA nasal screen", "mrsa nares swab", "Nasal swab"], ["Urine drug screen", "uds tox drug", "Urine"],
+      ["Ionized calcium", "ica calcium", "Blood"], ["Ethanol level", "etoh alcohol", "Blood"], ["Acetaminophen level", "apap tylenol level", "Blood"], ["Urine pregnancy (hCG)", "hcg pregnancy", "Urine"]]
+      .map(([n, k, sp]) => ["lab", n, "lab " + k, { f: FLAB, df: /AM draw/.test(n) ? "" : "Once", sp, pre: "Lab" }]),
+    /* imaging / diagnostics */
+    ["img", "Chest X-ray, portable", "cxr xray chest portable", { f: FO, df: "Once", pre: "Imaging", det: { l: "Reason for exam", ph: "Reason as written", req: 1 } }],
+    ["img", "Chest X-ray, 2 views", "cxr xray chest pa lateral", { f: FO, df: "Once", pre: "Imaging", det: { l: "Reason for exam", ph: "Reason as written", req: 1 } }],
+    ["img", "Abdominal X-ray (KUB)", "kub xray abdomen", { f: FO, df: "Once", pre: "Imaging", det: { l: "Reason for exam", ph: "Reason as written", req: 1 } }],
+    ["img", "X-ray to verify feeding tube placement", "xray tube placement ng dobhoff verify", { f: FO, df: "Once", pre: "Imaging", det: { l: "Reason for exam", ph: "e.g. new small-bore feeding tube", req: 1 } }],
+    ["img", "CT head without contrast", "ct head brain noncon stroke", { f: FO, df: "Once", pre: "Imaging", det: { l: "Reason for exam", ph: "Reason as written", req: 1 } }],
+    ["img", "CT angiography chest (PE protocol)", "cta ct chest pe pulmonary embolism contrast", { f: FO, df: "Once", pre: "Imaging", ctr: "iodinated", det: { l: "Reason for exam", ph: "Reason as written", req: 1 } }],
+    ["img", "CT abdomen and pelvis with contrast", "ct abd pelvis contrast", { f: FO, df: "Once", pre: "Imaging", ctr: "iodinated", det: { l: "Reason for exam", ph: "Reason as written", req: 1 } }],
+    ["img", "CT abdomen and pelvis without contrast", "ct abd pelvis noncon stone", { f: FO, df: "Once", pre: "Imaging", det: { l: "Reason for exam", ph: "Reason as written", req: 1 } }],
+    ["img", "MRI brain without contrast", "mri brain", { f: FO, df: "Once", pre: "Imaging", det: { l: "Reason for exam", ph: "Reason as written", req: 1 } }],
+    ["img", "MRI brain with and without contrast", "mri brain gadolinium contrast", { f: FO, df: "Once", pre: "Imaging", ctr: "gadolinium", det: { l: "Reason for exam", ph: "Reason as written", req: 1 } }],
+    ["img", "Ultrasound abdomen (RUQ)", "us ultrasound ruq gallbladder liver", { f: FO, df: "Once", pre: "Imaging", det: { l: "Reason for exam", ph: "Reason as written", req: 1 } }],
+    ["img", "Renal ultrasound", "us ultrasound kidney renal", { f: FO, df: "Once", pre: "Imaging", det: { l: "Reason for exam", ph: "Reason as written", req: 1 } }],
+    ["img", "Venous duplex ultrasound, lower extremity", "dvt duplex doppler ultrasound leg", { f: FO, df: "Once", pre: "Imaging", opt: { l: "Side", o: ["Bilateral", "Left", "Right"], d: "Bilateral" }, det: { l: "Reason for exam", ph: "Reason as written", req: 1 } }],
+    ["img", "Echocardiogram (transthoracic)", "echo tte heart ultrasound ef", { f: FO, df: "Once", pre: "Diagnostic", det: { l: "Reason for exam", ph: "Reason as written", req: 1 } }],
+    ["img", "12-lead ECG", "ecg ekg 12 lead electrocardiogram", { f: ["Once", "Daily", "PRN chest pain"], df: "Once", pre: "Diagnostic", det: { l: "Reason", ph: "Reason as written" } }],
+    /* code status (the four values the EHR's patient form uses) */
+    ...["Full Code", "DNR", "DNR/DNI", "Comfort care"].map(c => ["code", "Code status: " + c, "code status resuscitation " + (c === "Full Code" ? "full code" : c === "Comfort care" ? "comfort care cmo palliative dnr" : "dnr dni do not resuscitate intubate"),
+      { f: FC, df: "Continuous", code: c, opt: { l: "Discussed with", o: ["Patient", "Health care agent", "Family", "Not discussed yet"], d: "Patient" } }])
+  ];
+  /* IV fluids and infusions not in the EHR's MEDS list (MEDS has sodium chloride 0.9%, lactated Ringer's, dextrose 5% in water).
+     Infusions use the base drug in MEDS so the class, high-alert flag and MAR work as for any order of that drug. */
+  const XIV = [
+    { n: "dextrose 5% and 0.45% sodium chloride", k: "d5 1/2ns d5 half normal saline d5 0.45", sub: "IV fluid (hypotonic + dextrose)" },
+    { n: "dextrose 5% and 0.9% sodium chloride", k: "d5ns d5 normal saline", sub: "IV fluid (dextrose + isotonic)" },
+    { n: "sodium chloride 0.45%", k: "1/2ns half normal saline 0.45", sub: "IV fluid (hypotonic)" },
+    { n: "sodium chloride 3% (hypertonic)", k: "3% hypertonic saline", sub: "IV fluid (hypertonic)", ha: 1 },
+    { n: "heparin infusion", med: "heparin", k: "heparin drip gtt", sub: "Anticoagulant infusion" },
+    { n: "insulin regular infusion", med: "insulin regular", k: "insulin drip gtt dka", sub: "Insulin infusion" },
+    { n: "norepinephrine infusion", med: "norepinephrine", k: "levophed pressor drip gtt", sub: "Vasopressor infusion" },
+    { n: "propofol infusion", med: "propofol", k: "diprivan sedation drip gtt", sub: "Sedative infusion" },
+    { n: "dexmedetomidine infusion", med: "dexmedetomidine", k: "precedex sedation drip gtt", sub: "Sedative infusion" },
+    { n: "nitroglycerin infusion", med: "nitroglycerin", k: "ntg tridil drip gtt", sub: "Nitrate infusion" },
+    { n: "diltiazem infusion", med: "diltiazem", k: "cardizem drip gtt afib", sub: "Calcium channel blocker infusion" },
+    { n: "amiodarone infusion", med: "amiodarone", k: "cordarone drip gtt", sub: "Antiarrhythmic infusion" },
+    { n: "magnesium sulfate infusion", med: "magnesium sulfate", k: "mag drip", sub: "Electrolyte infusion" },
+    { n: "potassium chloride IV (premixed)", med: "potassium chloride", k: "kcl iv rider potassium", sub: "Electrolyte replacement (IV)" }
+  ];
+  const ABBR = { "acetaminophen": "apap tylenol", "aspirin": "asa", "sodium chloride 0.9%": "ns normal saline nacl", "lactated Ringer's": "lr ringers", "dextrose 5% in water": "d5w", "potassium chloride": "kcl", "heparin": "hep", "magnesium sulfate": "mag", "morphine": "ms", "ipratropium-albuterol": "duoneb", "polyethylene glycol 3350": "peg miralax", "nitroglycerin": "ntg", "insulin regular": "humulin r novolin r", "insulin glargine": "lantus basal", "insulin lispro": "humalog", "insulin aspart": "novolog", "piperacillin-tazobactam": "zosyn pip tazo", "vancomycin": "vanc", "ondansetron": "zofran" };
+  /* order sets: [catalog name, overrides]; meds in sets have no dose (the student enters it as written) */
+  const SETS = [
+    { id: "adm", n: "Admission: general med-surg", k: "admission admit med surg basic", d: "Common nursing, activity, diet and morning lab orders for a med-surg admission.",
+      items: [["Vital signs", { freq: "q4h" }], ["Fall precautions"], ["Activity: Up with assistance"], ["Diet: Regular"], ["Intake and output"], ["Daily weight"], ["Sequential compression devices (SCDs)"], ["Incentive spirometry"], ["CBC with differential", { freq: "Daily (AM draw)" }], ["Basic metabolic panel (BMP)", { freq: "Daily (AM draw)" }]] },
+    { id: "sepsis", n: "Sepsis: first hour", k: "sepsis septic shock bundle hour-1 lactate cultures", d: "Hour-1 bundle elements (Surviving Sepsis Campaign): lactate, blood cultures before antibiotics, fluids and close monitoring. Add the antibiotic and enter every dose and volume as written.",
+      items: [["Lactic acid (lactate)", { pri: "STAT" }], ["Blood cultures x2", { pri: "STAT", note: "Draw before antibiotics" }], ["CBC with differential", { pri: "STAT" }], ["Comprehensive metabolic panel (CMP)", { pri: "STAT" }], ["Urinalysis with reflex culture"], ["Chest X-ray, portable", { pri: "STAT" }], ["m:lactated Ringer's", { freq: "Once", pri: "STAT", note: "Bolus: enter volume and rate as written" }], ["Vital signs", { freq: "q1h" }], ["Intake and output", { opt: "Strict" }], ["Notify provider"]] },
+    { id: "acs", n: "Chest pain: rule out ACS", k: "chest pain acs mi troponin ecg", d: "Diagnostic and monitoring orders for chest pain. Medication orders are entered as written.",
+      items: [["12-lead ECG", { pri: "STAT" }], ["Troponin", { pri: "STAT", note: "Repeat per protocol" }], ["CBC with differential"], ["Basic metabolic panel (BMP)"], ["Magnesium"], ["PT/INR"], ["Chest X-ray, portable"], ["Telemetry (cardiac monitoring)"], ["Continuous pulse oximetry"], ["Vital signs", { freq: "q2h" }]] },
+    { id: "hf", n: "Heart failure exacerbation", k: "chf hf heart failure fluid overload diuresis", d: "Daily weights, strict I&O, sodium and fluid limits, labs and imaging. Enter the diuretic dose as written.",
+      items: [["Daily weight"], ["Intake and output", { opt: "Strict" }], ["Diet: Heart healthy (2 g sodium)"], ["Fluid restriction"], ["Basic metabolic panel (BMP)", { freq: "Daily (AM draw)" }], ["Magnesium", { freq: "Daily (AM draw)" }], ["BNP"], ["Telemetry (cardiac monitoring)"], ["Chest X-ray, portable"], ["Echocardiogram (transthoracic)"], ["m:furosemide", { route: "IV push" }]] },
+    { id: "postop", n: "Post-op: surgical floor", k: "post op postoperative surgery pacu", d: "Routine post-operative nursing orders. Pain and other medications are entered as written.",
+      items: [["Vital signs", { freq: "q4h" }], ["Incentive spirometry"], ["Sequential compression devices (SCDs)"], ["Activity: Ambulate", { freq: "TID" }], ["Diet: Advance as tolerated"], ["Intake and output"], ["Wound care"], ["Foley catheter care"], ["CBC with differential", { freq: "Daily (AM draw)" }], ["Basic metabolic panel (BMP)", { freq: "Daily (AM draw)" }]] },
+    { id: "dm", n: "Diabetes: glucose management", k: "diabetes hyperglycemia insulin glucose dm", d: "Glucose checks, diet and education. Insulin is entered exactly as written (dose and any correction scale).",
+      items: [["Fingerstick blood glucose (POC)", { freq: "AC & HS" }], ["Diet: Consistent carbohydrate"], ["Hemoglobin A1c"], ["Consult: Diabetes educator"], ["Notify provider"], ["m:insulin lispro", { freq: "AC" }]] },
+    { id: "stroke", n: "Stroke: acute (nursing and diagnostics)", k: "stroke cva tia neuro tpa", d: "Neuro checks, swallow screen before oral intake, imaging and labs for suspected stroke.",
+      items: [["Neuro checks", { freq: "q1h" }], ["Diet: NPO", { det: "Until bedside swallow screen passed" }], ["Bedside swallow screen"], ["CT head without contrast", { pri: "STAT" }], ["Fingerstick blood glucose (POC)", { freq: "Once", pri: "STAT" }], ["CBC with differential", { pri: "STAT" }], ["Basic metabolic panel (BMP)", { pri: "STAT" }], ["PT/INR", { pri: "STAT" }], ["aPTT", { pri: "STAT" }], ["12-lead ECG"], ["Telemetry (cardiac monitoring)"], ["Fall precautions"]] }
+  ];
+
+  /* ---------------- teaching checks (data only; see the RN review list) ---------------- */
+  const DUPG = [[/^Anticoagulant/i, "anticoagulants"], [/^Benzodiazepine/i, "benzodiazepines"], [/^Proton pump inhibitor/i, "proton pump inhibitors"], [/^Statin/i, "statins"],
+    [/^(ACE inhibitor|Angiotensin II receptor blocker)/i, "ACE inhibitors / ARBs"], [/^Beta blocker/i, "beta blockers"], [/^Loop diuretic/i, "loop diuretics"], [/^Calcium channel blocker/i, "calcium channel blockers"],
+    [/^Antidepressant \(SSRI\)/i, "SSRIs"], [/^Antipsychotic/i, "antipsychotics"], [/^Insulin \((rapid|short)/i, "rapid- or short-acting insulins"], [/^Insulin \(long/i, "long-acting insulins"],
+    [/^NSAID/i, "NSAIDs"], [/^Opioid analgesic/i, "opioid analgesics"]];
+  const HOLDC = [[/^Beta blocker/i, ["Hold if HR <60", "Hold if SBP <100", "Check apical pulse"]], [/^Cardiac glycoside/i, ["Check apical pulse", "Hold if HR <60"]],
+    [/^(Calcium channel blocker)/i, ["Hold if SBP <100", "Hold if HR <60"]], [/^(ACE inhibitor|Angiotensin II receptor blocker|Vasodilator|Nitrate|Central alpha-2)/i, ["Hold if SBP <100"]],
+    [/^(Loop|Thiazide) diuretic/i, ["Hold if SBP <100"]], [/^Insulin|sulfonylurea/i, ["Hold if BG <70"]], [/^(Opioid|Benzodiazepine|Sedative)/i, ["Hold if RR <12"]]];
+  const RENAL = new Set(["metformin", "enoxaparin", "vancomycin", "ketorolac", "ibuprofen", "gabapentin", "pregabalin", "digoxin", "levetiracetam", "cefepime", "meropenem", "piperacillin-tazobactam", "apixaban", "rivaroxaban", "famotidine", "morphine", "tramadol", "allopurinol", "spironolactone", "potassium chloride", "magnesium sulfate", "magnesium oxide", "lisinopril", "enalapril", "losartan"]);
+
+  /* ---------------- catalog build + search ---------------- */
+  let CATL = null, BYID = null;
+  function catalog() {
+    if (CATL) return CATL; const L = [];
+    MEDS.forEach(m => { const iv = /^IV fluid/i.test(m.c); L.push({ id: "m:" + m.n, n: m.n, c: iv ? "iv" : "med", sub: m.c, k: (m.b.join(" ") + " " + (ABBR[m.n] || "") + " " + m.c).toLowerCase(), med: m.n, md: m }) });
+    XIV.forEach(x => { const md = x.med ? medBy(x.med) : null; L.push({ id: "x:" + x.n, n: x.n, c: "iv", sub: x.sub, k: (x.k + " infusion drip iv").toLowerCase(), med: x.med || x.n, md, inf: !!x.med, ha: x.ha ? 1 : 0 }) });
+    NON.forEach(([c, n, k, sp]) => L.push(Object.assign({ id: "n:" + n, n, c, sub: CATS[c].n, k: String(k).toLowerCase() }, sp)));
+    SETS.forEach(s => L.push({ id: "s:" + s.id, n: s.n, c: "set", sub: s.items.length + " orders", k: s.k, set: s }));
+    CATL = L; BYID = new Map(L.map(x => [x.id, x])); return L;
+  }
+  const item = id => { catalog(); return BYID.get(id) || null };
+  const itemByName = n => { catalog(); if (BYID.has(n)) return BYID.get(n); return BYID.get("n:" + n) || BYID.get("m:" + n) || BYID.get("x:" + n) || null };
+  function search(q, cf) {
+    const L = catalog(); q = String(q || "").toLowerCase().trim(); const W = q.split(/\s+/).filter(Boolean);
+    if (!W.length) { if (!cf) return []; return L.filter(x => x.c === cf).slice().sort((a, b) => a.n.localeCompare(b.n)) }
+    /* every typed word must start a word of the name, keywords or type (so "renal" does not hit "adrenergic");
+       if nothing matches that way, fall back to plain substring matching */
+    const run = loose => { const out = [];
+    for (const x of L) {
+      if (cf && x.c !== cf) continue; const n = x.n.toLowerCase(), hay = n + " " + x.k + " " + String(x.sub || "").toLowerCase();
+      if (loose) { if (!W.every(w => hay.includes(w))) continue } else { const hw = x._hw || (x._hw = hay.split(/[^a-z0-9%&.+]+/).filter(Boolean)); if (!W.every(w => hw.some(t => t.startsWith(w)) || (/[^a-z0-9]/.test(w) && hay.includes(w)))) continue }
+      const nw = n.split(/[\s:(),/-]+/), kw = x.k.split(/\s+/);
+      let s = n.startsWith(q) ? 0 : nw.some(w => w.startsWith(W[0])) ? 1 : kw.some(w => w === W[0]) ? 1.5 : kw.some(w => w.startsWith(W[0])) ? 2 : n.includes(q) ? 3 : 4;
+      if (x.c === "set") s += .2; out.push([s, x]);
+    } return out };
+    let out = run(false); if (!out.length) out = run(true);
+    return out.sort((a, b) => a[0] - b[0] || CORD.indexOf(a[1].c) - CORD.indexOf(b[1].c) || a[1].n.localeCompare(b[1].n)).slice(0, 40).map(z => z[1]);
+  }
+
+  /* ---------------- state ---------------- */
+  const H = () => ({ q: "", cf: "", draft: null, hi: -1, msg: "", more: false });
+  const S = { h: { main: H(), panel: H(), modal: H() }, focus: null, clickHost: "", grp: {}, rb: {} };
+  const pendOf = p => (p && p.eoPend) || [];
+  const isMedCat = c => c === "med" || c === "iv";
+  const fq = f => FREQ[f] || {};
+  const nowT = p => curT(p);
+  function ocat(o) {
+    if (o.cat && CATS[o.cat]) return o.cat;
+    if (o.kind !== "nurse") { const md = medBy(o.med); return (md && /^IV fluid/i.test(md.c)) || (fq(o.freq).cont && /^IV/.test(o.route || "")) ? "iv" : "med" }
+    const t = String(o.text || "");
+    if (/^diet|^npo|fluid restriction|tube feeding|liquid consistency/i.test(t)) return "diet";
+    if (/^code status|\bdnr\b|full code|comfort care/i.test(t)) return "code";
+    if (/^consult/i.test(t)) return "consult";
+    if (/^lab:|\b(cbc|bmp|cmp|culture|troponin|lactate|lactic|inr|ptt|urinalysis|abg|vbg|a1c|magnesium|phosph|panel|level|type and|crossmatch|d-dimer|bnp|procalcitonin)\b/i.test(t)) return "lab";
+    if (/^imaging:|^diagnostic:|x-ray|xray|\bct\b|\bmri\b|ultrasound|duplex|echo|\becg\b|\bekg\b/i.test(t)) return "img";
+    if (/oxygen|\bo2\b|spirometr|bipap|cpap|pulse ox|suction|nebuli/i.test(t)) return "resp";
+    if (/physical therapy|occupational therapy|speech|swallow eval/i.test(t)) return "ther";
+    return "nurse";
+  }
+  const medText = o => [o.med, o.dose ? [o.dose, o.unit].filter(Boolean).join(" ") : "", o.route, o.freq].filter(Boolean).join(" ") + (o.prnReason ? ", PRN " + o.prnReason : "") + (o.rate ? ", " + o.rate : "");
+  const oText = o => o.kind === "nurse" ? String(o.text || "") : medText(o);
+  const tLbl2 = t => t == null ? "" : "HD" + tHD(t) + " " + hhmm(tMin(t));
+
+  /* ---------------- drafts ---------------- */
+  function unitFor(it, route) {
+    const n = String(it.med || it.n).toLowerCase(); if (it.c === "iv" && !it.inf) return "mL"; if (/insulin|heparin/.test(n)) return "units"; if (/potassium chloride/.test(n)) return "mEq";
+    if (/patch/.test(n)) return "patch"; if (route === "INH") return "puff"; if (it.inf && /norepinephrine|dexmedetomidine|nitroglycerin/.test(n)) return "mcg"; return "mg";
+  }
+  function routeFor(it) { const r = ((it.md && it.md.r) || [])[0] || (it.c === "iv" ? "IV" : "PO"); return ROUTES.indexOf(r) >= 0 ? r : /^IV/.test(r) ? "IV" : "PO" }
+  function newDraft(it, p, ov) {
+    ov = ov || {}; const now = nowMin(); const hd = p.hd || 1;
+    const d = { id: it.id, c: it.c, n: it.n, sub: it.sub, med: it.med || "", mod: "", ov: "", f: { pri: "Routine", hd, tm: hhmm(now), dur: "", ind: "", note: "", by: "Provider", mode: "written", read: false, ovr: "", ack: {} } };
+    const f = d.f;
+    if (isMedCat(it.c)) {
+      f.route = routeFor(it); f.unit = unitFor(it, f.route); f.dose = ""; f.freq = it.c === "iv" ? (it.inf || !/fluid/i.test(it.sub || "") ? "Continuous" : "Continuous") : f.route === "PO" ? "Daily" : f.route === "IV" ? "Once" : "Daily";
+      f.prn = ""; f.rate = ""; f.hold = ""; f.times = "";
+    } else { f.freq = it.df != null ? it.df : (it.f || [])[0] || ""; f.opt = it.opt ? it.opt.d : ""; f.det = "" }
+    Object.keys(ov).forEach(k => { if (k === "opt" && it.opt) { const o = it.opt.o.find(x => x === ov.opt || x.startsWith(ov.opt)); if (o) f.opt = o } else if (k in f || k === "det") f[k] = ov[k] });
+    if (isMedCat(it.c) && !f.times) f.times = (fq(f.freq).t || []).join(", ");
+    return d;
+  }
+  function draftFromOrder(o, p, mode) {
+    let it = null;
+    if (o.kind !== "nurse") it = (o.ref && item(o.ref)) || item("m:" + o.med) || { id: "m:" + o.med, c: ocat(o), n: o.med, sub: (medBy(o.med) || {}).c || "Medication", med: o.med, md: medBy(o.med) };
+    else it = (o.ref && item(o.ref)) || { id: "t:" + (o.text || ""), c: ocat(o), n: o.text || "Order", sub: CATS[ocat(o)].n, free: 1 };
+    const d = newDraft(it, p); const f = d.f;
+    if (o.kind !== "nurse") Object.assign(f, { dose: o.dose || "", unit: o.unit || f.unit, route: o.route || f.route, freq: o.freq || f.freq, prn: o.prnReason || "", rate: o.rate || "", hold: o.hold || "", times: (o.times || []).join(", "), note: o.note || "", by: o.by || "Provider" });
+    else if (o.eo) Object.assign(f, o.eo, { read: false, ovr: "", ack: {} });
+    else { f.freq = ""; f.by = o.by || "Provider"; d.free = 1 }
+    if (o.pri) f.pri = o.pri; if (o.ind) f.ind = o.ind; if (o.mode) f.mode = o.mode === "written" ? "written" : f.mode;
+    if (mode === "mod") { d.mod = o.id; if (o.startT != null && o.kind !== "nurse") { f.hd = p.hd || 1; f.tm = hhmm(nowMin()) } }
+    d.free = d.free || !!it.free; return d;
+  }
+  /* what is still missing before Accept / Sign */
+  function missing(d) {
+    if (!d) return []; const f = d.f, m = [];
+    if (isMedCat(d.c)) { if (!String(f.dose || "").trim() && !(d.c === "iv" && fq(f.freq).cont && String(f.rate || "").trim())) m.push(d.c === "iv" ? "volume" : "dose"); if (fq(f.freq).prn && !String(f.prn || "").trim()) m.push("PRN reason"); if (fq(f.freq).cont && !String(f.rate || "").trim()) m.push("rate") }
+    else { const it = item(d.id); if (it && it.det && it.det.req && !String(f.det || "").trim()) m.push(it.det.l.replace(/\s*\(.*\)$/, "").toLowerCase()) }
+    if (!d.free && !isMedCat(d.c) && (item(d.id) || {}).f && !f.freq) m.push("frequency");
+    if (f.mode !== "written" && !f.read) m.push("read back");
+    return m;
+  }
+
+  /* ---------------- safety checks (BPA-style) ---------------- */
+  const dupGroup = md => { if (!md) return null; const g = DUPG.find(([re]) => re.test(md.c)); return g ? g[1] : null };
+  function caseLab(p, re) { const L = (p.case && p.case.labs) || []; const x = L.filter(l => re.test(String(l[0]))).slice(-1)[0]; return x ? `${x[0]} ${x[1]}${x[2] ? " " + x[2] : ""}${x[3] === "H" ? " (high)" : x[3] === "L" ? " (low)" : ""}` : "" }
+  function checks(p, d) {
+    const out = []; if (!p || !d) return out; const f = d.f; const it = item(d.id) || {};
+    const O = (p.orders || []).filter(o => o.status !== "dc" && o.id !== d.mod); const PN = pendOf(p).filter(x => x.pid !== d.pid);
+    const al = p.allergies || [];
+    if (isMedCat(d.c)) {
+      const med = d.med || d.n; const md = medBy(med);
+      const ah = alHit(p, med);
+      if (ah) out.push({ k: "allergy", lvl: "stop", t: "Allergy: " + ah.name, b: `${p.label} has a documented allergy to ${ah.name}${ah.reaction ? " (" + ah.reaction + ")" : ""}. ${med} may be the same drug or in a related class. In clinicals, clarify the order with the provider and pharmacist before giving it.`, need: "ovr" });
+      const same = O.filter(o => o.kind !== "nurse" && String(o.med || "").toLowerCase() === String(med).toLowerCase()), sameP = PN.filter(x => isMedCat(x.c) && String(x.med || x.n).toLowerCase() === String(med).toLowerCase());
+      if (same.length || sameP.length) out.push({ k: "dup", lvl: "warn", t: "Duplicate order", b: `${med} is already ${same.length ? "active: " + medText(same[0]) : "on your pending list"}. If this replaces it, use Modify on the existing order instead.`, need: "ack" });
+      else { const g = dupGroup(md); if (g) { const oth = O.filter(o => o.kind !== "nurse" && dupGroup(medBy(o.med)) === g).map(o => o.med).concat(PN.filter(x => isMedCat(x.c) && dupGroup(medBy(x.med || x.n)) === g).map(x => x.med || x.n)); if (oth.length) out.push({ k: "dupc", lvl: "warn", t: "Duplicate therapy", b: `${med} and ${[...new Set(oth)].join(", ")} are both ${g}. Confirm both are intended (for example, a different indication or a planned switch).`, need: "ack" }) } }
+      if (isHA({ med, route: f.route, ha: it.ha })) out.push({ k: "ha", lvl: "info", t: "High-alert medication", b: "ISMP lists this as a high-alert medication: an error can cause serious harm. Check the dose, route and rate twice; many facilities require an independent double check." });
+      if (md && !String(f.hold || "").trim()) { const hc = HOLDC.find(([re]) => re.test(md.c)); if (hc) out.push({ k: "hold", lvl: "info", t: "Hold parameters?", b: `Medications in this class are often ordered with hold parameters. Copy them exactly as written on the order. If there are none, follow your facility's policy. Common examples:`, chips: hc[1] }) }
+      if (RENAL.has(String(med).toLowerCase())) { const cr = caseLab(p, /creatinine|egfr|gfr/i), k = /potassium chloride|spironolactone|lisinopril|enalapril|losartan/i.test(med) ? caseLab(p, /^potassium|^k\b/i) : ""; const why = /^(ibuprofen|ketorolac)$/i.test(med) ? "NSAIDs can reduce kidney function" : k || /spironolactone|lisinopril|enalapril|losartan|potassium chloride/i.test(med) ? "it can raise potassium or affect kidney function" : "it is cleared by the kidneys"; out.push({ k: "renal", lvl: "info", t: "Kidney function", b: `Kidney function matters for ${med}: ${why}. Check the latest creatinine / eGFR${k ? ", potassium" : ""} and urine output; the prescriber and pharmacist adjust for kidney function.`, lab: [cr, k].filter(Boolean).join(" · ") || "No creatinine on this chart yet." }) }
+    } else {
+      if (it.ctr) { const hit = al.find(a => /contrast|iod|gadolin/i.test(a.name || "")); if (hit) out.push({ k: "allergy", lvl: "stop", t: "Allergy: " + hit.name, b: `${p.label} has a documented ${hit.name} allergy${hit.reaction ? " (" + hit.reaction + ")" : ""}. This exam uses ${it.ctr} contrast. Tell the provider and radiology before the exam; premedication or another exam may be needed.`, need: "ovr" });
+        const cr = caseLab(p, /creatinine|egfr|gfr/i); const onMet = O.some(o => o.kind !== "nurse" && /metformin/i.test(o.med || ""));
+        out.push({ k: "renal", lvl: "info", t: "Contrast and kidney function", b: `Check kidney function before ${it.ctr} contrast and follow the facility's contrast policy.${onMet && it.ctr === "iodinated" ? " This patient has an active metformin order: many facilities hold metformin around iodinated contrast depending on kidney function." : ""}`, lab: cr || "No creatinine on this chart yet." }) }
+      if (it.latex) { const hit = al.find(a => /latex/i.test(a.name || "")); if (hit) out.push({ k: "allergy", lvl: "stop", t: "Allergy: " + hit.name, b: `${p.label} has a documented latex allergy. Use latex-free supplies for this procedure.`, need: "ovr" }) }
+      const base = String(d.n).toLowerCase(); const sameO = O.filter(o => o.kind === "nurse" && (o.ref === d.id || String(o.text || "").toLowerCase().startsWith(base))), sameP = PN.filter(x => x.id === d.id);
+      if (it.code) { const cur = O.filter(o => o.kind === "nurse" && ocat(o) === "code"); if (cur.length || (p.code && p.code !== it.code)) out.push({ k: "rep", lvl: "info", t: "Replaces the current code status", b: `Current: ${cur.length ? cur.map(oText).join("; ") : p.code}. Signing this changes the code status on the chart to ${it.code}.` }) }
+      else if (it.diet) { const cur = O.filter(o => o.kind === "nurse" && o.dietMain); if (cur.length) out.push({ k: "rep", lvl: "info", t: "Replaces the current diet", b: `Current: ${cur.map(oText).join("; ")}. It is discontinued when you sign.` }) }
+      else if (sameO.length || sameP.length) out.push({ k: "dup", lvl: "warn", t: "Duplicate order", b: `${d.n} is already ${sameO.length ? "active: " + oText(sameO[0]) : "on your pending list"}. To change it, use Modify on the existing order.`, need: "ack" });
+    }
+    return out;
+  }
+  const blocking = (d, C) => C.filter(c => (c.need === "ovr" && !d.f.ovr) || (c.need === "ack" && !d.f.ack[c.k]));
+
+  /* ---------------- order objects (existing data model) ---------------- */
+  function orderText(d) {
+    const f = d.f, it = item(d.id) || {};
+    if (d.free) return String(d.n);
+    const pre = it.pre ? it.pre + ": " : ""; const fr = f.freq && f.freq !== "Continuous" && !String(d.n).toLowerCase().includes(String(f.freq).toLowerCase()) ? " " + (/^(q\d|q shift|AC|PRN|\d+x)/i.test(f.freq) ? f.freq : f.freq === "Once" ? "once" : f.freq.toLowerCase().replace(/^daily \(am draw\)$/, "daily (AM draw)")) : "";
+    const bits = [];
+    if (f.opt && it.opt) bits.push(it.opt.l === "Type" && f.opt === "Standard" ? "" : f.opt);
+    if (String(f.det || "").trim()) bits.push(String(f.det).trim());
+    if (f.pri && f.pri !== "Routine") bits.push(f.pri);
+    return pre + d.n + fr + bits.filter(Boolean).map(b => " · " + b).join("");
+  }
+  function toOrder(p, d) {
+    const f = d.f, it = item(d.id) || {}; const hd = Math.max(1, +f.hd || p.hd || 1); const tm = toMin(f.tm); const st = fq(f.freq).now ? nowT(p) : T(hd, tm != null ? tm : nowMin());
+    const base = { id: uid(), status: "active", startHD: hd, created: Date.now(), by: String(f.by || "Provider").trim(), v38: 1, cat: d.c, ref: d.id, pri: f.pri, ind: String(f.ind || "").trim(), mode: f.mode, sT: nowT(p), startT: st };
+    if (f.mode !== "written") { base.vo = { st: "pend", t: Date.now(), rb: 1, via: f.mode === "phone" ? "telephone" : "verbal" }; base.by = base.by + (/read back/i.test(base.by) ? "" : " · " + (f.mode === "phone" ? "telephone" : "verbal") + " order, read back") }
+    if (f.ovr) base.ovr = f.ovr;
+    let o;
+    if (isMedCat(d.c)) {
+      const q = fq(f.freq); const times = q.t ? String(f.times || "").split(/[,\s]+/).map(s => s.trim()).filter(s => toMin(s) != null) : [];
+      o = Object.assign(base, { kind: "med", med: d.med || d.n, dose: String(f.dose || "").trim(), unit: f.unit, route: f.route, freq: f.freq, times: q.t ? (times.length ? times : q.t.slice()) : [], prnReason: q.prn ? String(f.prn || "").trim() : "", rate: q.cont ? String(f.rate || "").trim() : "", first: (q.now || f.freq === "Once") ? hhmm(tm != null ? tm : nowMin()) : "", hold: String(f.hold || "").trim(), note: String(f.note || "").trim() + (d.c === "iv" && it.inf && !/infusion/i.test(f.note || "") ? (f.note ? "; " : "") + "Infusion" : "") });
+      if (it.ha && !medBy(o.med)) o.ha = true;
+    } else {
+      o = Object.assign(base, { kind: "nurse", text: orderText(d), freq: f.freq, note: String(f.note || "").trim(), eo: { freq: f.freq, opt: f.opt || "", det: f.det || "", pri: f.pri, hd: f.hd, tm: f.tm, dur: f.dur, ind: f.ind, note: f.note, by: f.by, mode: "written" } });
+      if (it.diet) o.dietMain = 1;
+    }
+    const days = +f.dur; if (days && f.freq !== "Once" && !fq(f.freq).now) { o.dcT = st + days * 1440; o.endT = o.dcT }
+    return o;
+  }
+  function signAll(p, list) {
+    const made = [];
+    upd(q => {
+      q.orders = q.orders || []; const sim = curT(q);
+      list.forEach(d => {
+        const o = toOrder(q, d); const it = item(d.id) || {};
+        if (d.mod) { const old = q.orders.find(x => x.id === d.mod); if (old && old.status !== "dc") { old.status = "dc"; old.dcT = sim; old.dcWhy = "Modified" } o.modOf = d.mod }
+        if (it.code) { q.orders.filter(x => x.status !== "dc" && x.kind === "nurse" && ocat(x) === "code").forEach(x => { x.status = "dc"; x.dcT = sim; x.dcWhy = "Replaced" }); q.code = it.code }
+        if (it.diet) q.orders.filter(x => x.status !== "dc" && x.dietMain).forEach(x => { x.status = "dc"; x.dcT = sim; x.dcWhy = "Replaced" });
+        if (it.iso) { o.isoPrev = q.iso || "None"; q.iso = it.iso; o.isoSet = it.iso } if (it.fall) q.fall = true;
+        q.orders.push(o); made.push(o);
+      });
+      q.eoPend = (q.eoPend || []).filter(x => !list.some(d => d.pid === x.pid));
+    });
+    made.filter(o => o.kind !== "nurse" && o.med).forEach(o => { try { seen(o.med) } catch (e) { } });
+    return made;
+  }
+
+  /* ---------------- rendering ---------------- */
+  const fld = (l, inner, cls) => `<label class="eo-f${cls ? " " + cls : ""}"><span>${l}</span>${inner}</label>`;
+  const inp = (k, v, a) => `<input data-eof="${k}" value="${e_(v == null ? "" : v)}" ${a || ""}>`;
+  const sel = (k, opts, v) => `<select data-eof="${k}">${opts.map(o => { const [val, lab] = Array.isArray(o) ? o : [o, o]; return `<option value="${e_(val)}" ${String(v) === String(val) ? "selected" : ""}>${e_(lab)}</option>` }).join("")}</select>`;
+  const seg = (k, opts, v) => `<div class="eo-seg" role="group">${opts.map(o => `<button type="button" class="${o === v ? "on" : ""}" data-eo="set" data-k="${k}" data-v="${e_(o)}" aria-pressed="${o === v}">${e_(o)}</button>`).join("")}</div>`;
+  function medFreqChips(d) {
+    const r = d.f.route; if (d.c === "iv") return ["Continuous", "Once"];
+    return r === "PO" || r === "SL" || r === "NG tube" || r === "G tube" ? ["Daily", "BID", "TID", "QID", "q6h", "HS", "Once", "q4h PRN", "q6h PRN"]
+      : /^IV/.test(r) ? ["Once", "Now", "q6h", "q8h", "q12h", "Daily", "Continuous", "q4h PRN", "q6h PRN"]
+        : r === "SubQ" ? ["Daily", "BID", "q12h", "AC & HS", "Once", "q6h PRN"] : r === "INH" || r === "NEB" ? ["q4h", "q6h", "BID", "Daily", "q4h PRN", "q6h PRN"] : ["Daily", "BID", "TID", "Once", "q6h PRN"];
+  }
+  function alertsHTML(d, C) {
+    if (!C.length) return "";
+    return `<div class="eo-bpa" role="alert">${C.map(c => `<div class="eo-al eo-${c.lvl}"><b>${sv(c.lvl === "stop" ? "stop" : c.lvl === "warn" ? "warn" : "info", 15)} ${e_(c.t)}</b><p>${e_(c.b)}</p>${c.chips ? `<div class="eo-chips">${c.chips.map(x => `<button type="button" class="eo-chip" data-eo="hold" data-v="${e_(x)}">${e_(x)}</button>`).join("")}</div>` : ""}${c.lab ? `<p class="eo-lab">${e_(c.lab)}</p>` : ""}
+      ${c.need === "ovr" ? fld("Override reason (required to continue)", sel("ovr", [["", "Choose…"], "Will clarify with the provider before giving", "Patient has tolerated it before", "Not a true allergy (intolerance)", "Benefit outweighs the risk (per provider)"], d.f.ovr)) : ""}
+      ${c.need === "ack" ? `<label class="eo-ck"><input type="checkbox" data-eof="ack:${c.k}" ${d.f.ack[c.k] ? "checked" : ""}> Reviewed: keep this order</label>` : ""}</div>`).join("")}</div>`;
+  }
+  function composerHTML(h, p) {
+    const d = S.h[h].draft; if (!d) return ""; const f = d.f, it = item(d.id) || {}; const C = checks(p, d); const miss = missing(d); const blk = blocking(d, C);
+    const head = `<div class="eo-ch"><span class="eo-ic c-${d.c}">${sv(d.c, 18)}</span><div><b>${e_(d.n)}</b><small>${e_(d.sub || CATS[d.c].n)} · ${e_(CATS[d.c].n)}${d.mod ? " · modifying the active order" : ""}</small></div><button type="button" class="eo-x" data-eo="cancel" aria-label="Close composer">${sv("x", 16)}</button></div>`;
+    if (d.c === "set") {
+      const s = it.set; const L = s.items.map((r, i) => { const x = itemByName(r[0]); return x ? [i, x, r[1] || {}] : null }).filter(Boolean); const on = d.sel || (d.sel = L.map(z => z[0]));
+      return `<section class="eo-cmp" data-eo-cmp aria-label="Order set">${head}<p class="eo-sd">${e_(s.d)}</p><ul class="eo-setl">${L.map(([i, x, ov]) => { const dd = newDraft(x, p, ov); const t = isMedCat(x.c) ? `${x.n} · enter ${x.c === "iv" ? "volume and rate" : "dose"} as written` : orderText(dd); return `<li><label class="eo-ck"><input type="checkbox" data-eof="setsel:${i}" ${on.indexOf(i) >= 0 ? "checked" : ""}><span class="eo-ic c-${x.c}">${sv(x.c, 14)}</span><span>${e_(t)}</span></label></li>` }).join("")}</ul>
+        <div class="eo-cta"><button type="button" class="btn2 eo-acc" data-eo="setadd" ${on.length ? "" : "disabled"}>Add ${on.length} to pending</button><button type="button" class="btn2 sec2" data-eo="cancel">Cancel</button></div><p class="eo-fine">Example order set for practice. Your facility's order sets differ; enter what is written on your patient's chart.</p></section>`;
+    }
+    let body = "";
+    if (isMedCat(d.c)) {
+      const q = fq(f.freq); const ch = medFreqChips(d); const allF = Object.keys(FREQ);
+      body = `<div class="eo-g3">${fld(d.c === "iv" && !it.inf ? "Volume" : "Dose", inp("dose", f.dose, `inputmode="decimal" placeholder="${d.c === "iv" && !it.inf ? "e.g. 1000" : "As written"}" aria-required="true"`), "eo-req")}${fld("Unit", sel("unit", UNITS, f.unit))}${fld("Route", sel("route", ROUTES, f.route))}</div>
+        <div class="eo-f"><span>Frequency</span><div class="eo-chips">${ch.map(x => `<button type="button" class="eo-chip${f.freq === x ? " on" : ""}" data-eo="set" data-k="freq" data-v="${e_(x)}" aria-pressed="${f.freq === x}">${e_(x)}</button>`).join("")}${sel("freq", allF.indexOf(f.freq) >= 0 ? allF : [f.freq].concat(allF), f.freq).replace("<select", '<select aria-label="All frequencies" class="eo-fsel"')}</div></div>
+        ${q.prn ? fld("PRN reason", inp("prn", f.prn, 'placeholder="e.g. pain 4–6, nausea" aria-required="true"'), "eo-req") : ""}
+        ${q.cont ? fld("Rate", inp("rate", f.rate, `placeholder="${d.c === "iv" ? "e.g. 75 mL/hr" : "As written"}" aria-required="true"`), "eo-req") : ""}
+        ${fld("Hold parameters / special instructions", inp("hold", f.hold, 'maxlength="160" placeholder="e.g. Hold if HR <60 or SBP <100"'))}`;
+    } else {
+      body = `${it.f && it.f.length > 1 ? `<div class="eo-f"><span>Frequency</span><div class="eo-chips">${it.f.map(x => `<button type="button" class="eo-chip${f.freq === x ? " on" : ""}" data-eo="set" data-k="freq" data-v="${e_(x)}" aria-pressed="${f.freq === x}">${e_(x)}</button>`).join("")}</div></div>` : it.f && it.f.length === 1 ? `<p class="eo-one">Frequency: <b>${e_(it.f[0])}</b></p>` : ""}
+        ${it.opt ? fld(it.opt.l, sel("opt", it.opt.o, f.opt)) : ""}${it.det ? fld(it.det.l, inp("det", f.det, `maxlength="160" placeholder="${e_(it.det.ph || "")}" ${it.det.req ? 'aria-required="true"' : ""}`), it.det.req ? "eo-req" : "") : ""}
+        ${it.sp ? `<p class="eo-one">Specimen: <b>${e_(it.sp)}</b></p>` : ""}${d.free ? `<p class="eo-one">Order text: <b>${e_(d.n)}</b></p>` : ""}`;
+    }
+    const once = f.freq === "Once" || fq(f.freq).now;
+    const more = S.h[h].more;
+    const rest = `<div class="eo-g2">${fld("Priority", seg("pri", PRI, f.pri))}${fld("Start", `<span class="eo-st"><span>HD</span>${inp("hd", f.hd, 'inputmode="numeric" class="eo-hd" aria-label="Start hospital day"')}<span>at</span>${inp("tm", f.tm, 'placeholder="HH:MM" class="eo-tm" aria-label="Start time"')}<button type="button" class="eo-lk" data-eo="now">Now</button></span>`)}</div>
+      ${fld("Order mode", sel("mode", MODES, f.mode))}
+      ${f.mode !== "written" ? `<label class="eo-ck eo-rb${f.read ? "" : " need"}"><input type="checkbox" data-eof="read" ${f.read ? "checked" : ""}> <b>Read back and confirmed</b> with the ${f.mode === "phone" ? "caller" : "provider"} <small>Repeat the drug or test, dose, route and frequency back, word for word.</small></label>` : ""}
+      <details class="eo-more" data-eo-more ${more ? "open" : ""}><summary>More options <small>${e_([once ? "" : (DUR.find(x => x[0] === String(f.dur || "")) || DUR[0])[1], f.by].filter(Boolean).join(" · "))}</small></summary><div class="eo-g2">
+        ${!once ? fld("Duration", sel("dur", DUR, f.dur || "")) : ""}${isMedCat(d.c) && fq(f.freq).t ? fld("Admin times", inp("times", f.times, 'placeholder="09:00, 21:00"')) : ""}
+        ${fld("Indication", inp("ind", f.ind, 'maxlength="120" placeholder="Why it was ordered (optional)"'))}${fld("Comment", inp("note", f.note, 'maxlength="160" placeholder="Optional"'))}
+        ${fld("Ordered by (role only)", inp("by", f.by, 'maxlength="40" placeholder="e.g. Hospitalist"'))}</div>${isMedCat(d.c) ? `<p class="eo-fine">Admin times default to common facility times. Edit them to match the order.</p>` : ""}</details>`;
+    return `<section class="eo-cmp" data-eo-cmp aria-label="Order composer">${head}${alertsHTML(d, C)}<div class="eo-body">${body}${rest}</div>
+      <div class="eo-cta"><button type="button" class="btn2 eo-acc" data-eo="accept" ${miss.length || blk.length ? 'aria-disabled="true"' : ""}>${sv("cart", 15)} ${d.pid ? "Update pending order" : "Accept"}</button><button type="button" class="btn2 sec2" data-eo="cancel">Cancel</button>
+      ${miss.length || blk.length ? `<span class="eo-miss" role="status">Still needed: ${e_(miss.concat(blk.map(b => b.need === "ovr" ? "override reason" : "review " + b.t.toLowerCase())).join(", "))}</span>` : `<span class="eo-ready" role="status">${sv("ok", 14)} ${e_(isMedCat(d.c) ? medText({ med: d.med || d.n, dose: f.dose, unit: f.unit, route: f.route, freq: f.freq, prnReason: fq(f.freq).prn ? f.prn : "", rate: fq(f.freq).cont ? f.rate : "" }) : orderText(d))}</span>`}</div></section>`;
+  }
+  function resultsHTML(h) {
+    const st = S.h[h]; const R = search(st.q, st.cf); if (!st.q && !st.cf) return "";
+    if (!R.length) return `<p class="eo-none">No orderable matches “${e_(st.q)}”. Check the spelling, try a short name (e.g. “cbc”, “vs”, “npo”), or browse a category.</p>`;
+    return `<ul class="eo-res" role="listbox" aria-label="Orderables">${R.map((x, i) => `<li role="option" aria-selected="${st.hi === i}"><button type="button" class="eo-r${st.hi === i ? " hi" : ""}" data-eo="pick" data-v="${e_(x.id)}"><span class="eo-ic c-${x.c}">${sv(x.c, 16)}</span><span class="eo-rt"><b>${e_(x.n)}</b><small>${e_(x.c === "set" ? x.sub : x.sub && x.sub !== CATS[x.c].n ? x.sub : "")}</small></span><span class="eo-ty">${e_(CATS[x.c].n)}</span></button></li>`).join("")}</ul>`;
+  }
+  function pendingHTML(h, p) {
+    const L = pendOf(p); if (!L.length) return `<section class="eo-pend eo-empty" aria-label="Pending orders"><h4>${sv("cart", 15)} Pending orders</h4><p class="eo-e">Nothing pending. Search above, pick an order, then Accept.</p></section>`;
+    const bad = L.filter(d => missing(d).length || blocking(d, checks(p, d)).length);
+    return `<section class="eo-pend" aria-label="Pending orders"><h4>${sv("cart", 15)} Pending orders <i>${L.length}</i><button type="button" class="eo-lk" data-eo="pclear">Remove all</button></h4><ul class="eo-pl">${L.map(d => { const m = missing(d), b = blocking(d, checks(p, d)); return `<li class="${m.length || b.length ? "bad" : ""}"><span class="eo-ic c-${d.c}">${sv(d.c, 14)}</span><button type="button" class="eo-pt" data-eo="pedit" data-v="${e_(d.pid)}"><b>${e_(isMedCat(d.c) ? medText({ med: d.med || d.n, dose: d.f.dose, unit: d.f.unit, route: d.f.route, freq: d.f.freq, prnReason: fq(d.f.freq).prn ? d.f.prn : "", rate: fq(d.f.freq).cont ? d.f.rate : "" }) : orderText(d))}</b><small>${e_([CATS[d.c].n, d.mod ? "Modify" : "", d.f.pri !== "Routine" ? d.f.pri : "", d.f.mode !== "written" ? (d.f.mode === "phone" ? "Telephone" : "Verbal") + (d.f.read ? ", read back" : ", read back needed") : ""].filter(Boolean).join(" · "))}${m.length || b.length ? ` · <em>Needs ${e_(m.concat(b.map(x => x.need === "ovr" ? "override reason" : "review")).join(", "))}</em>` : ""}</small></button><button type="button" class="eo-x" data-eo="prm" data-v="${e_(d.pid)}" aria-label="Remove from pending">${sv("x", 14)}</button></li>` }).join("")}</ul>
+      ${S.h[h].msg ? `<p class="eo-msg" role="status">${S.h[h].msg}</p>` : ""}<button type="button" class="btn2 eo-sign" data-eo="sign" ${bad.length ? 'aria-disabled="true"' : ""}>${sv("ok", 16)} Sign orders (${L.length})</button></section>`;
+  }
+  function entryHTML(h, p) {
+    const st = S.h[h];
+    return `<div class="eo-entry"><div class="eo-sw"><span class="eo-si">${sv("q", 17)}</span><input type="search" class="eo-q" data-eoq="1" value="${e_(st.q)}" placeholder="${h === "panel" ? "Add order: med, lab, nursing, diet, set…" : "Add order: meds, labs, imaging, nursing, diet, consults, order sets"}" aria-label="Search orders" autocomplete="off" enterkeyhint="search"></div>
+      <div class="eo-cats" role="group" aria-label="Browse by type">${BROWSE.map(([k, l]) => `<button type="button" class="eo-cat${st.cf === k ? " on" : ""}" data-eo="cf" data-v="${k}" aria-pressed="${st.cf === k}"><span class="eo-ic c-${k}">${sv(k, 13)}</span>${e_(l)}</button>`).join("")}</div>
+      <div class="eo-rw" data-eo-res>${st.draft ? "" : resultsHTML(h)}</div>${composerHTML(h, p)}${pendingHTML(h, p)}</div>`;
+  }
+  const badges = o => `${o.kind !== "nurse" && isHA(o) ? ' <span class="mha">High alert</span>' : ""}${o.pri && o.pri !== "Routine" ? ` <span class="eo-pri">${e_(o.pri)}</span>` : ""}${o.vo && o.status !== "dc" ? `<span class="sc-vo ${o.vo.st === "signed" ? "signed" : "pend"}">${o.vo.st === "signed" ? "Verbal order · read back · signed by provider" : (o.vo.via === "telephone" ? "Telephone" : "Verbal") + " order · read back · pending provider signature"}</span>` : ""}`;
+  const detail = o => o.kind === "nurse" ? [o.ind ? "Indication: " + o.ind : "", o.note].filter(Boolean).join(" · ") : [o.hold, o.ind ? "Indication: " + o.ind : "", o.note].filter(Boolean).join(" · ");
+  const ends = o => o.endT != null && o.status !== "dc" ? " · ends " + tLbl2(o.endT) : "";
+  function groups(p) { const A = (p.orders || []).filter(o => o.status !== "dc"); const G = {}; A.forEach(o => { const c = ocat(o); (G[c] = G[c] || []).push(o) }); return CORD.filter(c => G[c]).map(c => [c, G[c]]) }
+  function activeMainHTML(p) {
+    const G = groups(p); if (!G.length) return `<p class="note">No active orders.</p>`;
+    return `<table class="ehtbl eo-tbl"><thead><tr><th>Order</th><th>Start</th><th>Ordered by</th><th><span class="sr">Actions</span></th></tr></thead>${G.map(([c, L]) => `<tbody><tr class="eo-gh"><th colspan="4"><span class="eo-ic c-${c}">${sv(c, 14)}</span> ${e_(CATS[c].pl)} <i>${L.length}</i></th></tr>${L.map(o => `<tr data-eoo="${e_(o.id)}"><td><b>${e_(oText(o))}</b>${badges(o)}${detail(o) ? `<small class="mhold">${e_(detail(o))}</small>` : ""}</td><td>HD ${o.startHD || 1}${o.kind !== "nurse" && o.first ? " " + e_(o.first) : ""}${e_(ends(o))}</td><td>${e_(o.by || "")}</td><td class="adx-nw"><button class="lk" data-ex="editorder" data-v="${e_(o.id)}">Modify</button> · <button class="lk" data-ex="dcorder" data-v="${e_(o.id)}">Discontinue</button> · <button class="lk" data-ex="reorder" data-v="${e_(o.id)}">Reorder</button></td></tr>`).join("")}</tbody>`).join("")}</table>`;
+  }
+  function history(p) {
+    const E = []; (p.orders || []).forEach(o => { E.push({ t: o.sT != null ? o.sT : o.startT != null ? o.startT : T(o.startHD || 1, 0), rt: o.created || 0, a: o.modOf ? "Modified" : "Signed", o }); if (o.status === "dc" && o.dcT != null) E.push({ t: o.dcT, rt: (o.created || 0) + 1, a: o.dcWhy === "Modified" ? "Replaced by a modified order" : o.dcWhy === "Replaced" ? "Replaced" : "Discontinued", o }) });
+    return E.sort((a, b) => b.t - a.t || b.rt - a.rt).slice(0, 12);
+  }
+  function historyHTML(p) { const L = history(p); return L.length ? `<ol class="eo-hist">${L.map(x => `<li><time>${e_(tLbl2(x.t))}</time><span><b>${e_(x.a)}</b> ${e_(oText(x.o))}${x.o.by ? ` <small>${e_(x.o.by)}</small>` : ""}</span></li>`).join("")}</ol>` : `<p class="eo-e">No order activity yet.</p>` }
+  function dcHTML(p) { const dc = (p.orders || []).filter(o => o.status === "dc"); return dc.length ? `<details class="ehdet eo-dc"><summary>Discontinued (${dc.length})</summary><ul class="ehul">${dc.map(o => `<li>${e_(oText(o))} <small>stopped ${o.dcT != null ? e_(tLbl2(o.dcT)) : ""}${o.dcWhy ? " · " + e_(o.dcWhy) : ""}</small> <button class="lk" data-ex="reorder" data-v="${e_(o.id)}">Reorder</button></li>`).join("")}</ul></details>` : "" }
+
+  /* main Orders activity (desktop, iPad, Rover) */
+  const _ordersHTML0 = ordersHTML;
+  ordersHTML = function (m, p) {
+    try {
+      m.innerHTML = `<div class="ehah"><h2>${ic("orders", 18)} Orders</h2><div class="ehact"><button class="btn2 mini" data-eo="focus" data-h="main">${sv("plus", 14)} Add order</button></div></div>
+       <p class="note">Enter the orders as written on your patient's chart in clinicals: dose, route, frequency, and any hold parameters. This is practice charting, not a real order.</p>
+       <div class="eo eo-main" data-eoh="main">${entryHTML("main", p)}</div>
+       <h3 class="eo-h3">Active orders</h3>${activeMainHTML(p)}${dcHTML(p)}
+       <details class="ehdet eo-hd"><summary>${sv("hist", 14)} Recent order history</summary>${historyHTML(p)}</details>
+       <p class="fine eo-lbl">${e_(LBL38)}</p>`;
+      const fs = S.focus; if (fs && fs.h === "main" && Date.now() - fs.at < 4000 && (!document.activeElement || document.activeElement === document.body)) focusRestore(fs);
+    } catch (e) { console.error("v38 orders", e); _ordersHTML0(m, p) }
+  };
+
+  /* side panel tab */
+  function panelHTML() {
+    const p = P(); if (!p) return `<div class="eo eo-panel" data-eoh="panel"><p class="vxsb-e">Open a patient to enter and review orders.</p></div>`;
+    const G = groups(p); const st = S.grp;
+    return `<div class="eo eo-panel" data-eoh="panel"><p class="vxsb-sub">${e_(p.label)} · Orders</p>${entryHTML("panel", p)}
+      <section class="eo-act" aria-label="Active orders"><h4>Active orders <i>${G.reduce((a, g) => a + g[1].length, 0)}</i></h4>${G.length ? G.map(([c, L]) => `<details class="eo-grp" data-eo-grp="${c}" ${st[c] === false ? "" : "open"}><summary><span class="eo-ic c-${c}">${sv(c, 14)}</span> ${e_(CATS[c].pl)} <i>${L.length}</i></summary><ul class="eo-al2">${L.map(o => `<li data-eoo="${e_(o.id)}"><div class="eo-ot"><b>${e_(oText(o))}</b>${badges(o)}<small>${e_(["HD " + (o.startHD || 1) + (o.kind !== "nurse" && o.first ? " " + o.first : "") + ends(o), o.by, detail(o)].filter(Boolean).join(" · "))}</small></div><div class="eo-oa"><button type="button" class="eo-lk" data-ex="editorder" data-v="${e_(o.id)}">Modify</button><button type="button" class="eo-lk" data-ex="dcorder" data-v="${e_(o.id)}">Discontinue</button><button type="button" class="eo-lk" data-ex="reorder" data-v="${e_(o.id)}">Reorder</button></div></li>`).join("")}</ul></details>`).join("") : `<p class="eo-e">No active orders.</p>`}</section>
+      <details class="eo-grp eo-hh" data-eo-grp="_hist" ${st._hist ? "open" : ""}><summary>${sv("hist", 14)} Recent order history</summary>${historyHTML(p)}</details>
+      <button type="button" class="vxsb-lk" data-ex="act" data-v="orders">Open Orders activity</button><p class="vxsb-fine">${e_(LBL38)}</p></div>`;
+  }
+  const KSB = "nclexsim.v1.sbar"; const sbSt = () => Object.assign({ open: false, tab: "wl" }, store.get(KSB, {}));
+  const inEHR = () => !!document.querySelector("#app .ehw");
+  const mine = () => { const s = sbSt(); return s.tab === "eord" || s.tab === "ord" };
+  let mounting = false;
+  function mountPanel(force) {
+    const host = document.getElementById("vxsb"); if (!host || host.hidden) { document.documentElement.classList.remove("eo-sbw"); return }
+    const tabs = host.querySelector(".vxsb-tabs"); if (!tabs) return; let tb = tabs.querySelector('[data-sb-tab="eord"]');
+    if (!inEHR()) { if (tb) tb.remove(); host.classList.remove("eo-on"); document.documentElement.classList.remove("eo-sbw"); return }
+    mounting = true;
+    try {
+      if (!tb) { const br = tabs.querySelector('[data-sb-tab="brain"]'); const html = `<button type="button" role="tab" class="vxsb-tab2 vxo-tab eo-tab" data-sb-tab="eord" aria-selected="false">${sv("orders", 15)}<span>Orders</span><b data-eo-n hidden></b></button>`; if (br) br.insertAdjacentHTML("afterend", html); else tabs.insertAdjacentHTML("beforeend", html); tb = tabs.querySelector('[data-sb-tab="eord"]') }
+      const p = P(); const n = pendOf(p).length; const nb = tb.querySelector("[data-eo-n]"); if (nb) { const t = n ? String(n) : ""; if (nb.textContent !== t) nb.textContent = t; if (nb.hidden !== !n) nb.hidden = !n }
+      const on = mine(); host.classList.toggle("eo-on", on); document.documentElement.classList.toggle("eo-sbw", on && !!sbSt().open);
+      if (!on) { if (tb.classList.contains("on")) { tb.classList.remove("on"); tb.setAttribute("aria-selected", "false") } return }
+      tabs.querySelectorAll(".vxsb-tab2").forEach(b => { const me = b === tb; if (b.classList.contains("on") !== me) b.classList.toggle("on", me); if (b.getAttribute("aria-selected") !== String(me)) b.setAttribute("aria-selected", String(me)) });
+      const pn = host.querySelector(".vxsb-p"); if (pn && pn.getAttribute("aria-label") !== "Orders") pn.setAttribute("aria-label", "Orders");
+      const body = host.querySelector(".vxsb-b"); if (!body) return;
+      if (force || !body.querySelector('[data-eoh="panel"]')) { const top = body.scrollTop; const fs = focusSnap(); body.innerHTML = panelHTML(); body.scrollTop = top; focusRestore(fs) }
+    } finally { mounting = false }
+  }
+  /* worklist subtitles: "Nursing order" -> the order's type for labs, imaging, diet, consults... */
+  function relabel() { const host = document.getElementById("vxsb"); if (!host || host.hidden) return; const L = host.querySelectorAll("[data-sb-nt]"); if (!L.length) return; const p = P(); if (!p) return; L.forEach(i => { const o = (p.orders || []).find(x => x.id === i.dataset.sbNt); if (!o) return; const c = ocat(o); if (c === "nurse") return; const sm = i.closest("label") && i.closest("label").querySelector("small"); if (sm && sm.textContent === "Nursing order") sm.textContent = CATS[c].n + " order" }) }
+  /* flowsheet: ordered monitoring frequencies with last filed / next due (vitals, neuro, I&O, POC glucose) */
+  function fsBanner() {
+    if (X.act !== "flow") return; const m = document.getElementById("ehm"); if (!m || m.querySelector(".eo-fsb")) return; const p = P(); if (!p) return;
+    const RW = [[/^vital signs/i, ["hr", "bp", "rr", "temp", "spo2"]], [/^neuro checks/i, null], [/^intake and output|^strict i&o|^strict intake/i, null], [/^fingerstick|^poc glucose/i, ["bg"]], [/^alcohol withdrawal/i, null]];
+    const now = curT(p); const L = [];
+    (p.orders || []).filter(o => o.status !== "dc" && o.kind === "nurse").forEach(o => { const t = String(o.text || ""); const r = RW.find(([re]) => re.test(t)); if (!r) return; const m2 = /q\s?(\d{1,2})\s?h/i.exec(t); let next = "", last = "", over = false;
+      if (r[1]) { const lt = (p.flow || []).filter(x => r[1].indexOf(x.r) >= 0 && x.v !== "" && x.v != null && x.t <= now).reduce((a, x) => Math.max(a, x.t), -1e9); if (lt > -1e9) last = hhmm(tMin(lt)); if (m2 && lt > -1e9 && now - lt > +m2[1] * 60) over = true }
+      if (m2) { const n = +m2[1] * 60; const mm = tMin(now); next = hhmm(Math.ceil((mm + 1) / n) * n) }
+      L.push(`<span class="eo-fsi${over ? " over" : ""}"><b>${e_(t)}</b>${last ? " · last filed " + e_(last) : " · not filed yet"}${next ? " · next due " + e_(next) : ""}${over ? " · overdue" : ""}</span>`) });
+    if (!L.length) return; const b = document.createElement("div"); b.className = "eo-fsb"; b.setAttribute("role", "note"); b.innerHTML = `${sv("nurse", 14)} <span>Ordered:</span> ${L.join("")}`; m.prepend(b);
+  }
+  /* storyboard follow-up: discontinuing an isolation order this module set clears the isolation flag */
+  function isoSync() { const p = P(); if (!p) return; const ch = (p.orders || []).filter(o => o.isoSet && o.status === "dc"); if (!ch.length) return; upd(q => { (q.orders || []).forEach(o => { if (o.isoSet && o.status === "dc") { if (q.iso === o.isoSet && !(q.orders || []).some(x => x.status !== "dc" && x.isoSet === q.iso)) q.iso = o.dcWhy === "Modified" ? q.iso : (o.isoPrev && o.isoPrev !== o.isoSet ? o.isoPrev : "None"); delete o.isoSet } }) }); draw() }
+
+  /* ---------------- focus keeping across re-renders ---------------- */
+  function hostOf(el) { const h = el && el.closest && el.closest("[data-eoh]"); return h ? h.dataset.eoh : "" }
+  function focusSnap() { const a = document.activeElement; if (!a || !a.closest || !a.closest("[data-eoh]")) return S.focus && Date.now() - S.focus.at < 4000 && (!a || a === document.body) ? S.focus : null; const k = a.dataset.eof ? `[data-eof="${a.dataset.eof}"]` : a.dataset.eoq ? "[data-eoq]" : a.dataset.eo ? `[data-eo="${a.dataset.eo}"]${a.dataset.v ? `[data-v="${CSS.escape(a.dataset.v)}"]` : ""}${a.dataset.k ? `[data-k="${a.dataset.k}"]` : ""}` : ""; if (!k) return null; let s = null, e = null; try { s = a.selectionStart; e = a.selectionEnd } catch (x) { } return { h: hostOf(a), k, s, e, at: Date.now() } }
+  function focusRestore(fs) { if (!fs) return; const r = document.querySelector(`[data-eoh="${fs.h}"]`); const el = r && r.querySelector(fs.k); if (!el || document.activeElement === el) return; try { el.focus({ preventScroll: true }); if (fs.s != null && el.setSelectionRange) el.setSelectionRange(fs.s, fs.e) } catch (x) { } }
+  function rerender(h) {
+    const p = P(); if (!p) return; const r = document.querySelector(`[data-eoh="${h}"]`); if (!r) return; const fs = focusSnap();
+    const ent = r.querySelector(".eo-entry"); if (ent) { const t = document.createElement("div"); t.innerHTML = entryHTML(h, p); ent.replaceWith(t.firstElementChild) }
+    focusRestore(fs);
+  }
+  function refreshAll(full) { ["main", "panel", "modal"].forEach(h => { if (document.querySelector(`[data-eoh="${h}"]`)) { if (full && h === "panel") mountPanel(true); else rerender(h) } }) }
+  function resultsOnly(h) { const r = document.querySelector(`[data-eoh="${h}"] [data-eo-res]`); if (r) r.innerHTML = S.h[h].draft ? "" : resultsHTML(h) }
+
+  /* ---------------- actions ---------------- */
+  function pick(h, id) {
+    const p = P(); const it = item(id); if (!p || !it) return; const st = S.h[h];
+    st.draft = newDraft(it, p); if (it.c === "set") st.draft.sel = null; st.hi = -1; st.msg = ""; st.more = false; rerender(h);
+    const r = document.querySelector(`[data-eoh="${h}"] [data-eo-cmp]`); if (r) { try { r.scrollIntoView({ block: "nearest", behavior: "smooth" }) } catch (e) { } const f = r.querySelector('[data-eof="dose"],[data-eof="det"][aria-required],[data-eo="setadd"],[data-eo="accept"]'); if (f) setTimeout(() => { try { f.focus({ preventScroll: true }) } catch (e) { } }, 30) }
+  }
+  function accept(h) {
+    const p = P(); const st = S.h[h]; const d = st.draft; if (!p || !d) return;
+    const C = checks(p, d), miss = missing(d), blk = blocking(d, C); if (miss.length || blk.length) { rerender(h); const x = document.querySelector(`[data-eoh="${h}"] .eo-miss`); if (x) { x.classList.remove("shake"); void x.offsetWidth; x.classList.add("shake") } return }
+    const vals = [d.f.dose, d.f.prn, d.f.rate, d.f.hold, d.f.ind, d.f.note, d.f.by, d.f.det, d.f.times]; if (!phiOK(vals.map(v => String(v || "")))) return;
+    const rec = JSON.parse(JSON.stringify(d)); rec.pid = d.pid || uid(); rec.at = Date.now();
+    upd(q => { q.eoPend = q.eoPend || []; const i = q.eoPend.findIndex(x => x.pid === rec.pid); if (i >= 0) q.eoPend[i] = rec; else q.eoPend.push(rec) });
+    st.draft = null; st.q = ""; st.cf = ""; st.msg = ""; afterChange(h); toastE((d.pid ? "Updated: " : "Pending: ") + d.n + ". Sign orders when you're done.");
+    const s2 = document.querySelector(`[data-eoh="${h}"] [data-eoq]`); if (s2 && h !== "modal") try { s2.focus({ preventScroll: true }) } catch (e) { }
+  }
+  function setAdd(h) {
+    const p = P(); const st = S.h[h]; const d = st.draft; if (!p || !d || d.c !== "set") return; const s = item(d.id).set; const on = d.sel || [];
+    const recs = s.items.map((r, i) => on.indexOf(i) >= 0 ? [itemByName(r[0]), r[1] || {}] : null).filter(z => z && z[0]).map(([x, ov]) => { const dd = newDraft(x, p, ov); dd.pid = uid(); dd.at = Date.now(); dd.set = s.id; return dd });
+    upd(q => { q.eoPend = (q.eoPend || []).concat(recs) }); st.draft = null; st.q = ""; st.cf = ""; afterChange(h); toastE(`${recs.length} orders from “${s.n}” are pending. Finish any marked in red, then Sign.`);
+  }
+  function afterChange(h) { if (h === "modal") { const p = P(); if (!pendOf(p).length) { sClose() } else rerender("modal") } refreshAll(false); mountPanel(false) }
+  function signFlow(h) {
+    const p = P(); if (!p) return; const L = pendOf(p); if (!L.length) return; const st = S.h[h];
+    const bad = L.filter(d => missing(d).length || blocking(d, checks(p, d)).length);
+    if (bad.length) { st.msg = `Finish ${bad.length === 1 ? "the order" : "the " + bad.length + " orders"} marked in red first: tap ${bad.length === 1 ? "it" : "each one"} to complete it.`; rerender(h); return }
+    const vo = L.filter(d => d.f.mode !== "written");
+    if (vo.length) { S.rb = {}; sModal(`<h3>Read back before you sign</h3><p>Verbal and telephone orders are read back to the person who gave them, then confirmed.</p><ol class="eo-rbl">${vo.map(d => `<li><label class="eo-ck"><input type="checkbox" data-eo-rb="${e_(d.pid)}"> <span><b>${e_(isMedCat(d.c) ? medText({ med: d.med || d.n, dose: d.f.dose, unit: d.f.unit, route: d.f.route, freq: d.f.freq, prnReason: d.f.prn, rate: fq(d.f.freq).cont ? d.f.rate : "" }) : orderText(d))}</b><small>${d.f.mode === "phone" ? "Telephone" : "Verbal"} order from ${e_(d.f.by || "the provider")}</small></span></label></li>`).join("")}</ol><div class="sbtns"><button class="btn2" data-eo="signok" data-h="${h}" disabled>Read back done · Sign ${L.length} order${L.length === 1 ? "" : "s"}</button><button class="btn2 sec2" data-sm="close">Cancel</button></div>`, "ehmod eo-rbm"); return }
+    doSign(h);
+  }
+  function doSign(h) {
+    const p = P(); const L = pendOf(p).slice(); if (!L.length) return; const made = signAll(p, L); const st = S.h[h]; st.msg = ""; if (h === "modal") sClose(); else if (document.querySelector(".eo-rbm")) sClose();
+    const meds = made.filter(o => o.kind !== "nurse").length; draw(); mountPanel(true);
+    toastE(`${made.length} order${made.length === 1 ? "" : "s"} signed${meds ? ` · ${meds} on the MAR` : ""}`);
+  }
+  /* rebind the closure's order form: Modify, Reorder and the old "+ Medication order" path open the composer */
+  const _orderForm0 = orderForm;
+  orderForm = function (o) {
+    const p = P(); if (!p) return _orderForm0(o);
+    let h = S.clickHost; if (h === "panel" && !document.querySelector('[data-eoh="panel"]')) h = ""; if (h === "main" && !document.querySelector('[data-eoh="main"]')) h = "";
+    if (!h) h = document.querySelector('[data-eoh="main"]') ? "main" : document.querySelector('[data-eoh="panel"]') ? "panel" : "modal";
+    const st = S.h[h]; st.more = false; st.msg = "";
+    if (!o) { st.draft = null; st.q = st.q || ""; } else if (o.id) st.draft = draftFromOrder(o, p, "mod"); else st.draft = draftFromOrder(Object.assign({}, o, { id: "" }), p, "re");
+    if (h === "modal") { sModal(`<h3>Orders</h3><div class="eo eo-modal" data-eoh="modal">${entryHTML("modal", p)}</div>`, "ehmod eo-mod") } else rerender(h);
+    const r = document.querySelector(`[data-eoh="${h}"] ${st.draft ? "[data-eo-cmp]" : "[data-eoq]"}`); if (r) { try { r.scrollIntoView({ block: "nearest", behavior: "smooth" }) } catch (e) { } if (!st.draft) try { r.focus({ preventScroll: true }) } catch (e) { } }
+  };
+  function openPanel() { const s = sbSt(); store.set(KSB, Object.assign(s, { open: true, tab: "eord" })); try { window.__vxsb && window.__vxsb.paint() } catch (e) { } setTimeout(() => mountPanel(true), 0); setTimeout(() => mountPanel(false), 120) }
+
+  /* ---------------- events ---------------- */
+  document.addEventListener("click", e => { const t = e.target; if (!t || !t.closest) return; S.clickHost = t.closest("#vxsb") ? "panel" : t.closest('[data-eoh="main"],#ehm') ? "main" : t.closest(".smod") ? (t.closest('[data-eoh="modal"]') ? "modal" : S.clickHost) : "";
+    const nn = t.closest('[data-ex="newnurse"]'); if (nn && document.querySelector(".ehw")) { e.preventDefault(); e.stopImmediatePropagation(); const h = document.querySelector('[data-eoh="main"]') ? "main" : "panel"; S.h[h].cf = "nurse"; S.h[h].draft = null; if (h === "panel") openPanel(); else { rerender("main"); const q = document.querySelector('[data-eoh="main"] [data-eoq]'); if (q) q.focus() } } }, true);
+  document.addEventListener("click", e => {
+    const b = e.target && e.target.closest && e.target.closest("[data-eo]"); if (!b) { const g = e.target && e.target.closest && e.target.closest("[data-eo-grp] > summary"); if (g) { const d = g.parentElement; setTimeout(() => { S.grp[d.dataset.eoGrp] = d.open }, 0) } const m = e.target && e.target.closest && e.target.closest("[data-eo-more] > summary"); if (m) { const h = hostOf(m); setTimeout(() => { if (S.h[h]) S.h[h].more = m.parentElement.open }, 0) } return }
+    const a = b.dataset.eo, v = b.dataset.v; const h = b.dataset.h || hostOf(b) || "main"; const st = S.h[h]; const p = P();
+    if (a === "signok") { doSign(h); return }
+    if (!st || !p) return; e.preventDefault();
+    if (a === "focus") { st.draft = null; rerender(h); const q = document.querySelector(`[data-eoh="${h}"] [data-eoq]`); if (q) { q.scrollIntoView({ block: "center", behavior: "smooth" }); q.focus({ preventScroll: true }) } return }
+    if (a === "cf") { st.cf = st.cf === v ? "" : v; st.draft = null; st.hi = -1; rerender(h); return }
+    if (a === "pick") { pick(h, v); return }
+    if (a === "cancel") { st.draft = null; rerender(h); if (h === "modal" && !pendOf(p).length) sClose(); return }
+    if (a === "set" && st.draft) { const k = b.dataset.k; st.draft.f[k] = v; if (k === "freq" && isMedCat(st.draft.c)) st.draft.f.times = (fq(v).t || []).join(", "); if (k === "pri" && v !== "Routine") { st.draft.f.hd = p.hd || 1; st.draft.f.tm = hhmm(nowMin()) } rerender(h); return }
+    if (a === "hold" && st.draft) { const f = st.draft.f; f.hold = f.hold ? f.hold + "; " + v : v; rerender(h); return }
+    if (a === "now" && st.draft) { st.draft.f.hd = p.hd || 1; st.draft.f.tm = hhmm(nowMin()); rerender(h); return }
+    if (a === "accept") { accept(h); return }
+    if (a === "setadd") { setAdd(h); return }
+    if (a === "pedit") { const d = pendOf(p).find(x => x.pid === v); if (d) { st.draft = JSON.parse(JSON.stringify(d)); st.draft.f.ack = st.draft.f.ack || {}; st.more = false; rerender(h); const r = document.querySelector(`[data-eoh="${h}"] [data-eo-cmp]`); if (r) try { r.scrollIntoView({ block: "nearest", behavior: "smooth" }) } catch (x) { } } return }
+    if (a === "prm") { upd(q => { q.eoPend = (q.eoPend || []).filter(x => x.pid !== v) }); if (st.draft && st.draft.pid === v) st.draft = null; afterChange(h); return }
+    if (a === "pclear") { sConfirm("Remove all pending orders?", "Nothing has been signed yet. This clears the pending list.", "Remove all", () => { upd(q => { q.eoPend = [] }); Object.values(S.h).forEach(x => { if (x.draft && x.draft.pid) x.draft = null }); refreshAll(false); mountPanel(false) }, true); return }
+    if (a === "sign") { signFlow(h); return }
+  });
+  document.addEventListener("change", e => { const c = e.target; if (c && c.dataset && c.dataset.eoRb != null) { const m = c.closest(".smod"); const all = [...m.querySelectorAll("[data-eo-rb]")]; const ok = all.every(x => x.checked); const btn = m.querySelector('[data-eo="signok"]'); if (btn) btn.disabled = !ok } });
+  function onField(e) {
+    const t = e.target; if (!t || !t.dataset) return; const h = hostOf(t); if (!h) return; const st = S.h[h];
+    if (t.dataset.eoq != null) { if (e.type !== "input") return; st.q = t.value; st.hi = -1; if (st.draft && st.q) st.draft = null; if (!st.q) st.hi = -1; const had = !!document.querySelector(`[data-eoh="${h}"] [data-eo-cmp]`); if (had) rerender(h); else resultsOnly(h); return }
+    const k = t.dataset.eof; if (!k || !st.draft) return; const d = st.draft;
+    if (k.startsWith("ack:")) { d.f.ack[k.slice(4)] = t.checked; rerender(h); return }
+    if (k.startsWith("setsel:")) { const i = +k.slice(7); d.sel = d.sel || []; if (t.checked) { if (d.sel.indexOf(i) < 0) d.sel.push(i) } else d.sel = d.sel.filter(x => x !== i); rerender(h); return }
+    const val = t.type === "checkbox" ? t.checked : t.value; d.f[k] = val;
+    if (k === "freq" && isMedCat(d.c)) d.f.times = (fq(val).t || []).join(", ");
+    if (k === "route" && isMedCat(d.c) && !d.f.dose) d.f.unit = unitFor(item(d.id) || d, val);
+    /* selects and checkboxes change the form's shape: re-render on "change". Text fields never re-render (a re-render on blur
+       would swallow the click on Accept that caused the blur). */
+    if (t.tagName === "SELECT" || t.type === "checkbox") { if (e.type === "change") rerender(h); return }
+    if (e.type === "change") return;
+    /* typing: refresh the status line and the Accept state without re-rendering the field */
+    const r = document.querySelector(`[data-eoh="${h}"] [data-eo-cmp]`); if (!r) return; const p = P(); const tmp = document.createElement("div"); tmp.innerHTML = composerHTML(h, p);
+    const nb = tmp.querySelector(".eo-cta"), ob = r.querySelector(".eo-cta"); if (nb && ob) ob.replaceWith(nb);
+    const na = tmp.querySelector(".eo-bpa"), oa = r.querySelector(".eo-bpa"); if (!!na !== !!oa || (na && oa && na.textContent !== oa.textContent)) { if (oa && na) oa.replaceWith(na); else if (oa) oa.remove(); else if (na) r.querySelector(".eo-ch").after(na) }
+  }
+  document.addEventListener("input", onField); document.addEventListener("change", onField);
+  const remember = e => { const t = e.target; if (t && t.closest && t.closest("[data-eoh]")) { const fs = focusSnap(); if (fs) S.focus = fs } };
+  document.addEventListener("focusin", remember); document.addEventListener("input", remember);
+  /* a real move elsewhere forgets the field; a field removed by a re-render (focus falls to <body>) is restored after the redraw */
+  document.addEventListener("focusout", e => { const t = e.target; if (!t || !t.closest || !t.closest("[data-eoh]")) return; setTimeout(() => { const a = document.activeElement; if (t.isConnected && a && a !== document.body && !(a.closest && a.closest("[data-eoh]"))) S.focus = null; if (t.isConnected && (!a || a === document.body)) S.focus = null }, 0) });
+  document.addEventListener("keydown", e => {
+    const t = e.target; if (!t || !t.dataset) return;
+    if (t.dataset.eoq != null) { const h = hostOf(t); const st = S.h[h]; const R = search(st.q, st.cf);
+      if (e.key === "ArrowDown" || e.key === "ArrowUp") { if (!R.length) return; e.preventDefault(); st.hi = e.key === "ArrowDown" ? Math.min(R.length - 1, st.hi + 1) : Math.max(0, st.hi - 1); resultsOnly(h); const x = document.querySelector(`[data-eoh="${h}"] .eo-r.hi`); if (x) x.scrollIntoView({ block: "nearest" }); return }
+      if (e.key === "Enter") { e.preventDefault(); const x = R[st.hi >= 0 ? st.hi : 0]; if (x) pick(h, x.id); return }
+      if (e.key === "Escape" && (st.q || st.cf)) { e.preventDefault(); e.stopPropagation(); st.q = ""; st.cf = ""; rerender(h); return } }
+    if (t.dataset.eof && e.key === "Enter" && t.tagName === "INPUT" && t.type !== "checkbox") { const h = hostOf(t); if (h) { e.preventDefault(); accept(h) } }
+  }, true);
+
+  /* ---------------- hooks: after every EHR draw, and on DOM changes (side panel repaints) ---------------- */
+  let sig = ""; (window.__EHXpost = window.__EHXpost || []).push(() => { try { isoSync() } catch (e) { } try { const p = P(); const s2 = p ? p.id + ":" + p.updated + ":" + (p.orders || []).length + ":" + pendOf(p).length : ""; mountPanel(s2 !== sig); sig = s2 } catch (e) { } try { fsBanner() } catch (e) { } });
+  { let busy = false, q = 0; const run = () => { q = 0; if (busy) return; busy = true; try { if (!mounting) mountPanel(false); relabel(); fsBanner() } catch (e) { } busy = false };
+    new MutationObserver(() => { if (busy || mounting || q) return; q = requestAnimationFrame ? requestAnimationFrame(run) : setTimeout(run, 16) }).observe(document.body, { childList: true, subtree: true }) }
+
+  /* ---------------- public API (tests and other modules) ---------------- */
+  window.__vxEO = {
+    version: V38, label: LBL38, cats: () => JSON.parse(JSON.stringify(CATS)), catalog: () => catalog().map(x => ({ id: x.id, n: x.n, c: x.c, sub: x.sub })),
+    search: (q, cf) => search(q, cf).map(x => ({ id: x.id, n: x.n, c: x.c, type: CATS[x.c].n })), state: S, pending: () => pendOf(P()), ocat,
+    compose: (id, h) => pick(h || (document.querySelector('[data-eoh="main"]') ? "main" : "panel"), id), checks: h => checks(P(), S.h[h || "main"].draft), openPanel, mount: mountPanel,
+    sets: () => SETS.map(s => ({ id: s.id, n: s.n, items: s.items.map(r => r[0]) }))
+  };
+}
+/* </v38-eorders-js> */
   /* ---- wiring into the app ---- */
   {const _dl=deepLink;deepLink=function(k){if(/^ehr(\/|$)/.test(k||"")){openEHR(k);return true}if(/^teach(\/|$)/.test(k||"")){openTeach(k);return true}if(/^school(\/|$)/.test(k||"")){openSchool(k);return true}return _dl.apply(this,arguments)}}
   if(typeof FEAT!=="undefined"){FEAT.push(["ehr","Clinical EHR & MAR","Practice MAR, orders, flowsheets, LDA avatar, care plans, PDF reports"]);FEAT_SEL.ehr="[data-ehr-open]"}
