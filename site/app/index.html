@@ -4004,6 +4004,202 @@ html[data-theme="dark"] .vxsb .eo-ic{filter:saturate(.9) brightness(.95)}
 .vxsec-phi b{color:#5b4300}
 .vxsec-toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);z-index:2147482000;max-width:min(560px,calc(100vw - 32px));background:#2c3e57;color:#fff;padding:12px 16px;border-radius:10px;font-size:14.5px;line-height:1.4;box-shadow:0 8px 30px rgba(0,0,0,.3)}
 /* </v40-sec-css> */
+/* <v41-vault-css> */
+/* v41 Compliance vault + My requirements (prefix vxv-). Epic-like: navy header, activity tabs, Media-tab list + preview pane,
+   flowsheet clearance grid (reuses the v34 .fg-t / .fg-tabs look). Phone first; no page-level horizontal scroll. */
+.vxv{--vxv-ok:#1b6e3c;--vxv-okb:#e3f3e8;--vxv-warn:#8a5a00;--vxv-warnb:#fff1d6;--vxv-bad:#a3231e;--vxv-badb:#fde5e2;--vxv-info:#1d4f91;--vxv-infob:#e3edf9;--vxv-nd:#4f5d68;--vxv-ndb:#e8edf0;--vxv-sel:#dbe8f6;--vxv-hd:#eef2f5;min-height:100vh;display:flex;flex-direction:column;background:var(--bg);color:var(--ink);overflow-x:hidden}
+[data-theme="dark"] .vxv,[data-theme="dark"] .vxv-mbg{--vxv-ok:#7fd49c;--vxv-okb:#123826;--vxv-warn:#f0c46a;--vxv-warnb:#3a2c0b;--vxv-bad:#f4a097;--vxv-badb:#43191a;--vxv-info:#9cc2f5;--vxv-infob:#14263d;--vxv-nd:#b6c6d0;--vxv-ndb:#1d3442;--vxv-sel:#1d3a5a;--vxv-hd:#1b2830}
+.vxv-mbg{--vxv-ok:#1b6e3c;--vxv-okb:#e3f3e8;--vxv-warn:#8a5a00;--vxv-warnb:#fff1d6;--vxv-bad:#a3231e;--vxv-badb:#fde5e2;--vxv-info:#1d4f91;--vxv-infob:#e3edf9;--vxv-nd:#4f5d68;--vxv-ndb:#e8edf0}
+body.vxv-on{overflow-x:hidden}
+.vxv-h{display:flex;align-items:center;gap:12px;padding:8px 16px;background:var(--navy);color:#fff;min-height:56px;flex-wrap:wrap}
+.vxv-h .logo{background:none;border:0;padding:0;color:#fff;cursor:pointer;display:flex}.vxv-h .logo svg{height:22px;width:auto}
+.vxv-t{font-weight:800;font-size:17px;letter-spacing:.2px}
+.vxv-pick{display:flex;align-items:center;min-width:0;max-width:100%}.vxv-pick select{font:inherit;font-size:14px;padding:6px 8px;border-radius:8px;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.12);color:#fff;max-width:min(60vw,360px)}.vxv-pick option{color:#111}
+.vxv-sch1{font-size:14px;opacity:.9;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:60vw}
+.vxv-hr{margin-left:auto;display:flex;align-items:center}
+.vxv-nav{display:flex;gap:2px;padding:0 8px;background:var(--surface);border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:none;position:sticky;top:0;z-index:20}
+.vxv-nav::-webkit-scrollbar{display:none}
+.vxv-tab{display:inline-flex;align-items:center;gap:7px;padding:12px 12px 10px;font-weight:700;font-size:14px;color:var(--muted);text-decoration:none;border-bottom:3px solid transparent;white-space:nowrap;min-height:44px;box-sizing:border-box}
+.vxv-tab:hover{color:var(--ink)}.vxv-tab[aria-current="page"]{color:var(--accent);border-bottom-color:var(--accent)}
+.vxv-nb{display:inline-block;min-width:20px;padding:0 6px;border-radius:10px;background:var(--vxv-infob);color:var(--vxv-info);font-size:11.5px;line-height:20px;text-align:center}.vxv-nb.bad{background:var(--vxv-badb);color:var(--vxv-bad)}
+.vxv-m{width:100%;max-width:1320px;margin:0 auto;padding:16px;box-sizing:border-box;flex:1;min-width:0}
+.vxv-sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.vxv-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:16px;min-width:0;box-sizing:border-box}
+.vxv-card h2{margin:0 0 8px;font-size:19px}.vxv-card h3{margin:16px 0 6px;font-size:15.5px}
+.vxv-card.vxv-flush{padding:0;overflow:hidden}.vxv-card.vxv-flush .vxv-ch{padding:14px 16px 8px}.vxv-card.vxv-flush .vxv-empty{padding:16px}
+.vxv-ch{display:flex;align-items:center;gap:8px;font-size:17px!important;flex-wrap:wrap}
+.vxv-empty{padding:20px;color:var(--muted);text-align:center}
+.vxv-mut{color:var(--muted);font-weight:400;font-size:.94em}
+.vxv-disc{font-size:12.5px;color:var(--muted);margin:10px 0 0}
+.vxv-btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;font:inherit;font-weight:700;font-size:15px;padding:10px 16px;min-height:44px;border-radius:10px;border:1px solid var(--accent);background:var(--accent);color:#fff;cursor:pointer;text-decoration:none;box-sizing:border-box;white-space:nowrap}
+.vxv-btn.sec{background:transparent;color:var(--accent)}.vxv-btn.mini{min-height:36px;padding:6px 12px;font-size:13.5px}
+.vxv-btn.danger{border-color:var(--vxv-bad);background:var(--vxv-bad);color:#fff}.vxv-btn.sec.danger{background:transparent;color:var(--vxv-bad)}
+.vxv-btn:disabled{opacity:.6;cursor:wait}
+.vxv-lnk{background:none;border:0;color:var(--accent);font:inherit;font-weight:700;cursor:pointer;padding:4px 2px;text-decoration:underline;text-underline-offset:2px;text-align:left}.vxv-lnk.bad{color:var(--vxv-bad)}
+.vxv-st{display:inline-flex;align-items:center;gap:4px;font-weight:800;font-size:12px;padding:2px 9px;border-radius:999px;white-space:nowrap;border:1px solid currentColor}
+.vxv-st.s-ok{color:var(--vxv-ok);background:var(--vxv-okb)}.vxv-st.s-warn{color:var(--vxv-warn);background:var(--vxv-warnb)}.vxv-st.s-bad{color:var(--vxv-bad);background:var(--vxv-badb)}.vxv-st.s-info{color:var(--vxv-info);background:var(--vxv-infob)}.vxv-st.s-nd{color:var(--vxv-nd);background:var(--vxv-ndb)}
+.vxv-tag{display:inline-block;font-size:11.5px;font-weight:700;padding:1px 7px;border-radius:6px;background:var(--vxv-ndb);color:var(--vxv-nd);vertical-align:middle}.vxv-tag.bad{background:var(--vxv-badb);color:var(--vxv-bad)}
+.x-ok{color:var(--vxv-ok)}.x-warn{color:var(--vxv-warn);font-weight:700}.x-bad{color:var(--vxv-bad);font-weight:700}
+.vxv-note{display:flex;gap:10px;align-items:flex-start;padding:10px 14px;border-radius:10px;background:var(--vxv-ndb);color:var(--ink);margin:0 0 12px;font-size:14px;border:1px solid var(--line)}
+.vxv-note svg{flex:none;margin-top:2px}.vxv-note.warn{background:var(--vxv-warnb)}.vxv-note.info{background:var(--vxv-infob)}.vxv-note.bad{background:var(--vxv-badb)}
+.vxv-phi{display:flex;gap:6px;align-items:flex-start;font-size:13px;color:var(--vxv-warn);background:var(--vxv-warnb);border-radius:8px;padding:8px 10px;margin:8px 0}.vxv-phi svg{flex:none;margin-top:2px}
+/* banner + KPIs */
+.vxv-ban{display:flex;gap:16px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--accent);border-radius:12px;padding:16px 18px;margin-bottom:16px}
+.vxv-ban>div:first-child{flex:1 1 380px;min-width:0}.vxv-banr{display:flex;gap:8px;flex-wrap:wrap}
+.vxv-k{font-size:12.5px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.4px}
+.vxv-h1{margin:2px 0 6px;font-size:24px;line-height:1.2;overflow-wrap:anywhere}
+.vxv-kpis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:16px}
+@media(min-width:620px){.vxv-kpis{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(min-width:1100px){.vxv-kpis{grid-template-columns:repeat(7,minmax(0,1fr))}}
+.vxv-kpi{display:flex;flex-direction:column;align-items:flex-start;gap:2px;font:inherit;text-align:left;background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--vxv-nd);border-radius:10px;padding:10px 12px;cursor:pointer;color:var(--ink);min-height:74px;min-width:0}
+.vxv-kpi b{font-size:26px;line-height:1.1}.vxv-kpi span{font-size:13px;color:var(--muted);font-weight:700}
+.vxv-kpi.bad{border-top-color:var(--vxv-bad)}.vxv-kpi.bad b{color:var(--vxv-bad)}.vxv-kpi.warn{border-top-color:#d49a1f}.vxv-kpi.warn b{color:var(--vxv-warn)}.vxv-kpi.soft{border-top-color:#8fb1c7}
+.vxv-kpi.on{outline:2px solid var(--accent);outline-offset:1px;background:var(--vxv-sel)}
+.vxv-cols{display:grid;grid-template-columns:minmax(0,1fr);gap:16px}.vxv-cols>.vxv-card{margin-bottom:0}
+@media(min-width:1000px){.vxv-cols{grid-template-columns:minmax(0,1.6fr) minmax(0,1fr)}}
+.vxv-cols+*{margin-top:16px}
+.vxv-alerts ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.vxv-alerts li{padding:8px 10px;border-radius:8px;border-left:4px solid var(--vxv-nd);background:var(--bg);font-size:14px;overflow-wrap:anywhere}
+.vxv-alerts li.a-bad{border-left-color:var(--vxv-bad)}.vxv-alerts li.a-warn{border-left-color:#d49a1f}.vxv-alerts li.a-info{border-left-color:var(--vxv-info)}
+.vxv-start ol{margin:4px 0 12px 18px;padding:0;line-height:1.6}
+/* tables (Media-tab list) */
+.vxv-tw{overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch}
+.vxv-tbl{width:100%;border-collapse:collapse;font-size:13.5px}
+.vxv-tbl td,.vxv-tbl th{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.vxv-tbl th{background:var(--vxv-hd);font-size:12px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.3px;white-space:nowrap;position:sticky;top:0}
+.vxv-tbl td small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+.vxv-tbl tbody tr[data-vv]{cursor:pointer}.vxv-tbl tbody tr[data-vv]:hover{background:var(--vxv-hd)}
+.vxv-tbl tbody tr.on{background:var(--vxv-sel);box-shadow:inset 4px 0 0 var(--accent)}
+.vxv-tbl tr:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.vxv-mt td{white-space:nowrap}.vxv-mt td:nth-child(3){white-space:normal;min-width:180px}
+@media(min-width:1100px){.vxv-lib{grid-template-columns:170px minmax(0,1fr) 400px!important}.vxv-lib.has-sel .vxv-mt th:nth-child(4),.vxv-lib.has-sel .vxv-mt td:nth-child(4),.vxv-lib.has-sel .vxv-mt th:nth-child(7),.vxv-lib.has-sel .vxv-mt td:nth-child(7){display:none}.vxv-lib.has-sel .vxv-mt td:nth-child(2){white-space:normal;min-width:110px}.vxv-lib.has-sel .vxv-mt td:nth-child(3){min-width:150px}}
+.vxv-tbl tr.sens td{background:color-mix(in srgb,var(--vxv-warnb) 45%,transparent)}
+.vxv-tb{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 12px}.vxv-tb h2{margin:0;font-size:20px;margin-right:auto}
+.vxv-in{font:inherit;font-size:15px;padding:9px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);min-height:42px;box-sizing:border-box;width:100%;min-width:0}
+.vxv-q{max-width:320px;flex:1 1 200px}
+.vxv-lib{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;align-items:start}
+.vxv-cats{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}.vxv-cats::-webkit-scrollbar{display:none}
+.vxv-cats button{font:inherit;font-size:13.5px;font-weight:700;padding:7px 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink);cursor:pointer;white-space:nowrap;min-height:38px}
+.vxv-cats button[aria-current="true"]{background:var(--accent);color:#fff;border-color:var(--accent)}
+.vxv-media{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px;min-width:0}
+.vxv-prev{background:var(--surface);border:1px solid var(--line);border-radius:12px;min-width:0;display:none}
+.vxv-lib.has-sel .vxv-prev{display:block}
+@media(max-width:1099px){.vxv-lib.has-sel .vxv-media,.vxv-lib.has-sel .vxv-cats{display:none}}
+@media(min-width:1100px){.vxv-lib{grid-template-columns:190px minmax(0,1fr) 420px}.vxv-prev{display:block;position:sticky;top:56px;max-height:calc(100vh - 72px);overflow:auto}.vxv-cats{flex-direction:column;overflow:visible}.vxv-cats button{border-radius:8px;text-align:left;white-space:normal}.vxv-back{display:none!important}}
+.vxv-ph{padding:14px 16px 8px;border-bottom:1px solid var(--line);background:var(--vxv-hd);border-radius:12px 12px 0 0}.vxv-ph h2{margin:4px 0 2px;font-size:18px;overflow-wrap:anywhere}
+.vxv-back{display:inline-flex;align-items:center;gap:4px;font:inherit;font-weight:700;color:var(--accent);background:none;border:0;padding:4px 0;cursor:pointer;min-height:36px}
+.vxv-pb{padding:12px 16px 16px}.vxv-pb h3{font-size:15px;margin:16px 0 8px}
+.vxv-dl{display:grid;grid-template-columns:minmax(0,1fr);gap:6px 14px;margin:0}.vxv-dl div{display:grid;grid-template-columns:120px minmax(0,1fr);gap:8px;padding:4px 0;border-bottom:1px dashed var(--line)}
+.vxv-dl dt{font-size:12.5px;font-weight:800;color:var(--muted)}.vxv-dl dd{margin:0;overflow-wrap:anywhere;font-size:14px}
+@media(min-width:700px){.vxv-dl.two{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.vxv-acts{display:flex;gap:6px;flex-wrap:wrap;margin:12px 0 0}
+.vxv-drop{display:flex;gap:10px;align-items:center;border:2px dashed var(--line);border-radius:10px;padding:12px;cursor:pointer;position:relative}
+.vxv-drop:hover{border-color:var(--accent)}.vxv-drop small{display:block;color:var(--muted);font-size:12.5px}
+.vxv-drop input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%}
+.vxv-files{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px}
+.vxv-files li{display:flex;gap:8px;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;padding:8px 10px;border:1px solid var(--line);border-radius:8px;font-size:14px}
+.vxv-files li>span:first-child{min-width:0;overflow-wrap:anywhere;flex:1 1 200px}.vxv-files small{display:block;color:var(--muted);font-size:12px}.vxv-files li.del{opacity:.55}
+.vxv-fa{display:flex;gap:6px;flex-wrap:wrap}
+.vxv-pv{position:relative;margin-top:10px;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff}
+.vxv-pv img{display:block;max-width:100%;height:auto;margin:0 auto}
+.vxv-pv.pdf{display:grid;gap:8px;padding:8px;background:var(--vxv-ndb)}
+.vxv-pg{position:relative;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.2)}.vxv-pg canvas{display:block;width:100%;height:auto}
+.vxv-wm{position:absolute;left:8px;bottom:6px;font-size:11px;font-weight:700;color:rgba(80,80,80,.75);background:rgba(255,255,255,.7);padding:1px 6px;border-radius:4px;pointer-events:none;user-select:none}
+.vxv-hist{margin-top:14px;font-size:13px}.vxv-hist summary{cursor:pointer;font-weight:700;color:var(--accent)}.vxv-hist ul{margin:6px 0;padding-left:18px;color:var(--muted)}
+/* sites */
+.vxv-sites{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
+@media(min-width:700px){.vxv-sites{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(min-width:1100px){.vxv-sites{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.vxv-site{display:flex;flex-direction:column;gap:6px;align-items:flex-start;text-align:left;font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;cursor:pointer;min-width:0}
+.vxv-site:hover{border-color:var(--accent)}.vxv-site.off{opacity:.65}.vxv-site b{font-size:16.5px;overflow-wrap:anywhere}
+.vxv-sk{font-size:12px;font-weight:800;text-transform:uppercase;color:var(--muted);letter-spacing:.3px}
+.vxv-site ul{list-style:none;margin:0;padding:0;font-size:13.5px;display:grid;gap:3px}.vxv-site li{display:flex;gap:5px;align-items:center}
+.vxv-crumb{margin:0 0 8px}
+.vxv-contacts{list-style:none;margin:0;padding:0;display:grid;gap:8px}.vxv-contacts li{display:flex;flex-direction:column;gap:1px;padding:8px 10px;border:1px solid var(--line);border-radius:8px;overflow-wrap:anywhere}.vxv-contacts small{color:var(--muted)}.vxv-contacts a{color:var(--accent);font-size:14px}
+.vxv-reqs{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:6px}
+.vxv-reqs li{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 10px;border:1px solid var(--line);border-radius:8px;flex-wrap:wrap}.vxv-reqs li>span{min-width:0;flex:1 1 200px}.vxv-reqs small{display:block;color:var(--muted);font-size:12.5px}
+.vxv-addreq{display:grid;grid-template-columns:minmax(0,1fr);gap:8px;margin-top:12px;align-items:end}
+@media(min-width:800px){.vxv-addreq{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) 150px auto}}
+/* clearance grid (v34 flowsheet look) */
+.vxv-seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}.vxv-seg button{font:inherit;font-weight:700;font-size:13.5px;padding:7px 14px;border:0;background:var(--surface);color:var(--ink);cursor:pointer;min-height:38px}.vxv-seg button[aria-pressed="true"]{background:var(--accent);color:#fff}
+.vxv-gtabs{margin:0!important}
+.vxv-gframe{background:#fff;border:1px solid #b9c9d5;border-top:0;border-radius:0 0 8px 8px;min-width:0}
+[data-theme="dark"] .vxv-gframe{background:var(--surface)}
+.vxv-gsum{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;padding:8px 10px;border-bottom:1px solid #d5dee5;background:#fbfcfd;font-size:13px;color:#14232b}
+[data-theme="dark"] .vxv-gsum{background:var(--vxv-hd);color:var(--ink)}
+.vxv-leg{display:inline-flex;gap:4px;flex-wrap:wrap;margin-left:auto}
+.vxv-gw{overflow:auto;max-height:calc(100vh - 260px);min-height:160px;-webkit-overflow-scrolling:touch;outline:none}
+.vxv-gw:focus-visible{box-shadow:inset 0 0 0 2px #8ab4f8}
+.vxv-gt{--fgL:170px;--vxvN:170px;min-width:100%;user-select:text!important;-webkit-user-select:text!important}
+.vxv-gt thead th{top:0;height:auto!important;padding:6px 8px!important;font-size:11.5px;vertical-align:bottom;white-space:normal!important;min-width:92px;max-width:130px;text-align:center;line-height:1.2}
+.vxv-gt thead th small{display:block;font-weight:600;color:#6b7c86;font-size:10px}
+.vxv-gt th.vxv-gn{position:sticky;left:0;z-index:4;text-align:left!important;min-width:var(--vxvN)!important;max-width:var(--vxvN)!important;width:var(--vxvN)!important;box-sizing:border-box;overflow:hidden;text-overflow:ellipsis;background:#e3eaee;border-right:2px solid #b9c9d5;white-space:normal!important}
+.vxv-gt tbody th.vxv-gn{background:#fff;z-index:2;font-weight:600;height:auto;padding:6px 8px}
+[data-theme="dark"] .vxv-gt tbody th.vxv-gn,[data-theme="dark"] .vxv-gt td{background:var(--surface);color:var(--ink)}
+.vxv-gt td{height:40px!important;text-align:center;font-size:12px;font-weight:800;white-space:nowrap}
+.vxv-gt td small{display:block;font-weight:600;font-size:10.5px;opacity:.85}
+.vxv-gt td.vxv-c{cursor:default}.vxv-gt td.vxv-c[data-vv]{cursor:pointer}.vxv-gt td.vxv-c[data-vv]:hover{outline:2px solid #1a73e8;outline-offset:-2px}
+.vxv-gt td.c-ok{background:#e6f4ea!important;color:#14532d}.vxv-gt td.c-warn{background:#fff4d6!important;color:#7a4d00}.vxv-gt td.c-bad{background:#fde8e6!important;color:#9b1c13}.vxv-gt td.c-info{background:#e8f0fe!important;color:#1d4f91}
+[data-theme="dark"] .vxv-gt td.c-ok{background:#123826!important;color:#a8e6bd}[data-theme="dark"] .vxv-gt td.c-warn{background:#3a2c0b!important;color:#f0d08a}[data-theme="dark"] .vxv-gt td.c-bad{background:#43191a!important;color:#f6b4ab}[data-theme="dark"] .vxv-gt td.c-info{background:#14263d!important;color:#a9c8f2}
+.vxv-gt .vxv-gcl{position:sticky;left:var(--vxvN);z-index:2;min-width:100px!important;max-width:100px!important;width:100px!important;box-sizing:border-box;border-right:2px solid #b9c9d5;white-space:normal!important}
+.vxv-gt thead th.vxv-gcl{z-index:4;background:#e3eaee}
+@media(max-width:600px){.vxv-gt{--vxvN:112px}.vxv-gt .vxv-gcl{min-width:84px!important;max-width:84px!important;width:84px!important}}
+/* days, queue */
+.vxv-days{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}@media(min-width:900px){.vxv-days{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.vxv-day{margin:0}.vxv-dh{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;align-items:flex-start}.vxv-dh small{display:block;color:var(--muted)}
+.vxv-notc{list-style:none;margin:6px 0;padding:0;display:grid;gap:4px}.vxv-notc li{padding:6px 8px;border-radius:6px;background:var(--vxv-badb);font-size:13.5px}.vxv-notc small{display:block;color:var(--muted)}
+.vxv-f{display:grid;gap:4px;font-size:13.5px;font-weight:700;min-width:0}.vxv-f>span{color:var(--muted)}.vxv-f small{font-weight:400;color:var(--muted);font-size:12px}
+.vxv-f.inline{margin-top:8px}
+.vxv-queue{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.vxv-queue li{display:flex;gap:12px;justify-content:space-between;align-items:center;flex-wrap:wrap;margin:0}.vxv-queue li>div:first-child{display:flex;flex-direction:column;gap:2px;min-width:0;flex:1 1 280px}.vxv-queue small{color:var(--muted)}
+.vxv-qa{display:flex;gap:6px;flex-wrap:wrap}
+.vxv-chk{list-style:none;margin:0 0 8px;padding:0;display:grid;gap:4px}.vxv-chk li{display:flex;gap:6px;align-items:center}
+.vxv-ck{display:inline-flex;gap:8px;align-items:center;font-size:14px;cursor:pointer;min-height:36px}.vxv-ck input{width:18px;height:18px;flex:none}.vxv-ck.big{display:flex;font-weight:700;margin:6px 0}
+/* modal */
+.vxv-mbg{position:fixed;inset:0;z-index:210;background:rgba(20,14,8,.6);display:grid;place-items:center;padding:12px;overflow:auto}
+.vxv-mod{background:var(--surface);color:var(--ink);width:100%;max-width:520px;border-top:4px solid var(--accent);border-radius:12px;padding:20px;box-shadow:0 20px 60px rgba(0,0,0,.35);box-sizing:border-box;max-height:calc(100vh - 24px);overflow:auto}
+.vxv-mod.wide{max-width:760px}.vxv-mod h2{margin:0 0 10px;font-size:20px}.vxv-mod form{display:grid;gap:10px}.vxv-mod hr{border:0;border-top:1px solid var(--line);margin:4px 0}
+.vxv-g2,.vxv-g3,.vxv-g4{display:grid;grid-template-columns:minmax(0,1fr);gap:8px}
+@media(min-width:560px){.vxv-g2{grid-template-columns:repeat(2,minmax(0,1fr))}.vxv-g3{grid-template-columns:repeat(3,minmax(0,1fr))}.vxv-g4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:720px){.vxv-g4{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.vxv-fs{border:1px solid var(--line);border-radius:8px;padding:8px 10px;margin:0;min-width:0}.vxv-fs legend{font-weight:800;font-size:13px;color:var(--muted);padding:0 4px}
+.vxv-mb{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.vxv-err{color:var(--vxv-bad);font-weight:700;margin:0;min-height:1em}
+.vxv-toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,30px);opacity:0;background:#16232b;color:#fff;padding:10px 16px;border-radius:10px;font-weight:700;z-index:230;transition:.2s;pointer-events:none;max-width:calc(100vw - 32px)}
+.vxv-toast.on{opacity:1;transform:translate(-50%,0)}
+/* My requirements */
+.vxv-mhero{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;margin-bottom:12px}.vxv-mhero .vxv-h1{font-size:26px}
+.vxv-mcounts{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.vxv-rqlist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
+@media(min-width:900px){.vxv-rqlist{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.vxv-rq{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--vxv-nd);border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.vxv-rq.s-ok{border-left-color:var(--vxv-ok)}.vxv-rq.s-warn{border-left-color:#d49a1f}.vxv-rq.s-bad{border-left-color:var(--vxv-bad)}.vxv-rq.s-info{border-left-color:var(--vxv-info)}
+.vxv-rqh{display:flex;gap:10px;align-items:flex-start}.vxv-rqh>div{flex:1;min-width:0}.vxv-rqh b{font-size:16px;overflow-wrap:anywhere}.vxv-rqh small{display:block;color:var(--muted);font-size:12.5px}
+.vxv-rqi{flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--vxv-ndb);color:var(--vxv-nd)}
+.vxv-rq.s-ok .vxv-rqi{background:var(--vxv-okb);color:var(--vxv-ok)}.vxv-rq.s-bad .vxv-rqi{background:var(--vxv-badb);color:var(--vxv-bad)}.vxv-rq.s-warn .vxv-rqi{background:var(--vxv-warnb);color:var(--vxv-warn)}.vxv-rq.s-info .vxv-rqi{background:var(--vxv-infob);color:var(--vxv-info)}
+.vxv-rqs{margin:0;font-size:14.5px}.vxv-rqa{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.vxv-rqa label.vxv-btn{position:relative;overflow:hidden}
+/* hooks */
+.vxv-regs{display:flex;gap:10px;justify-content:space-between;align-items:center;flex-wrap:wrap;border-left:6px solid var(--accent)}
+.vxv-clr{display:inline-block;margin-left:6px;font-size:11.5px;font-weight:800;padding:1px 8px;border-radius:999px;border:1px solid currentColor;vertical-align:middle;white-space:nowrap}
+.vxv-clr.ok{color:#1b6e3c;background:#e3f3e8}.vxv-clr.no{color:#a3231e;background:#fde5e2}
+/* entered in error (Epic-style): greyed, struck-through title, badge; still fully viewable */
+.eie{opacity:.62}.eie .vxv-tt,.vxv-tt.eie,tr.eie td b.vxv-tt{text-decoration:line-through;text-decoration-thickness:2px}
+.vxv-tbl tr.eie td{background:repeating-linear-gradient(135deg,transparent 0 8px,var(--vxv-ndb) 8px 9px)}
+.vxv-pb.eie dl{opacity:.7}.vxv-pb.eie{opacity:1}
+.vxv-eieb{display:inline-block;margin-left:6px;font-size:11px;font-weight:800;padding:1px 7px;border-radius:5px;background:#5b5b5b;color:#fff;letter-spacing:.2px;vertical-align:middle;text-decoration:none!important;white-space:nowrap;opacity:1}
+[data-theme="dark"] .vxv-eieb{background:#bdbdbd;color:#111}
+.vxv-note.eie{background:var(--vxv-ndb);border-left:4px solid #5b5b5b}
+.vxv-eiel{opacity:.6;text-decoration:line-through}.vxv-eier{display:block;color:var(--muted);font-size:12px;text-decoration:none}
+li.eie{opacity:.65}.vxv-site.eie{opacity:.6}
+.vxv-eiet{margin-left:auto;font-size:13px}
+/* Needs attention */
+.vxv-rsn{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 10px}
+.vxv-queue li.a-bad{border-left:5px solid var(--vxv-bad)}.vxv-queue li.a-warn{border-left:5px solid #d49a1f}.vxv-queue li.a-info{border-left:5px solid var(--vxv-info)}
+.vxv-queue li.ack{background:color-mix(in srgb,var(--surface) 80%,var(--vxv-ndb))}
+.vxv-queue li>div:first-child>.vxv-st{align-self:flex-start;margin-bottom:2px}
+.vxv-acct td{white-space:nowrap}.vxv-acct td:last-child{white-space:normal;min-width:160px}
+@media print{.vxv-h,.vxv-nav,.vxv-acts,.vxv-drop,.vxv-note:not(.eie),.vxv-cats,.vxv-media,.vxv-back,.vxv-toast{display:none!important}.vxv-lib{display:block!important}.vxv-prev{display:block!important;position:static!important;max-height:none!important;border:0}body.vxv-on .vxv-m{max-width:none}}
+/* </v41-vault-css> */
 .areqp{border:1px solid var(--line,#cfd8e0);border-radius:10px;padding:10px 14px 4px;margin:6px 0 10px}.areqp legend{font-weight:700;padding:0 6px}.agrid input[type=date],.agrid input[type=month]{width:100%;min-width:0;max-width:100%;box-sizing:border-box;-webkit-appearance:none;appearance:none}.agrid .aip{min-width:0;max-width:100%}
 </style>
 
@@ -4016,7 +4212,7 @@ const BANK = (function(e){try{const P=">oVO^cd@ge#lJ'~wUTDiEY+LZx-K&hkt(/F0;G`N.
 let HIDQ=new Set();const CFG={c:null,bypass:false};try{const c=JSON.parse(localStorage.getItem("ns.cfg")||"null");if(c&&typeof c==="object"){CFG.c=c;HIDQ=new Set(c.hideQ||[])}}catch(e){}
 const featOn=k=>!CFG.c||!CFG.c.feat||CFG.c.feat[k]!==false;
 
-const APPV="8293f028ea4e7ef817ed05fb30c74184e726f96ce4dd03729e1b29bb32f3a9a8";
+const APPV="bc8495420183f3448189ecf3ab78d244b606d02b0dfe7eddfb6205851086f4df";
 const CATS={
   MOC:{n:"Management of Care",lo:15,hi:21,w:18},
   SIC:{n:"Safety and Infection Prevention and Control",lo:10,hi:16,w:13},
@@ -18044,6 +18240,488 @@ const SECX = (() => {
 })();
 }
 /* </v40-sec-js> */
+/* <v41-vault-js> */
+/* v41 Compliance vault (#vault) + My requirements (#requirements).
+   Inserted INSIDE the app IIFE by patches/vault-apply.js. Uses from the app: SRV, srvApi, app, view, deepLink, acctSlot, stopLoop,
+   LOGO (each guarded where optional). Server: worker/vault.js (/api/vault/*). The server decides every permission; this file only
+   hides entry points and lays out what the server returns.
+   Roles: school admin (full), clinical coordinator (sites, students, preceptors, clearance), instructor (clearance status for their own
+   students), student and instructor (My requirements), Vexcura site admin (metadata only unless the school grants support access).
+   Hooks: Board compliance (#compliance) gets a vault summary card; the instructor hub's clinical-day roster gets "Cleared" chips. */
+{
+  const VS = { me: null, meAt: 0, sid: null, tab: "overview", ov: null, cat: "", q: "", docs: null, sel: null, det: null, site: null, gsite: "", gwho: "students", grid: null, busy: false, mine: null, tile: "" };
+  const uidK = () => SRV.me ? String(SRV.me.id) : "";
+  const lsGet = k => { try { return JSON.parse(localStorage.getItem(k) || "null") } catch (e) { return null } };
+  const lsSet = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)) } catch (e) { } };
+  const hintK = () => "nclexsim.v41.vault." + uidK(); const hint = () => (uidK() && lsGet(hintK())) || null;
+  const H = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const api = (p, o) => srvApi(p, o);
+  const today = () => new Date().toLocaleDateString("en-CA");
+  const fmtD = d => { if (!d) return ""; const t = new Date(d + "T12:00:00"); return isNaN(t) ? d : t.toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" }) };
+  const fmtT = ms => ms ? new Date(ms).toLocaleString(undefined, { month: "short", day: "numeric", year: "numeric", hour: "numeric", minute: "2-digit" }) : "";
+  const kb = n => n > 1048576 ? (n / 1048576).toFixed(1) + " MB" : Math.max(1, Math.round(n / 1024)) + " KB";
+  const plural = (n, w) => n + " " + w + (n === 1 ? "" : "s");
+  const ICO = { vault: '<rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="12" cy="12" r="3.2"/><path d="M12 8.8V7M12 17v-1.8M15.2 12H17M7 12h1.8"/>', list: '<path d="M8 6h13M8 12h13M8 18h13"/><path d="M3 6h.01M3 12h.01M3 18h.01"/>', site: '<path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M10 21v-5h4v5"/><path d="M11 9h2M12 8v2"/>', grid: '<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/>', cal: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>', check: '<path d="M5 12l5 5 9-10"/>', inbox: '<path d="M3 13l3-8h12l3 8v6H3z"/><path d="M3 13h5l1 2h6l1-2h5"/>', log: '<path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/>', gear: '<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/>', up: '<path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 20h16"/>', dl: '<path d="M12 4v12M7 11l5 5 5-5"/><path d="M4 20h16"/>', eye: '<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>', lock: '<rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>', plus: '<path d="M12 5v14M5 12h14"/>', back: '<path d="M15 6l-6 6 6 6"/>', x: '<path d="M6 6l12 12M18 6L6 18"/>', warn: '<path d="M12 4l9 16H3z"/><path d="M12 10v4M12 17h.01"/>', pen: '<path d="M4 20h4L19 9l-4-4L4 16z"/>', shield: '<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/>', hold: '<rect x="6" y="5" width="4" height="14"/><rect x="14" y="5" width="4" height="14"/>', trash: '<path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/>' };
+  const sv = (k, n) => `<svg viewBox="0 0 24 24" width="${n || 16}" height="${n || 16}" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICO[k] || ""}</svg>`;
+  const ST = { met: ["Met", "ok"], expiring: ["Expiring", "warn"], missing: ["Missing", "bad"], pending: ["To review", "info"], expired: ["Expired", "bad"] };
+  const stChip = (st, extra) => `<span class="vxv-st s-${(ST[st] || ["", "nd"])[1]}">${H((ST[st] || [st])[0])}${extra ? " " + H(extra) : ""}</span>`;
+  const DSTAT = { draft: "Draft", pending_sig: "Waiting for signatures", active: "Active", signed: "Signed", expired: "Expired", superseded: "Superseded", archived: "Archived" };
+  const BASIS = { law: "Law", board: "Board rule", accred: "Accreditor", guidance: "CDC guidance", practice: "Common practice", facility: "Facility" };
+  const KINDS = { hospital: "Hospital", ltc: "Long-term care / rehab", clinic: "Clinic", community: "Community / public health", school: "School", sim: "Simulation center", other: "Other" };
+  const eieBadge = e => e ? `<span class="vxv-eieb" title="${H("Entered in error by " + e.by + ", " + fmtT(e.at) + ": " + e.reason)}">Entered in error</span>` : "";
+  const eieNote = e => e ? `<div class="vxv-note eie">${sv("x", 16)}<div><b>Entered in error</b> by ${H(e.by)} · ${H(fmtT(e.at))}<br>Reason: ${H(e.reason)}<br><span class="vxv-mut">It stays in the record and can still be viewed. It no longer counts toward dashboards or clearance.</span></div></div>` : "";
+  const showE = () => !!VS.showEie;
+  const eieToggle = () => `<label class="vxv-ck vxv-eiet"><input type="checkbox" data-vv="showeie" ${VS.showEie ? "checked" : ""}> Show entered-in-error</label>`;
+  /* v40 client PHI helper (window.__SEC.phi): scan typed text before it is sent, report hits to the Security Center */
+  const phiCheck = (txt, where) => { try { const P = window.__SEC && window.__SEC.phi; if (!P || (P.on && !P.on())) return []; const k = P.scan(txt) || []; if (k.length && P.report) P.report(k, where, false); return k } catch (e) { return [] } };
+  const hipaaOn = () => { try { return !!(window.__SEC && window.__SEC.phi && window.__SEC.phi.mode()) } catch (e) { return false } };
+  const DISC = "Not legal advice. Confirm with counsel, your accreditor and your facilities.";
+  const toast = m => { let t = document.getElementById("vxv-toast"); if (!t) { t = document.createElement("div"); t.id = "vxv-toast"; t.className = "vxv-toast"; t.setAttribute("role", "status"); document.body.appendChild(t) } t.textContent = m; t.classList.add("on"); clearTimeout(t._t); t._t = setTimeout(() => t.classList.remove("on"), 2800) };
+  const CAT = () => (VS.cat_ && VS.cat_.cats) || { site: "Clinical sites", student: "Students", faculty: "Faculty", preceptor: "Preceptors", board: "Board and state", accred: "Accreditation", inst: "Institutional", policy: "Policies" };
+  const TYPES = () => (VS.cat_ && VS.cat_.types) || {};
+  const tLabel = (c, t) => ((TYPES()[c] || {})[t] || {}).label || t;
+
+  /* ---------- who can see what (hint only; the server decides) ---------- */
+  async function loadMe(force) {
+    if (!SRV.on || !SRV.me || SRV.me.mustReset) return null;
+    if (!force && VS.me && Date.now() - VS.meAt < 60000) return VS.me;
+    try { const m = await api("/api/vault/me"); VS.me = m; VS.meAt = Date.now(); const S = m.schools || []; lsSet(hintK(), { staff: S.filter(s => ["admin", "coord", "instructor", "site"].includes(s.role)).length, mine: S.filter(s => s.role === "student" || s.role === "instructor" || s.role === "coord").length, at: Date.now() }); return m } catch (e) { return null }
+  }
+  (window.__vxLaunchQ = window.__vxLaunchQ || []).push(
+    { id: "w-vault", group: "work", order: 5, icon: ICO.vault, label: "Compliance vault", hint: "Clinical site contracts, clearance, program documents", href: "#vault", roles: ["instructor", "progadmin", "admin"], when: () => { const h = hint(); return !!(h && h.staff > 0) }, keys: "compliance vault documents contracts clinical affiliation agreement certificate of insurance coi onboarding orientation clearance immunizations background check drug screen accreditation acen ccne cnea sara authorization handbook policies faculty files preceptor records retention legal hold" },
+    { id: "w-myreq", group: "account", order: 3, icon: ICO.check, label: "My requirements", hint: "Immunizations, BLS, training and site checklists", href: "#requirements", roles: ["student", "instructor"], when: () => { const h = hint(); return !!(h && h.mine > 0) }, keys: "my requirements immunizations flu shot tb test bls cpr hipaa training clinical clearance upload proof" });
+  try { if (window.__vxLaunch && window.__vxLaunch.add) window.__vxLaunchQ.splice(0).forEach(x => window.__vxLaunch.add(x)) } catch (e) { }
+  function warm() { try { const h = hint(); if (SRV.on && SRV.me && !SRV.me.mustReset && (!h || Date.now() - h.at > 6 * 3600e3)) loadMe(true) } catch (e) { } }
+  try { (SRV.ready || Promise.resolve()).then(() => setTimeout(warm, 1500)) } catch (e) { }
+
+  /* ---------- routing ---------- */
+  const isMine = k => /^(vault|requirements)(\/|$)/.test(k || "");
+  { const _dl = deepLink; deepLink = function (k) { if (isMine(k)) { open(k); return true } if (view === "vault") off(); return _dl.apply(this, arguments) } }
+  window.addEventListener("hashchange", () => { if (!isMine((location.hash || "").slice(1))) off() });
+  function off() { document.body.classList.remove("vxv-on"); closeMod() }
+  const TABS = [["overview", "Overview", "vault"], ["library", "Library", "list"], ["sites", "Clinical sites", "site"], ["clear", "Clearance", "grid"], ["days", "Clinical days", "cal"], ["review", "Needs attention", "warn"], ["audit", "Audit log", "log"], ["settings", "Settings", "gear"]];
+  const tabsFor = r => r === "instructor" ? ["clear", "days"] : r === "coord" ? ["overview", "library", "sites", "clear", "days", "review"] : r === "site" ? ["overview", "library", "sites", "clear", "days", "review", "audit"] : TABS.map(t => t[0]);
+  async function open(k) {
+    if (SRV.on && !SRV.loaded) { SRV.ready.then(() => open(k)); return }
+    if (SRV.on && !SRV.me) { SRV.next = k; try { srvGo("signin") } catch (e) { location.hash = "signin" } return }
+    try { stopLoop() } catch (e) { } if (view !== "vault") window.scrollTo(0, 0); view = "vault"; document.body.classList.add("vxv-on");
+    const mineView = /^requirements/.test(k); const m = /^vault(?:\/([a-z]+))?(?:\/([A-Za-z0-9_-]+))?(?:\/([A-Za-z0-9_-]+))?/.exec(k) || [];
+    app.innerHTML = shell(mineView); main(`<div class="vxv-empty">Loading…</div>`);
+    if (!VS.cat_) { try { VS.cat_ = await api("/api/vault/catalog") } catch (e) { } }
+    await loadMe(true); if (view !== "vault") return;
+    if (mineView) return openMine();
+    const S = ((VS.me && VS.me.schools) || []).filter(s => s.role !== "student");
+    if (!S.length) return main(`<div class="vxv-card"><h2>The compliance vault isn't available</h2><p>This workspace is for your program's admins, deans, clinical coordinators and instructors.</p><p><a class="vxv-btn" href="#requirements">Go to My requirements</a> <a class="vxv-btn sec" href="#progress">Go to my chart</a></p></div>`);
+    const last = lsGet("nclexsim.v41.vault.sid." + uidK()); VS.sid = S.some(s => s.id === VS.sid) ? VS.sid : S.some(s => s.id === last) ? last : (S.find(s => s.role !== "site") || S[0]).id;
+    const role = roleOf(); const allowed = tabsFor(role);
+    VS.tab = m[1] && allowed.includes(m[1]) ? m[1] : allowed[0];
+    if (m[1] === "library") { VS.cat = m[2] && CAT()[m[2]] ? m[2] : VS.cat; VS.sel = m[3] || null }
+    if (m[1] === "sites" && m[2]) VS.site = m[2]; else if (m[1] === "sites") VS.site = null;
+    if (m[1] === "clear" && m[2]) VS.gsite = m[2] === "all" ? "" : m[2];
+    paintPick(); await paint();
+  }
+  const school = () => ((VS.me && VS.me.schools) || []).find(s => s.id === VS.sid) || {};
+  const roleOf = () => school().role || "";
+  const canW = () => ["admin", "coord"].includes(roleOf());
+  const isAdm = () => roleOf() === "admin";
+  function shell(mine) {
+    return `<div class="vxv" id="vxv"><header class="vxv-h"><button class="logo" data-act="home" aria-label="Vexcura home">${typeof LOGO !== "undefined" ? LOGO : "Vexcura"}</button><span class="vxv-t">${mine ? "My requirements" : "Compliance vault"}</span><span id="vxv-pick" class="vxv-pick"></span><span class="vxv-hr"><span class="acct-slot">${typeof acctSlot === "function" ? acctSlot() : ""}</span></span></header>${mine ? "" : `<nav class="vxv-nav" id="vxv-nav" aria-label="Vault sections"></nav>`}<main class="vxv-m" id="vxv-m"></main></div>`;
+  }
+  const main = h => { const m = document.getElementById("vxv-m"); if (m) m.innerHTML = h };
+  function paintPick() {
+    const p = document.getElementById("vxv-pick"); if (!p) return; const S = ((VS.me && VS.me.schools) || []).filter(s => s.role !== "student");
+    p.innerHTML = S.length > 1 ? `<label class="vxv-sr" for="vxv-sch">Program</label><select id="vxv-sch" data-vv="school">${S.map(s => `<option value="${H(s.id)}"${s.id === VS.sid ? " selected" : ""}>${H(s.name)}${s.role === "site" ? " (site admin)" : ""}</option>`).join("")}</select>` : S.length ? `<span class="vxv-sch1">${H(S[0].name)}</span>` : "";
+  }
+  function paintNav() {
+    const n = document.getElementById("vxv-nav"); if (!n) return; const al = tabsFor(roleOf()); const c = (VS.ov && VS.ov.counts) || {};
+    const badge = k => k === "overview" && (c.expired + c.missing) ? `<b class="vxv-nb bad">${c.expired + c.missing}</b>` : k === "review" && c.attention ? `<b class="vxv-nb">${c.attention}</b>` : "";
+    n.innerHTML = TABS.filter(t => al.includes(t[0])).map(t => `<a href="#vault/${t[0]}" class="vxv-tab" ${VS.tab === t[0] ? 'aria-current="page"' : ""}>${sv(t[2], 18)}<span>${H(t[1])}</span>${badge(t[0])}</a>`).join("");
+  }
+  async function paint() {
+    paintNav(); const r = roleOf();
+    try {
+      if (["admin", "coord", "site"].includes(r) && (!VS.ov || VS.ov._sid !== VS.sid || Date.now() - VS.ov._at > 20000)) { VS.ov = await api(`/api/vault/s/${VS.sid}/overview`); VS.ov._sid = VS.sid; VS.ov._at = Date.now(); paintNav() }
+      const T = VS.tab;
+      if (T === "overview") return pOverview(); if (T === "library") return pLibrary(); if (T === "sites") return VS.site ? pSite() : pSites();
+      if (T === "clear") return pGrid(); if (T === "days") return pDays(); if (T === "review") return pReview(); if (T === "audit") return pAudit(); if (T === "settings") return pSettings();
+    } catch (e) { main(`<div class="vxv-card"><h2>Couldn't load the vault</h2><p>${H(e.message)}</p><button class="vxv-btn" data-vv="reload">Try again</button></div>`) }
+  }
+  const banner = () => {
+    const ov = VS.ov || {}; const s = ov.storage || (VS.me && VS.me.storage) || {}; const r = roleOf(); const L = [];
+    if (r === "site") L.push(`<div class="vxv-note info">${sv("lock", 18)}<div><b>Site admin view: metadata only.</b> Document contents stay locked unless this school grants support access${school().support ? ". <b>Support access is on.</b>" : "."}</div></div>`);
+    if (!s.on) L.push(`<div class="vxv-note">${sv("lock", 18)}<div><b>File storage is off.</b> File storage turns on when your administrator enables secure storage. Everything else (dates, checklists, clearance, alerts) works now.</div></div>`);
+    if (ov.phi_notice && !ov.hipaa && !hipaaOn()) L.push(`<div class="vxv-note warn">${sv("warn", 18)}<div>${H(ov.phi_notice)}</div></div>`);
+    return L.join("");
+  };
+
+  /* ---------- overview ---------- */
+  function pOverview() {
+    const o = VS.ov; if (!o) return main(`<div class="vxv-empty">No data.</div>`); const c = o.counts;
+    const tile = (k, n, label, cls) => `<button class="vxv-kpi ${cls}${VS.tile === k ? " on" : ""}" data-vv="tile" data-k="${k}" aria-pressed="${VS.tile === k}"><b>${n}</b><span>${H(label)}</span></button>`;
+    const empty = !o.sites.length && !c.missing;
+    const rowsFor = k => {
+      if (k === "missing") return o.missing.map(m => `<tr data-vv="${m.kind === "site" ? "opensite" : "addcore"}" data-id="${H(m.site_id || "")}" data-cat="${H(m.cat || "site")}" data-type="${H(m.type)}" tabindex="0"><td>${stChip("missing")}</td><td><b>${H(m.label)}</b>${m.site ? `<small>${H(m.site)}</small>` : m.basis ? `<small>${H(BASIS[m.basis] || "")}${m.cite ? " · " + H(m.cite) : ""}</small>` : ""}</td><td>${H(m.why || (m.na_ok ? "Not on file (mark N/A in Settings if it doesn't apply)" : "Not on file"))}</td></tr>`).join("");
+      if (k === "notice") return o.notice.map(n => `<tr data-vv="opendoc" data-id="${H(n.id)}" tabindex="0"><td>${n.days < 0 ? stChip("expired", "") : stChip("expiring")}</td><td><b>${H(n.title)}</b><small>${H(siteName(n.site_id))}</small></td><td>${n.days < 0 ? `Notice deadline passed ${fmtD(n.deadline)}.${n.auto_renew ? " Renews automatically on " + fmtD(n.expires) + "." : ""}` : `Give ${n.notice_days}-day notice by <b>${fmtD(n.deadline)}</b> (${plural(n.days, "day")})`}</td></tr>`).join("");
+      if (k === "items") return o.items.filter(x => x.days <= 30).map(x => `<tr data-vv="person" data-id="${H(x.user_id)}" tabindex="0"><td>${x.days < 0 ? stChip("expired") : stChip("expiring")}</td><td><b>${H(x.user)}</b><small>${H(x.label)}</small></td><td>${x.days < 0 ? "Expired " + fmtD(x.expires) : "Expires " + fmtD(x.expires) + " (" + plural(x.days, "day") + ")"}</td></tr>`).join("");
+      const L = k === "expired" ? o.buckets.expired : o.buckets[k] || [];
+      return L.map(x => `<tr data-vv="opendoc" data-id="${H(x.id)}" tabindex="0"><td>${x.days < 0 ? stChip("expired") : stChip("expiring")}</td><td><b>${H(x.title)}</b><small>${H(tLabel(x.cat, x.type))}${x.site_id ? " · " + H(siteName(x.site_id)) : x.person ? " · " + H(x.person) : ""}</small></td><td>${x.days < 0 ? "Expired " + fmtD(x.expires) + " (" + plural(-x.days, "day") + " ago)" : "Expires " + fmtD(x.expires) + " (" + plural(x.days, "day") + ")"}${x.auto_renew ? ` <span class="vxv-tag">Auto-renews</span>` : ""}</td></tr>`).join("");
+    };
+    const k = VS.tile || (c.expired ? "expired" : c.d30 ? "d30" : c.missing ? "missing" : "d60");
+    const title = { expired: "Expired", d30: "Expiring in 30 days", d60: "Expiring in 31-60 days", d90: "Expiring in 61-90 days", notice: "Notice-period deadlines", missing: "Missing", items: "Student and faculty requirements expiring in 30 days" }[k];
+    const body = rowsFor(k);
+    main(`${banner()}
+      <section class="vxv-ban"><div><div class="vxv-k">${H(o.school || school().name || "")}</div><h1 class="vxv-h1">Compliance vault</h1><p class="vxv-mut">Clinical site contracts, insurance, requirement clearance and every program document, with expiration tracking. ${H(DISC)}</p></div>
+      <div class="vxv-banr">${canW() ? `<button class="vxv-btn" data-vv="adddoc">${sv("plus")} Add document</button><button class="vxv-btn sec" data-vv="addsite">${sv("site")} Add clinical site</button>` : ""}<a class="vxv-btn sec" href="#compliance">${sv("shield")} Board compliance</a></div></section>
+      ${empty && isAdm() ? `<div class="vxv-card vxv-start"><h2>Start here</h2><ol><li>Add each clinical site, then its affiliation agreement and certificate of insurance with their dates.</li><li>Set each site's requirement checklist (flu, BLS, drug screen, orientation…).</li><li>Students add their own items in <b>My requirements</b>; you approve them in <b>To review</b>.</li></ol><p><button class="vxv-btn" data-vv="addsite">${sv("site")} Add your first clinical site</button> <button class="vxv-btn sec" data-vv="sample">Load sample data (fictional)</button></p></div>` : ""}
+      <div class="vxv-kpis" role="group" aria-label="Expiration dashboard">${tile("expired", c.expired, "Expired", "bad")}${tile("d30", c.d30, "Expiring in 30 days", "warn")}${tile("d60", c.d60, "In 60 days", "soft")}${tile("d90", c.d90, "In 90 days", "soft")}${tile("notice", c.notice, "Notice deadlines", "warn")}${tile("missing", c.missing, "Missing", "bad")}${tile("items", c.items, "People expiring", "soft")}</div>
+      <div class="vxv-cols"><section class="vxv-card vxv-flush"><h2 class="vxv-ch">${H(title)} <span class="vxv-mut">(${(body.match(/<tr/g) || []).length})</span></h2>${body ? `<div class="vxv-tw"><table class="vxv-tbl"><tbody>${body}</tbody></table></div>` : `<p class="vxv-empty">Nothing here.</p>`}</section>
+      <section class="vxv-card vxv-alerts"><h2 class="vxv-ch">${sv("warn")} Alerts</h2>${o.alerts.length ? `<ul>${o.alerts.map(a => `<li class="a-${a.level}">${a.doc ? `<button class="vxv-lnk" data-vv="opendoc" data-id="${H(a.doc)}">${H(a.line)}</button>` : a.site ? `<button class="vxv-lnk" data-vv="opensite" data-id="${H(a.site)}">${H(a.line)}</button>` : a.go ? `<a class="vxv-lnk" href="#vault/${H(a.go)}">${H(a.line)}</a>` : H(a.line)}</li>`).join("")}</ul>` : `<p class="vxv-empty">No alerts.</p>`}
+      ${o.purge && o.purge.length ? `<p class="vxv-mut">${plural(o.purge.length, "document")} past its keep-until date. <a class="vxv-lnk" href="#vault/settings">Review for deletion</a></p>` : ""}</section></div>
+      <p class="vxv-disc">${H(DISC)} Requirements are based on vault/RESEARCH.md (verified 2026-11-06).</p>`);
+  }
+  const siteName = id => ((VS.ov && VS.ov.sites) || []).find(s => s.id === id)?.name || "";
+
+  /* ---------- library (Epic Media tab: list + preview) ---------- */
+  async function pLibrary() {
+    const P = new URLSearchParams(); if (VS.cat) P.set("cat", VS.cat); if (VS.q) P.set("q", VS.q);
+    VS.docs = (await api(`/api/vault/s/${VS.sid}/docs?${P}`)).docs; const C = CAT();
+    const all = VS.docs.filter(d => showE() || !d.eie || d.id === VS.sel); const nE = VS.docs.filter(d => d.eie).length; const sel = VS.sel && all.find(d => d.id === VS.sel) ? VS.sel : null; VS.sel = sel;
+    main(`${banner()}<div class="vxv-lib${sel ? " has-sel" : ""}">
+      <aside class="vxv-cats" aria-label="Categories"><button data-vv="cat" data-k="" ${!VS.cat ? 'aria-current="true"' : ""}>All documents</button>${Object.entries(C).map(([k, v]) => `<button data-vv="cat" data-k="${k}" ${VS.cat === k ? 'aria-current="true"' : ""}>${H(v)}</button>`).join("")}</aside>
+      <section class="vxv-media"><div class="vxv-tb"><h2>${H(VS.cat ? C[VS.cat] : "All documents")}</h2><input class="vxv-in vxv-q" type="search" placeholder="Search title, type, person, tag" value="${H(VS.q)}" data-vv="q" aria-label="Search documents">${canW() ? `<button class="vxv-btn mini" data-vv="adddoc">${sv("plus")} Add</button>` : ""}${VS.cat === "board" ? `<a class="vxv-btn mini sec" href="#compliance">${sv("shield")} Board compliance</a>` : ""}${nE ? eieToggle() : ""}</div>
+      ${all.length ? `<div class="vxv-tw"><table class="vxv-tbl vxv-mt"><thead><tr><th>Date</th><th>Type</th><th>Description</th><th>Site / person</th><th>Expires</th><th>Status</th><th><span class="vxv-sr">Files</span>${sv("list", 14)}</th></tr></thead><tbody>
+        ${all.map(d => { const ex = d.expires ? Math.round((Date.parse(d.expires) - Date.parse(today())) / 864e5) : null; return `<tr data-vv="sel" data-id="${H(d.id)}" tabindex="0" class="${d.id === sel ? "on" : ""}${d.eie ? " eie" : ""}" ${d.id === sel ? 'aria-selected="true"' : ""}><td>${H(fmtD(d.effective || d.signed_on) || "—")}</td><td>${H(d.type_label)}${d.restricted ? ` ${sv("lock", 13)}` : ""}</td><td><b class="vxv-tt">${H(d.title)}</b>${eieBadge(d.eie)}${d.hold ? ` <span class="vxv-tag bad">Legal hold</span>` : ""}${d.sample ? ` <span class="vxv-tag">Sample</span>` : ""}</td><td>${H(siteName(d.site_id) || d.person_name || "")}</td><td class="${ex != null && ex < 0 ? "x-bad" : ex != null && ex <= 30 ? "x-warn" : ""}">${H(fmtD(d.expires) || "—")}</td><td>${H(DSTAT[d.status] || d.status)}</td><td>${d.files || ""}</td></tr>` }).join("")}</tbody></table></div>` : `<p class="vxv-empty">No documents${VS.cat ? " in " + H(C[VS.cat]) : ""} yet.${canW() ? ` <button class="vxv-lnk" data-vv="adddoc">Add one</button>` : ""}</p>`}
+      </section><aside class="vxv-prev" id="vxv-prev" aria-label="Preview">${sel ? `<div class="vxv-empty">Loading…</div>` : `<div class="vxv-empty">${sv("eye", 22)}<br>Select a document to preview it.</div>`}</aside></div>`);
+    if (sel) loadDoc(sel);
+  }
+  async function loadDoc(id) {
+    const p = document.getElementById("vxv-prev"); if (!p) return; let D; try { D = await api(`/api/vault/s/${VS.sid}/docs/${id}`) } catch (e) { p.innerHTML = `<div class="vxv-empty">${H(e.message)}</div>`; return }
+    VS.det = D; const d = D.doc, can = D.can, st = D.storage || {};
+    const nd = d.expires && d.notice_days ? new Date(Date.parse(d.expires) - d.notice_days * 864e5).toISOString().slice(0, 10) : "";
+    const kv = (k, v) => v ? `<div><dt>${H(k)}</dt><dd>${v}</dd></div>` : "";
+    p.innerHTML = `<div class="vxv-ph"><button class="vxv-back" data-vv="unsel" aria-label="Close preview">${sv("back", 18)}<span>List</span></button><h2${d.eie ? ' class="vxv-tt eie"' : ""}>${H(d.title)}</h2><span class="vxv-mut">${H(d.type_label)} · v${d.rev}</span> ${eieBadge(d.eie)}</div>
+      <div class="vxv-pb${d.eie ? " eie" : ""}">${eieNote(d.eie)}${d.hold ? `<div class="vxv-note bad">${sv("hold", 16)}<div><b>Legal hold:</b> ${H(d.hold_reason)}.</div></div>` : ""}
+      <dl class="vxv-dl">${kv("Status", H(DSTAT[d.status] || d.status))}${kv("Site", H(siteName(d.site_id)))}${kv("Person", H(d.person_name))}${kv("Effective", H(fmtD(d.effective)))}${kv("Expires", H(fmtD(d.expires)))}${kv("Renewal", H([d.auto_renew ? "Renews automatically" : d.expires ? "Does not auto-renew" : "", d.renew_term].filter(Boolean).join(" · ")))}${kv("Notice period", d.notice_days ? H(d.notice_days + " days") + (nd ? ` · deadline <b>${H(fmtD(nd))}</b>` : "") : "")}${kv("Signed", d.signed_on ? H(fmtD(d.signed_on)) + (d.signers.length ? "<br>" + d.signers.map(s => H(s.name + (s.title ? ", " + s.title : "") + (s.party ? " (" + s.party + ")" : ""))).join("<br>") : "") : "")}${kv("Owner", H(d.owner_name))}${kv("Tags", d.tags.map(t => `<span class="vxv-tag">${H(t)}</span>`).join(" "))}${kv("Keep until", H(fmtD(d.keep_until)))}${kv("Notes", d.note ? H(d.note).replace(/\n/g, "<br>") : "")}</dl>
+      <div class="vxv-acts">${can.write && !d.eie ? `<button class="vxv-btn mini" data-vv="editdoc">${sv("pen")} Amend</button>${["agreement", "amend"].includes(d.type) || d.cat === "preceptor" ? `<button class="vxv-btn mini sec" data-vv="sign">${sv("check")} Mark signed</button>` : ""}` : ""}${D.can.hold ? `<button class="vxv-btn mini sec" data-vv="hold">${sv("hold")} ${d.hold ? "Release hold" : "Legal hold"}</button>` : ""}${can.eie ? (d.eie ? `<button class="vxv-btn mini sec" data-vv="eie" data-kind="doc" data-id="${H(d.id)}" data-on="0">${sv("check")} Un-mark entered in error</button>` : `<button class="vxv-btn mini sec danger" data-vv="eie" data-kind="doc" data-id="${H(d.id)}" data-on="1">${sv("x")} Mark in error</button>`) : ""}<button class="vxv-btn mini sec" data-vv="print">${sv("log")} Print</button>${can.access ? `<button class="vxv-btn mini sec" data-vv="access" data-ids="${H(d.id)}">${sv("eye")} Access history</button>` : ""}</div>
+      <h3>Files and versions</h3>
+      ${can.write && !d.eie ? (st.on ? (D.minimized ? `<p class="vxv-mut">${sv("lock", 14)} Storing this kind of document is off (data minimization). Record dates and the verifier instead, or turn it on in Settings.</p>` : `<label class="vxv-drop">${sv("up", 20)}<span><b>Upload ${D.files.length ? "a new version" : "the executed copy"}</b><small>PDF, JPG, PNG or HEIC, up to 15 MB. Encrypted before it's stored.</small></span><input type="file" accept=".pdf,.jpg,.jpeg,.png,.heic,.heif,application/pdf,image/jpeg,image/png,image/heic" data-vv="upload" data-owner="doc" data-id="${H(d.id)}"></label>${!D.hipaa && D.phi_notice ? `<p class="vxv-phi">${sv("warn", 14)} ${H(D.phi_notice)}</p>` : ""}`) : `<p class="vxv-note">${sv("lock", 16)}<span>File storage turns on when your administrator enables secure storage.</span></p>`) : ""}
+      ${D.files.length ? `<ul class="vxv-files">${D.files.map((f, i) => `<li class="${f.deleted ? "del" : ""}${f.eie ? " eie" : ""}"><span><b>v${f.ver}</b> <span class="vxv-tt">${H(f.name)}</span>${i === D.files.findIndex(x => !x.eie) && D.files.length > 1 ? ` <span class="vxv-tag">Current</span>` : ""}${eieBadge(f.eie)}${f.phi ? ` <span class="vxv-tag bad">Possible PHI</span>` : ""}<small>${H(kb(f.size))} · ${H(f.by)} · ${H(fmtT(f.at))}${f.sha256 ? " · SHA-256 " + H(f.sha256) + "…" : ""}</small>${f.eie ? `<small>Entered in error by ${H(f.eie.by)} · ${H(fmtT(f.eie.at))}: ${H(f.eie.reason)}</small>` : ""}${can.eie && !d.eie ? `<small><button class="vxv-lnk${f.eie ? "" : " bad"}" data-vv="eie" data-kind="version" data-id="${H(f.id)}" data-on="${f.eie ? 0 : 1}">${f.eie ? "Un-mark" : "Mark this version in error"}</button></small>` : ""}</span>${!f.deleted && can.file ? `<span class="vxv-fa"><button class="vxv-btn mini sec" data-vv="view" data-blob="${H(f.id)}" data-ct="${H(f.ctype)}">${sv("eye")} Preview</button><button class="vxv-btn mini sec" data-vv="dl" data-blob="${H(f.id)}" data-name="${H(f.name)}">${sv("dl")} Download</button></span>` : !f.deleted ? `<span class="vxv-mut">${sv("lock", 14)} Locked</span>` : ""}</li>`).join("")}</ul>` : `<p class="vxv-mut">No file stored. The record and its dates still count.</p>`}
+      <div id="vxv-view"></div>
+      <details class="vxv-hist" open><summary>Amendment history (${D.revs.length} version${D.revs.length === 1 ? "" : "s"})</summary><ul>${D.revs.map(r => `<li><button class="vxv-lnk" data-vv="rev" data-rev="${r.rev}">Version ${r.rev}</button> · ${H(r.by_name || "")} · ${H(fmtT(r.at))}${r.rev === d.rev ? " · current" : ""}</li>`).join("")}</ul><div id="vxv-revv"></div></details><div id="vxv-acc"></div></div>`;
+  }
+
+  /* files: signed link, then fetch; previews render in the page (no inline HTML, no PDF scripting) */
+  async function getLink(blob, mode, mine) { const path = typeof mine === "string" ? mine : mine ? `/api/vault/mine/link?sid=${encodeURIComponent(VS.mine ? VS.mine.school.id : "")}` : `/api/vault/s/${VS.sid}/docs/${VS.det.doc.id}/link`; return api(path, { method: "POST", body: { blob, mode } }) }
+  async function fetchBlob(blob, mode, mine) { const L = await getLink(blob, mode, mine); const r = await fetch(L.url, { credentials: "same-origin" }); if (!r.ok) throw new Error((await r.text()).slice(0, 200) || "Download failed"); return { blob: await r.blob(), wm: r.headers.get("X-Vault-Watermark") } }
+  async function download(blob, name, mine) { try { const { blob: b } = await fetchBlob(blob, "dl", mine); const u = URL.createObjectURL(b); const a = document.createElement("a"); a.href = u; a.download = name || "file"; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(u), 4000); toast("Downloaded. The PDF is stamped with your name and the time.") } catch (e) { toast(e.message) } }
+  let PDFL = null; const PJ = { lib: "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.min.mjs", worker: "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.worker.min.mjs" };
+  async function pdfLib() { if (PDFL) return PDFL; const m = await import(PJ.lib); m.GlobalWorkerOptions.workerSrc = PJ.worker; PDFL = m; return m }
+  async function preview(blob, ct, mine) {
+    const v = document.getElementById(mine ? "vxv-mview" : "vxv-view"); if (!v) return; v.innerHTML = `<div class="vxv-empty">Opening…</div>`;
+    const wm = `${(SRV.me && SRV.me.name) || ""} · ${new Date().toLocaleString()}`;
+    try {
+      const { blob: b } = await fetchBlob(blob, "view", mine);
+      if (/^image\/(png|jpeg)$/.test(ct)) { const u = URL.createObjectURL(b); v.innerHTML = `<div class="vxv-pv"><img src="${u}" alt="Preview"><span class="vxv-wm" aria-hidden="true">${H(wm)}</span></div>`; return }
+      if (ct === "application/pdf") {
+        const lib = await pdfLib(); const doc = await lib.getDocument({ data: new Uint8Array(await b.arrayBuffer()), isEvalSupported: false, enableXfa: false, disableFontFace: true }).promise;
+        v.innerHTML = `<div class="vxv-pv pdf" id="vxv-pvp"></div><p class="vxv-mut">${doc.numPages > 4 ? "Showing 4 of " + doc.numPages + " pages. Download for the rest." : plural(doc.numPages, "page")}</p>`; const box = document.getElementById("vxv-pvp");
+        for (let i = 1; i <= Math.min(4, doc.numPages); i++) { const pg = await doc.getPage(i); const vp = pg.getViewport({ scale: 1.4 }); const c = document.createElement("canvas"); c.width = vp.width; c.height = vp.height; c.setAttribute("aria-label", "Page " + i); await pg.render({ canvasContext: c.getContext("2d"), viewport: vp, annotationMode: lib.AnnotationMode ? lib.AnnotationMode.ENABLE : 1 }).promise; const w = document.createElement("div"); w.className = "vxv-pg"; w.appendChild(c); const s = document.createElement("span"); s.className = "vxv-wm"; s.textContent = wm; w.appendChild(s); box.appendChild(w) }
+        return;
+      }
+      v.innerHTML = `<p class="vxv-mut">This file type can't be previewed here. Use Download.</p>`;
+    } catch (e) { v.innerHTML = `<p class="vxv-mut">${H(e.message || "Preview failed")}. Use Download instead.</p>` }
+  }
+  const typeOf = f => f.type || ({ pdf: "application/pdf", jpg: "image/jpeg", jpeg: "image/jpeg", png: "image/png", heic: "image/heic", heif: "image/heif" }[(f.name.split(".").pop() || "").toLowerCase()] || "application/octet-stream");
+  async function upload(path, f) {
+    if (f.size > 15 * 1024 * 1024) { toast("Files can be up to 15 MB."); return false }
+    const r = await fetch(path, { method: "POST", credentials: "same-origin", headers: { "X-NCLEX": "1", "Content-Type": typeOf(f), "X-Vault-Name": encodeURIComponent(f.name) }, body: f });
+    let j = null; try { j = await r.json() } catch (e) { } if (!r.ok) { toast((j && j.error) || "Upload failed"); return false } toast("Uploaded and encrypted: " + j.name); return true;
+  }
+
+  /* ---------- modal ---------- */
+  function mod(h, wide) { closeMod(); const d = document.createElement("div"); d.className = "vxv-mbg"; d.id = "vxv-mbg"; d.innerHTML = `<div class="vxv-mod${wide ? " wide" : ""}" role="dialog" aria-modal="true">${h}</div>`; document.body.appendChild(d); d.addEventListener("click", e => { if (e.target === d) closeMod() }); const f = d.querySelector("input:not([type=hidden]),select,textarea,button"); if (f) try { f.focus() } catch (e) { } return d }
+  function closeMod() { const d = document.getElementById("vxv-mbg"); if (d) d.remove() }
+  const fld = (label, inner, hint) => `<label class="vxv-f"><span>${H(label)}</span>${inner}${hint ? `<small>${hint}</small>` : ""}</label>`;
+  const inp = (n, v, t, a) => `<input class="vxv-in" name="${n}" type="${t || "text"}" value="${H(v == null ? "" : v)}" ${a || ""}>`;
+  const sel = (n, opts, v) => `<select class="vxv-in" name="${n}">${opts.map(([k, l]) => `<option value="${H(k)}"${String(k) === String(v == null ? "" : v) ? " selected" : ""}>${H(l)}</option>`).join("")}</select>`;
+  const formVals = f => { const o = {}; new FormData(f).forEach((v, k) => { o[k] = v }); f.querySelectorAll("input[type=checkbox]").forEach(c => { o[c.name] = c.checked }); return o };
+
+  function docForm(d) {
+    d = d || { cat: VS.cat || "site", type: "", site_id: VS.site || "" }; const T = TYPES(); const C = CAT(); const sites = (VS.ov && VS.ov.sites) || [];
+    const cats = Object.keys(C).filter(k => isAdm() || ["site", "student", "preceptor"].includes(k));
+    const types = cat => Object.entries(T[cat] || {}).filter(([k, v]) => isAdm() || !v.restricted).map(([k, v]) => [k, v.label]);
+    const phi = VS.ov && !VS.ov.hipaa ? `<p class="vxv-phi">${sv("warn", 14)} ${H(VS.ov.phi_notice || "")}</p>` : "";
+    mod(`<form data-vf="doc" data-id="${H(d.id || "")}"><h2>${d.id ? "Edit document" : "Add a document"}</h2>
+      <div class="vxv-g2">${d.id ? `<input type="hidden" name="cat" value="${H(d.cat)}">` + fld("Category", `<input class="vxv-in" value="${H(C[d.cat])}" disabled>`) : fld("Category", `<select class="vxv-in" name="cat" data-vv="fcat">${cats.map(k => `<option value="${k}"${k === d.cat ? " selected" : ""}>${H(C[k])}</option>`).join("")}</select>`)}
+      ${fld("Document type", `<select class="vxv-in" name="type" id="vxv-ftype">${types(d.cat).map(([k, l]) => `<option value="${k}"${k === d.type ? " selected" : ""}>${H(l)}</option>`).join("")}</select>`)}</div>
+      ${fld("Title", inp("title", d.title, "text", 'maxlength="160" placeholder="Leave blank to use the type name"'))}
+      <div class="vxv-g2">${fld("Clinical site", sel("site_id", [["", "None"]].concat(sites.map(s => [s.id, s.name])), d.site_id))}${fld("Person (name)", inp("person_name", d.person_name, "text", 'maxlength="120"'))}</div>
+      <div class="vxv-g3">${fld("Effective date", inp("effective", d.effective, "date"))}${fld("Expiration date", inp("expires", d.expires, "date"))}${fld("Status", sel("status", Object.entries(DSTAT), d.status || "active"))}</div>
+      <fieldset class="vxv-fs"><legend>Renewal terms</legend><div class="vxv-g3"><label class="vxv-ck"><input type="checkbox" name="auto_renew" ${d.auto_renew ? "checked" : ""}> Renews automatically</label>${fld("Notice period (days)", inp("notice_days", d.notice_days, "number", 'min="0" max="1095" placeholder="e.g. 90"'), "We alert you before the notice deadline.")}${fld("Term", inp("renew_term", d.renew_term, "text", 'placeholder="e.g. 1 year"'))}</div></fieldset>
+      <div class="vxv-g2">${fld("Tags", inp("tags", (d.tags || []).join(", "), "text", 'placeholder="comma separated"'))}${fld("Keep until (optional)", inp("keep_until", d.keep_until, "date"), "Blank = keep. Past this date it shows in Review for deletion.")}</div>
+      ${fld("Notes", `<textarea class="vxv-in" name="note" rows="3" maxlength="2000" placeholder="Key terms, insurance minimums, who to call">${H(d.note || "")}</textarea>`)}${phi}
+      <div class="vxv-mb"><button class="vxv-btn" type="submit">Save</button><button class="vxv-btn sec" type="button" data-vv="close">Cancel</button></div><p class="vxv-err" role="alert"></p></form>`, true);
+  }
+  function siteForm(s) {
+    s = s || { contacts: [{}, {}] }; const C = (s.contacts && s.contacts.length ? s.contacts : [{}]).concat([{}]).slice(0, 6);
+    mod(`<form data-vf="site" data-id="${H(s.id || "")}"><h2>${s.id ? "Edit clinical site" : "Add a clinical site"}</h2>
+      <div class="vxv-g2">${fld("Site name", inp("name", s.name, "text", 'required maxlength="140"'))}${fld("Kind", sel("kind", Object.entries(KINDS), s.kind || "hospital"))}</div>
+      ${fld("Address", inp("address", s.address, "text", 'maxlength="240"'))}${fld("Units used", inp("units", s.units, "text", 'maxlength="400" placeholder="e.g. 4 West Med-Surg; L&D"'))}
+      ${fld("Renewal terms (summary)", inp("renewal", s.renewal, "text", 'maxlength="400" placeholder="e.g. Renews July 1 unless 90 days\' notice"'))}
+      <fieldset class="vxv-fs"><legend>Contacts</legend>${C.map((c, i) => `<div class="vxv-g4">${inp("c_role" + i, c.role, "text", 'placeholder="Role" aria-label="Contact role"')}${inp("c_name" + i, c.name, "text", 'placeholder="Name" aria-label="Contact name"')}${inp("c_email" + i, c.email, "email", 'placeholder="Email" aria-label="Contact email"')}${inp("c_phone" + i, c.phone, "tel", 'placeholder="Phone" aria-label="Contact phone"')}</div>`).join("")}</fieldset>
+      ${fld("Notes", `<textarea class="vxv-in" name="notes" rows="2" maxlength="2000">${H(s.notes || "")}</textarea>`)}${s.id ? `<label class="vxv-ck"><input type="checkbox" name="inactive" ${s.status === "inactive" ? "checked" : ""}> No longer used (inactive)</label>` : ""}
+      <div class="vxv-mb"><button class="vxv-btn" type="submit">Save</button><button class="vxv-btn sec" type="button" data-vv="close">Cancel</button></div><p class="vxv-err" role="alert"></p></form>`, true);
+  }
+
+  /* ---------- sites ---------- */
+  async function pSites() {
+    const o = VS.ov; const allS = (await api(`/api/vault/s/${VS.sid}/sites`)).sites; const sites = allS.filter(x => showE() || !x.eie); const nE = allS.filter(x => x.eie).length; const docs = (await api(`/api/vault/s/${VS.sid}/docs?cat=site`)).docs.filter(d => !d.eie);
+    const card = s => { const D = docs.filter(d => d.site_id === s.id); const ag = D.filter(d => d.type === "agreement").sort((a, b) => (b.expires || "").localeCompare(a.expires || ""))[0]; const coi = D.filter(d => d.type === "coi").sort((a, b) => (b.expires || "").localeCompare(a.expires || ""))[0]; const miss = o.missing.filter(m => m.site_id === s.id);
+      const line = (lab, d) => { if (!d) return `<li class="x-bad">${sv("x", 14)} ${H(lab)}: not on file</li>`; const n = d.expires ? Math.round((Date.parse(d.expires) - Date.parse(today())) / 864e5) : null; return `<li class="${n != null && n < 0 ? "x-bad" : n != null && n <= 60 ? "x-warn" : d.status === "pending_sig" ? "x-warn" : "x-ok"}">${sv(n != null && n < 0 ? "x" : "check", 14)} ${H(lab)}: ${d.status === "pending_sig" ? "waiting for signatures" : n == null ? "no end date" : n < 0 ? "expired " + H(fmtD(d.expires)) : "through " + H(fmtD(d.expires))}${d.auto_renew ? " · auto-renews" : ""}</li>` };
+      return `<button class="vxv-site${s.status === "inactive" ? " off" : ""}${s.eie ? " eie" : ""}" data-vv="opensite" data-id="${H(s.id)}"><span class="vxv-sk">${H(KINDS[s.kind] || "Site")}${s.status === "inactive" ? " · inactive" : ""}</span><b class="vxv-tt">${H(s.name)}</b>${eieBadge(s.eie)}<ul>${line("Agreement", ag)}${line("COI", coi)}</ul>${miss.length ? `<span class="vxv-st s-bad">${plural(miss.length, "item")} missing</span>` : `<span class="vxv-st s-ok">On file</span>`}</button>` };
+    main(`${banner()}<div class="vxv-tb"><h2>Clinical sites</h2>${nE ? eieToggle() : ""}${canW() ? `<button class="vxv-btn mini" data-vv="addsite">${sv("plus")} Add clinical site</button>` : ""}</div>${sites.length ? `<div class="vxv-sites">${sites.map(card).join("")}</div>` : `<p class="vxv-empty">No clinical sites yet.</p>`}`);
+  }
+  async function pSite() {
+    const R = await api(`/api/vault/s/${VS.sid}/sites/${VS.site}`); const s = R.site; VS.siteR = R; const docsAll = R.docs; const docs = docsAll.filter(d => showE() || !d.eie); const nE = docsAll.filter(d => d.eie).length + R.reqs.filter(q => q.eie).length;
+    const ag = docsAll.filter(d => d.type === "agreement" && !d.eie); const cur = ag.find(d => d.status !== "superseded") || ag[0];
+    const nd = cur && cur.expires && cur.notice_days ? new Date(Date.parse(cur.expires) - cur.notice_days * 864e5).toISOString().slice(0, 10) : "";
+    const row = d => `<tr data-vv="opendoc" data-id="${H(d.id)}" tabindex="0"${d.eie ? ' class="eie"' : ""}><td>${H(d.type_label)}</td><td><b class="vxv-tt">${H(d.title)}</b>${eieBadge(d.eie)}</td><td>${H(fmtD(d.effective) || "—")}</td><td>${H(fmtD(d.expires) || "—")}</td><td>${H(DSTAT[d.status] || d.status)}</td><td>${d.files ? plural(d.files, "file") : "—"}</td></tr>`;
+    const reqRow = (q, base) => `<li${q.eie ? ' class="eie"' : ""}><span><b class="vxv-tt">${H(q.label)}</b>${eieBadge(q.eie)}${q.doc ? ` <span class="vxv-tag">Proof required</span>` : ""}<small>${H(q.fm ? "Valid " + q.fm + " months" : q.fd ? "Valid " + q.fd + " days" : "Once")}${q.basis ? " · " + H(BASIS[q.basis] || q.basis) : ""}${q.sens ? " · status only by default" : ""}${base ? " · all sites" : ""}</small></span>${!base && canW() ? `<button class="vxv-lnk${q.eie ? "" : " bad"}" data-vv="eie" data-kind="req" data-id="${H(q.id)}" data-on="${q.eie ? 0 : 1}" aria-label="${q.eie ? "Un-mark" : "Mark in error"}: ${H(q.label)}">${q.eie ? "Un-mark" : "Mark in error"}</button>` : ""}${q.eie ? `<small class="vxv-eier">Entered in error by ${H(q.eie.by)} · ${H(fmtT(q.eie.at))}: ${H(q.eie.reason)}</small>` : ""}</li>`;
+    main(`${banner()}<div class="vxv-crumb"><a href="#vault/sites" class="vxv-lnk">${sv("back", 14)} Clinical sites</a></div>
+      <section class="vxv-ban"><div><div class="vxv-k">${H(KINDS[s.kind] || "Clinical site")}${s.status === "inactive" ? " · inactive" : ""}${s.sample ? " · sample" : ""}</div><h1 class="vxv-h1">${H(s.name)}</h1><p class="vxv-mut">${H(s.address)}${s.units ? " · " + H(s.units) : ""}</p></div><div class="vxv-banr">${canW() ? `<button class="vxv-btn sec" data-vv="editsite">${sv("pen")} Edit site</button><button class="vxv-btn" data-vv="adddoc" data-site="${H(s.id)}">${sv("plus")} Add document</button>` : ""}<a class="vxv-btn sec" href="#vault/clear/${H(s.id)}">${sv("grid")} Clearance</a>${canW() ? `<button class="vxv-btn sec${s.eie ? "" : " danger"}" data-vv="eie" data-kind="site" data-id="${H(s.id)}" data-on="${s.eie ? 0 : 1}">${s.eie ? "Un-mark site" : "Mark site in error"}</button>` : ""}${isAdm() ? `<button class="vxv-btn sec" data-vv="access" data-ids="${H([s.id].concat(docsAll.map(d => d.id)).join(","))}">${sv("eye")} Access history</button>` : ""}</div></section>${eieNote(s.eie)}${nE ? `<p>${eieToggle()}</p>` : ""}<div id="vxv-acc"></div>
+      <div class="vxv-cols"><section class="vxv-card"><h2 class="vxv-ch">Affiliation agreement</h2>${cur ? `<dl class="vxv-dl two"><div><dt>Status</dt><dd>${H(DSTAT[cur.status] || cur.status)}</dd></div><div><dt>Effective</dt><dd>${H(fmtD(cur.effective) || "—")}</dd></div><div><dt>Expires</dt><dd>${H(fmtD(cur.expires) || "—")}</dd></div><div><dt>Renewal</dt><dd>${cur.auto_renew ? "Renews automatically" : "Does not auto-renew"}${cur.renew_term ? " · " + H(cur.renew_term) : ""}</dd></div><div><dt>Notice period</dt><dd>${cur.notice_days ? H(cur.notice_days + " days") + (nd ? " · deadline <b>" + H(fmtD(nd)) + "</b>" : "") : "—"}</dd></div><div><dt>Signed</dt><dd>${cur.signed_on ? H(fmtD(cur.signed_on)) + (cur.signers.length ? " by " + cur.signers.map(x => H(x.name)).join(", ") : "") : "Not marked signed"}</dd></div></dl><p><button class="vxv-btn mini sec" data-vv="opendoc" data-id="${H(cur.id)}">${sv("eye")} Open agreement</button></p>` : `<p class="vxv-empty">No agreement on file. ${canW() ? `<button class="vxv-lnk" data-vv="adddoc" data-site="${H(s.id)}" data-type="agreement">Add the agreement</button>` : ""}</p>`}${s.renewal ? `<p class="vxv-mut"><b>Renewal terms:</b> ${H(s.renewal)}</p>` : ""}</section>
+      <section class="vxv-card"><h2 class="vxv-ch">Contacts</h2>${s.contacts.length ? `<ul class="vxv-contacts">${s.contacts.map(c => `<li><b>${H(c.name)}</b><small>${H(c.role)}</small>${c.email ? `<a href="mailto:${H(c.email)}">${H(c.email)}</a>` : ""}${c.phone ? `<a href="tel:${H(c.phone)}">${H(c.phone)}</a>` : ""}</li>`).join("")}</ul>` : `<p class="vxv-empty">No contacts.</p>`}${s.notes ? `<p class="vxv-mut">${H(s.notes)}</p>` : ""}</section></div>
+      <section class="vxv-card vxv-flush"><h2 class="vxv-ch">Documents: agreement, COI, onboarding and orientation (amendments and corrections stay as history)</h2>${docs.length ? `<div class="vxv-tw"><table class="vxv-tbl vxv-mt"><thead><tr><th>Type</th><th>Description</th><th>Effective</th><th>Expires</th><th>Status</th><th>Files</th></tr></thead><tbody>${docs.map(row).join("")}</tbody></table></div>` : `<p class="vxv-empty">No documents yet.</p>`}</section>
+      <section class="vxv-card"><h2 class="vxv-ch">Onboarding requirements for students</h2><p class="vxv-mut">Everything on this list must be Met for a student to be <b>cleared for ${H(s.name)}</b>. Program-wide items apply to every site.</p><ul class="vxv-reqs">${R.reqs.filter(q => showE() || !q.eie).map(q => reqRow(q)).join("")}${R.base.filter(q => q.applies !== "faculty").map(q => reqRow(q, 1)).join("")}</ul>
+      ${canW() ? `<form class="vxv-addreq" data-vf="req" data-site="${H(s.id)}">${fld("Add a requirement", sel("code", Object.entries((VS.cat_ && VS.cat_.reqs) || {}).filter(([k, v]) => v.applies !== "faculty").map(([k, v]) => [k, v.label]).concat([["custom", "Other (type a name)"]]), "flu"))}${fld("Name (optional)", inp("label", "", "text", 'placeholder="e.g. Facility orientation module"'))}${fld("Valid for (months)", inp("fm", "", "number", 'min="1" max="240" placeholder="blank = default"'))}<label class="vxv-ck"><input type="checkbox" name="doc"> Proof document required</label><button class="vxv-btn mini" type="submit">${sv("plus")} Add</button></form>` : ""}</section>`);
+  }
+
+  /* ---------- clearance grid (flowsheet style) ---------- */
+  async function pGrid() {
+    const sites = ((VS.ov && VS.ov.sites) || (await api(`/api/vault/s/${VS.sid}/sites`)).sites).filter(s => s.status !== "inactive");
+    const P = new URLSearchParams({ who: VS.gwho }); if (VS.gsite) P.set("site", VS.gsite);
+    const G = await api(`/api/vault/s/${VS.sid}/grid?${P}`); VS.grid = G; const r = roleOf();
+    const cell = (q, c, p) => { const t = ST[c.st] || ["", "nd"]; const tip = [c.done ? "Done " + fmtD(c.done) : "", c.exp ? "Expires " + fmtD(c.exp) : "", c.reason ? "Rejected: " + c.reason : "", c.waived ? "Declination/waiver accepted" : ""].filter(Boolean).join(" · "); return `<td class="vxv-c c-${t[1]}" ${canW() ? `data-vv="cell" data-u="${H(p.id)}" data-q="${H(q.id)}" tabindex="0" role="button"` : ""} title="${H(tip)}" aria-label="${H(p.name + ", " + q.label + ": " + t[0] + (tip ? ". " + tip : ""))}"><span>${H(t[0])}</span>${c.exp && c.st !== "missing" ? `<small>${H(fmtD(c.exp))}</small>` : ""}</td>` };
+    const siteNm = VS.gsite ? (sites.find(s => s.id === VS.gsite) || {}).name : "";
+    const nCl = G.rows.filter(x => x.cleared).length;
+    main(`${banner()}<div class="vxv-tb"><h2>Clearance${siteNm ? ": " + H(siteNm) : ""}</h2>${r !== "instructor" ? `<span class="vxv-seg" role="group" aria-label="People"><button data-vv="gwho" data-k="students" aria-pressed="${VS.gwho === "students"}">Students</button><button data-vv="gwho" data-k="faculty" aria-pressed="${VS.gwho === "faculty"}">Faculty</button></span>` : ""}</div>
+      <div class="fg-tabs vxv-gtabs" role="tablist" aria-label="Site">${[["", "Program-wide"]].concat(sites.map(s => [s.id, s.name])).map(([k, l]) => `<button role="tab" data-vv="gsite" data-k="${H(k)}" aria-selected="${VS.gsite === k}">${H(l)}</button>`).join("")}</div>
+      <div class="vxv-gframe"><div class="vxv-gsum">${G.reqs.length ? `<b>${nCl} of ${G.rows.length}</b> ${VS.gwho === "faculty" ? "faculty" : "students"} cleared${siteNm ? " for " + H(siteNm) : " for program-wide items"} as of ${H(fmtD(G.at))}.` : "No requirements set for this view yet."} ${r === "instructor" ? `<span class="vxv-mut">You see status only, for students in your clinical groups.</span>` : canW() ? `<span class="vxv-mut">Select a cell to record or review an item.</span>` : ""}<span class="vxv-leg">${["met", "expiring", "pending", "missing", "expired"].map(k => stChip(k)).join("")}</span></div>
+      ${G.rows.length && G.reqs.length ? `<div class="vxv-gw" tabindex="0" aria-label="Clearance grid, scrolls sideways"><table class="fg-t vxv-gt"><thead><tr><th class="vxv-gn">${VS.gwho === "faculty" ? "Faculty" : "Student"}</th><th class="vxv-gcl">${siteNm ? "Cleared for " + H(siteNm) : "Cleared"}</th>${G.reqs.map(q => `<th title="${H(q.label)}"><span>${H(q.label)}</span>${q.site_id ? "" : "<small>all sites</small>"}</th>`).join("")}</tr></thead><tbody>
+        ${G.rows.map(p => `<tr><th class="vxv-gn">${["admin", "coord", "site"].includes(r) ? `<button class="vxv-lnk" data-vv="person" data-id="${H(p.id)}">${H(p.name)}</button>` : H(p.name)}</th><td class="vxv-gcl ${p.cleared ? "c-ok" : "c-bad"}"><b>${p.cleared ? "Cleared" : "Not cleared"}</b>${p.cleared && p.expiring ? "<small>item expiring</small>" : ""}</td>${G.reqs.map(q => cell(q, p.cells[q.id] || { st: "missing" }, p)).join("")}</tr>`).join("")}</tbody></table></div>` : `<p class="vxv-empty">${G.rows.length ? "Add requirements to this site's checklist to see clearance." : "No people to show."}</p>`}</div>
+      <p class="vxv-disc">"Cleared" means every item for this view is Met (or Expiring) today. Clinical days use the clearance for that day's site and date.</p>`);
+  }
+  async function pDays() {
+    const R = await api(`/api/vault/s/${VS.sid}/days?n=45`); const sites = (VS.ov && VS.ov.sites) || [];
+    main(`${banner()}<div class="vxv-tb"><h2>Upcoming clinical days</h2><span class="vxv-mut">Next 45 days · clearance is checked for each day's site and date</span></div>${R.days.length ? `<div class="vxv-days">${R.days.map(d => `<section class="vxv-card vxv-day"><div class="vxv-dh"><div><b>${H(fmtD(d.date))}</b> ${H([d.start, d.end].filter(Boolean).join("-"))}<small>${H(d.group)}${d.unit ? " · " + H(d.unit) : ""}</small></div>${d.site ? `<span class="vxv-tag">${H(d.site.name)}</span>` : `<span class="vxv-tag bad">Site not matched: “${H(d.site_text || "none")}”</span>`}</div>
+      <p>${d.n ? (d.cleared === d.n ? `<span class="vxv-st s-ok">All ${d.n} cleared</span>` : `<span class="vxv-st s-bad">${d.n - d.cleared} of ${d.n} not cleared</span>`) : "No students on this day."}</p>${d.not.length ? `<ul class="vxv-notc">${d.not.map(s => `<li><b>${H(s.name)}</b><small>Missing: ${H(s.missing.join(", "))}</small></li>`).join("")}</ul>` : ""}
+      ${canW() ? `<label class="vxv-f inline"><span>Vault site for this day</span>${sel("daysite", [["", "Match by name"]].concat(sites.map(s => [s.id, s.name])), d.site ? d.site.id : "").replace('name="daysite"', `name="daysite" data-vv="daysite" data-id="${H(d.id)}"`)}</label>` : ""}</section>`).join("")}</div>` : `<p class="vxv-empty">No clinical days in the next 45 days.</p>`}`);
+  }
+
+  /* ---------- review queue + person ---------- */
+  /* ---------- Needs attention (one queue, every reason) ---------- */
+  const REASON = { expired: "Expired", expiring: "Expiring soon", notice_passed: "Notice deadline passed", missing: "Missing", no_coi: "No current COI", awaiting_verification: "Waiting for verification", resubmitted: "Resubmitted after rejection", attest_no_doc: "Attested without required document", no_executed_copy: "No executed copy", eie_replace: "Entered in error: needs a replacement", phi: "Possible PHI", retention: "Review retention" };
+  async function pReview() {
+    const R = await api(`/api/vault/s/${VS.sid}/attention`); VS.att = R.items; const f = VS.attF || "open";
+    const L = R.items.filter(x => f === "all" ? true : f === "resolved" ? x.ack && x.ack.state === "resolved" : !x.ack || x.ack.state !== "resolved");
+    const counts = {}; R.items.filter(x => !x.ack || x.ack.state !== "resolved").forEach(x => { counts[x.reason] = (counts[x.reason] || 0) + 1 });
+    const fix = x => { const t = x.target || {}; if (x.reason === "awaiting_verification" || x.reason === "resubmitted") return `<button class="vxv-btn mini" data-vv="approve" data-id="${H(t.id)}">${sv("check")} Approve</button><button class="vxv-btn mini sec danger" data-vv="reject" data-id="${H(t.id)}">${sv("x")} Reject</button><button class="vxv-btn mini sec" data-vv="person" data-id="${H(t.user_id)}">Open</button>`;
+      if (x.add) return `<button class="vxv-btn mini" data-vv="addcore" data-cat="${H(x.add.cat)}" data-type="${H(x.add.type)}" data-site="${H(x.add.site_id || "")}">${sv("plus")} Add it</button>${t.kind === "doc" ? `<button class="vxv-btn mini sec" data-vv="opendoc" data-id="${H(t.id)}">Open</button>` : t.kind === "site" ? `<button class="vxv-btn mini sec" data-vv="opensite" data-id="${H(t.id)}">Open site</button>` : ""}`;
+      if (t.kind === "doc") return `<button class="vxv-btn mini" data-vv="opendoc" data-id="${H(t.id)}">Open</button>`; if (t.kind === "site") return `<button class="vxv-btn mini" data-vv="opensite" data-id="${H(t.id)}">Open site</button>`;
+      if (t.kind === "item" || t.kind === "person") return `<button class="vxv-btn mini" data-vv="person" data-id="${H(t.user_id || t.id)}">Open</button>`; return "" };
+    main(`${banner()}<div class="vxv-tb"><h2>Needs attention</h2><span class="vxv-mut">${R.open} open</span><span class="vxv-seg" role="group" aria-label="Show">${[["open", "Open"], ["resolved", "Resolved"], ["all", "All"]].map(([k, l]) => `<button data-vv="attf" data-k="${k}" aria-pressed="${f === k}">${l}</button>`).join("")}</span></div>
+      <div class="vxv-rsn">${Object.entries(counts).map(([k, n]) => `<span class="vxv-tag">${H(REASON[k] || k)} · ${n}</span>`).join(" ")}</div>
+      ${L.length ? `<ul class="vxv-queue">${L.map(x => `<li class="vxv-card a-${x.sev}${x.ack ? " ack" : ""}" data-key="${H(x.key)}"><div><span class="vxv-st s-${x.sev === "bad" ? "bad" : x.sev === "warn" ? "warn" : "info"}">${H(REASON[x.reason] || x.reason)}</span><b>${H(x.label)}</b>${x.ack ? `<small>${x.ack.state === "resolved" ? "Resolved" : "Acknowledged"} by ${H(x.ack.by)} · ${H(fmtT(x.ack.at))}: ${H(x.ack.note)}</small>` : ""}</div><div class="vxv-qa">${fix(x)}${canW() ? (x.ack && x.ack.state === "resolved" ? `<button class="vxv-btn mini sec" data-vv="ackx" data-k="open">Reopen</button>` : `${x.ack ? "" : `<button class="vxv-btn mini sec" data-vv="ackx" data-k="ack">Acknowledge</button>`}<button class="vxv-btn mini sec" data-vv="ackx" data-k="resolved">Resolve</button>`) : ""}</div></li>`).join("")}</ul>` : `<p class="vxv-empty">${f === "open" ? "Nothing needs attention." : "Nothing here."}</p>`}
+      <p class="vxv-disc">Items stay on this list until the cause is fixed or someone resolves them with a note. Acknowledging keeps them on the list. Every action is in the audit trail.</p>`);
+  }
+  async function personMod(uid) {
+    const R = await api(`/api/vault/s/${VS.sid}/person/${uid}`); const reqs = (VS.cat_ && VS.cat_.reqs) || {}; VS.person = R; VS.personId = uid; const ce = R.can && R.can.eie;
+    const L = R.items.filter(i => showE() || !i.eie); const nE = R.items.filter(i => i.eie).length;
+    mod(`<h2>${H(R.person.name)}</h2><p class="vxv-mut">${H(R.person.role)} · requirement history (newest first). Corrections are added as new entries; earlier entries stay as history. Viewing is logged.</p>
+      <div class="vxv-acts">${nE ? eieToggle() : ""}${R.can && R.can.access ? `<button class="vxv-btn mini sec" data-vv="access" data-person="${H(uid)}">${sv("eye")} Access history</button>` : ""}</div>
+      ${L.length ? `<ul class="vxv-files">${L.map(i => `<li class="${i.eie ? "eie" : ""}"><span><b class="vxv-tt">${H((reqs[i.code] || {}).label || i.code)}</b> ${i.eie ? eieBadge(i.eie) : stChip(i.status === "approved" ? "met" : i.status === "submitted" ? "pending" : "missing")}<small>${H(i.status)}${i.done_on ? " · done " + H(fmtD(i.done_on)) : ""}${i.expires ? " · expires " + H(fmtD(i.expires)) : ""}${i.outcome ? " · " + H(i.outcome.replace(/_/g, " ")) : ""}${i.verifier ? " · verified by " + H(i.verifier) : ""}${i.reason ? " · reason: " + H(i.reason) : ""} · attested by ${H(i.by)} ${H(fmtT(i.created))}${i.supersedes ? " · replaces an earlier entry" : ""}</small>${i.eie ? `<small class="vxv-eier">Entered in error by ${H(i.eie.by)} · ${H(fmtT(i.eie.at))}: ${H(i.eie.reason)}</small>` : ""}
+        ${(i.reviews || []).map(v => `<small class="${v.eie ? "vxv-eiel" : ""}">${v.decision === "approved" ? "Approved" : "Rejected"} by ${H(v.by)} · ${H(fmtT(v.at))}${v.reason ? ": " + H(v.reason) : ""}${v.eie ? " · entered in error (" + H(v.eie.reason) + ")" : ""}${ce ? ` <button class="vxv-lnk${v.eie ? "" : " bad"}" data-vv="eie" data-kind="review" data-id="${H(v.id)}" data-on="${v.eie ? 0 : 1}">${v.eie ? "Un-mark" : "Mark decision in error"}</button>` : ""}</small>`).join("")}
+        ${(i.files || []).filter(f => !f.deleted).map(f => `<small class="${f.eie ? "vxv-eiel" : ""}">${H(f.name)}${f.phi ? " · possible PHI" : ""}${f.eie ? " · entered in error" : ""} <button class="vxv-lnk" data-vv="pdl" data-it="${H(i.id)}" data-blob="${H(f.id)}" data-name="${H(f.name)}">Download</button></small>`).join("")}
+        ${ce ? `<small><button class="vxv-lnk${i.eie ? "" : " bad"}" data-vv="eie" data-kind="item" data-id="${H(i.id)}" data-on="${i.eie ? 0 : 1}">${i.eie ? "Un-mark entry" : "Mark entry in error"}</button></small>` : ""}</span></li>`).join("")}</ul>` : `<p class="vxv-empty">No items yet.</p>`}<div id="vxv-acc"></div><div class="vxv-mb"><button class="vxv-btn sec" data-vv="close">Close</button></div>`, true);
+  }
+  function cellMod(u, q) {
+    const G = VS.grid; const p = G.rows.find(x => x.id === u); const rq = G.reqs.find(x => x.id === q); const c = p.cells[q] || {};
+    const screen = rq.sens === "screen";
+    mod(`<form data-vf="rec" data-u="${H(u)}" data-code="${H(rq.code)}" data-item="${H(c.st === "pending" ? c.item || "" : "")}"><h2>${H(rq.label)}</h2><p><b>${H(p.name)}</b> · ${stChip(c.st)}${c.exp ? " · expires " + H(fmtD(c.exp)) : ""}${c.reason ? " · rejected: " + H(c.reason) : ""}</p>
+      ${c.st === "pending" ? `<p class="vxv-mut">Submitted ${H(fmtD(c.done))}. Check the proof against the source, then approve or reject.</p><div class="vxv-mb"><button class="vxv-btn" type="button" data-vv="approve" data-id="${H(c.item)}">${sv("check")} Approve</button><button class="vxv-btn sec danger" type="button" data-vv="reject" data-id="${H(c.item)}">${sv("x")} Reject</button></div><hr>` : ""}
+      <p class="vxv-mut">Record what you verified from the source record. ${rq.sens ? "Status and dates only: no document is needed." : ""}</p>
+      <div class="vxv-g2">${fld("Date done", inp("done_on", "", "date", 'max="' + today() + '"'))}${fld("Expires (optional)", inp("expires", "", "date"), "Blank = computed from the requirement.")}</div>
+      ${screen ? fld("Outcome", sel("outcome", [["meets", "Meets the site's criteria"], ["does_not_meet", "Does not meet"], ["pending", "Pending"]], "meets"), "Record the outcome only. Don't store the report (FCRA; see Settings).") : fld("How verified (optional)", inp("method", "", "text", 'maxlength="120" placeholder="e.g. AHA eCard checked, titer report seen"'))}
+      <label class="vxv-ck"><input type="checkbox" name="waived"> Declination or exemption accepted by the site</label>
+      <div class="vxv-mb"><button class="vxv-btn" type="submit">Record as Met</button><button class="vxv-btn sec" type="button" data-vv="close">Cancel</button></div><p class="vxv-err" role="alert"></p></form>`);
+  }
+
+  /* ---------- audit ---------- */
+  async function pAudit() {
+    const P = VS.asens ? "&sens=1" : ""; const R = await api(`/api/vault/s/${VS.sid}/audit?limit=200${P}`); VS.audit = R.rows;
+    main(`${banner()}<div class="vxv-tb"><h2>Audit log</h2><span class="vxv-mut">${H(R.retention || "")}</span><label class="vxv-ck"><input type="checkbox" data-vv="asens" ${VS.asens ? "checked" : ""}> Sensitive records only</label><button class="vxv-btn mini sec" data-vv="verify">${sv("shield")} Verify integrity</button><button class="vxv-btn mini sec" data-vv="csv">${sv("dl")} Export CSV</button></div><p id="vxv-ver" class="vxv-mut" aria-live="polite"></p>
+      <div class="vxv-tw"><table class="vxv-tbl vxv-mt"><thead><tr><th>#</th><th>When</th><th>Who</th><th>Role</th><th>Action</th><th>What</th><th>Detail</th></tr></thead><tbody>${R.rows.map(x => `<tr${x.sens ? ' class="sens"' : ""}><td>${x.seq}</td><td>${H(fmtT(x.at))}</td><td>${H(x.actor_name)}</td><td>${H(x.actor_role)}</td><td>${H(x.action.replace(/_/g, " "))}${x.sens ? ` ${sv("lock", 12)}` : ""}</td><td>${H(x.kind)} ${H((x.target || "").slice(0, 14))}</td><td><small>${H((x.detail || "").slice(0, 90))}</small></td></tr>`).join("")}</tbody></table></div>`);
+  }
+
+  /* ---------- settings ---------- */
+  async function pSettings() {
+    const o = VS.ov; const s = o.settings; const st = o.storage; const T = TYPES(); const na = new Set(s.na || []);
+    const staff = (await api(`/api/vault/s/${VS.sid}/staff`)).staff.filter(x => x.role === "instructor");
+    const sup = s.support_until && s.support_until > Date.now();
+    const core = []; for (const c of ["board", "accred", "inst", "policy"]) for (const [k, v] of Object.entries(T[c] || {})) if (v.core && v.na) core.push([c + "." + k, v.label]);
+    main(`${banner()}<div class="vxv-tb"><h2>Settings</h2></div><div class="vxv-cols">
+      <section class="vxv-card"><h2 class="vxv-ch">${sv("lock")} Secure storage</h2><ul class="vxv-chk"><li class="${st.r2 ? "x-ok" : "x-bad"}">${sv(st.r2 ? "check" : "x", 14)} Encrypted file store (R2) ${st.r2 ? "connected" : "not enabled yet"}</li><li class="${st.master ? "x-ok" : "x-bad"}">${sv(st.master ? "check" : "x", 14)} Encryption master key ${st.master ? "set" : "not set"}</li></ul><p class="vxv-mut">Files are encrypted with AES-256-GCM using a key unique to your program before they are stored. ${st.on ? "" : "File storage turns on when your administrator enables secure storage."}</p>
+        <h3>Business Associate Agreement</h3><p class="vxv-mut">Vexcura doesn't hold patient information. If a clinical partner asks whether you have a BAA, request one here and we'll follow up.${o.baa ? ` <b>Requested ${H(fmtT(o.baa.requested))}.</b>` : ""}</p>${isAdm() ? `<button class="vxv-btn mini sec" data-vv="baa">${sv("shield")} ${o.baa ? "Update BAA request" : "Request a BAA"}</button>` : ""}</section>
+      <section class="vxv-card"><h2 class="vxv-ch">${sv("shield")} Data minimization</h2><p>By default the vault records <b>status, dates, who verified and the attestation</b> for immunizations, TB, background checks and drug screens, and does not store the documents.</p>
+        <label class="vxv-ck big"><input type="checkbox" data-vv="minh" ${s.store_health ? "checked" : ""} ${isAdm() ? "" : "disabled"}> Allow storing immunization and health documents</label>
+        <label class="vxv-ck big"><input type="checkbox" data-vv="mins" ${s.store_screens ? "checked" : ""} ${isAdm() ? "" : "disabled"}> Allow storing background check and drug screen reports</label>
+        <details><summary>Why we recommend outcome only for background checks</summary><p class="vxv-mut">Background reports from a screening vendor are consumer reports under the Fair Credit Reporting Act. The FTC reads "employment purposes" broadly, and schools usually follow FCRA steps through the vendor (disclosure, authorization, a copy before an adverse decision, adverse-action notice). Keeping copies adds duties: protecting them, handling disputes, and secure disposal (16 CFR Part 682). The vendor already keeps the report and often sends results straight to the facility. Record the outcome and date here unless your counsel approves storing reports.</p></details></section>
+      <section class="vxv-card"><h2 class="vxv-ch">Vexcura support access</h2><p class="vxv-mut">Vexcura staff see metadata only (titles, dates, statuses), never document contents. You can let support open documents for a few days while they help you. Every access is logged.</p>${sup ? `<p><b>Support access is on until ${H(fmtT(s.support_until))}.</b></p>` : ""}${isAdm() ? (sup ? `<button class="vxv-btn mini sec danger" data-vv="unsupport">Turn off support access</button>` : `<button class="vxv-btn mini sec" data-vv="support">Allow support access for 3 days</button>`) : ""}</section>
+      <section class="vxv-card"><h2 class="vxv-ch">Clinical coordinators</h2><p class="vxv-mut">Coordinators manage sites, student requirements, preceptors and clearance. They can't see faculty, board, accreditation or institutional files, or restricted records.</p>${staff.length ? `<ul class="vxv-reqs">${staff.map(x => `<li><span><b>${H(x.name)}</b></span><label class="vxv-ck"><input type="checkbox" data-vv="coord" data-id="${H(x.id)}" ${x.coord ? "checked" : ""} ${isAdm() ? "" : "disabled"}> Coordinator</label></li>`).join("")}</ul>` : `<p class="vxv-empty">No instructors yet.</p>`}</section>
+      <section class="vxv-card"><h2 class="vxv-ch">Program checklist</h2><p class="vxv-mut">Mark items that don't apply to your program so they don't show as Missing.</p><ul class="vxv-reqs">${core.map(([k, l]) => `<li><span>${H(l)}</span><label class="vxv-ck"><input type="checkbox" data-vv="na" data-k="${H(k)}" ${na.has(k) ? "checked" : ""} ${isAdm() ? "" : "disabled"}> Not applicable</label></li>`).join("")}</ul></section>
+      <section class="vxv-card"><h2 class="vxv-ch">Retention</h2><p class="vxv-mut">Like medical records, nothing is ever deleted. Wrong entries are marked <b>entered in error</b> and stay viewable. Documents past their keep-until date are flagged <b>Review retention</b> in Needs attention. If your program needs a record destroyed for a legal reason, contact Vexcura in writing; it's a separate, logged process with a second confirmation.</p>${o.purge.length ? `<ul class="vxv-reqs">${o.purge.map(p => `<li><span><b>${H(p.title)}</b><small>Keep until ${H(fmtD(p.keep_until))}</small></span><button class="vxv-lnk" data-vv="opendoc" data-id="${H(p.id)}">Review</button></li>`).join("")}</ul>` : `<p class="vxv-empty">Nothing due for review.</p>`}
+        ${isAdm() ? `<h3>Sample data</h3><p class="vxv-mut">Fictional sites and documents for training.</p><button class="vxv-btn mini sec" data-vv="sample">Load sample data</button> <button class="vxv-btn mini sec" data-vv="unsample">Retire sample data</button>` : ""}</section></div><p class="vxv-disc">${H(DISC)}</p>`);
+  }
+
+  /* ---------- My requirements (students and instructors) ---------- */
+  async function openMine() {
+    const p = document.getElementById("vxv-pick"); let R;
+    const sid = (lsGet("nclexsim.v41.mine.sid." + uidK()) || ""); try { R = await api("/api/vault/mine" + (sid ? "?sid=" + encodeURIComponent(sid) : "") + (VS.mineAll ? (sid ? "&" : "?") + "all=1" : "")) } catch (e) { if (e.status === 404 && sid) { lsSet("nclexsim.v41.mine.sid." + uidK(), ""); try { R = await api("/api/vault/mine") } catch (x) { } } if (!R) return main(`<div class="vxv-card"><h2>My requirements</h2><p>${H(e.message)}</p><p><a class="vxv-btn" href="#progress">Go to my chart</a></p></div>`) }
+    VS.mine = R; if (p) p.innerHTML = `<span class="vxv-sch1">${H(R.school.name)}</span>`;
+    const L = R.list; const n = s => L.filter(x => x.cell.st === s).length; const todo = L.filter(x => !["met", "expiring", "pending"].includes(x.cell.st));
+    const sorted = L.slice().sort((a, b) => ({ missing: 0, expired: 0, expiring: 1, pending: 2, met: 3 }[a.cell.st] - { missing: 0, expired: 0, expiring: 1, pending: 2, met: 3 }[b.cell.st]));
+    const card = x => { const c = x.cell; const it = x.item; return `<li class="vxv-rq s-${(ST[c.st] || ["", "nd"])[1]}"><div class="vxv-rqh"><span class="vxv-rqi">${sv(c.st === "met" ? "check" : c.st === "pending" ? "inbox" : "warn", 20)}</span><div><b>${H(x.label)}</b><small>${x.sites.length ? "Needed for " + H(x.sites.join(", ")) : "Needed for all clinical sites"}${x.fm ? " · renew every " + x.fm + " months" : x.fd ? " · valid " + x.fd + " days" : ""}</small></div>${stChip(c.st)}</div>
+      <p class="vxv-rqs">${c.st === "met" || c.st === "expiring" ? (c.exp ? `Good through <b>${H(fmtD(c.exp))}</b>${c.st === "expiring" ? " · renew soon" : ""}` : `Done ${H(fmtD(c.done))}`) : c.st === "pending" ? `Sent ${H(fmtD(c.done))}. Waiting for your program to check it.` : c.st === "expired" ? `Expired ${H(fmtD(c.exp))}. Add your new date.` : c.reason ? `<span class="x-bad">Not accepted: ${H(c.reason)}</span>` : "Not done yet."}</p>
+      ${c.st === "pending" && it && it.status === "submitted" ? `<div class="vxv-rqa">${x.upload ? `<label class="vxv-btn mini sec">${sv("up")} Add a photo or PDF<input type="file" class="vxv-sr" accept=".pdf,.jpg,.jpeg,.png,.heic,.heif" data-vv="upload" data-owner="mine" data-id="${H(it.id)}"></label>` : ""}${it.files ? `<span class="vxv-mut">${plural(it.files, "file")} attached</span>` : ""}<button class="vxv-lnk" data-vv="mieie" data-id="${H(it.id)}">Entered in error</button></div>` : `<div class="vxv-rqa"><button class="vxv-btn mini" data-vv="madd" data-code="${H(x.code)}">${c.st === "met" ? "Add a newer date" : c.st === "expiring" || c.st === "expired" ? "Renew" : "Add"}</button></div>`}${x.doc_required ? `<p class="vxv-mut">${sv("list", 12)} A document is required for this item.</p>` : ""}${(x.history || []).some(h => h.eie) ? `<details class="vxv-hist"><summary>Earlier entries</summary><ul>${x.history.map(h => `<li class="${h.eie ? "vxv-eiel" : ""}">${H(fmtD(h.done_on))} · ${H(h.status)}${h.eie ? " · entered in error: " + H(h.eie.reason) : ""}</li>`).join("")}</ul></details>` : ""}</li>` };
+    main(`<section class="vxv-mhero"><h1 class="vxv-h1">${todo.length ? `${plural(todo.length, "thing")} to do` : n("pending") ? "Waiting for review" : "You're all set"}</h1><p class="vxv-mut">${R.who === "faculty" ? "Faculty requirements for your clinical sites." : "What you need before clinical."} ${R.sites.length ? "Your upcoming sites: " + R.sites.map(s => `<b>${H(s.name)}</b> (${H(fmtD(s.next))})`).join(", ") + "." : ""}</p>
+      <div class="vxv-mcounts">${stChip("missing", "· " + (n("missing") + n("expired")))}${stChip("expiring", "· " + n("expiring"))}${stChip("pending", "· " + n("pending"))}${stChip("met", "· " + n("met"))}</div></section>
+      ${!R.hipaa ? `<p class="vxv-phi">${sv("warn", 14)} ${H(R.phi_notice)}</p>` : ""}
+      <ul class="vxv-rqlist">${sorted.map(card).join("")}</ul>
+      <p class="vxv-mut"><label class="vxv-ck"><input type="checkbox" data-vv="mineall" ${VS.mineAll ? "checked" : ""}> Show requirements for every site, not just mine</label></p><div id="vxv-mview"></div>
+      <p class="vxv-disc">Your program sees what you add here, and so does the clinical site if your program shares your clearance with them. ${R.store.health ? "" : "Your program records dates for health items; you don't need to upload them."}</p>`);
+  }
+  function mineForm(code) {
+    const x = VS.mine.list.find(y => y.code === code); const screen = x.sens === "screen";
+    mod(`<form data-vf="mine" data-code="${H(code)}"><h2>${H(x.label)}</h2>${x.note ? `<p class="vxv-mut">${H(x.note)}</p>` : ""}
+      ${fld("Date it was done", inp("done_on", "", "date", 'required max="' + today() + '"'), screen ? "The date on your result." : "The date on your card, record or certificate.")}
+      ${screen ? fld("Result", sel("outcome", [["pending", "I don't know yet"], ["meets", "Cleared / passed"], ["does_not_meet", "Not cleared"]], "pending"), "Don't upload the report. Your program records the outcome.") : fld("Details (optional)", inp("method", "", "text", 'maxlength="120" placeholder="e.g. 2 doses, titer, AHA eCard"'))}
+      ${x.fm || x.fd ? "" : fld("Expiration date, if it has one (optional)", inp("expires", "", "date"))}
+      ${x.upload ? fld("Photo or PDF (optional)", `<input class="vxv-in" type="file" name="file" accept=".pdf,.jpg,.jpeg,.png,.heic,.heif">`, "PDF, JPG, PNG or HEIC, up to 15 MB.") : `<p class="vxv-mut">${sv("lock", 14)} ${screen ? "Reports aren't stored here." : "No upload needed: your program checks the date with the source."}</p>`}
+      ${!VS.mine.hipaa ? `<p class="vxv-phi">${sv("warn", 14)} Don't include patient information or your SSN.</p>` : ""}
+      <label class="vxv-ck big"><input type="checkbox" name="attest" required> I confirm this is true and accurate.</label>
+      <div class="vxv-mb"><button class="vxv-btn" type="submit">Send</button><button class="vxv-btn sec" type="button" data-vv="close">Cancel</button></div><p class="vxv-err" role="alert"></p></form>`);
+  }
+
+  /* ---------- events ---------- */
+  const reloadOv = () => { VS.ov = null };
+  const vroot = t => t.closest("#vxv,#vxv-mbg,.vxv-regs");
+  document.addEventListener("click", async e => {
+    const b = e.target.closest("[data-vv]"); if (!b || !vroot(b)) return; const k = b.dataset.vv, id = b.dataset.id;
+    if (["school", "q", "upload", "daysite", "asens", "minh", "mins", "coord", "na", "fcat", "mineall", "showeie"].includes(k)) return;
+    if (b.tagName === "A") return; e.preventDefault();
+    try {
+      if (k === "reload") return paint(); if (k === "close") return closeMod();
+      if (k === "tile") { VS.tile = b.dataset.k; return pOverview() }
+      if (k === "cat") { VS.cat = b.dataset.k; VS.sel = null; location.hash = "vault/library" + (VS.cat ? "/" + VS.cat : ""); return }
+      if (k === "sel") { VS.sel = id; document.querySelectorAll(".vxv-mt tr.on").forEach(r => { r.classList.remove("on"); r.removeAttribute("aria-selected") }); b.classList.add("on"); b.setAttribute("aria-selected", "true"); document.querySelector(".vxv-lib").classList.add("has-sel"); try { history.replaceState(null, "", "#vault/library/" + (VS.cat || "all") + "/" + id) } catch (x) { } return loadDoc(id) }
+      if (k === "unsel") { VS.sel = null; document.querySelector(".vxv-lib").classList.remove("has-sel"); document.getElementById("vxv-prev").innerHTML = `<div class="vxv-empty">Select a document to preview it.</div>`; return }
+      if (k === "opendoc") { closeMod(); const d = await api(`/api/vault/s/${VS.sid}/docs/${id}`); VS.cat = d.doc.cat; VS.sel = id; location.hash = "vault/library/" + d.doc.cat + "/" + id; return }
+      if (k === "opensite") { closeMod(); location.hash = "vault/sites/" + id; return }
+      if (k === "addsite") return siteForm(); if (k === "editsite") return siteForm(VS.siteR.site);
+      if (k === "adddoc") { docForm({ cat: b.dataset.site ? "site" : VS.cat || "site", site_id: b.dataset.site || "", type: b.dataset.type || "" }); return }
+      if (k === "addcore") { closeMod(); docForm({ cat: b.dataset.cat, type: b.dataset.type, site_id: b.dataset.site || "" }); return }
+      if (k === "editdoc") return docForm(VS.det.doc);
+      if (k === "view") return preview(b.dataset.blob, b.dataset.ct);
+      if (k === "dl") return download(b.dataset.blob, b.dataset.name);
+      if (k === "pdl") return download(b.dataset.blob, b.dataset.name, `/api/vault/s/${VS.sid}/items/${b.dataset.it}/link`);
+      if (k === "sign") { const d = VS.det.doc; mod(`<form data-vf="sign"><h2>Mark signed</h2><p class="vxv-mut">Records who signed and when. This is not an electronic signature; upload the executed copy after.</p>${fld("Date signed", inp("signed_on", d.signed_on || today(), "date", "required"))}${[0, 1, 2].map(i => `<div class="vxv-g3">${inp("s_name" + i, (d.signers[i] || {}).name, "text", 'placeholder="Signer name" aria-label="Signer name"')}${inp("s_title" + i, (d.signers[i] || {}).title, "text", 'placeholder="Title" aria-label="Signer title"')}${inp("s_party" + i, (d.signers[i] || {}).party || (i ? "Facility" : "School"), "text", 'placeholder="Party" aria-label="Party"')}</div>`).join("")}<div class="vxv-mb"><button class="vxv-btn" type="submit">Mark signed</button><button class="vxv-btn sec" type="button" data-vv="close">Cancel</button></div><p class="vxv-err" role="alert"></p></form>`); return }
+      if (k === "hold") { const d = VS.det.doc; if (d.hold) { await api(`/api/vault/s/${VS.sid}/docs/${d.id}/hold`, { method: "POST", body: { on: false } }); toast("Hold released") } else { const r = prompt("Reason for the legal hold (e.g. pending claim, audit):", "Legal hold"); if (r == null) return; await api(`/api/vault/s/${VS.sid}/docs/${d.id}/hold`, { method: "POST", body: { on: true, reason: r } }); toast("Legal hold on") } reloadOv(); return loadDoc(d.id) }
+      if (k === "eie" || k === "mieie") { const on = k === "mieie" ? true : b.dataset.on === "1"; const kind = k === "mieie" ? "mine" : b.dataset.kind; mod(`<form data-vf="eie" data-kind="${H(kind)}" data-id="${H(id)}" data-on="${on ? 1 : 0}"><h2>${on ? "Mark entered in error" : "Un-mark entered in error"}</h2><p class="vxv-mut">${on ? "The record stays in the vault, greyed out and still viewable. It no longer counts toward dashboards or clearance. Add the corrected record afterwards." : "The record counts again. Say why it was marked by mistake."}</p>${fld("Reason (required)", `<textarea class="vxv-in" name="reason" rows="3" maxlength="300" required placeholder="${on ? "e.g. Uploaded to the wrong site" : "e.g. Marked by mistake"}"></textarea>`)}<div class="vxv-mb"><button class="vxv-btn${on ? " danger" : ""}" type="submit">${on ? "Mark in error" : "Un-mark"}</button><button class="vxv-btn sec" type="button" data-vv="close">Cancel</button></div><p class="vxv-err" role="alert"></p></form>`); return }
+      if (k === "print") { const d = VS.det && VS.det.doc; try { await api(`/api/vault/s/${VS.sid}/log`, { method: "POST", body: { action: "print", kind: "doc", id: d ? d.id : "", what: d ? d.title : "" } }) } catch (x) { } window.print(); return }
+      if (k === "access") { const box = document.querySelector("#vxv-mbg #vxv-acc") || document.getElementById("vxv-acc"); if (!box) return; box.innerHTML = `<p class="vxv-mut">Loading access history…</p>`; const q = b.dataset.person ? "person=" + encodeURIComponent(b.dataset.person) : "ids=" + encodeURIComponent(b.dataset.ids || ""); const A = await api(`/api/vault/s/${VS.sid}/access?${q}`); box.innerHTML = `<h3>Access history</h3><p class="vxv-mut">Every view, download, print, change and mark-in-error for this record (newest first). Opening this list is logged too.</p>${A.rows.length ? `<div class="vxv-tw"><table class="vxv-tbl vxv-acct"><thead><tr><th>When</th><th>Who</th><th>Role</th><th>Action</th><th>Detail</th></tr></thead><tbody>${A.rows.map(x => `<tr${x.sens ? ' class="sens"' : ""}><td>${H(fmtT(x.at))}</td><td>${H(x.actor_name)}</td><td>${H(x.actor_role)}</td><td>${H(x.action.replace(/_/g, " "))}</td><td><small>${H((x.detail || "").slice(0, 120))}</small></td></tr>`).join("")}</tbody></table></div>` : `<p class="vxv-empty">No entries.</p>`}`; return }
+      if (k === "rev") { const r = await api(`/api/vault/s/${VS.sid}/docs/${VS.det.doc.id}/rev/${b.dataset.rev}`); const d = r.doc || {}; document.getElementById("vxv-revv").innerHTML = `<div class="vxv-note info"><div><b>Version ${r.rev}</b> · ${H(r.by)} · ${H(fmtT(r.at))}<br>${H(d.title || "")}${d.effective ? " · effective " + H(fmtD(d.effective)) : ""}${d.expires ? " · expires " + H(fmtD(d.expires)) : ""}${d.status ? " · " + H(DSTAT[d.status] || d.status) : ""}${d.note ? "<br>" + H(d.note) : ""}</div></div>`; return }
+      if (k === "attf") { VS.attF = b.dataset.k; return pReview() }
+      if (k === "ackx") { const li = b.closest("[data-key]"); const key = li.dataset.key; const st = b.dataset.k; if (st === "open") { await api(`/api/vault/s/${VS.sid}/attention/ack`, { method: "POST", body: { key, state: "open" } }); toast("Reopened"); reloadOv(); return paint() } mod(`<form data-vf="ack" data-key="${H(key)}" data-state="${H(st)}"><h2>${st === "resolved" ? "Resolve" : "Acknowledge"}</h2><p class="vxv-mut">${st === "resolved" ? "It leaves the open list. If the cause comes back (for example a new expiration), it shows up again." : "It stays on the list, marked as seen."}</p>${fld("Note (required)", `<textarea class="vxv-in" name="note" rows="3" maxlength="500" required placeholder="What was done, or why it's OK"></textarea>`)}<div class="vxv-mb"><button class="vxv-btn" type="submit">${st === "resolved" ? "Resolve" : "Acknowledge"}</button><button class="vxv-btn sec" type="button" data-vv="close">Cancel</button></div><p class="vxv-err" role="alert"></p></form>`); return }
+      if (k === "gsite") { VS.gsite = b.dataset.k; return pGrid() } if (k === "gwho") { VS.gwho = b.dataset.k; return pGrid() }
+      if (k === "cell") return cellMod(b.dataset.u, b.dataset.q);
+      if (k === "person") return personMod(id);
+      if (k === "approve") { await api(`/api/vault/s/${VS.sid}/items/${id}/review`, { method: "POST", body: { ok: true } }); closeMod(); toast("Approved"); reloadOv(); return paint() }
+      if (k === "reject") { mod(`<form data-vf="reject" data-id="${H(id)}"><h2>Reject this item</h2>${fld("Reason (the person sees this)", `<textarea class="vxv-in" name="reason" rows="3" maxlength="300" required placeholder="e.g. The second dose date is missing"></textarea>`)}<div class="vxv-mb"><button class="vxv-btn danger" type="submit">Reject</button><button class="vxv-btn sec" type="button" data-vv="close">Cancel</button></div><p class="vxv-err" role="alert"></p></form>`); return }
+      if (k === "verify") { const v = await api(`/api/vault/s/${VS.sid}/audit/verify`); document.getElementById("vxv-ver").innerHTML = v.ok ? `${sv("check", 14)} All ${v.rows} entries verified. The chain is intact.` : `<span class="x-bad">${sv("warn", 14)} ${v.bad} entr${v.bad === 1 ? "y" : "ies"} failed verification (first: #${H(v.bad_seq.join(", #"))}). Contact Vexcura.</span>`; return }
+      if (k === "csv") { const rows = [["seq", "time", "who", "role", "action", "kind", "target", "detail", "ip", "sensitive"]].concat((VS.audit || []).map(x => [x.seq, new Date(x.at).toISOString(), x.actor_name, x.actor_role, x.action, x.kind, x.target, x.detail, x.ip, x.sens ? "yes" : ""])); const csv = rows.map(r => r.map(v => { v = String(v == null ? "" : v); if (/^[=+\-@]/.test(v)) v = "'" + v; return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v }).join(",")).join("\n"); const u = URL.createObjectURL(new Blob([csv], { type: "text/csv" })); const a = document.createElement("a"); a.href = u; a.download = "vault-audit-" + today() + ".csv"; a.click(); api(`/api/vault/s/${VS.sid}/log`, { method: "POST", body: { action: "export", kind: "audit", id: VS.sid, what: "audit CSV" } }).catch(() => { }); setTimeout(() => URL.revokeObjectURL(u), 3000); return }
+      if (k === "support") { await api(`/api/vault/s/${VS.sid}/support`, { method: "POST", body: { days: 3 } }); toast("Support access on for 3 days"); reloadOv(); return paint() }
+      if (k === "unsupport") { await api(`/api/vault/s/${VS.sid}/support`, { method: "DELETE" }); toast("Support access off"); reloadOv(); return paint() }
+      if (k === "baa") { mod(`<form data-vf="baa"><h2>Request a Business Associate Agreement</h2><p class="vxv-mut">Vexcura is not set up to hold protected health information (PHI) yet, so this vault is for school records, not patient information. Tell us who asked and why; we'll follow up with you.</p>${fld("Best contact (name, email or phone)", inp("contact", (SRV.me && SRV.me.name) || "", "text", 'maxlength="200" required'))}${fld("What do you need it for?", `<textarea class="vxv-in" name="note" rows="3" maxlength="1000" placeholder="e.g. Our hospital partner asked during contract renewal"></textarea>`)}<div class="vxv-mb"><button class="vxv-btn" type="submit">Send request</button><button class="vxv-btn sec" type="button" data-vv="close">Cancel</button></div><p class="vxv-err" role="alert"></p></form>`); return }
+      if (k === "sample") { await api(`/api/vault/s/${VS.sid}/sample`, { method: "POST" }); toast("Sample data loaded (fictional)"); reloadOv(); VS.tab = "overview"; location.hash = "vault/overview"; return paint() }
+      if (k === "unsample") { await api(`/api/vault/s/${VS.sid}/sample`, { method: "DELETE" }); toast("Sample data retired (marked entered in error)"); reloadOv(); return paint() }
+      if (k === "madd") return mineForm(b.dataset.code);
+    } catch (x) { toast(x.message || "Something went wrong") }
+  });
+  document.addEventListener("change", async e => {
+    const b = e.target.closest("[data-vv]"); if (!b || !vroot(b)) return; const k = b.dataset.vv;
+    try {
+      if (k === "school") { VS.sid = b.value; lsSet("nclexsim.v41.vault.sid." + uidK(), VS.sid); VS.ov = null; VS.site = null; VS.sel = null; const al = tabsFor(roleOf()); if (!al.includes(VS.tab)) VS.tab = al[0]; paintPick(); return paint() }
+      if (k === "upload") { const f = b.files && b.files[0]; if (!f) return; b.disabled = true; const path = b.dataset.owner === "mine" ? `/api/vault/mine/items/${b.dataset.id}/file?sid=${encodeURIComponent(VS.mine.school.id)}` : `/api/vault/s/${VS.sid}/docs/${b.dataset.id}/file`; const okk = await upload(path, f); b.disabled = false; b.value = ""; if (okk) { if (b.dataset.owner === "mine") return openMine(); return loadDoc(b.dataset.id) } return }
+      if (k === "daysite") { await api(`/api/vault/s/${VS.sid}/day/${b.dataset.id}`, { method: "PUT", body: { site_id: b.value } }); toast("Saved"); return pDays() }
+      if (k === "asens") { VS.asens = b.checked; return pAudit() }
+      if (k === "minh" || k === "mins") { const on = b.checked; const key = k === "minh" ? "store_health" : "store_screens"; if (on) { b.checked = false; mod(`<h2>Store ${k === "minh" ? "health documents" : "background and drug screen reports"}?</h2><p>${k === "minh" ? "Immunization records and titers that a school keeps are FERPA education records. Storing them means more sensitive data to protect. Recording status, dates and the verifier is usually enough for clinical sites." : "Background reports are consumer reports under the FCRA. Storing them adds dispute, access and secure-disposal duties. We recommend recording the outcome only unless your counsel approves."}</p><p><b>Never upload patient information from a clinical site.</b></p><div class="vxv-mb"><button class="vxv-btn" data-vv="minyes" data-key="${key}">I understand, turn it on</button><button class="vxv-btn sec" data-vv="close">Keep it off</button></div>`); return } await api(`/api/vault/s/${VS.sid}/settings`, { method: "PUT", body: { [key]: false } }); toast("Turned off"); reloadOv(); return paint() }
+      if (k === "coord") { await api(`/api/vault/s/${VS.sid}/staff`, { method: "PUT", body: { user_id: b.dataset.id, coord: b.checked } }); toast(b.checked ? "Coordinator added" : "Coordinator removed"); return }
+      if (k === "na") { const s = new Set((VS.ov.settings.na) || []); b.checked ? s.add(b.dataset.k) : s.delete(b.dataset.k); await api(`/api/vault/s/${VS.sid}/settings`, { method: "PUT", body: { na: [...s] } }); VS.ov.settings.na = [...s]; toast("Saved"); VS.ov._at = 0; return }
+      if (k === "fcat") { const T = TYPES()[b.value] || {}; const t = document.getElementById("vxv-ftype"); t.innerHTML = Object.entries(T).filter(([x, v]) => isAdm() || !v.restricted).map(([x, v]) => `<option value="${x}">${H(v.label)}</option>`).join(""); return }
+      if (k === "mineall") { VS.mineAll = b.checked; return openMine() }
+      if (k === "showeie") { VS.showEie = b.checked; if (document.getElementById("vxv-mbg") && VS.personId) return personMod(VS.personId); return paint() }
+    } catch (x) { toast(x.message || "Something went wrong") }
+  });
+  document.addEventListener("click", async e => { const b = e.target.closest('[data-vv="minyes"]'); if (!b) return; e.preventDefault(); try { await api(`/api/vault/s/${VS.sid}/settings`, { method: "PUT", body: { [b.dataset.key]: true, ack: "minimize-ack/1" } }); closeMod(); toast("Turned on"); reloadOv(); paint() } catch (x) { toast(x.message) } }, true);
+  let qT = 0; document.addEventListener("input", e => { const b = e.target.closest('[data-vv="q"]'); if (!b) return; clearTimeout(qT); qT = setTimeout(async () => { VS.q = b.value; const pos = b.selectionStart; await pLibrary(); const n = document.querySelector('[data-vv="q"]'); if (n) { n.focus(); try { n.setSelectionRange(pos, pos) } catch (x) { } } }, 300) });
+  document.addEventListener("keydown", e => { if (e.key === "Escape" && document.getElementById("vxv-mbg")) { closeMod(); return } if ((e.key === "Enter" || e.key === " ") && e.target.matches && e.target.matches("tr[data-vv],td[data-vv]") && vroot(e.target)) { e.preventDefault(); e.target.click() } });
+  document.addEventListener("submit", async e => {
+    const f = e.target.closest("form[data-vf]"); if (!f || !vroot(f)) return; e.preventDefault(); const k = f.dataset.vf; const v = formVals(f); const err = f.querySelector(".vxv-err"); const btn = f.querySelector("[type=submit]");
+    { const hits = phiCheck(Object.values(v).filter(x => typeof x === "string").join(" \n "), "vault:" + k); if (hits.length) { if (err) err.textContent = `This looks like protected health information (${hits.join(", ")}). Remove it: the vault is not for patient information.`; return } }
+    if (btn) btn.disabled = true;
+    try {
+      if (k === "doc") { const body = { cat: v.cat, type: v.type, title: v.title, site_id: v.site_id, person_name: v.person_name, effective: v.effective, expires: v.expires, status: v.status, auto_renew: !!v.auto_renew, notice_days: v.notice_days, renew_term: v.renew_term, tags: v.tags, keep_until: v.keep_until, note: v.note }; const id = f.dataset.id; const r = id ? await api(`/api/vault/s/${VS.sid}/docs/${id}`, { method: "PUT", body }) : await api(`/api/vault/s/${VS.sid}/docs`, { method: "POST", body }); closeMod(); toast("Saved"); reloadOv(); const did = id || r.id; VS.cat = v.cat || VS.cat; VS.sel = did; if (VS.tab === "library") { await paint(); return } location.hash = "vault/library/" + (v.cat || VS.cat) + "/" + did; return }
+      if (k === "site") { const contacts = [0, 1, 2, 3, 4, 5].map(i => ({ role: v["c_role" + i], name: v["c_name" + i], email: v["c_email" + i], phone: v["c_phone" + i] })).filter(c => c.name || c.email || c.phone); const body = { name: v.name, kind: v.kind, address: v.address, units: v.units, renewal: v.renewal, notes: v.notes, contacts, status: v.inactive ? "inactive" : "active" }; const id = f.dataset.id; const r = id ? await api(`/api/vault/s/${VS.sid}/sites/${id}`, { method: "PUT", body }) : await api(`/api/vault/s/${VS.sid}/sites`, { method: "POST", body }); closeMod(); toast("Saved"); reloadOv(); VS.tab = "sites"; VS.site = id || r.id; location.hash = "vault/sites/" + VS.site; await paint(); return }
+      if (k === "req") { const code = v.code === "custom" ? "custom_" + Math.random().toString(36).slice(2, 7) : v.code; if (v.code === "custom" && !v.label) throw new Error("Type a name for this requirement."); await api(`/api/vault/s/${VS.sid}/reqs`, { method: "POST", body: { site_id: f.dataset.site, code, label: v.label, fm: v.fm || undefined, doc: !!v.doc } }); toast("Added"); return pSite() }
+      if (k === "sign") { const signers = [0, 1, 2].map(i => ({ name: v["s_name" + i], title: v["s_title" + i], party: v["s_party" + i] })).filter(s => s.name); await api(`/api/vault/s/${VS.sid}/docs/${VS.det.doc.id}/sign`, { method: "POST", body: { signed_on: v.signed_on, signers } }); closeMod(); toast("Marked signed"); reloadOv(); return loadDoc(VS.det.doc.id) }
+      if (k === "reject") { await api(`/api/vault/s/${VS.sid}/items/${f.dataset.id}/review`, { method: "POST", body: { ok: false, reason: v.reason } }); closeMod(); toast("Rejected; the person sees why"); reloadOv(); return paint() }
+      if (k === "rec") { await api(`/api/vault/s/${VS.sid}/items`, { method: "POST", body: { user_id: f.dataset.u, code: f.dataset.code, done_on: v.done_on, expires: v.expires, method: v.method, outcome: v.outcome, waived: !!v.waived } }); closeMod(); toast("Recorded"); return pGrid() }
+      if (k === "eie") { const kind = f.dataset.kind, id = f.dataset.id, on = f.dataset.on === "1"; if (kind === "mine") await api(`/api/vault/mine/items/${id}/eie?sid=${encodeURIComponent(VS.mine.school.id)}`, { method: "POST", body: { on: true, reason: v.reason } }); else await api(`/api/vault/s/${VS.sid}/eie`, { method: "POST", body: { kind, id, on, reason: v.reason } }); closeMod(); toast(on ? "Marked entered in error" : "Un-marked"); reloadOv(); if (kind === "mine") return openMine(); if (["item", "review"].includes(kind) && VS.personId && VS.tab !== "library") return personMod(VS.personId); if (VS.tab === "library" && VS.det && ["doc", "version"].includes(kind)) { await paint(); return } return paint() }
+      if (k === "ack") { await api(`/api/vault/s/${VS.sid}/attention/ack`, { method: "POST", body: { key: f.dataset.key, state: f.dataset.state, note: v.note } }); closeMod(); toast(f.dataset.state === "resolved" ? "Resolved" : "Acknowledged"); reloadOv(); return paint() }
+      if (k === "baa") { const r = await api(`/api/vault/s/${VS.sid}/baa`, { method: "POST", body: { contact: v.contact, note: v.note } }); closeMod(); toast("Request sent. Vexcura will follow up."); reloadOv(); return paint() }
+      if (k === "mine") { const sid = VS.mine.school.id; const r = await api(`/api/vault/mine/items?sid=${encodeURIComponent(sid)}`, { method: "POST", body: { code: f.dataset.code, done_on: v.done_on, expires: v.expires, method: v.method, outcome: v.outcome, attest: !!v.attest } }); const file = f.querySelector("input[type=file]"); if (file && file.files && file.files[0]) await upload(`/api/vault/mine/items/${r.id}/file?sid=${encodeURIComponent(sid)}`, file.files[0]); closeMod(); toast("Sent to your program for review"); return openMine() }
+    } catch (x) { if (err) err.textContent = x.message || "Something went wrong"; if (btn) btn.disabled = false }
+  });
+
+  /* ---------- hooks into Board compliance (v37) and the instructor hub's clinical day (v20) ---------- */
+  const sumCache = {};
+  async function regsCard(m) {
+    try {
+      const R = window.__vxRegs && window.__vxRegs.state && window.__vxRegs.state(); if (!R || !R.sid || R.tab !== "req" || m.querySelector(".vxv-regs")) return;
+      const h = hint(); if (!h || !h.staff) return; const me = await loadMe(); const s = me && (me.schools || []).find(x => x.id === R.sid && ["admin", "coord", "site"].includes(x.role)); if (!s) return;
+      let c = sumCache[R.sid]; if (!c || Date.now() - c.at > 60000) { const o = await api(`/api/vault/s/${R.sid}/overview`); let nc = 0; try { const D = await api(`/api/vault/s/${R.sid}/days?n=14`); nc = D.days.reduce((a, d) => a + d.not.length, 0) } catch (e) { } c = sumCache[R.sid] = { at: Date.now(), o: o.counts, sites: o.sites.length, nc } }
+      if (!c.sites || m.querySelector(".vxv-regs") || !document.body.contains(m)) return;
+      const d = document.createElement("section"); d.className = "vxr-card vxv-regs";
+      d.innerHTML = `<div><b>${sv("vault", 16)} Compliance vault</b><span class="vxv-mut"> · ${c.o.expired} expired · ${c.o.d30} expiring in 30 days · ${c.o.missing} missing · ${c.nc} clinical placement${c.nc === 1 ? "" : "s"} not cleared in the next 14 days</span></div><a class="vxv-btn mini sec" href="#vault/overview">Open vault</a>`;
+      m.insertBefore(d, m.firstChild);
+    } catch (e) { }
+  }
+  const hubDone = new WeakSet();
+  async function hubChips(ul) {
+    if (hubDone.has(ul)) return; hubDone.add(ul);
+    try {
+      const h = hint(); if (!h || !h.staff) return; const me = await loadMe(); const s = me && (me.schools || []).find(x => ["admin", "coord", "instructor"].includes(x.role)); if (!s) return;
+      const ids = [...ul.querySelectorAll('[data-vxi="rmstu"][data-v]')].map(b => b.dataset.v); if (!ids.length) return;
+      const hd = ul.closest("main,section,div") && document.querySelector(".vxi-row h2 + p.vxi-muted"); const site = hd ? (hd.textContent.split(" · ")[1] || "") : "";
+      const R = await api(`/api/vault/s/${s.id}/clear`, { method: "POST", body: { ids, site_text: site } }); if (!R.reqs) return;
+      R.people.forEach(p => { const li = ul.querySelector(`[data-vxi="rmstu"][data-v="${CSS.escape(p.id)}"]`); const nm = li && li.closest("li") && li.closest("li").querySelector(".nm"); if (!nm || nm.querySelector(".vxv-clr")) return; const c = document.createElement("span"); c.className = "vxv-clr " + (p.cleared ? "ok" : "no"); c.textContent = p.cleared ? "Cleared" + (R.site ? " for " + R.site.name.replace(/ \(fictional\)$/, "") : "") : "Not cleared"; if (!p.cleared) c.title = "Missing: " + p.missing.join(", "); nm.appendChild(c) });
+    } catch (e) { }
+  }
+  try { new MutationObserver(() => { const m = document.getElementById("vxr-m"); if (m && document.body.classList.contains("vxr-on") && m.querySelector(".vxr-ban")) regsCard(m); document.querySelectorAll("ul.vxi-att").forEach(hubChips) }).observe(document.body, { childList: true, subtree: true }) } catch (e) { }
+
+  window.__vxVault = { state: () => VS, loadMe, open: k => { location.hash = k || "vault" }, reload: () => { VS.ov = null; return paint() } };
+}
+/* </v41-vault-js> */
 /* <v22-daily-js> */
 /* <v22-daily-js> Daily AI questions + owner spot-check queue.
    Insert INSIDE the app's main IIFE in app.html (BANK/BY/itemHTML/qflagL are IIFE-scoped, not globals): directly after
