@@ -3790,7 +3790,7 @@ const BANK = (function(e){try{const P=">oVO^cd@ge#lJ'~wUTDiEY+LZx-K&hkt(/F0;G`N.
 let HIDQ=new Set();const CFG={c:null,bypass:false};try{const c=JSON.parse(localStorage.getItem("ns.cfg")||"null");if(c&&typeof c==="object"){CFG.c=c;HIDQ=new Set(c.hideQ||[])}}catch(e){}
 const featOn=k=>!CFG.c||!CFG.c.feat||CFG.c.feat[k]!==false;
 
-const APPV="9b725abbda0965ac4394c2dbec623d393a0b886e7e7bc75aeb4482855bd9841f";
+const APPV="4c4de7fedb0e34993252b5fb96a09a62bf1219ecc0c5b2c9f8bcf46887634857";
 const CATS={
   MOC:{n:"Management of Care",lo:15,hi:21,w:18},
   SIC:{n:"Safety and Infection Prevention and Control",lo:10,hi:16,w:13},
@@ -8319,7 +8319,7 @@ zolpidem|Sedative-hypnotic|PO||Ambien`;
 
   /* ---- program admin (school) ---- */
   const SA={sid:null,d:null,tab:"overview"};
-  const PLANL={per_student:"Per student ($99/student/yr)",site100:"Program license, up to 100 ($7,500/yr)",site250:"Program license, 101–250 ($15,000/yr)",site500:"Program license, 251–500 ($25,000/yr)",custom:"Custom"};
+  const PLANL={per_student:"Per student ($199/student/yr)",site100:"Program license, up to 100 ($15,000/yr)",site250:"Program license, 101–250 ($30,000/yr)",site500:"Program license, 251–500 ($50,000/yr)",custom:"Custom"};
   const STL={pilot:"Pilot",active:"Active",expired:"Expired",suspended:"Suspended"};
   const dIn=t=>t?new Date(t).toISOString().slice(0,10):"";const dOut=s=>s?Date.parse(s+"T12:00:00"):0;
   const fmtD=t=>t?new Date(t).toLocaleDateString([], {year:"numeric",month:"short",day:"numeric"}):"—";
