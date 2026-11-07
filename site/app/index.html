@@ -4200,6 +4200,235 @@ li.eie{opacity:.65}.vxv-site.eie{opacity:.6}
 .vxv-acct td{white-space:nowrap}.vxv-acct td:last-child{white-space:normal;min-width:160px}
 @media print{.vxv-h,.vxv-nav,.vxv-acts,.vxv-drop,.vxv-note:not(.eie),.vxv-cats,.vxv-media,.vxv-back,.vxv-toast{display:none!important}.vxv-lib{display:block!important}.vxv-prev{display:block!important;position:static!important;max-height:none!important;border:0}body.vxv-on .vxv-m{max-width:none}}
 /* </v41-vault-css> */
+/* <v39-instr-css> */
+/* ---------- v39 Instructor My Chart (workspace, live stream, feedback, gradebook) + student feedback in place ---------- */
+.v39 .vxi-t em{font-style:normal;font-weight:500;opacity:.85}
+.v39 .vxi-h .twlive{font-size:12.5px;font-weight:600;color:#bfe8cf;white-space:nowrap}
+.v39 .vxi-h .twlive.off{color:#ffd28a}
+.v39-hb{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.35);border-radius:8px;padding:5px 10px;font:600 13px var(--f-body);min-height:32px;cursor:pointer;white-space:nowrap}
+.v39-hb:hover{background:rgba(255,255,255,.2)}
+.v39-b{align-items:stretch}
+.v39-main{flex:1 1 auto;min-width:0;display:flex;flex-direction:column}
+.v39-side{min-height:calc(100vh - 56px)}
+.v39-side .vxi-sf .vxi-btn{width:100%}
+.v39-gsel{font:inherit;font-size:14px;font-weight:600;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);width:100%;min-height:40px}
+.v39-sl button{align-items:center}
+.v39-sl button>span:nth-child(2){flex:1 1 auto;min-width:0}
+.v39-sl b,.v39-sl small{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.v39-ic{display:inline-flex;gap:4px;flex:none}
+.v39-st{display:inline-grid;place-items:center;min-width:20px;height:20px;padding:0 5px;border-radius:10px;font:800 11px/1 var(--f-body);font-style:normal;box-sizing:border-box}
+.v39-st.red{background:var(--bad);color:#fff}.v39-st.amber{background:var(--warn);color:#fff}.v39-st.rev{background:#e7e0f7;color:#4b2a91}
+.vxi-sl button[aria-current="true"] .v39-st.rev{background:#fff}
+.v39-sfoot{padding:8px 14px 14px;font-size:13px}
+.v39-mbar{display:none;gap:8px;padding:10px 16px 0;flex-wrap:wrap}
+.v39-mg{display:flex;flex-direction:column;gap:2px;flex:1 1 160px;min-width:0;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.v39-mg select{font:inherit;font-size:14px;text-transform:none;letter-spacing:0;font-weight:600;color:var(--ink);padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--surface);min-height:40px;width:100%}
+/* KPI tiles */
+.v39-kpi{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:8px;padding:12px max(16px,1.4vw) 4px}
+.v39-kpi button{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:9px 11px;color:var(--ink);cursor:pointer;min-width:0;border-top:3px solid #b9c9d5}
+.v39-kpi button:hover{border-color:var(--accent)}
+.v39-kpi b{font-size:22px;line-height:1.1;font-variant-numeric:tabular-nums}
+.v39-kpi span{font-size:11.5px;color:var(--muted);line-height:1.25;overflow:hidden;text-overflow:ellipsis}
+.v39-kpi .red{border-top-color:var(--bad)}.v39-kpi .red b{color:var(--bad)}
+.v39-kpi .amber{border-top-color:var(--warn)}.v39-kpi .amber b{color:var(--warn)}
+.v39-kpi .good{border-top-color:var(--good)}.v39-kpi .good b{color:var(--good)}
+/* activity tabs (Epic activity bar) */
+.v39-tabs{display:flex;gap:2px;padding:6px max(12px,1.2vw) 0;border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:none;flex:none;background:var(--bg)}
+.v39-tabs::-webkit-scrollbar{display:none}
+.v39-tabs a{display:inline-flex;align-items:center;gap:7px;padding:10px 13px 9px;color:var(--muted);text-decoration:none;font-weight:600;font-size:14px;border-bottom:3px solid transparent;white-space:nowrap;border-radius:6px 6px 0 0}
+.v39-tabs a:hover{color:var(--ink);background:var(--sunk)}
+.v39-tabs a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--accent);background:var(--surface)}
+.v39-tabs .v39-ext{margin-left:auto}
+.v39-n{display:inline-block;min-width:18px;padding:0 5px;border-radius:9px;background:#6a2fb0;color:#fff;font:800 11px/18px var(--f-body);font-style:normal;text-align:center;box-sizing:border-box}
+.v39-tb{display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:10px max(16px,2vw) 0}
+.v39-tb[hidden]{display:none}
+.v39-tbl{color:var(--muted);font-size:13.5px;margin-right:auto}
+.v39-m{padding-top:14px}
+.v39-h2{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.v39-h2 h2{margin:0}
+.v39-today{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:12px}
+.v39-gname{margin-left:auto;font-weight:700;color:var(--muted);font-size:14px}
+.v39-grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,340px);gap:16px;align-items:start}
+/* live stream */
+.v39-flt{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.v39-flt button{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:5px 12px;font:600 13px var(--f-body);min-height:32px;cursor:pointer}
+.v39-flt button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.v39-flt2{display:flex;gap:8px;margin-bottom:6px;flex-wrap:wrap}
+.v39-flt2 select,.v39-flt2 input{font:inherit;font-size:14px;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);min-height:38px;flex:1 1 160px;min-width:0}
+.v39-st-l{list-style:none;margin:0;padding:0}
+.v39-ev{display:grid;grid-template-columns:84px 26px minmax(0,1fr) auto;gap:8px;align-items:start;padding:9px 6px;border-top:1px solid var(--line);border-left:3px solid transparent}
+.v39-ev:first-child{border-top:0}
+.v39-ev.v39-bad{border-left-color:var(--bad);background:color-mix(in srgb,var(--bad-soft) 45%,transparent)}
+.v39-ev.v39-warn{border-left-color:var(--warn)}
+.v39-ev.v39-ok{border-left-color:var(--good)}
+.v39-ev.rv{opacity:.78}
+.v39-et{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;padding-top:2px}
+.v39-ek{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:6px;background:var(--sunk);color:var(--accent)}
+.v39-ek.k-ehr{background:#e3eef7;color:#1d5670}.v39-ek.k-learn{background:#efe8fb;color:#5b2fa0}.v39-ek.k-clin{background:#e6f4ea;color:#1f6e44}.v39-ek.k-fb{background:#fff1dc;color:#8a4b00}
+.v39-eb{min-width:0;font-size:14px;line-height:1.35;overflow-wrap:anywhere}
+.v39-who{font-weight:700}
+.v39-kn{font-weight:700;color:var(--muted);font-size:12.5px;text-transform:uppercase;letter-spacing:.03em}
+.v39-pt{color:var(--muted)}
+.v39-lb{color:var(--ink)}
+.v39-fbs{display:flex;flex-direction:column;gap:2px;margin-top:4px}
+.v39-fbs i{font-style:normal;font-size:12.5px;color:#8a4b00;background:#fff6e8;border-radius:6px;padding:2px 6px;display:inline-flex;gap:4px;align-items:center;width:fit-content;max-width:100%}
+.v39-fbs i.priv{color:#4c6470;background:var(--sunk)}
+.v39-ea{display:flex;gap:4px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.v39-sc{font-variant-numeric:tabular-nums;font-size:14px;padding:2px 7px;border-radius:6px;background:var(--sunk)}
+.v39-fbb{display:inline-flex;align-items:center;gap:5px;border:1px solid #d9c3a1;background:#fffaf2;color:#7a4300;border-radius:8px;padding:5px 9px;font:700 12.5px var(--f-body);cursor:pointer;min-height:32px;white-space:nowrap}
+.v39-fbb:hover{background:#fff1dc}
+.v39-fbb.sm{padding:3px 8px;min-height:28px}
+.v39-rvb,.v39-op{display:inline-grid;place-items:center;width:32px;height:32px;border:1px solid var(--line);background:var(--surface);color:var(--muted);border-radius:8px;cursor:pointer}
+.v39-rvb[aria-pressed="true"]{background:var(--good-soft);color:var(--good);border-color:var(--good)}
+.v39-pts .v39-ptc{display:flex;flex-direction:column;gap:3px;width:100%;text-align:left;border:1px solid var(--line);border-left:4px solid var(--good);border-radius:10px;background:var(--surface);padding:10px 12px;margin-bottom:8px;color:var(--ink);cursor:pointer}
+.v39-ptc.tw-red{border-left-color:var(--bad)}.v39-ptc.tw-amber{border-left-color:var(--warn)}
+.v39-ptc span{font-size:13px;color:var(--muted)}.v39-ptc small{font-size:12px;color:var(--muted)}
+.v39-chips{display:flex;gap:4px;flex-wrap:wrap}
+/* student chart (banner + sections) */
+.v39-banner{display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:12px;padding:12px 14px;margin-bottom:10px}
+.v39-bav{width:48px;height:48px;font-size:17px}
+.v39-bid{flex:1 1 220px;min-width:0}.v39-bid h2{margin:0;font-size:22px}
+.v39-bkv{display:flex;gap:14px;margin:0;flex-wrap:wrap}.v39-bkv div{min-width:64px}.v39-bkv dt{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}.v39-bkv dd{margin:0;font-weight:800;font-size:18px;font-variant-numeric:tabular-nums}
+.v39-sub{display:flex;gap:2px;border-bottom:1px solid var(--line);margin-bottom:12px;overflow-x:auto;scrollbar-width:none}
+.v39-sub a{padding:9px 12px 8px;color:var(--muted);text-decoration:none;font-weight:600;font-size:14px;border-bottom:3px solid transparent;white-space:nowrap}
+.v39-sub a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--accent)}
+.v39-ptbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:6px}
+.v39-ptbar select{font:inherit;font-weight:700;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink)}
+.v39-ro .ehcard{margin-bottom:12px}
+.v39-items{list-style:none;margin:0;padding:0}
+.v39-items>li{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;padding:9px 0;border-top:1px solid var(--line)}
+.v39-items>li:first-child{border-top:0}
+.v39-items>li>div{min-width:0;flex:1 1 auto;overflow-wrap:anywhere}
+.v39-items>li.me{background:color-mix(in srgb,var(--sunk) 60%,transparent)}
+.v39-note{white-space:pre-wrap;margin:4px 0 0;font-size:14px}
+.v39-bad{color:var(--bad);font-weight:700}
+.v39-rowr{display:flex;justify-content:flex-end;margin-bottom:8px}
+.v39-fbl{list-style:none;margin:0;padding:0}
+.v39-fbl>li{padding:9px 10px;border:1px solid var(--line);border-left:4px solid #e8710a;border-radius:8px;margin-bottom:8px;background:var(--surface);overflow-wrap:anywhere}
+.v39-fbl>li.priv{border-left-color:#9aa9b0;background:var(--sunk)}
+.v39-fbl>li.new{box-shadow:inset 0 0 0 1px #e8710a}
+.v39-fbl.sm>li{padding:6px 9px;margin:6px 0 0;font-size:13.5px}
+.v39-fbl p{margin:4px 0 0}
+.v39-fsc{font-weight:700;color:#7a4300}
+.v39-ex h3{flex-wrap:wrap}
+.v39-items-t td{vertical-align:top}
+/* flowsheet-style tables (instructor read-only flowsheet, evaluations, gradebook) reuse the v34 .fg-t grid skin */
+.v39-fgw{overflow:auto;border:1px solid #b9c9d5;border-radius:8px;background:#fff;max-height:70vh;--fgL:210px;-webkit-overflow-scrolling:touch}
+.v39-fg tr.v39-hr th,.v39-gt tr.v39-hr th{position:sticky;top:0;height:30px;min-width:74px;text-align:center;font-size:12px;background:#eef2f5;color:#33454f;z-index:3;padding:4px 8px}
+.v39-fg thead th.fg-cn,.v39-gt thead th.fg-cn{left:0;z-index:5;padding:4px 8px;text-align:left;width:var(--fgL);min-width:var(--fgL);max-width:var(--fgL)}
+.v39-fg td.v39-fc{cursor:pointer}
+.v39-fg td.v39-fc:hover,.v39-fg td.v39-fc:focus-visible{background:#fff6e8;outline:2px solid #e8710a;outline-offset:-2px}
+.v39-fbm{position:relative}
+.fg-t td.v39-fbm::before,.v39-fbm::before{content:"";position:absolute;top:0;left:0;border-style:solid;border-width:8px 8px 0 0;border-color:#0f8b8d transparent transparent transparent;pointer-events:none;z-index:1}
+#ehm [data-ex="viewadm"].v39-fbm{box-shadow:0 0 0 2px #0f8b8d}
+.v39-evt td{text-align:center;font-weight:700}
+.v39-r-S{background:#eef8f1!important;color:#1f6e44}.v39-r-NI{background:#fff6e0!important;color:#8a5a00}.v39-r-U{background:#fdecea!important;color:#b3261e}.v39-r-NO{color:#7a8b93}
+/* gradebook */
+.v39-gtb{display:flex;align-items:center;gap:6px;flex-wrap:wrap;padding:4px 0 8px}
+.v39-gtb .mtt{font-size:17px;font-weight:800;margin-right:4px}
+.v39-gtb .fg-file{background:#e9eef2;color:#5b6b74;border-color:#d3dde4}
+.v39-gtb .fg-file.on{background:#1f6e44;color:#fff;border-color:#1f6e44}
+.v39-chk{gap:6px}.v39-chk input{margin:0}
+.v39-lms{display:inline-flex;align-items:center;gap:5px;font:700 12.5px var(--f-body);color:#1f6e44;background:#eef8f1;border-radius:6px;padding:4px 8px;max-width:240px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.v39-sy{display:inline-flex;align-items:center;gap:4px;font:700 11.5px var(--f-body);border-radius:6px;padding:2px 7px;white-space:nowrap}
+.v39-sy::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.v39-sy-synced{color:#1f6e44;background:#eef8f1}.v39-sy-pending{color:#8a5a00;background:#fff6e0}.v39-sy-error{color:#b3261e;background:#fdecea}
+.v39-gb{background:#fff;border:1px solid #b9c9d5;border-radius:8px;min-width:0;--fgL:210px}
+.v39-gw{position:relative;overflow:auto;max-height:calc(100vh - 330px);min-height:220px;outline:none;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;border-radius:0 0 8px 8px}
+.v39-gw:focus-visible{box-shadow:inset 0 0 0 2px #8ab4f8}
+.v39-gt thead th.v39-ch{min-width:104px;max-width:180px;padding:0;vertical-align:bottom}
+.v39-gt thead th.v39-ch.v39-cc{background:#e6eaed}
+.v39-chb{display:flex;flex-direction:column;align-items:center;gap:1px;width:100%;border:0;background:none;padding:5px 8px;font:inherit;color:inherit;cursor:pointer;line-height:1.2}
+.v39-chb b{font-size:12.5px;white-space:normal;max-width:170px}
+.v39-chb small{font-weight:500;color:#4c6470;font-size:10.5px}
+.v39-chb:hover{background:#dbe8f6}
+.v39-gt tbody th{font-weight:600}
+.v39-gt td.v39-c{text-align:center;min-width:104px}
+.v39-gt td.v39-auto{color:#0f6f71;font-style:italic;background:#eefafa}
+.v39-gt td.v39-autof{color:#0f6f71}
+.v39-gt td.v39-u{color:#b3261e;font-weight:800}.v39-gt td.v39-ni{color:#8a5a00;font-weight:700}
+.v39-gt td.v39-sel{background:#e8f0fe}
+.v39-gt td.v39-act{box-shadow:inset 0 0 0 2px #1a73e8;background:#fff}
+.v39-gt td[class*="v39-y-"]::before{content:"";position:absolute;left:3px;bottom:3px;width:6px;height:6px;border-radius:50%}
+.v39-gt td.v39-y-synced::before{background:#2f9e5b}.v39-gt td.v39-y-pending::before{background:#d39a2c}.v39-gt td.v39-y-error::before{background:#d93025;width:8px;height:8px}
+.v39-fh{position:absolute;right:-4px;bottom:-4px;width:8px;height:8px;background:#1a73e8;border:1px solid #fff;cursor:crosshair;z-index:4}
+.v39-inp{position:absolute;inset:0;width:100%;height:100%;border:2px solid #1a73e8;box-sizing:border-box;font:inherit;text-align:center;padding:0 4px;background:#fff;color:#14232b;outline:none}
+.v39-inp.bad{border-color:#d93025;background:#fdecea}
+.v39-pick{position:absolute;left:0;top:100%;z-index:20;background:#fff;border:1px solid #b9c9d5;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,.18);padding:4px;min-width:190px;display:flex;flex-direction:column}
+.v39-pick button{text-align:left;border:0;background:none;padding:6px 8px;border-radius:6px;font:inherit;font-size:13px;cursor:pointer}
+.v39-pick button:hover{background:#e8f0fe}
+.v39-aun{color:#0f6f71;font-size:11.5px;margin-left:6px}
+.v39-keys{margin-top:8px}
+.v39-lg{display:inline-flex;gap:8px;flex-wrap:wrap;margin-left:4px}.v39-lg i{font-style:normal;padding:0 6px;border-radius:4px}.v39-lg i.v39-auto{color:#0f6f71;font-style:italic;background:#eefafa}.v39-lg i.fsp{color:#6a2fb0;background:#f7f1fd}.v39-lg i.fscalc{background:#f1f3f5;font-weight:700}
+.v39-gbe{margin-top:12px}
+.v39-aud ul{list-style:none;margin:8px 0 0;padding:0;font-size:13px;max-height:260px;overflow:auto}.v39-aud li{padding:4px 0;border-top:1px solid var(--line)}
+/* inbox */
+.v39-ib{display:grid;grid-template-columns:220px minmax(0,1fr);gap:14px;align-items:start}
+.v39-ibf{display:flex;flex-direction:column;gap:4px}
+.v39-ibf button{display:flex;justify-content:space-between;gap:8px;align-items:center;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:8px;padding:9px 11px;font:600 14px var(--f-body);cursor:pointer;text-align:left}
+.v39-ibf button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.v39-ibf i{font-style:normal;font-weight:800;font-variant-numeric:tabular-nums}
+.v39-code{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.v39-cl{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.v39-cv{font-size:26px;letter-spacing:.06em;font-variant-numeric:tabular-nums}
+/* composer and modals */
+.v39-mod .v39-f3{display:grid;grid-template-columns:1fr 1fr 1.6fr;gap:10px}
+.v39-fbi{background:var(--sunk);border-radius:8px;padding:6px 10px}
+.v39-rt{border-collapse:collapse;width:100%;margin:6px 0 8px;font-size:14px}
+.v39-rt th{text-align:left;font-weight:600;padding:4px 8px 4px 0}
+.v39-rt td{padding:3px 0}
+.v39-rt .vxi-seg label{display:inline-flex;cursor:pointer}
+.v39-rt .vxi-seg input{position:absolute;opacity:0;width:1px;height:1px}
+.v39-rt .vxi-seg span{display:inline-block;padding:6px 11px;border-right:1px solid var(--line);font-weight:700;min-width:16px;text-align:center}
+.v39-rt .vxi-seg label:last-child span{border-right:0}
+.v39-rt .vxi-seg input:checked+span{background:var(--accent);color:var(--accent-ink)}
+.v39-rt .vxi-seg input:focus-visible+span{outline:2px solid #1a73e8;outline-offset:-2px}
+.v39-exp{list-style:none;margin:0;padding:0}.v39-exp li{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-top:1px solid var(--line)}.v39-exp .vxi-btn{flex:none;min-width:168px;justify-content:flex-start}.v39-exp span{font-size:13px}
+/* student side */
+.c2tdb.v39-chip.new b{color:#e8710a}
+.v39fbc{border-left:4px solid #0f8b8d}
+.v39exc{background:var(--surface);border:1px solid var(--line);border-left:4px solid #0f8b8d;border-radius:12px;padding:12px 14px;margin:0 0 12px}
+.v39exc h3{font-size:16px;margin:0 0 4px;display:flex;gap:6px;align-items:center}
+.v39-pin{display:inline-flex;align-items:center;gap:3px;margin-left:8px;font-size:12px;font-weight:700;color:#0f6f71;background:#e3f4f4;border-radius:6px;padding:1px 6px}
+.v39-ifb{margin-bottom:8px;border-left:4px solid #0f8b8d}
+.v39-dbf{margin:6px 0 10px;border-left:4px solid #0f8b8d}
+.v39-pop{position:absolute;z-index:9999;max-width:290px;background:#fff;color:#14232b;border:1px solid #b9c9d5;border-left:4px solid #0f8b8d;border-radius:8px;padding:10px 12px;box-shadow:0 8px 24px rgba(0,0,0,.2);font-size:14px}
+.v39-pop p{margin:4px 0}
+/* responsive: iPad portrait and phones drop the left list for two pickers; KPIs wrap */
+@media (max-width:1280px){.v39-kpi{grid-template-columns:repeat(4,minmax(0,1fr))}.v39-grid2{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:900px){
+  .v39-side{display:none}
+  .v39-mbar{display:flex}
+  .v39-kpi{padding:10px 16px 2px;gap:6px}
+  .v39-kpi button{padding:7px 9px}.v39-kpi b{font-size:18px}.v39-kpi span{font-size:10.5px}
+  .v39-tabs{padding:6px 8px 0}.v39-tabs a{padding:9px 10px 8px;font-size:13.5px}
+  .v39 .vxi-h .twlive{display:none}
+  .v39-hb span{display:none}
+  .v39-ib{grid-template-columns:minmax(0,1fr)}.v39-ibf{flex-direction:row;flex-wrap:wrap}.v39-ibf button{flex:1 1 150px}
+  .v39-gw{max-height:62vh}
+}
+@media (max-width:600px){
+  .v39-kpi{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .v39-kpi span{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+  .v39-ev{grid-template-columns:24px minmax(0,1fr);gap:6px}
+  .v39-ev .v39-et{grid-column:2;order:-1;padding:0}
+  .v39-ev .v39-ek{grid-row:1/3}
+  .v39-ev .v39-ea{grid-column:2;justify-content:flex-start}
+  .v39-fbb span{display:none}
+  .v39-mod .v39-f3{grid-template-columns:1fr 1fr}
+  .v39-mod .v39-f3 label:last-child{grid-column:1/3}
+  .v39-gname{margin-left:0}
+  .v39-banner{padding:10px}
+  .v39-fgw,.v39-gb{--fgL:132px}
+  .v39-exp li{flex-direction:column}
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .v39-fgw,:root:not([data-theme="light"]) .v39-gb{color-scheme:light}}
+.v39-gt,.v39-fg{width:max-content;min-width:100%}
+.v39-gt .fg-fill{width:auto;min-width:48px}
+.v39-gt thead th.v39-ch{box-shadow:none}
+.v39-days{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin:-4px 0 12px}
+.v39-vis{margin-top:6px;color:var(--muted)}
+/* </v39-instr-css> */
 .areqp{border:1px solid var(--line,#cfd8e0);border-radius:10px;padding:10px 14px 4px;margin:6px 0 10px}.areqp legend{font-weight:700;padding:0 6px}.agrid input[type=date],.agrid input[type=month]{width:100%;min-width:0;max-width:100%;box-sizing:border-box;-webkit-appearance:none;appearance:none}.agrid .aip{min-width:0;max-width:100%}
 </style>
 
@@ -4212,7 +4441,7 @@ const BANK = (function(e){try{const P=">oVO^cd@ge#lJ'~wUTDiEY+LZx-K&hkt(/F0;G`N.
 let HIDQ=new Set();const CFG={c:null,bypass:false};try{const c=JSON.parse(localStorage.getItem("ns.cfg")||"null");if(c&&typeof c==="object"){CFG.c=c;HIDQ=new Set(c.hideQ||[])}}catch(e){}
 const featOn=k=>!CFG.c||!CFG.c.feat||CFG.c.feat[k]!==false;
 
-const APPV="bc8495420183f3448189ecf3ab78d244b606d02b0dfe7eddfb6205851086f4df";
+const APPV="108cc97c2cba1a3a72daee3dc3d1315bd4e26355d7185dc0dbfc95b1a0a7230f";
 const CATS={
   MOC:{n:"Management of Care",lo:15,hi:21,w:18},
   SIC:{n:"Safety and Infection Prevention and Control",lo:10,hi:16,w:13},
@@ -8717,7 +8946,7 @@ zolpidem|Sedative-hypnotic|PO||Ambien`;
      <nav class="mfil twtabs" role="tablist">${TVT.map(([k,l])=>`<button role="tab" aria-selected="${t===k}" data-tx="tab" data-v="${k}">${l}${k==="feedback"&&C.length?" ("+C.length+")":""}</button>`).join("")}</nav><div class="twro">${body}</div><p class="fine">Read-only view of the student's de-identified practice chart. It updates live while the student charts.</p>`}
   function tvFb(x,C){return `<section class="ehcard"><h3>Feedback to ${esc(tvName(x.uid))}</h3>${C.length?`<ul class="fbl">${C.slice().reverse().map(c=>`<li><div><b>${esc(c.author_name||"Instructor")}</b> <span class="fine">${esc(SECN[c.section]||"General")} · ${esc(new Date(c.created).toLocaleString([], {month:"short",day:"numeric",hour:"numeric",minute:"2-digit"}))} · ${c.read_at?"Read":"Not read yet"}</span></div><p>${esc(c.text)}</p></li>`).join("")}</ul>`:`<p class="note">No feedback yet.</p>`}${tvFbForm()}</section>`}
   const tvFbForm=()=>`<form class="aform" data-txf="fb"><div class="ehg2"><label class="afld"><span>About</span><select name="section">${Object.entries(SECN).map(([k,l])=>`<option value="${k}">${l}</option>`).join("")}</select></label></div><label class="afld"><span>Feedback</span><textarea name="text" rows="4" maxlength="2000" required placeholder="What went well, what to fix, what to look up before next clinical."></textarea></label><div class="sbtns"><button class="btn2" type="submit">Send to student</button></div></form>`;
-  document.addEventListener("click",async e=>{const b=e.target.closest&&e.target.closest("[data-tx]");if(!b)return;if(view!=="teach"&&view!=="school"&&!b.closest(".smod"))return;const k=b.dataset.tx,v=b.dataset.v;
+  document.addEventListener("click",async e=>{const b=e.target.closest&&e.target.closest("[data-tx]");if(!b)return;if(view!=="teach"&&view!=="school"&&view!=="instructor"&&!b.closest(".smod"))return;const k=b.dataset.tx,v=b.dataset.v;
     if(k==="ehr"){location.hash="#ehr";return}
     if(k==="grp"){if(v!==TV.gid){tvReset();TV.gid=v;TV.sel=null;tvDraw();tvPoll()}return}
     if(k==="open"){TV.sel=v;TV.tab="overview";tvRender();window.scrollTo(0,0);return}
@@ -8742,6 +8971,8 @@ zolpidem|Sedative-hypnotic|PO||Ambien`;
       if(k==="join"){SC.mine=await srvApi("/api/school/join",{method:"POST",body:{code:v("code")}});scApply();toastE("Joined "+(SC.mine.school||"your school"));await tvGroups();tvDraw();return}
       if(view==="school")await saSubmit(f,k,v)}catch(er){alertBox(er.message)}},true);
 
+  {const _tvd39=tvDraw;tvDraw=function(){if(view==="instructor"&&window.__vx39paint){window.__vx39paint();return}return _tvd39.apply(this,arguments)}}
+  window.__EHX39=()=>({TV,tvPoll,tvGroups,tvReset,tvFeed,tvStat,tvName,tvMarToday,tvLive,rpt,rptHTML,asgSection,asgLoad,CX,CL,SC,scLoad,scTeacher,scAdmin,scGroups,scSchools,fbLoad,SECN,flagOf,ROW,fmtV,tLbl,LDA,ACTL,dueNow,curT,dxPri,SEXW,buildPDF,dlPDF,relT,clockT,ic,phiFind,phiOK,toastE,FREQ,doses,adminFor,tMin,hhmm,tHD,plainOrder,CPEV,valAt,evalModal,prepModal});
   /* ---- program admin (school) ---- */
   const SA={sid:null,d:null,tab:"overview"};
   const PLANL={per_student:"Per student ($199/student/yr)",site100:"Program license, up to 100 ($15,000/yr)",site250:"Program license, 101–250 ($30,000/yr)",site500:"Program license, 251–500 ($50,000/yr)",custom:"Custom"};
@@ -18722,6 +18953,635 @@ const SECX = (() => {
   window.__vxVault = { state: () => VS, loadMe, open: k => { location.hash = k || "vault" }, reload: () => { VS.ov = null; return paint() } };
 }
 /* </v41-vault-js> */
+/* <v39-instr-js> */
+/* ---------- v39: Instructor My Chart. One Epic-style instructor workspace that merges the live clinical group dashboard (#teach)
+   and the instructor hub (#instructor): groups and students on the left, KPI tiles, activity tabs (Live, Students, Gradebook,
+   Feedback, Assignments, Cases, Evaluations, Clinical days, Roster & codes, Curriculum, Compliance). Everything students do streams in
+   (EHR charting from shared charts, practice exams with per-item answers, drills, telemetry, auscultation, megacode, rounds,
+   clinical day sign-ins, Library and Review Book), every item takes feedback (comment, score or rubric, visible to the student or
+   private), the gradebook works like the v34 flowsheet (keyboard entry, pick lists, validation, comments, copy/paste, fill handle,
+   undo, File grades), grades go to the school's LMS through LTI 1.3 Assignment and Grade Services, with CSV exports for schools
+   without LTI. Students see feedback where the item lives (flowsheet cell, MAR dose, exam item, drill debrief) and in a
+   Feedback inbox on My Chart. Server: worker/instr.js (/api/instr/*). Old routes (#teach, #teach/<group>[/<chart>],
+   #instructor/home) redirect here. ---------- */
+{
+  const IX = window.__vx39 = { tab: "live", gid: null, uid: null, sub: "timeline", pid: null, ptab: "summary", groups: [], gAt: 0, gErr: "", srv: true, live: {}, cur: { p: 0, f: 0, e: 0 }, prog: {}, evs: [], fb: [], rev: new Set(), days: [], members: [], busy: false, at: 0, sig: "", flt: { k: "all", q: "", u: "" }, ib: "review", gb: null, gbP: {}, gbC: {}, gbS: null, gbA: null, undo: [], redo: [], auto: true, my: null, myAt: 0, view: "students", evalU: "" };
+  const E = () => { try { return window.__EHX39 ? window.__EHX39() : null } catch (e) { return null } };
+  const HUB = () => window.__vxHub || {};
+  const api = (p, o) => srvApi("/api/instr" + p, o);
+  const $ = s => document.querySelector(s);
+  const ini = n => esc(String(n || "?").split(/\s+/).map(x => x[0] || "").join("").slice(0, 2).toUpperCase());
+  const clk = t => t ? new Date(t).toLocaleTimeString([], { hour: "numeric", minute: "2-digit" }) : "";
+  const dtm = t => { if (!t) return ""; const d = new Date(t), n = new Date(); return d.toDateString() === n.toDateString() ? clk(t) : d.toLocaleDateString([], { month: "short", day: "numeric" }) + " " + clk(t) };
+  const ago = t => { if (!t) return "Never"; const s = (Date.now() - t) / 1000; return s < 60 ? "Just now" : s < 3600 ? Math.round(s / 60) + " min ago" : s < 86400 ? Math.round(s / 3600) + " hr ago" : Math.round(s / 86400) + " d ago" };
+  const pres = t => !t ? "" : Date.now() - t < 10 * 60000 ? "on" : Date.now() - t < 864e5 ? "mid" : "";
+  const toast = m => { let d = document.getElementById("vxitoast"); if (!d) { d = document.createElement("div"); d.id = "vxitoast"; d.setAttribute("role", "status"); d.style.cssText = "position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#103a4f;color:#fff;padding:12px 18px;border-radius:10px;font-weight:600;z-index:9999;box-shadow:0 6px 20px rgba(0,0,0,.25);max-width:calc(100vw - 32px)"; document.body.appendChild(d) } d.textContent = m; d.hidden = false; clearTimeout(d._t); d._t = setTimeout(() => { d.hidden = true }, 3200) };
+  const fail = er => alertBox((er && er.message) || "Something went wrong.");
+  const lsG = k => { try { return JSON.parse(localStorage.getItem(k) || "null") } catch (e) { return null } }, lsS = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)) } catch (e) { } };
+  const meK = () => SRV && SRV.me ? String(SRV.me.id) : "";
+  const SV = { live: '<path d="M3 12h4l3-7 4 14 3-7h4"/>', users: '<circle cx="9" cy="8" r="3.2"/><path d="M3 20c.8-3.5 3.2-5 6-5s5.2 1.5 6 5"/><path d="M16 4.5a3 3 0 0 1 0 6M18 14.5c1.6.7 2.6 2.4 3 5.5"/>', grid: '<rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 9h18M3 14h18M9 4v16M15 4v16"/>', inbox: '<path d="M3 13l3-8h12l3 8v6H3z"/><path d="M3 13h5l1 2h6l1-2h5"/>', send: '<path d="M4 12l16-8-6 16-3-7z"/>', case: '<path d="M4 7h16v13H4z"/><path d="M9 7V4h6v3"/>', eval: '<path d="M6 3h9l4 4v14H6z"/><path d="M9 13l2 2 4-4"/>', cal: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>', key: '<circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3"/>', book: '<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/>', shield: '<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/>', back: '<path d="M15 18l-6-6 6-6"/>', plus: '<path d="M12 5v14M5 12h14"/>', msg: '<path d="M4 5h16v11H8l-4 4z"/>', check: '<path d="M5 12l5 5L20 7"/>', flag: '<path d="M5 21V4h11l-2 4 2 4H5"/>', eye: '<path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>', down: '<path d="M12 4v12M6 11l6 6 6-6M5 20h14"/>', undo: '<path d="M9 14L4 9l5-5"/><path d="M4 9h11a5 5 0 0 1 0 10h-3"/>', redo: '<path d="M15 14l5-5-5-5"/><path d="M20 9H9a5 5 0 0 0 0 10h3"/>', sync: '<path d="M20 11a8 8 0 0 0-14-5l-2 2"/><path d="M4 4v4h4"/><path d="M4 13a8 8 0 0 0 14 5l2-2"/><path d="M20 20v-4h-4"/>', link: '<path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/>', chat: '<path d="M4 5h16v11H8l-4 4z"/><path d="M8 9h8M8 12h5"/>', star: '<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/>', more: '<circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="19" cy="12" r="1.5"/>' };
+  const sv = (k, s) => `<svg viewBox="0 0 24 24" width="${s || 18}" height="${s || 18}" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${SV[k] || ""}</svg>`;
+  /* ---------- tabs (activity bar). own = rendered here; hub = the v20 instructor hub renders it into #vxi-m ---------- */
+  const TABS = [["live", "Live", "live", "own"], ["students", "Students", "users", "own"], ["gradebook", "Gradebook", "grid", "own"], ["inbox", "Feedback", "inbox", "own"], ["assign", "Assignments", "send", "hub"], ["cases", "Cases", "case", "own"], ["evals", "Evaluations", "eval", "own"], ["days", "Clinical days", "cal", "hub"], ["roster", "Roster & codes", "key", "own"], ["curriculum", "Curriculum", "book", "hub"]];
+  const HUBTAB = { assign: 1, days: 1, curriculum: 1, content: 1 };
+  /* ---------- event model ---------- */
+  const KL = { mar: "MAR", flow: "Flowsheet", note: "Note", lda: "LDA", care: "Care plan", order: "Order", sdoh: "SDOH", sbar: "Secure Chat", ho: "Handoff", dx: "Drill (chart)", exam: "Practice exam", quick: "Quick round", live: "Exam in progress", drill: "Drill", tele: "Telemetry", ausc: "Auscultation", code: "Megacode", rounds: "Bedside rounds", practice: "Practice", lib: "Library", book: "Review book", clinday: "Clinical day", fb: "Feedback" };
+  const KG = { mar: "ehr", flow: "ehr", note: "ehr", lda: "ehr", care: "ehr", order: "ehr", sdoh: "ehr", sbar: "ehr", ho: "ehr", dx: "learn", exam: "learn", quick: "learn", live: "learn", drill: "learn", tele: "learn", ausc: "learn", code: "learn", rounds: "learn", practice: "learn", lib: "learn", book: "learn", clinday: "clin", fb: "fb" };
+  const FKIND = { mar: "mar", flow: "flow", note: "note", lda: "lda", care: "care", order: "order", sdoh: "sdoh", sbar: "sbar", ho: "note", dx: "drill", exam: "exam", quick: "quick", live: "exam", drill: "drill", tele: "tele", ausc: "ausc", code: "code", rounds: "rounds", practice: "practice", lib: "lib", book: "lib", clinday: "clinday" };
+  const KI = { ehr: "case", learn: "star", clin: "cal", fb: "msg" };
+  const nm = uid => { const m = IX.members.find(x => x.id === String(uid)) || ((E() || {}).TV || { members: [] }).members.find(x => String(x.id) === String(uid)); return m ? (m.name || m.email || "Student") : "Student" };
+  function ehrEvents(uid, p) {
+    const X = E(); if (!X || !p) return []; const L = [], pid = p.id, pt = p.label || "Patient";
+    const add = (k, ref, t, label, o) => { if (t) L.push(Object.assign({ uid, k, ref, t, label, pid, pt, src: "ehr" }, o || {})) };
+    (p.mar || []).forEach(a => { if (!a.rt || a.dx32ctx) return; const o = (p.orders || []).find(y => y.id === a.oid) || {}; const al = (a.scanAlerts || []).length, ov = /^override/.test(a.scan || "");
+      add("mar", "mar:" + pid + ":" + a.id, a.rt, `${X.ACTL[a.act] || a.act} ${o.med || ""}${a.dose ? " " + a.dose : ""}${/barcode|scanned/.test(a.scan || "") ? " · scanned" : ov ? " · scan override" : ""}${a.reason ? " · " + a.reason : ""}${al ? " · " + al + " scan alert" + (al > 1 ? "s" : "") + ": " + (a.scanAlerts || []).join("; ") : ""}`, { sev: al ? "bad" : ov || a.act !== "given" ? "warn" : "ok", review: !!(al || ov || a.act !== "given"), aid: a.id }) });
+    const fr = {}; (p.flow || []).forEach(r => { if (!r.rt || r.sim) return; const kk = Math.round(r.rt / 60000); (fr[kk] = fr[kk] || []).push(r) });
+    Object.entries(fr).forEach(([kk, R]) => { const ab = R.map(r => { const fl = X.flagOf(r.r, r.v); return fl ? (X.ROW[r.r] ? X.ROW[r.r].l : r.r) + " " + X.fmtV(r.v) + " (" + fl + ")" : "" }).filter(Boolean);
+      add("flow", "fsb:" + pid + ":" + kk, Math.max(...R.map(r => r.rt)), `Filed ${R.length} flowsheet value${R.length > 1 ? "s" : ""} at ${X.tLbl(R[0].t)}${ab.length ? ": " + ab.join(", ") : ""}`, { sev: ab.length ? "warn" : "info", review: !!ab.length, cells: R.map(r => ({ t: r.t, r: r.r, v: r.v })) }) });
+    (p.notes || []).forEach(n => { if (!n.rt || n.dx32ctx) return; const dbf = /debrief/i.test(n.type || ""); add(dbf ? "dx" : "note", (dbf ? "dxn:" : "note:") + pid + ":" + n.id, n.rt, (dbf ? "Drill debrief note" : "Signed a " + (n.type || "") + " note") + (n.text ? ": " + String(n.text).replace(/\s+/g, " ").slice(0, 90) : ""), { review: !dbf, nid: n.id }) });
+    (p.ldas || []).forEach(l => { if (l.rt) add("lda", "lda:" + pid + ":" + l.id, l.rt, "Placed " + (X.LDA[l.type] ? X.LDA[l.type].n : "LDA") + (l.site ? " · " + l.site : ""), {}); if (l.removed && l.rmrt) add("lda", "lda:" + pid + ":" + l.id, l.rmrt, "Removed " + (X.LDA[l.type] ? X.LDA[l.type].n : "LDA"), {}) });
+    if (p.cp && p.cp.at) add("care", "cp:" + pid, p.cp.at, "Care plan · " + ((p.cp.problems || []).length) + " problem" + ((p.cp.problems || []).length === 1 ? "" : "s"), { review: true });
+    const c0 = (p.created || 0) + 120000; (p.orders || []).forEach(o => { if (!o.created || o.created < c0 || o.dx32ctx || o.dx32proto) return; add("order", "ord:" + pid + ":" + o.id, o.created, "Order: " + (o.med ? o.med + " " + (o.dose || "") + " " + (o.unit || "") + " " + (o.route || "") + " " + (o.freq || "") : o.text || "") + (o.by ? " · " + o.by : ""), { review: true }) });
+    const sd = p.sdoh && p.sdoh.at; if (sd) Object.entries(sd).forEach(([k, t]) => add("sdoh", "sdoh:" + pid + ":" + k, t, "SDOH screening · " + k, {}));
+    const th = p.sc29 && p.sc29.th; if (th) Object.entries(th).forEach(([k, M]) => (M || []).forEach(m => { if (m.who === "me" && !m.auto) add("sbar", "sbar:" + pid + ":" + m.id, m.at, "Secure Chat to " + ({ prov: "the provider", lab: "the lab", pharm: "pharmacy", fam: "family", charge: "the charge nurse" }[k] || k) + ": " + String(m.txt || "").replace(/\s+/g, " ").slice(0, 120), { review: true }) }));
+    if (p.ho && (p.ho.at || p.ho.synth)) add("ho", "ho:" + pid, p.ho.at || p.updated, "Handoff written", { review: true });
+    (p.dx32h || []).forEach(h => add("dx", "dx:" + pid + ":" + h.t, h.t, "Drill finished on chart · tier " + (h.tier || 1) + " · " + h.sc + "%", { sc: h.sc, review: false }));
+    if (p.dx32 && !p.dx32.done) add("dx", "dxr:" + pid, p.updated, "Deteriorating-patient drill running now", { sev: "warn" });
+    return L;
+  }
+  function allEvents() {
+    const X = E(); const L = [];
+    if (X && X.TV && X.TV.gid === IX.gid) Object.values(X.TV.docs).forEach(d => { ehrEvents(String(d.uid), d.data).forEach(e => L.push(e)) });
+    Object.entries(IX.prog).forEach(([u, P]) => (P || []).forEach(e => L.push(Object.assign({ uid: u, src: "prog", review: ["exam", "quick", "drill", "tele", "ausc"].indexOf(e.k) >= 0, sev: e.sc == null ? "info" : e.sc >= 77 ? "ok" : e.sc >= 60 ? "warn" : "bad" }, e))));
+    IX.evs.forEach(e => L.push({ uid: String(e.uid), k: e.k, ref: e.ref || e.k + ":" + e.id, t: e.at, label: e.label, sc: e.sc, d: e.d, src: "ev", review: e.k === "code" || e.k === "rounds", sev: e.sc == null ? "info" : e.sc >= 77 ? "ok" : e.sc >= 60 ? "warn" : "bad" }));
+    IX.days.forEach(d => { if (d.at) L.push({ uid: d.uid, k: "clinday", ref: "clinday:" + d.day, t: d.at, label: "Clinical day " + d.date + " · " + ({ present: "Signed in", late: "Signed in late", absent: "Absent", excused: "Excused" }[d.status] || d.status) + (d.how === "badge" ? " (badge)" : d.how === "instructor" ? " (by instructor)" : "") + (d.site ? " · " + d.site : ""), sev: d.status === "absent" ? "bad" : d.status === "late" ? "warn" : "ok", src: "day", hrs: d.hrs }) });
+    IX.fb.filter(f => !f.deleted).forEach(f => L.push({ uid: f.uid, k: "fb", ref: "fbx:" + f.id, t: f.updated, label: (f.visible ? "Feedback sent" : "Private note") + " · " + (f.label || KL[f.kind] || f.kind) + (f.text ? ": " + f.text.slice(0, 90) : ""), src: "fb", sev: "info", fid: f.id, read: f.read_at }));
+    return L.filter(e => e.t).sort((a, b) => b.t - a.t);
+  }
+  const fbFor = (uid, ref) => IX.fb.filter(f => !f.deleted && f.uid === String(uid) && f.ref === ref);
+  const fbEv = e => { const L = fbFor(e.uid, e.ref); if (e.cells) e.cells.forEach(c => fbFor(e.uid, "fs:" + e.pid + ":" + c.t + ":" + c.r).forEach(f => L.push(f))); if (/^exam:/.test(e.ref)) IX.fb.forEach(f => { if (!f.deleted && f.uid === String(e.uid) && String(f.ref).startsWith("exi:" + e.ref.slice(5) + ":")) L.push(f) }); return L };
+  const isRev = e => IX.rev.has(e.uid + "|" + e.ref) || fbEv(e).length > 0;
+  const needRev = () => allEvents().filter(e => e.review && e.src !== "fb" && !isRev(e) && Date.now() - e.t < 14 * 864e5);
+  /* ---------- data ---------- */
+  async function loadGroups(force) {
+    if (!force && IX.groups.length && Date.now() - IX.gAt < 60000) return IX.groups;
+    try { const r = await api("/groups"); IX.groups = ctxGroups(r.groups || []); IX.srv = true }
+    catch (e) { IX.srv = e.status === 404 ? false : IX.srv; try { const X = E(); if (X) { await X.tvGroups(); IX.groups = X.TV.groups.map(g => ({ id: g.id, name: g.name, course: g.course || "", school: g.school || "", archived: !!g.archived, mine: true, n: g.n || 0 })) } } catch (e2) { IX.gErr = e2.message } }
+    IX.gAt = Date.now();
+    if (!IX.gid || !IX.groups.some(g => g.id === IX.gid)) { const pref = lsG("vx.v39.g." + meK()); const L = IX.groups.filter(g => !g.archived); IX.gid = (L.find(g => g.id === pref) || L.find(g => g.mine) || L[0] || IX.groups[0] || {}).id || null }
+    return IX.groups;
+  }
+  function setGroup(gid) {
+    if (gid === IX.gid && IX.live.gid === gid) return; IX.gid = gid; lsS("vx.v39.g." + meK(), gid);
+    IX.cur = { p: 0, f: 0, e: 0 }; IX.prog = {}; IX.evs = []; IX.fb = []; IX.rev = new Set(); IX.days = []; IX.members = []; IX.gb = null; IX.gbP = {}; IX.gbC = {}; IX.undo = []; IX.redo = []; IX.live = { gid };
+    const X = E(); if (X && X.TV.gid !== gid) { X.tvReset(); X.TV.gid = gid; X.TV.sel = null }
+  }
+  async function poll(force) {
+    if (IX.busy || !IX.gid) return; IX.busy = true; const gid = IX.gid; const before = IX.sig;
+    try {
+      const X = E(); if (X) { if (X.TV.gid !== gid) { X.tvReset(); X.TV.gid = gid } try { await X.tvPoll() } catch (e) { } }
+      if (IX.srv) { try { const c = IX.cur; const r = await api(`/g/${gid}/live?p=${c.p}&f=${c.f}&e=${c.e}`); if (IX.gid !== gid) return;
+          IX.members = r.members || []; (r.prog || []).forEach(p => { IX.prog[p.uid] = p.ev }); const seenE = new Set(IX.evs.map(e => e.id)); (r.ev || []).forEach(e => { if (!seenE.has(e.id)) IX.evs.push(e) }); IX.evs.sort((a, b) => b.id - a.id); IX.evs = IX.evs.slice(0, 600);
+          const byId = {}; IX.fb.forEach(f => { byId[f.id] = f }); (r.fb || []).forEach(f => { byId[f.id] = f }); IX.fb = Object.values(byId).sort((a, b) => b.updated - a.updated);
+          (r.rev || []).forEach(x => IX.rev.add(x.ref)); if (r.days) IX.days = r.days; IX.cur = r.cur || IX.cur; IX.live.err = "" }
+        catch (e) { if (e.status === 404 && /Not found/.test(e.message || "")) IX.srv = false; IX.live.err = e.message } }
+      if (!IX.members.length && X) IX.members = (X.TV.members || []).map(m => ({ id: String(m.id), name: m.name || m.email, email: m.email || "" }));
+      IX.at = Date.now();
+      const docs = X ? Object.values(X.TV.docs).map(d => d.uid + d.pid + d.srv).join() : "";
+      IX.sig = [docs, IX.cur.p, IX.cur.f, IX.cur.e, IX.members.length, IX.fb.length, IX.days.length].join("|");
+    } finally { IX.busy = false }
+    if (force || IX.sig !== before) { if (canRepaint()) paint(); else { side(); kpi() } }
+    liveTxt();
+  }
+  const canRepaint = () => { if (document.querySelector(".smod-bg")) return false; const a = document.activeElement; if (a && a.closest && a.closest("#vxi-m") && /^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName)) return false; if (IX.tab === "gradebook" && (IX.gbE || Object.keys(IX.gbP).length)) return false; return true };
+  function liveTxt() { const el = document.getElementById("twlive"); if (!el) return; const X = E(); const err = IX.live.err || (X && X.TV.err); el.className = "twlive" + (err ? " off" : ""); el.textContent = err ? "Offline · retrying" : "● Live · updated " + (IX.at ? (Date.now() - IX.at < 45000 ? "just now" : ago(IX.at).toLowerCase()) : "now") }
+  let tick = 0; setInterval(() => { if (view !== "instructor" || !document.getElementById("v39") || document.visibilityState !== "visible") return; tick++; const fast = IX.tab === "live" || IX.tab === "students" || IX.tab === "inbox"; if (fast || tick % 3 === 0) poll(); else liveTxt() }, 6000);
+  /* ---------- shell ---------- */
+  const grp = () => IX.groups.find(g => g.id === IX.gid) || null;
+  function shell() {
+    const S = ctxSchools(); const g = grp();
+    return `<div class="vxi v39" id="vxi"><header class="vxi-h"><button class="logo" data-act="home" aria-label="Vexcura home">${LOGO}</button><span class="vxi-t">Instructor <em>My Chart</em></span><span class="vxi-sch" id="vxi-sch">${esc(S.map(s => s.short || s.name).join(" · ") || (g && g.school) || "")}</span><span class="vxi-hr"><span class="twlive" id="twlive"></span><button class="v39-hb" data-v39="ehr" title="Open the Clinical EHR">${sv("case", 16)}<span>Clinical EHR</span></button><span class="acct-slot">${typeof acctSlot === "function" ? acctSlot() : ""}</span></span></header>
+     <div class="vxi-b v39-b"><aside class="vxi-side v39-side" id="v39-side" aria-label="Clinical groups and students"></aside>
+      <div class="v39-main"><div class="v39-mbar" id="v39-mbar"></div><div class="v39-kpi" id="v39-kpi" aria-label="Group at a glance"></div><nav class="v39-tabs" id="v39-tabs" aria-label="Instructor activities"></nav><div class="v39-tb" id="v39-tb"></div><main class="vxi-m v39-m" id="vxi-m" tabindex="-1"></main></div></div><div id="v39" hidden></div></div>`;
+  }
+  /* the program chooser (v22 owner, window.__vxCtxSid) narrows the workspace to one program, like the hub's D() */
+  const ctxSid = () => { try { return window.__vxCtxSid && window.__vxCtxSid() } catch (e) { return null } };
+  const ctxSchools = () => { const S = (HUB().d && HUB().d.schools) || []; const c = ctxSid(); return c && S.length > 1 && S.some(s => s.id === c) && !HUB().d.site ? S.filter(s => s.id === c) : S };
+  const ctxGroups = L => { const c = ctxSid(); return c && L.some(g => g.school_id === c) && L.some(g => g.school_id !== c) ? L.filter(g => g.school_id === c) : L };
+  function ensureShell() { if (!document.getElementById("v39")) { app.innerHTML = shell() } view = "instructor"; document.body.classList.add("vxi-on", "v39-on") }
+  function tabsHTML() {
+    const n = needRev().length; const compl = complianceOK();
+    return TABS.map(([k, l, i]) => `<a href="#instructor/${k}" ${IX.tab === k || (k === "curriculum" && IX.tab === "content") ? 'aria-current="page"' : ""} data-v39tab="${k}">${sv(i, 17)}<span>${l}</span>${k === "inbox" && n ? `<i class="v39-n">${n}</i>` : ""}</a>`).join("") + (compl ? `<a href="#compliance" class="v39-ext">${sv("shield", 17)}<span>Compliance</span></a>` : "");
+  }
+  const complianceOK = () => { try { return !!(window.__vxLaunch && window.__vxLaunch.list({ all: true }).some(e => e.id === "w-regs")) } catch (e) { return false } };
+  function side() {
+    const el = document.getElementById("v39-side"); const mb = document.getElementById("v39-mbar"); const G = IX.groups.filter(g => !g.archived), A = IX.groups.filter(g => g.archived); const st = studentRows();
+    const gsel = `<select class="v39-gsel" data-v39sel="grp" aria-label="Clinical group">${G.map(g => `<option value="${esc(g.id)}" ${g.id === IX.gid ? "selected" : ""}>${esc(g.name)}${g.mine ? "" : " · " + esc(g.school || "program")}</option>`).join("")}${A.length ? `<optgroup label="Archived">${A.map(g => `<option value="${esc(g.id)}" ${g.id === IX.gid ? "selected" : ""}>${esc(g.name)}</option>`).join("")}</optgroup>` : ""}${!IX.groups.length ? `<option value="">No clinical groups yet</option>` : ""}</select>`;
+    if (el) el.innerHTML = `<h3><span>Clinical groups</span><span>${G.length}</span></h3><div class="vxi-sf">${gsel}<button class="vxi-btn sm sec" data-v39="newgrp">${sv("plus", 15)} New clinical group</button></div>
+      <h3><span>Students</span><span>${st.length}</span></h3><div class="vxi-sf"><input type="search" placeholder="Find a student" data-v39in="sq" value="${esc(IX.flt.sq || "")}" aria-label="Find a student"></div>
+      <ul class="vxi-sl v39-sl">${st.filter(s => !IX.flt.sq || s.name.toLowerCase().includes(IX.flt.sq.toLowerCase())).map(s => `<li><button data-v39="stu" data-v="${esc(s.id)}" aria-current="${IX.tab === "students" && IX.uid === s.id}"><span class="vxi-av">${ini(s.name)}<i class="${pres(s.last)}"></i></span><span><b>${esc(s.name)}</b><small>${esc(s.last ? ago(s.last) : "No activity yet")}${s.pts ? " · " + s.pts + " chart" + (s.pts > 1 ? "s" : "") : ""}</small></span><span class="v39-ic">${s.lvl === "red" ? `<i class="v39-st red" title="Overdue doses, scan alerts or abnormal vitals">!</i>` : s.lvl === "amber" ? `<i class="v39-st amber" title="Doses due">•</i>` : ""}${s.rev ? `<i class="v39-st rev" title="${s.rev} item${s.rev > 1 ? "s" : ""} to review">${s.rev}</i>` : ""}</span></button></li>`).join("") || `<li class="vxi-muted" style="padding:10px">${IX.gid ? "No students yet. Share the join code in Roster & codes." : "Create a clinical group to start."}</li>`}</ul>
+      <div class="v39-sfoot">${(HUB().d && (HUB().d.site || (HUB().d.schools || []).some(s => s.role === "admin"))) ? `<a class="lk" href="#school">Program admin</a>` : ""}</div>`;
+    if (mb) mb.innerHTML = `<label class="v39-mg"><span>Group</span>${gsel}</label><label class="v39-mg"><span>Student</span><select data-v39sel="stu" aria-label="Student"><option value="">All students (${st.length})</option>${st.map(s => `<option value="${esc(s.id)}" ${IX.uid === s.id && IX.tab === "students" ? "selected" : ""}>${esc(s.name)}${s.lvl === "red" ? " (!)" : ""}${s.rev ? " · " + s.rev + " to review" : ""}</option>`).join("")}</select></label>`;
+  }
+  function studentRows() {
+    const X = E(); const L = allEvents(); const nr = needRev(); const docs = X && X.TV.gid === IX.gid ? Object.values(X.TV.docs) : [];
+    return IX.members.map(m => { const id = String(m.id); const mine = docs.filter(d => String(d.uid) === id); let lvl = "green"; mine.forEach(d => { try { const s = X.tvStat(d.data); if (s.ov || s.alerts || s.flags.length) lvl = "red"; else if ((s.dn || s.rs) && lvl !== "red") lvl = "amber" } catch (e) { } });
+      const ev = L.find(e => e.uid === id && e.src !== "fb"); return { id, name: m.name || m.email || "Student", email: m.email || "", last: ev ? ev.t : null, lvl, pts: mine.length, rev: nr.filter(e => e.uid === id).length } });
+  }
+  function kpi() {
+    const el = document.getElementById("v39-kpi"); if (!el) return; const X = E(); const docs = X && X.TV.gid === IX.gid ? Object.values(X.TV.docs) : []; const tot = { ov: 0, al: 0, fl: 0, gv: 0 };
+    docs.forEach(d => { try { const s = X.tvStat(d.data); tot.ov += s.ov; tot.al += s.alerts; tot.fl += s.flags.length ? 1 : 0; tot.gv += s.given } catch (e) { } });
+    const st = studentRows(); const act = st.filter(s => s.last && Date.now() - s.last < 10 * 60000).length; const nr = needRev().length;
+    const T = [["Students", IX.members.length, "", "roster"], ["Active now", act, act ? "good" : "", "live"], ["Patients", docs.length, "", "live"], ["Overdue doses", tot.ov, tot.ov ? "red" : "", "live"], ["Scan alerts", tot.al, tot.al ? "red" : "", "live"], ["Patients with abnormal vitals", tot.fl, tot.fl ? "amber" : "", "live"], ["Doses given today", tot.gv, "", "live"], ["To review", nr, nr ? "amber" : "", "inbox"]];
+    el.innerHTML = T.map(([l, v, c, t]) => `<button class="${c}" data-v39go="${t}"><b>${v}</b><span>${l}</span></button>`).join("");
+  }
+  function toolbar() {
+    const el = document.getElementById("v39-tb"); if (!el) return; const g = grp(); const t = IX.tab; let h = "";
+    if (t === "assign") h = `<span class="v39-tbl">Assign practice, drills, cases and program content.</span><button class="vxi-btn sm sec" data-cl="prepopen">Pre-clinical prep</button><button class="vxi-btn sm sec" data-cl="evalopen">Weekly evaluations</button><button class="vxi-btn sm sec" data-v39go="cases">Graded EHR cases</button>`;
+    else if (t === "days") h = `<span class="v39-tbl">Attendance and hours feed the gradebook's Clinical hours column.</span><button class="vxi-btn sm sec" data-v39go="gradebook">Open gradebook</button>`;
+    else if (t === "curriculum" || t === "content") h = `<a class="vxi-btn sm ${t === "curriculum" ? "" : "sec"}" href="#instructor/curriculum">Program content</a><a class="vxi-btn sm ${t === "content" ? "" : "sec"}" href="#instructor/content">What students see</a><a class="vxi-btn sm sec" href="#curriculum">Edit curriculum</a>`;
+    el.innerHTML = h; el.hidden = !h;
+  }
+  async function paint() {
+    if (view !== "instructor" || !document.getElementById("v39")) return; { const sc = document.getElementById("vxi-sch"); const S = ctxSchools(); if (sc && S.length) sc.textContent = S.map(x => x.short || x.name).join(" · ") } side(); kpi(); const tb = document.getElementById("v39-tabs"); if (tb) tb.innerHTML = tabsHTML(); toolbar(); liveTxt();
+    const m = document.getElementById("vxi-m"); if (!m) return; if (HUBTAB[IX.tab]) return;
+    const y = window.scrollY; const f = { live: liveHTML, students: studentsHTML, gradebook: gbHTML, inbox: inboxHTML, cases: casesHTML, evals: evalsHTML, roster: rosterHTML }[IX.tab] || liveHTML;
+    if (!IX.groups.length && !teacherish()) { m.innerHTML = `<div class="twempty">${sv("shield", 30)}<h2>Instructor My Chart is for instructors</h2><p>This workspace is for clinical instructors and program admins at a licensed nursing program. If you teach, ask your program admin for an instructor code.</p><a class="vxi-btn" href="#progress">Go to My Chart</a></div>`; return }
+    if (!IX.gid && IX.tab !== "roster") { m.innerHTML = emptyHTML(); return }
+    m.innerHTML = f(); window.scrollTo(0, y); after();
+  }
+  const teacherish = () => { try { const X = E(); if (X && X.scTeacher()) return true; const h = lsG("vx.roles." + meK()); return !!(h && h.t) } catch (e) { return false } };
+  function emptyHTML() { return `<div class="twempty">${sv("users", 30)}<h2>Watch your clinical group chart in real time</h2><p>Create a clinical group, give students the join code, and you'll see everything they do: shared charts, practice exams, drills, sign-ins and more. Leave feedback on any item and grade it here.</p><span class="vxi-row" style="justify-content:center"><button class="vxi-btn" data-v39="newgrp">${sv("plus", 16)} New clinical group</button><button class="vxi-btn sec" data-cx="lib">Browse the case library</button></span>${IX.gErr ? `<p class="abox warn">${esc(IX.gErr)}</p>` : ""}</div>` }
+  function after() {
+    if (IX.tab === "gradebook") gbAfter();
+    if (IX.tab === "cases") { const X = E(); if (X && X.TV.gid === IX.gid && (!X.CX.asg[IX.gid] || Date.now() - (X.CX.asgAt[IX.gid] || 0) > 20000)) X.asgLoad(IX.gid).then(() => { const e = document.getElementById("twcx"); if (e) e.innerHTML = X.asgSection() }).catch(() => { }) }
+    if (IX.tab === "evals") loadEvals();
+  }
+  /* ---------- Live ---------- */
+  const FLT = [["all", "Everything"], ["ehr", "EHR charting"], ["learn", "Exams, drills & modules"], ["clin", "Clinical days"], ["fb", "Feedback"], ["review", "Needs review"]];
+  function rowHTML(e, o) {
+    o = o || {}; const fb = fbEv(e); const rv = isRev(e); const g = KG[e.k] || "learn";
+    return `<li class="v39-ev v39-${e.sev || "info"}${rv ? " rv" : ""}" data-ref="${esc(e.ref)}"><span class="v39-et">${esc(dtm(e.t))}</span><span class="v39-ek k-${g}" title="${esc(KL[e.k] || e.k)}">${sv(KI[g], 15)}</span><span class="v39-eb">${o.noName ? "" : `<button class="lk v39-who" data-v39="stu" data-v="${esc(e.uid)}">${esc(nm(e.uid))}</button> · `}<span class="v39-kn">${esc(KL[e.k] || e.k)}</span>${e.pt ? ` · <span class="v39-pt">${esc(e.pt)}</span>` : ""}<br><span class="v39-lb">${esc(e.label)}</span>${fb.length ? `<span class="v39-fbs">${fb.map(f => `<i class="${f.visible ? "" : "priv"}">${sv("msg", 12)} ${esc((f.score != null ? f.score + (f.max ? "/" + f.max : "") + " · " : "") + (f.text || "").slice(0, 70))}${f.visible ? (f.read_at ? " · read" : " · not read yet") : " · private"}</i>`).join("")}</span>` : ""}</span>
+      <span class="v39-ea">${e.sc != null ? `<b class="v39-sc">${Math.round(e.sc)}%</b>` : ""}${e.src !== "fb" ? `<button class="v39-fbb" data-v39="fb" data-u="${esc(e.uid)}" data-ref="${esc(e.ref)}" data-k="${esc(FKIND[e.k] || "general")}" data-p="${esc(e.pid || "")}" data-l="${esc((KL[e.k] || e.k) + (e.pt ? " · " + e.pt : "") + " · " + e.label.slice(0, 120))}" aria-label="Leave feedback">${sv("msg", 15)}<span>Feedback</span></button>${e.review ? `<button class="v39-rvb" data-v39="rev" data-v="${esc(e.uid + "|" + e.ref)}" aria-pressed="${rv}" title="${rv ? "Reviewed" : "Mark reviewed"}">${sv("check", 15)}</button>` : ""}` : ""}<button class="v39-op" data-v39="open" data-u="${esc(e.uid)}" data-ref="${esc(e.ref)}" aria-label="Open in the student's chart">${sv("eye", 15)}</button></span></li>`;
+  }
+  function streamHTML(L, o) { return L.length ? `<ul class="v39-st-l">${L.map(e => rowHTML(e, o)).join("")}</ul>` : `<p class="vxi-muted" style="padding:12px">Nothing yet. Activity appears here within seconds as students chart, practice and sign in.</p>` }
+  function liveHTML() {
+    const g = grp(); let L = allEvents(); const f = IX.flt; const nr = new Set(needRev().map(e => e.uid + "|" + e.ref));
+    if (f.k === "review") L = L.filter(e => nr.has(e.uid + "|" + e.ref)); else if (f.k !== "all") L = L.filter(e => (KG[e.k] || "learn") === f.k);
+    if (f.u) L = L.filter(e => e.uid === f.u); if (f.q) { const q = f.q.toLowerCase(); L = L.filter(e => (e.label + " " + nm(e.uid) + " " + (e.pt || "") + " " + (KL[e.k] || "")).toLowerCase().includes(q)) }
+    const td = todayDay(); const X = E(); const docs = X && X.TV.gid === IX.gid ? Object.entries(X.TV.docs) : [];
+    return `${IX.srv ? "" : `<p class="abox warn">Exams, drills, feedback and the gradebook need the v39 server update (/api/instr). Live EHR charting still works.</p>`}
+     <div class="v39-today">${td ? `<button class="vxi-btn sm" data-vxi="openday" data-v="${esc(td.id)}">${sv("check", 15)} Take attendance · ${esc(td.site || "Clinical")}</button>` : `<button class="vxi-btn sm sec" data-vxi="newday">${sv("plus", 15)} Add a clinical day</button>`}<button class="vxi-btn sm sec" data-v39go="assign">${sv("send", 15)} Assign work</button><button class="vxi-btn sm sec" data-v39go="gradebook">${sv("grid", 15)} Gradebook</button><span class="v39-gname">${g ? esc(g.name) + (g.course ? " · " + esc(g.course) : "") : ""}</span></div>
+     ${upDays().length ? `<div class="v39-days" aria-label="Clinical days">${upDays().map(d => `<button class="vxi-btn sm sec" data-vxi="openday" data-v="${esc(d.id)}">${sv("cal", 14)} ${esc(new Date(d.date + "T12:00:00").toLocaleDateString([], { weekday: "short", month: "short", day: "numeric" }))} · ${esc(d.site || "Clinical")}</button>`).join("")}<button class="lk" data-v39go="days">All clinical days</button></div>` : ""}
+     <div class="v39-grid2"><section class="vxi-card v39-stream"><h3>Live activity <span class="vxi-muted">${L.length} item${L.length === 1 ? "" : "s"}</span></h3>
+      <div class="v39-flt" role="group" aria-label="Filter activity">${FLT.map(([k, l]) => `<button data-v39flt="${k}" aria-pressed="${f.k === k}">${l}${k === "review" && nr.size ? " (" + nr.size + ")" : ""}</button>`).join("")}</div>
+      <div class="v39-flt2"><select data-v39sel="fu" aria-label="Student"><option value="">All students</option>${IX.members.map(m => `<option value="${esc(m.id)}" ${f.u === m.id ? "selected" : ""}>${esc(m.name)}</option>`).join("")}</select><input type="search" data-v39in="fq" placeholder="Search activity" value="${esc(f.q)}" aria-label="Search activity"></div>
+      ${streamHTML(L.slice(0, 200))}</section>
+      <section class="vxi-card v39-pts"><h3>Patients <span class="vxi-muted">${docs.length}</span></h3>${docs.length ? docs.map(([k, x]) => ptCard(k, x)).join("") : `<p class="vxi-muted">No practice charts yet. Charts your students create appear here and update live.</p>`}</section></div>`;
+  }
+  function ptCard(k, x) {
+    const X = E(); const p = x.data; let s; try { s = X.tvStat(p) } catch (e) { s = { ov: 0, dn: 0, rs: 0, alerts: 0, flags: [], given: 0 } } const L = s.ov || s.alerts || s.flags.length ? "red" : s.dn || s.rs ? "amber" : "green";
+    return `<button class="v39-ptc tw-${L}" data-v39="chart" data-u="${esc(x.uid)}" data-p="${esc(p.id)}"><b>${esc(p.label)}</b><span>${esc(nm(x.uid))} · HD ${p.hd || 1} · ${esc(p.unit || "")}</span><span class="v39-chips">${s.ov ? `<i class="twc red">${s.ov} overdue</i>` : ""}${s.dn ? `<i class="twc amber">${s.dn} due</i>` : ""}${s.alerts ? `<i class="twc red">${s.alerts} scan alert${s.alerts > 1 ? "s" : ""}</i>` : ""}${s.flags.length ? `<i class="twc red">${esc(s.flags.slice(0, 2).join(", "))}</i>` : ""}${!s.ov && !s.dn && !s.alerts && !s.flags.length ? `<i class="twc green">On track</i>` : ""}</span><small>Active ${esc(ago(x.updated).toLowerCase())}</small></button>`;
+  }
+  const upDays = () => { const t = new Date(); const ymd = t.getFullYear() + "-" + String(t.getMonth() + 1).padStart(2, "0") + "-" + String(t.getDate()).padStart(2, "0"); const D = (HUB().d && HUB().d.days) || []; const td = todayDay(); return D.filter(d => d.date >= ymd && (!d.group_id || d.group_id === IX.gid) && (!td || d.id !== td.id)).sort((a, b) => (a.date + (a.start || "")).localeCompare(b.date + (b.start || ""))).slice(0, 3) };
+  const todayDay = () => { const t = new Date(); const ymd = t.getFullYear() + "-" + String(t.getMonth() + 1).padStart(2, "0") + "-" + String(t.getDate()).padStart(2, "0"); const D = (HUB().d && HUB().d.days) || []; return D.find(d => d.date === ymd && (!d.group_id || d.group_id === IX.gid)) || null };
+  /* ---------- Students + drill-down (opening a student is like opening a patient chart) ---------- */
+  function studentsHTML() {
+    if (IX.uid && IX.members.some(m => m.id === IX.uid)) return chartOf(IX.uid);
+    const st = studentRows(); const gb = IX.gb; const avg = u => { if (!gb) return "—"; const c = gb.cols.find(c => c.kind === "avg"); const v = c && (gb.calc[u] || {})[c.id]; return v ? v.val + "%" : "—" };
+    return `<div class="v39-h2"><h2>Students</h2><span class="vxi-row"><button class="vxi-btn sm sec" data-vxsc="cohort-tab">Outside scores</button><button class="vxi-btn sm sec" data-v39go="roster">Roster & codes</button></span></div>
+     ${st.length ? `<div class="vxi-tw"><table class="vxi-tbl v39-tbl"><thead><tr><th>Student</th><th>Status</th><th>Last activity</th><th class="vxi-hide-m">Charts</th><th class="vxi-hide-m">To review</th><th class="vxi-hide-m">Clinical hours</th><th class="vxi-hide-m">Average</th></tr></thead><tbody>${st.map(s => `<tr data-v39="stu" data-vxi="stu" data-v="${esc(s.id)}"><td><span class="vxi-row" style="gap:8px;flex-wrap:nowrap"><span class="vxi-av">${ini(s.name)}<i class="${pres(s.last)}"></i></span><span><b>${esc(s.name)}</b><br><small class="vxi-muted">${esc(s.email)}</small></span></span></td><td>${s.lvl === "red" ? `<span class="vxi-chip bad">Needs attention</span>` : s.lvl === "amber" ? `<span class="vxi-chip warn">Doses due</span>` : `<span class="vxi-chip ok">On track</span>`}</td><td>${esc(s.last ? ago(s.last) : "No activity yet")}</td><td class="vxi-hide-m">${s.pts}</td><td class="vxi-hide-m">${s.rev || ""}</td><td class="vxi-hide-m">${hoursOf(s.id)}</td><td class="vxi-hide-m">${avg(s.id)}</td></tr>`).join("")}</tbody></table></div>` : `<div class="vxi-card"><p>No students in this group yet. Share the join code from <button class="lk" data-v39go="roster">Roster & codes</button>.</p></div>`}`;
+  }
+  const hoursOf = u => { const h = IX.days.filter(d => d.uid === u).reduce((a, d) => a + (d.hrs || 0), 0); return Math.round(h * 10) / 10 };
+  const SUBS = [["timeline", "Timeline"], ["charts", "EHR charts"], ["exams", "Exams"], ["sims", "Drills & modules"], ["clinical", "Clinical"], ["grades", "Grades"], ["feedback", "Feedback"]];
+  function chartOf(uid) {
+    const m = IX.members.find(x => x.id === uid) || { name: "Student" }; const st = studentRows().find(s => s.id === uid) || {}; const L = allEvents().filter(e => e.uid === uid); const fb = IX.fb.filter(f => f.uid === uid && !f.deleted);
+    const sub = IX.sub || "timeline"; let body = "";
+    if (sub === "timeline") body = `<section class="vxi-card"><h3>Timeline <span class="vxi-muted">${L.length}</span></h3>${streamHTML(L.slice(0, 300), { noName: true })}</section>`;
+    else if (sub === "charts") body = chartsHTML(uid);
+    else if (sub === "exams") body = examsHTML(uid);
+    else if (sub === "sims") body = `<section class="vxi-card"><h3>Drills, telemetry, auscultation, megacode, rounds, Library and Review Book</h3>${streamHTML(L.filter(e => ["drill", "dx", "tele", "ausc", "code", "rounds", "practice", "lib", "book"].indexOf(e.k) >= 0), { noName: true })}</section>`;
+    else if (sub === "clinical") body = clinicalHTML(uid);
+    else if (sub === "grades") body = gradesOf(uid);
+    else body = `<section class="vxi-card"><h3>Feedback to ${esc(m.name)} <button class="vxi-btn sm" data-v39="fb" data-u="${esc(uid)}" data-ref="gen" data-k="general" data-l="General feedback">${sv("plus", 14)} General feedback</button></h3>${fb.length ? `<ul class="v39-fbl">${fb.map(f => fbItem(f, true)).join("")}</ul>` : `<p class="vxi-muted">No feedback yet. Every item in this chart has a Feedback button.</p>`}</section>`;
+    return `<div class="v39-banner"><button class="vxi-btn sm sec" data-v39="allstu">${sv("back", 15)} Students</button><span class="vxi-av v39-bav">${ini(m.name)}<i class="${pres(st.last)}"></i></span><div class="v39-bid"><h2>${esc(m.name)}</h2><p class="vxi-muted">${esc(m.email || "")} · ${esc((grp() || {}).name || "")} · last activity ${esc(st.last ? ago(st.last).toLowerCase() : "none yet")}</p></div>
+      <dl class="v39-bkv"><div><dt>Charts</dt><dd>${st.pts || 0}</dd></div><div><dt>To review</dt><dd>${st.rev || 0}</dd></div><div><dt>Clinical hours</dt><dd>${hoursOf(uid)}</dd></div><div><dt>Feedback</dt><dd>${fb.length}</dd></div></dl>
+      <span class="vxi-row"><button class="vxi-btn sm" data-v39="fb" data-u="${esc(uid)}" data-ref="gen" data-k="general" data-l="General feedback">${sv("msg", 15)} Feedback</button><button class="vxi-btn sm sec" data-vxi="assignto" data-v="${esc(uid)}">${sv("send", 15)} Assign</button><button class="vxi-btn sm sec" data-cl="port" data-v="${esc(uid)}" data-v39pg="1">Portfolio PDF</button></span></div>
+     <nav class="v39-sub" aria-label="Student chart sections">${SUBS.map(([k, l]) => `<a href="#instructor/students/${esc(uid)}/${k}" aria-current="${sub === k ? "page" : "false"}">${l}${k === "feedback" && fb.length ? " (" + fb.length + ")" : ""}</a>`).join("")}</nav>${body}`;
+  }
+  function fbItem(f, edit) { return `<li class="${f.visible ? "" : "priv"}"><div><b>${esc(f.label || KL[f.kind] || f.kind)}</b> <span class="vxi-muted">${esc(dtm(f.updated))} · ${esc(f.author)}${f.visible ? (f.read_at ? " · read by student" : " · not read yet") : " · private note"}</span></div>${f.score != null ? `<p class="v39-fsc">Score ${f.score}${f.max ? " / " + f.max : ""}${f.rubric ? " · " + f.rubric.map(r => esc(r.label) + " " + r.v + "/" + r.max).join(", ") : ""}</p>` : ""}${f.text ? `<p>${esc(f.text)}</p>` : ""}${edit ? `<div class="vxi-row"><button class="lk" data-v39="fbvis" data-v="${esc(f.id)}">${f.visible ? "Make private" : "Show to student"}</button><button class="lk" data-v39="fbdel" data-v="${esc(f.id)}">Delete</button></div>` : ""}</li>` }
+  function docsOf(uid) { const X = E(); return X && X.TV.gid === IX.gid ? Object.values(X.TV.docs).filter(d => String(d.uid) === uid) : [] }
+  const PT = [["summary", "Summary"], ["flow", "Flowsheet"], ["mar", "MAR"], ["orders", "Orders"], ["notes", "Notes"], ["lda", "LDAs"], ["care", "Care plan"], ["chat", "Secure Chat & SDOH"], ["report", "Report"]];
+  function chartsHTML(uid) {
+    const D = docsOf(uid); if (!D.length) return `<section class="vxi-card"><h3>EHR charts</h3><p class="vxi-muted">No practice charts yet. Charts this student creates appear here and update live.</p></section>`;
+    const d = D.find(x => x.pid === IX.pid || x.data.id === IX.pid) || D[0]; IX.pid = d.data.id; const p = d.data; const X = E(); const t = IX.ptab || "summary"; let b = "";
+    const fbB = (ref, k, l) => `<button class="v39-fbb sm" data-v39="fb" data-u="${esc(uid)}" data-ref="${esc(ref)}" data-k="${k}" data-p="${esc(p.id)}" data-l="${esc(l)}">${sv("msg", 14)}<span>Feedback</span></button>`;
+    const inl = ref => { const F = fbFor(uid, ref); return F.length ? `<ul class="v39-fbl sm">${F.map(f => fbItem(f, false)).join("")}</ul>` : "" };
+    if (t === "summary") b = X.rptHTML(X.rpt(p).filter(s => ["overview", "summary", "dx"].indexOf(s.id) >= 0)) + X.tvMarToday(p);
+    else if (t === "flow") b = flowGrid(uid, p);
+    else if (t === "mar") { const A = (p.mar || []).filter(a => !a.dx32ctx).slice().sort((a, b) => (b.rt || 0) - (a.rt || 0)); b = X.tvMarToday(p) + `<section class="ehcard"><h3>Administrations</h3>${A.length ? `<ul class="v39-items">${A.map(a => { const o = (p.orders || []).find(y => y.id === a.oid) || {}; const ref = "mar:" + p.id + ":" + a.id; const lab = `MAR · ${X.ACTL[a.act] || a.act} ${o.med || ""} ${a.dose || ""} at ${X.tLbl(a.at)}`; return `<li data-ref="${esc(ref)}"><div><b>${esc(X.ACTL[a.act] || a.act)} ${esc(o.med || "")} ${esc(a.dose || "")}</b> <span class="vxi-muted">${esc(X.tLbl(a.at))} · ${esc(a.route || o.route || "")}${a.scan ? " · " + esc(a.scan) : ""}${a.reason ? " · " + esc(a.reason) : ""}</span>${(a.scanAlerts || []).length ? `<p class="v39-bad">Scan alert: ${esc(a.scanAlerts.join("; "))}</p>` : ""}${a.comment ? `<p class="vxi-muted">${esc(a.comment)}</p>` : ""}${inl(ref)}</div>${fbB(ref, "mar", lab)}</li>` }).join("")}</ul>` : `<p class="vxi-muted">No administrations yet.</p>`}</section>` }
+    else if (t === "orders") { const O = (p.orders || []).filter(o => !o.dx32proto); b = `<section class="ehcard"><h3>Orders</h3><ul class="v39-items">${O.map(o => { const ref = "ord:" + p.id + ":" + o.id; const txt = o.med ? X.plainOrder(o) : o.text; return `<li data-ref="${esc(ref)}"><div><b>${esc(txt || "")}</b> <span class="vxi-muted">${o.status === "dc" ? "Discontinued · " : ""}${esc(o.by || "")}</span>${inl(ref)}</div>${fbB(ref, "order", "Order · " + String(txt || "").slice(0, 100))}</li>` }).join("") || `<li class="vxi-muted">No orders.</li>`}</ul></section>` }
+    else if (t === "notes") { const N = (p.notes || []).slice().sort((a, b) => (b.rt || 0) - (a.rt || 0)); b = `<section class="ehcard"><h3>Notes</h3><ul class="v39-items">${N.map(n => { const ref = (/debrief/i.test(n.type || "") ? "dxn:" : "note:") + p.id + ":" + n.id; return `<li data-ref="${esc(ref)}"><div><b>${esc(n.type || "Note")}</b> <span class="vxi-muted">${esc(n.t != null ? X.tLbl(n.t) : "")} · ${esc(n.by || "")}</span><p class="v39-note">${esc(n.text || "")}</p>${inl(ref)}</div>${fbB(ref, /debrief/i.test(n.type || "") ? "drill" : "note", (n.type || "Note") + " note")}</li>` }).join("") || `<li class="vxi-muted">No notes.</li>`}</ul></section>` }
+    else if (t === "lda") b = X.rptHTML(X.rpt(p).filter(s => s.id === "lda")) + `<section class="ehcard"><h3>LDAs</h3><ul class="v39-items">${(p.ldas || []).map(l => { const ref = "lda:" + p.id + ":" + l.id; return `<li><div><b>${esc(X.LDA[l.type] ? X.LDA[l.type].n : "LDA")}</b> <span class="vxi-muted">${esc(l.site || "")}${l.removed ? " · removed" : ""}</span>${inl(ref)}</div>${fbB(ref, "lda", "LDA · " + (X.LDA[l.type] ? X.LDA[l.type].n : ""))}</li>` }).join("") || `<li class="vxi-muted">No LDAs.</li>`}</ul></section>`;
+    else if (t === "care") { const ref = "cp:" + p.id; b = `<div class="v39-rowr">${fbB(ref, "care", "Care plan · " + p.label)}</div>${inl(ref)}` + X.rptHTML(X.rpt(p).filter(s => s.id === "care")) }
+    else if (t === "chat") { const th = (p.sc29 && p.sc29.th) || {}; const M = []; Object.entries(th).forEach(([k, L]) => (L || []).forEach(m => M.push(Object.assign({ th: k }, m)))); M.sort((a, b) => a.at - b.at);
+      const sd = (p.sdoh && p.sdoh.at) || {};
+      b = `<section class="ehcard"><h3>Secure Chat</h3>${M.length ? `<ul class="v39-items">${M.map(m => { const ref = "sbar:" + p.id + ":" + m.id; return `<li class="${m.who === "me" ? "me" : ""}"><div><b>${m.who === "me" ? esc(nm(uid)) : esc(m.n || m.who)}</b> <span class="vxi-muted">${esc(m.th)} · ${esc(dtm(m.at))}</span><p class="v39-note">${esc(m.txt || "")}</p>${m.who === "me" ? inl(ref) : ""}</div>${m.who === "me" && !m.auto ? fbB(ref, "sbar", "Secure Chat SBAR · " + String(m.txt || "").slice(0, 80)) : ""}</li>` }).join("")}</ul>` : `<p class="vxi-muted">No Secure Chat messages.</p>`}</section>
+       <section class="ehcard"><h3>Social drivers of health screening</h3>${Object.keys(sd).length ? `<ul class="v39-items">${Object.entries(sd).map(([k, tt]) => { const ref = "sdoh:" + p.id + ":" + k; return `<li><div><b>${esc(k)}</b> <span class="vxi-muted">${esc(dtm(tt))}</span>${inl(ref)}</div>${fbB(ref, "sdoh", "SDOH · " + k)}</li>` }).join("")}</ul>` : `<p class="vxi-muted">Not screened yet.</p>`}</section>` }
+    else if (t === "report") b = X.rptHTML(X.rpt(p)) + `<div class="sbtns"><button class="vxi-btn sm sec" data-v39="pdf" data-u="${esc(uid)}" data-p="${esc(p.id)}">Download PDF report</button></div>`;
+    return `<div class="v39-ptbar">${D.length > 1 ? `<select data-v39sel="pt" aria-label="Patient">${D.map(x => `<option value="${esc(x.data.id)}" ${x.data.id === p.id ? "selected" : ""}>${esc(x.data.label)}</option>`).join("")}</select>` : `<b>${esc(p.label)}</b>`}<span class="vxi-muted">${esc(p.age || "")} ${esc(X.SEXW[p.sex] || "")} · ${esc(p.unit || "")} · HD ${p.hd || 1} · ${esc(X.dxPri(p) || "")} · updated ${esc(ago(d.updated).toLowerCase())}</span></div>
+     <nav class="mfil twtabs v39-ptt" role="tablist">${PT.map(([k, l]) => `<button role="tab" aria-selected="${t === k}" data-v39="ptab" data-v="${k}">${l}</button>`).join("")}</nav><div class="twro v39-ro">${b}</div><p class="fine">Read-only view of the student's de-identified practice chart. It updates live while the student charts. Click a flowsheet cell, a dose or any item to leave feedback.</p>`;
+  }
+  function flowGrid(uid, p) {
+    const X = E(); const FS = window.__vxFS; const F = (p.flow || []).filter(r => !r.sim); if (!F.length) return `<p class="vxi-muted">No flowsheet values filed yet.</p>`;
+    const T = [...new Set(F.map(r => r.t))].sort((a, b) => b - a).slice(0, 14).sort((a, b) => a - b); const R = FS && FS.rows ? FS.rows() : []; const used = new Set(F.map(r => r.r));
+    const rows = (R.length ? R.filter(r => used.has(r.id)) : [...used].map(id => ({ id, label: X.ROW[id] ? X.ROW[id].l : id, group: "" }))); const val = (rid, t) => { const x = F.filter(r => r.r === rid && r.t === t).pop(); return x ? x.v : null };
+    let grp_ = ""; const body = rows.map(r => { let h = ""; if (r.group && r.group !== grp_) { grp_ = r.group; h += `<tr class="fg-gh"><th colspan="${T.length + 1}">${esc(r.group)}</th></tr>` }
+      return h + `<tr><th title="${esc(r.label)}">${esc(r.label)}${r.unit ? ` <small>${esc(r.unit)}</small>` : ""}</th>${T.map(t => { const v = val(r.id, t); if (v == null) return `<td class="fgc"></td>`; const ref = "fs:" + p.id + ":" + t + ":" + r.id; const fl = X.flagOf(r.id, v); const fb = fbFor(uid, ref); const vv = Array.isArray(v) ? v.join(", ") : X.fmtV(v);
+        return `<td class="fgc v39-fc${fl ? " fsf-" + (/H/.test(fl) ? "H" : "L") : ""}${fb.length ? " v39-fbm" : ""}" data-v39="fb" data-u="${esc(uid)}" data-ref="${esc(ref)}" data-k="flow" data-p="${esc(p.id)}" data-l="${esc("Flowsheet · " + r.label + " " + vv + " · " + X.tLbl(t))}" tabindex="0" title="${esc(r.label + " " + vv + (fb.length ? " · feedback: " + fb.map(f => f.text).join(" / ") : " · click to leave feedback"))}">${esc(vv)}${fl ? `<sup>${esc(fl)}</sup>` : ""}</td>` }).join("")}</tr>` }).join("");
+    return `<div class="v39-fgw"><table class="fg-t v39-fg"><thead><tr class="v39-hr"><th class="fg-cn">Flowsheet row</th>${T.map(t => `<th>${esc(X.tLbl(t).replace(/^HD(\d+) /, "HD$1 "))}</th>`).join("")}</tr></thead><tbody>${body}</tbody></table></div><p class="fine">Teal corner = your feedback on that cell. Values flagged H/L are outside the program's normal range.</p>`;
+  }
+  function examsHTML(uid) {
+    const P = (IX.prog[uid] || []).filter(e => e.k === "exam" || e.k === "quick" || e.k === "live"); if (!P.length) return `<section class="vxi-card"><h3>Exams</h3><p class="vxi-muted">No practice exams or quick rounds synced yet.</p></section>`;
+    const open = IX.exam || (P.find(e => e.k !== "live") || P[0]).ref;
+    return P.map(e => { const isO = e.ref === open; const items = (e.d && (e.d.items || e.d.last)) || [];
+      return `<section class="vxi-card v39-ex"><h3><button class="lk" data-v39="exam" data-v="${esc(e.ref)}">${esc(e.label)}</button><span class="vxi-row">${e.sc != null ? `<b class="v39-sc">${e.sc}%</b>` : ""}${e.d && e.d.pred != null ? `<span class="vxi-chip">Pass likelihood ${e.d.pred}%</span>` : ""}<span class="vxi-muted">${esc(dtm(e.t))}</span><button class="v39-fbb sm" data-v39="fb" data-u="${esc(uid)}" data-ref="${esc(e.ref)}" data-k="exam" data-l="${esc(e.label)}">${sv("msg", 14)}<span>Feedback</span></button></span></h3>${fbFor(uid, e.ref).length ? `<ul class="v39-fbl sm">${fbFor(uid, e.ref).map(f => fbItem(f)).join("")}</ul>` : ""}
+       ${isO ? `<div class="vxi-tw"><table class="vxi-tbl v39-items-t"><thead><tr><th>#</th><th>Item</th><th>Student answer</th><th>Result</th><th></th></tr></thead><tbody>${items.map((x, i) => { const it = typeof BY !== "undefined" ? BY[x.id] : null; const ref = "exi:" + String(e.ref).replace(/^exam:/, "") + ":" + x.id; const F = fbFor(uid, ref);
+          return `<tr data-ref="${esc(ref)}"><td>${i + 1}${x.pre ? `<br><small class="vxi-muted">pretest</small>` : ""}</td><td><b>${esc(x.id)}</b> ${it ? esc(String(it.q).split("\n")[0].slice(0, 160)) : ""}${F.length ? `<ul class="v39-fbl sm">${F.map(f => fbItem(f)).join("")}</ul>` : ""}</td><td>${esc(answerTxt(it, x.r))}</td><td>${x.s >= 0.999 ? `<span class="vxi-chip ok">Correct</span>` : x.s > 0 ? `<span class="vxi-chip warn">Partial</span>` : `<span class="vxi-chip bad">Incorrect</span>`}</td><td><button class="v39-fbb sm" data-v39="fb" data-u="${esc(uid)}" data-ref="${esc(ref)}" data-k="exi" data-l="${esc("Exam item " + x.id + (it ? " · " + String(it.q).split("\n")[0].slice(0, 80) : ""))}" aria-label="Feedback on item ${i + 1}">${sv("msg", 14)}</button></td></tr>` }).join("")}</tbody></table></div>` : ""}</section>` }).join("");
+  }
+  function answerTxt(it, r) { if (r == null) return "—"; let v; try { v = JSON.parse(r) } catch (e) { v = r } if (!it) return typeof v === "object" ? JSON.stringify(v) : String(v); const o = it.o || []; const L = i => String.fromCharCode(65 + i) + ". " + String(o[i] == null ? i : o[i]).slice(0, 60);
+    if (it.t === "mc" && typeof v === "number") return L(v); if ((it.t === "sata" || it.t === "order") && Array.isArray(v)) return v.map(i => typeof i === "number" ? String.fromCharCode(65 + i) : i).join(", "); return typeof v === "object" ? JSON.stringify(v).slice(0, 80) : String(v) }
+  function clinicalHTML(uid) {
+    const D = IX.days.filter(d => d.uid === uid);
+    return `<section class="vxi-card"><h3>Clinical days <span class="vxi-muted">${hoursOf(uid)} h attended</span></h3>${D.length ? `<ul class="v39-items">${D.map(d => { const ref = "clinday:" + d.day; return `<li><div><b>${esc(d.date)} · ${esc(d.site || "Clinical")}${d.unit ? " · " + esc(d.unit) : ""}</b> <span class="vxi-muted">${esc(d.start)}–${esc(d.end)} · ${esc({ present: "Present", late: "Late", absent: "Absent", excused: "Excused", "": "Not signed in" }[d.status] || d.status)}${d.at ? " at " + esc(clk(d.at)) : ""} · ${d.hrs} h</span>${fbFor(uid, ref).length ? `<ul class="v39-fbl sm">${fbFor(uid, ref).map(f => fbItem(f)).join("")}</ul>` : ""}</div><span class="vxi-row"><button class="v39-fbb sm" data-v39="fb" data-u="${esc(uid)}" data-ref="${esc(ref)}" data-k="clinday" data-l="${esc("Clinical day " + d.date)}">${sv("msg", 14)}<span>Feedback</span></button><button class="lk" data-vxi="openday" data-v="${esc(d.day)}">Attendance</button></span></li>` }).join("")}</ul>` : `<p class="vxi-muted">Not on a clinical day yet.</p>`}</section>
+     <section class="vxi-card"><h3>Pre-clinical prep and weekly evaluations</h3><div class="vxi-row"><button class="vxi-btn sm sec" data-cl="prepopen">Prep for this group</button><button class="vxi-btn sm sec" data-v39go="evals">Evaluations</button></div></section>`;
+  }
+  function gradesOf(uid) {
+    const b = IX.gb; if (!b) { loadGb(); return `<section class="vxi-card"><p class="vxi-muted">Loading grades…</p></section>` }
+    return `<section class="vxi-card"><h3>Grades <button class="vxi-btn sm sec" data-v39go="gradebook">Open gradebook</button></h3>${b.cols.length ? `<div class="vxi-tw"><table class="vxi-tbl"><thead><tr><th>Column</th><th>Grade</th><th>Source</th><th>LMS</th></tr></thead><tbody>${b.cols.map(c => { const v = cellView(c, uid); return `<tr><td><b>${esc(c.label)}</b> <small class="vxi-muted">${esc(KINDL[c.kind])}</small></td><td>${esc(v.txt || "—")}</td><td>${esc(v.auto ? "Auto (not filed)" : v.src === "auto" ? "Auto, filed" : v.calc ? "Calculated" : v.txt ? "Entered" : "")}</td><td>${syncChip(c, uid)}</td></tr>` }).join("")}</tbody></table></div>` : `<p class="vxi-muted">No gradebook columns yet.</p>`}</section>`;
+  }
+  /* ---------- Feedback inbox (In Basket) ---------- */
+  function inboxHTML() {
+    const nr = needRev(); const sent = IX.fb.filter(f => !f.deleted && f.visible); const unread = sent.filter(f => !f.read_at); const priv = IX.fb.filter(f => !f.deleted && !f.visible);
+    const F = [["review", "Needs review", nr.length], ["unread", "Not read by student", unread.length], ["sent", "Sent feedback", sent.length], ["private", "Private notes", priv.length]]; const k = IX.ib;
+    const list = k === "review" ? streamHTML(nr) : `<ul class="v39-fbl">${(k === "unread" ? unread : k === "private" ? priv : sent).map(f => `<li class="${f.visible ? "" : "priv"}"><div><button class="lk" data-v39="stu" data-v="${esc(f.uid)}">${esc(nm(f.uid))}</button> · <b>${esc(f.label || KL[f.kind] || f.kind)}</b> <span class="vxi-muted">${esc(dtm(f.updated))}${f.read_at ? " · read " + esc(dtm(f.read_at)) : ""}</span></div>${f.score != null ? `<p class="v39-fsc">Score ${f.score}${f.max ? " / " + f.max : ""}</p>` : ""}<p>${esc(f.text || "")}</p><div class="vxi-row"><button class="lk" data-v39="open" data-u="${esc(f.uid)}" data-ref="${esc(f.ref)}">Open item</button><button class="lk" data-v39="fbvis" data-v="${esc(f.id)}">${f.visible ? "Make private" : "Show to student"}</button><button class="lk" data-v39="fbdel" data-v="${esc(f.id)}">Delete</button></div></li>`).join("") || `<li class="vxi-muted">Nothing here.</li>`}</ul>`;
+    return `<div class="v39-h2"><h2>Feedback inbox</h2>${k === "review" && nr.length ? `<button class="vxi-btn sm sec" data-v39="revall">${sv("check", 15)} Mark all ${nr.length} reviewed</button>` : ""}</div><div class="v39-ib"><nav class="v39-ibf" aria-label="Inbox folders">${F.map(([id, l, n]) => `<button data-v39ib="${id}" aria-pressed="${k === id}"><span>${l}</span><i>${n}</i></button>`).join("")}</nav><section class="vxi-card v39-ibl">${list}</section></div><p class="fine">Needs review lists notes, care plans, Secure Chat messages, orders, scan alerts and overrides, abnormal vitals, exams, drills and module results from the last 14 days that have no feedback and aren't marked reviewed.</p>`;
+  }
+  /* ---------- Cases / Evaluations / Roster ---------- */
+  function casesHTML() { const X = E(); if (!X) return ""; return `<div class="v39-h2"><h2>Graded EHR cases</h2></div><div id="twcx">${X.TV.gid === IX.gid ? X.asgSection() : `<p class="vxi-muted">Loading…</p>`}</div><p class="fine">Case grades can fill a gradebook column automatically (Gradebook › Add column › Auto-fill from › the case).</p>` }
+  function evalsHTML() {
+    const E2 = IX.evals; const COMP = [["pcc", "Patient-centered care"], ["safety", "Safety"], ["judgment", "Clinical judgment"], ["team", "Teamwork & communication"], ["ebp", "Evidence-based practice"], ["info", "Informatics & documentation"], ["qi", "Quality improvement"], ["prof", "Professionalism"]];
+    if (!E2) return `<div class="v39-h2"><h2>Clinical evaluations</h2></div><p class="vxi-muted">Loading…</p>`;
+    const weeks = [...new Set(E2.map(e => e.week))].sort((a, b) => a - b); const u = IX.evalU || (IX.members[0] || {}).id || "";
+    const one = E2.filter(e => e.student_id === u); const cell = (e, k) => { const v = e && e.ratings && e.ratings[k]; return v ? `<td class="fgc v39-r-${v}">${esc(v)}</td>` : `<td class="fgc"></td>` };
+    return `<div class="v39-h2"><h2>Clinical evaluations</h2><span class="vxi-row"><button class="vxi-btn sm" data-cl="evalopen">${sv("plus", 15)} New or edit weekly evaluation</button><button class="vxi-btn sm sec" data-v39go="gradebook">Gradebook</button></span></div>
+     <section class="vxi-card"><h3>By student and week <span class="vxi-muted">S satisfactory · NI needs improvement · U unsatisfactory · NO not observed</span></h3><div class="v39-fgw"><table class="fg-t v39-fg v39-evt"><thead><tr class="v39-hr"><th class="fg-cn">Student</th>${weeks.map(w => `<th>Week ${w}</th>`).join("") || "<th>No evaluations yet</th>"}</tr></thead><tbody>${IX.members.map(m => `<tr><th><button class="lk" data-v39="evalu" data-v="${esc(m.id)}">${esc(m.name)}</button></th>${weeks.map(w => { const e = E2.find(x => x.student_id === m.id && x.week === w); if (!e) return `<td class="fgc"></td>`; const R = Object.values(e.ratings || {}); const o = R.indexOf("U") >= 0 ? "U" : R.indexOf("NI") >= 0 ? "NI" : R.length ? "S" : ""; return `<td class="fgc v39-r-${o}"><button class="lk" data-cl="eval" data-v="${esc(e.id)}">${o || "Draft"}${e.signed ? (e.ack ? " ✓✓" : " ✓") : " (draft)"}</button></td>` }).join("")}</tr>`).join("")}</tbody></table></div></section>
+     <section class="vxi-card"><h3>Competencies · <select data-v39sel="evalu" aria-label="Student">${IX.members.map(m => `<option value="${esc(m.id)}" ${m.id === u ? "selected" : ""}>${esc(m.name)}</option>`).join("")}</select></h3><div class="v39-fgw"><table class="fg-t v39-fg v39-evt"><thead><tr class="v39-hr"><th class="fg-cn">Competency</th>${weeks.map(w => `<th>Week ${w}</th>`).join("")}</tr></thead><tbody>${COMP.map(([k, l]) => `<tr><th>${esc(l)}</th>${weeks.map(w => cell(one.find(e => e.week === w), k)).join("")}</tr>`).join("")}</tbody></table></div><p class="fine">Rows are competencies, columns are weeks (the per-student rubric). Signed weeks fill gradebook columns set to Auto-fill › Evaluation week N.</p></section>`;
+  }
+  async function loadEvals() { if (IX.evLoading || IX.evals && IX.evals.gid === IX.gid && Date.now() - IX.evals.at < 20000) return; IX.evLoading = true; try { const r = await srvApi("/api/clin/" + IX.gid + "/evals"); IX.evals = (r.evals || []).map(e => Object.assign(e, {})); IX.evals.gid = IX.gid; IX.evals.at = Date.now() } catch (e) { IX.evals = []; IX.evals.gid = IX.gid; IX.evals.at = Date.now() } IX.evLoading = false; if ((IX.tab === "evals" || (IX.tab === "gradebook" && IX.view === "comp")) && canRepaint()) paint() }
+  function rosterHTML() {
+    const X = E(); const g = X && X.TV.group && X.TV.gid === IX.gid ? X.TV.group : null; const G = grp();
+    if (!IX.gid) return emptyHTML(); if (!g) return `<p class="vxi-muted">Loading the group…</p>`;
+    return `<div class="v39-h2"><h2>Roster & codes</h2><span class="vxi-row"><button class="vxi-btn sm sec" data-rs="open">Roster import</button>${g.school_id ? `<button class="vxi-btn sm sec" data-qb="open" data-v="${esc(g.school_id)}">Questions</button>` : ""}<button class="vxi-btn sm sec" data-tx="editgrp">Edit</button><button class="vxi-btn sm sec" data-tx="archgrp">${g.archived ? "Reopen" : "Archive"}</button></span></div>
+     <section class="vxi-card v39-code"><div><span class="v39-cl">Student join code</span><b class="v39-cv">${esc(g.code || "—")}</b></div><div class="vxi-row"><button class="vxi-btn sm" data-tx="copy" data-v="${esc(g.code || "")}">Copy code</button><button class="vxi-btn sm sec" data-tx="copylink" data-v="${esc(g.code || "")}">Copy sign-up link</button><button class="vxi-btn sm sec" data-tx="newcode">New code</button></div><p class="vxi-muted">${esc(g.name)}${g.course ? " · " + esc(g.course) : ""} · ${esc(g.school || "")}. Students without an account sign up at ${esc(location.origin)}/#invite/${esc(g.code || "")}.</p></section>
+     <section class="vxi-card"><h3>Members <span class="vxi-muted">${IX.members.length}</span></h3>${IX.members.length ? `<ul class="vxi-att">${IX.members.map(m => `<li><span class="vxi-av">${ini(m.name)}</span><span class="nm"><b>${esc(m.name)}</b><small>${esc(m.email || "")}${m.joined ? " · joined " + esc(new Date(m.joined).toLocaleDateString()) : ""}</small></span><button class="lk" data-tx="rmstu" data-v="${esc(m.id)}">Remove</button></li>`).join("")}</ul>` : `<p class="vxi-muted">No students yet.</p>`}</section>
+     <p class="fine">Privacy: you see students in the groups you teach (program admins see their program). Students see only their own feedback and grades. Vexcura logs grade changes. Charts are de-identified practice charts; don't enter real patient information.</p>`;
+  }
+  /* ---------- feedback composer ---------- */
+  const RUB = { "": ["No rubric", []], cj: ["Clinical judgment (NCSBN CJMM)", [["recognize", "Recognize cues", 4], ["analyze", "Analyze cues", 4], ["prioritize", "Prioritize hypotheses", 4], ["solutions", "Generate solutions", 4], ["action", "Take action", 4], ["evaluate", "Evaluate outcomes", 4]]], doc: ["Documentation", [["accurate", "Accurate", 3], ["complete", "Complete", 3], ["timely", "Timely", 3], ["concise", "Clear and concise", 3]]], med: ["Medication administration", [["patient", "Right patient (2 identifiers)", 1], ["drug", "Right drug", 1], ["dose", "Right dose", 1], ["route", "Right route", 1], ["time", "Right time", 1], ["assess", "Assessment before giving", 1], ["doc", "Right documentation", 1]]], sbar: ["SBAR communication", [["s", "Situation", 2], ["b", "Background", 2], ["a", "Assessment", 2], ["r", "Recommendation", 2]]] };
+  function composer(o) {
+    const F = fbFor(o.u, o.ref); const rk = o.k === "mar" ? "med" : o.k === "sbar" ? "sbar" : o.k === "note" || o.k === "flow" || o.k === "care" ? "doc" : o.k === "drill" ? "cj" : "";
+    sModal(`<h3>Feedback for ${esc(nm(o.u))}</h3><p class="note v39-fbi">${esc(o.l || "General feedback")}</p>${F.length ? `<ul class="v39-fbl sm">${F.map(f => fbItem(f, true)).join("")}</ul>` : ""}
+      <form class="aform v39-fbf" data-v39f="fb" data-u="${esc(o.u)}" data-ref="${esc(o.ref)}" data-k="${esc(o.k || "general")}" data-p="${esc(o.p || "")}" data-l="${esc(o.l || "")}">
+       <label class="afld"><span>Comment</span><textarea name="text" rows="4" maxlength="4000" placeholder="What went well, what to fix, what to look up before next clinical."></textarea></label>
+       <div class="v39-f3"><label class="afld"><span>Score <em>optional</em></span><input name="score" inputmode="decimal" autocomplete="off"></label><label class="afld"><span>Out of</span><input name="max" inputmode="decimal" autocomplete="off" value="${rk ? RUB[rk][1].reduce((a, r) => a + r[2], 0) : ""}"></label><label class="afld"><span>Rubric</span><select name="rub">${Object.entries(RUB).map(([k, [l]]) => `<option value="${k}" ${k === rk ? "selected" : ""}>${esc(l)}</option>`).join("")}</select></label></div>
+       <div class="v39-rub" data-v39rub="1">${rubRows(rk)}</div>
+       <label class="achk"><input type="checkbox" name="vis" checked> Visible to the student (uncheck for a private note)</label>
+       <div class="sbtns"><button class="vxi-btn" type="submit">Save feedback</button><button type="button" class="vxi-btn sec" data-sm="close">Cancel</button></div></form>`, "ehmod v39-mod");
+    setTimeout(() => { const t = document.querySelector('[data-v39f="fb"] textarea'); if (t) t.focus() }, 40);
+  }
+  const rubRows = k => { const R = (RUB[k] || RUB[""])[1]; return R.length ? `<table class="v39-rt"><tbody>${R.map(([id, l, mx]) => `<tr><th>${esc(l)}</th><td><span class="vxi-seg">${[...Array(mx + 1)].map((_, i) => `<label><input type="radio" name="r_${id}" value="${i}"><span>${i}</span></label>`).join("")}</span></td></tr>`).join("")}</tbody></table>` : "" };
+  document.addEventListener("change", e => { const s = e.target; if (s.name === "rub" && s.closest('[data-v39f="fb"]')) { const w = s.closest("form").querySelector("[data-v39rub]"); w.innerHTML = rubRows(s.value); const R = RUB[s.value][1]; const f = s.closest("form"); if (R.length) { f.elements.max.value = R.reduce((a, r) => a + r[2], 0) } return }
+    if (s.type === "radio" && /^r_/.test(s.name) && s.closest('[data-v39f="fb"]')) { const f = s.closest("form"); const R = RUB[f.elements.rub.value][1]; let t = 0, any = false; R.forEach(([id]) => { const x = f.querySelector(`[name="r_${id}"]:checked`); if (x) { t += +x.value; any = true } }); if (any) f.elements.score.value = t } });
+  document.addEventListener("submit", async e => {
+    const f = e.target.closest && e.target.closest('[data-v39f="fb"]'); if (!f) return; e.preventDefault(); e.stopPropagation(); const v = n => String(f.elements[n] ? f.elements[n].value : "").trim();
+    const R = RUB[v("rub")][1]; const rub = R.length ? R.map(([id, l, mx]) => { const x = f.querySelector(`[name="r_${id}"]:checked`); return { k: id, label: l, v: x ? +x.value : null, max: mx } }).filter(r => r.v != null) : null;
+    if (typeof phiFind === "function" && phiFind(v("text")).length && typeof phiOK === "function" && !phiOK([v("text")])) return;
+    const b = f.querySelector('[type=submit]'); b.disabled = true;
+    try { const r = await api(`/g/${IX.gid}/fb`, { method: "POST", body: { uid: f.dataset.u, ref: f.dataset.ref, kind: f.dataset.k, pid: f.dataset.p, label: f.dataset.l, text: v("text"), score: v("score") === "" ? null : v("score"), max: v("max") === "" ? null : v("max"), rubric: rub && rub.length ? rub : null, visible: f.elements.vis.checked } });
+      IX.fb.unshift(r.item); IX.rev.add(r.item.uid + "|" + r.item.ref); sClose(); toast(r.item.visible ? "Feedback sent" : "Private note saved"); paint() } catch (er) { b.disabled = false; fail(er) }
+  }, true);
+  /* ---------- gradebook (v34 flowsheet look and keys) ---------- */
+  const KINDL = { score: "Points", pct: "Percent", sui: "S / NI / U", rubric: "Rubric", avg: "Weighted average", hours: "Clinical hours", status: "Clinical status" };
+  const CALC = { avg: 1, hours: 1, status: 1 };
+  async function loadGb(force) { if (!IX.srv || !IX.gid) return; if (IX.gbL && !force) return; IX.gbL = true; try { const r = await api(`/g/${IX.gid}/gb`); if (r.group && r.group.id === IX.gid) IX.gb = r } catch (e) { IX.gbErr = e.message } IX.gbL = false; if ((IX.tab === "gradebook" || IX.tab === "students") && (canRepaint() || force)) paint() }
+  const gk = (c, u) => c + "|" + u;
+  function cellView(c, u) {
+    const b = IX.gb; const k = gk(c.id, u); if (CALC[c.kind]) { const v = calcLive(c, u); return { txt: v == null ? "" : v, calc: true } }
+    if (k in IX.gbP) return { txt: IX.gbP[k] == null ? "" : IX.gbP[k], pend: true, cm: k in IX.gbC ? IX.gbC[k] : (b.grades[k] || {}).cm };
+    const g = b.grades[k]; if (g && g.val != null) return { txt: g.val, src: g.src, cm: k in IX.gbC ? IX.gbC[k] : g.cm, autoNow: b.auto[c.id] && b.auto[c.id][u] };
+    const a = b.auto[c.id] && b.auto[c.id][u]; if (a) return { txt: a.val, auto: true, why: a.why, cm: IX.gbC[k] };
+    return { txt: "", cm: k in IX.gbC ? IX.gbC[k] : g && g.cm };
+  }
+  function numOf(c, u) { const v = cellView(c, u); if (v.txt === "" || v.txt == null) return null; if (c.kind === "sui") return null; const n = parseFloat(v.txt); if (!isFinite(n)) return null; return c.kind === "pct" ? n : c.max ? n / c.max * 100 : null }
+  function calcLive(c, u) {
+    const b = IX.gb; if (c.kind === "hours") return String(hoursOf(u) || (b.hours[u] || 0));
+    if (c.kind === "avg") { let w = 0, s = 0; b.cols.filter(x => (x.kind === "score" || x.kind === "pct" || x.kind === "rubric") && x.weight > 0).forEach(x => { const p = numOf(x, u); if (p == null) return; w += x.weight; s += p * x.weight }); return w ? (Math.round(s / w * 10) / 10).toFixed(1) : null }
+    if (c.kind === "status") { const L = b.cols.filter(x => x.kind === "sui").map(x => cellView(x, u).txt).filter(Boolean); return L.length ? (L.indexOf("U") >= 0 ? "U" : L.indexOf("NI") >= 0 ? "NI" : "S") : null }
+    return null;
+  }
+  function validate(c, v) {
+    if (v == null || String(v).trim() === "") return { ok: true, v: null }; const s = String(v).trim();
+    if (CALC[c.kind]) return { ok: false, msg: "This column is calculated." };
+    if (c.kind === "sui") { const u = s.toUpperCase().replace(/[^A-Z]/g, ""); const k = u === "S" || /^SAT/.test(u) ? "S" : u === "U" || /^UNS/.test(u) ? "U" : u === "NI" || /^N/.test(u) ? "NI" : null; return k ? { ok: true, v: k } : { ok: false, msg: "Use S (satisfactory), NI (needs improvement) or U (unsatisfactory)." } }
+    const n = parseFloat(s.replace(/%$/, "")); if (!isFinite(n) || !/^-?\d*\.?\d+%?$/.test(s)) return { ok: false, msg: "Enter a number." }; const mx = c.kind === "pct" ? 100 : c.max || 100;
+    if (n < 0 || n > mx * 1.5) return { ok: false, msg: `Enter 0 to ${mx} (up to ${mx * 1.5} with extra credit).` }; return { ok: true, v: String(Math.round(n * 100) / 100) };
+  }
+  const syncOf = (c, u) => IX.gb && IX.gb.sync[gk(c.id, u)];
+  function syncChip(c, u) { if (!IX.gb || !IX.gb.lms || !c.lms) return `<span class="vxi-muted">—</span>`; const s = syncOf(c, u); return s ? `<span class="v39-sy v39-sy-${s.st}" title="${esc(s.msg || "")}">${s.st === "synced" ? "Synced" : s.st === "pending" ? "Pending" : "Error"}</span>` : `<span class="vxi-muted">Not sent</span>` }
+  function gbHTML() {
+    if (!IX.srv) return `<div class="vxi-card"><h3>Gradebook</h3><p>The gradebook needs the v39 server update (/api/instr). Until then, case grades are in <button class="lk" data-v39go="cases">Cases</button>.</p></div>`;
+    const b = IX.gb; if (!b || b.group.id !== IX.gid) { loadGb(); return `<p class="vxi-muted">Loading the gradebook…</p>` }
+    const P = Object.keys(IX.gbP).length + Object.keys(IX.gbC).filter(k => !(k in IX.gbP)).length; const autoN = IX.auto ? autoPending().length : 0; const n = P + autoN;
+    const S = b.students, C = b.cols; const lms = b.lms; const sy = Object.values(b.sync); const er = sy.filter(s => s.st === "error").length, pd = sy.filter(s => s.st === "pending").length;
+    if (IX.view === "comp") return gbTb(n, lms, er, pd) + compView();
+    return gbTb(n, lms, er, pd) + `<div class="v39-gb" id="v39gb"><div class="fg-fx" id="v39fx"><span class="fg-nb" id="v39nb">Select a cell</span><span class="fg-fxi">fx</span><span class="fg-fv" id="v39fv"></span><span class="fg-ref" id="v39ref"></span></div>
+     <div class="v39-gw" id="v39gw" tabindex="0" aria-label="Gradebook grid. Arrow keys move, type to enter a grade, Enter or Tab to commit."><table class="fg-t v39-gt" id="v39gt"><thead><tr class="v39-hr"><th class="fg-cn">Student<small class="fg-cnl">${S.length} student${S.length === 1 ? "" : "s"}</small></th>${C.map((c, i) => `<th class="v39-ch${CALC[c.kind] ? " v39-cc" : ""}" data-ci="${i}" title="${esc(c.label + " · " + KINDL[c.kind] + (c.max && !CALC[c.kind] && c.kind !== "sui" ? " · out of " + c.max : "") + (c.weight ? " · weight " + c.weight : "") + (c.src ? " · auto-fill " + c.src : "") + (c.lms ? " · sent to LMS" : ""))}"><button class="v39-chb" data-v39="colset" data-v="${esc(c.id)}"><b>${esc(c.label)}</b><small>${esc(KINDL[c.kind])}${c.kind === "score" || c.kind === "rubric" ? " /" + c.max : ""}${c.weight ? " · w" + c.weight : ""}${c.src ? " · auto" : ""}${c.lms && lms ? " · LMS" : ""}</small></button></th>`).join("")}<th class="fg-fill"><button class="fg-b" data-v39="addcol" title="Add a column">${sv("plus", 15)}</button></th></tr></thead>
+     <tbody>${S.map((s, ri) => `<tr><th title="${esc(s.email)}"><button class="lk" data-v39="stu" data-v="${esc(s.id)}">${esc(s.name)}</button></th>${C.map((c, ci) => { const v = cellView(c, s.id); const y = syncOf(c, s.id); const cls = ["fgc", "v39-c"]; if (v.calc) cls.push("fscalc"); if (v.pend) cls.push("fsp"); if (v.auto) cls.push("v39-auto"); if (v.src === "auto" && !v.pend) cls.push("v39-autof"); if (v.cm) cls.push("fg-cm"); if ((gk(c.id, s.id) in IX.gbC)) cls.push("fg-cmp"); if (v.txt === "U") cls.push("v39-u"); if (v.txt === "NI") cls.push("v39-ni"); if (lms && c.lms && y) cls.push("v39-y-" + y.st);
+        return `<td class="${cls.join(" ")}" data-r="${ri}" data-c="${ci}" title="${esc((v.auto ? "Auto: " + (v.why || "") + " (not filed yet)" : "") + (v.cm ? (v.auto ? " · " : "") + "Comment: " + v.cm : "") + (y && lms && c.lms ? " · LMS: " + (y.st === "synced" ? "Synced" : y.st === "pending" ? "Pending" : "Error " + (y.msg || "")) : ""))}">${esc(v.txt == null ? "" : v.txt)}</td>` }).join("")}<td class="fg-fill"></td></tr>`).join("")}</tbody></table></div></div>
+     ${!C.length ? `<div class="vxi-card v39-gbe"><h3>Start your gradebook</h3><p>Add columns for assignments, clinical days and evaluations, or start with the clinical course columns: one S/NI/U column per clinical day and weekly evaluation, each assigned case, a weighted average and clinical hours.</p><div class="vxi-row"><button class="vxi-btn" data-v39="starter">${sv("plus", 16)} Add clinical course columns</button><button class="vxi-btn sec" data-v39="addcol">Add a column</button></div></div>` : ""}
+     <p class="fine v39-keys">Type a grade, then Enter (down) or Tab (right). S/NI/U columns take S, N or U. Delete clears. Shift+arrows select; Ctrl+C / Ctrl+V copy and paste; drag the corner square or Ctrl+D to fill down; Ctrl+Z undo; Shift+F2 comment; Ctrl+S File grades. <span class="v39-lg"><i class="v39-auto">81</i> auto-filled from app activity (override by typing) · <i class="fsp">90</i> not filed yet · <i class="fscalc">87.5</i> calculated</span></p>
+     ${b.audit && b.audit.length ? `<details class="vxi-card v39-aud"><summary><b>Change log</b> <span class="vxi-muted">${b.audit.length} recent</span></summary><ul>${b.audit.map(a => `<li><span class="vxi-muted">${esc(dtm(a.at))}</span> ${esc(a.by_name || "")} · ${esc(a.what)}${a.student_id ? " · " + esc(nm(a.student_id)) : ""}${a.col_id ? " · " + esc((b.cols.find(c => c.id === a.col_id) || {}).label || "removed column") : ""}${a.what === "grade" || a.what === "comment" ? `: ${esc(a.old == null ? "—" : a.old)} → ${esc(a.new == null ? "—" : a.new)}${a.src === "auto" ? " (auto)" : ""}` : a.new ? ": " + esc(a.new) : ""}</li>`).join("")}</ul></details>` : ""}`;
+  }
+  function gbTb(n, lms, er, pd) {
+    return `<div class="v39-gtb"><span class="mtt">Gradebook</span><button class="fg-b fg-file${n ? " on" : ""}" data-v39="file" ${n ? "" : "disabled"} title="File grades (Ctrl+S)">${sv("check", 15)} File grades${n ? ` <i class="fg-n">${n}</i>` : ""}</button>
+     <span class="fg-grp"><button class="fg-b fg-i" data-v39="undo" ${IX.undo.length ? "" : "disabled"} title="Undo (Ctrl+Z)" aria-label="Undo">${sv("undo", 15)}</button><button class="fg-b fg-i" data-v39="redo" ${IX.redo.length ? "" : "disabled"} title="Redo (Ctrl+Y)" aria-label="Redo">${sv("redo", 15)}</button></span>
+     <span class="fg-grp"><button class="fg-b" data-v39="addcol">${sv("plus", 15)} Column</button><label class="fg-b v39-chk" title="Include auto-filled values when you file"><input type="checkbox" data-v39in="auto" ${IX.auto ? "checked" : ""}> Auto values</label><button class="fg-b" data-v39="gbview" aria-pressed="${IX.view === "comp"}">${IX.view === "comp" ? "Students view" : "Competencies view"}</button></span>
+     <span class="fg-sp"></span><span class="fg-grp">${lms ? `<span class="v39-lms ok" title="Linked to ${esc(lms.title)}">${sv("link", 14)} ${esc(lms.title)}</span>${er ? `<span class="v39-sy v39-sy-error">${er} error${er > 1 ? "s" : ""}</span>` : ""}${pd ? `<span class="v39-sy v39-sy-pending">${pd} pending</span>` : ""}<button class="fg-b" data-v39="sync" title="Send pending and failed grades to the LMS">${sv("sync", 15)} Send to LMS</button>` : ""}<button class="fg-b" data-v39="lms">${sv("link", 15)} ${lms ? "LMS link" : "Link LMS course"}</button><button class="fg-b" data-v39="export">${sv("down", 15)} Export CSV</button></span></div>`;
+  }
+  function compView() {
+    const E2 = IX.evals; if (!E2 || E2.gid !== IX.gid) { loadEvals(); return `<p class="vxi-muted">Loading evaluations…</p>` }
+    const u = IX.evalU || (IX.members[0] || {}).id; IX.evalU = u; const w = [...new Set(E2.map(e => e.week))].sort((a, b) => a - b); const one = E2.filter(e => e.student_id === u);
+    const COMP = [["pcc", "Patient-centered care"], ["safety", "Safety"], ["judgment", "Clinical judgment"], ["team", "Teamwork & communication"], ["ebp", "Evidence-based practice"], ["info", "Informatics & documentation"], ["qi", "Quality improvement"], ["prof", "Professionalism"]];
+    return `<div class="vxi-card"><h3>Competencies for <select data-v39sel="evalu" aria-label="Student">${IX.members.map(m => `<option value="${esc(m.id)}" ${m.id === u ? "selected" : ""}>${esc(m.name)}</option>`).join("")}</select><button class="vxi-btn sm" data-cl="evalopen">Weekly evaluation form</button></h3><div class="v39-fgw"><table class="fg-t v39-fg v39-evt"><thead><tr class="v39-hr"><th class="fg-cn">Competency</th>${w.map(x => `<th>Week ${x}</th>`).join("") || "<th>No evaluations yet</th>"}</tr></thead><tbody>${COMP.map(([k, l]) => `<tr><th>${esc(l)}</th>${w.map(x => { const e = one.find(y => y.week === x); const v = e && e.ratings && e.ratings[k]; return `<td class="fgc v39-r-${v || ""}">${v ? esc(v) : ""}</td>` }).join("")}</tr>`).join("")}</tbody></table></div><p class="fine">The rubric-based weekly clinical evaluation (8 competencies, S/NI/U/NO, signed by you and acknowledged by the student). Use Evaluations to open or sign a week.</p></div>`;
+  }
+  function autoPending() { const b = IX.gb; const L = []; if (!b) return L; b.cols.forEach(c => { const A = b.auto[c.id]; if (!A || CALC[c.kind]) return; Object.entries(A).forEach(([u, a]) => { const k = gk(c.id, u); if (k in IX.gbP) return; const g = b.grades[k]; if (!g || g.val == null) L.push({ c: c.id, u, v: a.val, src: "auto" }) }) }); return L }
+  /* grid engine */
+  const GS = { a: null, f: null, ed: null };
+  const cellEl = (r, c) => document.querySelector(`#v39gt td[data-r="${r}"][data-c="${c}"]`);
+  function gbAfter() { const g = document.getElementById("v39gt"); if (!g) return; if (!GS.a) GS.a = { r: 0, c: 0 }; GS.f = GS.f || Object.assign({}, GS.a); mark(); fx() }
+  function rng() { const a = GS.a, f = GS.f || GS.a; return { r0: Math.min(a.r, f.r), r1: Math.max(a.r, f.r), c0: Math.min(a.c, f.c), c1: Math.max(a.c, f.c) } }
+  function mark() { document.querySelectorAll("#v39gt td.v39-sel,#v39gt td.v39-act").forEach(x => x.classList.remove("v39-sel", "v39-act")); const R = rng(); for (let r = R.r0; r <= R.r1; r++)for (let c = R.c0; c <= R.c1; c++) { const e = cellEl(r, c); if (e) e.classList.add("v39-sel") } const a = cellEl(GS.a.r, GS.a.c); if (a) { a.classList.add("v39-act"); const h = document.getElementById("v39fh") || Object.assign(document.createElement("span"), { id: "v39fh", className: "v39-fh", title: "Drag to fill" }); const e = cellEl(R.r1, R.c1); if (e) e.appendChild(h); try { a.scrollIntoView({ block: "nearest", inline: "nearest" }) } catch (er) { } } }
+  function fx() { const b = IX.gb; if (!b || !GS.a) return; const s = b.students[GS.a.r], c = b.cols[GS.a.c]; const nb = document.getElementById("v39nb"), fv = document.getElementById("v39fv"), rf = document.getElementById("v39ref"); if (!s || !c) { if (nb) nb.textContent = "Select a cell"; return }
+    const v = cellView(c, s.id); const y = syncOf(c, s.id); if (nb) nb.textContent = s.name + " · " + c.label;
+    if (fv) fv.innerHTML = `<b>${esc(v.txt || "")}</b>${v.pend ? ` <span class="fg-un">not filed</span>` : ""}${v.auto ? ` <span class="v39-aun">auto: ${esc(v.why || "")}</span>` : v.autoNow && v.autoNow.val !== v.txt ? ` <span class="v39-aun">auto now ${esc(v.autoNow.val)} (${esc(v.autoNow.why || "")})</span>` : ""}${v.cm ? ` <span class="fg-cmv">${sv("msg", 12)} ${esc(v.cm)}</span>` : ""}${GS.err ? ` <span class="v39-bad">${esc(GS.err)}</span>` : ""}`;
+    if (rf) rf.innerHTML = `${esc(KINDL[c.kind])}${c.kind === "score" || c.kind === "rubric" ? " · out of " + c.max : ""}${IX.gb.lms && c.lms ? " · LMS: " + (y ? (y.st === "synced" ? "Synced" : y.st === "pending" ? "Pending" : "Error. " + esc(y.msg || "")) : "not sent") : ""}` }
+  function stage(L, label) { /* L: [{k, v}] values; one undo step */
+    const prev = L.map(x => ({ k: x.k, had: x.k in IX.gbP, v: IX.gbP[x.k] })); L.forEach(x => { const [cid, u] = x.k.split("|"); const b = IX.gb; const g = b.grades[x.k]; const filed = g ? g.val : null; if ((x.v || null) === (filed || null) && !(b.auto[cid] && b.auto[cid][u] && !filed && x.v)) delete IX.gbP[x.k]; else IX.gbP[x.k] = x.v });
+    IX.undo.push(prev); IX.redo = []; if (IX.undo.length > 100) IX.undo.shift(); repaintGrid() }
+  function undo(re) { const A = re ? IX.redo : IX.undo, B = re ? IX.undo : IX.redo; const st = A.pop(); if (!st) return; B.push(st.map(x => ({ k: x.k, had: x.k in IX.gbP, v: IX.gbP[x.k] }))); st.forEach(x => { if (x.had) IX.gbP[x.k] = x.v; else delete IX.gbP[x.k] }); repaintGrid() }
+  function repaintGrid() { const w = document.getElementById("v39gw"); const sl = w ? [w.scrollLeft, w.scrollTop] : null; const y = window.scrollY; const m = document.getElementById("vxi-m"); if (!m || IX.tab !== "gradebook") return; m.innerHTML = gbHTML(); const w2 = document.getElementById("v39gw"); if (w2 && sl) { w2.scrollLeft = sl[0]; w2.scrollTop = sl[1] } window.scrollTo(0, y); gbAfter(); if (w2 && !GS.noFocus) w2.focus({ preventScroll: true }); GS.noFocus = false; const tb = document.getElementById("v39-tabs"); if (tb) tb.innerHTML = tabsHTML() }
+  function commitEdit(move) { const ed = GS.ed; if (!ed) return true; const b = IX.gb; const c = b.cols[ed.c], s = b.students[ed.r]; const x = validate(c, ed.inp.value); if (!x.ok) { GS.err = x.msg; ed.inp.classList.add("bad"); ed.inp.setAttribute("aria-invalid", "true"); fx(); return false } GS.err = ""; GS.ed = null; IX.gbE = false; stage([{ k: gk(c.id, s.id), v: x.v }]); if (move) go(move[0], move[1]); return true }
+  function startEdit(ch) { const b = IX.gb; const c = b.cols[GS.a.c], s = b.students[GS.a.r]; if (!c || !s) return; if (CALC[c.kind]) { GS.err = "This column is calculated."; fx(); return } if (c.kind === "rubric" && ch == null) { rubricForm(c, s); return }
+    const td = cellEl(GS.a.r, GS.a.c); if (!td) return; const v = cellView(c, s.id); const inp = document.createElement("input"); inp.className = "fg-inp v39-inp"; inp.value = ch != null ? ch : (v.txt || ""); inp.setAttribute("aria-label", s.name + " " + c.label); inp.autocomplete = "off"; if (c.kind !== "sui") inp.inputMode = "decimal";
+    td.textContent = ""; td.appendChild(inp); GS.ed = { r: GS.a.r, c: GS.a.c, inp }; IX.gbE = true; inp.focus(); if (ch == null) inp.select(); else { const L = inp.value.length; inp.setSelectionRange(L, L) }
+    if (c.kind === "sui") pick(td, inp) }
+  function pick(td, inp) { const L = [["S", "Satisfactory"], ["NI", "Needs improvement"], ["U", "Unsatisfactory"]]; const d = document.createElement("div"); d.className = "fg-pop v39-pick"; d.setAttribute("role", "listbox"); const draw = () => { const q = inp.value.toUpperCase(); d.innerHTML = L.filter(([k, l]) => !q || k.startsWith(q) || l.toUpperCase().startsWith(q)).map(([k, l]) => `<button type="button" role="option" data-v39pk="${k}"><b>${k}</b> ${l}</button>`).join("") }; draw(); td.appendChild(d); inp.addEventListener("input", draw); d.addEventListener("mousedown", e => { const b = e.target.closest("[data-v39pk]"); if (!b) return; e.preventDefault(); inp.value = b.dataset.v39pk; commitEdit([1, 0]) }) }
+  function go(dr, dc, ext) { const b = IX.gb; if (!b) return; const R = b.students.length - 1, C = b.cols.length - 1; if (R < 0 || C < 0) return; const n = { r: Math.max(0, Math.min(R, GS.a.r + dr)), c: Math.max(0, Math.min(C, GS.a.c + dc)) }; if (ext) { GS.f = { r: Math.max(0, Math.min(R, (GS.f || GS.a).r + dr)), c: Math.max(0, Math.min(C, (GS.f || GS.a).c + dc)) } } else { GS.a = n; GS.f = Object.assign({}, n) } GS.err = ""; mark(); fx() }
+  function selTSV() { const b = IX.gb; const R = rng(); const out = []; for (let r = R.r0; r <= R.r1; r++) { const row = []; for (let c = R.c0; c <= R.c1; c++)row.push(cellView(b.cols[c], b.students[r].id).txt || ""); out.push(row.join("\t")) } return out.join("\n") }
+  function pasteTSV(t) { const b = IX.gb; const rows = String(t || "").replace(/\r/g, "").replace(/\n$/, "").split("\n").map(l => l.split("\t")); const R = rng(); const single = rows.length === 1 && rows[0].length === 1; const L = [], bad = [];
+    const H = single ? R.r1 - R.r0 + 1 : rows.length, Wd = single ? R.c1 - R.c0 + 1 : rows[0].length;
+    for (let i = 0; i < H; i++)for (let j = 0; j < Wd; j++) { const r = R.r0 + i, c = R.c0 + j; if (r >= b.students.length || c >= b.cols.length) continue; const col = b.cols[c]; if (CALC[col.kind]) continue; const raw = single ? rows[0][0] : (rows[i] || [])[j]; if (raw == null) continue; const x = validate(col, raw); if (!x.ok) { bad.push(b.students[r].name + " · " + col.label + ": " + x.msg); continue } L.push({ k: gk(col.id, b.students[r].id), v: x.v }) }
+    if (L.length) stage(L); GS.err = bad.length ? bad.length + " not pasted. " + bad[0] : ""; fx() }
+  function fillDown() { const b = IX.gb; const R = rng(); if (R.r1 === R.r0) return; const L = []; for (let c = R.c0; c <= R.c1; c++) { const col = b.cols[c]; if (CALC[col.kind]) continue; const v = cellView(col, b.students[R.r0].id).txt || null; for (let r = R.r0 + 1; r <= R.r1; r++)L.push({ k: gk(col.id, b.students[r].id), v }) } if (L.length) stage(L) }
+  function comment() { const b = IX.gb; const c = b.cols[GS.a.c], s = b.students[GS.a.r]; if (!c || !s || CALC[c.kind]) return; const k = gk(c.id, s.id); const cur = cellView(c, s.id).cm || "";
+    sModal(`<h3>Comment · ${esc(s.name)} · ${esc(c.label)}</h3><form class="aform" data-v39f="cm" data-k="${esc(k)}"><label class="afld"><span>Comment (goes with the grade; sent to the LMS as the score comment)</span><textarea name="t" rows="3" maxlength="500">${esc(cur)}</textarea></label><div class="sbtns"><button class="vxi-btn" type="submit">Save comment</button><button class="vxi-btn sec" type="button" data-sm="close">Cancel</button></div></form>`, "ehmod") }
+  function rubricForm(c, s) { const R = c.rubric || []; const k = gk(c.id, s.id); const cur = cellView(c, s.id);
+    sModal(`<h3>${esc(c.label)} · ${esc(s.name)}</h3><p class="note">Rubric total out of ${c.max}. ${R.length ? "" : "This column has no criteria; enter the total."}</p><form class="aform" data-v39f="rub" data-k="${esc(k)}">${R.length ? `<table class="v39-rt"><tbody>${R.map(r => `<tr><th>${esc(r.label)}</th><td><input name="r_${esc(r.k)}" inputmode="decimal" style="width:80px" placeholder="0–${r.max}" data-max="${r.max}"></td></tr>`).join("")}</tbody></table>` : `<label class="afld"><span>Total</span><input name="tot" value="${esc(cur.txt || "")}" inputmode="decimal"></label>`}<label class="afld"><span>Comment</span><textarea name="cm" rows="2" maxlength="500">${esc(cur.cm || "")}</textarea></label><div class="sbtns"><button class="vxi-btn" type="submit">Stage grade</button><button class="vxi-btn sec" type="button" data-sm="close">Cancel</button></div></form>`, "ehmod v39-mod") }
+  document.addEventListener("submit", e => { const f = e.target.closest && e.target.closest('[data-v39f="cm"],[data-v39f="rub"]'); if (!f) return; e.preventDefault(); e.stopPropagation(); const k = f.dataset.k; const [cid] = k.split("|"); const c = IX.gb.cols.find(x => x.id === cid);
+    if (f.dataset.v39f === "cm") { IX.gbC[k] = f.elements.t.value.trim(); sClose(); repaintGrid(); return }
+    let tot; if (f.elements.tot) tot = f.elements.tot.value; else { let t = 0, bad = ""; (c.rubric || []).forEach(r => { const v = parseFloat(f.elements["r_" + r.k].value || "0"); if (!(v >= 0 && v <= r.max)) bad = r.label; t += v || 0 }); if (bad) { alertBox("Check " + bad + "."); return } tot = String(t) }
+    const x = validate(c, tot); if (!x.ok) { alertBox(x.msg); return } IX.gbC[k] = f.elements.cm.value.trim(); sClose(); stage([{ k, v: x.v }]) }, true);
+  document.addEventListener("keydown", e => {
+    if (IX.tab !== "gradebook" || view !== "instructor" || document.querySelector(".smod-bg")) return; const w = document.getElementById("v39gw"); if (!w || !GS.a) return; const inGrid = w.contains(document.activeElement) || document.activeElement === document.body; if (!inGrid) return;
+    const k = e.key, ctl = e.ctrlKey || e.metaKey;
+    if (ctl && (k === "s" || k === "S")) { e.preventDefault(); if (GS.ed && !commitEdit()) return; fileGrades(); return }
+    if (GS.ed) { if (k === "Enter") { e.preventDefault(); commitEdit(e.shiftKey ? [-1, 0] : [1, 0]) } else if (k === "Tab") { e.preventDefault(); commitEdit(e.shiftKey ? [0, -1] : [0, 1]) } else if (k === "Escape") { e.preventDefault(); GS.ed = null; IX.gbE = false; GS.err = ""; repaintGrid() } else if ((k === "ArrowDown" || k === "ArrowUp") && !e.altKey && IX.gb.cols[GS.ed.c].kind !== "sui") { e.preventDefault(); commitEdit([k === "ArrowDown" ? 1 : -1, 0]) } return }
+    if (ctl && (k === "z" || k === "Z")) { e.preventDefault(); undo(e.shiftKey); return } if (ctl && (k === "y" || k === "Y")) { e.preventDefault(); undo(true); return }
+    if (ctl && (k === "c" || k === "C")) { e.preventDefault(); const t = selTSV(); GS.clip = t; try { navigator.clipboard.writeText(t).catch(() => { }) } catch (er) { } toast("Copied"); return }
+    if (ctl && (k === "v" || k === "V")) { e.preventDefault(); const done = t => pasteTSV(t); try { navigator.clipboard.readText().then(done, () => done(GS.clip || "")) } catch (er) { done(GS.clip || "") } return }
+    if (ctl && (k === "d" || k === "D")) { e.preventDefault(); fillDown(); return }
+    const mv = { ArrowDown: [1, 0], ArrowUp: [-1, 0], ArrowRight: [0, 1], ArrowLeft: [0, -1] }[k]; if (mv) { e.preventDefault(); go(mv[0], mv[1], e.shiftKey); return }
+    if (k === "Enter") { e.preventDefault(); go(e.shiftKey ? -1 : 1, 0); return } if (k === "Tab") { e.preventDefault(); go(0, e.shiftKey ? -1 : 1); return }
+    if (k === "F2" && e.shiftKey) { e.preventDefault(); comment(); return } if (k === "F2") { e.preventDefault(); startEdit(null); return }
+    if (k === "Delete" || k === "Backspace") { e.preventDefault(); const b = IX.gb; const R = rng(); const L = []; for (let r = R.r0; r <= R.r1; r++)for (let c = R.c0; c <= R.c1; c++) { const col = b.cols[c]; if (!CALC[col.kind]) L.push({ k: gk(col.id, b.students[r].id), v: null }) } stage(L); return }
+    if (k.length === 1 && !ctl && !e.altKey) { e.preventDefault(); startEdit(k) }
+  });
+  document.addEventListener("mousedown", e => {
+    if (IX.tab !== "gradebook") return; const h = e.target.closest && e.target.closest("#v39fh"); if (h) { e.preventDefault(); GS.fill = { r0: rng().r0 }; return }
+    const td = e.target.closest && e.target.closest("#v39gt td[data-r]"); if (!td || td.querySelector("input")) return; if (GS.ed) { if (!commitEdit()) return } const r = +td.dataset.r, c = +td.dataset.c;
+    if (e.shiftKey && GS.a) GS.f = { r, c }; else { GS.a = { r, c }; GS.f = { r, c }; GS.drag = true } GS.err = ""; mark(); fx(); const w = document.getElementById("v39gw"); if (w) setTimeout(() => w.focus({ preventScroll: true }), 0) });
+  document.addEventListener("mouseover", e => { if (!(GS.drag || GS.fill) || IX.tab !== "gradebook") return; const td = e.target.closest && e.target.closest("#v39gt td[data-r]"); if (!td) return; GS.f = { r: +td.dataset.r, c: GS.fill ? (GS.f || GS.a).c : +td.dataset.c }; mark() });
+  document.addEventListener("mouseup", () => { if (GS.fill) { GS.fill = null; fillDown() } GS.drag = false });
+  document.addEventListener("dblclick", e => { const td = e.target.closest && e.target.closest("#v39gt td[data-r]"); if (td && IX.tab === "gradebook") startEdit(null) });
+  async function fileGrades() {
+    const b = IX.gb; if (!b) return; const cells = Object.entries(IX.gbP).map(([k, v]) => { const [c, u] = k.split("|"); return { c, u, v, cm: k in IX.gbC ? IX.gbC[k] : ((b.grades[k] || {}).cm || ""), src: "manual" } });
+    Object.entries(IX.gbC).forEach(([k, cm]) => { if (k in IX.gbP) return; const [c, u] = k.split("|"); const g = b.grades[k]; const a = b.auto[c] && b.auto[c][u]; cells.push({ c, u, v: g && g.val != null ? g.val : a ? a.val : null, cm, src: g ? g.src : a ? "auto" : "manual" }) });
+    if (IX.auto) autoPending().forEach(x => { if (!cells.some(y => y.c === x.c && y.u === x.u)) cells.push(x) });
+    if (!cells.length) { toast("Nothing to file"); return }
+    const btn = document.querySelector('[data-v39="file"]'); if (btn) btn.disabled = true;
+    try { const r = await api(`/g/${IX.gid}/gb/file`, { method: "POST", body: { cells } }); const bad = r.bad || []; IX.gb = r; const badK = new Set(bad.map(x => gk(x.c, x.u))); Object.keys(IX.gbP).forEach(k => { if (!badK.has(k)) delete IX.gbP[k] }); Object.keys(IX.gbC).forEach(k => { if (!badK.has(k)) delete IX.gbC[k] }); IX.undo = []; IX.redo = [];
+      const pb = r.passback || {}; toast(`Filed ${r.filed} grade${r.filed === 1 ? "" : "s"}${pb.linked ? ` · LMS: ${pb.sent} sent${pb.failed ? ", " + pb.failed + " failed" : ""}${pb.skipped ? ", " + pb.skipped + " not linked yet" : ""}` : ""}`); GS.err = bad.length ? bad.length + " not filed: " + bad[0].msg : ""; repaintGrid() } catch (er) { fail(er); if (btn) btn.disabled = false }
+  }
+  function colForm(c) {
+    const X = E(); const asg = X && X.CX.asg[IX.gid] ? (X.CX.asg[IX.gid].assignments || []) : []; const days = [...new Map(IX.days.map(d => [d.day, d])).values()]; const weeks = [...new Set((IX.evals || []).map(e => e.week))];
+    const SRC = [["", "None (enter by hand)"], ["exam", "Latest practice exam (%)"], ["exam:best", "Best practice exam (%)"], ["quick", "Latest quick round (%)"], ["drill", "Latest deteriorating-patient drill"], ["drill:best", "Best deteriorating-patient drill"], ["tele", "Latest telemetry run"], ["ausc", "Latest auscultation exam"], ["code", "Latest megacode"], ["rounds", "Latest bedside rounds"], ...asg.map(a => ["case:" + a.id, "Case: " + a.title]), ...[1, 2, 3, 4, 5, 6, 7, 8, ...weeks].filter((x, i, A) => A.indexOf(x) === i).sort((a, b) => a - b).map(w => ["eval:" + w, "Evaluation week " + w + " (S/NI/U)"]), ...days.map(d => ["day:" + d.day, "Clinical day " + d.date + " attendance (S/U)"])];
+    c = c || {}; const has = c.src && !SRC.some(s => s[0] === c.src) ? [[c.src, c.src]] : [];
+    sModal(`<h3>${c.id ? "Column settings" : "Add a column"}</h3><form class="aform v39-colf" data-v39f="col" data-v="${esc(c.id || "")}">
+     <label class="afld"><span>Name</span><input name="label" maxlength="80" required value="${esc(c.label || "")}" placeholder="e.g. Care plan 1, Week 3 clinical"></label>
+     <div class="v39-f3"><label class="afld"><span>Type</span><select name="kind" ${c.id ? "" : ""}>${Object.entries(KINDL).map(([k, l]) => `<option value="${k}" ${c.kind === k ? "selected" : ""}>${l}</option>`).join("")}</select></label><label class="afld"><span>Out of (points)</span><input name="max" inputmode="decimal" value="${esc(c.max || "")}" placeholder="100"></label><label class="afld"><span>Weight</span><input name="weight" inputmode="decimal" value="${esc(c.weight || "")}" placeholder="0 = not in average"></label></div>
+     <label class="afld"><span>Auto-fill from app activity <em>optional; you can always override</em></span><select name="src">${has.concat(SRC).map(([k, l]) => `<option value="${esc(k)}" ${(c.src || "") === k ? "selected" : ""}>${esc(l)}</option>`).join("")}</select></label>
+     <label class="afld"><span>Rubric criteria <em>rubric type only; one per line as "Name, points"</em></span><textarea name="rub" rows="3" placeholder="Assessment, 10&#10;Interventions, 10&#10;Evaluation, 5">${esc((c.rubric || []).map(r => r.label + ", " + r.max).join("\n"))}</textarea></label>
+     <label class="achk"><input type="checkbox" name="lms" ${c.lms || !c.id ? "checked" : ""}> Send to the LMS gradebook (when this group is linked to an LMS course)</label>
+     <div class="sbtns"><button class="vxi-btn" type="submit">${c.id ? "Save" : "Add column"}</button>${c.id ? `<button type="button" class="vxi-btn danger" data-v39="coldel" data-v="${esc(c.id)}">Remove column</button>` : ""}<button type="button" class="vxi-btn sec" data-sm="close">Cancel</button></div></form>`, "ehmod v39-mod") }
+  document.addEventListener("submit", async e => { const f = e.target.closest && e.target.closest('[data-v39f="col"]'); if (!f) return; e.preventDefault(); e.stopPropagation(); const v = n => String(f.elements[n].value || "").trim();
+    const rub = v("rub") ? v("rub").split("\n").map((l, i) => { const m = /^(.*?)[,;:]\s*(\d+(?:\.\d+)?)\s*$/.exec(l.trim()); return m ? { k: "c" + (i + 1), label: m[1].trim(), max: +m[2] } : null }).filter(Boolean) : null;
+    const body = { label: v("label"), kind: v("kind"), max: v("max") || null, weight: v("weight") || 0, src: v("src") || null, lms: f.elements.lms.checked, rubric: v("kind") === "rubric" ? rub : null };
+    try { const r = f.dataset.v ? await api(`/g/${IX.gid}/gb/cols/${f.dataset.v}`, { method: "PUT", body }) : await api(`/g/${IX.gid}/gb/cols`, { method: "POST", body: { cols: [body] } }); IX.gb = r; sClose(); repaintGrid() } catch (er) { fail(er) } }, true);
+  async function starter() {
+    const X = E(); const asg = X && X.CX.asg[IX.gid] ? (X.CX.asg[IX.gid].assignments || []) : []; const days = [...new Map(IX.days.map(d => [d.day, d])).values()].sort((a, b) => a.date.localeCompare(b.date)); const weeks = [...new Set((IX.evals || []).map(e => e.week))].sort((a, b) => a - b);
+    const cols = days.map(d => ({ label: "Clinical " + d.date.slice(5), kind: "sui", src: "day:" + d.day, lms: false })).concat((weeks.length ? weeks : [1]).map(w => ({ label: "Week " + w + " evaluation", kind: "sui", src: "eval:" + w, lms: true })), asg.map(a => ({ label: a.title, kind: "pct", weight: 1, src: "case:" + a.id, lms: true })), [{ label: "Care plan", kind: "score", max: 20, weight: 1, lms: true }, { label: "Latest drill", kind: "pct", src: "drill", weight: 1, lms: true }, { label: "Weighted average", kind: "avg", lms: true }, { label: "Clinical hours", kind: "hours" }, { label: "Clinical status", kind: "status" }]);
+    try { IX.gb = await api(`/g/${IX.gid}/gb/cols`, { method: "POST", body: { cols } }); repaintGrid(); toast(cols.length + " columns added") } catch (er) { fail(er) } }
+  async function lmsModal() {
+    let r; try { r = await api(`/g/${IX.gid}/lms`) } catch (er) { fail(er); return } const cur = r.current;
+    sModal(`<h3>LMS gradebook link</h3>${cur ? `<p class="abox">Linked to <b>${esc(cur.title || cur.context_id)}</b>. Filing grades sends LMS columns to its gradebook (LTI 1.3 Assignment and Grade Services). Each column becomes a gradebook column named "Vexcura: …".</p>` : `<p class="note">Link this clinical group to its course in your school's LMS. Grades you file go to the LMS gradebook automatically, with per-cell status (Synced, Pending, Error).</p>`}
+     ${r.options.length ? `<form class="aform" data-v39f="lms"><label class="afld"><span>Course</span><select name="o">${r.options.map(o => `<option value="${esc(o.platform_id + "|" + o.context_id)}" ${cur && cur.context_id === o.context_id ? "selected" : ""}>${esc(o.title)} · ${esc(o.lms)}${o.ags ? "" : " (no grade access)"}</option>`).join("")}</select></label><div class="sbtns"><button class="vxi-btn" type="submit">${cur ? "Change link" : "Link course"}</button>${cur ? `<button type="button" class="vxi-btn danger" data-v39="lmsoff">Unlink</button>` : ""}<button type="button" class="vxi-btn sec" data-sm="close">Close</button></div></form>` : `<p>No LMS course found for you yet. Open Vexcura once from your course in Canvas, Blackboard, Moodle or Brightspace (as the instructor) using the Vexcura LTI 1.3 tool your program connected, then come back here.</p><p class="vxi-muted">Students appear in the LMS sync after they open Vexcura from the course once, so the LMS knows who they are. No LTI at your school? Use Export CSV.</p><div class="sbtns">${cur ? `<button type="button" class="vxi-btn danger" data-v39="lmsoff">Unlink</button>` : ""}<button type="button" class="vxi-btn sec" data-sm="close">Close</button></div>`}
+     <p class="fine">Vexcura sends scores only for students in this group who have opened Vexcura from that course. Vexcura isn't certified by any LMS vendor; it uses the standard LTI 1.3 and AGS interfaces.</p>`, "ehmod v39-mod") }
+  document.addEventListener("submit", async e => { const f = e.target.closest && e.target.closest('[data-v39f="lms"]'); if (!f) return; e.preventDefault(); e.stopPropagation(); const [platform_id, context_id] = f.elements.o.value.split("|");
+    try { const r = await api(`/g/${IX.gid}/lms`, { method: "PUT", body: { platform_id, context_id } }); sClose(); toast("Linked" + (r.queued ? " · " + r.queued + " grades queued" : "")); await syncLms() } catch (er) { fail(er) } }, true);
+  async function syncLms() { try { const r = await api(`/g/${IX.gid}/gb/sync`, { method: "POST", body: {} }); IX.gb = r; const pb = r.passback || {}; toast(pb.linked ? `LMS: ${pb.sent} sent${pb.failed ? ", " + pb.failed + " failed" : ""}${pb.skipped ? ", " + pb.skipped + " not linked yet" : ""}` : "Not linked to an LMS course"); repaintGrid() } catch (er) { fail(er) } }
+  function exportModal() { const F = [["canvas", "Canvas", "Student, ID, SIS User ID, SIS Login ID, Section, then point columns. Canvas matches students by its ID or SIS columns: Vexcura fills SIS Login ID with the student's email, so check that your Canvas login IDs are emails, or paste into a Canvas gradebook export. S/NI/U columns are left out (Canvas imports points)."], ["blackboard", "Blackboard", "Last Name, First Name, Username, then columns. Vexcura fills Username with the email; Blackboard matches the Username column, and new columns come in as text columns."], ["moodle", "Moodle", "Email address, then columns and optional Feedback columns. In Moodle, map Email address to the user's email and each column to a grade item."], ["d2l", "Brightspace (D2L)", "OrgDefinedId, Username, \"<item> Points Grade\" or \"<item> Text Grade\", End-of-Line Indicator (#). Column names must match existing grade items; Vexcura fills Username with the email."], ["generic", "Spreadsheet (generic CSV)", "Name, email and every column including calculated ones."]];
+    sModal(`<h3>Export grades (CSV)</h3><p class="note">For schools without LTI, or to check grades before importing. Formats follow each LMS's published gradebook import layout; review the file before you import it.</p><ul class="v39-exp">${F.map(([k, l, d]) => `<li><a class="vxi-btn sm" href="/api/instr/g/${esc(IX.gid)}/gb/export?fmt=${k}" data-v39exp="${k}">${sv("down", 14)} ${esc(l)}</a><span class="vxi-muted">${esc(d)}</span></li>`).join("")}</ul><p class="fine">Exports are logged in the gradebook change log. Only file grades you'd share with the program; this file contains student names and emails.</p><div class="sbtns"><button class="vxi-btn sec" data-sm="close">Done</button></div>`, "ehmod v39-mod") }
+  /* exports go through fetch so the v40 "confirm it's you" prompt (exports are sensitive) can appear and retry */
+  document.addEventListener("click", async e => { const a = e.target.closest && e.target.closest("a[data-v39exp]"); if (!a) return; e.preventDefault(); a.setAttribute("aria-busy", "true");
+    try { const r = await fetch(a.getAttribute("href"), { credentials: "same-origin", headers: { "X-NCLEX": "1" } }); if (!r.ok) { let m = "Couldn't export (" + r.status + ")."; try { m = (await r.json()).error || m } catch (er) { } throw new Error(m) }
+      const blob = await r.blob(); const cd = r.headers.get("Content-Disposition") || ""; const nm = (/filename="([^"]+)"/.exec(cd) || [])[1] || "Vexcura-grades.csv"; const u = URL.createObjectURL(blob); const d = document.createElement("a"); d.href = u; d.download = nm; document.body.appendChild(d); d.click(); setTimeout(() => { URL.revokeObjectURL(u); d.remove() }, 4000); toast("Downloaded " + nm) } catch (er) { fail(er) } finally { a.removeAttribute("aria-busy") } });
+  /* ---------- clicks ---------- */
+  document.addEventListener("click", async e => {
+    const tb = e.target.closest && e.target.closest("[data-v39go]"); if (tb && view === "instructor") { e.preventDefault(); location.hash = "#instructor/" + tb.dataset.v39go; return }
+    const fl = e.target.closest && e.target.closest("[data-v39flt]"); if (fl) { IX.flt.k = fl.dataset.v39flt; paint(); return }
+    const ib = e.target.closest && e.target.closest("[data-v39ib]"); if (ib) { IX.ib = ib.dataset.v39ib; paint(); return }
+    const b = e.target.closest && e.target.closest("[data-v39]"); if (!b) return; const k = b.dataset.v39, v = b.dataset.v;
+    if (k === "fb") { e.preventDefault(); composer({ u: b.dataset.u, ref: b.dataset.ref, k: b.dataset.k, p: b.dataset.p, l: b.dataset.l }); return }
+    if (k === "stu") { e.preventDefault(); location.hash = "#instructor/students/" + v; return }
+    if (k === "allstu") { location.hash = "#instructor/students"; return }
+    if (k === "ehr") { location.hash = "#ehr"; return }
+    if (k === "newgrp") { const X = E(); if (X) { const bb = document.createElement("button"); bb.dataset.tx = "newgrp"; bb.hidden = true; document.body.appendChild(bb); bb.click(); bb.remove() } return }
+    if (k === "rev") { const on = b.getAttribute("aria-pressed") !== "true"; try { await api(`/g/${IX.gid}/reviewed`, { method: "POST", body: { refs: [v], on } }); if (on) IX.rev.add(v); else IX.rev.delete(v); paint() } catch (er) { fail(er) } return }
+    if (k === "revall") { const L = needRev().map(x => x.uid + "|" + x.ref); try { await api(`/g/${IX.gid}/reviewed`, { method: "POST", body: { refs: L } }); L.forEach(x => IX.rev.add(x)); paint() } catch (er) { fail(er) } return }
+    if (k === "open") { openRef(b.dataset.u, b.dataset.ref); return }
+    if (k === "chart") { IX.pid = b.dataset.p; IX.ptab = "summary"; location.hash = "#instructor/students/" + b.dataset.u + "/charts"; return }
+    if (k === "ptab") { IX.ptab = v; paint(); return }
+    if (k === "exam") { IX.exam = v; paint(); return }
+    if (k === "evalu") { IX.evalU = v; paint(); return }
+    if (k === "pdf") { const X = E(); const d = docsOf(b.dataset.u).find(x => x.data.id === b.dataset.p); if (!X || !d) return; try { const s = X.buildPDF(d.data, { stu: nm(b.dataset.u), ins: SRV.me && SRV.me.name || "", course: (grp() || {}).course || "", wk: "" }, {}); X.dlPDF(s, ("Vexcura-Clinical-Report-" + nm(b.dataset.u) + "-" + d.data.label).replace(/[^A-Za-z0-9]+/g, "-") + ".pdf") } catch (er) { fail(er) } return }
+    if (k === "fbvis" || k === "fbdel") { const f = IX.fb.find(x => x.id === v); if (!f) return; try { if (k === "fbdel") { await api(`/g/${IX.gid}/fb/${v}`, { method: "DELETE" }); f.deleted = true } else { const r = await api(`/g/${IX.gid}/fb/${v}`, { method: "PUT", body: { visible: !f.visible } }); Object.assign(f, r.item) } if (document.querySelector(".smod-bg")) sClose(); paint() } catch (er) { fail(er) } return }
+    if (k === "file") { if (GS.ed && !commitEdit()) return; fileGrades(); return }
+    if (k === "undo" || k === "redo") { undo(k === "redo"); return }
+    if (k === "addcol") { colForm(null); return }
+    if (k === "colset") { e.preventDefault(); colForm(IX.gb.cols.find(c => c.id === v)); return }
+    if (k === "coldel") { sConfirm("Remove this column?", "Its grades stay in the change log. Grades already sent to the LMS stay there.", "Remove", async () => { try { IX.gb = await api(`/g/${IX.gid}/gb/cols/${v}`, { method: "DELETE" }); repaintGrid() } catch (er) { fail(er) } }, true); return }
+    if (k === "starter") { starter(); return }
+    if (k === "gbview") { IX.view = IX.view === "comp" ? "students" : "comp"; paint(); return }
+    if (k === "lms") { lmsModal(); return }
+    if (k === "lmsoff") { try { await api(`/g/${IX.gid}/lms`, { method: "DELETE" }); sClose(); await loadGb(true) } catch (er) { fail(er) } return }
+    if (k === "sync") { syncLms(); return }
+    if (k === "export") { exportModal(); return }
+  });
+  document.addEventListener("change", e => { const s = e.target.closest && e.target.closest("[data-v39sel]"); if (s) { const k = s.dataset.v39sel;
+      if (k === "grp") { setGroup(s.value); paint(); poll(true); if (IX.tab === "gradebook") loadGb(true); return }
+      if (k === "stu") { location.hash = s.value ? "#instructor/students/" + s.value : "#instructor/students"; return }
+      if (k === "fu") { IX.flt.u = s.value; paint(); return } if (k === "pt") { IX.pid = s.value; paint(); return } if (k === "evalu") { IX.evalU = s.value; paint(); return } }
+    const i = e.target.closest && e.target.closest("[data-v39in]"); if (i && i.dataset.v39in === "auto") { IX.auto = i.checked; repaintGrid() } });
+  document.addEventListener("input", e => { const i = e.target.closest && e.target.closest("[data-v39in]"); if (!i) return; if (i.dataset.v39in === "fq") { IX.flt.q = i.value; clearTimeout(IX.qt); IX.qt = setTimeout(() => { const pos = i.selectionStart; paint(); const n = document.querySelector('[data-v39in="fq"]'); if (n) { n.focus(); try { n.setSelectionRange(pos, pos) } catch (er) { } } }, 250) } if (i.dataset.v39in === "sq") { IX.flt.sq = i.value; clearTimeout(IX.st); IX.st = setTimeout(() => { side(); const n = document.querySelector('#v39-side [data-v39in="sq"]'); if (n) { n.focus(); const L = n.value.length; n.setSelectionRange(L, L) } }, 200) } });
+  function openRef(uid, ref) { const [k, a, b] = String(ref || "").split(":"); IX.uid = uid;
+    if (/^(mar|fs|fsb|note|dxn|ord|lda|cp|sbar|sdoh|ho|dx|dxr)$/.test(k)) { IX.pid = a; IX.ptab = { mar: "mar", fs: "flow", fsb: "flow", note: "notes", dxn: "notes", ord: "orders", lda: "lda", cp: "care", sbar: "chat", sdoh: "chat", ho: "summary", dx: "notes", dxr: "summary" }[k]; location.hash = "#instructor/students/" + uid + "/charts"; return }
+    if (k === "exam" || k === "exi") { IX.exam = "exam:" + a; location.hash = "#instructor/students/" + uid + "/exams"; return }
+    if (k === "clinday") { location.hash = "#instructor/students/" + uid + "/clinical"; return }
+    if (k === "gen") { location.hash = "#instructor/students/" + uid + "/feedback"; return }
+    location.hash = "#instructor/students/" + uid + "/" + (/^(drill|tele|ausc|code|rounds|lib|book|daily|wl)$/.test(k) ? "sims" : "timeline") }
+  /* ---------- routing: #instructor[/tab[/a[/b]]]; #teach[/g[/k]] redirects here ---------- */
+  async function route39(k) {
+    if (SRV.on && !SRV.loaded) { SRV.ready.then(() => route39(k)); return true } if (SRV.on && !SRV.me) { SRV.next = k; srvGo("signin"); return true }
+    let m = /^teach(?:\/(g_[a-f0-9]{16}))?(?:\/([A-Za-z0-9_|-]+))?/.exec(k);
+    if (m) { if (m[1]) setGroup(m[1]); let to = "#instructor/live"; if (m[2]) { const uid = decodeURIComponent(m[2]).split("|")[0]; const pid = decodeURIComponent(m[2]).split("|")[1]; if (pid) IX.pid = pid; to = "#instructor/students/" + uid + "/charts" } try { history.replaceState(null, "", location.pathname + location.search + to) } catch (e) { } k = to.slice(1) }
+    m = /^instructor(?:\/([a-z]+))?(?:\/([^/]+))?(?:\/([^/]+))?/.exec(k) || []; let tab = m[1] || "live"; if (tab === "home") { tab = "live"; try { history.replaceState(null, "", location.pathname + location.search + "#instructor/live") } catch (e) { } }
+    if (!TABS.some(t => t[0] === tab) && tab !== "content") tab = "live";
+    IX.tab = tab; if (tab === "students") { IX.uid = m[2] ? decodeURIComponent(m[2]) : null; IX.sub = m[3] || "timeline" }
+    const entering = view !== "instructor" || !document.getElementById("v39"); ensureShell(); try { stopLoop() } catch (e) { }
+    if (!HUB().d || entering || Date.now() - (HUB().at || 0) > 20000) loadHubData();
+    const first = !IX.groups.length; if (first) { const mm = document.getElementById("vxi-m"); if (mm) mm.innerHTML = `<div class="vxi-empty"><b>Loading your clinical groups…</b></div>` }
+    const X = E(); if (X) { try { await X.scLoad() } catch (e) { } }
+    const cx = ctxSid() || null; const cxCh = cx !== IX.ctx; IX.ctx = cx; if (cxCh && !entering) { IX.gid = null }
+    await loadGroups(entering || cxCh || !IX.groups.length); if (IX.gid && IX.live.gid !== IX.gid) setGroup(IX.gid);
+    if (HUBTAB[tab]) { paint(); _dl39("instructor/" + tab + (m[2] ? "/" + m[2] : "")) } else paint();
+    if (first || !IX.at || Date.now() - IX.at > 5000) poll(true);
+    if ((tab === "gradebook" || tab === "students") && (!IX.gb || IX.gb.group.id !== IX.gid)) loadGb();
+    return true;
+  }
+  /* the hub's own data (clinical days, schools) feeds Today and Clinical days; load it once in the background */
+  function loadHubData() { if (IX.hubL) return; IX.hubL = 1; srvApi("/api/clinday/home?t=" + Date.now()).then(r => { const H = window.__vxHub; if (H && !HUBTAB[IX.tab]) { H.d = r; H.at = Date.now() } const s = document.getElementById("vxi-sch"); if (s && r.schools) s.textContent = ctxSchools().map(x => x.short || x.name).join(" · "); if (view === "instructor" && (IX.tab === "live" || IX.tab === "students") && canRepaint()) paint() }).catch(() => { }).finally(() => { IX.hubL = 0 }) }
+  let _dl39 = null;
+  if (typeof deepLink === "function") { _dl39 = deepLink; deepLink = function (k) { if (/^(instructor|teach)(\/|$)/.test(k || "")) { route39(k); return true } if (view === "instructor") document.body.classList.remove("v39-on"); return _dl39.apply(this, arguments) } }
+  window.addEventListener("hashchange", () => { if (!/^#(instructor|teach)(\/|$)/.test(location.hash)) document.body.classList.remove("v39-on") });
+  /* the old Live clinical groups page is gone: anything that still opens it (buttons, links, the LTI launch) lands here */
+  document.addEventListener("click", e => { const a = e.target.closest && e.target.closest('a[href^="#teach"]'); if (a) { e.preventDefault(); location.hash = a.getAttribute("href").replace(/^#teach/, "#instructor/live") } }, true);
+  /* the live dashboard's group actions (new group, edit, archive) call tvDraw; in the workspace that repaints here */
+  window.__vx39paint = () => { const X = E(); IX.gAt = 0; loadGroups(true).then(() => { if (X && X.TV.gid && X.TV.gid !== IX.gid) setGroup(X.TV.gid); paint(); poll(true) }) };
+  /* ---------- launcher registry (header search + More) ---------- */
+  const LQ = window.__vxLaunchQ = window.__vxLaunchQ || [];
+  const ROLES = ["instructor", "progadmin", "admin"];
+  [["w-inst", 1, "inst", "Instructor My Chart", "Live activity, students, gradebook, feedback", "#instructor/live", "instructor teacher hub faculty my chart workspace", true],
+   ["w-teach", 2, "live", "Live clinical groups", "Now part of Instructor My Chart › Live", "#instructor/live", "instructor dashboard live clinical groups teach real time", false],
+   ["v39-students", 3, "user", "Students (instructor)", "Every student's timeline and charts", "#instructor/students", "students roster drill down timeline chart", false],
+   ["v39-gb", 4, "chart", "Gradebook", "Flowsheet-style grades, LMS sync, CSV export", "#instructor/gradebook", "grades gradebook lms canvas blackboard moodle d2l brightspace export file grades", true],
+   ["v39-inbox", 5, "bell", "Feedback inbox", "Items waiting for your review", "#instructor/inbox", "feedback inbox in basket review comments", false],
+   ["v39-evals", 6, "check", "Clinical evaluations", "Weekly S/NI/U evaluations by competency", "#instructor/evals", "evaluation rubric competency weekly", false],
+   ["v39-cases", 7, "orders", "Graded EHR cases", "Case library and case grades", "#instructor/cases", "case library assign grade", false],
+   ["v39-roster", 8, "user", "Roster and join codes", "Codes, members, roster import", "#instructor/roster", "join code roster members invite", false]].forEach(([id, order, icon, label, hint, href, keys, more]) => LQ.push({ id, group: "work", order, icon, label, hint, href, roles: ROLES, keys, more }));
+  if (window.__vxLaunch && window.__vxLaunch.add) { try { LQ.splice(0).forEach(x => window.__vxLaunch.add(x)) } catch (e) { } }
+
+  /* ================= student side: Feedback inbox on My Chart + feedback where the item lives ================= */
+  const ST = { my: null, at: 0, busy: false, seen: new Set() };
+  window.__vx39s = ST;
+  const isStudentish = () => SRV && SRV.me && !SRV.me.mustReset;
+  async function myLoad(force) { if (!isStudentish() || ST.busy) return ST.my; if (!force && ST.my && Date.now() - ST.at < 45000) return ST.my; ST.busy = true; try { const old = ST.my; ST.my = await api("/my"); ST.at = Date.now(); const fresh = old && ST.my.fb.filter(f => !f.read_at && !old.fb.some(o => o.id === f.id)); if (fresh && fresh.length) toast("New feedback from your instructor") } catch (e) { if (e.status === 404 || e.status === 401) ST.my = ST.my || { fb: [], grades: [], n: 0, off: true } } finally { ST.busy = false } inPlace(); chip(); return ST.my }
+  setInterval(() => { if (document.visibilityState === "visible" && isStudentish() && view !== "instructor") myLoad() }, 30000);
+  if (SRV && SRV.on && SRV.ready) SRV.ready.then(() => { if (isStudentish()) setTimeout(() => myLoad(true), 1500) });
+  const myFb = () => (ST.my && ST.my.fb) || [];
+  function chip() {
+    const c = document.querySelector("#c2 .c2h .c2v"); if (!c) return; const L = myFb(); let b = c.querySelector("[data-v39s]"); if (!L.length && !(ST.my && ST.my.grades && ST.my.grades.length)) { if (b) b.remove(); return }
+    const n = L.filter(f => !f.read_at).length; const h = `<i>Feedback</i><b>${n ? n + " new" : L.length + " item" + (L.length === 1 ? "" : "s")}</b>`;
+    if (!b) { b = document.createElement("button"); b.className = "c2tdb v39-chip"; b.dataset.v39s = "inbox"; b.title = "Feedback and grades from your instructor"; c.appendChild(b) } if (b.innerHTML !== h) b.innerHTML = h; b.classList.toggle("new", !!n) }
+  function openInbox() {
+    const L = myFb(); const G = (ST.my && ST.my.grades) || []; const ids = L.filter(f => !f.read_at).map(f => f.id);
+    sModal(`<h3>Feedback from your instructor</h3>${L.length ? `<ul class="v39-fbl v39-my">${L.map(f => `<li class="${f.read_at ? "" : "new"}"><div><b>${esc(f.label || KL[f.kind] || "General")}</b> <span class="vxi-muted">${esc(f.author)} · ${esc(f.group || "")} · ${esc(dtm(f.updated))}</span></div>${f.score != null ? `<p class="v39-fsc">Score ${f.score}${f.max ? " / " + f.max : ""}${f.rubric ? " · " + f.rubric.map(r => esc(r.label) + " " + r.v + "/" + r.max).join(", ") : ""}</p>` : ""}${f.text ? `<p>${esc(f.text)}</p>` : ""}${goable(f) ? `<button class="lk" data-v39s="go" data-v="${esc(f.id)}">Show me where</button>` : ""}</li>`).join("")}</ul>` : `<p class="note">No feedback yet.</p>`}
+      ${G.length ? `<h4 style="margin-top:14px">Your grades</h4><div class="ehscroll"><table class="ehtbl"><thead><tr><th>Item</th><th>Grade</th><th>Group</th></tr></thead><tbody>${G.map(g => `<tr><td>${esc(g.label)}${g.cm ? `<br><small>${esc(g.cm)}</small>` : ""}</td><td><b>${esc(g.val)}</b>${g.kind === "score" || g.kind === "rubric" ? " / " + g.max : g.kind === "pct" || g.kind === "avg" ? "%" : ""}</td><td>${esc(g.group)}</td></tr>`).join("")}</tbody></table></div>` : ""}
+      <p class="fine">Only you and your instructors (and your program's admins) can see your feedback and grades.</p><div class="sbtns"><button class="btn2" data-sm="close">Done</button></div>`, "ehmod v39-mod v39-inb");
+    if (ids.length) api("/my/read", { method: "POST", body: { ids } }).then(() => { L.forEach(f => { if (ids.indexOf(f.id) >= 0) f.read_at = Date.now() }); chip() }).catch(() => { });
+  }
+  ST.load = myLoad; ST.open = openInbox;
+  const goable = f => /^(fs|mar|note|dxn|ord|lda|cp|sbar|sdoh|exam|exi|drill|dx)$/.test(String(f.ref).split(":")[0]);
+  function goTo(f) { const [k, a, b, c] = String(f.ref).split(":"); sClose();
+    if (/^(fs|mar|note|dxn|ord|lda|cp|sbar|sdoh|dx)$/.test(k)) { const act = { fs: "flow", mar: "mar", note: "notes", dxn: "notes", ord: "orders", lda: "lda", cp: "care", sbar: "summary", sdoh: "summary", dx: "notes" }[k]; ST.goto = { pid: a, act, ref: f.ref, t: k === "fs" ? +b : null, rid: k === "fs" ? c : null };
+      const H = window.__EHX && window.__EHX.get(); if (H) { if (location.hash !== "#ehr") location.hash = "#ehr"; setTimeout(() => { try { const G = window.__EHX.get(); G.X.pid = a; G.X.act = act; G.v29.draw(); if (k === "fs" && window.__vxFS) setTimeout(() => { if (!window.__vxFS.select(c, +b)) { const all = document.querySelector('#ehm .fg-tabs [data-v="all"]') || [...document.querySelectorAll("#ehm .fg-tabs button")].pop(); if (all) all.click(); setTimeout(() => { window.__vxFS.select(c, +b); inPlace() }, 250) } else inPlace() }, 200) } catch (e) { } }, location.hash === "#ehr" ? 30 : 500) } return }
+    if (k === "exam" || k === "exi") { try { const H = store.get(K.hist, []); const r = H.find(x => String(x.id) === String(a)); if (r && typeof renderResults === "function") { location.hash = ""; setTimeout(() => { renderResults(r); setTimeout(inPlace, 200) }, 50) } else toast("That exam isn't on this device yet.") } catch (e) { } return }
+    if (k === "drill") { toast("Open the drill's patient chart and its Debrief to see this feedback in place.") } }
+  document.addEventListener("click", e => { const b = e.target.closest && e.target.closest("[data-v39s]"); if (!b) return; const k = b.dataset.v39s; if (k === "inbox") { e.preventDefault(); myLoad(true).then(openInbox); return } if (k === "go") { const f = myFb().find(x => x.id === b.dataset.v); if (f) goTo(f); return } if (k === "pin") { const f = myFb().find(x => x.id === b.dataset.v); if (f) fbPop(b, f) } });
+  function fbPop(anchor, f) { document.querySelectorAll(".v39-pop").forEach(x => x.remove()); const d = document.createElement("div"); d.className = "v39-pop"; d.setAttribute("role", "dialog"); d.innerHTML = `<b>${esc(f.author)}</b> <span class="vxi-muted">${esc(dtm(f.updated))}</span>${f.score != null ? `<p class="v39-fsc">Score ${f.score}${f.max ? " / " + f.max : ""}</p>` : ""}<p>${esc(f.text || "")}</p><button class="lk" data-v39x="1">Close</button>`; document.body.appendChild(d); const r = anchor.getBoundingClientRect(); d.style.top = Math.min(window.innerHeight - 160, r.bottom + 6) + window.scrollY + "px"; d.style.left = Math.max(8, Math.min(window.innerWidth - 300, r.left)) + "px"; d.addEventListener("click", e => { if (e.target.closest("[data-v39x]")) d.remove() }); setTimeout(() => document.addEventListener("click", function h(ev) { if (!d.contains(ev.target)) { d.remove(); document.removeEventListener("click", h) } }), 0);
+    if (!f.read_at) api("/my/read", { method: "POST", body: { ids: [f.id] } }).then(() => { f.read_at = Date.now(); chip() }).catch(() => { }) }
+  /* in place: flowsheet cells, MAR doses, notes, exam items, drill debriefs, plus a card on the EHR activity */
+  const ACTK = { flow: ["fs"], mar: ["mar"], notes: ["note", "dxn", "dx"], orders: ["ord"], lda: ["lda"], care: ["cp"], summary: ["sbar", "sdoh", "cp", "dx"] };
+  function inPlace() {
+    const L = myFb(); if (!L.length) return;
+    const H = window.__EHX && (() => { try { return window.__EHX.get() } catch (e) { return null } })();
+    if (H && view === "ehr" && H.X.pid && document.getElementById("ehm")) {
+      const pid = H.X.pid, act = H.X.act; const mine = L.filter(f => String(f.ref).split(":")[1] === pid || f.pid === pid);
+      mine.forEach(f => { const [k, a, b, c] = String(f.ref).split(":"); let el = null;
+        if (k === "fs") el = document.querySelector(`#ehm td[data-r="${CSS.escape(c)}"][data-t="${CSS.escape(b)}"]`);
+        else if (k === "mar") el = document.querySelector(`#ehm [data-ex="viewadm"][data-v="${CSS.escape(b)}"]`);
+        else if (k === "note" || k === "dxn") { const x = document.querySelector(`#ehm [data-ex="delnote"][data-v="${CSS.escape(b)}"]`); el = x && (x.closest("li,article,.ehnote,section") || x.parentElement) }
+        if (el && !el.classList.contains("v39-fbm")) { el.classList.add("v39-fbm"); el.setAttribute("data-v39fb", f.id); const t = el.getAttribute("title") || ""; el.setAttribute("title", (t ? t + " · " : "") + "Instructor feedback: " + (f.text || "")) } });
+      const keys = ACTK[act] || []; const here = mine.filter(f => keys.indexOf(String(f.ref).split(":")[0]) >= 0 || (act === "summary" && f.kind === "general"));
+      const old = document.getElementById("v39fbc"); if (old) old.remove();
+      if (here.length) { const host = document.querySelector("#ehm .ehgrid") || document.querySelector("#ehm main") || document.getElementById("ehm"); const s = document.createElement("section"); s.className = "ehcard v39fbc"; s.id = "v39fbc"; const un = here.filter(f => !f.read_at).length;
+        s.innerHTML = `<h3>${sv("msg", 16)} Instructor feedback${un ? ` <b class="ehbadge">${un} new</b>` : ""}</h3><ul class="v39-fbl sm">${here.slice(0, 8).map(f => `<li class="${f.read_at ? "" : "new"}"><div><b>${esc(f.label || KL[f.kind] || "")}</b> <span class="fine">${esc(f.author)} · ${esc(dtm(f.updated))}</span></div>${f.score != null ? `<p class="v39-fsc">Score ${f.score}${f.max ? " / " + f.max : ""}</p>` : ""}<p>${esc(f.text || "")}</p>${String(f.ref).startsWith("fs:") ? `<button class="lk" data-v39s="go" data-v="${esc(f.id)}">Show the cell</button>` : ""}</li>`).join("")}</ul>`;
+        host.insertAdjacentElement("afterbegin", s); const ids = here.filter(f => !f.read_at && !ST.seen.has(f.id)).map(f => f.id); if (ids.length) { ids.forEach(i => ST.seen.add(i)); setTimeout(() => api("/my/read", { method: "POST", body: { ids } }).then(() => { here.forEach(f => { if (ids.indexOf(f.id) >= 0) f.read_at = Date.now() }); chip() }).catch(() => { }), 2500) } }
+    }
+    if (view === "results" && typeof curRec !== "undefined" && curRec) {
+      const id = String(curRec.id); const ex = L.filter(f => f.ref === "exam:" + id); const it = L.filter(f => String(f.ref).startsWith("exi:" + id + ":"));
+      if ((ex.length || it.length) && !document.getElementById("v39exc")) { const host = document.getElementById("rvlist"); if (host) { const s = document.createElement("section"); s.className = "v39exc"; s.id = "v39exc"; s.innerHTML = `<h3>${sv("msg", 16)} Instructor feedback on this exam</h3><ul class="v39-fbl sm">${ex.concat(it).map(f => `<li><b>${esc(f.label || "")}</b> <span class="fine">${esc(f.author)}</span>${f.score != null ? `<p class="v39-fsc">Score ${f.score}${f.max ? " / " + f.max : ""}</p>` : ""}<p>${esc(f.text || "")}</p></li>`).join("")}</ul>`; host.insertAdjacentElement("beforebegin", s) } }
+      document.querySelectorAll("#rvlist details.rv[data-i]").forEach(d => { const x = curRec.items[+d.dataset.i]; if (!x) return; const F = it.filter(f => f.ref === "exi:" + id + ":" + x.id); if (!F.length) return; const sm = d.querySelector("summary"); if (sm && !sm.querySelector(".v39-pin")) sm.insertAdjacentHTML("beforeend", `<span class="v39-pin" title="Instructor feedback">${sv("msg", 13)} Feedback</span>`); const bd = d.querySelector(".body"); if (bd && bd.innerHTML && !bd.querySelector(".v39-ifb")) bd.insertAdjacentHTML("afterbegin", `<div class="v39-ifb abox">${F.map(f => `<b>${esc(f.author)}:</b> ${esc(f.text || "")}${f.score != null ? " (" + f.score + (f.max ? "/" + f.max : "") + ")" : ""}`).join("<br>")}</div>`) });
+    }
+    document.querySelectorAll(".smod h3").forEach(h => { if (!/^Debrief ·/.test(h.textContent || "")) return; const md = h.closest(".smod"); if (!md || md.querySelector(".v39-dbf")) return; const F = L.filter(f => f.kind === "drill"); if (!F.length) return; h.insertAdjacentHTML("afterend", `<div class="v39-dbf abox"><b>${sv("msg", 14)} Instructor feedback on your drills</b><ul class="v39-fbl sm">${F.slice(0, 4).map(f => `<li><b>${esc(f.label || "Drill")}</b> <span class="fine">${esc(f.author)} · ${esc(dtm(f.updated))}</span>${f.score != null ? `<p class="v39-fsc">Score ${f.score}${f.max ? " / " + f.max : ""}${f.rubric ? " · " + f.rubric.map(r => esc(r.label) + " " + r.v + "/" + r.max).join(", ") : ""}</p>` : ""}<p>${esc(f.text || "")}</p></li>`).join("")}</ul></div>`) });
+  }
+  /* plain notice for students in a clinical group: instructors see all practice charting (not only charts shared with the group) */
+  function visNote() { const X = E(); if (!X || !X.scGroups || !X.scGroups().length) return; document.querySelectorAll("#app .shc, #app .schc").forEach(c => { if (c.querySelector(".v39-vis")) return; const p = document.createElement("p"); p.className = "fine v39-vis"; p.textContent = "Your clinical instructors can see all of your practice charting."; c.appendChild(p) }) }
+  { const POST = window.__EHXpost = window.__EHXpost || []; POST.push(() => { try { visNote(); if (ST.my) inPlace() } catch (e) { } }) }
+  new MutationObserver(() => { clearTimeout(ST.mt); ST.mt = setTimeout(() => { try { visNote(); if (ST.my) { chip(); inPlace() } } catch (e) { } }, 120) }).observe(document.getElementById("app") || document.body, { childList: true, subtree: true });
+  document.addEventListener("toggle", e => { const d = e.target; if (d && d.classList && d.classList.contains("rv") && d.open) setTimeout(inPlace, 0) }, true);
+  LQ.push({ id: "v39-myfb", group: "chart", order: 4, icon: "bell", label: "Feedback from my instructor", hint: "Comments, scores and grades", run: () => myLoad(true).then(openInbox), roles: ["in"], keys: "feedback instructor comments grades inbox", when: () => !!(ST.my && ((ST.my.fb || []).length || (ST.my.grades || []).length)) });
+  if (window.__vxLaunch && window.__vxLaunch.add) { try { LQ.splice(0).forEach(x => window.__vxLaunch.add(x)) } catch (e) { } }
+  if (typeof deepLink === "function") { const _d = deepLink; deepLink = function (k) { if (k === "feedback") { setTimeout(() => { location.hash = "#progress"; setTimeout(() => myLoad(true).then(openInbox), 900) }, 0); return true } return _d.apply(this, arguments) } }
+  /* lightweight event feed: megacode, bedside rounds, topic drills / daily rounds, Review Book chapters (things progress sync doesn't carry) */
+  const EVQ = []; let evT = 0; const inGroup = () => { const X = E(); return !!(X && X.scGroups && X.scGroups().length) };
+  function ev(k, ref, label, sc, d) { if (!isStudentish() || !inGroup()) return; EVQ.push({ k, ref, label, sc, d }); clearTimeout(evT); evT = setTimeout(() => { const L = EVQ.splice(0, 25); if (L.length) api("/ev", { method: "POST", body: { ev: L }, keepalive: true }).catch(() => { }) }, 2000) }
+  window.__vx39ev = ev;
+  if (typeof telePush === "function") { const _tp = telePush; telePush = function (kind, rec) { const r = _tp.apply(this, arguments); try { if (kind === "codes") ev("code", "code:" + rec.id, "Megacode · " + (rec.key || "") + " · " + (rec.out || ""), rec.pct, { key: rec.key, out: rec.out }); if (kind === "rounds") ev("rounds", "rounds:" + rec.id, "Bedside rounds · " + (rec.kind === "win" ? "patient stabilized" : rec.kind || "ended"), rec.kind === "win" ? 100 : 0, { sc: rec.sc, t: rec.t }) } catch (e) { } return r } }
+  if (typeof finishPractice === "function") { const _fp = finishPractice; finishPractice = function () { let snap = null; try { if (typeof D !== "undefined" && D && D.ids) snap = { mode: D.mode, key: D.key, n: D.ids.length, sc: D.scores.length ? Math.round(D.scores.reduce((a, b) => a + b, 0) / D.ids.length * 100) : null, items: D.ids.slice(0, 60).map((id, i) => ({ id, s: D.scores[i] })) } } catch (e) { } const r = _fp.apply(this, arguments); try { if (snap) ev("practice", "practice:" + Date.now(), ({ qotd: "Question of the day", daily: "Daily rounds", drill: "Topic drill" }[snap.mode] || "Practice set") + " · " + snap.n + " questions", snap.sc, snap) } catch (e) { } return r } }
+  setInterval(() => { try { const v = localStorage.getItem("vxbk.last"); if (v && v !== ST.bk) { const first = ST.bk === undefined; ST.bk = v; if (!first) { const o = JSON.parse(v) || {}; ev("book", "book:" + (o.ch || "") + ":" + (o.p || ""), "Review book · chapter " + (o.ch || "") + (o.p ? " page " + o.p : ""), null, o) } } else if (ST.bk === undefined) ST.bk = v } catch (e) { } }, 15000);
+}
+/* </v39-instr-js> */
 /* <v22-daily-js> */
 /* <v22-daily-js> Daily AI questions + owner spot-check queue.
    Insert INSIDE the app's main IIFE in app.html (BANK/BY/itemHTML/qflagL are IIFE-scoped, not globals): directly after
