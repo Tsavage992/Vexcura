@@ -1,0 +1,11 @@
+# Never commit secrets or keys
+.adminkey
+**/.adminkey
+*.key
+*.pem
+.env
+.env.*
+**/secret*
+*secret*.txt
+*.pubkey
+GH_TOKEN*
