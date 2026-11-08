@@ -4429,6 +4429,18 @@ li.eie{opacity:.65}.vxv-site.eie{opacity:.6}
 .v39-days{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin:-4px 0 12px}
 .v39-vis{margin-top:6px;color:var(--muted)}
 /* </v39-instr-css> */
+/* <v42-harden-css> */
+/* v42 client hardening CSS (defensive, layout-neutral). The functional fix in this release is JS/worker-side
+   (CSV formula-injection guard); this file exists to keep the v42-harden-css marker paired with v42-harden-js
+   and carries only harmless, defensive rules. */
+
+/* Keep decrypted image previews and any embedded file preview inside their container (defense in depth: a
+   crafted image can't push page chrome off-screen to spoof UI around a sensitive file). */
+.vxv-pv img, .vxv-pv svg, .v39 .v39-pv img { max-width: 100%; height: auto; }
+
+/* The confidential watermark stamped onto previews must stay visible even if a stylesheet tries to hide it. */
+.vxv-wm { opacity: 1 !important; visibility: visible !important; }
+/* </v42-harden-css> */
 .areqp{border:1px solid var(--line,#cfd8e0);border-radius:10px;padding:10px 14px 4px;margin:6px 0 10px}.areqp legend{font-weight:700;padding:0 6px}.agrid input[type=date],.agrid input[type=month]{width:100%;min-width:0;max-width:100%;box-sizing:border-box;-webkit-appearance:none;appearance:none}.agrid .aip{min-width:0;max-width:100%}
 </style>
 
@@ -4441,7 +4453,7 @@ const BANK = (function(e){try{const P=">oVO^cd@ge#lJ'~wUTDiEY+LZx-K&hkt(/F0;G`N.
 let HIDQ=new Set();const CFG={c:null,bypass:false};try{const c=JSON.parse(localStorage.getItem("ns.cfg")||"null");if(c&&typeof c==="object"){CFG.c=c;HIDQ=new Set(c.hideQ||[])}}catch(e){}
 const featOn=k=>!CFG.c||!CFG.c.feat||CFG.c.feat[k]!==false;
 
-const APPV="108cc97c2cba1a3a72daee3dc3d1315bd4e26355d7185dc0dbfc95b1a0a7230f";
+const APPV="62edd8f081f4725d038d03bee5fd0126a4cf3d2a7bb50fa10aa5f9b5cc3b115a";
 const CATS={
   MOC:{n:"Management of Care",lo:15,hi:21,w:18},
   SIC:{n:"Safety and Infection Prevention and Control",lo:10,hi:16,w:13},
@@ -7220,7 +7232,7 @@ function adxClick(k,b,e){
   if(k==="upick"){if(b.checked)ADM.pick.add(b.value);else ADM.pick.delete(b.value);adxBulkBar();e.stopPropagation();return}
   if(k==="bk"){adxBulkRun(b.dataset.v);return}
   if(k==="uassign"||k==="umsg"){ADM.pick=new Set([b.dataset.v]);ADM.amode=k==="umsg"?"message":"order";ADM.ato="pick";ADM.tab="assign";drawAdmin();srvTabs();window.scrollTo(0,0);return}
-  if(k==="audcsv"){const t=document.querySelector("#adm table");if(!t)return;const q=v=>'"'+String(v).replace(/\s+/g," ").trim().replace(/"/g,'""')+'"';const rows=[...t.querySelectorAll("tr")].filter(r=>!r.hidden).map(r=>[...r.children].map(c=>q(c.textContent)).join(","));const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([rows.join("\n")],{type:"text/csv"}));a.download="vexcura-audit-"+new Date().toISOString().slice(0,10)+".csv";document.body.appendChild(a);a.click();a.remove();return}}
+  if(k==="audcsv"){const t=document.querySelector("#adm table");if(!t)return;const q=v=>{v=String(v).replace(/\s+/g," ").trim();if(/^[=+\-@\t\r]/.test(v))v="'"+v;return '"'+v.replace(/"/g,'""')+'"'};const rows=[...t.querySelectorAll("tr")].filter(r=>!r.hidden).map(r=>[...r.children].map(c=>q(c.textContent)).join(","));const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([rows.join("\n")],{type:"text/csv"}));a.download="vexcura-audit-"+new Date().toISOString().slice(0,10)+".csv";document.body.appendChild(a);a.click();a.remove();return}}
 /* checkbox clicks inside clickable rows shouldn't open the profile */
 document.addEventListener("click",e=>{const td=e.target.closest&&e.target.closest("td.adx-cb,th.adx-cb");if(!td)return;e.stopPropagation();let i=e.target.matches("input")?e.target:td.querySelector("input");if(!i)return;if(i!==e.target)i.checked=!i.checked;adxClick(i.dataset.adx,i,e)},true);
 
@@ -9208,7 +9220,7 @@ zolpidem|Sedative-hypnotic|PO||Ambien`;
     const body={student:r.mb.id,pid:r.e[1].data.id,score,comment:(q("comment")||{}).value||"",released:!!(q("released")||{}).checked,detail:r.auto?{auto:r.auto.total,S:r.auto.S,rub:r.auto.rub}:null};
     try{await cxApi("assign/"+encodeURIComponent(CX.gr.aid)+"/grade",{method:"PUT",body});const A=CX.asg[TV.gid];A.grades=(A.grades||[]).filter(g=>!(g.aid===CX.gr.aid&&g.sid===r.mb.id));A.grades.push({aid:CX.gr.aid,sid:r.mb.id,pid:body.pid,score,comment:body.comment,released:body.released,at:Date.now()});r.g=A.grades[A.grades.length-1];
       if(!quiet){const b=document.querySelector(`[data-cx="gsave"][data-v="${i}"]`);if(b){b.textContent="Saved ✓";setTimeout(()=>{b.textContent="Save"},1800)}}return true}catch(e){alertBox(e.message||"Couldn't save the grade.");return false}}
-  function gCSV(){const R=CX.gr.rows;const q=(i,f)=>{const e=document.querySelector(`[data-gi="${i}"][data-f="${f}"]`);return e?(e.type==="checkbox"?(e.checked?"yes":"no"):e.value):""};const c=v=>{v=String(v==null?"":v);return /[",\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v};
+  function gCSV(){const R=CX.gr.rows;const q=(i,f)=>{const e=document.querySelector(`[data-gi="${i}"][data-f="${f}"]`);return e?(e.type==="checkbox"?(e.checked?"yes":"no"):e.value):""};const c=v=>{v=String(v==null?"":v);if(/^[=+\-@\t\r]/.test(v))v="'"+v;return /[",\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v};
     const head=["Student","Email","Case",...CJ.map(([,l])=>l),"Auto score","Final score","Comment","Released"];
     const lines=[head.map(c).join(",")].concat(R.map((r,i)=>[r.mb.name||"",r.mb.email||"",CX.gr.title,...CJ.map(([k])=>r.auto?r.auto.S[k]:""),r.auto?r.auto.total:"",r.e?q(i,"score"):"",r.e?q(i,"comment"):"",r.e?q(i,"released"):""].map(c).join(",")));
     const b=new Blob(["\ufeff"+lines.join("\r\n")],{type:"text/csv"});const u=URL.createObjectURL(b);const a=document.createElement("a");a.href=u;a.download=("Vexcura-grades-"+CX.gr.title).replace(/[^A-Za-z0-9-]+/g,"-").slice(0,80)+".csv";document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),4000)}
@@ -9285,7 +9297,7 @@ zolpidem|Sedative-hypnotic|PO||Ambien`;
     if(a==="open"){rosterModal();return}
     if(a==="link"){const r=RS.rows.find(x=>x.email===v);const t=invLink(g.code,r);try{await navigator.clipboard.writeText(t);b.textContent="Copied ✓"}catch(x){sModal(`<h3>Sign-up link</h3><p class="mono allow-copy">${esc(t)}</p><div class="sbtns"><button class="btn2 sec2" data-rs="open">Back</button></div>`)}return}
     if(a==="del"){try{await srvApi("/api/roster/"+encodeURIComponent(RS.gid)+"/"+encodeURIComponent(v),{method:"DELETE"})}catch(x){}rosterModal();return}
-    if(a==="csv"){const c=s=>{s=String(s==null?"":s);return /[",\n]/.test(s)?'"'+s.replace(/"/g,'""')+'"':s};const L=[["Name","Email","Student ID","Status","Personal sign-up link"].join(",")].concat(RS.rows.map(r=>[r.name,r.email,r.sid,r.joined?"Joined":"Not joined",r.joined?"":invLink(g.code,r)].map(c).join(",")));
+    if(a==="csv"){const c=s=>{s=String(s==null?"":s);if(/^[=+\-@\t\r]/.test(s))s="'"+s;return /[",\n]/.test(s)?'"'+s.replace(/"/g,'""')+'"':s};const L=[["Name","Email","Student ID","Status","Personal sign-up link"].join(",")].concat(RS.rows.map(r=>[r.name,r.email,r.sid,r.joined?"Joined":"Not joined",r.joined?"":invLink(g.code,r)].map(c).join(",")));
       const u=URL.createObjectURL(new Blob(["﻿"+L.join("\r\n")],{type:"text/csv"}));const x=document.createElement("a");x.href=u;x.download=("Vexcura-roster-"+g.name).replace(/[^A-Za-z0-9-]+/g,"-")+".csv";document.body.appendChild(x);x.click();x.remove();setTimeout(()=>URL.revokeObjectURL(u),4000);return}
   });
   document.addEventListener("submit",async e=>{const f=e.target.closest("[data-rsf]");if(!f)return;e.preventDefault();let t=f.elements.t.value;const file=f.elements.f.files&&f.elements.f.files[0];if(file){if(file.size>2e6){alertBox("That file is too large. Use a CSV under 2 MB.");return}t+="\n"+await file.text()}
@@ -9643,7 +9655,7 @@ zolpidem|Sedative-hypnotic|PO||Ambien`;
     }catch(x){inl(x.message||"Couldn't save.")}});
 
   /* ======== v11: program data export ======== */
-  const csvC=s=>{s=String(s==null?"":s);return /[",\n]/.test(s)?'"'+s.replace(/"/g,'""')+'"':s};
+  const csvC=s=>{s=String(s==null?"":s);if(/^[=+\-@\t\r]/.test(s))s="'"+s;return /[",\n]/.test(s)?'"'+s.replace(/"/g,'""')+'"':s};
   const dlBlob=(txt,name,type)=>{const u=URL.createObjectURL(new Blob([txt],{type}));const a=document.createElement("a");a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),4000)};
   document.addEventListener("click",async e=>{const b=e.target.closest&&e.target.closest("[data-ops]");if(!b)return;e.preventDefault();const k=b.dataset.ops,sid=b.dataset.v;b.disabled=true;
     try{const d=await srvApi("/api/ops/export/"+sid);const base=("Vexcura-"+(d.school.short||d.school.name)+"-"+new Date().toISOString().slice(0,10)).replace(/[^A-Za-z0-9-]+/g,"-");
@@ -17862,6 +17874,27 @@ const REGS_ENGINE = (() => {
 }
 }
 /* </v37-regs-js> */
+/* <v42-harden-js> */
+{
+/* v42 client hardening (defensive only). Inserted inside the app IIFE as a block, so these consts stay block-scoped.
+   The substantive fix in this release is the CSV formula/DDE-injection guard applied to the four client-side CSV
+   builders (audit export, case gradebook export, roster export, program-data export) by patches/hardening-apply.js.
+   This block publishes the canonical guarded cell-escaper so any future client CSV uses one tested implementation,
+   and it is harmless if called more than once. See security/CODE-REVIEW-2026-11.md finding M-1. */
+try {
+  /* Neutralize spreadsheet formula / DDE execution: a cell beginning with = + - @ TAB or CR is prefixed with an
+     apostrophe (the same rule the worker uses in ats.js / scores.js / sec.js and the vault audit export), then
+     normal CSV quoting is applied. Use window.__vxCsvCell(value) when building any CSV on the client. */
+  if (!window.__vxCsvCell) {
+    window.__vxCsvCell = function (v) {
+      var s = v == null ? "" : String(v);
+      if (/^[=+\-@\t\r]/.test(s)) s = "'" + s;
+      return /[",\n\r]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
+    };
+  }
+} catch (e) { /* non-fatal: CSV builders carry their own inline guard after hardening-apply.js */ }
+}
+/* </v42-harden-js> */
 /* <v40-sec-js> */
 {
 /* v40 Security Center content (plain language). Facts verified 2026-11-06; see security/AUDIT-2026-11.md for sources. */
