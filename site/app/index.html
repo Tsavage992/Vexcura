@@ -4656,6 +4656,26 @@ li.eie{opacity:.65}.vxv-site.eie{opacity:.6}
 /* bold shift-change dividers at 07:00 and 19:00 (day/night boundaries), in the user's theme color */
 .vxbr thead th.vxbr-th.sb{border-left:3px solid var(--vb-acc);box-shadow:inset 2px 0 0 var(--vb-acc)}
 .vxbr tbody td.vxbr-tc.sb{border-left:3px solid var(--vb-acc)}
+/* hour-cell task icons (meds = mortar & pestle, charting = flowsheet) with a count + click-to-open popover */
+.vxbr-ic{display:inline-flex;align-items:center;gap:3px;margin:2px;padding:3px 7px 3px 5px;border-radius:7px;border:1px solid var(--vb-line);background:#fff;cursor:pointer;vertical-align:top;color:var(--vb-ink);line-height:1}
+.vxbr-ic svg{width:17px;height:17px;flex:0 0 auto}
+.vxbr-ic i{font:800 12px var(--f-body,inherit);font-style:normal}
+.vxbr-ic:hover{filter:brightness(.97);box-shadow:0 1px 3px rgba(10,30,40,.12)}
+.vxbr-ic.st-overdue{border-color:#e4b4b1;background:#fdecea;color:#8c1d18}
+.vxbr-ic.st-due{border-color:#e4c57b;background:#fdf4e0;color:#8a5a00}
+.vxbr-ic.st-given{border-color:#bfe0cb;background:#edf7f0;color:#1f6b45}
+.vxbr-ic.st-sched{border-color:#d6dde2;background:#f4f7f9;color:var(--vb-mut)}
+.vxbr-cpop{position:absolute;z-index:40;background:#fff;border:1px solid var(--vb-line);border-radius:11px;box-shadow:0 10px 30px -6px rgba(10,30,40,.3);min-width:224px;max-width:320px;padding:6px 6px 4px;font:13px var(--f-body,inherit);color:var(--vb-ink)}
+.vcp-hd{display:flex;align-items:center;gap:7px;padding:5px 6px 7px;border-bottom:1px solid var(--vb-line)}
+.vcp-hd svg{width:17px;height:17px;color:var(--vb-acc)}.vcp-hd b{font-size:13.5px}.vcp-hd small{color:var(--vb-mut);margin-left:auto;font-weight:600}
+.vcp-hd .vp-x{background:none;border:0;font-size:17px;line-height:1;cursor:pointer;color:var(--vb-mut);padding:0 2px}
+.vxbr-cpop ul{list-style:none;margin:4px 0 2px;padding:0;max-height:260px;overflow:auto}
+.vcp-i{display:flex;width:100%;gap:8px;align-items:center;text-align:left;background:none;border:0;padding:7px 8px;border-radius:7px;cursor:pointer;font:600 13px var(--f-body,inherit);color:var(--vb-ink)}
+.vcp-i:hover{background:var(--vb-head)}.vcp-i[disabled]{cursor:default;opacity:.7}
+.vcp-i .vcp-t{display:flex;align-items:center;gap:5px}.vcp-i .vxbr-ck{width:13px;height:13px;color:#1f6b45}
+.vcp-i i{margin-left:auto;font-style:normal;font-weight:700;font-size:11px;white-space:nowrap}
+.vcp-i.st-overdue i{color:#8c1d18}.vcp-i.st-due i,.vcp-i.st-reassess i{color:#8a5a00}.vcp-i.st-given{color:#1f6b45}
+.vcp-ft{color:var(--vb-mut);font-size:11.5px;padding:4px 8px 4px;border-top:1px solid var(--vb-line);margin-top:2px}
 /* sticky patient column */
 .vxbr tbody td.vxbr-ptc{position:sticky;left:0;z-index:3;width:244px;min-width:244px;max-width:244px;background:var(--vb-pt);border-right:2px solid var(--vb-line);padding:8px 10px 9px}
 .vxbr-pt{display:block;width:100%;text-align:left;cursor:pointer;background:none;border:0;padding:0;margin:0;font:inherit;color:inherit}
@@ -5274,7 +5294,7 @@ const BANK = (function(e){try{const P=">oVO^cd@ge#lJ'~wUTDiEY+LZx-K&hkt(/F0;G`N.
 let HIDQ=new Set();const CFG={c:null,bypass:false};try{const c=JSON.parse(localStorage.getItem("ns.cfg")||"null");if(c&&typeof c==="object"){CFG.c=c;HIDQ=new Set(c.hideQ||[])}}catch(e){}
 const featOn=k=>!CFG.c||!CFG.c.feat||CFG.c.feat[k]!==false;
 
-const APPV="b27aa60ed4269c2875aae2df1734966bbfeda4ff7c2ef8d9038aecfff327dcf6";
+const APPV="98ff32d597c82506fad526423c9869fa1b2ce0fb76303f3d9343b06bcb9b5951";
 const CATS={
   MOC:{n:"Management of Care",lo:15,hi:21,w:18},
   SIC:{n:"Safety and Infection Prevention and Control",lo:10,hi:16,w:13},
@@ -21455,6 +21475,8 @@ const SECX = (() => {
   const CK = '<svg class="vxbr-ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>';
   const CKS = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:7px;height:7px"><path d="M5 12l4 4 10-10"/></svg>';
   const CLOCK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
+  const MORTAR = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11h16"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0"/><path d="M12 17.5v2.5M8.5 20h7"/><path d="M14.4 4.3 19 8.9"/><circle cx="13.9" cy="3.9" r="1.05" fill="currentColor" stroke="none"/></svg>';
+  const FLOWI = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="15" rx="1.6"/><path d="M3.5 9.2h17M3.5 14.2h17M9 4.5v15"/></svg>';
   const NCOLS = 12;
   const SYS = [["neuro", "Neuro"], ["cardiac", "Cardiac"], ["resp", "Respiratory"], ["gi", "GI"], ["gu", "GU"], ["skin", "Skin"], ["msk", "Activity / mobility"], ["safety", "Safety"], ["psych", "Psychosocial"]];
 
@@ -21565,11 +21587,13 @@ const SECX = (() => {
         <span class="vxbr-al ${al.length ? "" : "nka"}">${al.length ? "Allergies: " + al.map(a => e_(a.name)).join(", ") : "No Known Allergies"}</span>
       </button><div class="vxbr-flags"><button type="button" class="vxbr-ord" data-vb-go="orders" data-vb-pid="${e_(p.id)}" title="Open orders">Orders${nOrd ? ` <b>${nOrd}</b>` : ""}${prn ? ` <i>PRN ${prn}</i>` : ""}</button>${flag("A")}${flag("S")}${flag("D")}</div></td>`;
       const prior = `<td class="vxbr-tc" style="text-align:center">${B.prior ? `<span class="vxbr-prioc" title="${B.prior} item(s) carried over / overdue from before this shift">${B.prior}</span>` : ""}</td>`;
+      const grpSt = arr => arr.some(x => x.c === "overdue") ? "overdue" : arr.some(x => x.c === "due" || x.c === "reassess") ? "due" : (arr.length && arr.every(x => x.c === "given")) ? "given" : "sched";
       const cells = cols.map(h => {
         const L = (B.byHour[h] || []); const cls = (h === nowHp ? "now" : (h < nowHp ? "past" : "")) + (isSB(h) ? " sb" : "");
-        if (!L.length) return `<td class="vxbr-tc ${cls}">${h === nowHp ? '<span class="vxbr-empty">—</span>' : ""}</td>`;
-        const show = L.slice(0, 3); const extra = L.length - show.length;
-        return `<td class="vxbr-tc ${cls}">${show.map(x => `<button type="button" class="vxbr-c c-${e_(x.c)}" ${x.go ? `data-vb-go="${e_(x.go)}" data-vb-pid="${e_(p.id)}"` : "disabled"} title="${e_(x.t)}${STLAB[x.c] ? " — " + STLAB[x.c] : ""}">${x.c === "given" ? CK : ""}${e_(x.t)}${STLAB[x.c] ? ` <i>${STLAB[x.c]}</i>` : ""}</button>`).join("")}${extra > 0 ? `<span class="vxbr-more">+${extra} more</span>` : ""}</td>`;
+        const meds = L.filter(x => x.go === "mar"), chart = L.filter(x => x.go === "flow");
+        if (!meds.length && !chart.length) return `<td class="vxbr-tc ${cls}">${h === nowHp ? '<span class="vxbr-empty">—</span>' : ""}</td>`;
+        const icon = (kind, arr, svg, label) => arr.length ? `<button type="button" class="vxbr-ic st-${grpSt(arr)}" data-vb-cell="${kind}" data-vb-h="${h}" data-vb-pid="${e_(p.id)}" title="${arr.length} ${label}${arr.length === 1 ? "" : "s"} at ${e_(hh(h))} — click to view" aria-label="${arr.length} ${label}${arr.length === 1 ? "" : "s"} at ${e_(hh(h))}">${svg}<i>${arr.length}</i></button>` : "";
+        return `<td class="vxbr-tc ${cls}">${icon("med", meds, MORTAR, "medication")}${icon("chart", chart, FLOWI, "charting task")}</td>`;
       }).join("");
       return `<tr>${ptCell}${prior}${cells}</tr>`;
     }).join("");
@@ -21581,7 +21605,24 @@ const SECX = (() => {
   /* ---- navigator popover ---- */
   let pop = null;
   function closePop() { if (pop) { pop.remove(); pop = null } document.removeEventListener("click", outside, true); }
-  function outside(e) { if (pop && !pop.contains(e.target) && !e.target.closest("[data-vb-nav]")) closePop() }
+  function outside(e) { if (pop && !pop.contains(e.target) && !e.target.closest("[data-vb-nav]") && !e.target.closest("[data-vb-cell]")) closePop() }
+  /* ---- cell popover: the due medications / charting tasks behind an hour-cell icon ---- */
+  function openCellPop(anchor, pid, kind, h) {
+    const E = EH(); if (!E) return; const p = E.db().patients.find(x => x.id === pid); if (!p) return;
+    const S = shiftOf(E, p); const B = brainEvents(E, p, S);
+    const L = (B.byHour[h] || []).filter(x => kind === "med" ? x.go === "mar" : x.go === "flow"); if (!L.length) return;
+    closePop();
+    const hlab = E.hhmm((((h % 24) + 24) % 24) * 60).replace(":", "");
+    const li = x => `<li><button type="button" class="vcp-i st-${e_(x.c)}" ${x.go ? `data-vb-go="${e_(x.go)}" data-vb-pid="${e_(pid)}"` : "disabled"}><span class="vcp-t">${x.c === "given" ? CK : ""}${e_(x.t)}</span>${STLAB[x.c] ? `<i>${e_(STLAB[x.c])}</i>` : ""}</button></li>`;
+    const el = document.createElement("div"); el.id = "vxbr-cpop"; el.className = "vxbr-cpop";
+    el.innerHTML = `<div class="vcp-hd">${kind === "med" ? MORTAR : FLOWI}<b>${kind === "med" ? "Medications" : "Charting"}</b><small>${e_(hlab)}</small><button type="button" class="vp-x" data-vb-x="1" aria-label="Close">×</button></div><ul>${L.map(li).join("")}</ul><div class="vcp-ft">Click an item to open the ${kind === "med" ? "MAR" : "flowsheet"}. Practice only.</div>`;
+    document.body.appendChild(el);
+    const r = anchor.getBoundingClientRect(); const w = el.offsetWidth, hgt = el.offsetHeight;
+    let left = r.left + window.scrollX + r.width / 2 - w / 2; if (left + w > window.scrollX + document.documentElement.clientWidth - 8) left = window.scrollX + document.documentElement.clientWidth - w - 8;
+    let top = r.bottom + window.scrollY + 6; if (top + hgt > window.scrollY + document.documentElement.clientHeight - 8 && r.top - hgt - 6 > 0) top = r.top + window.scrollY - hgt - 6;
+    el.style.left = Math.max(8, left) + "px"; el.style.top = top + "px"; pop = el;
+    setTimeout(() => document.addEventListener("click", outside, true), 0);
+  }
   function openPop(anchor, pid, which) {
     const E = EH(); if (!E) return; const p = E.db().patients.find(x => x.id === pid); if (!p) return;
     const S = shiftOf(E, p); const items = navItems(E, p, S, which); const st = navState(items);
@@ -21612,6 +21653,8 @@ const SECX = (() => {
       if (e.target.closest("[data-vb-x]")) { closePop(); return }
       const nav = e.target.closest("[data-vb-nav]");
       if (nav && !e.target.closest("[data-vb-chk]")) { e.preventDefault(); e.stopPropagation(); const pid = nav.dataset.vbPid, which = nav.dataset.vbNav; if (pop && pop.dataset.for === pid + which) { closePop(); return } openPop(nav, pid, which); if (pop) pop.dataset.for = pid + which; return }
+      const cell = e.target.closest("[data-vb-cell]");
+      if (cell) { e.preventDefault(); e.stopPropagation(); const pid = cell.dataset.vbPid, kind = cell.dataset.vbCell, h = +cell.dataset.vbH; const key = pid + kind + h; if (pop && pop.dataset.for === key) { closePop(); return } openCellPop(cell, pid, kind, h); if (pop) pop.dataset.for = key; return }
       const go = e.target.closest("[data-vb-go]");
       if (go) { e.preventDefault(); closePop(); E.go(go.dataset.vbPid, go.dataset.vbGo); return }
     }, false);
