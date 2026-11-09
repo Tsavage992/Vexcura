@@ -4821,6 +4821,78 @@ html[data-deco="on"] .v45-sec h3{border-left:3px solid var(--accent);padding-lef
 .v45-done{padding:10px 22px}
 @media (max-width:420px){.v45-card{padding:16px}.v45-top h2{font-size:24px}.v45-ac{width:36px;height:36px}.v45-foot{flex-direction:column-reverse;align-items:stretch}.v45-done{width:100%;justify-content:center}}
 /* </v45-look-css> */
+/* <v49-chatx-css> */
+/* v49-chatx: make the Secure Chat thread read more like a real text message thread.
+   Additive, scoped to .sc29; no layout/behaviour change, just rhythm and tone of the bubbles. */
+.sc29 .sc-m { gap: 5px; }
+/* bubbles from the same side hug closer, the way a texting thread groups turns */
+.sc29 .sc-msg.them + .sc-msg.them,
+.sc29 .sc-msg.me + .sc-msg.me { margin-top: -1px; }
+.sc29 .sc-msg.them + .sc-msg.them .sc-n { display: none; } /* don't repeat the sender name on a run of replies */
+.sc29 .sc-bub { line-height: 1.38; }
+/* short, terse replies get a snug width so they look like quick texts, not paragraphs */
+.sc29 .sc-msg.them .sc-bub { background: #e9eef2; }
+.sc29 .sc-msg.them + .sc-msg.them .sc-bub { border-top-left-radius: 6px; }
+.sc29 .sc-msg.me + .sc-msg.me .sc-bub { border-top-right-radius: 6px; }
+html[data-theme="dark"] .sc29 .sc-msg.them .sc-bub { background: #1a3340; }
+/* </v49-chatx-css> */
+/* <v47-brainx-css> */
+/* v47 Brain worklist interactivity: scan-to-give affordance on med chips and drag-to-reschedule.
+   Additive layer over the v44 Brain grid; scoped to .vxbr chips, the drop highlight, the drag ghost and
+   the small Epic-style confirmation box. Reuses the grid's own --vb-* custom properties where possible. */
+/* scan-&-give button tucked into an actionable med chip */
+.vxbr-c.vbx-act{position:relative;padding-right:19px}
+.vxbr-c.vbx-drag{cursor:grab;touch-action:pan-y}
+.vxbr-c.vbx-drag:active{cursor:grabbing}
+.vxbr .vbx-scan{position:absolute;top:1px;right:1px;width:16px;height:16px;padding:0;border:0;border-radius:4px;background:rgba(255,255,255,.72);color:inherit;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:.62;line-height:0}
+.vxbr .vbx-scan svg{width:12px;height:12px;display:block}
+.vxbr .vbx-scan:hover,.vxbr .vbx-scan:focus-visible{opacity:1;background:#fff;outline:2px solid var(--vb-acc,#1d5670);outline-offset:1px}
+.vxbr-c.c-overdue .vbx-scan,.vxbr-c.c-due .vbx-scan{background:rgba(255,255,255,.85)}
+/* drag feedback */
+.vxbr-c.vbx-dragging{opacity:.35}
+body.vbx-dragging-on{user-select:none;-webkit-user-select:none}
+body.vbx-dragging-on .vxbr-wrap{overscroll-behavior:contain}
+.vxbr tbody td.vxbr-tc.vbx-drop{background:var(--vb-now,#fff6e6);box-shadow:inset 0 0 0 2px var(--vb-acc,#1d5670);border-radius:6px}
+.vbx-ghost{position:fixed;z-index:9999;pointer-events:none;left:0;top:0;max-width:150px;font-size:10.5px;font-weight:700;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background:#1d5670;color:#fff;border-radius:6px;padding:4px 8px;box-shadow:0 6px 18px rgba(10,30,40,.3);transform:translate(10px,10px)}
+.vbx-ghost small{display:block;font-weight:600;opacity:.85;font-size:9.5px}
+/* non-blocking confirmation box, Epic-style, anchored near a chip */
+.vbx-conf{position:absolute;z-index:70;background:#1a7f4b;color:#fff;font-size:12px;font-weight:700;line-height:1.2;padding:7px 11px;border-radius:8px;box-shadow:0 8px 24px rgba(12,40,25,.3);max-width:230px;animation:vbxpop .16s ease-out}
+.vbx-conf::after{content:"";position:absolute;top:-5px;left:16px;border:5px solid transparent;border-top:0;border-bottom-color:#1a7f4b}
+.vbx-conf.vbx-below::after{top:auto;bottom:-5px;border-bottom:0;border-top-color:#1a7f4b}
+@keyframes vbxpop{from{opacity:0;transform:translateY(-3px)}to{opacity:1;transform:translateY(0)}}
+/* fallback toast when no EHR toast helper is reachable */
+.vbx-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:9500;background:#0d3b52;color:#fff;padding:9px 16px;border-radius:9px;font:14px/1.3 inherit;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+html[data-theme="dark"] .vxbr .vbx-scan{background:rgba(16,34,44,.7)}
+html[data-theme="dark"] .vxbr .vbx-scan:hover,html[data-theme="dark"] .vxbr .vbx-scan:focus-visible{background:#13222c}
+html[data-theme="dark"] .vbx-ghost{background:#184b61}
+@media (prefers-color-scheme:dark){html:not([data-theme="light"]) .vxbr .vbx-scan{background:rgba(16,34,44,.7)}}
+/* keep the scan target comfortably tappable on touch */
+@media (pointer:coarse){.vxbr .vbx-scan{width:20px;height:20px;opacity:.85}.vxbr .vbx-scan svg{width:13px;height:13px}.vxbr-c.vbx-act{padding-right:23px}}
+/* </v47-brainx-css> */
+/* <v48-fsq-css> */
+/* v48 Flowsheet quick-pick chips: a compact one-click option popover under the active pick/multi cell on the
+   desktop/iPad grid. Scoped to .fq-* so it never collides with the v34 .fg-* grid or the .fg-sho touch sheet.
+   Matches the grid's Epic skin (same borders, blues and selected-chip tint as .fg-dd / .fg-sho). */
+.fq-pop{position:fixed;z-index:9000;background:#fff;border:1px solid #b9c9d5;border-radius:10px;box-shadow:0 10px 28px rgba(16,40,56,.2);padding:8px;box-sizing:border-box;font:13px var(--f-body);color:#14232b;max-width:440px}
+.fq-h{display:flex;align-items:center;gap:8px;margin:0 2px 7px;min-height:18px}
+.fq-ht{flex:1 1 auto;min-width:0;font-weight:700;color:#103a4f;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fq-ht em{font-style:normal;font-weight:600;color:#7a8b93;font-size:11px}
+.fq-done{flex:none;height:24px;padding:0 10px;border:1px solid #1d5670;border-radius:6px;background:#1d5670;color:#fff;font:700 11.5px var(--f-body);cursor:pointer}
+.fq-done:hover{background:#174559;border-color:#174559}
+.fq-x{flex:none;width:24px;height:24px;border:1px solid transparent;border-radius:6px;background:none;color:#5b6b74;font:700 16px/1 var(--f-body);cursor:pointer;padding:0}
+.fq-x:hover{background:#eef4fa;border-color:#c6d6e4;color:#123e74}
+.fq-chips{display:flex;flex-wrap:wrap;gap:6px;max-height:50vh;overflow:auto}
+.fq-chip{display:inline-flex;align-items:center;gap:6px;max-width:260px;min-height:30px;padding:4px 10px;border:1px solid #c6d6e4;border-radius:16px;background:#fff;color:#103a4f;font:600 12.5px var(--f-body);cursor:pointer;text-align:left}
+.fq-chip:hover{background:#eef4fa;border-color:#9fbbd8}
+.fq-chip:focus-visible{outline:2px solid #1a73e8;outline-offset:1px}
+.fq-chip .fq-cl{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.fq-chip.on{background:#dcecff;border-color:#2f6fbf;color:#0d3561;font-weight:700}
+.fq-chip kbd{flex:none;font:700 9.5px ui-monospace,Menlo,Consolas,monospace;color:#7a8b93;border:1px solid #d5dee5;border-radius:3px;padding:0 3px;background:#f6f9fb}
+.fq-chip.on kbd{color:#2f6fbf;border-color:#aecbe8;background:#fff}
+.fq-ck{width:15px;height:15px;flex:none;box-sizing:border-box;border:1.5px solid #7a8b93;border-radius:3px;background:#fff}
+.fq-chip.on .fq-ck{background:#2f6fbf url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 6.2 5 8.6 9.6 3.6' fill='none' stroke='white' stroke-width='2'/%3E%3C/svg%3E") center/11px no-repeat;border-color:#2f6fbf}
+@media (pointer:coarse){.fq-chip{min-height:38px;padding:6px 14px;font-size:14px}.fq-done{height:32px}.fq-x{width:32px;height:32px}}
+/* </v48-fsq-css> */
 .areqp{border:1px solid var(--line,#cfd8e0);border-radius:10px;padding:10px 14px 4px;margin:6px 0 10px}.areqp legend{font-weight:700;padding:0 6px}.agrid input[type=date],.agrid input[type=month]{width:100%;min-width:0;max-width:100%;box-sizing:border-box;-webkit-appearance:none;appearance:none}.agrid .aip{min-width:0;max-width:100%}
 </style>
 
@@ -4833,7 +4905,7 @@ const BANK = (function(e){try{const P=">oVO^cd@ge#lJ'~wUTDiEY+LZx-K&hkt(/F0;G`N.
 let HIDQ=new Set();const CFG={c:null,bypass:false};try{const c=JSON.parse(localStorage.getItem("ns.cfg")||"null");if(c&&typeof c==="object"){CFG.c=c;HIDQ=new Set(c.hideQ||[])}}catch(e){}
 const featOn=k=>!CFG.c||!CFG.c.feat||CFG.c.feat[k]!==false;
 
-const APPV="f6dacda19943d86d96ec4652b47897d84abfdabd4c9dcbbef8e477977768cc99";
+const APPV="35bc32cea41af7480184ce4b43632bb75ea8c244ed0e4cd9a9e447fa96d6c7d7";
 const CATS={
   MOC:{n:"Management of Care",lo:15,hi:21,w:18},
   SIC:{n:"Safety and Infection Prevention and Control",lo:10,hi:16,w:13},
@@ -11527,6 +11599,158 @@ zolpidem|Sedative-hypnotic|PO||Ambien`;
   window.__vxFSX46 = { install, groups: GROUPS.map(g => g.g), version: "v46" };
 })();
 /* </v46-fsx-js> */
+/* <v48-fsq-js> */
+/* v48 Flowsheet quick-pick chips (desktop / iPad grid): the mobile touch bottom sheet (fsgrid.js shPaint) shows one-tap
+   option chips for pick/multi rows, but the desktop/iPad spreadsheet grid only showed option chips inside the native
+   filter dropdown (opened by typing or double-clicking). This additive patch mounts a small "quick picks" popover under
+   the active cell whenever a pick or multi row is selected on the desktop/iPad grid, so a single click files a coded
+   value — exactly the chips the row defines, including group WDL rows and the v46 groups (Provider Role, Method of
+   Communication, Interpreter fields, Disability Assessment, etc.).
+
+   Purely additive: it reads the row's field def from window.__EHX34.ROW (the registry fsgrid + fsx + the LDA code all
+   register rows into) and files through the public window.__vxFS API (set / get / select). It never edits the v34/v46
+   blocks, never touches the stored data model, and yields to the native in-cell editor / filter dropdown / touch sheet
+   (closes itself whenever any of those is open). Phone Rover keeps its own bottom sheet (this patch is a no-op there). */
+(function () {
+  "use strict";
+  if (window.__vxFSQ) return;
+  var FS = function () { return window.__vxFS || null; };
+  var KK = function () { return window.__EHX34 || null; };
+  var EH = function () { try { return window.__EHX && window.__EHX.get(); } catch (e) { return null; } };
+  var e_ = function (s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]; }); };
+  var S = { box: null, r: null, t: null, obs: null, host: null, raf: 0, engaged: false, dismiss: null };
+
+  function rover() { var E = EH(); try { return !!(E && E.v29 && E.v29.isRover && E.v29.isRover()); } catch (e) { return false; } }
+  function gridOn() { return !!document.querySelector(".fg34 #fswrap"); }
+  function fieldOf(rid) { var K = KK(); var r = K && K.ROW ? K.ROW[rid] : null; return r && r.f ? r.f : null; }
+  function labelOf(rid) { var K = KK(); var r = K && K.ROW ? K.ROW[rid] : null; return (r && r.l) || rid; }
+  function activeTd() { return document.querySelector(".fg34 #fswrap td.fgc.fg-act"); }
+  /* yield to the native in-cell editor, the filter dropdown, and the touch bottom sheet */
+  function busy() { return !!(document.querySelector(".fg34 #fswrap td.fg-editing") || document.getElementById("fgdd") || document.querySelector(".fg-sh")); }
+  var ck = function (r, t) { return t + "|" + r; };
+
+  function hide() { if (S.box) { S.box.remove(); S.box = null; } }
+  function close() { hide(); S.r = null; S.t = null; S.dismiss = null; }
+
+  function sync() {
+    if (!S.engaged || !gridOn() || busy() || rover()) { hide(); if (!gridOn()) close(); return; }
+    var td = activeTd(); if (!td) { hide(); return; }
+    var rid = td.dataset.r, t = +td.dataset.t;
+    if (S.dismiss !== ck(rid, t)) S.dismiss = null;
+    if (S.dismiss) { hide(); return; }
+    var f = fieldOf(rid);
+    if (!f || (f.t !== "pick" && f.t !== "multi") || !Array.isArray(f.o) || !f.o.length) { hide(); return; }
+    render(td, rid, t, f);
+  }
+
+  function render(td, rid, t, f) {
+    S.r = rid; S.t = t;
+    var api = FS();
+    var cur = api ? api.get(rid, t) : null;
+    var multi = f.t === "multi";
+    var set = multi ? new Set(Array.isArray(cur) ? cur : (cur ? [cur] : [])) : null;
+    var wdl = /_wdl$/.test(rid);
+    var chips = f.o.map(function (o, i) {
+      var on = multi ? set.has(o) : (cur === o);
+      var kb = wdl ? (o === "WDL" ? "W" : "X") : (!multi && !f.o.some(function (x) { return /\d/.test(x); }) && i < 9 ? (i + 1) : "");
+      return '<button type="button" class="fq-chip' + (on ? " on" : "") + '" data-fq="pick" data-v="' + e_(o) + '" aria-pressed="' + on + '">'
+        + (multi ? '<i class="fq-ck" aria-hidden="true"></i>' : "")
+        + '<span class="fq-cl">' + e_(o) + "</span>"
+        + (kb !== "" ? '<kbd>' + kb + "</kbd>" : "")
+        + "</button>";
+    }).join("");
+    var html = '<div class="fq-h"><span class="fq-ht">' + e_(labelOf(rid)) + (multi ? ' <em>select all that apply</em>' : "") + "</span>"
+      + (multi ? '<button type="button" class="fq-done" data-fq="done">Done</button>' : "")
+      + '<button type="button" class="fq-x" data-fq="close" aria-label="Close quick picks" title="Close (one-click chips)">&#215;</button></div>'
+      + '<div class="fq-chips">' + chips + "</div>";
+    var box = S.box;
+    if (!box) { box = document.createElement("div"); box.className = "fq-pop"; box.setAttribute("role", "dialog"); box.setAttribute("aria-label", "Quick picks"); document.body.appendChild(box); S.box = box; }
+    box.classList.toggle("fq-multi", multi);
+    box.innerHTML = html;
+    place(td);
+  }
+
+  function place(td) {
+    var box = S.box; if (!box || !td) return;
+    var host = document.getElementById("fswrap");
+    var hr = host ? host.getBoundingClientRect() : null;
+    var r = td.getBoundingClientRect();
+    /* hide if the selected cell has scrolled out of the grid viewport (behind the frozen header counts too) */
+    if (hr && (r.bottom < hr.top + 20 || r.top > hr.bottom - 4 || r.right < hr.left + 8 || r.left > hr.right - 8)) { box.style.visibility = "hidden"; return; }
+    box.style.visibility = "";
+    var W = innerWidth, H = innerHeight;
+    box.style.maxWidth = Math.min(440, W - 16) + "px";
+    var h = box.offsetHeight, w = box.offsetWidth;
+    var top = r.bottom + 4; if (top + h > H - 8 && r.top - h - 4 > 8) top = r.top - h - 4;
+    var left = Math.min(r.left, W - w - 8);
+    box.style.top = Math.max(8, top) + "px";
+    box.style.left = Math.max(8, left) + "px";
+  }
+
+  /* advance selection to the next charted (non-calc) row in the same time column, like the touch sheet's Next */
+  function advance(rid, t) {
+    var api = FS(); var St = api && api._S; var M = St && St.M; if (!api || !M) return;
+    var R = M.R; var i = R.indexOf(rid);
+    for (var k = i + 1; k < R.length; k++) { var f = fieldOf(R[k]); if (f && f.t !== "calc") { api.select(R[k], t); return; } }
+  }
+
+  function onPick(o) {
+    var api = FS(); if (!api || S.r == null) return;
+    var f = fieldOf(S.r); if (!f) return;
+    var rid = S.r, t = S.t;
+    if (f.t === "multi") {
+      var cur = api.get(rid, t); var set = new Set(Array.isArray(cur) ? cur : (cur ? [cur] : []));
+      if (set.has(o)) set.delete(o); else set.add(o);
+      var arr = f.o.filter(function (x) { return set.has(x); });
+      api.set(rid, t, arr.length ? arr : "");   /* redraws the grid; the observer re-syncs and refreshes the chips */
+      return;
+    }
+    api.set(rid, t, o);
+    advance(rid, t);
+  }
+
+  /* ---------- wiring ---------- */
+  function schedule() { if (S.raf) return; S.raf = requestAnimationFrame(function () { S.raf = 0; sync(); }); }
+  function attach() {
+    try {
+      var w = document.getElementById("fswrap");
+      if (!w || !w.closest(".fg34")) { if (S.obs) { S.obs.disconnect(); S.obs = null; } S.host = null; close(); return; }
+      if (S.host === w && S.obs) { schedule(); return; }
+      if (S.obs) S.obs.disconnect();
+      S.host = w;
+      S.obs = new MutationObserver(schedule);
+      S.obs.observe(w, { subtree: true, attributes: true, attributeFilter: ["class"], childList: true });
+      schedule();
+    } catch (e) { }
+  }
+
+  /* first user interaction with the grid "engages" the chips, so they never pop on the auto-selected cell at load */
+  document.addEventListener("pointerdown", function (e) {
+    var t = e.target;
+    if (t && t.closest && t.closest(".fg34 #fswrap") && (e.pointerType || "mouse") !== "touch") { S.engaged = true; schedule(); }
+  }, true);
+
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest && e.target.closest(".fq-pop [data-fq]"); if (!b) return;
+    e.preventDefault(); e.stopPropagation();
+    var k = b.dataset.fq;
+    if (k === "pick") { onPick(b.dataset.v); return; }
+    if (k === "done") { var rid = S.r, t = S.t; S.dismiss = ck(rid, t); hide(); if (rid != null) advance(rid, t); return; }
+    if (k === "close") { S.dismiss = ck(S.r, S.t); hide(); var w = document.getElementById("fswrap"); if (w) w.focus({ preventScroll: true }); return; }
+  }, false);
+
+  var reflow = function () { if (S.box && activeTd()) place(activeTd()); };
+  window.addEventListener("scroll", reflow, { passive: true, capture: true });
+  window.addEventListener("resize", reflow);
+
+  /* re-attach the observer to the live #fswrap after every EHR draw (the node is recreated on a full render) */
+  var POST = window.__EHXpost = window.__EHXpost || [];
+  POST.push(attach);
+  attach();
+
+  window.__vxFSQ = { version: "v48", sync: sync, _S: S };
+})();
+/* </v48-fsq-js> */
 /* ---------- request access (invite-only mode), invite codes, sample questions ---------- */
 const accessMode=()=>(CFG.c&&CFG.c.access)||(SRV.signups===false?"closed":"open");
 const PRICE_OPTS=[["","Prefer not to say"],["0","I'd only use it free"],["lt20","Under $20 a month"],["20-39","$20–39 a month"],["40-59","$40–59 a month"],["60+","$60+ a month"],["unsure","Not sure yet"]];
@@ -21144,6 +21368,433 @@ try{
 applyLook();
 if(location.hash==="#appearance"){try{v45Open()}catch(e){}}
 /* </v45-look-js> */
+/* <v49-chatx-js> */
+/* v49-chatx: make the v29 Secure Chat provider read like a real clinician texting back, and scale the
+   expected report (and the provider's tone) to the student's communication skill.
+   Self-contained: exposes window.__vxChatX. The v29 chat block calls __vxChatX.style(d,p,sc,s) to reword
+   the (rule-based) provider reply, and __vxChatX.aiHint() to add a texting-style hint to the sbarprov AI payload.
+   Orders, scoring and read-back logic stay exactly where they were — this only changes wording and tracks a
+   local, communication-specific proficiency derived from how tight/complete recent SBARs were. */
+(function () {
+  "use strict";
+  var LSX = "nclexsim.v49.chatx";
+  var LV = ["novice", "developing", "proficient", "expert"];
+  function load() { try { return JSON.parse(localStorage.getItem(LSX) || "{}") || {}; } catch (e) { return {}; } }
+  function save(o) { try { localStorage.setItem(LSX, JSON.stringify(o)); } catch (e) {} }
+
+  /* ---- proficiency (pure, unit-testable) ---- */
+  function levelOf(p, n) {
+    if (!n) return "novice";
+    if (p < 0.34) return "novice";
+    if (p < 0.56) return "developing";
+    if (p < 0.78) return "proficient";
+    return "expert";
+  }
+  /* completeness: fraction of the SBAR rubric met; density: complete AND short => high.
+     sample blends the two so a great SBAR is both complete and terse. */
+  function sampleOf(r, words) {
+    var hasLab = !!(r && r.lab != null);
+    var max = 10 + (hasLab ? 2 : 0);
+    var score = r ? (num(r.s) + num(r.b) + num(r.v) + num(r.a) + num(r.r) + (r.lab == null ? 0 : num(r.lab))) : 0;
+    var completeness = max ? clamp(score / max) : 0;
+    var ideal = hasLab ? 52 : 44; /* words in a complete, tight report */
+    var density = words > 0 ? clamp(completeness * ideal / words) : 0;
+    var sample = clamp(0.6 * completeness + 0.4 * density);
+    return { completeness: completeness, density: density, words: words, score: score, max: max, sample: sample };
+  }
+  function num(x) { return typeof x === "number" ? x : 0; }
+  function clamp(x) { return x < 0 ? 0 : x > 1 ? 1 : x; }
+
+  function prof() {
+    var st = load();
+    var p = typeof st.p === "number" ? st.p : 0;
+    var n = st.n || 0;
+    var level = levelOf(p, n);
+    return { p: p, n: n, level: level, idx: LV.indexOf(level) };
+  }
+  function record(r, words, epKey) {
+    var st = load();
+    if (epKey && st.lastEp === epKey) return prof(); /* one sample per call episode */
+    var s = sampleOf(r, words);
+    var n = st.n || 0;
+    var prev = typeof st.p === "number" ? st.p : 0;
+    var p = n ? prev * 0.7 + s.sample * 0.3 : s.sample; /* EWMA */
+    save({ p: p, n: n + 1, lastEp: epKey || st.lastEp, t: Date.now() });
+    return prof();
+  }
+
+  /* ---- small helpers for wording ---- */
+  var VLAB = { hr: "HR", bp: "BP", rr: "RR", spo2: "SpO2", temp: "temp" };
+  function wc(t) { t = String(t || "").trim(); return t ? t.split(/\s+/).length : 0; }
+  function epText(s) {
+    try {
+      var start = s.ep.start;
+      return s.th.prov.filter(function (m) { return m.who === "me" && m.at >= start; }).map(function (m) { return m.txt; }).join(" ");
+    } catch (e) { return ""; }
+  }
+  function lastMe(s) {
+    try {
+      var me = s.th.prov.filter(function (m) { return m.who === "me"; });
+      return me.length ? me[me.length - 1].txt : "";
+    } catch (e) { return ""; }
+  }
+  function provShort(s) { return s && s.ep && s.ep.backup ? "Dr. Okafor" : "Dr. Rivera"; }
+  function rot(arr, seed) { return arr[((seed % arr.length) + arr.length) % arr.length]; }
+  function missingVitals(r) {
+    var got = (r && r.vit && r.vit.got) || [];
+    return ["hr", "bp", "rr", "spo2", "temp"].filter(function (k) { return got.indexOf(k) < 0; });
+  }
+
+  /* ---- the reword ---- */
+  /* d: the rule decision {k, q?, txt}; p: patient; sc: scenario (may be null for ack); s: the sc29 state.
+     Returns a texting-style string, or null to let the app keep its own d.txt. */
+  function style(d, p, sc, s) {
+    try {
+      if (!d || !d.k) return null;
+      var pr = prof();
+      var lvl = pr.idx; /* 0 novice .. 3 expert */
+      var r = s && s.ep && s.ep.r;
+      var seed = (s && s.ep && s.ep.sent) || 0;
+      var prov = provShort(s);
+      var lastWords = wc(lastMe(s));
+      var ramble = lastWords >= 55;
+
+      /* record proficiency once per episode, on the first substantive decision */
+      if ((d.k === "order" || d.k === "ack") && s && s.ep && p) {
+        record(r, wc(epText(s)), p.id + ":" + s.ep.start);
+      }
+
+      if (d.k === "who") {
+        return rot([
+          "This is " + prov + " — who's this, and which patient?",
+          prov + " here. Who's calling / which pt?",
+          lvl >= 2 ? "who's this? which pt?" : prov + " here — who's this, and which patient?"
+        ], seed);
+      }
+
+      if (d.k === "ask") {
+        var q = askLine(d.q, sc, r, lvl, seed);
+        if (!q) return null;
+        if (ramble && lvl >= 2) return rot(["too much — " + q, "lead with the concern. " + q], seed);
+        if (ramble && lvl === 1) return "keep it tight — " + q;
+        return q;
+      }
+
+      if (d.k === "ack") {
+        var needVit = r && (r.v === 0 || (r.vit && r.vit.n < 2));
+        if (needVit) {
+          return rot([
+            lvl >= 2 ? "need a full set of vitals first — then call back." : "Get me a full set of vitals and call me back if you're worried.",
+            lvl >= 2 ? "what are the vitals? call back with a full set." : "I need current vitals before I can decide. Recheck and call back."
+          ], seed);
+        }
+        return rot([
+          lvl >= 2 ? "nothing from me. recheck in 1h, call if it changes." : "Thanks. No new orders right now — recheck in an hour and call me if anything changes.",
+          lvl >= 3 ? "ok, keep watching. recheck 1h." : lvl >= 2 ? "ok — no new orders. recheck 1h and call if worse." : "Okay, no new orders. Recheck in an hour and let me know if anything changes."
+        ], seed);
+      }
+
+      if (d.k === "order") {
+        if (!sc || !sc.say) return null;
+        var smp = sampleOf(r, wc(epText(s)));
+        var tight = smp.completeness >= 0.8;
+        var lead = orderLead(lvl, tight, seed);
+        var rb = lvl >= 2 ? " read it back." : lvl === 1 ? " Read it back for me." : " Please read that back to me.";
+        return lead + " " + sc.say + rb;
+      }
+
+      if (d.k === "rbok") {
+        var firstTry = !(s && s.ep && s.ep.rbTry);
+        if (firstTry && lvl >= 2) return rot(["correct — go ahead, signing now.", "yep, that's it. go ahead, I'll sign."], seed);
+        return rot([
+          lvl >= 2 ? "that's right — go ahead, I'll sign it." : "That's correct. Go ahead, and I'll sign the order shortly.",
+          lvl >= 3 ? "correct. go ahead." : "Correct — go ahead, and I'll sign it shortly."
+        ], seed);
+      }
+
+      if (d.k === "rbask") {
+        return rot([
+          lvl >= 2 ? "read it back first." : "Before we hang up, please read that order back to me.",
+          lvl >= 2 ? "read the order back before you go." : "Read that order back to me before we hang up."
+        ], seed);
+      }
+
+      if (d.k === "rbbad") {
+        var say = s && s.ep && s.ep.say;
+        if (!say) return null;
+        var again = (s.ep.rbTry || 0) >= 2;
+        var pre = again ? (lvl >= 2 ? "once more, slowly: " : "Let me say it again slowly. ") : (lvl >= 2 ? "not quite — " : "That's not quite what I said. ");
+        var tail = lvl >= 2 ? " read it back." : " Read it back, please.";
+        return pre + say + tail;
+      }
+
+      return null;
+    } catch (e) { return null; }
+  }
+
+  function askLine(g, sc, r, lvl, seed) {
+    if (g === "v") {
+      var miss = missingVitals(r);
+      if (lvl >= 2 && miss.length && miss.length <= 3) {
+        return "what's the " + miss.map(function (k) { return VLAB[k]; }).join(" and ") + "?";
+      }
+      return rot([
+        lvl >= 2 ? "what are the actual numbers?" : "What are the current vital signs?",
+        lvl >= 3 ? "vitals?" : lvl >= 1 ? "what's a full set of vitals?" : "Give me a full set of vital signs."
+      ], seed);
+    }
+    if (g === "lab") {
+      var ask = sc && sc.lab && sc.lab.ask ? sc.lab.ask : (sc && sc.labCall && sc.labCall.ask ? sc.labCall.ask : "");
+      if (!ask) return lvl >= 2 ? "what's the lab value?" : "What's the relevant lab value?";
+      return lvl >= 2 ? "what's the " + ask + "?" : "What's the " + ask + "?";
+    }
+    if (g === "a") {
+      return rot([
+        lvl >= 2 ? "what do you think's going on?" : "What do you think is going on?",
+        lvl >= 3 ? "your read?" : lvl >= 1 ? "what's your assessment?" : "Tell me what you think is happening."
+      ], seed);
+    }
+    if (g === "r") {
+      return rot([
+        lvl >= 2 ? "what do you need from me?" : "What would you like me to do?",
+        lvl >= 3 ? "what do you want?" : lvl >= 1 ? "what are you asking for?" : "What would you like me to order?"
+      ], seed);
+    }
+    return null;
+  }
+
+  function orderLead(lvl, tight, seed) {
+    if (lvl >= 3) return tight ? rot(["got it — tight report.", "perfect, that's clear."], seed) : "ok.";
+    if (lvl === 2) return tight ? rot(["got it, clear report.", "ok, that's clear."], seed) : "ok —";
+    if (lvl === 1) return tight ? "Thanks, that's a clear report." : "Okay.";
+    return tight ? "Thanks, that's a clear report." : "Okay.";
+  }
+
+  /* ---- AI-wording hint: appended to the sbarprov payload so the model (if it reads `hint`) texts in
+     the student's register. Primary improvement is the rule-based path above; this only nudges the optional AI. ---- */
+  function aiHint() {
+    var P = prof();
+    var byLevel = {
+      novice: "The nurse is new — be clear and briefly prompt for anything missing.",
+      developing: "Keep it brief and natural, 1–2 short sentences, no formal paragraphs.",
+      proficient: "Text a competent nurse: terse and casual, often one clipped line. Reward a tight report.",
+      expert: "Text an expert nurse: very terse, clipped (e.g. 'got it, start the bolus, recheck 1h'). Push back in a few words if key data is missing."
+    };
+    return "Reply like a real clinician texting back on Secure Chat. Student level: " + P.level + ". " +
+      (byLevel[P.level] || byLevel.developing) + " Stay clinically accurate. If you give an order, still ask for a read-back.";
+  }
+
+  window.__vxChatX = {
+    style: style,
+    prof: prof,
+    record: record,
+    aiHint: aiHint,
+    levelOf: levelOf,
+    sampleOf: sampleOf,
+    _reset: function () { save({}); }
+  };
+})();
+/* </v49-chatx-js> */
+/* <v47-brainx-js> */
+{
+  /* v47 Brain worklist interactivity. Additive over the v44 Brain grid: adds a scan-&-give affordance to
+     actionable med chips and horizontal drag-to-reschedule. Talks to the EHR only through window.__EHX.get()
+     (v29 public API) and window.__vxBrain (v44). It never edits the v44 block: it augments the rendered chips
+     after each draw and drives the EHR's own authentic administration path for giving.
+
+     Giving: the medication-administration logic (adminDialog / fileAdmin / the barcode scanner, and all of its
+     five-rights, allergy, hold-parameter and high-alert double-check validation) is private to the app's EHR
+     closure and is NOT exposed on window.__EHX. To avoid duplicating or bypassing that safety validation, a
+     scan from the brain opens the patient's MAR and drives the EHR's own "give" action for that exact dose,
+     then runs the dialog's own scan confirmation. The nurse files in the authentic dialog; when the dose is
+     filed the brain is brought back and the chip reflects the "given" state.
+
+     Rescheduling: a dose's scheduled time lives on the order as o.times (an array of "HH:MM"; when absent the
+     frequency's default times are used — see FREQ). A drag rewrites the matching o.times slot through the
+     EHR's store (db()+save, since upd() needs an open patient), which the grid reads back via E.doses(). */
+  const EH = () => { try { return window.__EHX && window.__EHX.get() } catch (e) { return null } };
+  const e_ = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+  const norm = s => String(s == null ? "" : s).toLowerCase().replace(/\s+/g, " ").trim();
+  const toMOD = s => { const m = /^(\d{1,2}):(\d{2})/.exec(String(s || "")); return m ? (+m[1]) * 60 + (+m[2]) : null };
+  const SCANIC = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M3 5v14M7 5v14M11 5v14M15 5v10M15 17v2M19 5v14M21 5v14"/></svg>';
+
+  function toast(m) { const E = EH(); try { if (E && E.v29 && E.v29.toastE) { E.v29.toastE(m); return } } catch (e) { } const t = document.createElement("div"); t.className = "vbx-toast"; t.textContent = m; document.body.appendChild(t); setTimeout(() => t.remove(), 2400) }
+
+  /* ---- read what a rendered chip represents ---- */
+  function chipState(chip) { for (const c of ["given", "overdue", "due", "sched", "held", "refused"]) if (chip.classList.contains("c-" + c)) return c; return "" }
+  function shiftStartH(E, p) { const now = E.curT(p), m = E.tMin(now); const day = m >= 420 && m < 1140; const start = day ? now - (m - 420) : m >= 1140 ? now - (m - 1140) : now - (m + 300); return Math.floor(start / 60) }
+  function cellHour(E, chip) {
+    const td = chip.closest("td.vxbr-tc"); if (!td) return null; const tr = td.closest("tr"); if (!tr) return null;
+    const cells = [...tr.querySelectorAll("td.vxbr-tc")]; const idx = cells.indexOf(td); if (idx < 1) return null; /* 0 = Prior column */
+    const pid = chip.getAttribute("data-vb-pid"); const p = pid && (E.db().patients || []).find(x => x.id === pid); if (!p) return null;
+    return shiftStartH(E, p) + (idx - 1);
+  }
+  function dropHour(E, x, y, row) {
+    const el = document.elementFromPoint(x, y); if (!el) return null; const td = el.closest && el.closest("td.vxbr-tc"); if (!td || td.closest("tr") !== row) return null;
+    const cells = [...row.querySelectorAll("td.vxbr-tc")]; const idx = cells.indexOf(td); if (idx < 1) return null;
+    const pid = (row.querySelector("[data-vb-pid]") || {}).getAttribute ? row.querySelector("[data-vb-pid]").getAttribute("data-vb-pid") : null;
+    const p = pid && (E.db().patients || []).find(x => x.id === pid); if (!p) return null;
+    return { td, hour: shiftStartH(E, p) + (idx - 1) };
+  }
+  /* map a med chip back to (order, dose time) using the public dose API */
+  function resolveChip(E, chip) {
+    const pid = chip.getAttribute("data-vb-pid"); if (!pid) return null;
+    const p = (E.db().patients || []).find(x => x.id === pid); if (!p) return null;
+    const hour = cellHour(E, chip); if (hour == null) return null;
+    const state = chipState(chip); if (!state) return null;
+    const txt = norm(chip.textContent); const hd = p.hd || 1; let best = null;
+    (p.orders || []).forEach(o => {
+      if (o.status === "dc") return; const f = (E.FREQ && E.FREQ[o.freq]) || {}; if (f.prn || f.cont) return;
+      [hd, hd + 1].forEach(d => (E.doses(p, o, d) || []).forEach(t => {
+        if (Math.floor(t / 60) !== hour || best) return; if (E.doseState(p, o, t) !== state) return;
+        const lab = o.med + (o.dose ? " " + o.dose + (o.unit ? " " + o.unit : "") : "");
+        if (txt.indexOf(norm(lab)) === 0) best = { p, o, t, label: lab, state };
+      }));
+    });
+    return best;
+  }
+
+  /* ---- augment chips after each draw: scan button + drag flag ---- */
+  function augment() {
+    const E = EH(); if (!E) return;
+    document.querySelectorAll(".vxbr .vxbr-c").forEach(chip => {
+      if (chip.getAttribute("data-vbx")) return;
+      const isMed = chip.getAttribute("data-vb-go") === "mar" && !chip.classList.contains("c-nurse") && !chip.classList.contains("c-shift") && !chip.classList.contains("c-reassess");
+      chip.setAttribute("data-vbx", "1");
+      if (!isMed) return;
+      const st = chipState(chip); const actionable = st === "due" || st === "overdue" || st === "sched";
+      const r = resolveChip(E, chip); if (!r) return;
+      chip.setAttribute("data-vbx-oid", r.o.id); chip.setAttribute("data-vbx-t", String(r.t)); chip.setAttribute("data-vbx-med", r.label);
+      if (!actionable) return;
+      chip.classList.add("vbx-act", "vbx-drag");
+      const f = (E.FREQ && E.FREQ[r.o.freq]) || {}; if (f.t && f.t.length) chip.setAttribute("data-vbx-resch", "1");
+      const b = document.createElement("button"); b.type = "button"; b.className = "vbx-scan"; b.setAttribute("data-vbx-scan", "1");
+      b.title = "Scan & give " + r.label; b.setAttribute("aria-label", "Scan and give " + r.label); b.innerHTML = SCANIC;
+      chip.appendChild(b);
+    });
+  }
+
+  /* ---- scan & give: drive the EHR's own authentic administration path for one dose ---- */
+  function giveFromBrain(pid, oid, t, med) {
+    const E = EH(); if (!E) return;
+    toast("Scanning to give " + med + "…");
+    try { E.go(pid, "mar") } catch (e) { return }
+    let tries = 0;
+    (function openDlg() {
+      const E2 = EH(); if (!E2 || !(E2.X && E2.X.pid === pid) || !document.querySelector(".ehw")) { if (tries++ < 40) setTimeout(openDlg, 60); return }
+      const host = document.querySelector(".ehw");
+      const trig = document.createElement("button"); trig.type = "button"; trig.style.display = "none";
+      trig.setAttribute("data-ex", "give"); trig.setAttribute("data-o", oid); trig.setAttribute("data-t", String(t));
+      host.appendChild(trig); trig.dispatchEvent(new MouseEvent("click", { bubbles: true, cancelable: true })); trig.remove();
+      let t2 = 0;
+      (function runScan() {
+        const f = document.querySelector('.aform[data-exf="admin"]'); if (!f) { if (t2++ < 25) setTimeout(runScan, 60); return }
+        const sp = f.querySelector('[data-ex="scan"][data-v="pt"]'); if (sp && !sp.classList.contains("ok")) sp.click();
+        setTimeout(() => { const sm = f.querySelector('[data-ex="scan"][data-v="med"]'); if (sm && !sm.classList.contains("ok")) sm.click(); }, 140);
+      })();
+      watchFiled(pid, oid, t, med);
+    })();
+  }
+  function watchFiled(pid, oid, t, med) {
+    let n = 0; const iv = setInterval(() => {
+      n++; const E = EH(); if (!E) { if (n > 220) clearInterval(iv); return }
+      const p = (E.db().patients || []).find(x => x.id === pid);
+      const done = p && (p.mar || []).some(a => a.oid === oid && a.due === t && a.act);
+      if (done) {
+        clearInterval(iv); try { E.go("", "") } catch (e) { }
+        setTimeout(() => {
+          try { window.__vxBrain && window.__vxBrain.refresh() } catch (e) { } augment();
+          const chip = [...document.querySelectorAll(".vxbr-c[data-vbx-oid]")].find(c => c.getAttribute("data-vbx-oid") === oid && c.getAttribute("data-vbx-t") === String(t));
+          confirmNear(chip, "✓ Scanned — " + med + " given"); toast("✓ " + med + " given");
+        }, 200);
+      } else if (n > 220) clearInterval(iv);
+    }, 300);
+  }
+
+  /* small non-blocking confirmation anchored near a chip */
+  let confEl = null;
+  function confirmNear(anchor, text) {
+    if (confEl) { confEl.remove(); confEl = null }
+    const el = document.createElement("div"); el.className = "vbx-conf"; el.textContent = text; document.body.appendChild(el);
+    if (anchor) {
+      const r = anchor.getBoundingClientRect(); const w = el.offsetWidth, h = el.offsetHeight;
+      let left = r.left + window.scrollX; left = Math.max(8, Math.min(left, window.scrollX + document.documentElement.clientWidth - w - 8));
+      let top = r.bottom + window.scrollY + 7; if (top + h > window.scrollY + document.documentElement.clientHeight - 8 && r.top - h - 7 > 0) { top = r.top + window.scrollY - h - 7; el.classList.add("vbx-below") }
+      el.style.left = left + "px"; el.style.top = top + "px";
+    } else { el.style.cssText += ";position:fixed;left:50%;top:auto;bottom:26px;transform:translateX(-50%)" }
+    confEl = el; setTimeout(() => { if (el.parentNode) el.remove(); if (confEl === el) confEl = null }, 2800);
+  }
+
+  /* ---- reschedule: rewrite the matching o.times slot and persist ---- */
+  function reschedule(pid, oid, origT, targetHour) {
+    const E = EH(); if (!E) return;
+    const d = E.db(); const p = (d.patients || []).find(x => x.id === pid); if (!p) return;
+    const o = (p.orders || []).find(x => x.id === oid); if (!o) return;
+    const f = (E.FREQ && E.FREQ[o.freq]) || {};
+    if (f.prn || f.cont || f.now || o.freq === "Once" || !(f.t && f.t.length)) { toast("This dose can't be rescheduled by dragging."); return }
+    const eff = (o.times && o.times.length ? o.times.slice() : f.t.slice());
+    const origMin = E.tMin(origT); const origHH = E.hhmm(origMin);
+    const hod = (((targetHour % 24) + 24) % 24); const newMin = hod * 60 + (origMin % 60); const newHH = E.hhmm(newMin);
+    if (newHH === origHH) return;
+    const idx = eff.findIndex(x => x === origHH || toMOD(x) === origMin); if (idx < 0) { toast("Couldn't match this dose to the order's schedule."); return }
+    const others = eff.filter((_, i) => i !== idx).map(toMOD).filter(v => v != null);
+    if (others.indexOf(newMin) >= 0) { toast("There's already a " + o.med + " dose at " + newHH + "."); return }
+    if (others.some(mm => { const gap = Math.abs(mm - newMin); return Math.min(gap, 1440 - gap) < 60 })) { toast("Keep at least an hour between " + o.freq + " doses."); return }
+    eff[idx] = newHH; eff.sort((a, b) => (toMOD(a) || 0) - (toMOD(b) || 0));
+    o.times = eff; o.schedHx = o.schedHx || []; o.schedHx.push({ from: origHH, to: newHH, t: E.curT(p), by: "Nurse (practice)", freq: o.freq });
+    p.updated = Date.now();
+    try { E.v29.save(d) } catch (e) { toast("Couldn't save the change."); return }
+    try { window.__vxBrain && window.__vxBrain.refresh() } catch (e) { }
+    setTimeout(() => { augment(); const chip = [...document.querySelectorAll(".vxbr-c[data-vbx-oid]")].find(c => c.getAttribute("data-vbx-oid") === oid && c.getAttribute("data-vbx-t") === String(E.T ? E.T(E.tHD(origT), newMin) : origT)); confirmNear(chip, "✓ Moved to " + newHH); }, 160);
+    toast((o.med || "Dose") + " rescheduled " + origHH + " → " + newHH + " (all " + o.freq + " days)");
+  }
+
+  /* ---- pointer drag (works with mouse and touch) ---- */
+  let DRAG = null, ghost = null;
+  function makeGhost(med, origHH) { if (ghost) ghost.remove(); ghost = document.createElement("div"); ghost.className = "vbx-ghost"; ghost.innerHTML = e_(med) + "<small>from " + e_(origHH) + " · drop on a time</small>"; document.body.appendChild(ghost) }
+  function moveGhost(x, y) { if (ghost) { ghost.style.left = x + "px"; ghost.style.top = y + "px" } }
+  function clearDrop() { document.querySelectorAll("td.vxbr-tc.vbx-drop").forEach(td => td.classList.remove("vbx-drop")) }
+  function endDrag() { if (DRAG && DRAG.chip) DRAG.chip.classList.remove("vbx-dragging"); document.body.classList.remove("vbx-dragging-on"); if (ghost) { ghost.remove(); ghost = null } clearDrop(); DRAG = null }
+
+  document.addEventListener("pointerdown", e => {
+    const chip = e.target.closest && e.target.closest(".vxbr-c.vbx-drag[data-vbx-resch]");
+    if (!chip || (e.target.closest && e.target.closest("[data-vbx-scan]"))) return;
+    if (e.pointerType === "mouse" && e.button !== 0) return;
+    const E = EH(); if (!E) return;
+    DRAG = { chip, x0: e.clientX, y0: e.clientY, active: false, pid: chip.getAttribute("data-vb-pid"), oid: chip.getAttribute("data-vbx-oid"), t: +chip.getAttribute("data-vbx-t"), med: chip.getAttribute("data-vbx-med") || "dose", row: chip.closest("tr"), pointerId: e.pointerId, origHH: E.hhmm(E.tMin(+chip.getAttribute("data-vbx-t"))) };
+  }, true);
+  document.addEventListener("pointermove", e => {
+    if (!DRAG || e.pointerId !== DRAG.pointerId) return;
+    const dx = e.clientX - DRAG.x0, dy = e.clientY - DRAG.y0;
+    if (!DRAG.active) {
+      if (Math.abs(dx) < 8 || Math.abs(dx) <= Math.abs(dy)) return; /* let vertical gestures scroll */
+      DRAG.active = true; try { DRAG.chip.setPointerCapture(e.pointerId) } catch (_) { }
+      DRAG.chip.classList.add("vbx-dragging"); document.body.classList.add("vbx-dragging-on"); makeGhost(DRAG.med, DRAG.origHH);
+    }
+    e.preventDefault(); moveGhost(e.clientX, e.clientY);
+    const E = EH(); if (!E) return; clearDrop(); const d = dropHour(E, e.clientX, e.clientY, DRAG.row); if (d) d.td.classList.add("vbx-drop");
+  }, true);
+  document.addEventListener("pointerup", e => {
+    if (!DRAG || e.pointerId !== DRAG.pointerId) return; const D = DRAG;
+    if (D.active) { e.preventDefault(); const E = EH(); const d = E && dropHour(E, e.clientX, e.clientY, D.row); endDrag(); if (d && d.hour != null) reschedule(D.pid, D.oid, D.t, d.hour); return }
+    endDrag();
+  }, true);
+  document.addEventListener("pointercancel", () => { if (DRAG) endDrag() }, true);
+
+  /* ---- scan button click (capture, to beat the v44 "open MAR" handler) ---- */
+  document.addEventListener("click", e => {
+    const b = e.target.closest && e.target.closest("[data-vbx-scan]"); if (!b) return;
+    e.preventDefault(); e.stopPropagation();
+    const chip = b.closest(".vxbr-c"); if (!chip) return;
+    giveFromBrain(chip.getAttribute("data-vb-pid"), chip.getAttribute("data-vbx-oid"), +chip.getAttribute("data-vbx-t"), chip.getAttribute("data-vbx-med") || "medication");
+  }, true);
+
+  window.addEventListener("resize", () => { if (confEl) { confEl.remove(); confEl = null } });
+  (window.__EHXpost = window.__EHXpost || []).push(() => { try { augment() } catch (e) { } });
+  try { augment() } catch (e) { }
+  window.__vxBrainX = { augment, give: giveFromBrain, reschedule };
+}
+/* </v47-brainx-js> */
 /* <v22-daily-js> */
 /* <v22-daily-js> Daily AI questions + owner spot-check queue.
    Insert INSIDE the app's main IIFE in app.html (BANK/BY/itemHTML/qflagL are IIFE-scoped, not globals): directly after
@@ -24561,7 +25212,7 @@ window.__vxTele={version:TLV,open,close,RH,RHM,build,grade,sigHash,presFor,conte
     return {k:"order",txt:(gaps.length?"Okay. ":"Thanks, that's a clear report. ")+sc.say+" Please read that back to me."}}
   async function aiWord(p,sc,s,d){const E=V();if(!E||!s.ai||(d.k!=="order"&&d.k!=="ack"))return null;
     const ord=(sc?sc.orders:[]).map((o,i)=>i+": "+ordTxt(o)).join("\n");const tr=s.th.prov.filter(m=>m.at>=s.ep.start).map(m=>(m.who==="me"?"NURSE: ":"PROVIDER: ")+m.txt).join("\n");
-    try{const r=await Promise.race([E.v29.ai("sbarprov",{scen:`${sc?sc.t:"Routine update"}. Vitals: ${sc&&sc.vit?Object.entries(sc.vit).map(([k,v])=>k+" "+v).join(", "):"see chart"}. ${sc?sc.cue:""}`,orders:ord||"none",sbar:tr}),new Promise(res=>setTimeout(()=>res(null),9000))]);
+    try{const r=await Promise.race([E.v29.ai("sbarprov",{scen:`${sc?sc.t:"Routine update"}. Vitals: ${sc&&sc.vit?Object.entries(sc.vit).map(([k,v])=>k+" "+v).join(", "):"see chart"}. ${sc?sc.cue:""}`,orders:ord||"none",sbar:tr,hint:(window.__vxChatX&&window.__vxChatX.aiHint&&window.__vxChatX.aiHint())||""}),new Promise(res=>setTimeout(()=>res(null),9000))]);
       const j=r&&r.data?r.data:r;const t=j&&j.reply?String(j.reply).slice(0,600):"";if(!t)return null;return d.k==="order"&&!/read (it|that|those|them) back|read-?back/i.test(t)?t+" Please read that back to me.":t}catch(e){return null}}
   async function sendProv(p,txt){const E=V();const sc=scen(p);let d=null,out=null;
     E.upd(q=>{const s=SC(q);q.sc29=s;if(!s.ep||s.ep.done)s.ep={start:now(),asked:{},sent:0};const ep=s.ep;push(q,"prov",{who:"me",txt});ep.sent++;
@@ -24569,7 +25220,7 @@ window.__vxTele={version:TLV,open,close,RH,RHM,build,grade,sigHash,presFor,conte
       if(sc&&sc.unresp&&!ep.backup){ep.wait=ep.wait||{at:now(),esc:now()+TT().esc};return}
       d=decide(q,s,sc,txt);if(d.k==="order"){ep.rb=sc.rbFix.map(re=>re.source);ep.say=sc.say;ep.ordAt=now()}})
     if(!d)return paint();
-    let say=d.txt,ai=0;if(V()&&SC(curP()).ai){const w=await aiWord(curP(),sc,SC(curP()),d);if(w){say=w;ai=1}}
+    let say=(window.__vxChatX&&window.__vxChatX.style&&window.__vxChatX.style(d,curP(),sc,SC(curP())))||d.txt,ai=0;if(V()&&SC(curP()).ai){const w=await aiWord(curP(),sc,SC(curP()),d);if(w){say=w;ai=1}}
     E.upd(q=>{const s=SC(q);const ep=s.ep;const m=push(q,"prov",{who:"prov",n:provName(s),txt:say,at:now()+typ(),ai,k:d.k});if(d.k==="order")m.ord=sc.orders.map(ordTxt);
       if(d.k==="rbok"){ep.rbOk=now();ep.rbFirst=!ep.rbTry;ep.done=1;ep.rb=null;out=1}if(d.k==="order")ep.firstAsk=Object.keys(ep.asked||{}).length;s.log=s.log||[];s.log.push({k:"call",t:now(),r:ep.r||null,asked:Object.keys(ep.asked||{}),d:d.k})});
     if(out)applyOrders(sc);paint()}
