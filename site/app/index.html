@@ -4641,7 +4641,7 @@ li.eie{opacity:.65}.vxv-site.eie{opacity:.6}
    Scoped to #ehm .vxbr and the #vxbr-pop popover. */
 .vxbr-wrap{--vb-line:#d6dde2;--vb-ink:#17323f;--vb-mut:#5c6b74;--vb-head:#eef3f6;--vb-hd2:#dfeaef;--vb-pt:#fbfdfe;--vb-now:#fff6e6;--vb-nowb:#e4a62c;--vb-acc:var(--accent,#1d5670);--vb-ok:#1a7f4b;--vb-okb:#e3f3ea;--vb-over:#b3261e;--vb-overb:#fbe9e7;--vb-due:#9a6a00;--vb-dueb:#fdf3df;--vb-held:#6b5b2a;--vb-nurse:#1d5670;--vb-nurseb:#e6eef2;--vb-sched:#64737c;--vb-schedb:#eef2f4;
   border:1px solid var(--vb-line);border-radius:10px;overflow:auto;background:#fff;margin-top:10px;max-height:calc(100vh - 230px);box-shadow:0 1px 2px rgba(10,30,40,.05)}
-.vxbr{border-collapse:separate;border-spacing:0;width:100%;min-width:900px;font-size:13px;color:var(--vb-ink)}
+.vxbr{border-collapse:separate;border-spacing:0;width:100%;min-width:900px;font-size:13px;color:var(--vb-ink);table-layout:fixed}
 .vxbr thead th{position:sticky;top:0;z-index:4;background:var(--vb-head);border-bottom:2px solid var(--vb-line);font-weight:700;color:var(--vb-mut);padding:7px 6px;text-align:center;white-space:nowrap;font-variant-numeric:tabular-nums}
 .vxbr thead th.vxbr-ph{left:0;z-index:6;text-align:left;width:244px;min-width:244px;max-width:244px;border-right:2px solid var(--vb-line);padding-left:12px}
 .vxbr thead th.vxbr-prior{width:60px;min-width:60px}
@@ -4661,6 +4661,9 @@ li.eie{opacity:.65}.vxv-site.eie{opacity:.6}
 .vxbr-ic svg{width:17px;height:17px;flex:0 0 auto}
 .vxbr-ic i{font:800 12px var(--f-body,inherit);font-style:normal}
 .vxbr-ic:hover{filter:brightness(.97);box-shadow:0 1px 3px rgba(10,30,40,.12)}
+.vxbr-ic[draggable="true"]{cursor:grab}.vxbr-ic[draggable="true"]:active{cursor:grabbing}
+.vxbr-ic.vxbr-dragging{opacity:.4}
+.vxbr-tc.vxbr-drop{box-shadow:inset 0 0 0 2px var(--vb-acc);background:color-mix(in srgb,var(--vb-acc) 12%,#fff)}
 .vxbr-ic.st-overdue{border-color:#e4b4b1;background:#fdecea;color:#8c1d18}
 .vxbr-ic.st-due{border-color:#e4c57b;background:#fdf4e0;color:#8a5a00}
 .vxbr-ic.st-given{border-color:#bfe0cb;background:#edf7f0;color:#1f6b45}
@@ -5307,7 +5310,7 @@ const BANK = (function(e){try{const P=">oVO^cd@ge#lJ'~wUTDiEY+LZx-K&hkt(/F0;G`N.
 let HIDQ=new Set();const CFG={c:null,bypass:false};try{const c=JSON.parse(localStorage.getItem("ns.cfg")||"null");if(c&&typeof c==="object"){CFG.c=c;HIDQ=new Set(c.hideQ||[])}}catch(e){}
 const featOn=k=>!CFG.c||!CFG.c.feat||CFG.c.feat[k]!==false;
 
-const APPV="1d9f6b7d746bcf5689e212d1738ac5525c675d8ace738a3ce7fcceda509be2cb";
+const APPV="ea81feea218e3b834dfabcfec882955595858e4be81c37754bc27604b570d3fe";
 const CATS={
   MOC:{n:"Management of Care",lo:15,hi:21,w:18},
   SIC:{n:"Safety and Infection Prevention and Control",lo:10,hi:16,w:13},
@@ -9072,11 +9075,20 @@ zolpidem|Sedative-hypnotic|PO||Ambien`;
   function fileVals(p,t,vals){const F=fsVals(p);Object.entries(vals).forEach(([r,v])=>{const i=F.findIndex(x=>x.r===r&&x.t===t);if(v===""||v==null){if(i>=0)F.splice(i,1)}else if(i>=0){F[i].v=v;F[i].rt=Date.now()}else F.push({t,r,v,rt:Date.now()})})}
 
   /* ---- MAR ---- */
-  function doses(p,o,hd){if(o.status==="dc"&&o.dcT!=null&&o.dcT<T(hd,0))return [];const f=FREQ[o.freq]||{};if(f.prn||f.cont)return [];let L=[];
+  function doses0(p,o,hd){if(o.status==="dc"&&o.dcT!=null&&o.dcT<T(hd,0))return [];const f=FREQ[o.freq]||{};if(f.prn||f.cont)return [];let L=[];
     if(f.now||o.freq==="Once"){const t=o.startT!=null?o.startT:T(o.startHD||1,toMin(o.first)||0);if(tHD(t)===hd)L=[t]}
     else{const times=(o.times&&o.times.length?o.times:f.t||[]).map(toMin).filter(x=>x!=null);L=times.map(m=>T(hd,m))}
     const st=o.startT!=null?o.startT:T(o.startHD||1,0);return L.filter(t=>t>=st&&(o.dcT==null||t<o.dcT))}
+  /* doses() applies any per-dose reschedule overrides (p.resched, keyed by order id + original time), so a dose
+     dragged to a new hour on the Brain also moves on the MAR. With no overrides this is identical to the old doses(). */
+  function doses(p,o,hd){const L=doses0(p,o,hd);const R=p&&p.resched;if(!R)return L;return L.map(t=>{const k=o.id+"|"+t;return R[k]!=null?R[k]:t})}
   function adminFor(p,oid,t){return (p.mar||[]).find(a=>a.oid===oid&&a.due===t)}
+  /* reschedule every unadministered scheduled dose in hour srcH to hour tgtH (keeping the minute), for one patient.
+     Exposed for the Brain's drag-and-drop; returns how many doses moved. */
+  window.__EHXresched=function(pid,srcH,tgtH){try{const d=db();const p=(d.patients||[]).find(x=>x.id===pid);if(!p)return 0;const hd=p.hd||1;const R=p.resched=p.resched||{};let n=0;
+    (p.orders||[]).forEach(o=>{if(o.status==="dc"||o.kind==="nurse")return;const f=FREQ[o.freq]||{};if(f.prn||f.cont)return;
+      doses0(p,o,hd).forEach(t0=>{const key=o.id+"|"+t0;const cur=R[key]!=null?R[key]:t0;if(tHD(cur)!==hd||Math.floor(tMin(cur)/60)!==srcH)return;if(adminFor(p,o.id,cur))return;const nt=T(tHD(cur),tgtH*60+(tMin(cur)%60));if(nt!==cur){R[key]=nt;n++}})});
+    if(n)save(d);return n}catch(e){return 0}};
   function doseState(p,o,t){const a=adminFor(p,o.id,t);if(a)return a.act;const now=curT(p);if(tHD(t)<(p.hd||1)||now-t>(X.win||60))return "overdue";if(Math.abs(t-now)<=(X.win||60))return "due";return "sched"}
   function dueNow(p){const out=[];const hd=p.hd||1;(p.orders||[]).forEach(o=>{if(o.status==="dc")return;doses(p,o,hd).forEach(t=>{const s=doseState(p,o,t);if(s==="due"||s==="overdue")out.push({o,t,s})})});(p.mar||[]).forEach(a=>{if(a.reassessDue!=null&&!a.reassessed&&a.reassessDue<=curT(p)+30)out.push({o:(p.orders||[]).find(o=>o.id===a.oid)||{med:"PRN"},t:a.reassessDue,s:"reassess",a})});return out}
   function lastGiven(p,o){const L=(p.mar||[]).filter(a=>a.oid===o.id&&a.act==="given").sort((a,b)=>b.at-a.at);return L[0]}
@@ -21604,9 +21616,9 @@ const SECX = (() => {
       const cells = cols.map(h => {
         const L = (B.byHour[h] || []); const cls = (h === nowHp ? "now" : (h < nowHp ? "past" : "")) + (isSB(h) ? " sb" : "");
         const meds = L.filter(x => x.go === "mar"), chart = L.filter(x => x.go === "flow");
-        if (!meds.length && !chart.length) return `<td class="vxbr-tc ${cls}">${h === nowHp ? '<span class="vxbr-empty">—</span>' : ""}</td>`;
-        const icon = (kind, arr, svg, label) => arr.length ? `<button type="button" class="vxbr-ic st-${grpSt(arr)}" data-vb-cell="${kind}" data-vb-h="${h}" data-vb-pid="${e_(p.id)}" title="${arr.length} ${label}${arr.length === 1 ? "" : "s"} at ${e_(hh(h))} — click to view" aria-label="${arr.length} ${label}${arr.length === 1 ? "" : "s"} at ${e_(hh(h))}">${svg}<i>${arr.length}</i></button>` : "";
-        return `<td class="vxbr-tc ${cls}">${icon("med", meds, MORTAR, "medication")}${icon("chart", chart, FLOWI, "charting task")}</td>`;
+        if (!meds.length && !chart.length) return `<td class="vxbr-tc ${cls}" data-vb-h="${h}">${h === nowHp ? '<span class="vxbr-empty">—</span>' : ""}</td>`;
+        const icon = (kind, arr, svg, label, drag) => arr.length ? `<button type="button" class="vxbr-ic st-${grpSt(arr)}"${drag ? ' draggable="true"' : ""} data-vb-cell="${kind}" data-vb-h="${h}" data-vb-pid="${e_(p.id)}" title="${arr.length} ${label}${arr.length === 1 ? "" : "s"} at ${e_(hh(h))} — click to view${drag ? ", drag to reschedule" : ""}" aria-label="${arr.length} ${label}${arr.length === 1 ? "" : "s"} at ${e_(hh(h))}">${svg}<i>${arr.length}</i></button>` : "";
+        return `<td class="vxbr-tc ${cls}" data-vb-h="${h}">${icon("med", meds, MORTAR, "medication", 1)}${icon("chart", chart, FLOWI, "charting task", 0)}</td>`;
       }).join("");
       return `<tr>${ptCell}${prior}${cells}</tr>`;
     }).join("");
@@ -21695,6 +21707,31 @@ const SECX = (() => {
     else { scroll.outerHTML = html; }
   }
   bind();
+
+  /* ---- drag-and-drop: drag a medication icon to another hour to reschedule its doses (Epic-style) ---- */
+  const hh2 = h => { const E = EH(); return E ? E.hhmm((((h % 24) + 24) % 24) * 60).replace(":", "") : String(h) };
+  let DRAG = null;
+  document.addEventListener("dragstart", e => {
+    const ic = e.target.closest && e.target.closest('.vxbr-ic[data-vb-cell="med"][draggable="true"]'); if (!ic) return;
+    DRAG = { pid: ic.dataset.vbPid, h: +ic.dataset.vbH };
+    try { e.dataTransfer.setData("text/plain", "vxmed"); e.dataTransfer.effectAllowed = "move" } catch (x) { }
+    ic.classList.add("vxbr-dragging"); closePop();
+  });
+  document.addEventListener("dragend", () => { document.querySelectorAll(".vxbr-dragging").forEach(x => x.classList.remove("vxbr-dragging")); document.querySelectorAll(".vxbr-drop").forEach(x => x.classList.remove("vxbr-drop")); DRAG = null });
+  document.addEventListener("dragover", e => {
+    if (!DRAG) return; const td = e.target.closest && e.target.closest('#ehm .vxbr-tc[data-vb-h]'); if (!td) return;
+    e.preventDefault(); try { e.dataTransfer.dropEffect = "move" } catch (x) { }
+    if (!td.classList.contains("vxbr-drop")) { document.querySelectorAll(".vxbr-drop").forEach(x => x.classList.remove("vxbr-drop")); td.classList.add("vxbr-drop") }
+  });
+  document.addEventListener("drop", e => {
+    if (!DRAG) return; const td = e.target.closest && e.target.closest('#ehm .vxbr-tc[data-vb-h]'); const src = DRAG; DRAG = null;
+    document.querySelectorAll(".vxbr-drop").forEach(x => x.classList.remove("vxbr-drop"));
+    if (!td) return; e.preventDefault(); const tgtH = +td.dataset.vbH; if (src.h === tgtH) return;
+    const fn = window.__EHXresched; if (typeof fn !== "function") return;
+    const n = fn(src.pid, src.h, tgtH);
+    if (n > 0) { lastSig = ""; refresh(); const E = EH(); try { if (E && E.toastE) E.toastE(n + " dose" + (n === 1 ? "" : "s") + " moved to " + hh2(tgtH)) } catch (x) { } }
+  });
+
   (window.__EHXpost = window.__EHXpost || []).push(() => { try { refresh() } catch (e) { } });
   window.__vxBrain = { refresh, open: openPop };
 }
@@ -23507,8 +23544,13 @@ document.addEventListener("click", async e => { const b = e.target.closest && e.
     "shift — care coordination": "Shift",
     "shift - care coordination": "Shift",
     "instructor feedback": "Feedback",
-    "clinical group": "Sharing"
+    "clinical group": "Sharing",
+    "clinical reasoning lab": "Reasoning Lab",
+    "video library": "Videos",
+    "board of nursing compliance": "Compliance"
   };
+  /* the patient block stays on the primary tab; everything else below it is an activity card */
+  const PATSEL = ".ehlh, .vxbr-bar, .vxbr-wrap, .ehscroll, .ehdet, .ehempty";
   const label = c => {
     const h = c.querySelector("h3, h2"); let t = h ? h.textContent.trim() : "Activity";
     t = t.replace(/\s*\d+\s*new$/i, "").trim();
@@ -23524,10 +23566,12 @@ document.addEventListener("click", async e => { const b = e.target.closest && e.
     const host = document.querySelector("#ehm.ehm-list"); if (!host) return;
     if (!host.querySelector(":scope > .ehlh")) return;  /* only the real "My Patients" list has the header */
     if (host.querySelector(":scope > .vxct")) return;   /* already tabified this draw */
-    const kids = [...host.children];
-    const cards = kids.filter(el => el.matches && ((el.matches(".ehcard") && !el.matches(".ehatt")) || el.id === "vxsh-ehrcard"));
+    const kids = [...host.children].filter(el => el.nodeType === 1);
+    const ptEls = kids.filter(el => el.matches && el.matches(PATSEL) && !el.matches(".ehatt"));
+    /* an activity card = any element after the patient block that carries a heading (Med Quiz, groups, Shift,
+       Clinical Reasoning Lab, videos, compliance, …), captured generically so every category becomes a tab */
+    const cards = kids.filter(el => !ptEls.includes(el) && !el.matches(".ehatt") && (el.matches(".ehcard") || el.id === "vxsh-ehrcard" || el.querySelector("h2, h3")));
     if (!cards.length) return;           /* nothing to tab; leave as-is */
-    const ptEls = kids.filter(el => !cards.includes(el));
     const mk = (t, c) => { const e = document.createElement(t); if (c) e.className = c; return e };
     const tabs = [{ id: "pts", label: "My Patients", els: ptEls }];
     cards.forEach((c, i) => tabs.push({ id: "c" + i, label: label(c), els: [c] }));
