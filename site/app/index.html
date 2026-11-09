@@ -4645,6 +4645,9 @@ li.eie{opacity:.65}.vxv-site.eie{opacity:.6}
 .vxbr tbody td.vxbr-tc{border-left:1px solid #eef1f3;min-height:62px;padding:4px;text-align:center}
 .vxbr tbody td.vxbr-tc.now{background:var(--vb-now)}
 .vxbr tbody td.vxbr-tc.past{background:#fafbfc}
+/* bold shift-change dividers at 07:00 and 19:00 (day/night boundaries), in the user's theme color */
+.vxbr thead th.vxbr-th.sb{border-left:3px solid var(--vb-acc);box-shadow:inset 2px 0 0 var(--vb-acc)}
+.vxbr tbody td.vxbr-tc.sb{border-left:3px solid var(--vb-acc)}
 /* sticky patient column */
 .vxbr tbody td.vxbr-ptc{position:sticky;left:0;z-index:3;width:244px;min-width:244px;max-width:244px;background:var(--vb-pt);border-right:2px solid var(--vb-line);padding:8px 10px 9px}
 .vxbr-pt{display:block;width:100%;text-align:left;cursor:pointer;background:none;border:0;padding:0;margin:0;font:inherit;color:inherit}
@@ -5263,7 +5266,7 @@ const BANK = (function(e){try{const P=">oVO^cd@ge#lJ'~wUTDiEY+LZx-K&hkt(/F0;G`N.
 let HIDQ=new Set();const CFG={c:null,bypass:false};try{const c=JSON.parse(localStorage.getItem("ns.cfg")||"null");if(c&&typeof c==="object"){CFG.c=c;HIDQ=new Set(c.hideQ||[])}}catch(e){}
 const featOn=k=>!CFG.c||!CFG.c.feat||CFG.c.feat[k]!==false;
 
-const APPV="74ca2db7d48ef8b04fcb8ce324269d3dd1857bc99c0b69e2dc9c09f6f6bf49c9";
+const APPV="1f413bfe90cf9a4444d108c56b1f84ba99bb4ae6fc328b39757c14f358cec300";
 const CATS={
   MOC:{n:"Management of Care",lo:15,hi:21,w:18},
   SIC:{n:"Safety and Infection Prevention and Control",lo:10,hi:16,w:13},
@@ -9067,7 +9070,7 @@ zolpidem|Sedative-hypnotic|PO||Ambien`;
     sModal(`<div class="ehadm"><p class="c2bpa-k">${ic("mar",16)} ${prn?"PRN administration":"Scheduled dose "+esc(tLbl(t))}</p><h3>${orderLine(o)}</h3>${o.hold?`<p class="mhold">${esc(o.hold)}</p>`:""}
       <form class="aform" data-exf="admin" data-o="${o.id}" data-t="${t==null?"":t}" data-prn="${prn?1:""}">
       <div class="ehscan"><button type="button" class="ehsc" data-ex="scan" data-v="pt">${ic("list",14)} Scan patient wristband</button><button type="button" class="ehsc" data-ex="scan" data-v="med">${ic("pill",14)} Scan medication</button><input type="hidden" name="scanpt"><input type="hidden" name="scanmed"></div>
-      <p class="fine ehscmsg" id="ehscmsg">Scan both, or give a reason you couldn't. On a phone, Scan opens the camera; on a computer the scan is simulated.</p>
+      <p class="fine ehscmsg" id="ehscmsg">Scan both, or give a reason you couldn't. On a phone or tablet, Scan opens the camera; on a computer the scan is simulated.</p>
       ${tooSoon?`<p class="abox warn">${esc(tooSoon)}</p>`:""}
       ${need.length?`<div class="ehg2">${need.map(k=>{const [l,u,src]=fld2[k];const v=src?lv[src]||"":"";return `<label class="afld"><span>${l}${u?" ("+u+")":""}</span><input name="v_${k}" value="${esc(v)}" ${k==="sbp"?'placeholder="120/80"':'inputmode="decimal"'} data-rule="${k}"></label>`}).join("")}</div><p id="ehrule" class="ehrule" aria-live="polite"></p>`:""}
       <div class="ehg2"><label class="afld"><span>Action</span><select name="act">${Object.entries(ACTL).map(([k,l])=>`<option value="${k}">${l}</option>`).join("")}</select></label>
@@ -9573,7 +9576,9 @@ zolpidem|Sedative-hypnotic|PO||Ambien`;
   let ZXP=null;const ZXURL="https://cdn.jsdelivr.net/npm/@zxing/library@0.21.3/umd/index.min.js";
   const loadZX=()=>ZXP||(ZXP=new Promise((res,rej)=>{if(window.ZXing)return res(window.ZXing);const s=document.createElement("script");s.src=ZXURL;s.async=true;s.onload=()=>window.ZXing?res(window.ZXing):(ZXP=null,rej(new Error("The barcode library didn't load.")));s.onerror=()=>{ZXP=null;rej(new Error("Couldn't load the barcode tools. Check your connection and try again."))};document.head.appendChild(s)}));
   const camOK=()=>!!(window.isSecureContext&&navigator.mediaDevices&&navigator.mediaDevices.getUserMedia);
-  const useCam=()=>isRover()&&camOK();
+  /* touch-primary device (phone or tablet/iPad): iPadOS reports as desktop Safari, so also check maxTouchPoints */
+  const touchDev=()=>{try{return (navigator.maxTouchPoints||0)>1||!!(window.matchMedia&&matchMedia("(any-pointer: coarse)").matches&&!matchMedia("(any-pointer: fine)").matches)}catch(e){return false}};
+  const useCam=()=>camOK()&&(isRover()||touchDev());
   const ptCode=p=>"VXPT:"+p.sim;
   const medCode=(o,name)=>"VXMED:"+(name||o.med)+"|"+[o.dose,o.unit].filter(Boolean).join(" ")+"|"+(o.route||"");
   const norm=s=>String(s||"").toLowerCase().replace(/[^a-z0-9]+/g," ").trim();
@@ -21499,7 +21504,8 @@ const SECX = (() => {
     const cols = [...Array(NCOLS)].map((_, i) => h0 + i);
     const nowH = Math.floor(S0.now / 60);
     const hh = h => E.hhmm(((h % 24) + 24) % 24 * 60);
-    const head = `<tr><th class="vxbr-ph">Patient</th><th class="vxbr-prior">Prior</th>${cols.map(h => `<th class="vxbr-th ${h === nowH ? "now" : ""}">${e_(hh(h)).replace(":", "")}<small>${h === nowH ? "now" : h < nowH ? "" : ""}</small></th>`).join("")}</tr>`;
+    const isSB = h => { const x = ((h % 24) + 24) % 24; return x === 7 || x === 19 };
+    const head = `<tr><th class="vxbr-ph">Patient</th><th class="vxbr-prior">Prior</th>${cols.map(h => `<th class="vxbr-th ${h === nowH ? "now" : ""}${isSB(h) ? " sb" : ""}">${e_(hh(h)).replace(":", "")}<small>${h === nowH ? "now" : h < nowH ? "" : ""}</small></th>`).join("")}</tr>`;
     const body = P.map(p => {
       const S = shiftOf(E, p); const B = brainEvents(E, p, S); const nowHp = Math.floor(S.now / 60);
       const al = (p.allergies || []);
@@ -21517,7 +21523,7 @@ const SECX = (() => {
       </button><div class="vxbr-flags"><button type="button" class="vxbr-ord" data-vb-go="orders" data-vb-pid="${e_(p.id)}" title="Open orders">Orders${nOrd ? ` <b>${nOrd}</b>` : ""}${prn ? ` <i>PRN ${prn}</i>` : ""}</button>${flag("A")}${flag("S")}${flag("D")}</div></td>`;
       const prior = `<td class="vxbr-tc" style="text-align:center">${B.prior ? `<span class="vxbr-prioc" title="${B.prior} item(s) carried over / overdue from before this shift">${B.prior}</span>` : ""}</td>`;
       const cells = cols.map(h => {
-        const L = (B.byHour[h] || []); const cls = h === nowHp ? "now" : (h < nowHp ? "past" : "");
+        const L = (B.byHour[h] || []); const cls = (h === nowHp ? "now" : (h < nowHp ? "past" : "")) + (isSB(h) ? " sb" : "");
         if (!L.length) return `<td class="vxbr-tc ${cls}">${h === nowHp ? '<span class="vxbr-empty">—</span>' : ""}</td>`;
         const show = L.slice(0, 3); const extra = L.length - show.length;
         return `<td class="vxbr-tc ${cls}">${show.map(x => `<button type="button" class="vxbr-c c-${e_(x.c)}" ${x.go ? `data-vb-go="${e_(x.go)}" data-vb-pid="${e_(p.id)}"` : "disabled"} title="${e_(x.t)}${STLAB[x.c] ? " — " + STLAB[x.c] : ""}">${x.c === "given" ? CK : ""}${e_(x.t)}${STLAB[x.c] ? ` <i>${STLAB[x.c]}</i>` : ""}</button>`).join("")}${extra > 0 ? `<span class="vxbr-more">+${extra} more</span>` : ""}</td>`;
