@@ -1441,6 +1441,14 @@ body{padding-top:var(--nsb,0px)}
 .mleg{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-top:8px}.mleg .mdose{width:auto;display:inline-block;padding:2px 8px;cursor:default}
 .ehscan{display:flex;gap:8px;flex-wrap:wrap}.ehsc{flex:1;min-width:200px;display:flex;gap:6px;align-items:center;justify-content:center;padding:10px;border:2px dashed #9fb6c0;border-radius:8px;background:#f5f8fa;font:700 13px var(--f-body);cursor:pointer}.ehsc.ok{border-style:solid;border-color:#2e7d4f;background:#ddf1e4;color:#1f6b45}
 .ehscmsg.warn{color:#8c1d18}.ehrule.on{background:#fbf0d4;border:1px solid #e2c57b;border-radius:6px;padding:8px 10px}
+.bscan{min-width:min(560px,92vw)}.bscan-pt{margin:8px 0;padding:9px 12px;border-radius:8px;background:#f5f8fa;border:1px solid #d8e2e9;color:#5c6b74;font-weight:600;font-size:14px}.bscan-pt.ok{background:#ddf1e4;border-color:#2e7d4f;color:#1f6b45}
+.bscan-inrow{display:flex;gap:8px;margin:8px 0 4px}.bscan-in{flex:1;padding:12px 14px;border:2px solid var(--accent,#1d5670);border-radius:8px;font:600 16px var(--f-body);background:#fff;color:#14232b}.bscan-in:focus{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--accent,#1d5670) 30%,transparent)}
+.bscan-hint{color:var(--muted);margin:2px 0 8px}.bscan-hint.warn{color:#8c1d18;font-weight:700}.bscan-tools{display:flex;gap:8px;margin-bottom:8px}
+.bscan-ln{font-weight:700;color:#103a4f;font-size:13px;margin:6px 0 4px}.bscan-list{list-style:none;margin:0 0 8px;padding:0;max-height:min(42vh,320px);overflow:auto;border:1px solid #e3eaef;border-radius:8px}
+.bsr{display:flex;align-items:center;gap:10px;padding:8px 10px;border-bottom:1px solid #eef3f6}.bsr:last-child{border-bottom:0}.bsrt{font:700 12.5px ui-monospace,monospace;color:#5c6b74;min-width:42px}
+.bsrm{flex:1;display:flex;flex-direction:column;line-height:1.3}.bsrm small{color:#5c6b74;font-size:12.5px}.bswarn{color:#8a5a00;font-size:12px;font-style:normal;font-weight:700}
+.bsrok{color:#1f6b45;font-weight:800;font-size:15px}.bsrx{background:none;border:0;color:#9fb0b9;font-size:16px;cursor:pointer;padding:2px 6px;line-height:1}.bsrx:hover{color:#8c1d18}
+.bscan-empty{color:var(--muted);font-size:13.5px;margin:4px 0 8px}.bscan-ft{margin-top:4px}.mtb-scan{font-weight:700;color:var(--accent,#1d5670)}
 .ehmeds{position:relative}.ehsug{display:none;position:absolute;left:0;right:0;top:64px;z-index:5;background:#fff;border:1px solid var(--eh-line);border-radius:6px;box-shadow:0 8px 24px rgba(0,0,0,.12);max-height:260px;overflow:auto}.ehsug.on{display:block}
 .ehsug button{display:block;width:100%;text-align:left;border:0;background:none;padding:7px 10px;cursor:pointer}.ehsug button:hover{background:#eef4f7}.ehsug small{display:block;color:#5b6f79}
 .ehchips{display:flex;gap:5px;flex-wrap:wrap;margin-top:5px}.ehchip{border:1px solid var(--eh-line);background:#f5f8fa;border-radius:999px;padding:2px 9px;font-size:12px;cursor:pointer}
@@ -5266,7 +5274,7 @@ const BANK = (function(e){try{const P=">oVO^cd@ge#lJ'~wUTDiEY+LZx-K&hkt(/F0;G`N.
 let HIDQ=new Set();const CFG={c:null,bypass:false};try{const c=JSON.parse(localStorage.getItem("ns.cfg")||"null");if(c&&typeof c==="object"){CFG.c=c;HIDQ=new Set(c.hideQ||[])}}catch(e){}
 const featOn=k=>!CFG.c||!CFG.c.feat||CFG.c.feat[k]!==false;
 
-const APPV="1f413bfe90cf9a4444d108c56b1f84ba99bb4ae6fc328b39757c14f358cec300";
+const APPV="b27aa60ed4269c2875aae2df1734966bbfeda4ff7c2ef8d9038aecfff327dcf6";
 const CATS={
   MOC:{n:"Management of Care",lo:15,hi:21,w:18},
   SIC:{n:"Safety and Infection Prevention and Control",lo:10,hi:16,w:13},
@@ -9054,7 +9062,7 @@ zolpidem|Sedative-hypnotic|PO||Ambien`;
         ${strip(o)}${out?`<div class="mmore">${out} other dose${out===1?"":"s"} on HD ${hd} outside this view</div>`:""}
         ${det?`<footer class="mcf"><span>Ordered Admin Amount: <b>${esc(o.dose||"")} ${esc(o.unit||"")}</b></span><span>Last Admin: <b>${lg?esc(tLbl(lg.at))+" (Given)":"None"}</b></span>${f.prn&&lg&&nextPRN(o,lg)?`<span>Next available: <b>${esc(nextPRN(o,lg))}</b></span>`:""}${o.hold?`<span class="mhold">${esc(o.hold)}</span>`:""}${o.note?`<span>Admin instructions: ${esc(o.note)}</span>`:""}<span>Ordered by: ${esc(o.by||"")}</span></footer>`:""}</article>`};
     const F=[["all","ALL"],["sched","Scheduled"],["prn","PRN"],["cont","Continuous"],["resp","Respiratory"],["due","Due/Overdue Meds"],["dc","Discontinued"]];
-    m.innerHTML=`<div class="mtool"><b class="mtt">MAR</b><button class="mtb" data-ex="act" data-v="mar" title="Refresh">↻</button><button class="mtb" data-ex="marleg">Legend</button><button class="mtb" data-ex="mardet">${det?"Hide":"Show"} All Details</button><button class="mtb" data-ex="act" data-v="lda">LDA Avatar</button><button class="mtb" data-ex="act" data-v="labels">Barcodes</button><button class="mtb mtbp" data-ex="neworder">+ New Order</button></div>
+    m.innerHTML=`<div class="mtool"><b class="mtt">MAR</b><button class="mtb mtb-scan" data-ex="bscan" title="Scan medications with a barcode scanner, then file them together">${ic("pill",14)} Scan meds</button><button class="mtb" data-ex="act" data-v="mar" title="Refresh">↻</button><button class="mtb" data-ex="marleg">Legend</button><button class="mtb" data-ex="mardet">${det?"Hide":"Show"} All Details</button><button class="mtb" data-ex="act" data-v="lda">LDA Avatar</button><button class="mtb" data-ex="act" data-v="labels">Barcodes</button><button class="mtb mtbp" data-ex="neworder">+ New Order</button></div>
      <div class="mfil" role="tablist">${F.map(([k,l])=>`<button role="tab" aria-selected="${flt===k}" data-ex="marf" data-v="${k}">${l}</button>`).join("")}</div>
      <div class="mnav"><button class="mtb" data-ex="marnow">Go to Now</button><button class="mtb" data-ex="marday" data-v="-1">‹ HD</button><b>Hospital day ${hd}${isToday?" (today)":""}</b><button class="mtb" data-ex="marday" data-v="1">HD ›</button></div>
      <div class="mruler"><button class="mrar" data-ex="marshift" data-v="-4" aria-label="Earlier">◀</button><div class="mrh">${hrs.map(h=>`<span class="${isToday&&h===nowH?"mrnow":""}">${pad(h)}00</span>`).join("")}</div><button class="mrar" data-ex="marshift" data-v="4" aria-label="Later">▶</button></div>
@@ -9098,6 +9106,34 @@ zolpidem|Sedative-hypnotic|PO||Ambien`;
     if(prn&&v("reass")&&rec.act==="given")rec.reassessDue=at+(+v("reass"));
     upd(q=>{q.mar=q.mar||[];q.mar=q.mar.filter(a=>!(a.oid===o.id&&a.due!=null&&a.due===rec.due));q.mar.push(rec)});seen(o.med);sClose();draw();toastE(`${o.med}: ${ACTL[rec.act]} ${tLbl(at)}`)}
   function prompt2(miss,f){const box=document.getElementById("ehscmsg");box.innerHTML=`<b>${esc(miss[0].toUpperCase()+miss.slice(1))} not scanned.</b> Choose a reason to continue: <select id="ehovr"><option value="">Choose…</option><option>Wristband unreadable</option><option>Barcode won't scan</option><option>Emergency</option><option>Scanner unavailable</option></select>`;box.classList.add("warn");document.getElementById("ehovr").addEventListener("change",e=>{f.dataset.ovr=e.target.value})}
+  /* ---- batch bedside scanning: USB keyboard-wedge scanner (desktop) or camera (touch); scan patient, then meds, file all at once (Epic-style) ---- */
+  let BSCAN=null;
+  function bscanDue(p){const hd=p.hd||1,out=[];(p.orders||[]).filter(o=>o.status!=="dc"&&o.kind!=="nurse"&&!(FREQ[o.freq]||{}).prn&&!(FREQ[o.freq]||{}).cont).forEach(o=>{doses(p,o,hd).forEach(t=>{if(!adminFor(p,o.id,t))out.push({o,t})})});out.sort((a,b)=>a.t-b.t);return out}
+  function startBatchScan(){const p=P();if(!p)return;BSCAN={pid:p.id,ptOK:false,list:[],msg:""};bscanModal()}
+  function bscanModal(){const p=P();if(!p||!BSCAN)return;const due=bscanDue(p);const remaining=due.filter(d=>!BSCAN.list.some(x=>x.oid===d.o.id&&x.t===d.t));
+    const rows=BSCAN.list.map((e,i)=>`<li class="bsr"><span class="bsrt">${esc(hhmm(tMin(e.t)).replace(":",""))}</span><span class="bsrm"><b>${esc(e.med)}</b><small>${esc([e.dose,e.route].filter(Boolean).join(" · "))}</small>${e.warn?`<em class="bswarn">${esc(e.warn)}</em>`:""}</span><span class="bsrok">✓</span><button type="button" class="bsrx" data-ex="bscanrm" data-v="${i}" aria-label="Remove ${esc(e.med)}">✕</button></li>`).join("");
+    const cam=useCam();
+    sModal(`<div class="bscan"><p class="c2bpa-k">${ic("mar",16)} Scan medications</p><h3>${esc(p.label)}${p.sim?" · "+esc(p.sim):""}</h3>
+      <div class="bscan-pt ${BSCAN.ptOK?"ok":""}">${BSCAN.ptOK?"✓ Patient verified — scan each medication, then file them together.":"Scan the patient's wristband to begin."}</div>
+      <form class="aform" data-exf="bscan"><div class="bscan-inrow"><input name="code" class="bscan-in" autocomplete="off" placeholder="${BSCAN.ptOK?"Scan a medication barcode":"Scan the patient's wristband"}" aria-label="Scan barcode"><button class="btn2" type="submit">Enter</button></div></form>
+      <p class="fine bscan-hint ${BSCAN.msg?"warn":""}" id="bscanmsg">${BSCAN.msg?esc(BSCAN.msg):"Use a USB barcode scanner — it types the code and presses Enter — or type the code."+(cam?" On a phone or tablet, use the camera.":"")}</p>
+      <div class="bscan-tools">${cam?`<button type="button" class="btn2 mini sec2" data-ex="bscancam">${ic("pill",14)} Use camera</button>`:""}<button type="button" class="btn2 mini sec2" data-ex="bscansim">Simulate a scan</button></div>
+      ${BSCAN.list.length?`<div class="bscan-ln">Scanned (${BSCAN.list.length})</div><ul class="bscan-list">${rows}</ul>`:`<p class="bscan-empty">${BSCAN.ptOK?(remaining.length?remaining.length+" dose"+(remaining.length===1?"":"s")+" due to scan.":"No scheduled doses are due right now."):""}</p>`}
+      <div class="sbtns bscan-ft"><button type="button" class="btn2" data-ex="bscanfile" ${BSCAN.list.length?"":"disabled"}>File all (${BSCAN.list.length}) as given</button><button type="button" class="btn2 sec2" data-ex="bscancancel">Close</button></div></div>`);
+    setTimeout(()=>{const i=document.querySelector(".bscan-in");if(i){try{i.focus()}catch(e){}}},40)}
+  async function bscanHandle(code){const p=P();if(!p||!BSCAN)return;code=String(code||"").trim();if(!code)return;
+    if(!BSCAN.ptOK){const r=checkPt(p,code);if(r&&r.ok){BSCAN.ptOK=true;BSCAN.msg="";try{beep()}catch(e){}}else{BSCAN.msg=(r&&r.msg)||"That isn't this patient's wristband.";}bscanModal();return}
+    const c=parseCode(code);if(c.k==="pt"){BSCAN.msg="Patient already verified. Scan a medication.";bscanModal();return}
+    let idm;try{idm=await identifyMed(code)}catch(e){idm={ok:false,msg:"Couldn't read that barcode."}}
+    if(!BSCAN)return;
+    if(!idm.ok){BSCAN.msg=idm.msg||"Barcode not recognized.";bscanModal();return}
+    const due=bscanDue(p);const cand=due.find(d=>nameMatch(d.o,idm)&&!BSCAN.list.some(x=>x.oid===d.o.id&&x.t===d.t));
+    if(!cand){const anyOrder=(p.orders||[]).some(o=>o.status!=="dc"&&nameMatch(o,idm));BSCAN.msg=anyOrder?`${idm.name||"That medication"} has no scheduled dose due to give right now.`:`No due medication matches ${idm.name||"that label"}. Scan a due dose's label.`;bscanModal();return}
+    const warn=doseWarn(cand.o,idm);try{beep()}catch(e){}
+    BSCAN.list.push({oid:cand.o.id,t:cand.t,med:cand.o.med,dose:[cand.o.dose,cand.o.unit].filter(Boolean).join(" "),route:cand.o.route||"",warn:warn||""});BSCAN.msg="";bscanModal()}
+  function bscanFileAll(){const p=P();if(!p||!BSCAN||!BSCAN.list.length)return;const list=BSCAN.list.slice();const now=nowMin();const meds=list.map(e=>e.med);
+    upd(q=>{q.mar=q.mar||[];list.forEach(e=>{const o=(q.orders||[]).find(x=>x.id===e.oid);if(!o)return;const at=T(tHD(e.t),now);const rec={id:uid(),rt:Date.now(),oid:o.id,due:e.t,at,act:"given",reason:"",dose:[o.dose,o.unit].filter(Boolean).join(" "),route:o.route||"",site:"",scan:"scanned"};q.mar=q.mar.filter(a=>!(a.oid===o.id&&a.due!=null&&a.due===e.t));q.mar.push(rec)})});
+    meds.forEach(m=>{try{seen(m)}catch(e){}});const n=list.length;BSCAN=null;sClose();draw();toastE(n+" medication"+(n===1?"":"s")+" filed as given")}
   function reassessDialog(p,a){const o=(p.orders||[]).find(x=>x.id===a.oid)||{med:"PRN"};sModal(`<h3>Reassess: ${esc(o.med)}</h3><p class="note">Given ${esc(tLbl(a.at))}${a.pain?`, pain before ${esc(a.pain)}/10`:""}.</p><form class="aform" data-exf="reass" data-v="${a.id}"><div class="ehg2"><label class="afld"><span>Pain score now (0–10)</span><input name="pain" inputmode="numeric"></label><label class="afld"><span>Sedation</span><select name="sed"><option value="">—</option>${ROW.sed.f.o.map(x=>`<option>${x}</option>`).join("")}</select></label><label class="afld"><span>Response</span><select name="eff"><option>Effective</option><option>Partially effective</option><option>Not effective</option></select></label><label class="afld ehw2"><span>Comment</span><input name="c" maxlength="200"></label></div><div class="sbtns"><button class="btn2" type="submit">File reassessment</button><button type="button" class="btn2 sec2" data-sm="close">Cancel</button></div></form>`)}
 
   /* ---- Orders ---- */
@@ -10548,6 +10584,12 @@ zolpidem|Sedative-hypnotic|PO||Ambien`;
     if(k==="viewadm"){const a=(p.mar||[]).find(x=>x.id===v);if(a)viewAdm(p,a);return}
     if(k==="undoadm"){sConfirm("Remove this administration?","Use this to correct a documentation error in practice.","Remove",()=>{upd(q=>{q.mar=q.mar.filter(a=>a.id!==v)});sClose();draw()});return}
     if(k==="reass"){const a=(p.mar||[]).find(x=>x.id===v);if(a)reassessDialog(p,a);return}
+    if(k==="bscan"){startBatchScan();return}
+    if(k==="bscansim"){bscanHandle("SIM");return}
+    if(k==="bscancam"){if(!BSCAN)return;scanner(BSCAN.ptOK?"Scan the medication":"Scan the patient's wristband",async txt=>{await bscanHandle(txt);return {ok:true}});return}
+    if(k==="bscanfile"){bscanFileAll();return}
+    if(k==="bscancancel"){BSCAN=null;sClose();return}
+    if(k==="bscanrm"){if(BSCAN){BSCAN.list.splice(+v,1);bscanModal()}return}
     if(k==="scan"&&useCam()){scanInDialog(b,v);return}
     if(k==="scan"){const f=b.closest("form");const inp=f.elements[v==="pt"?"scanpt":"scanmed"];inp.value="1";b.classList.add("ok");b.innerHTML=(v==="pt"?`✓ ${esc(p.label)} · ${esc(p.sim)} matched`:`✓ ${esc((p.orders||[]).find(o=>o.id===f.dataset.o).med)} matched order`);const msg=document.getElementById("ehscmsg");if(f.elements.scanpt.value&&f.elements.scanmed.value){msg.textContent="Patient and medication match. Check the remaining rights: dose, route, time, documentation.";msg.classList.remove("warn")}return}
     if(k==="medcard"){medCard(v);return}
@@ -10602,6 +10644,7 @@ zolpidem|Sedative-hypnotic|PO||Ambien`;
     if(k==="order"){saveOrder(f);return}
     if(k==="nurse"){if(!phiOK([v("text")]))return;upd(q=>{q.orders=q.orders||[];q.orders.push({id:uid(),kind:"nurse",text:v("text"),status:"active",startHD:q.hd||1,created:Date.now()})});sClose();draw();return}
     if(k==="admin"){fileAdmin(f);return}
+    if(k==="bscan"){bscanHandle(v("code"));return}
     if(k==="reass"){upd(q=>{const a=(q.mar||[]).find(x=>x.id===f.dataset.v);if(a){a.reassessed={t:curT(q),pain:v("pain"),sed:v("sed"),eff:v("eff"),c:v("c")};const vt=T(q.hd||1,Math.floor(nowMin()/15)*15);const vals={};if(v("pain"))vals.pain=v("pain");if(v("sed"))vals.sed=v("sed");if(Object.keys(vals).length)fileVals(q,vt,vals)}});sClose();draw();toastE("Reassessment filed");return}
     if(k==="cell"){const c=f.closest("[data-cell]");setCell(c.dataset.cell,v("v"),"down");return}
     if(k==="dxadd"){if(!phiOK([v("n")]))return;upd(q=>{dxFix(q);const pr=!!f.elements.primary.checked;if(pr)q.dxs.forEach(z=>z.primary=false);q.dxs.push({id:uid(),n:v("n"),type:v("type"),hd:Math.max(1,+v("hd")||q.hd||1),primary:pr});dxFix(q)});draw();dxModal();toastE("Diagnosis added");return}
