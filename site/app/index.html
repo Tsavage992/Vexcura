@@ -5106,6 +5106,40 @@ html[data-theme="dark"] .vbx-ghost{background:#184b61}
 :root[data-theme=dark] #vxdx .vxdx-ck{background:#0e1a20}
 :root[data-theme=dark] #vxdx .vxdx-opt.pick-ok{background:#16352250}:root[data-theme=dark] #vxdx .vxdx-opt.pick-bad{background:#3a1c1950}:root[data-theme=dark] #vxdx .vxdx-opt.pick-harm{background:#45191550}:root[data-theme=dark] #vxdx .vxdx-opt.miss{background:#15291d}
 /* </v52-dxrx-css> */
+/* <v51-roles-css> */
+/* v51 roles — team & permission tiers + content-reviewer queue. Epic-flat, inherits admin tokens. */
+.rolx-tier{display:inline-flex;align-items:center;gap:5px;padding:2px 9px;border-radius:999px;font-size:12.5px;font-weight:600;line-height:1.7;white-space:nowrap;border:1px solid transparent}
+.rolx-tier.t-owner{background:#eadcff;color:#4b2a86;border-color:#d6c2f4}
+.rolx-tier.t-admin{background:#dbe8fb;color:#1f4a86;border-color:#c3d7f3}
+.rolx-tier.t-reviewer{background:#d8efe1;color:#1d6b43;border-color:#bfe4cf}
+.rolx-tier.t-viewer{background:#ececf1;color:#4a4a55;border-color:#dcdce3}
+.rolx-tier .dot{width:7px;height:7px;border-radius:50%;background:currentColor;opacity:.75}
+.rolx-you{font-size:11.5px;color:var(--muted);font-weight:600;margin-left:6px}
+.rolx-grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));margin:4px 0 2px}
+.rolx-card{border:1px solid var(--line);border-radius:12px;padding:13px 15px;background:var(--bg)}
+.rolx-card h4{margin:0 0 3px;font-size:14.5px;display:flex;align-items:center;gap:7px}
+.rolx-card ul{margin:7px 0 0;padding-left:17px;font-size:13px;color:var(--muted);line-height:1.6}
+.rolx-card ul li.no{color:#b23b2e;list-style:none;margin-left:-17px}
+.rolx-card ul li.no::before{content:"\00d7  ";font-weight:700}
+.rolx-sel{font:inherit;font-size:13.5px;padding:5px 8px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+.rolx-sel:disabled{opacity:.55;cursor:not-allowed}
+.rolx-mt td{vertical-align:middle}
+.rolx-mt td small{display:block;color:var(--muted);font-size:12px;margin-top:1px}
+.rolx-rv-on{color:#1d6b43;font-weight:600;font-size:12.5px;white-space:nowrap}
+.rolx-rv-off{color:var(--muted);font-size:12.5px}
+.rolx-idcard{border:1px solid var(--line);border-left:4px solid #1d6b43;border-radius:12px;padding:15px 17px;background:var(--bg);margin-bottom:16px}
+.rolx-idcard.needs{border-left-color:#c58a00;background:#fffaf0}
+.rolx-idcard h3{margin:0 0 4px;font-size:16px}
+.rolx-roster{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.rolx-chip{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:999px;padding:5px 13px;font-size:13px;background:var(--sunk)}
+.rolx-chip b{font-weight:650}
+.rolx-chip small{color:var(--muted)}
+.rolx-q{border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:10px 0;background:var(--bg)}
+.rolx-q .qh{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:5px}
+.rolx-q code{font-size:12px}
+.rolx-empty{text-align:center;color:var(--muted);padding:26px 10px}
+.rolx-note{font-size:12.5px;color:var(--muted);margin-top:3px}
+/* </v51-roles-css> */
 .areqp{border:1px solid var(--line,#cfd8e0);border-radius:10px;padding:10px 14px 4px;margin:6px 0 10px}.areqp legend{font-weight:700;padding:0 6px}.agrid input[type=date],.agrid input[type=month]{width:100%;min-width:0;max-width:100%;box-sizing:border-box;-webkit-appearance:none;appearance:none}.agrid .aip{min-width:0;max-width:100%}
 </style>
 
@@ -5118,7 +5152,7 @@ const BANK = (function(e){try{const P=">oVO^cd@ge#lJ'~wUTDiEY+LZx-K&hkt(/F0;G`N.
 let HIDQ=new Set();const CFG={c:null,bypass:false};try{const c=JSON.parse(localStorage.getItem("ns.cfg")||"null");if(c&&typeof c==="object"){CFG.c=c;HIDQ=new Set(c.hideQ||[])}}catch(e){}
 const featOn=k=>!CFG.c||!CFG.c.feat||CFG.c.feat[k]!==false;
 
-const APPV="21309524ef28820984e36fd204089426281d7bef00ab4a2c59e73457f8c2413b";
+const APPV="38361b15a22f4fcde0fdab1e4d83a6341899516a251f4f81e7a0939cf579d492";
 const CATS={
   MOC:{n:"Management of Care",lo:15,hi:21,w:18},
   SIC:{n:"Safety and Infection Prevention and Control",lo:10,hi:16,w:13},
@@ -18068,15 +18102,15 @@ if(window.__vx32T&&window.__vx32T.test)Object.assign(window.__vx32,{RUN,CASES,CA
   const STN=Object.fromEntries(STAGES);
   const STATUS=[["all","All programs"],["prospect","Prospects"],["pilot","Pilots"],["active","Active"],["expired","Expired"]];
   const ACTS=[["needs","Needs you","inbox"],["programs","Programs","school"],["sales","Sales","pipe"],["hiring","Hiring","hire"],["security","Security","shield"],["people","Students & users","users"],["content","Content","book"],["reports","Reports","chart"],["settings","Settings","gear"]];
-  const SUBS={people:[["users","Users"],["access","Access requests"],["resets","Password resets"],["assign","Assign & message"],["sessions","Signed-in devices"],["claims","Fee reimbursement"]],
-    content:[["daily","Daily content"],["bank","Question bank"],["reports","Question reports"]],
+  const SUBS={people:[["users","Users"],["access","Access requests"],["resets","Password resets"],["assign","Assign & message"],["sessions","Signed-in devices"],["claims","Fee reimbursement"],["team","Team & roles"]],
+    content:[["daily","Daily content"],["bank","Question bank"],["reports","Question reports"],["review","Review queue"]],
     reports:[["overview","Activity"],["system","System & usage"],["audit","Audit log"]],
     settings:[["site","Site & features"],["access","Sign-in & access"],["contracts","Contracts & prices"],["integrations","School sign-on & LMS"]]};
   const PTABS=[["overview","Overview"],["people","People & permissions"],["content","Content & curriculum"],["approvals","Approvals"],["tasks","Tasks"],["legal","Legal"],["billing","Billing"],["activity","Activity"]];
   /* old admin tab → new home */
   const LEG={overview:["reports","overview"],users:["people","users"],user:["people","users"],access:["people","access"],requests:["people","resets"],sessions:["people","sessions"],assign:["people","assign"],guar:["people","claims"],schools:["programs"],onb:["programs"],site:["settings","site"],content:["content","bank"],qflags:["content","reports"],system:["reports","system"],audit:["reports","audit"]};
   /* new sub-tab hosted by an old renderer */
-  const HOST={"people/users":"users","people/access":"access","people/resets":"requests","people/assign":"assign","people/sessions":"sessions","people/claims":"guar","content/bank":"content","content/reports":"qflags","reports/overview":"overview","reports/system":"system","reports/audit":"audit","settings/site":"site"};
+  const HOST={"people/users":"users","people/access":"access","people/resets":"requests","people/assign":"assign","people/sessions":"sessions","people/claims":"guar","content/bank":"content","content/reports":"qflags","reports/overview":"overview","reports/system":"system","reports/audit":"audit","settings/site":"site","people/team":"rolesteam","content/review":"rolesrv"};
   const I={shield:'<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/>',hire:'<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/>',inbox:'<path d="M3 13l3-8h12l3 8v6H3z"/><path d="M3 13h5l1 3h6l1-3h5"/>',school:'<path d="M4 20V9l8-5 8 5v11"/><path d="M9 20v-6h6v6"/>',pipe:'<path d="M3 5h18l-7 8v6l-4 2v-8z"/>',users:'<circle cx="9" cy="8" r="3.2"/><path d="M3 20c.8-3.5 3.2-5 6-5s5.2 1.5 6 5"/><path d="M16 4.5a3 3 0 0 1 0 6M18 14.5c1.6.7 2.6 2.4 3 5.5"/>',book:'<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/>',chart:'<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>',gear:'<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/>',plus:'<path d="M12 5v14M5 12h14"/>',refresh:'<path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 4v7h-7"/>',back:'<path d="M15 6l-6 6 6 6"/>',pin:'<path d="M12 21s-6-5.3-6-10a6 6 0 0 1 12 0c0 4.7-6 10-6 10z"/><circle cx="12" cy="11" r="2"/>'};
   const sv=(k,s)=>`<svg viewBox="0 0 24 24" width="${s||18}" height="${s||18}" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${I[k]||""}</svg>`;
   const chip=(t,c)=>`<span class="vxi-chip ${c||""}">${esc(t)}</span>`;
@@ -18198,7 +18232,7 @@ if(window.__vx32T&&window.__vx32T.test)Object.assign(window.__vx32,{RUN,CASES,CA
     if(!document.getElementById("adm")||document.getElementById("adm").dataset.own!==OWN.act)main(`${subsHTML(OWN.act)}<div class="adm allow-copy vxo-leg" id="adm" data-own="${OWN.act}"><p class="note">Loading…</p></div>`);
     else{const n=document.querySelector(".vxo-subs");if(n)n.outerHTML=subsHTML(OWN.act)}
     if(ADM.tab!=="user"||tab!=="users")ADM.tab=tab;if(tab==="overview")adminSub();
-    await _dw();tidy()}
+    await (tab==="rolesteam"&&typeof rolxTeam==="function"?Promise.resolve(rolxTeam(document.getElementById("adm"))).catch(e=>{var h=document.getElementById("adm");if(h)h.innerHTML=rolxErr(e)}):tab==="rolesrv"&&typeof rolxQueue==="function"?Promise.resolve(rolxQueue(document.getElementById("adm"))).catch(e=>{var h=document.getElementById("adm");if(h)h.innerHTML=rolxErr(e)}):_dw());tidy()}
   function tidy(){const h=document.getElementById("adm");if(!h)return;
     h.querySelectorAll(".adx-strip").forEach(x=>x.remove());/* overview quick actions duplicated the tabs; the Needs-you queue replaces them */
     h.querySelectorAll('[data-act="s-signups"]').forEach(b=>{const p=b.closest("p");if(p)p.remove()});/* sign-ups switch lives in Settings › Sign-in & access */
@@ -22990,6 +23024,119 @@ if(location.hash==="#appearance"){try{v45Open()}catch(e){}}
   if (window.__vxDxrxT && window.__vxDxrxT.test) Object.assign(window.__vxDxrx, { CASES, scoreAssess, scoreRecognize, scoreDiagnose, scoreTreat, overall, budgetOf, startCase, run: () => RUN, paint });
 })();
 /* </v52-dxrx-js> */
+/* <v51-roles-js> */
+/* v51 roles — corporate sub-admins with permission tiers + an RN content-reviewer role.
+   Adds two Admin tabs ("Team & roles", "Review queue"), gated by the tier the server reports at /api/roles/me.
+   All real enforcement is server-side (worker/roles.js guard); this only shapes the UI. Reviewer sign-offs reuse
+   the existing daily-review attribution, so a reviewer who approves an item becomes the "reviewed by a registered
+   nurse (Name, date)" label students see. */
+const ROLX = { me: null, tried: false, team: null, roster: null };
+const RTIER = { owner: "Owner", admin: "Administrator", reviewer: "Content Reviewer", viewer: "Read-only" };
+const rolxBadge = t => `<span class="rolx-tier t-${esc(t)}"><span class="dot"></span>${esc(RTIER[t] || t)}</span>`;
+async function rolxMe(force) { if (ROLX.me && !force) return ROLX.me; try { ROLX.me = await srvApi("/api/roles/me") } catch (e) { ROLX.me = { tier: srvIsAdmin() ? "admin" : null, caps: ["view.admin"] } } return ROLX.me }
+const rolxCan = c => !!(ROLX.me && (ROLX.me.caps || []).indexOf(c) >= 0);
+/* The admin surface is the owner workspace (v22-owner). It hosts legacy tab renderers through its SUBS/HOST bridge;
+   roles-apply.js adds two sub-tabs (People › Team & roles, Content › Review queue) and one surgical edit to the
+   owner's legacy() so it calls the hoisted rolxTeam()/rolxQueue() below for those two keys. Enforcement is
+   server-side (worker/roles.js guard); this only shapes the UI. */
+const rolxErr = (er, tab) => `<div class="rp"><h3>Couldn't load this section</h3><p class="note">${esc(er.message || String(er))}</p></div>`;
+/* re-render the active roles sub-tab in place after an action (the owner workspace set ADM.tab for us) */
+function rolxRedraw() { const h = document.getElementById("adm"); if (!h) return; if (ADM.tab === "rolesteam") rolxTeam(h); else if (ADM.tab === "rolesrv") rolxQueue(h) }
+
+/* The owner workspace top nav shows every section to any role='admin' account. For a Content Reviewer that is too
+   much (Sales, Hiring, Security…), so once we know the tier we hide the sections they have no business in. A viewer
+   keeps the full read-only nav. Server-side the guard blocks anything they shouldn't reach regardless of the nav. */
+const ROLX_REVIEWER_TABS = { needs: 1, content: 1 };
+function rolxFilterNav() { if (!ROLX.me) return; const t = ROLX.me.tier;
+  const nav = document.getElementById("vxo-tabs");
+  if (nav && t === "reviewer") nav.querySelectorAll("a[href]").forEach(a => { const m = (a.getAttribute("href") || "").match(/#admin(?:\/([a-z]+))?/); const sec = m && m[1] ? m[1] : "needs"; if (!ROLX_REVIEWER_TABS[sec]) a.style.display = "none" });
+  document.querySelectorAll('.vxo-subs a[href$="/people/team"]').forEach(a => { if (!rolxCan("users.manage")) a.style.display = "none" });
+  document.querySelectorAll('.vxo-subs a[href$="/content/review"]').forEach(a => { if (!rolxCan("content.review")) a.style.display = "none" }); }
+function rolxWatchNav() { if (ROLX.navWatch) return; const root = document.getElementById("vxo"); if (!root) return; ROLX.navWatch = new MutationObserver(() => rolxFilterNav()); ROLX.navWatch.observe(root, { childList: true, subtree: true }); rolxFilterNav() }
+/* load the tier early so the nav filter and sub-tabs are correct from first paint */
+if (SRV.on && SRV.ready && SRV.ready.then) SRV.ready.then(() => { if (!srvIsAdmin()) return; rolxMe().then(() => { setTimeout(rolxWatchNav, 50); setTimeout(rolxFilterNav, 120) }) });
+
+/* ---------------- Team & roles ---------------- */
+function rolxCapCard(tier, T, caps, labels) {
+  const have = new Set(T[tier] || []); const keys = Object.keys(labels);
+  return `<div class="rolx-card"><h4>${rolxBadge(tier)}</h4><ul>${keys.map(k => have.has(k) ? `<li>${esc(labels[k])}</li>` : "").join("")}${tier !== "owner" ? keys.filter(k => !have.has(k)).slice(0, 4).map(k => `<li class="no">${esc(labels[k])}</li>`).join("") : ""}</ul></div>` }
+async function rolxTeam(host) {
+  host.innerHTML = `<p class="note">Loading the team…</p>`;
+  const T = await srvApi("/api/roles/team"); ROLX.team = T;
+  const canManage = T.canManageTeam, me = ROLX.me || {};
+  const order = T.order || ["owner", "admin", "reviewer", "viewer"];
+  const pickable = t => canManage ? order : order.filter(x => x === "reviewer" || x === "viewer" || x === t);
+  const rows = (T.members || []).map(u => {
+    const opts = pickable(u.tier).map(t => `<option value="${t}" ${t === u.tier ? "selected" : ""}>${esc(RTIER[t])}</option>`).join("");
+    const lockOwner = (u.tier === "owner" && !canManage);
+    const disabled = (u.isYou && u.tier === "owner") || lockOwner || !(canManage || u.tier === "reviewer" || u.tier === "viewer" || u.tier === "admin");
+    return `<tr><td><b>${esc(u.name)}</b>${u.isYou ? `<span class="rolx-you">you</span>` : ""}<small>${esc(u.email)}</small></td>
+      <td><select class="rolx-sel" data-rolx-tier data-uid="${esc(u.id)}" data-prev="${esc(u.tier)}" data-name="${esc(u.name)}" ${disabled ? "disabled" : ""} aria-label="Role for ${esc(u.name)}">${opts}</select></td>
+      <td>${u.status === "active" ? `<span class="st st-ok">Active</span>` : `<span class="st st-bad">Disabled</span>`}</td>
+      <td>${u.reviewer ? `<span class="rolx-rv-on">✓ ${esc(u.reviewer)}</span>` : `<span class="rolx-rv-off">—</span>`}</td>
+      <td class="adx-nw">${u.lastLogin ? esc(fdt(u.lastLogin)) : "Never"}</td></tr>` }).join("");
+  host.innerHTML = adxH("Team & roles", `${(T.members || []).length} team member${(T.members || []).length === 1 ? "" : "s"} · roles decide what each person can see and do`,
+    canManage ? `<button class="btn2" data-rolx="add">Add team member</button>` : "") + `
+   <div class="rolx-grid">${order.map(t => rolxCapCard(t, T.tierCaps, T.capLabels, T.capLabels)).join("")}</div>
+   <div class="mx-wrap"><table class="fs adm-t rolx-mt"><thead><tr><th>Person</th><th>Role tier</th><th>Account</th><th>RN reviewer sign-off</th><th>Last sign-in</th></tr></thead><tbody>${rows || `<tr><td colspan="5" class="rolx-empty">No team members yet.</td></tr>`}</tbody></table></div>
+   <p class="rolx-note">${canManage ? "Change a role from the dropdown. Changing someone's role signs them out so the new access takes effect right away." : "Only an owner can add administrators or change owner/administrator access. You can set people to Content Reviewer or Read-only."}</p>
+   <p class="rolx-note">Content Reviewers appear on the public “Reviewed by registered nurses” roster once they confirm their RN reviewer name in the Review queue.</p>`;
+}
+document.addEventListener("change", async e => { const s = e.target.closest && e.target.closest("[data-rolx-tier]"); if (!s) return;
+  const uid = s.dataset.uid, tier = s.value, prev = s.dataset.prev, name = s.dataset.name; if (tier === prev) return;
+  const go = async () => { try { await srvApi("/api/roles/team/tier", { method: "POST", body: { uid, tier } }); ROLX.team = null; adxToast(name + " is now " + RTIER[tier]); if (SRV.me && uid === SRV.me.id) ROLX.me = null; rolxRedraw() } catch (x) { s.value = prev; alertBox(x.message) } };
+  sConfirm("Change " + esc(name) + "'s role?", "They'll become <b>" + esc(RTIER[tier]) + "</b> and be signed out so it takes effect now.", "Change role", go, tier === "owner"); s.value = prev; });
+document.addEventListener("click", e => { const b = e.target.closest && e.target.closest('[data-rolx="add"]'); if (!b) return;
+  const owner = rolxCan("team.manage");
+  const tiers = owner ? [["admin", "Administrator"], ["reviewer", "Content Reviewer"], ["viewer", "Read-only"]] : [["reviewer", "Content Reviewer"], ["viewer", "Read-only"]];
+  sModal(`<h3>Add a team member</h3><p class="note">Creates a staff account and sets its role. They'll get a one-time password to sign in and set their own.</p>
+   <form class="aform" data-rolxf="add" autocomplete="off"><label class="afld"><span>Full name</span><input name="name" maxlength="80" required placeholder="Jane Doe, RN"></label>
+    <label class="afld"><span>Email</span><input name="email" type="email" maxlength="254" required placeholder="jane@example.com"></label>
+    <label class="afld"><span>Role</span><select name="tier" class="rolx-sel">${tiers.map(([v, l]) => `<option value="${v}">${l}</option>`).join("")}</select></label>
+    <p class="amsg note" aria-live="polite"></p><div class="sbtns"><button class="btn2" type="submit">Create account</button><button type="button" class="btn2 sec2" data-sm="close">Cancel</button></div></form>`) });
+document.addEventListener("submit", async e => { const f = e.target.closest && e.target.closest('[data-rolxf="add"]'); if (!f) return; e.preventDefault();
+  const sb = f.querySelector('[type="submit"]'); setMsg(f, "");
+  try { sb.disabled = true; const name = fv(f, "name"), email = fv(f, "email"), tier = f.elements.tier.value;
+    if (!name) throw new Error("Enter a name."); if (!email) throw new Error("Enter an email.");
+    const r = await srvApi("/api/admin/users", { method: "POST", body: { name, email, role: "admin", notes: "Added as " + RTIER[tier] } });
+    if (tier !== "admin") { try { await srvApi("/api/roles/team/tier", { method: "POST", body: { uid: r.id, tier } }) } catch (x) { } }
+    ADM.users = null; ROLX.team = null; sClose();
+    sModal(`<h3>${esc(name)} added as ${esc(RTIER[tier])}</h3><p>Give them this one-time password to sign in. They'll set their own on first use.</p><p class="abox"><code class="allow-copy" style="font-size:17px">${esc(r.tempPassword)}</code></p><div class="sbtns"><button class="btn2" data-sm="close">Done</button></div>`);
+    rolxRedraw();
+  } catch (x) { setMsg(f, x.message || "Couldn't create the account.", false); if (sb) sb.disabled = false } });
+
+/* ---------------- Review queue (content reviewer) ---------------- */
+async function rolxQueue(host) {
+  host.innerHTML = `<p class="note">Loading the review queue…</p>`;
+  const [S, roster] = await Promise.all([ srvApi("/api/daily/admin/summary"), srvApi("/api/roles/reviewers").catch(() => ({ reviewers: [] })) ]);
+  ROLX.roster = roster; const rv = S.reviewer; const c = S.counts || {};
+  let items = { items: [] }; if (c.spot || c.pending) { try { items = await srvApi("/api/daily/admin/items?view=" + (c.spot ? "spot" : "pending") + "&limit=25") } catch (e) { } }
+  const id = (rv && !ROLX.rvEdit) ? `<div class="rolx-idcard"><h3>✓ Signed off as ${esc(rv)}</h3><p class="note">Items you approve are credited to this name on the “reviewed by a registered nurse” label students see. <button class="lk" data-rolx="rvedit">Change name</button></p></div>`
+    : `<div class="rolx-idcard needs"><h3>Confirm your RN reviewer name</h3><p class="note">Before you can sign off on content, confirm the name and credential you want shown, e.g. “Jane Doe, RN”.</p>
+       <form class="aform" data-rolxf="rv"><label class="afld"><span>Reviewer name and credential</span><input name="display" maxlength="80" required placeholder="Jane Doe, RN" value="${esc(rv || ((SRV.me && SRV.me.name) || "") + ", RN")}"></label>
+        <label style="display:flex;gap:8px;align-items:flex-start;font-size:13.5px;margin:4px 0"><input type="checkbox" name="attest" required> <span>I am a registered nurse and I am reviewing this content for clinical accuracy.</span></label>
+        <p class="amsg note" aria-live="polite"></p><button class="btn2" type="submit">Confirm and start reviewing</button></form></div>`;
+  const chips = (roster.reviewers || []).map(r => `<span class="rolx-chip"><b>${esc(r.display)}</b>${r.reviewed ? `<small>${r.reviewed} signed off</small>` : ""}</span>`).join("");
+  const list = (items.items || []).map(it => `<div class="rolx-q"><div class="qh"><code>${esc(it.id)}</code><span class="st st-n">${esc(it.kind === "guide" ? "Study guide" : "Question")}</span>${it.cat ? `<span class="note">${esc(it.cat)}</span>` : ""}<span class="st st-warn">Not yet RN-reviewed</span></div>
+     <p class="adx-pq">${esc((it.data && (it.data.q || it.title)) || it.title || "").slice(0, 200)}</p>
+     ${it.data && it.data.r ? `<details><summary>Rationale &amp; source</summary><p class="note">${esc(String(it.data.r).slice(0, 600))}</p>${(it.sources || []).length ? `<p class="fine">${esc((it.sources || []).join("; ").slice(0, 300))}</p>` : ""}</details>` : ""}
+     <div class="sbtns" style="margin-top:8px">${rv ? `<button class="btn2 mini" data-rolx="review" data-id="${esc(it.id)}">Mark reviewed by RN</button>` : ""}<button class="btn2 mini sec2" data-act="s-go" data-v="admin" data-rolx="opendaily">Open full review tool</button></div></div>`).join("");
+  host.innerHTML = adxH("Review queue", `${(c.spot || 0)} auto-published awaiting RN sign-off · ${(c.pending || 0)} pending · ${(c.reviewed || 0)} reviewed`, "") + id + `
+   <section class="rp"><h3>Reviewed by registered nurses</h3>${chips ? `<div class="rolx-roster">${chips}</div>` : `<p class="note">No reviewers have confirmed their RN name yet.</p>`}<p class="rolx-note">This roster powers the credit shown across the platform, so content is attributed to the nurses who reviewed it — not to one person.</p></section>
+   <section class="rp"><h3>Needs a registered nurse's review</h3>${list || `<p class="rolx-empty">Nothing is waiting for review right now.</p>`}${(items.items || []).length ? `<p class="rolx-note">The full review tool (edit, approve, unpublish) is in the daily content pipeline. These are the items students can already see with a “not yet reviewed” label.</p>` : ""}</section>`;
+}
+document.addEventListener("click", e => { const b = e.target.closest && e.target.closest('[data-rolx="rvedit"]'); if (b) { ROLX.rvEdit = true; rolxRedraw() } });
+document.addEventListener("submit", async e => { const f = e.target.closest && e.target.closest('[data-rolxf="rv"]'); if (!f) return; e.preventDefault();
+  const sb = f.querySelector('[type="submit"]'); setMsg(f, "");
+  try { sb.disabled = true; const display = fv(f, "display"); if (f.elements.attest && !f.elements.attest.checked) throw new Error("Confirm you are a registered nurse.");
+    await srvApi("/api/daily/admin/reviewer", { method: "POST", body: { display, attest: true } });
+    ROLX.rvEdit = false; adxToast("Reviewer name confirmed"); rolxRedraw();
+  } catch (x) { setMsg(f, x.message || "Couldn't confirm.", false); if (sb) sb.disabled = false } });
+document.addEventListener("click", async e => { const b = e.target.closest && e.target.closest('[data-rolx="review"]'); if (!b) return;
+  const id = b.dataset.id; b.disabled = true; b.textContent = "Marking…";
+  try { await srvApi("/api/daily/admin/items/" + encodeURIComponent(id), { method: "POST", body: { action: "review" } }); adxToast("Marked reviewed by RN"); rolxRedraw() }
+  catch (x) { b.disabled = false; b.textContent = "Mark reviewed by RN"; if (x && /needReviewer|reviewer/i.test(x.message || "")) alertBox("Confirm your RN reviewer name first (at the top of this page)."); else alertBox(x.message) } });
+/* </v51-roles-js> */
 /* <v22-daily-js> */
 /* <v22-daily-js> Daily AI questions + owner spot-check queue.
    Insert INSIDE the app's main IIFE in app.html (BANK/BY/itemHTML/qflagL are IIFE-scoped, not globals): directly after
