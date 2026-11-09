@@ -5140,6 +5140,117 @@ html[data-theme="dark"] .vbx-ghost{background:#184b61}
 .rolx-empty{text-align:center;color:var(--muted);padding:26px 10px}
 .rolx-note{font-size:12.5px;color:var(--muted);margin-top:3px}
 /* </v51-roles-css> */
+/* <v53-mktx-css> */
+/* v53 mktx: premium marketing pass — inclusive sign-in line, reworked footer with a
+   security/trust strip, a nursing-students landing page and a platform mind-map hub.
+   All colors come from the app's existing tokens (var(--accent) is the per-user themeable
+   teal, var(--gold)/var(--flame) the gold accent) so everything tracks light/dark and theming. */
+
+/* ---- inclusive sign-in sub-line ---- */
+.wsx-who{margin:12px auto 0;max-width:30ch;font-size:13px;line-height:1.4;color:#4a5d68;text-align:center;letter-spacing:.01em}
+html[data-theme="dark"] .wsx-who{color:#a9bcc6}
+@media (prefers-color-scheme:dark){html:not([data-theme="light"]) .wsx-who{color:#a9bcc6}}
+
+/* ============================================================= PREMIUM FOOTER */
+.mktf{margin-top:80px}
+.mktf .wrap{display:grid;gap:30px}
+.mktf-top{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,3fr);gap:34px 40px;align-items:start}
+.mktf-brand{max-width:34ch}
+.mktf-brand .logo .brandmark{height:30px}
+.mktf-tag{margin:14px 0 18px;font-size:14.5px;line-height:1.6;color:var(--navy-ink);opacity:.82}
+.mktf-cta{display:inline-flex;align-items:center;gap:8px;background:var(--flame);color:#231505;border-radius:5px;padding:10px 18px;font-family:var(--f-sub);font-weight:700;font-size:14.5px;text-decoration:none;box-shadow:0 0 0 1px #8a5c12 inset,0 8px 22px -10px rgb(242 184 75/.65);transition:transform .12s,box-shadow .2s}
+.mktf-cta:hover{transform:translateY(-1px);box-shadow:0 0 0 1px #8a5c12 inset,0 12px 26px -10px rgb(242 184 75/.8)}
+.mktf-cols{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:26px 22px}
+.mktf-col h4{font-family:var(--f-sub);font-size:12px;letter-spacing:.11em;text-transform:uppercase;color:var(--gold,#c9a14e);margin:0 0 12px;opacity:.95}
+.mktf-col ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.mktf-col a,.mktf-col button.lk{color:var(--navy-ink);text-decoration:none;background:none;border:0;padding:0;margin:0;font:inherit;font-size:14px;line-height:1.35;text-align:left;opacity:.86;cursor:pointer;transition:opacity .15s,color .15s}
+.mktf-col a:hover,.mktf-col button.lk:hover{color:var(--gold,#e0b25f);opacity:1;text-decoration:underline;text-underline-offset:2px}
+
+/* trust / security strip (crawlable text) */
+.mktf-trust{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;padding:18px 22px;border-radius:14px;background:rgb(255 255 255/.045);border:1px solid rgb(246 238 223/.14)}
+.mktf-trust-k{--mktf-lock:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>');display:inline-flex;align-items:center;gap:8px;font-family:var(--f-sub);font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--gold,#d0a85a);font-weight:700}
+.mktf-trust-k::before{content:"";width:15px;height:15px;flex:none;background:currentColor;-webkit-mask:var(--mktf-lock) center/contain no-repeat;mask:var(--mktf-lock) center/contain no-repeat}
+.mktf-badges{display:flex;flex-wrap:wrap;gap:8px 10px;list-style:none;margin:0;padding:0;flex:1 1 auto}
+.mktf-badges li{font-size:12.5px;line-height:1;color:var(--navy-ink);opacity:.9;padding:7px 11px;border-radius:999px;background:rgb(255 255 255/.06);border:1px solid rgb(246 238 223/.16);white-space:nowrap}
+.mktf-trust-link{color:var(--gold,#e0b25f);font-size:13px;font-weight:600;text-decoration:none;white-space:nowrap}
+.mktf-trust-link:hover{text-decoration:underline;text-underline-offset:2px}
+
+/* corporate line + hardware notice */
+.mktf-corp{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 28px;align-items:baseline;border-top:1px solid rgb(246 238 223/.14);padding-top:22px}
+.mktf-addr{font-style:normal;font-size:13.5px;color:var(--navy-ink);opacity:.82}
+.mktf-addr b{opacity:1}
+.mktf-hw{margin:0;font-size:12.5px;color:var(--navy-ink);opacity:.6;max-width:46ch;line-height:1.5}
+.mktf-fine{border-top:1px solid rgb(246 238 223/.14)}
+@media (max-width:900px){.mktf-top{grid-template-columns:1fr;gap:26px}.mktf-cols{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 20px}}
+@media (max-width:520px){.mktf-cols{grid-template-columns:1fr}.mktf-trust{padding:16px}}
+
+/* ============================================================= SHARED MKTX PAGE SHELL */
+.mktx-pg{background:var(--bg);color:var(--ink)}
+.mktx-pg .wrap{max-width:1180px}
+.mktx-hero{position:relative;isolation:isolate;overflow:hidden;color:#fff;background:var(--navy,#103a4f);padding:clamp(40px,8vh,78px) 0 clamp(34px,6vh,56px)}
+.mktx-hero::before{content:"";position:absolute;inset:auto -8% -60% 44%;height:130%;z-index:-1;background:radial-gradient(closest-side,rgb(248 194 122/.22),transparent 72%)}
+.mktx-hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:linear-gradient(90deg,transparent,var(--flame,#f2b84b) 28%,var(--flame,#f2b84b) 72%,transparent)}
+.mktx-eye{margin:0 0 14px;font:800 12.5px/1 var(--f-sub);letter-spacing:.17em;text-transform:uppercase;color:var(--flame,#f8c27a)}
+.mktx-hero h1{margin:0 0 16px;font:800 clamp(34px,5vw,60px)/1.03 var(--f-body);letter-spacing:-.025em;color:#fff;text-wrap:balance;max-width:20ch}
+.mktx-lead{margin:0 0 24px;font-size:clamp(16.5px,1.5vw,19.5px);line-height:1.56;color:rgb(255 255 255/.88);max-width:60ch}
+.mktx-cta{display:flex;flex-wrap:wrap;gap:10px 12px}
+.mktx-cta .btn-lamp{background:var(--flame);color:#231505;box-shadow:0 0 0 1px #9a6a1f inset,0 10px 28px -10px rgb(248 194 122/.75);text-decoration:none}
+.mktx-cta .btn-ink{text-decoration:none;color:#fff;border-color:rgb(255 255 255/.4)}
+.mktx-sec{padding:clamp(40px,7vh,72px) 0}
+.mktx-alt{background:var(--sunk)}
+.mktx-k{margin:0 0 10px;font:800 12px/1 var(--f-sub);letter-spacing:.15em;text-transform:uppercase;color:var(--accent)}
+.mktx-h2{margin:0 0 14px;font:800 clamp(26px,3.1vw,40px)/1.1 var(--f-body);letter-spacing:-.02em;color:var(--ink);text-wrap:balance}
+.mktx-sub{margin:0 auto 6px;font-size:17px;line-height:1.6;color:var(--muted);max-width:66ch}
+.mktx-center{text-align:center}
+.mktx-center .mktx-sub{text-align:center}
+
+/* ---- students journey ---- */
+.mkts-stats{list-style:none;margin:clamp(24px,4vh,36px) 0 0;padding:16px 0 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px 22px;border-top:1px solid rgb(255 255 255/.16)}
+.mkts-stats li{display:grid;gap:3px}
+.mkts-stats b{font:800 clamp(24px,3vw,36px)/1 var(--f-body);letter-spacing:-.02em;color:var(--flame,#f8c27a);font-variant-numeric:tabular-nums}
+.mkts-stats span{font-size:13.5px;color:rgb(255 255 255/.8)}
+.mkts-path{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;counter-reset:step}
+.mkts-path li{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 20px 18px;box-shadow:0 1px 2px rgb(11 36 51/.05);min-width:0}
+.mkts-path li::before{counter-increment:step;content:counter(step,decimal-leading-zero);display:block;font:800 13px/1 var(--f-sub);letter-spacing:.06em;color:var(--accent);margin-bottom:10px;opacity:.8}
+.mkts-path h3{margin:0 0 7px;font-size:17.5px;color:var(--ink);letter-spacing:-.01em}
+.mkts-path p{margin:0;font-size:14.5px;line-height:1.55;color:var(--muted)}
+.mkts-path .mkts-kw{margin:9px 0 0;font-size:12.5px;color:var(--accent);font-weight:600}
+.mkts-feats{list-style:none;margin:26px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.mkts-feats li{display:flex;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:16px 18px;min-width:0}
+.mkts-feats svg{color:var(--good);flex:none;margin-top:2px}
+.mkts-feats b{display:block;color:var(--ink);font-size:15.5px;margin-bottom:3px}
+.mkts-feats span{color:var(--muted);font-size:14px;line-height:1.5}
+.mkts-cta2{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+@media (max-width:820px){.mkts-path{grid-template-columns:repeat(2,minmax(0,1fr))}.mkts-feats{grid-template-columns:1fr}.mkts-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.mkts-path{grid-template-columns:1fr}}
+
+/* ============================================================= PLATFORM MIND-MAP */
+.mkmap-wrap{padding:clamp(32px,6vh,60px) 0}
+.mkmap{position:relative;max-width:1060px;margin:0 auto}
+.mkmap-core{display:grid;justify-items:center;gap:8px;text-align:center;background:radial-gradient(130% 130% at 50% 0,var(--accent),color-mix(in srgb,var(--accent) 62%,#0b2433));color:var(--accent-ink,#fff);border-radius:20px;padding:26px 28px;box-shadow:0 18px 44px -20px color-mix(in srgb,var(--accent) 70%,transparent),0 0 0 1px rgb(255 255 255/.08) inset;max-width:360px;margin-inline:auto}
+.mkmap-core .logo .brandmark{height:30px}
+.mkmap-core .mkmap-core-sub{margin:4px 0 0;font-size:13.5px;line-height:1.5;opacity:.9}
+.mkmap-core-ai{margin-top:8px;display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;letter-spacing:.04em;padding:5px 12px;border-radius:999px;background:rgb(255 255 255/.16);color:#fff}
+.mkmap-grid{margin-top:26px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.mkmap-node{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px 18px 16px;box-shadow:0 2px 10px -4px rgb(11 36 51/.14);min-width:0;transition:transform .14s,box-shadow .2s,border-color .2s}
+.mkmap-node:hover{transform:translateY(-2px);box-shadow:0 14px 30px -14px rgb(11 36 51/.3);border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+.mkmap-node::before{content:"";position:absolute;left:0;top:16px;bottom:16px;width:3px;border-radius:3px;background:var(--accent);opacity:.85}
+.mkmap-node.k-gold::before{background:var(--flame,#e0a94b)}
+.mkmap-node.k-ai::before{background:linear-gradient(var(--accent),var(--flame,#e0a94b))}
+.mkmap-nh{display:flex;align-items:center;gap:9px;margin:0 0 4px;padding-left:10px}
+.mkmap-nh svg{color:var(--accent);flex:none}
+.mkmap-node.k-gold .mkmap-nh svg{color:var(--gold,#a57a2a)}
+.mkmap-nh h3{margin:0;font-size:15.5px;color:var(--ink);letter-spacing:-.01em}
+.mkmap-node>p{margin:0 0 9px;padding-left:10px;font-size:13px;line-height:1.5;color:var(--muted)}
+.mkmap-leaves{list-style:none;margin:0;padding:0 0 0 10px;display:flex;flex-wrap:wrap;gap:6px}
+.mkmap-leaves li{font-size:12px;line-height:1;color:var(--ink);background:var(--sunk);border:1px solid var(--line);border-radius:999px;padding:6px 10px}
+.mkmap-node.k-ai .mkmap-leaves li{background:color-mix(in srgb,var(--accent) 12%,var(--surface))}
+.mkmap-tag{display:inline-block;margin-left:8px;font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--gold,#a57a2a);background:var(--warn-soft,#f4e6c8);border:1px solid color-mix(in srgb,var(--gold,#a57a2a) 40%,transparent);border-radius:6px;padding:2px 7px;vertical-align:middle}
+.mkmap-foot{margin-top:22px;text-align:center;font-size:13.5px;color:var(--muted)}
+.mkmap-foot a{color:var(--accent);font-weight:600}
+@media (max-width:860px){.mkmap-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:540px){.mkmap-grid{grid-template-columns:1fr}.mkmap-core{padding:22px 20px}}
+/* </v53-mktx-css> */
 .areqp{border:1px solid var(--line,#cfd8e0);border-radius:10px;padding:10px 14px 4px;margin:6px 0 10px}.areqp legend{font-weight:700;padding:0 6px}.agrid input[type=date],.agrid input[type=month]{width:100%;min-width:0;max-width:100%;box-sizing:border-box;-webkit-appearance:none;appearance:none}.agrid .aip{min-width:0;max-width:100%}
 </style>
 
@@ -5152,7 +5263,7 @@ const BANK = (function(e){try{const P=">oVO^cd@ge#lJ'~wUTDiEY+LZx-K&hkt(/F0;G`N.
 let HIDQ=new Set();const CFG={c:null,bypass:false};try{const c=JSON.parse(localStorage.getItem("ns.cfg")||"null");if(c&&typeof c==="object"){CFG.c=c;HIDQ=new Set(c.hideQ||[])}}catch(e){}
 const featOn=k=>!CFG.c||!CFG.c.feat||CFG.c.feat[k]!==false;
 
-const APPV="38361b15a22f4fcde0fdab1e4d83a6341899516a251f4f81e7a0939cf579d492";
+const APPV="74ca2db7d48ef8b04fcb8ce324269d3dd1857bc99c0b69e2dc9c09f6f6bf49c9";
 const CATS={
   MOC:{n:"Management of Care",lo:15,hi:21,w:18},
   SIC:{n:"Safety and Infection Prevention and Control",lo:10,hi:16,w:13},
@@ -5367,19 +5478,24 @@ function band(sub){const p=prefs();const th=themeIcon(p.theme);
   <div class="ctrls">${SRV.on?`<span class="acct-slot">${acctSlot()}</span>`:""}<div class="seg" role="group" aria-label="Text size"><button class="t1" data-act="text" data-v="md" aria-pressed="${p.text==="md"}" aria-label="Standard text">A</button><button class="t2" data-act="text" data-v="lg" aria-pressed="${p.text==="lg"}" aria-label="Larger text">A</button><button class="t3" data-act="text" data-v="xl" aria-pressed="${p.text==="xl"}" aria-label="Largest text">A</button></div>
   <button class="iconbtn fontbtn" data-act="fontt" aria-pressed="${store.get(K3.font,"std")==="easy"}" aria-label="Easy-read font" title="Easy-read font">Aa</button><button class="iconbtn" data-act="theme" aria-label="${th[1]}. Change theme" title="${th[1]}">${SVG[th[0]]}</button><button class="menub" data-menu="open" aria-haspopup="dialog" aria-expanded="false"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Menu</span></button></div></div></header>`}
 function corpLines(){const c=COMPANY;const L=[];L.push(`<b>${esc(c.legalName||c.brand)}</b>`);if(c.address)L.push(esc(c.address));if(c.phone)L.push(`<a href="tel:+1${c.phone.replace(/\D/g,"")}">${esc(c.phone)}</a>`);if(c.site)L.push(esc(c.site));if(c.email)L.push(`<span>${esc(c.email)}</span>`);return L.join("<br>")}
-function foot(){const yr=new Date().getFullYear();const owner=COMPANY.legalName||COMPANY.brand;
-  return `<footer class="foot2 f3"><div class="wrap">
-   <div class="f3top"><span class="logo" style="color:var(--navy-ink)" role="img" aria-label="Vexcura">${LOGO}</span><p>The full NCLEX-RN practice exam, an Epic-style academic EHR and clinical instructor tools. Free for students and instructors; your school licenses Vexcura. Built by a registered nurse.</p><a class="f3cta" href="/for-nursing-schools#pilot">Request a pilot</a></div>
-   <div class="fcols f3cols">
-    <nav aria-label="For programs"><h4>For programs</h4><ul><li><a href="/for-nursing-schools">Vexcura for nursing schools</a></li><li><a href="/clinical-instructor-tools">Clinical instructor tools</a></li><li><a href="/academic-ehr-for-nursing-students">Academic EHR</a></li><li><a href="/nursing-simulation-scenarios">Simulation drills</a></li><li><a href="/nursing-lms-integration">LMS integration</a></li><li><a href="/status">System status</a></li></ul></nav>
-    <nav aria-label="Students"><h4>Students</h4><ul><li><button class="lk" data-act="brief" data-mode="cat">Full examination</button></li><li><button class="lk" data-act="brief" data-mode="quick">Quick round</button></li><li><button class="lk" data-act="toexplore">Topic drill</button></li><li><a href="/nclex-practice-questions">Practice questions</a></li><li><a href="/nclex-study-guides">Study guides</a></li><li><a href="/question-of-the-day">Question of the day</a><a href="/careers">Careers</a></li></ul></nav>
-    <nav aria-label="Legal"><h4>Legal</h4><ul><li><a href="#terms">Terms of Use</a></li><li><a href="#privacy">Privacy Policy</a></li><li><a href="#copyright">Copyright</a></li><li><a href="#disclaimer">Educational Disclaimer</a></li><li><a href="#trademarks">Trademarks and Affiliation</a></li><li><a href="#accessibility">Accessibility</a></li><li><a href="#editorial">How questions are checked</a></li><li class="adm-link" ${TELE.isAdmin?"":"hidden"}><a href="#admin">Admin dashboard</a></li></ul></nav>
-    <div><h4>Contact</h4><address class="fcorp">${esc(COMPANY.address)}<br><a href="tel:+1${COMPANY.phone.replace(/\D/g,"")}">${esc(COMPANY.phone)}</a></address></div>
+function foot(){const yr=new Date().getFullYear();
+  return `<footer class="foot2 mktf"><div class="wrap">
+   <div class="mktf-top">
+    <div class="mktf-brand"><span class="logo" style="color:var(--navy-ink)" role="img" aria-label="Vexcura">${LOGO}</span><p class="mktf-tag">The full NCLEX-RN practice exam, an Epic-style academic EHR and clinical instructor tools &mdash; built by a registered nurse. Free for students and faculty; your school licenses Vexcura.</p><a class="mktf-cta" href="/for-nursing-schools#pilot">Request a pilot</a></div>
+    <div class="mktf-cols">
+     <nav class="mktf-col" aria-label="Platform"><h4>Platform</h4><ul><li><a href="/software">Platform overview</a></li><li><a href="/academic-ehr-for-nursing-students">Academic EHR</a></li><li><a href="/nursing-simulation-scenarios">Clinical simulations</a></li><li><a href="/nclex-practice-questions">NCLEX practice questions</a></li><li><a href="/nclex-study-guides">Study guides</a></li><li><a href="/question-of-the-day">Question of the day</a></li></ul></nav>
+     <nav class="mktf-col" aria-label="For schools"><h4>For schools</h4><ul><li><a href="/for-nursing-schools">For nursing schools</a></li><li><a href="/clinical-instructor-tools">Clinical instructor tools</a></li><li><a href="/nursing-lms-integration">LMS integration</a></li><li><a href="/for-nursing-schools#pricing">Pricing</a></li><li><a href="/for-nursing-schools#pilot">Request a pilot</a></li><li><a href="/status">System status</a></li></ul></nav>
+     <nav class="mktf-col" aria-label="For students"><h4>For students</h4><ul><li><a href="/for-nursing-students">Nursing students hub</a></li><li><button class="lk" data-act="brief" data-mode="cat">Full examination</button></li><li><button class="lk" data-act="brief" data-mode="quick">Quick round</button></li><li><button class="lk" data-act="toexplore">Topic drill</button></li><li><a href="#signup">Create a free account</a></li></ul></nav>
+     <nav class="mktf-col" aria-label="Company"><h4>Company</h4><ul><li><a href="/about#founder">About &amp; founder</a></li><li><a href="/careers">Careers</a></li><li><a href="#privacy">Security &amp; trust</a></li><li><a href="/for-nursing-schools#pilot">Contact your account team</a></li></ul></nav>
+     <nav class="mktf-col" aria-label="Legal"><h4>Legal</h4><ul><li><a href="#terms">Terms of Use</a></li><li><a href="#privacy">Privacy Policy</a></li><li><a href="#copyright">Copyright</a></li><li><a href="#disclaimer">Educational Disclaimer</a></li><li><a href="#trademarks">Trademarks &amp; Affiliation</a></li><li><a href="#accessibility">Accessibility</a></li><li><a href="#editorial">How questions are checked</a></li><li class="adm-link" ${TELE.isAdmin?"":"hidden"}><a href="#admin">Admin dashboard</a></li></ul></nav>
+    </div>
    </div>
-   <div class="flegal">
-    <p>NCLEX®, NCLEX-RN®, and Next Generation NCLEX® are registered trademarks of the National Council of State Boards of Nursing, Inc. (NCSBN). Pearson VUE® is a trademark of Pearson Education, Inc. ATI is a trademark of Assessment Technologies Institute, LLC. Vexcura is independent and is not affiliated with, endorsed by, or sponsored by NCSBN, Pearson VUE, ATI, any EHR vendor, or any state board of nursing.</p>
+   <div class="mktf-trust"><span class="mktf-trust-k">Security &amp; trust</span><ul class="mktf-badges"><li>Bank-level (AES-256) encryption</li><li>TLS 1.2+ in transit</li><li>Two-step sign-in</li><li>Audit logging</li><li>FERPA-aligned &middot; HIPAA-ready</li></ul><a class="mktf-trust-link" href="#privacy">How we protect your data &rarr;</a></div>
+   <div class="mktf-corp"><address class="mktf-addr"><b>Vexcura LLC</b> &middot; ${esc(COMPANY.address)}</address><p class="mktf-hw">Best experienced on a desktop or tablet with a modern browser &mdash; the EHR and clinical simulations use a wide screen.</p></div>
+   <div class="flegal mktf-fine">
+    <p>NCLEX&reg;, NCLEX-RN&reg;, and Next Generation NCLEX&reg; are registered trademarks of the National Council of State Boards of Nursing, Inc. (NCSBN). Pearson VUE&reg; is a trademark of Pearson Education, Inc. ATI is a trademark of Assessment Technologies Institute, LLC. Vexcura is independent and is not affiliated with, endorsed by, or sponsored by NCSBN, Pearson VUE, ATI, any EHR vendor, or any state board of nursing.</p>
     <p>For educational purposes only. Content is not medical advice and must not be used for patient care. Pass likelihood is an estimate and does not predict or guarantee an NCLEX result. Questions are written and fact-checked with AI assistance against published sources; see <a href="#editorial" style="color:inherit">How questions are checked</a>.</p>
-    <p>© ${yr} ${esc(owner)}. All rights reserved. Use of this site means you accept the <a href="#terms" style="color:inherit">Terms of Use</a> and <a href="#privacy" style="color:inherit">Privacy Policy</a>.</p>
+    <p>&copy; ${yr} Vexcura LLC. All rights reserved. Use of this site means you accept the <a href="#terms" style="color:inherit">Terms of Use</a> and <a href="#privacy" style="color:inherit">Privacy Policy</a>.</p>
    </div></div></footer>`}
 
 /* index-card question */
@@ -7418,10 +7534,11 @@ function renderSignin(admin){if(SRV.me&&!admin){location.hash="#progress";return
   app.innerHTML=`<div class="wsx">${VXS.art(VXS.cur())}
    <main class="wsx-c" id="main"><section class="wsx-p allow-copy" aria-labelledby="wsxh">
     <div class="wsx-brand"><button class="wsx-logo" data-act="home" aria-label="Vexcura home">${LOGO}</button><p class="wsx-sub">Clinical Practice Workstation</p><p class="wsx-rel">${esc(mon)}</p></div>
-    <h1 id="wsxh" class="sr">${admin?"Administrator log in":"Log in to Vexcura"}</h1>
+    <h1 id="wsxh" class="sr">${admin?"Administrator sign in":"Sign in to Vexcura"}</h1>
+    ${admin?"":'<p class="wsx-who">Students, faculty &amp; staff &mdash; everyone gets access here.</p>'}
     ${admin?`<p class="wsx-adm">Administrator access</p>`:""}
     <form class="aform wsx-f" data-form="signin">${fld("User ID","email",{type:"email",ac:"username",req:1,max:254,im:"email",value:uid})}${fld("Password","password",{type:"password",ac:"current-password",req:1,max:200})}
-     ${formMsg()}<button class="wsx-go" type="submit">Log In</button>
+     ${formMsg()}<button class="wsx-go" type="submit">Sign in</button>
      <label class="wsx-rem"><input type="checkbox" id="wslrem" ${uid?"checked":""}> Remember my user ID</label></form>
     <p class="wsx-links"><a href="#forgot">Forgot your password?</a>${SRV.signups?`<a href="#signup">New student? Create an account</a>`:""}</p>
     ${SRV.setup?`<p class="abox">This site doesn't have an owner account yet. <a href="#setup">Set up the owner account</a> with your setup code.</p>`:admin?`<p class="fine">Locked out of the owner account? <a href="#recover">Recover it with your setup code</a>.</p>`:""}
@@ -7668,7 +7785,7 @@ const CU={data:null,p:null,done:()=>store.get("nclexsim.v1.currdone",{}),edit:nu
         <label class="achk"><input type="checkbox" name="req"> Required for students</label><label class="achk"><input type="checkbox" name="draft"> Save as a draft (students can't see it yet)</label>
         <p class="clerr" hidden></p><div class="sbtns"><button class="btn2" type="submit">Add</button></div></form></section>
       <section class="rp"><h3>Your program's content (${s.items.length})</h3>${s.items.length?groups(s.items).map(([u,I])=>`<h5 class="cu-u">${esc(u)}</h5><ul class="cu-l">${I.map(x=>itemHTML(x,s,true).replace('</span></div></li>',`<button type="button" class="btn2 mini sec2" data-cupub="${esc(x.id)}" data-v="${x.status==="draft"?"published":"draft"}">${x.status==="draft"?"Publish":"Unpublish"}</button><button type="button" class="btn2 mini sec2" data-cureq="${esc(x.id)}" data-v="${x.req?0:1}">${x.req?"Not required":"Make required"}</button><button type="button" class="lk" data-cudel="${esc(x.id)}">Remove</button></span></div></li>`)).join("")}</ul>`).join(""):`<p class="note">Nothing yet. Add your first lecture or handout above.</p>`}</section>
-      <section class="rp cu-rep"><h3>Need something bigger?</h3><p class="note">Custom cases, integrations with your school's systems, or other major changes are set up by your Vexcura representative, Tyler Savage. Call 762-677-2802.</p></section>`,true)}
+      <section class="rp cu-rep"><h3>Need something bigger?</h3><p class="note">Custom cases, integrations with your school's systems, or other major changes are set up by your dedicated Vexcura account manager. Ask your account team and they'll scope it with you.</p></section>`,true)}
   const rd=f=>new Promise((ok,no)=>{const r=new FileReader();r.onload=()=>ok(r.result);r.onerror=()=>no(new Error("Couldn't read that file."));r.readAsDataURL(f)});
   document.addEventListener("change",e=>{const f=e.target.closest&&e.target.closest('[data-cuf="add"]');if(f&&e.target.name==="kind"){const k=f.elements.kind.value;f.querySelector(".cu-file").hidden=k!=="file";f.querySelector(".cu-url").hidden=k!=="link"}
     const sc=e.target.closest&&e.target.closest("[data-cusch]");if(sc){CU.edit=sc.value;renderCurr()}});
@@ -12329,7 +12446,7 @@ function obDash(a,C){const I=a.info||{},B=a.billing||{};const i=obStepIdx(a);con
   const detail=`<section class="rp obcard"><div class="obch"><h3>Program details</h3>${["submitted","approved"].indexOf(a.status)>=0?`<button class="btn2 mini sec2" data-ob="editinfo">Edit</button>`:""}</div>
     <dl class="obdl"><dt>School</dt><dd>${esc(I.school)}${I.program?" · "+esc(I.program):""}</dd><dt>Program type</dt><dd>${esc(I.type||"")}</dd><dt>Students</dt><dd>About ${esc(I.students||"")}</dd><dt>Location</dt><dd>${esc([I.city,I.state].filter(Boolean).join(", "))}</dd><dt>Director</dt><dd>${esc(B.name||OB.me.name)}${I.title?", "+esc(I.title):""} · ${esc(OB.me.email)}${I.phone?" · "+esc(I.phone):""}</dd></dl></section>`;
   let main="";
-  if(a.status==="submitted")main=`<section class="rp obcard obnow"><h3>2. Vexcura is reviewing your program</h3><p>Tyler Savage, RN, reviews every program before contracts go out. When your program is approved, trial access turns on for your faculty and you can choose a license here.</p><p class="note">Questions? Call ${esc(C.payee.phone)}.</p></section>`;
+  if(a.status==="submitted")main=`<section class="rp obcard obnow"><h3>2. Vexcura is reviewing your program</h3><p>Your Vexcura account team reviews every program before contracts go out. When your program is approved, trial access turns on for your faculty and you can choose a license here.</p><p class="note">Questions? Call ${esc(C.payee.phone)}.</p></section>`;
   else if(a.status==="declined")main=`<section class="rp obcard obnow"><h3>We couldn't approve this signup</h3>${a.note?`<p>${esc(a.note)}</p>`:""}<p class="note">Call ${esc(C.payee.phone)} if you think this is a mistake.</p></section>`;
   else if(a.status==="approved"){main=`${a.school_id?`<section class="rp obcard obtrial"><h3>Your trial access is on</h3><p>Faculty and a small group of students can use Vexcura now. Open the program admin page for your invite codes.</p><div class="btn-row"><a class="btn2" href="#school">Open program admin</a><a class="btn2 sec2" href="#teach">Instructor dashboard</a></div></section>`:""}
     ${a.note?`<div class="abox">${esc(a.note)}</div>`:""}
@@ -14231,7 +14348,7 @@ app.addEventListener("drop",e=>{const s2=e.target.closest&&e.target.closest(".sl
         <p class="lp3-eye">The full NCLEX-RN practice exam</p>
         <h1 id="lp3h">Sit the whole NCLEX&#8209;RN before test day.</h1>
         <p class="lp3-lead">Vexcura's full adaptive practice exam runs 85 to 150 items on a five-hour clock, with NGN case studies and the same stopping rules as the real exam. When it ends, students get a pass-likelihood estimate and a breakdown by client needs category.</p>
-        <div class="lp3-cta"><a class="btn-lamp" href="#signin">Student sign-in</a><a class="btn-ink" href="/for-nursing-schools">For nursing schools</a><a class="btn-ink" href="/for-nursing-schools#pilot">Request a pilot</a></div>
+        <div class="lp3-cta"><a class="btn-lamp" href="#signin">Sign in</a><a class="btn-ink" href="/for-nursing-schools">For nursing schools</a><a class="btn-ink" href="/for-nursing-schools#pilot">Request a pilot</a></div>
         <p class="lp3-stu">New student? <a href="#signup">Join with your school's code</a>. Students and instructors are free; your school licenses Vexcura.</p>
       </div>
       <figure class="lp3-vis duo"><div class="duo-s">${lpBrowser("exam-q","(max-width: 900px) calc(100vw - 72px), 620px",1)}${lpPhone("exam-phone","(max-width: 900px) 30vw, 170px","dv-po",1)}</div><figcaption>The full exam in progress, on a laptop and a phone. The time in the phone's status bar is yours.</figcaption></figure>
@@ -14278,14 +14395,14 @@ app.addEventListener("drop",e=>{const s2=e.target.closest&&e.target.closest(".sl
       <div><p class="lp3-k">How Vexcura is licensed</p><h2 id="lp3f" class="lp3-h2">Students and instructors are free. Your school licenses Vexcura.</h2>
         <p>Every plan includes everything: the full exam, the academic EHR, the instructor workspace, badge sign-in, curriculum uploads, SSO and LTI. Plans differ only by how many students they cover. Board-ready reporting is coming soon, included in every plan.</p>
         <div class="lp3-cta"><a class="btn-lamp" href="/for-nursing-schools#pricing">See school pricing</a><a class="btn-ink" href="/#program-setup">Set up your program</a><a class="btn-ink" href="/for-nursing-schools#pilot">Request a pilot</a></div></div>
-      <ul class="lp3-buy">${ck("<b>Contract packet</b> Order form, license agreement, student data privacy agreement and pilot agreement.")}${ck("<b>FERPA and data handling</b> What's collected, who sees it and how it's deleted. The practice EHR keeps real patient data out.")}${ck("<b>Security and accessibility</b> Draft HECVAT-style answers and a draft VPAT-format conformance report.")}${ck("<b>One person to call</b> Tyler Savage, RN, handles setup and major customizations personally.")}</ul>
+      <ul class="lp3-buy">${ck("<b>Contract packet</b> Order form, license agreement, student data privacy agreement and pilot agreement.")}${ck("<b>FERPA and data handling</b> What's collected, who sees it and how it's deleted. The practice EHR keeps real patient data out.")}${ck("<b>Security and accessibility</b> Draft HECVAT-style answers and a draft VPAT-format conformance report.")}${ck("<b>One dedicated contact</b> Your account manager handles setup and major customizations personally, start to finish.")}</ul>
     </div></section>
 
     <section class="lp-steps" aria-labelledby="lps"><div class="wrap">
       <h2 id="lps" class="lp-h2">How a pilot works</h2>
       <ol class="lp-sgrid"><li><b>1</b><h3>Pick one cohort</h3><p>Choose a clinical group or course. We set up your program, faculty accounts and join codes in a short kickoff call.</p></li><li><b>2</b><h3>Use it for a semester</h3><p>Students join with a code and take the full exam, chart in the EHR and practice daily. Instructors run clinical days and assign work.</p></li><li><b>3</b><h3>Decide with your data</h3><p>Review the results together at the end of the semester and export your data. There's no obligation to buy.</p></li></ol>
     </div></section>
-    <section class="lp-close vxs-band">${VXS.art(VXS.cur(),"vxs-art",null,2)}<div class="vxs-sh" aria-hidden="true"></div><div class="wrap lp-ci"><div><h2 class="lp-h2 l">Bring the full NCLEX practice exam to your program.</h2><p>Talk with Tyler Savage, RN, CRS, LNC, the nurse who built it: <a href="tel:+17626772802">762-677-2802</a> · <a href="/about#founder">Meet the founder</a></p></div><div class="lp-cta"><a class="btn-lamp lp-go" href="/for-nursing-schools">For nursing schools</a><a class="btn-ink" href="#signin">Student sign-in</a></div></div></section>
+    <section class="lp-close vxs-band">${VXS.art(VXS.cur(),"vxs-art",null,2)}<div class="vxs-sh" aria-hidden="true"></div><div class="wrap lp-ci"><div><h2 class="lp-h2 l">Bring the full NCLEX practice exam to your program.</h2><p>Talk with your dedicated Vexcura account team about bringing the full exam to your program. <a href="/about#founder">Meet the founder who built it</a></p></div><div class="lp-cta"><a class="btn-lamp lp-go" href="/for-nursing-schools">For nursing schools</a><a class="btn-ink" href="#signin">Sign in</a></div></div></section>
     </main>${foot()}</div>`;
     lpLive()}
   window.__nsLanding=renderLanding;window.addEventListener("hashchange",()=>{window.__vxMoved=1});document.addEventListener("click",e=>{if(e.target.closest&&e.target.closest("[data-act],a"))window.__vxMoved=1},true);
@@ -23137,6 +23254,139 @@ document.addEventListener("click", async e => { const b = e.target.closest && e.
   try { await srvApi("/api/daily/admin/items/" + encodeURIComponent(id), { method: "POST", body: { action: "review" } }); adxToast("Marked reviewed by RN"); rolxRedraw() }
   catch (x) { b.disabled = false; b.textContent = "Mark reviewed by RN"; if (x && /needReviewer|reviewer/i.test(x.message || "")) alertBox("Confirm your RN reviewer name first (at the top of this page)."); else alertBox(x.message) } });
 /* </v51-roles-js> */
+/* <v53-mktx-js> */
+/* v53 mktx: two premium in-app marketing page routes — the nursing-students hub
+   (/for-nursing-students) and the platform mind-map hub (/software). Inserted INSIDE the
+   app IIFE, so it shares band(), foot(), VXS, esc, app, view, BANK, LOGO and renderHome.
+   Path routing: a one-shot renderHome wrap claims the first boot render when the pathname
+   matches one of these routes, then steps aside so the logo / Home behave normally. The
+   authoritative <title>/meta and crawlable copy live in the server-rendered SEO page for
+   each route (built separately); here we set document.title/description for in-app UX. */
+{
+  const MKI = {
+    check: '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>',
+    ehr: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 13h3M8 16h5"/></svg>',
+    exam: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg>',
+    sim: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h3l2-6 4 14 2-8h4"/><circle cx="20" cy="12" r="1.4"/></svg>',
+    teach: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7l8-3 8 3-8 3-8-3z"/><path d="M6 10v4c0 1.7 2.7 3 6 3s6-1.3 6-3v-4"/></svg>',
+    board: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4v5c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V7l8-4z"/><path d="M9 12l2 2 4-4"/></svg>',
+    media: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3V9z"/></svg>',
+    ai: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><rect x="7" y="7" width="10" height="10" rx="2.5"/><circle cx="12" cy="12" r="1.3"/></svg>',
+    vr: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="10" rx="3"/><path d="M8 12h.01M16 12h.01M10.5 15h3"/></svg>'
+  };
+  function mktxMeta(title, desc) {
+    try { document.title = title } catch (e) { }
+    try {
+      let m = document.querySelector('meta[name="description"]');
+      if (!m) { m = document.createElement("meta"); m.setAttribute("name", "description"); document.head.appendChild(m) }
+      m.setAttribute("content", desc);
+    } catch (e) { }
+  }
+  const ck = s => '<li>' + MKI.check + '<span>' + s + '</span></li>';
+
+  /* -------------------------------------------------- /for-nursing-students */
+  function renderStudents() {
+    stopLoop(); stopTick(); stopSpeak(); view = "mktx"; window.scrollTo(0, 0);
+    mktxMeta(
+      "For Nursing Students — NCLEX Prep, Clinical Skills & Academic EHR | Vexcura",
+      "Vexcura is the nursing-school study platform for every stage: fundamentals, pharmacology, dosage calculation, med-surg, care plans, clinicals, NCLEX and Next Gen NCLEX (NGN) prep, test day and your first nursing job. Free for students."
+    );
+    const steps = [
+      ["Fundamentals", "Build the base — safety, vital signs, infection control and nursing process — with sourced practice questions from day one.", "fundamentals · nursing process · safety"],
+      ["Health assessment", "Practice head-to-toe assessment and documentation in an Epic-style academic EHR before you ever touch a real chart.", "health assessment · charting"],
+      ["Pharmacology", "Drug classes, side effects and nursing considerations, reinforced by questions that come back until they stick.", "pharmacology · medication safety"],
+      ["Dosage calculation", "Drill dosage calc and IV rates with worked rationales, plus a live MAR that flags doses due against the clock.", "dosage calculation · med math"],
+      ["Med-surg", "The heaviest course, one system at a time — cardiac, respiratory, renal, endocrine — with unfolding case studies.", "med-surg · pathophysiology"],
+      ["Care plans & clinical judgment", "Write care plans and work the clinical-judgment ladder the way the NCSBN model and NGN items expect.", "care plans · clinical judgment"],
+      ["Mental health, maternal & peds", "Round out the specialties with focused drills so no rotation catches you off guard.", "psych · OB · pediatrics"],
+      ["Clinicals & clinical skills", "Clinical-reasoning labs, telemetry, auscultation, a deteriorating-patient drill and Shift care-coordination — reps before the floor.", "clinical skills · simulation"],
+      ["NCLEX prep", "Sit the full adaptive exam — 85 to 150 items on a five-hour clock with real stopping rules — and get a pass-likelihood read.", "NCLEX-RN prep · adaptive exam"],
+      ["Next Gen NCLEX (NGN)", "Case studies, bowtie, matrix and partial-credit items so the new question types feel familiar.", "NGN · next generation NCLEX"],
+      ["Test day", "A proctored test-day rehearsal with an integrity report, so the real thing is just one more rep.", "test day · exam readiness"],
+      ["Your first nursing job", "Charting, handoff, prioritization and delegation practice that carries past the exam into your first RN role.", "new grad RN · first nursing job"]
+    ];
+    const n = BANK.length.toLocaleString();
+    app.innerHTML = '<div class="page mktx-pg">' + band() + '<main id="main">' +
+      '<section class="mktx-hero"><div class="wrap">' +
+      '<p class="mktx-eye">For nursing students</p>' +
+      '<h1>Every stage of nursing school, in one place.</h1>' +
+      '<p class="mktx-lead">From your first fundamentals exam to your first shift as an RN, Vexcura keeps you moving: cited practice questions, an Epic-style academic EHR, clinical simulations and a full adaptive NCLEX exam. Free for students &mdash; your school licenses the rest.</p>' +
+      '<div class="mktx-cta"><a class="btn-lamp" href="#signup">Create your free account</a><a class="btn-ink" href="#signin">Sign in</a></div>' +
+      '<ul class="mkts-stats"><li><b>' + n + '</b><span>cited practice questions</span></li><li><b>85&ndash;150</b><span>item adaptive exam</span></li><li><b>NGN</b><span>case studies &amp; item types</span></li><li><b>Free</b><span>for every student</span></li></ul>' +
+      '</div></section>' +
+      '<section class="mktx-sec mktx-center"><div class="wrap">' +
+      '<p class="mktx-k">The nursing-school journey</p><h2 class="mktx-h2">Wherever you are, there&rsquo;s something here for today.</h2>' +
+      '<p class="mktx-sub">Search for your course and you should land somewhere that speaks your language. Here&rsquo;s the whole path, start to license.</p>' +
+      '<ol class="mkts-path" style="text-align:left">' + steps.map(s => '<li><h3>' + s[0] + '</h3><p>' + s[1] + '</p><p class="mkts-kw">' + s[2] + '</p></li>').join("") + '</ol>' +
+      '</div></section>' +
+      '<section class="mktx-sec mktx-alt"><div class="wrap mktx-center">' +
+      '<p class="mktx-k">Study tools that follow you</p><h2 class="mktx-h2">Practice every day, not just before the exam.</h2></div>' +
+      '<div class="wrap"><ul class="mkts-feats">' +
+      ck('<b>Question of the day</b><span>One sourced NCLEX-style question daily, with a streak to keep.</span>') +
+      ck('<b>Missed-question cards</b><span>Questions you miss come back on a schedule until you own them.</span>') +
+      ck('<b>Academic EHR</b><span>Chart on made-up patients: My Chart, MAR, flowsheets, orders and care plans.</span>') +
+      ck('<b>Clinical simulations</b><span>Telemetry, auscultation, a deteriorating patient and care-coordination reps.</span>') +
+      ck('<b>Pass-likelihood read</b><span>Know where you stand by client-needs category after every full exam.</span>') +
+      ck('<b>Free study guides</b><span>Printable, sourced PDFs at nclexsim.com/nclex-study-guides.</span>') +
+      '</ul>' +
+      '<div class="mkts-cta2"><a class="btn-lamp" href="#signup" style="text-decoration:none">Create your free account</a><a class="btn-ink" href="/software" style="text-decoration:none;color:var(--accent);border-color:color-mix(in srgb,var(--accent) 50%,transparent)">See the whole platform</a></div>' +
+      '</div></section>' +
+      '</main>' + foot() + '</div>';
+  }
+
+  /* -------------------------------------------------- /software (platform mind-map) */
+  function mapNode(kind, icon, title, tag, desc, leaves) {
+    return '<div class="mkmap-node ' + kind + '"><div class="mkmap-nh">' + icon + '<h3>' + title + (tag ? '<span class="mkmap-tag">' + tag + '</span>' : '') + '</h3></div>' +
+      '<p>' + desc + '</p><ul class="mkmap-leaves">' + leaves.map(l => '<li>' + l + '</li>').join("") + '</ul></div>';
+  }
+  function renderSoftware() {
+    stopLoop(); stopTick(); stopSpeak(); view = "mktx"; window.scrollTo(0, 0);
+    mktxMeta(
+      "The Vexcura Platform — Academic EHR, NCLEX Exams, Clinical Simulations & Instructor Tools",
+      "Everything Vexcura reaches, from one core: an Epic-style academic EHR, adaptive NCLEX exams, clinical simulations, instructor and compliance tools, a video library and AI throughout — with VR simulations on the roadmap."
+    );
+    const nodes =
+      mapNode("", MKI.ehr, "Academic EHR", "", "An Epic-style teaching chart for made-up patients.", ["My Chart", "MAR on a time ruler", "Flowsheets", "Orders &amp; LDAs", "Care plans", "Handoff &amp; Brain"]) +
+      mapNode("k-ai", MKI.exam, "NCLEX adaptive exams", "AI", "Full-length, adaptive, with real stopping rules.", ["85&ndash;150 items", "NGN case studies", "Bowtie &amp; matrix", "Pass likelihood", "Rationales"]) +
+      mapNode("", MKI.sim, "Clinical simulations", "", "Reps that change in real time, before the floor.", ["Telemetry", "Auscultation", "Deteriorating patient", "Shift care-coordination", "Clinical Reasoning Lab"]) +
+      mapNode("", MKI.teach, "Instructor tools", "", "Run clinical days and assign work in a tap.", ["Attendance &amp; badges", "Assignments", "Live clinical groups", "Curriculum uploads", "SSO &amp; LTI 1.3"]) +
+      mapNode("k-gold", MKI.board, "Compliance &amp; reporting", "Soon", "Board-ready evidence without the spreadsheet.", ["Board reporting", "Program outcomes", "Audit logging", "FERPA data handling"]) +
+      mapNode("", MKI.media, "Learning &amp; media", "", "Reference and review, built into the chart.", ["Video library", "Study guides", "Megacode (ACLS)", "Question of the day"]);
+    app.innerHTML = '<div class="page mktx-pg">' + band() + '<main id="main">' +
+      '<section class="mktx-hero"><div class="wrap">' +
+      '<p class="mktx-eye">The platform</p>' +
+      '<h1>One platform. The whole clinical education stack.</h1>' +
+      '<p class="mktx-lead">Vexcura started as a practice exam and grew into the system a nursing program runs on &mdash; charting, simulation, teaching and reporting &mdash; with AI woven through and VR simulations on the way. Here&rsquo;s everything it reaches, radiating from one core.</p>' +
+      '<div class="mktx-cta"><a class="btn-lamp" href="/for-nursing-schools#pilot">Request a pilot</a><a class="btn-ink" href="/for-nursing-students">For students</a></div>' +
+      '</div></section>' +
+      '<section class="mkmap-wrap"><div class="wrap"><div class="mkmap">' +
+      '<div class="mkmap-core"><span class="logo" role="img" aria-label="Vexcura">' + LOGO + '</span><p class="mkmap-core-sub">The academic EHR &amp; NCLEX platform, built by a registered nurse.</p><span class="mkmap-core-ai">' + MKI.ai + ' AI throughout</span></div>' +
+      '<div class="mkmap-grid">' + nodes + '</div>' +
+      '<div class="mkmap-grid" style="margin-top:16px">' +
+      mapNode("k-ai", MKI.ai, "AI, throughout", "", "Assistance everywhere, labeled and reviewed by a nurse.", ["AI study coach", "Care-plan &amp; note checks", "New questions most days", "Trusted-source search"]) +
+      mapNode("k-gold", MKI.vr, "On the roadmap", "Coming", "Where the platform is heading next.", ["VR simulations", "Expanded board reporting", "More specialty sims"]) +
+      '</div>' +
+      '<p class="mkmap-foot">Every plan includes everything &mdash; plans differ only by how many students they cover. <a href="/for-nursing-schools">See how Vexcura is licensed</a>.</p>' +
+      '</div></div></section>' +
+      '</main>' + foot() + '</div>';
+  }
+
+  try { window.__nsStudents = renderStudents; window.__nsSoftware = renderSoftware } catch (e) { }
+
+  /* one-shot path dispatch: claim only the first boot render for a matching pathname */
+  let mktxClaimed = false;
+  const _rhMKTX = renderHome;
+  renderHome = function () {
+    if (!mktxClaimed) {
+      mktxClaimed = true;
+      let p = ""; try { p = location.pathname || "" } catch (e) { }
+      if (/^\/(for-nursing-students|students)\/?$/.test(p)) return renderStudents();
+      if (/^\/(software|platform)\/?$/.test(p)) return renderSoftware();
+    }
+    return _rhMKTX.apply(this, arguments);
+  };
+}
+/* </v53-mktx-js> */
 /* <v22-daily-js> */
 /* <v22-daily-js> Daily AI questions + owner spot-check queue.
    Insert INSIDE the app's main IIFE in app.html (BANK/BY/itemHTML/qflagL are IIFE-scoped, not globals): directly after
