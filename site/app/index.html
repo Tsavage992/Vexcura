@@ -4441,6 +4441,386 @@ li.eie{opacity:.65}.vxv-site.eie{opacity:.6}
 /* The confidential watermark stamped onto previews must stay visible even if a stylesheet tries to hide it. */
 .vxv-wm { opacity: 1 !important; visibility: visible !important; }
 /* </v42-harden-css> */
+/* <v43-shift-css> */
+/* v43-shift-css: "Shift" multi-patient care-coordination capstone. Scoped to #vxsh (full-screen overlay) and .vxsh-* .
+   Epic-inspired, phone(390)/iPad/desktop, reduced-motion respected. No horizontal overflow. */
+#vxsh{position:fixed;inset:0;z-index:4000;background:#eef2f5;color:#17262e;display:flex;flex-direction:column;overflow:hidden;font-family:inherit}
+#vxsh *{box-sizing:border-box}
+#vxsh .vxsh-scroll{flex:1;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch}
+#vxsh .vxsh-wrap{max-width:1180px;margin:0 auto;padding:14px 16px 90px;width:100%}
+/* top bar */
+.vxsh-top{display:flex;align-items:center;gap:10px;padding:8px 14px;background:#0d3b52;color:#fff;flex-wrap:wrap;min-height:48px}
+.vxsh-top .vxsh-ttl{font-weight:700;font-size:16px;display:flex;align-items:center;gap:8px}
+.vxsh-top .vxsh-ttl svg{width:20px;height:20px}
+.vxsh-clock{margin-left:auto;display:flex;align-items:center;gap:10px;font-variant-numeric:tabular-nums}
+.vxsh-clock .vxsh-cv{font-weight:700;font-size:15px;background:rgba(255,255,255,.14);padding:3px 9px;border-radius:7px}
+.vxsh-clock .vxsh-cv.warn{background:#b3261e}
+.vxsh-x{background:transparent;border:1px solid rgba(255,255,255,.5);color:#fff;border-radius:7px;padding:5px 10px;font:inherit;font-weight:600;cursor:pointer}
+.vxsh-x:hover{background:rgba(255,255,255,.12)}
+/* generic */
+.vxsh-card{background:#fff;border:1px solid #d9e2e8;border-radius:12px;padding:14px 16px;margin:0 0 12px;box-shadow:0 1px 2px rgba(13,59,82,.05)}
+.vxsh-card h3{margin:0 0 6px;font-size:16px}
+.vxsh-card h4{margin:12px 0 4px;font-size:14px}
+.vxsh-muted{color:#5a6b74;font-size:13px}
+.vxsh-fine{color:#6b7b84;font-size:12px;line-height:1.5}
+.vxsh-btn{display:inline-flex;align-items:center;gap:6px;background:#0d6cbf;color:#fff;border:1px solid #0d6cbf;border-radius:8px;padding:8px 14px;font:inherit;font-weight:600;cursor:pointer;line-height:1.2}
+.vxsh-btn:hover{background:#0b5ea6}
+.vxsh-btn.sec{background:#fff;color:#0d3b52;border-color:#aebfc9}
+.vxsh-btn.sec:hover{background:#f0f5f8}
+.vxsh-btn.warn{background:#b3261e;border-color:#b3261e}
+.vxsh-btn.warn:hover{background:#9b1c13}
+.vxsh-btn.mini{padding:5px 10px;font-size:13px}
+.vxsh-btn:disabled{opacity:.5;cursor:default}
+.vxsh-btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.vxsh-pill{display:inline-block;padding:2px 9px;border-radius:999px;font-size:12px;font-weight:600;border:1px solid transparent}
+.vxsh-pill.ac1{background:#fbe6e4;color:#9b1c13;border-color:#f0c4bf}
+.vxsh-pill.ac2{background:#fdecd9;color:#8a4b00;border-color:#f3d2a6}
+.vxsh-pill.ac3{background:#fff6cf;color:#6b5600;border-color:#eadd8f}
+.vxsh-pill.ac4{background:#e3f0e6;color:#1f6b3a;border-color:#bcdcc4}
+.vxsh-pill.ac5{background:#e4eef6;color:#184e77;border-color:#bcd6ea}
+.vxsh-pill.new{background:#b3261e;color:#fff}
+.vxsh-pill.ok{background:#e3f0e6;color:#1f6b3a}
+.vxsh-pill.bad{background:#fbe6e4;color:#9b1c13}
+.vxsh-tag{display:inline-block;font-size:11px;color:#5a6b74;background:#eef2f5;border:1px solid #dbe3e8;border-radius:6px;padding:1px 7px;margin:1px 2px 1px 0}
+.vxsh-ai{display:inline-block;font-size:11px;color:#6b4e00;background:#fff6cf;border:1px solid #eadd8f;border-radius:6px;padding:2px 8px;margin:4px 0}
+/* progress bar */
+.vxsh-bar{height:8px;border-radius:5px;background:#e4ebf0;overflow:hidden;margin:4px 0}
+.vxsh-bar>i{display:block;height:100%;background:#0d6cbf}
+/* step dots */
+.vxsh-steps{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 12px}
+.vxsh-steps span{font-size:12px;color:#5a6b74;padding:3px 10px;border-radius:999px;background:#fff;border:1px solid #d9e2e8}
+.vxsh-steps span.on{background:#0d3b52;color:#fff;border-color:#0d3b52}
+.vxsh-steps span.done{background:#e3f0e6;color:#1f6b3a;border-color:#bcdcc4}
+/* patient board */
+.vxsh-board{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:12px}
+.vxsh-pt{background:#fff;border:1px solid #d9e2e8;border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:6px;position:relative;cursor:pointer;border-left:5px solid #cfd9df}
+.vxsh-pt:hover{box-shadow:0 2px 10px rgba(13,59,82,.12)}
+.vxsh-pt.a1{border-left-color:#b3261e}.vxsh-pt.a2{border-left-color:#e67e00}.vxsh-pt.a3{border-left-color:#c7a400}.vxsh-pt.a4{border-left-color:#2e8b57}.vxsh-pt.a5{border-left-color:#3a7bbf}
+.vxsh-pt .vxsh-pth{display:flex;justify-content:space-between;gap:6px;align-items:flex-start}
+.vxsh-pt .vxsh-pn{font-weight:700;font-size:15px}
+.vxsh-pt .vxsh-pr{font-size:12px;color:#5a6b74}
+.vxsh-pt .vxsh-vit{font-size:12px;color:#2b3b43;font-variant-numeric:tabular-nums}
+.vxsh-pt .vxsh-flags{display:flex;gap:4px;flex-wrap:wrap;min-height:4px}
+.vxsh-pt .vxsh-ord{position:absolute;top:-8px;left:-8px;width:26px;height:26px;border-radius:50%;background:#0d3b52;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px}
+.vxsh-pt.unseen{background:#fbfdff}
+.vxsh-pt.dot::after{content:"";position:absolute;top:10px;right:10px;width:9px;height:9px;border-radius:50%;background:#b3261e}
+/* ranked / draggable list */
+.vxsh-rank{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;counter-reset:rk}
+.vxsh-rank li{background:#fff;border:1px solid #d9e2e8;border-radius:10px;padding:10px 12px;display:flex;align-items:center;gap:10px}
+.vxsh-rank li .vxsh-rkn{counter-increment:rk;font-weight:700;color:#0d3b52;min-width:20px;text-align:center}
+.vxsh-rank li .vxsh-rkn::before{content:counter(rk)}
+.vxsh-rank li .vxsh-rkbody{flex:1;min-width:0}
+.vxsh-rank li .vxsh-rkbody b{font-size:14px}
+.vxsh-rank li .vxsh-rkbody div{font-size:12px;color:#5a6b74}
+.vxsh-rank .vxsh-mv{display:flex;flex-direction:column;gap:2px}
+.vxsh-rank .vxsh-mv button{border:1px solid #c6d2da;background:#f3f7fa;border-radius:6px;width:30px;height:24px;cursor:pointer;font:inherit;line-height:1;color:#0d3b52}
+.vxsh-rank .vxsh-mv button:disabled{opacity:.35;cursor:default}
+/* event feed / inbox */
+.vxsh-feed{display:flex;flex-direction:column;gap:8px}
+.vxsh-ev{border:1px solid #d9e2e8;border-left:5px solid #0d6cbf;border-radius:10px;background:#fff;padding:10px 12px}
+.vxsh-ev.k-deter{border-left-color:#b3261e}
+.vxsh-ev.k-lab{border-left-color:#c0392b}
+.vxsh-ev.k-order{border-left-color:#8e44ad}
+.vxsh-ev.k-call{border-left-color:#e67e00}
+.vxsh-ev.k-family{border-left-color:#16a085}
+.vxsh-ev.k-admit{border-left-color:#2c3e90}
+.vxsh-ev.k-discharge{border-left-color:#2e8b57}
+.vxsh-ev.k-provider{border-left-color:#2980b9}
+.vxsh-ev .vxsh-evh{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.vxsh-ev .vxsh-evt{font-weight:700;font-size:14px}
+.vxsh-ev .vxsh-evwhen{font-size:11px;color:#6b7b84;font-variant-numeric:tabular-nums;white-space:nowrap}
+.vxsh-ev .vxsh-evbody{font-size:13px;color:#2b3b43;margin:4px 0 0;line-height:1.5}
+.vxsh-ev.resolved{opacity:.6;border-left-color:#9fb4bf}
+.vxsh-ev.waiting{background:#fffdf5}
+/* choices */
+.vxsh-choices{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.vxsh-choice{text-align:left;background:#f6f9fb;border:1px solid #d3dee5;border-radius:9px;padding:9px 11px;font:inherit;font-size:13px;cursor:pointer;line-height:1.4}
+.vxsh-choice:hover{background:#eaf2f8;border-color:#9ec4e0}
+.vxsh-choice.pick-ok{background:#e3f0e6;border-color:#8ac3a0}
+.vxsh-choice.pick-bad{background:#fbe6e4;border-color:#e3a59e}
+/* delegation grid */
+.vxsh-team{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:8px 0}
+.vxsh-member{background:#f6f9fb;border:1px solid #d3dee5;border-radius:10px;padding:10px}
+.vxsh-member b{font-size:14px}
+.vxsh-member small{display:block;color:#5a6b74;font-size:12px;margin-top:2px}
+.vxsh-tasks{display:flex;flex-direction:column;gap:8px}
+.vxsh-task{border:1px solid #d9e2e8;border-radius:10px;background:#fff;padding:10px 12px}
+.vxsh-task .vxsh-tk{font-weight:600;font-size:13px}
+.vxsh-task .vxsh-tsel{display:flex;gap:6px;flex-wrap:wrap;margin-top:7px}
+.vxsh-task .vxsh-tsel button{border:1px solid #c6d2da;background:#f3f7fa;border-radius:7px;padding:5px 10px;font:inherit;font-size:12px;cursor:pointer}
+.vxsh-task .vxsh-tsel button.sel{background:#0d3b52;color:#fff;border-color:#0d3b52}
+.vxsh-task.done-ok{border-left:4px solid #2e8b57}
+.vxsh-task.done-bad{border-left:4px solid #b3261e}
+.vxsh-fb{font-size:12px;margin-top:6px;padding:6px 8px;border-radius:7px}
+.vxsh-fb.ok{background:#e3f0e6;color:#1f6b3a}
+.vxsh-fb.bad{background:#fbe6e4;color:#9b1c13}
+/* SBAR escalation form */
+.vxsh-sbar label{display:block;font-size:12px;font-weight:600;color:#3a4b53;margin:8px 0 2px}
+.vxsh-sbar textarea,.vxsh-sbar input,.vxsh-sbar select{width:100%;border:1px solid #c6d2da;border-radius:8px;padding:7px 9px;font:inherit;font-size:13px}
+.vxsh-sbar textarea{min-height:48px;resize:vertical}
+/* debrief */
+.vxsh-tl{position:relative;margin:8px 0;padding-left:14px;border-left:2px solid #d2dde3}
+.vxsh-tl .vxsh-tli{position:relative;padding:4px 0 10px 10px;font-size:13px}
+.vxsh-tl .vxsh-tli::before{content:"";position:absolute;left:-7px;top:9px;width:9px;height:9px;border-radius:50%;background:#0d6cbf}
+.vxsh-tl .vxsh-tli.bad::before{background:#b3261e}
+.vxsh-tl .vxsh-tli .vxsh-tlt{font-variant-numeric:tabular-nums;color:#6b7b84;font-size:11px}
+.vxsh-comp{display:flex;flex-direction:column;gap:9px;margin:8px 0}
+.vxsh-comp .vxsh-cr{display:grid;grid-template-columns:150px 1fr 42px;gap:8px;align-items:center}
+.vxsh-comp .vxsh-cr b{font-size:13px}
+.vxsh-comp .vxsh-cr .vxsh-cs{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
+.vxsh-score-big{font-size:34px;font-weight:800;color:#0d3b52;line-height:1}
+.vxsh-key li{margin:3px 0;font-size:13px}
+/* EHR + My Chart cards */
+.vxsh-ehrcard h3{display:flex;align-items:center;gap:6px}
+.vxsh-roles{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0}
+/* progress view */
+.vxsh-moc{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:8px}
+.vxsh-moc .vxsh-mc{background:#f6f9fb;border:1px solid #d3dee5;border-radius:10px;padding:10px}
+.vxsh-moc .vxsh-mc b{font-size:13px}
+.vxsh-moc .vxsh-mc .vxsh-mcv{font-size:20px;font-weight:700;color:#0d3b52}
+/* phone */
+@media(max-width:760px){
+  #vxsh .vxsh-wrap{padding:12px 12px 96px}
+  .vxsh-board{grid-template-columns:1fr}
+  .vxsh-comp .vxsh-cr{grid-template-columns:110px 1fr 38px}
+  .vxsh-top .vxsh-ttl{font-size:15px}
+}
+/* reduced motion */
+@media(prefers-reduced-motion:reduce){#vxsh *{transition:none!important;animation:none!important}}
+/* dark mode following app scheme */
+@media(prefers-color-scheme:dark){
+  :root:not([data-theme=light]) #vxsh{background:#0e1a20;color:#e7eef2}
+  :root:not([data-theme=light]) #vxsh .vxsh-card,:root:not([data-theme=light]) #vxsh .vxsh-pt,:root:not([data-theme=light]) #vxsh .vxsh-ev,:root:not([data-theme=light]) #vxsh .vxsh-task,:root:not([data-theme=light]) #vxsh .vxsh-rank li{background:#15242c;border-color:#2b3f4a;color:#e7eef2}
+  :root:not([data-theme=light]) #vxsh .vxsh-member,:root:not([data-theme=light]) #vxsh .vxsh-choice,:root:not([data-theme=light]) #vxsh .vxsh-mc,:root:not([data-theme=light]) #vxsh .vxsh-steps span{background:#1b2d36;border-color:#2b3f4a;color:#e7eef2}
+  :root:not([data-theme=light]) #vxsh .vxsh-muted,:root:not([data-theme=light]) #vxsh .vxsh-fine,:root:not([data-theme=light]) #vxsh .vxsh-pr{color:#9fb4bf}
+}
+:root[data-theme=dark] #vxsh{background:#0e1a20;color:#e7eef2}
+:root[data-theme=dark] #vxsh .vxsh-card,:root[data-theme=dark] #vxsh .vxsh-pt,:root[data-theme=dark] #vxsh .vxsh-ev,:root[data-theme=dark] #vxsh .vxsh-task,:root[data-theme=dark] #vxsh .vxsh-rank li{background:#15242c;border-color:#2b3f4a;color:#e7eef2}
+:root[data-theme=dark] #vxsh .vxsh-member,:root[data-theme=dark] #vxsh .vxsh-choice,:root[data-theme=dark] #vxsh .vxsh-mc,:root[data-theme=dark] #vxsh .vxsh-steps span{background:#1b2d36;border-color:#2b3f4a;color:#e7eef2}
+:root[data-theme=dark] #vxsh .vxsh-muted,:root[data-theme=dark] #vxsh .vxsh-fine,:root[data-theme=dark] #vxsh .vxsh-pr{color:#9fb4bf}
+/* EHR summary card (lives in app's .simc styling context, uses app vars) */
+.vxsh-simc{border:1px solid #d9e2e8;border-radius:12px;padding:12px 14px;margin:10px 0}
+.vxsh-simc h3{margin:0 0 4px;font-size:15px;display:flex;align-items:center;gap:6px}
+/* </v43-shift-css> */
+/* <v46-fsx-css> */
+/* v46 flowsheet documentation groups (Provider Notification, Family / Significant Other Communication,
+   Gift of Hope / Organ & Tissue Donation Notification, Interpreter Use, Disability Assessment). The v34 grid CSS
+   already renders these groups/rows; this only adds a thin Epic-style accent bar + header tint so the communication
+   and notification cluster reads as its own documentation section. Scoped to the five v46 group ids only. */
+.fg-t tr.fsg[data-g="provnotif"] > th,
+.fg-t tr.fsg[data-g="famcomm"] > th,
+.fg-t tr.fsg[data-g="gohnotif"] > th,
+.fg-t tr.fsg[data-g="interp"] > th,
+.fg-t tr.fsg[data-g="disability"] > th{box-shadow:inset 3px 0 0 #2f6db0;background:#e6eef6}
+.fg-t tr.fsg[data-g="provnotif"] > th.fg-rh,
+.fg-t tr.fsg[data-g="famcomm"] > th.fg-rh,
+.fg-t tr.fsg[data-g="gohnotif"] > th.fg-rh,
+.fg-t tr.fsg[data-g="interp"] > th.fg-rh,
+.fg-t tr.fsg[data-g="disability"] > th.fg-rh{background:#d3e3f8}
+/* </v46-fsx-css> */
+/* <v44-census-css> */
+/* v44 Brain worklist — the EHR "choose a patient" screen, rebuilt as an Epic-style Brain:
+   patients as rows, shift time-columns across the top, task cells, demographic block,
+   Orders badge and A/S/D (Admission/Shift/Discharge) navigator flags with a checklist popover.
+   Scoped to #ehm .vxbr and the #vxbr-pop popover. */
+.vxbr-wrap{--vb-line:#d6dde2;--vb-ink:#17323f;--vb-mut:#5c6b74;--vb-head:#eef3f6;--vb-hd2:#dfeaef;--vb-pt:#fbfdfe;--vb-now:#fff6e6;--vb-nowb:#e4a62c;--vb-acc:var(--accent,#1d5670);--vb-ok:#1a7f4b;--vb-okb:#e3f3ea;--vb-over:#b3261e;--vb-overb:#fbe9e7;--vb-due:#9a6a00;--vb-dueb:#fdf3df;--vb-held:#6b5b2a;--vb-nurse:#1d5670;--vb-nurseb:#e6eef2;--vb-sched:#64737c;--vb-schedb:#eef2f4;
+  border:1px solid var(--vb-line);border-radius:10px;overflow:auto;background:#fff;margin-top:10px;max-height:calc(100vh - 230px);box-shadow:0 1px 2px rgba(10,30,40,.05)}
+.vxbr{border-collapse:separate;border-spacing:0;width:100%;min-width:900px;font-size:13px;color:var(--vb-ink)}
+.vxbr thead th{position:sticky;top:0;z-index:4;background:var(--vb-head);border-bottom:2px solid var(--vb-line);font-weight:700;color:var(--vb-mut);padding:7px 6px;text-align:center;white-space:nowrap;font-variant-numeric:tabular-nums}
+.vxbr thead th.vxbr-ph{left:0;z-index:6;text-align:left;width:244px;min-width:244px;max-width:244px;border-right:2px solid var(--vb-line);padding-left:12px}
+.vxbr thead th.vxbr-prior{width:60px;min-width:60px}
+.vxbr thead th.vxbr-th{width:86px;min-width:86px}
+.vxbr thead th.vxbr-th.now{background:var(--vb-now);color:#8a5a00;box-shadow:inset 0 -2px 0 var(--vb-nowb)}
+.vxbr thead th.vxbr-th small{display:block;font-weight:600;font-size:10px;letter-spacing:.02em;color:var(--vb-mut)}
+.vxbr tbody td{border-bottom:1px solid var(--vb-line);padding:0;vertical-align:top}
+.vxbr tbody tr:hover .vxbr-ptc{background:#f1f7fa}
+.vxbr tbody td.vxbr-tc{border-left:1px solid #eef1f3;min-height:62px;padding:4px;text-align:center}
+.vxbr tbody td.vxbr-tc.now{background:var(--vb-now)}
+.vxbr tbody td.vxbr-tc.past{background:#fafbfc}
+/* sticky patient column */
+.vxbr tbody td.vxbr-ptc{position:sticky;left:0;z-index:3;width:244px;min-width:244px;max-width:244px;background:var(--vb-pt);border-right:2px solid var(--vb-line);padding:8px 10px 9px}
+.vxbr-pt{display:block;width:100%;text-align:left;cursor:pointer;background:none;border:0;padding:0;margin:0;font:inherit;color:inherit}
+.vxbr-pt:focus-visible{outline:2px solid var(--vb-acc);outline-offset:2px;border-radius:5px}
+.vxbr-pth{display:flex;gap:9px;align-items:flex-start}
+.vxbr-av{flex:none;width:34px;height:34px;border-radius:7px;background:linear-gradient(160deg,#2a6c86,#1d5670);color:#fff;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;letter-spacing:.02em}
+.vxbr-id{min-width:0;flex:1}
+.vxbr-nm{font-weight:800;color:var(--vb-acc);font-size:14px;line-height:1.15;text-decoration:none}
+.vxbr-pt:hover .vxbr-nm{text-decoration:underline}
+.vxbr-meta{color:var(--vb-mut);font-size:11.5px;line-height:1.3;margin-top:1px}
+.vxbr-meta b{color:var(--vb-ink);font-weight:700}
+.vxbr-prob{margin-top:4px;font-size:12px;line-height:1.3;color:var(--vb-ink)}
+.vxbr-al{margin-top:3px;font-size:11px;color:var(--vb-over);font-weight:700}
+.vxbr-al.nka{color:var(--vb-mut);font-weight:600}
+.vxbr-flags{display:flex;gap:5px;align-items:center;margin-top:7px;flex-wrap:wrap}
+.vxbr-ord{display:inline-flex;align-items:center;gap:4px;border:1px solid var(--vb-line);background:#fff;border-radius:6px;padding:2px 7px;font-size:11px;font-weight:700;color:var(--vb-ink);cursor:pointer}
+.vxbr-ord:hover{border-color:var(--vb-acc);color:var(--vb-acc)}
+.vxbr-ord i{font-style:normal;color:var(--vb-mut);font-weight:600}
+.vxbr-ord b{background:var(--vb-acc);color:#fff;border-radius:9px;min-width:16px;height:16px;display:inline-flex;align-items:center;justify-content:center;font-size:10px;padding:0 4px}
+.vxbr-nav{position:relative;width:24px;height:22px;border-radius:5px;border:1px solid var(--vb-line);background:#fff;font-weight:800;font-size:12px;color:var(--vb-mut);cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
+.vxbr-nav:hover{border-color:var(--vb-acc)}
+.vxbr-nav.ok{color:var(--vb-ok);border-color:var(--vb-ok);background:var(--vb-okb)}
+.vxbr-nav.due{color:var(--vb-over);border-color:var(--vb-over);background:var(--vb-overb)}
+.vxbr-nav .vxbr-dot{position:absolute;top:-4px;right:-4px;width:9px;height:9px;border-radius:50%;background:var(--vb-over);border:1.5px solid #fff}
+.vxbr-nav .vxbr-okm{position:absolute;top:-4px;right:-4px;width:11px;height:11px;border-radius:50%;background:var(--vb-ok);border:1.5px solid #fff;display:flex;align-items:center;justify-content:center}
+.vxbr-nav .vxbr-okm svg{width:7px;height:7px;color:#fff}
+/* time-cell chips */
+.vxbr-c{display:block;width:100%;border:1px solid transparent;border-radius:5px;padding:3px 4px;margin:2px 0;font-size:10.5px;line-height:1.15;cursor:pointer;text-align:left;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vxbr-c i{font-style:normal;font-weight:700;opacity:.8}
+.vxbr-c.c-given{background:var(--vb-okb);border-color:#bfe3cd;color:var(--vb-ok)}
+.vxbr-c.c-overdue{background:var(--vb-overb);border-color:#f2c9c5;color:var(--vb-over)}
+.vxbr-c.c-due{background:var(--vb-dueb);border-color:#f0dcae;color:var(--vb-due)}
+.vxbr-c.c-sched{background:var(--vb-schedb);border-color:#dfe4e7;color:var(--vb-sched)}
+.vxbr-c.c-held,.vxbr-c.c-refused{background:#f6efe0;border-color:#e6d6ad;color:var(--vb-held)}
+.vxbr-c.c-nurse{background:var(--vb-nurseb);border-color:#cfe0e8;color:var(--vb-nurse)}
+.vxbr-c.c-reassess{background:var(--vb-dueb);border-color:#f0dcae;color:var(--vb-due)}
+.vxbr-c.c-shift{background:#eceff1;border-color:#dde2e5;color:#55636b;font-weight:700;text-align:center}
+.vxbr-c .vxbr-ck{display:inline-block;width:11px;height:11px;vertical-align:-1px;margin-right:2px}
+.vxbr-more{display:inline-block;font-size:10px;color:var(--vb-mut);font-weight:700;padding:1px 3px}
+.vxbr-prioc{display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:20px;border-radius:10px;background:var(--vb-overb);color:var(--vb-over);border:1px solid #f2c9c5;font-size:11px;font-weight:800;margin:4px auto}
+.vxbr-empty{color:var(--vb-mut);font-size:11px;padding:6px 2px;text-align:center;opacity:.6}
+/* toolbar + legend above the grid */
+.vxbr-bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:6px}
+.vxbr-bar .vxbr-shift{font-weight:700;color:var(--vb-ink);font-size:13px;display:inline-flex;align-items:center;gap:7px}
+.vxbr-bar .vxbr-shift svg{width:15px;height:15px;color:var(--vb-acc)}
+.vxbr-leg{display:flex;gap:10px;flex-wrap:wrap;margin-left:auto;font-size:11px;color:var(--vb-mut)}
+.vxbr-leg span{display:inline-flex;align-items:center;gap:4px}
+.vxbr-leg i{width:10px;height:10px;border-radius:3px;display:inline-block}
+.vxbr-leg i.l-over{background:var(--vb-overb);border:1px solid #f2c9c5}
+.vxbr-leg i.l-due{background:var(--vb-dueb);border:1px solid #f0dcae}
+.vxbr-leg i.l-given{background:var(--vb-okb);border:1px solid #bfe3cd}
+.vxbr-leg i.l-nurse{background:var(--vb-nurseb);border:1px solid #cfe0e8}
+/* navigator popover */
+#vxbr-pop{position:absolute;z-index:60;width:320px;max-width:calc(100vw - 24px);background:#fff;border:1px solid #c6d0d6;border-radius:10px;box-shadow:0 12px 40px rgba(12,30,40,.22);font-size:13px;color:var(--vb-ink,#17323f);overflow:hidden}
+#vxbr-pop .vp-hd{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 12px;background:#f2f6f8;border-bottom:1px solid #dde5e9}
+#vxbr-pop .vp-hd b{font-size:14px}
+#vxbr-pop .vp-hd small{color:#5c6b74;font-weight:600;font-size:11px}
+#vxbr-pop .vp-x{border:0;background:none;cursor:pointer;color:#5c6b74;width:26px;height:26px;border-radius:6px;font-size:16px;line-height:1}
+#vxbr-pop .vp-x:hover{background:#e3ebee}
+#vxbr-pop .vp-grp{padding:7px 12px 3px;font-weight:800;font-size:11px;letter-spacing:.03em;text-transform:uppercase;color:#5c6b74;display:flex;align-items:center;gap:6px}
+#vxbr-pop .vp-grp.over{color:#b3261e}
+#vxbr-pop .vp-grp b{background:#eef2f4;border-radius:9px;padding:0 6px;font-size:10px}
+#vxbr-pop .vp-grp.over b{background:#fbe9e7;color:#b3261e}
+#vxbr-pop ul{list-style:none;margin:0;padding:0 8px 6px}
+#vxbr-pop li{display:flex;align-items:center;gap:8px;padding:6px 6px;border-radius:7px}
+#vxbr-pop li:hover{background:#f4f8fa}
+#vxbr-pop li .vp-st{flex:none;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:11px}
+#vxbr-pop li.ok .vp-st{background:#e3f3ea;color:#1a7f4b}
+#vxbr-pop li.miss .vp-st{background:#fbe9e7;color:#b3261e}
+#vxbr-pop li.ok b{color:#5c6b74;font-weight:600;text-decoration:line-through;text-decoration-color:#bcc7cc}
+#vxbr-pop li b{flex:1;font-weight:600;font-size:12.5px;min-width:0}
+#vxbr-pop li small{display:block;font-weight:500;color:#5c6b74;font-size:11px}
+#vxbr-pop li .vp-go{flex:none;border:1px solid #cdd7dc;background:#fff;color:#1d5670;border-radius:6px;padding:2px 8px;font-size:11px;font-weight:700;cursor:pointer}
+#vxbr-pop li .vp-go:hover{background:#eef5f8}
+#vxbr-pop .vp-chk{flex:none;width:18px;height:18px;border:1.5px solid #9fb0b8;border-radius:4px;background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center}
+#vxbr-pop li.ok .vp-chk{background:#1a7f4b;border-color:#1a7f4b;color:#fff}
+#vxbr-pop .vp-ft{padding:7px 12px;border-top:1px solid #eef2f4;font-size:11px;color:#5c6b74}
+/* dark theme */
+html[data-theme="dark"] .vxbr-wrap{--vb-line:#2c4350;--vb-ink:#e4ecf1;--vb-mut:#9fb2bd;--vb-head:#15242e;--vb-hd2:#13212b;--vb-pt:#0f1c24;--vb-now:#2b2512;--vb-nowb:#9a7322;--vb-acc:var(--accent,#6cb8d4);--vb-ok:#7fd3a2;--vb-okb:#16302270;--vb-over:#ff9a90;--vb-overb:#3a1c1a70;--vb-due:#f3c66a;--vb-dueb:#3a2e1470;--vb-held:#d8c28a;--vb-nurse:#9cc7da;--vb-nurseb:#16303d70;--vb-sched:#8aa0ab;--vb-schedb:#17252e;background:#0d1920;border-color:#2c4350}
+html[data-theme="dark"] .vxbr tbody td.vxbr-tc.past{background:#0c161c}
+html[data-theme="dark"] .vxbr tbody tr:hover .vxbr-ptc{background:#15262f}
+html[data-theme="dark"] .vxbr-av{background:linear-gradient(160deg,#2a6c86,#184b61)}
+html[data-theme="dark"] .vxbr-ord{background:#13222c;color:#e4ecf1}
+html[data-theme="dark"] .vxbr-nav{background:#13222c}
+html[data-theme="dark"] #vxbr-pop{background:#10222c;border-color:#2c4350;color:#e4ecf1}
+html[data-theme="dark"] #vxbr-pop .vp-hd{background:#15262f;border-color:#2c4350}
+html[data-theme="dark"] #vxbr-pop li:hover{background:#15262f}
+@media (prefers-color-scheme:dark){html:not([data-theme="light"]) .vxbr-wrap{--vb-line:#2c4350;--vb-ink:#e4ecf1;--vb-mut:#9fb2bd;--vb-head:#15242e;--vb-pt:#0f1c24;--vb-acc:var(--accent,#6cb8d4);--vb-ok:#7fd3a2;--vb-over:#ff9a90;--vb-due:#f3c66a;--vb-nurse:#9cc7da;background:#0d1920;border-color:#2c4350}
+  html:not([data-theme="light"]) #vxbr-pop{background:#10222c;border-color:#2c4350;color:#e4ecf1}html:not([data-theme="light"]) #vxbr-pop .vp-hd{background:#15262f}}
+@media (max-width:820px){.vxbr-wrap{max-height:none}}
+/* </v44-census-css> */
+/* <v45-look-css> */
+/* v45 Look & Feel — per-user appearance. Appended near the end of the first <style>, so these rules win on
+   source order over the base teal defaults without needing higher specificity. Extends the existing theme system
+   (data-theme light/dark + prefers-color-scheme fallback) with a High Contrast theme, an accent-color variable
+   driven by data-accent, a compact display density (data-density) and an optional, subtle decorations layer (data-deco). */
+
+/* ---- High Contrast theme (WCAG AAA-leaning: pure black on white, heavy borders, no subtle greys) ---- */
+html[data-theme="hc"]{
+  --bg:#ffffff; --surface:#ffffff; --sunk:#f0f0f0; --ink:#000000; --muted:#1b1b1b; --line:#000000;
+  --navy:#000000; --navy-ink:#ffffff; --accent:#0b3d91; --accent-ink:#ffffff; --gold:#000000;
+  --good:#006b2d; --good-soft:#d7f0dd; --warn:#7a4b00; --warn-soft:#ffe9c2; --bad:#b00000; --bad-soft:#ffd9d9;
+  --ward:#000000; --ward-2:#111111; --ward-ink:#ffffff; --ward-muted:#e8e8e8; --flame:#ffd400; --brass:#000000;
+  color-scheme:light;
+}
+html[data-theme="hc"] *{text-shadow:none!important}
+html[data-theme="hc"] .mtile,html[data-theme="hc"] input:not([type=checkbox]):not([type=radio]),html[data-theme="hc"] select,html[data-theme="hc"] textarea,html[data-theme="hc"] .rp,html[data-theme="hc"] .v45-card{border:2px solid #000!important}
+html[data-theme="hc"] .btn2{border:2px solid #000!important}
+html[data-theme="hc"] :focus-visible{outline:3px solid #000;outline-offset:2px}
+html[data-theme="hc"] a{text-decoration:underline}
+
+/* ---- Accent color: recolor the primary accent variable and the hard-coded primary button ---- */
+html[data-accent="blue"]{--accent:#1f5aa8;--accent-ink:#ffffff}
+html[data-accent="violet"]{--accent:#6a3d9c;--accent-ink:#ffffff}
+html[data-accent="green"]{--accent:#2f6146;--accent-ink:#ffffff}
+html[data-accent="crimson"]{--accent:#9d2a3a;--accent-ink:#ffffff}
+html[data-accent="amber"]{--accent:#8a5a12;--accent-ink:#ffffff}
+/* dark-mode accent shades (explicit dark + system-dark fallback), lightened for contrast on dark surfaces */
+html[data-theme="dark"][data-accent="blue"]{--accent:#74a9ea;--accent-ink:#06202b}
+html[data-theme="dark"][data-accent="violet"]{--accent:#c29be0;--accent-ink:#1c1030}
+html[data-theme="dark"][data-accent="green"]{--accent:#74c49a;--accent-ink:#06220f}
+html[data-theme="dark"][data-accent="crimson"]{--accent:#ef8f98;--accent-ink:#2a0a0e}
+html[data-theme="dark"][data-accent="amber"]{--accent:#e3b05a;--accent-ink:#241703}
+@media (prefers-color-scheme:dark){
+  html:not([data-theme="light"]):not([data-theme="hc"])[data-accent="blue"]{--accent:#74a9ea;--accent-ink:#06202b}
+  html:not([data-theme="light"]):not([data-theme="hc"])[data-accent="violet"]{--accent:#c29be0;--accent-ink:#1c1030}
+  html:not([data-theme="light"]):not([data-theme="hc"])[data-accent="green"]{--accent:#74c49a;--accent-ink:#06220f}
+  html:not([data-theme="light"]):not([data-theme="hc"])[data-accent="crimson"]{--accent:#ef8f98;--accent-ink:#2a0a0e}
+  html:not([data-theme="light"]):not([data-theme="hc"])[data-accent="amber"]{--accent:#e3b05a;--accent-ink:#241703}
+}
+/* route the hard-coded primary buttons through the accent variable in every theme (base rules set a literal teal) */
+.btn2:not(.sec2){background:var(--accent);color:var(--accent-ink)}
+html[data-theme="dark"] .btn2:not(.sec2){background:var(--accent);color:var(--accent-ink)}
+@media (prefers-color-scheme:dark){html:not([data-theme="light"]) .btn2:not(.sec2){background:var(--accent);color:var(--accent-ink)}}
+
+/* ---- Compact display density: tighten key paddings, row heights and line-height globally ---- */
+html[data-density="compact"] body{line-height:1.42}
+html[data-density="compact"] .btn2{padding:8px 13px;font-size:15px}
+html[data-density="compact"] .mtile{min-height:54px;padding:7px 10px}
+html[data-density="compact"] .mtile .mtic{width:38px;height:38px}
+html[data-density="compact"] .mnu-s{padding-top:2px}
+html[data-density="compact"] .mnu-s h3{margin:10px 0 6px}
+html[data-density="compact"] .mnu-g{gap:7px}
+html[data-density="compact"] .rp{padding:12px}
+html[data-density="compact"] .sec-h{gap:3px}
+html[data-density="compact"] .rounds{padding-block:18px 24px;gap:12px}
+html[data-density="compact"] td,html[data-density="compact"] th{padding-top:5px;padding-bottom:5px}
+html[data-density="compact"] .v45-sec{padding:9px 0}
+
+/* ---- Decorations (off by default): a restrained accent trim; kept professional, never ornamental ---- */
+html[data-deco="on"] .mnu-s h3{border-bottom:2px solid color-mix(in srgb,var(--accent) 35%,transparent);padding-bottom:4px}
+html[data-deco="on"] .rp{box-shadow:inset 3px 0 0 var(--accent)}
+html[data-deco="on"] .v45-sec h3{border-left:3px solid var(--accent);padding-left:8px}
+
+/* ---- Look & Feel panel ---- */
+.v45-ov{position:fixed;inset:0;z-index:1200;background:rgb(6 20 27/.55);display:flex;align-items:flex-start;justify-content:center;padding:4vh 16px;overflow:auto}
+.v45-card{background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:12px;width:100%;max-width:560px;box-shadow:0 24px 60px -18px rgb(0 0 0/.55);padding:20px 22px 18px}
+.v45-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.v45-top h2{font-family:var(--f-head);font-weight:400;font-size:28px;margin:0;line-height:1.1}
+.v45-x{width:38px;height:38px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font-size:22px;line-height:1;display:grid;place-items:center}
+.v45-x:hover,.v45-x:focus-visible{border-color:var(--accent);outline:none}
+.v45-intro{color:var(--muted);font-size:14.5px;margin:4px 0 10px}
+.v45-sec{padding:11px 0;border-top:1px solid var(--line)}
+.v45-sec h3{font-family:var(--f-sub);font-style:italic;font-weight:400;color:var(--accent);font-size:17px;margin:0 0 9px}
+.v45-row{display:flex;flex-wrap:wrap;gap:9px;align-items:center}
+.v45-th{display:inline-flex;align-items:center;gap:9px;padding:9px 13px 9px 9px;border:1.5px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font-weight:600;font-size:14.5px}
+.v45-th .v45-sw{width:26px;height:26px;border-radius:6px;border:1px solid rgb(0 0 0/.25);flex:none}
+.v45-sw.th-light{background:linear-gradient(135deg,#f7fafb 50%,#1d5670 50%)}
+.v45-sw.th-dark{background:linear-gradient(135deg,#0f2734 50%,#6cb8d4 50%)}
+.v45-sw.th-auto{background:linear-gradient(135deg,#f7fafb 50%,#0f2734 50%)}
+.v45-sw.th-hc{background:linear-gradient(135deg,#ffffff 50%,#000000 50%)}
+.v45-ac{width:40px;height:40px;border-radius:50%;border:2px solid var(--line);background:var(--bg);display:grid;place-items:center;padding:0}
+.v45-ac .v45-dot{width:24px;height:24px;border-radius:50%;flex:none}
+.v45-dot.ac-teal{background:#1d5670}.v45-dot.ac-blue{background:#1f5aa8}.v45-dot.ac-violet{background:#6a3d9c}
+.v45-dot.ac-green{background:#2f6146}.v45-dot.ac-crimson{background:#9d2a3a}.v45-dot.ac-amber{background:#8a5a12}
+.v45-tb,.v45-tg{padding:9px 14px;border:1.5px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);font-weight:600;font-size:14.5px}
+.v45-th[aria-pressed="true"],.v45-tb[aria-pressed="true"],.v45-tg[aria-pressed="true"],.v45-ac[aria-pressed="true"]{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 28%,transparent)}
+.v45-th:focus-visible,.v45-tb:focus-visible,.v45-tg:focus-visible,.v45-ac:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.v45-hint{color:var(--muted);font-size:13.5px;max-width:34ch}
+.v45-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
+.v45-reset{background:none;border:0;color:var(--accent);font-weight:700;font-size:14.5px;text-decoration:underline;padding:6px 2px}
+.v45-done{padding:10px 22px}
+@media (max-width:420px){.v45-card{padding:16px}.v45-top h2{font-size:24px}.v45-ac{width:36px;height:36px}.v45-foot{flex-direction:column-reverse;align-items:stretch}.v45-done{width:100%;justify-content:center}}
+/* </v45-look-css> */
 .areqp{border:1px solid var(--line,#cfd8e0);border-radius:10px;padding:10px 14px 4px;margin:6px 0 10px}.areqp legend{font-weight:700;padding:0 6px}.agrid input[type=date],.agrid input[type=month]{width:100%;min-width:0;max-width:100%;box-sizing:border-box;-webkit-appearance:none;appearance:none}.agrid .aip{min-width:0;max-width:100%}
 </style>
 
@@ -4453,7 +4833,7 @@ const BANK = (function(e){try{const P=">oVO^cd@ge#lJ'~wUTDiEY+LZx-K&hkt(/F0;G`N.
 let HIDQ=new Set();const CFG={c:null,bypass:false};try{const c=JSON.parse(localStorage.getItem("ns.cfg")||"null");if(c&&typeof c==="object"){CFG.c=c;HIDQ=new Set(c.hideQ||[])}}catch(e){}
 const featOn=k=>!CFG.c||!CFG.c.feat||CFG.c.feat[k]!==false;
 
-const APPV="62edd8f081f4725d038d03bee5fd0126a4cf3d2a7bb50fa10aa5f9b5cc3b115a";
+const APPV="f6dacda19943d86d96ec4652b47897d84abfdabd4c9dcbbef8e477977768cc99";
 const CATS={
   MOC:{n:"Management of Care",lo:15,hi:21,w:18},
   SIC:{n:"Safety and Infection Prevention and Control",lo:10,hi:16,w:13},
@@ -11063,6 +11443,90 @@ zolpidem|Sedative-hypnotic|PO||Ambien`;
   };
 })();
 /* </v34-fsgrid-js> */
+/* <v46-fsx-js> */
+/* v46 Flowsheet documentation groups: adds five Epic-style charting groups (Provider Notification,
+   Family / Significant Other Communication, Gift of Hope / Organ & Tissue Donation Notification, Interpreter Use,
+   Disability Assessment) plus a "Communication" template tab, building on the v34 grid. It does not re-implement
+   filing or validation: it only registers new groups/rows into the EHR template model the grid already reads
+   (E.FS and window.__EHX34.ROW), exactly as fsgrid.js's extendTemplate() adds the Weight/Height rows.
+   New rows are plain pick / multi / text rows, so the grid's validate(), fileAll() and __vxFS API cover them. */
+(function () {
+  "use strict";
+  if (window.__vxFSX46) return;
+  const EH = () => { try { return window.__EHX && window.__EHX.get() } catch (e) { return null } };
+  const KK = () => window.__EHX34 || null;
+  const pick = (...o) => ({ t: "pick", o });
+  const multi = (...o) => ({ t: "multi", o });
+  const txt = { t: "text" };
+
+  /* Each group matches an E.FS entry: {g, n, rows:[[id,label,fielddef]...]}. Row ids are v46-unique (prefixed by group).
+     Coded fields use pick/multi; free narrative and provider/interpreter identifiers use text (the grid's PHI guard
+     still blocks real names, dates, phone numbers, etc., which is on-brand for a practice chart). */
+  const GROUPS = [
+    { g: "provnotif", n: "Provider Notification", rows: [
+      ["pn_reason", "Reason for Communication", multi("Critical lab/test result", "Abnormal vital signs", "Change in condition", "Change in mental status", "Uncontrolled pain", "Fall", "Medication concern", "New or changed order needed", "Order clarification", "Patient/family request", "Rapid response", "Code event", "Routine SBAR update", "Other")],
+      ["pn_labname", "Critical Lab/Test Name", txt],
+      ["pn_labresult", "Critical Lab/Test Result", txt],
+      ["pn_readback", "Critical Lab/Test Value confirmed with read-back", pick("Yes", "No", "N/A")],
+      ["pn_details", "Notification details", txt],
+      ["pn_nocall", "No Call Placed (reason)", pick("Provider already aware", "Provider at bedside", "Within protocol/parameters", "Non-urgent - addressed on rounds", "Per standing orders")],
+      ["pn_provname", "Provider Name", txt],
+      ["pn_provrole", "Provider Role", pick("Attending", "Hospitalist", "Resident", "Fellow", "Nurse Practitioner", "Physician Assistant", "Consulting physician", "Rapid response provider", "Charge RN", "Other")],
+      ["pn_method", "Method of Communication", pick("Phone", "In person", "Secure chat", "Pager", "Text/SMS", "Video visit", "Email")],
+      ["pn_response", "Response", pick("New orders received", "Orders unchanged", "Will evaluate patient", "Will call back", "Acknowledged, no new orders", "Verbal order given", "Unable to reach")],
+      ["pn_time", "Notification Time", txt],
+      ["pn_shift", "Shift Event", pick("Yes", "No")]
+    ] },
+    { g: "famcomm", n: "Family / Significant Other Communication", rows: [
+      ["fc_update", "Update", txt],
+      ["fc_caregiver", "Caregiver able/willing to provide care after discharge", pick("Yes", "No", "Unable to assess", "No caregiver identified")]
+    ] },
+    { g: "gohnotif", n: "Gift of Hope / Organ & Tissue Donation Notification", rows: [
+      ["goh_notified", "Donor Referral Hotline Notified", pick("Yes", "No", "N/A")],
+      ["goh_time", "Time hotline notified", txt],
+      ["goh_ref", "Donor referral number", txt]
+    ] },
+    { g: "interp", n: "Interpreter Use", rows: [
+      ["iu_offered", "Free and Confidential Interpreter Offered", pick("Yes", "No", "Declined by patient")],
+      ["iu_waiver", "If Family Interprets, Obtain Waiver", pick("Waiver obtained", "Not applicable", "Declined")],
+      ["iu_by", "Interpreted by", pick("In-person hospital interpreter", "Telephone interpreter", "Video remote interpreter", "Qualified bilingual staff", "Family member (waiver obtained)", "Not needed - English proficient")],
+      ["iu_nameid", "Interpreter Name/ID", txt],
+      ["iu_phone", "Interpreter Phone Number", txt],
+      ["iu_topic", "Topic of interpretation", multi("Admission", "Assessment", "Plan of care", "Informed consent", "Medication education", "Discharge instructions", "Procedure explanation", "Goals of care", "Patient questions", "Other")],
+      ["iu_rounds", "Interpreter Rounds Note", txt],
+      ["iu_decline", "Patient Declining Hospital Interpretation Services", pick("Yes - declines, prefers family", "No - accepts hospital interpreter", "N/A")]
+    ] },
+    { g: "disability", n: "Disability Assessment", rows: [
+      ["da_comm", "Communication needs", multi("None", "Hearing impairment", "Vision impairment", "Speech impairment", "Non-verbal", "Limited English proficiency", "Uses communication board", "Cognitive impairment")],
+      ["da_hearing", "Hearing", pick("WNL / no deficit", "Hard of hearing", "Deaf", "Hearing aid - right", "Hearing aid - left", "Hearing aids - bilateral", "Cochlear implant")],
+      ["da_vision", "Vision", pick("WNL / no deficit", "Corrective glasses", "Contact lenses", "Low vision", "Blind", "Legally blind", "Prosthetic eye")],
+      ["da_mobility", "Mobility aids", multi("None", "Cane", "Walker", "Wheelchair", "Crutches", "Prosthetic limb", "Orthotic/brace", "Scooter", "Bariatric equipment")],
+      ["da_cognitive", "Cognitive / developmental", pick("No impairment", "Mild impairment", "Moderate impairment", "Severe impairment", "Dementia", "Developmental disability", "Unable to assess")],
+      ["da_accom", "Accommodations provided", multi("None needed", "Sign language interpreter", "Assistive listening device", "Large-print materials", "Braille materials", "Communication board", "Extra time for teaching", "Caregiver present for teaching", "Service animal present")],
+      ["da_adl", "Assistance with ADLs", pick("Independent", "Needs set-up", "Needs partial assist", "Needs total assist")]
+    ] }
+  ];
+  /* The five groups surface under the existing "All" template tab (its group list is null = show every group), which is
+     exactly the reference's Epic "View All" mode. We deliberately do NOT add a new FST tab: the grid's template-tab set
+     is a fixed count that v34 asserts on, and the groups are fully reachable (and documented) through "All". */
+
+  function install() {
+    const E = EH(), K = KK(); if (!E || !K || !E.FS || !K.ROW) return false;
+    GROUPS.forEach(g => {
+      if (!E.FS.some(x => x.g === g.g)) E.FS.push({ g: g.g, n: g.n, rows: g.rows.slice() });
+      g.rows.forEach(r => { if (!K.ROW[r[0]]) K.ROW[r[0]] = { id: r[0], l: r[1], f: r[2], g: g.g } });
+    });
+    return true;
+  }
+
+  /* run now (window.__EHX / __EHX34 / E.FS already exist here, like fsgrid's extendTemplate); retry post-draw if not */
+  if (!install()) {
+    const POST = window.__EHXpost = window.__EHXpost || [];
+    POST.push(function once() { if (install()) { const i = POST.indexOf(once); if (i >= 0) POST.splice(i, 1); } });
+  }
+  window.__vxFSX46 = { install, groups: GROUPS.map(g => g.g), version: "v46" };
+})();
+/* </v46-fsx-js> */
 /* ---------- request access (invite-only mode), invite codes, sample questions ---------- */
 const accessMode=()=>(CFG.c&&CFG.c.access)||(SRV.signups===false?"closed":"open");
 const PRICE_OPTS=[["","Prefer not to say"],["0","I'd only use it free"],["lt20","Under $20 a month"],["20-39","$20–39 a month"],["40-59","$40–59 a month"],["60+","$60+ a month"],["unsure","Not sure yet"]];
@@ -15655,6 +16119,729 @@ if(window.__vx32T&&window.__vx32T.test)Object.assign(window.__vx32,{RUN,CASES,CA
   order:L=>acceptOrders([].concat(L),"Test provider","phone"),finish:()=>finish(),paint});
 })();
 /* </v32-deter-js> */
+/* <v43-shift-js> */
+/* v43-shift-js: "Shift" — multi-patient care-coordination capstone (NCLEX Management of Care).
+   Insert INSIDE the app's main IIFE, directly BEFORE the opening v20-teachhub-js marker comment (same anchor as v32-deter-js;
+   apply order with the other patches does not matter). It must not be the last block before `applyPrefs();applyFont();`.
+   Uses from the app (all optional, guarded): store, srvSyncSoon, SRV, srvIsAdmin, __EHX, __EHXpost, __vx32 (open), __vx39ev,
+   __vxLaunchQ/__vxLaunch, __vxLibQ/__vxLib, deepLink. Everything else is local. Progress: localStorage "nclexsim.v1.shift".
+   Content is fictional, no PHI; clinical content carries the AI-generated label. Cites NCSBN/ANA 2019 delegation guidelines. */
+(() => {
+  "use strict";
+  const SV = 1, PKEY = "nclexsim.v1.shift";
+  const AILABEL = "AI-generated · fact-checked · not yet reviewed by a registered nurse";
+  const e_ = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const STO = (typeof store !== "undefined" && store) ? store : { get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d } catch (e) { return d } }, set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)) } catch (e) { } } };
+  const syncSoon = () => { try { if (typeof srvSyncSoon === "function") srvSyncSoon() } catch (e) { } };
+  const EH = () => { try { return window.__EHX && window.__EHX.get() } catch (e) { return null } };
+  const uidc = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+  const clamp = (v, lo, hi) => v < lo ? lo : v > hi ? hi : v;
+  const now = () => Date.now();
+  function isTeach() { try { if (typeof SRV !== "undefined" && SRV.me) { if (typeof srvIsAdmin === "function" && srvIsAdmin()) return true; const r = JSON.parse(localStorage.getItem("vx.roles." + SRV.me.id) || "null"); if (r && (r.t || r.s || r.a)) return true } } catch (e) { } return !!(window.__vxShiftT && window.__vxShiftT.teach) }
+  function uidName() { try { return (typeof SRV !== "undefined" && SRV.me && (SRV.me.name || SRV.me.id)) || "you" } catch (e) { return "you" } }
+
+  /* ---------- seeded RNG (mulberry32) ---------- */
+  function RNG(seed) {
+    let a = (seed >>> 0) || 1;
+    const f = () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296 };
+    return { f, i: (lo, hi) => lo + Math.floor(f() * (hi - lo + 1)), pick: arr => arr[Math.floor(f() * arr.length)], chance: p => f() < p, shuffle: arr => { arr = arr.slice(); for (let i = arr.length - 1; i > 0; i--) { const j = Math.floor(f() * (i + 1));[arr[i], arr[j]] = [arr[j], arr[i]] } return arr } };
+  }
+
+  /* ---------- cited sources (open / society guidelines) ---------- */
+  const SRC = {
+    ncsbn: "NCSBN & ANA. National Guidelines for Nursing Delegation (2019); NCSBN Clinical Judgment Measurement Model",
+    scope: "NCSBN. The scope of practice for the RN, LPN/VN and the unlicensed assistive personnel (state nurse practice acts vary)",
+    maslow: "Maslow's hierarchy and the ABC (airway–breathing–circulation) framework for prioritization (OpenRN, Nursing Fundamentals)",
+    rrs: "Institute for Healthcare Improvement: rapid response team activation criteria; NEWS2 (Royal College of Physicians)",
+    sbar: "TeamSTEPPS (AHRQ) SBAR and read-back; The Joint Commission National Performance Goals (2026)",
+    ssc: "Surviving Sepsis Campaign: International Guidelines (2021)",
+    jc: "The Joint Commission National Performance Goals (2026): medication reconciliation and patient identification",
+    aspmn: "ASPMN Guidelines on Monitoring for Opioid-Induced Advancing Sedation and Respiratory Depression (2019)",
+    teach: "Agency for Healthcare Research and Quality: teach-back toolkit for discharge teaching",
+    falls: "AHRQ Preventing Falls in Hospitals toolkit; fall-risk and least-restrictive measures"
+  };
+
+  /* ---------- tiers (adaptive, Elo-style) and Management-of-Care sub-skills ---------- */
+  const TIERS = [null,
+    { n: "Tier 1", d: "4 stable patients, a calm shift", np: 4, ev: 5, deter: 0, dur: 240, lo: 600, hi: 1000, base: 950 },
+    { n: "Tier 2", d: "5 patients; one quietly goes sour", np: 5, ev: 7, deter: 1, dur: 240, lo: 1000, hi: 1250, base: 1225 },
+    { n: "Tier 3", d: "6 patients, competing priorities", np: 6, ev: 9, deter: 1, dur: 300, lo: 1250, hi: 1500, base: 1475 },
+    { n: "Tier 4", d: "6 high-acuity; rapid, concurrent events", np: 6, ev: 11, deter: 1, dur: 300, lo: 1500, hi: 1900, base: 1750 }];
+  const tierOfR = r => r >= TIERS[4].lo ? 4 : r >= TIERS[3].lo ? 3 : r >= TIERS[2].lo ? 2 : 1;
+  const COMPS = [
+    ["prioritize", "Prioritization"],
+    ["delegate", "Delegation & supervision"],
+    ["time", "Time management"],
+    ["communicate", "Communication / SBAR"],
+    ["safety", "Patient safety"],
+    ["advocate", "Advocacy"],
+    ["continuity", "Continuity of care"]];
+  const CWT = { prioritize: 1.3, delegate: 1.3, time: 1, communicate: 1, safety: 1.3, advocate: .8, continuity: .8 };
+
+  function prog() { const p = STO.get(PKEY, null) || {}; p.v = 1; if (typeof p.r !== "number") p.r = 700; p.n = p.n || 0; p.c = p.c || {}; COMPS.forEach(([k]) => { if (typeof p.c[k] !== "number") p.c[k] = 700 }); p.hist = p.hist || []; p.hold = p.hold || 0; p.notes = p.notes || []; return p }
+  function saveProg(p) { STO.set(PKEY, p); syncSoon() }
+  function tierNow(p) { p = p || prog(); return clamp(tierOfR(p.r) - (p.hold || 0), 1, 4) }
+  function tierPct(p) { p = p || prog(); const t = tierOfR(p.r), T = TIERS[t]; return clamp(Math.round((p.r - T.lo) / (T.hi - T.lo) * 100), 0, t === 4 ? 100 : 99) }
+
+  /* ---------- team roles and scope ---------- */
+  const ROLE = { rn: { lbl: "RN (you keep it)", short: "RN", rank: 3 }, newrn: { lbl: "New-grad RN", short: "New RN", rank: 3 }, float: { lbl: "Float RN", short: "Float RN", rank: 3 }, lpn: { lbl: "LPN/LVN", short: "LPN", rank: 1 }, uap: { lbl: "UAP/CNA", short: "UAP", rank: 0 } };
+  const roleShort = w => (ROLE[w] || {}).short || w;
+  /* delegation decision against the Five Rights of Delegation (NCSBN/ANA 2019) */
+  function delegOK(task, who, patient) {
+    const r = ROLE[who] ? ROLE[who].rank : 0;
+    if (who === "rn") return { ok: true, right: "Retained", reason: "You keep this task yourself.", src: "ncsbn" };
+    if (task.rnOnly) return { ok: false, right: "Right Task", reason: "Assessment, the first teaching, evaluation of a response, an unstable patient, IV-push/first-dose high-alert meds and blood administration stay with the RN — they cannot be delegated.", src: "ncsbn" };
+    if (task.need > r) return { ok: false, right: "Right Person", reason: "A " + roleShort(who) + "'s scope of practice does not include this task. Choose a licensed nurse within scope.", src: "scope" };
+    if (task.stableOnly && patient && !patient.stable) return { ok: false, right: "Right Circumstance", reason: "This patient is unstable, so even a routine task here needs a licensed nurse's judgment — wrong circumstance to delegate.", src: "ncsbn" };
+    return { ok: true, right: "Appropriate", reason: "Right task, right person, right circumstance. Give clear direction and the parameters to report, then follow up.", src: "ncsbn" };
+  }
+
+  /* ---------- patient archetypes (fictional) ----------
+     acuity 1 = most critical. stable=false means unstable/at-risk. pri = handoff-time priority weight (higher = see first). */
+  const FIRST = ["Avery", "Jordan", "Riley", "Morgan", "Casey", "Quinn", "Harper", "Rowan", "Elliot", "Sawyer", "Marlowe", "Devon", "Noa", "Shiloh", "Reese", "Blair"];
+  const LAST = ["Delgado", "Okafor", "Petrov", "Nguyen", "Caldwell", "Ramos", "Whitfield", "Abara", "Lindqvist", "Underwood", "Castellano", "Burke", "Fontaine", "Vargas", " Monroe".trim(), "Esposito"];
+  const ARCH = [
+    {
+      code: "acs", dx: "Chest pain, rule out acute coronary syndrome", sys: "Cardiac", ac: 1, stable: false, pri: 95,
+      vit: { hr: 98, bp: "148/88", rr: 20, spo2: 95, t: 37.0, pain: 6 }, src: "rrs",
+      sbar: { s: "New onset substernal chest pressure 6/10, radiating to the left arm.", b: "History of hypertension and hyperlipidemia; smoker.", a: "First troponin pending, 12-lead shows nonspecific changes, on telemetry.", r: "Keep on the monitor, repeat troponin and ECG, aspirin given." },
+      tasks: [{ id: "assess", label: "Reassess the chest pain and obtain a focused cardiac assessment", rnOnly: true }, { id: "ecg", label: "Obtain a repeat 12-lead ECG now", need: 1 }, { id: "vs", label: "Cycle vital signs q15min", need: 0, stableOnly: true }],
+      teach: "Chest pain with possible ACS is an airway/circulation priority: assess first, keep on telemetry, and escalate changes. Reassessment of a new or changing complaint is an RN responsibility."
+    },
+    {
+      code: "copd", dx: "COPD exacerbation", sys: "Respiratory", ac: 2, stable: false, pri: 82,
+      vit: { hr: 96, bp: "138/82", rr: 24, spo2: 90, t: 37.2, pain: 2 }, src: "rrs", deterCand: 1,
+      sbar: { s: "Increasing shortness of breath, using accessory muscles.", b: "COPD on 2 L home oxygen; two prior admissions this year.", a: "SpO2 90% on 2 L, scattered wheezes, on scheduled bronchodilators and steroids.", r: "Titrate oxygen to keep SpO2 88–92%, watch the respiratory rate." },
+      tasks: [{ id: "assess", label: "Perform a focused respiratory assessment and auscultate", rnOnly: true }, { id: "neb", label: "Give the scheduled nebulizer treatment", need: 1 }, { id: "vs", label: "Recheck SpO2 and respiratory rate", need: 0, stableOnly: true }],
+      teach: "In COPD, titrate oxygen to 88–92% and treat the whole picture of breathing. Rising respiratory rate and falling SpO2 are early cues of a patient going sour (airway/breathing priority)."
+    },
+    {
+      code: "sepsis", dx: "Urosepsis in an older adult", sys: "Infection", ac: 2, stable: false, pri: 80,
+      vit: { hr: 104, bp: "104/60", rr: 22, spo2: 94, t: 38.4, pain: 3 }, src: "ssc", deterCand: 2,
+      sbar: { s: "Older adult, a little more confused than baseline this morning.", b: "Admitted with a urinary tract infection; lives alone.", a: "Low-grade fever, heart rate up, blood pressure trending down, lactate pending.", r: "Follow the sepsis bundle, recheck the blood pressure and mentation closely." },
+      tasks: [{ id: "assess", label: "Assess mentation and perfusion; trend the blood pressure", rnOnly: true }, { id: "abx", label: "Hang the ordered antibiotic", rnOnly: true }, { id: "vs", label: "Recheck blood pressure and temperature", need: 0 }],
+      teach: "New confusion in an older adult with infection is an early sepsis cue, not just 'sundowning.' Trending hypotension and tachycardia need the RN's assessment and the sepsis bundle. Vitals on an unstable patient should not be delegated."
+    },
+    {
+      code: "gib", dx: "Upper GI bleed", sys: "GI", ac: 1, stable: false, pri: 92,
+      vit: { hr: 110, bp: "98/58", rr: 20, spo2: 96, t: 36.7, pain: 4 }, src: "rrs",
+      sbar: { s: "Passed a large melena stool overnight, feels lightheaded.", b: "History of NSAID use and prior ulcer.", a: "Heart rate up, blood pressure borderline, hemoglobin dropped from 11 to 8.", r: "Type and crossmatch sent, two large-bore IVs, hold anticoagulation, NPO." },
+      tasks: [{ id: "assess", label: "Reassess perfusion and the most recent stool", rnOnly: true }, { id: "blood", label: "Administer the ordered blood product", rnOnly: true }, { id: "io", label: "Record strict intake and output", need: 0 }],
+      teach: "Active GI bleeding with a falling hemoglobin is a circulation priority. Blood product administration and ongoing assessment stay with the RN; a UAP can keep strict I&O."
+    },
+    {
+      code: "postop", dx: "Post-op day 1, bowel resection", sys: "Surgical", ac: 3, stable: true, pri: 55,
+      vit: { hr: 84, bp: "126/76", rr: 16, spo2: 97, t: 37.3, pain: 5 }, src: "aspmn",
+      sbar: { s: "Comfortable on a PCA, incision intact.", b: "Bowel resection yesterday, no complications overnight.", a: "Stable vitals, sterile abdominal dressing due to be changed this shift.", r: "First dressing change is a sterile, RN task; encourage early ambulation and incentive spirometry." },
+      tasks: [{ id: "dressing", label: "Perform the first sterile dressing change", rnOnly: true }, { id: "teachpca", label: "Teach PCA safety and only-patient-pushes-the-button", rnOnly: true }, { id: "ambulate", label: "Assist with ambulation in the hall", need: 0, stableOnly: true }, { id: "is", label: "Remind to use the incentive spirometer", need: 0, stableOnly: true }],
+      teach: "A first sterile dressing change and initial teaching are RN tasks. Ambulation and reminding about the incentive spirometer on a stable patient are appropriate for a UAP — with clear direction and follow-up."
+    },
+    {
+      code: "chf", dx: "Heart failure, fluid overload", sys: "Cardiac", ac: 3, stable: true, pri: 58,
+      vit: { hr: 88, bp: "132/80", rr: 18, spo2: 94, t: 36.9, pain: 1 }, src: "rrs",
+      sbar: { s: "Mild shortness of breath, improving with diuresis.", b: "Chronic heart failure, on scheduled morning furosemide.", a: "Up 2 kg from dry weight, 1+ edema, daily weight and strict I&O ordered; a basic metabolic panel is pending.", r: "Give the morning diuretic, trend the daily weight, watch potassium." },
+      tasks: [{ id: "give", label: "Give the morning furosemide and reassess", rnOnly: true }, { id: "weight", label: "Obtain the standing daily weight", need: 0, stableOnly: true }, { id: "io", label: "Keep strict intake and output", need: 0, stableOnly: true }],
+      teach: "Daily weights and I&O on a stable heart-failure patient are classic UAP tasks. Watch the pending potassium after diuresis — a new critical value will need the RN to act and the provider to be notified."
+    },
+    {
+      code: "dka", dx: "Diabetic ketoacidosis, resolving", sys: "Endocrine", ac: 2, stable: false, pri: 70,
+      vit: { hr: 94, bp: "118/72", rr: 18, spo2: 98, t: 36.8, pain: 1 }, src: "rrs",
+      sbar: { s: "Alert, nausea improving.", b: "Type 1 diabetes, admitted in DKA.", a: "On an insulin infusion, hourly point-of-care glucose, potassium being repleted.", r: "Titrate the insulin drip per protocol, check glucose hourly, do not stop the drip abruptly." },
+      tasks: [{ id: "titrate", label: "Titrate the insulin infusion per protocol", rnOnly: true }, { id: "glu", label: "Check the hourly point-of-care glucose", need: 0 }, { id: "assess", label: "Assess hydration and mentation", rnOnly: true }],
+      teach: "Titrating an insulin infusion is an RN judgment task that cannot be delegated. A UAP may perform a point-of-care glucose where policy allows, but the RN interprets it and adjusts the drip."
+    },
+    {
+      code: "stroke", dx: "Ischemic stroke, post-thrombolysis", sys: "Neuro", ac: 2, stable: false, pri: 74,
+      vit: { hr: 78, bp: "150/86", rr: 16, spo2: 97, t: 36.9, pain: 0 }, src: "rrs",
+      sbar: { s: "Mild right-sided weakness, speaking in short sentences.", b: "Received thrombolytics in the ED six hours ago.", a: "Neuro checks and blood pressure q1h per protocol; strict blood-pressure parameters.", r: "Continue neuro checks, keep blood pressure in range, report any decline immediately." },
+      tasks: [{ id: "neuro", label: "Perform the hourly neurologic assessment", rnOnly: true }, { id: "bp", label: "Recheck the blood pressure per protocol", need: 0, stableOnly: true }, { id: "swallow", label: "Keep NPO until the swallow screen", need: 0 }],
+      teach: "Neurologic assessment after thrombolysis is an RN task tied to time-critical blood-pressure limits. Report any change at once. Keeping the patient NPO before a swallow screen can be reinforced by assistive personnel."
+    },
+    {
+      code: "pneu", dx: "Community-acquired pneumonia, improving — discharge today", sys: "Respiratory", ac: 4, stable: true, pri: 40, dischargeCand: 1,
+      vit: { hr: 80, bp: "122/74", rr: 17, spo2: 96, t: 37.0, pain: 2 }, src: "teach",
+      sbar: { s: "Feeling much better, eating well.", b: "Treated for pneumonia, now on oral antibiotics.", a: "Stable, afebrile, discharge planned today with a new antibiotic prescription.", r: "Complete discharge teaching with teach-back and reconcile the medication list." },
+      tasks: [{ id: "teach", label: "Complete discharge teaching with teach-back", rnOnly: true }, { id: "medrec", label: "Reconcile the discharge medication list", rnOnly: true }, { id: "transport", label: "Arrange wheelchair transport at discharge", need: 0, stableOnly: true }],
+      teach: "Discharge teaching with teach-back and medication reconciliation are RN responsibilities and the heart of continuity of care. Transport can be delegated."
+    },
+    {
+      code: "hip", dx: "Hip fracture, post-op, high fall risk", sys: "Ortho", ac: 3, stable: true, pri: 52,
+      vit: { hr: 86, bp: "128/78", rr: 17, spo2: 96, t: 37.1, pain: 6 }, src: "falls",
+      sbar: { s: "Intermittently confused, pulling at lines.", b: "Repaired a fractured hip yesterday, lives at home with family.", a: "High fall risk, bed alarm on, needs assist of one to the bathroom.", r: "Keep fall precautions, answer call lights promptly, assist with ambulation." },
+      tasks: [{ id: "assess", label: "Assess the new confusion and pain", rnOnly: true }, { id: "amb", label: "Assist to the bathroom with a gait belt", need: 0, stableOnly: true }, { id: "reposition", label: "Reposition and provide comfort care", need: 0, stableOnly: true }],
+      teach: "A confused, high-fall-risk post-op patient needs prompt call-light response and the least-restrictive safe measures. Assisted toileting and repositioning are UAP tasks; new confusion still needs the RN's assessment."
+    }
+  ];
+
+  function patName(r) { return r.pick(FIRST) + " " + r.pick(LAST) }
+
+  /* ---------- roster generation (seeded) ---------- */
+  function genRoster(tier, seed) {
+    const T = TIERS[tier] || TIERS[1]; const r = RNG((seed >>> 0) ^ 0x51ed270b ^ (tier * 2654435761));
+    const pool = r.shuffle(ARCH);
+    const chosen = [];
+    for (const a of pool) { if (chosen.length >= T.np) break; chosen.push(a) }
+    /* when this tier has a deteriorating patient, guarantee a deterioration-candidate archetype is in the assignment */
+    let deterIdx = -1;
+    if (T.deter) {
+      if (!chosen.some(a => a.deterCand)) { const cand = pool.find(a => a.deterCand); if (cand) chosen[r.i(0, chosen.length - 1)] = cand; }
+      const cands = chosen.map((a, i) => a.deterCand ? i : -1).filter(i => i >= 0);
+      if (cands.length) deterIdx = r.pick(cands);
+    }
+    const rooms = r.shuffle(["402", "404", "406", "408", "410", "412", "414", "416"]);
+    const roster = chosen.map((a, i) => {
+      const age = r.i(a.ac <= 2 ? 52 : 34, a.ac <= 2 ? 88 : 74);
+      const p = {
+        id: "p" + (i + 1), code: a.code, name: patName(r), room: rooms[i] || (420 + i), age, dx: a.dx, sys: a.sys,
+        ac: a.ac, stable: a.stable, pri: a.pri, vit: Object.assign({}, a.vit), src: a.src, teach: a.teach,
+        sbar: a.sbar, tasks: a.tasks.map(t => Object.assign({}, t)), deter: i === deterIdx, dischargeCand: !!a.dischargeCand
+      };
+      return p;
+    });
+    /* handoff plants: 1–2 patients carry a deliberate gap or error in report */
+    plantHandoff(roster, r, tier);
+    /* mark the deteriorating patient's report as subtly reassuring (the cue is quiet) */
+    return roster;
+  }
+
+  const PLANTS = [
+    { type: "allergy", txt: "No allergies were mentioned in report, but the chart lists a penicillin allergy.", flag: "A documented allergy was omitted from the hand-off.", comp: "communicate", src: "jc" },
+    { type: "crit", txt: "Report called the patient 'stable' but a critical lab value (reported below) was not addressed.", flag: "A critical value was not addressed in the hand-off.", comp: "communicate", src: "sbar" },
+    { type: "vital", txt: "The off-going nurse described the patient as fine, yet the last charted set shows an abnormal vital sign.", flag: "An abnormal vital sign was glossed over in the hand-off.", comp: "communicate", src: "sbar" },
+    { type: "task", txt: "A time-critical task (a due medication or a pending screen) was not handed off.", flag: "A time-critical pending task was missing from the hand-off.", comp: "continuity", src: "sbar" }
+  ];
+  function plantHandoff(roster, r, tier) {
+    const n = tier >= 3 ? 2 : 1; const idx = r.shuffle(roster.map((_, i) => i)).slice(0, n);
+    roster.forEach(p => p.plants = []);
+    idx.forEach(i => { const pl = r.pick(PLANTS); roster[i].plants = [{ id: "pl_" + roster[i].id, type: pl.type, txt: pl.txt, flag: pl.flag, comp: pl.comp, src: pl.src }] });
+  }
+
+  /* ---------- delegable task catalogue flattened for the delegation screen ---------- */
+  function rosterTasks(roster) {
+    const out = [];
+    roster.forEach(p => (p.tasks || []).forEach(t => out.push({ key: p.id + ":" + t.id, pid: p.id, pname: p.name, proom: p.room, label: t.label, rnOnly: !!t.rnOnly, need: t.need || 0, stableOnly: !!t.stableOnly, stable: p.stable }))); return out;
+  }
+
+  /* ---------- team generation ---------- */
+  function genTeam(tier, r) {
+    const team = [{ who: "uap", name: r.pick(["Sam", "Pat", "Chris", "Lee"]) + " (CNA)" }, { who: "lpn", name: r.pick(["Robin", "Alex", "Taylor", "Jamie"]) + " (LPN)" }];
+    if (tier >= 3) team.push({ who: r.chance(.5) ? "newrn" : "float", name: r.pick(["Dev", "Nour", "Kai", "Ira"]) + " (RN)" });
+    return team;
+  }
+
+  /* ---------- event construction (concurrent, compressed time) ---------- */
+  function buildEvents(roster, tier, r) {
+    const T = TIERS[tier]; const evs = []; let id = 1;
+    const deterP = roster.find(p => p.deter);
+    const push = e => { e.id = "e" + (id++); e.done = false; e.pick = null; e.handledAt = null; evs.push(e) };
+    const spread = (lo, hi) => r.i(lo, hi);
+    /* the quietly deteriorating patient: a 3-step escalation chain */
+    if (deterP) {
+      const base = deterP.vit, kind = deterP.code === "sepsis" ? "sepsis" : deterP.code === "copd" ? "hypoxia" : "shock";
+      deterP.deterKind = kind;
+      push({ t: spread(20, 45), pid: deterP.id, k: "deter", chain: 1, comp: "safety", win: 60, severity: 1, title: "Subtle change — " + deterP.name, body: "The UAP mentions " + deterP.name + " in " + deterP.room + " 'just doesn't look quite right' and asked for you. Early vital-sign drift is on the monitor.", choices: [{ txt: "Go assess the patient now and recheck a full set of vitals", good: true, note: "Recognizing the early cue and assessing is exactly right." }, { txt: "Ask the UAP to recheck vitals and tell them later", good: false, note: "Delegating the recheck is fine, but an early cue in an at-risk patient needs YOUR assessment." }, { txt: "Finish your other tasks first; it's probably nothing", good: false, safety: true, note: "Dismissing an early cue is how a quiet deterioration gets missed." }] });
+      push({ t: spread(55, 80), pid: deterP.id, k: "deter", chain: 2, comp: "safety", win: 45, severity: 2, title: "Worsening — " + deterP.name, body: "Vitals are clearly abnormal now (" + (kind === "sepsis" ? "hypotension and tachycardia, more confused" : kind === "hypoxia" ? "SpO2 falling, respiratory rate climbing" : "blood pressure dropping, mottled") + ").", choices: [{ txt: "Stay with the patient, start interventions in your scope, and prepare to escalate", good: true, note: "Stabilize within scope and get help coming." }, { txt: "Chart the abnormal vitals and keep monitoring", good: false, safety: true, note: "Documenting without acting lets the patient slide." }, { txt: "Give an as-needed medication and move on", good: false, safety: true, note: "A single PRN without assessment or escalation is unsafe here." }] });
+      push({ t: spread(95, 120), pid: deterP.id, k: "deter", chain: 3, comp: "escalate", win: 30, severity: 3, title: "Escalate — " + deterP.name, body: "The patient meets rapid-response criteria. What is your move?", escalate: true, choices: [{ txt: "Call a rapid response and give a complete SBAR", good: true, note: "Timely escalation with SBAR is the goal." }, { txt: "Page the provider and wait for a callback", good: false, note: "A routine page is too slow once rapid-response criteria are met." }, { txt: "Keep watching for a few more minutes", good: false, safety: true, note: "Waiting past rapid-response criteria is a missed-deterioration event." }] });
+    }
+    /* critical lab value (advocacy) */
+    const labP = roster.find(p => p.code === "chf") || roster.find(p => !p.deter && p.ac >= 3) || roster[0];
+    if (labP) push({ t: spread(30, 60), pid: labP.id, k: "lab", comp: "advocate", win: 45, severity: 2, title: "Critical lab — " + labP.name, body: "The lab calls with a critical potassium of 6.2 mmol/L on " + labP.name + " in " + labP.room + ". A read-back is required.", choices: [{ txt: "Read back the value, assess the patient and an ECG, and notify the provider", good: true, note: "Read-back, assessment and provider notification — textbook." }, { txt: "Write it down and notify the provider at the end of the shift", good: false, safety: true, note: "A critical value needs timely action and provider notification." }, { txt: "Repeat the lab first and do nothing until it returns", good: false, note: "Don't delay acting on a critical value to re-draw it." }] });
+    /* new order with a question (advocacy / safety) */
+    const ordP = roster.find(p => p.code === "postop") || roster.find(p => p.ac === 3) || roster[0];
+    if (ordP) push({ t: spread(40, 75), pid: ordP.id, k: "order", comp: "safety", win: 50, severity: 2, title: "New order — " + ordP.name, body: "A new order appears to double the opioid dose for " + ordP.name + ", who is already sedated. What do you do?", choices: [{ txt: "Hold the dose and clarify the order with the provider", good: true, note: "Questioning an unsafe order is advocacy and safety." }, { txt: "Give it exactly as written — the provider ordered it", good: false, safety: true, note: "An order that looks unsafe must be clarified, not simply followed." }, { txt: "Give half the dose on your own judgment", good: false, safety: true, note: "You can't unilaterally change a dose; clarify the order." }] });
+    /* provider callback (SBAR / read-back) */
+    const callP = roster.find(p => p.ac <= 2 && !p.deter) || roster[0];
+    if (callP) push({ t: spread(50, 90), pid: callP.id, k: "provider", comp: "communicate", win: 40, severity: 1, title: "Provider callback — " + callP.name, body: "The provider returns your page about " + callP.name + ". Give report.", choices: [{ txt: "Give a focused SBAR and read back the new verbal orders", good: true, note: "SBAR plus read-back of verbal orders is the standard." }, { txt: "Describe everything from the start of the shift in detail", good: false, note: "Report should be focused — Situation, Background, Assessment, Recommendation." }, { txt: "Take the verbal orders without reading them back", good: false, safety: true, note: "Verbal orders must be read back to the provider." }] });
+    /* call light / fall risk (safety, time) */
+    const fallP = roster.find(p => p.code === "hip") || roster.find(p => p.ac === 3) || roster[0];
+    if (fallP) push({ t: spread(25, 70), pid: fallP.id, k: "call", comp: "time", win: 20, severity: 2, title: "Call light — " + fallP.name, body: fallP.name + " in " + fallP.room + " (high fall risk) is on the call light to use the bathroom.", choices: [{ txt: "Send the UAP promptly to assist to the bathroom", good: true, note: "Prompt response and appropriate delegation prevents a fall." }, { txt: "Answer it yourself after you finish charting", good: false, note: "A high-fall-risk patient needs a prompt response; delegating assist is appropriate." }, { txt: "Let the patient go on their own this once", good: false, safety: true, note: "Telling a high-fall-risk patient to go alone risks a fall." }] });
+    /* family at the desk (advocacy / communication) */
+    const famP = roster[r.i(0, roster.length - 1)];
+    push({ t: spread(35, 80), pid: famP.id, k: "family", comp: "advocate", win: 40, severity: 1, title: "Family at the desk", body: "A family member of " + famP.name + " is upset at the desk asking for an update while two patients need you.", choices: [{ txt: "Acknowledge them, set a time to talk, and attend to the sicker patients first", good: true, note: "Acknowledge and prioritize — you can't abandon an unstable patient." }, { txt: "Stop everything and give a full update now", good: false, note: "Don't leave a deteriorating patient to give a routine family update." }, { txt: "Ignore them until you are free", good: false, note: "Ignoring family erodes trust; acknowledge and set expectations." }] });
+    /* admission (continuity / med rec) */
+    if (tier >= 2) push({ t: spread(70, 110), pid: "admit", k: "admit", comp: "continuity", win: 50, severity: 2, title: "New admission from the ED", body: "The charge nurse assigns you a new admission from the emergency department.", choices: [{ txt: "Complete the admission assessment and reconcile home medications", good: true, note: "Admission assessment and medication reconciliation keep care continuous and safe." }, { txt: "Have the UAP do the admission assessment", good: false, safety: true, note: "An admission assessment is an RN task — it can't be delegated." }, { txt: "Put the chart aside until the shift calms down", good: false, note: "A new admission needs a timely RN assessment." }] });
+    /* discharge teach-back (continuity) */
+    const dcP = roster.find(p => p.dischargeCand);
+    if (dcP) push({ t: spread(80, 130), pid: dcP.id, k: "discharge", comp: "continuity", win: 60, severity: 1, title: "Discharge — " + dcP.name, body: dcP.name + " is ready for discharge. How do you finish safely?", choices: [{ txt: "Teach the new prescriptions and confirm understanding with teach-back", good: true, note: "Teach-back confirms the patient actually understands — continuity of care." }, { txt: "Hand over the paperwork and say goodbye", good: false, note: "Handing over paper without teach-back misses the teaching." }, { txt: "Delegate the discharge teaching to the UAP", good: false, note: "Teaching is an RN task; it can't be delegated." }] });
+    /* patient off the unit (continuity / time) */
+    if (tier >= 3) { const offP = roster.find(p => p.ac >= 3 && p.id !== (dcP || {}).id) || roster[1]; if (offP) push({ t: spread(60, 100), pid: offP.id, k: "provider", comp: "continuity", win: 45, severity: 1, title: "Off the unit — " + offP.name, body: offP.name + " is due in radiology, but their time-critical medication is coming due.", choices: [{ txt: "Give the time-critical medication before transport, or coordinate timing", good: true, note: "Coordinate timing so the due medication isn't missed during transport." }, { txt: "Let them go and give the medication whenever they return", good: false, note: "A time-critical med shouldn't be skipped for a scan — coordinate it." }, { txt: "Cancel the imaging without telling anyone", good: false, note: "Don't unilaterally cancel ordered imaging; coordinate instead." }] }) }
+    /* sort by time */
+    evs.sort((a, b) => a.t - b.t);
+    return evs;
+  }
+
+  /* ---------- priority key ---------- */
+  function prioKey(roster) {
+    /* higher pri first; the deteriorating patient's quiet cue nudges them up a little */
+    return roster.map(p => ({ id: p.id, w: p.pri + (p.deter ? 6 : 0) + (p.stable ? 0 : 4) })).sort((a, b) => b.w - a.w).map(x => x.id);
+  }
+
+  /* ---------- run lifecycle ---------- */
+  function newRun(tier, seed) {
+    tier = clamp(+tier || 1, 1, 4); seed = (seed >>> 0) || RNG(now()).i(1, 1e9);
+    const r = RNG(seed ^ 0x2545f491);
+    const roster = genRoster(tier, seed);
+    const team = genTeam(tier, r);
+    const events = buildEvents(roster, tier, r);
+    return { v: SV, tier, seed, t0: now(), roster, team, events, dur: TIERS[tier].dur, t: 0, phase: "brief", handoff: { caught: {}, falseFlags: 0 }, prio: { chosen: roster.map(p => p.id) }, deleg: {}, delegReport: {}, seen: {}, started: 0, done: false, safety: [] };
+  }
+
+  /* ----- decisions ----- */
+  function flagHandoff(R, pid, isIssue) {
+    const p = R.roster.find(x => x.id === pid); if (!p) return;
+    const has = (p.plants || []).length > 0;
+    if (isIssue) { if (has) R.handoff.caught[pid] = 1; else R.handoff.falseFlags++ }
+    else { delete R.handoff.caught[pid] }
+  }
+  function setPriority(R, order) { if (Array.isArray(order) && order.length === R.roster.length) R.prio.chosen = order.slice() }
+  function seePatient(R, pid) { R.seen[pid] = R.seen[pid] || R.t; }
+  function delegate(R, taskKey, who, reportSet) { R.deleg[taskKey] = who; if (reportSet != null) R.delegReport[taskKey] = !!reportSet; }
+  function actEvent(R, evId, choiceIdx) {
+    const ev = R.events.find(e => e.id === evId); if (!ev || ev.done) return null;
+    ev.pick = choiceIdx; ev.handledAt = R.t; ev.done = true;
+    const ch = ev.choices[choiceIdx];
+    if (ch && ch.safety) R.safety.push({ t: R.t, pid: ev.pid, txt: ev.title + ": " + ch.txt });
+    return ch;
+  }
+  function escalate(R, pid, sbar) {
+    const ev = R.events.find(e => e.escalate && e.pid === pid && !e.done);
+    if (ev) { ev.pick = 0; ev.handledAt = R.t; ev.done = true; ev.sbar = sbar || {}; }
+    R.escCalled = R.escCalled || {}; R.escCalled[pid] = { t: R.t, sbar: sbar || {} };
+  }
+  /* advance compressed time; expire unhandled events past their window; the deter chain miss → safety event */
+  function advance(R, mins) {
+    R.t = clamp(R.t + (+mins || 0), 0, R.dur);
+    R.events.forEach(ev => {
+      if (!ev.done && R.t > ev.t + ev.win) {
+        ev.expired = true; ev.done = true; ev.handledAt = null;
+        if (ev.k === "deter" && ev.chain === 3) R.safety.push({ t: ev.t + ev.win, pid: ev.pid, txt: "Deterioration not escalated — rapid response criteria were met and missed." });
+        else if (ev.severity >= 2) R.safety.push({ t: ev.t + ev.win, pid: ev.pid, txt: ev.title + " went unhandled past its window." });
+      }
+    });
+    return R.t;
+  }
+  const deterMissed = R => { const p = R.roster.find(x => x.deter); if (!p) return false; const chain3 = R.events.find(e => e.k === "deter" && e.chain === 3 && e.pid === p.id); return !!(chain3 && (chain3.expired || (chain3.pick != null && chain3.choices[chain3.pick] && !chain3.choices[chain3.pick].good))); };
+
+  /* ---------- scoring ---------- */
+  function scoreRun(R) {
+    const chk = []; const add = (k, txt, v, src) => chk.push({ k, txt, v: clamp(v, 0, 1), src: src || "" });
+    /* prioritization: rank correlation vs key, weighted, hard penalty for burying an unstable/critical patient */
+    const key = prioKey(R.roster); const chosen = R.prio.chosen.slice();
+    const keyRank = {}; key.forEach((id, i) => keyRank[id] = i);
+    let dsum = 0, dmax = 0; const nP = R.roster.length;
+    chosen.forEach((id, i) => { const w = (R.roster.find(p => p.id === id) || {}).ac <= 2 ? 2 : 1; dsum += w * Math.abs(i - keyRank[id]); dmax += w * (nP - 1) });
+    let prv = dmax ? 1 - dsum / dmax : 1;
+    /* bury-critical penalty */
+    R.roster.forEach(p => { if (p.ac === 1) { const pos = chosen.indexOf(p.id); if (pos >= Math.ceil(nP / 2)) prv -= .3 } });
+    prv = clamp(prv, 0, 1); add("prioritize", "Ordered patients by acuity and safety (ABCs, unstable before stable)", prv, "maslow");
+
+    /* delegation: appropriateness of each delegated task + keeping RN tasks + report direction */
+    const tasks = rosterTasks(R.roster); let dgGood = 0, dgTot = 0, dgViol = 0;
+    tasks.forEach(t => {
+      const who = R.deleg[t.key] || "rn"; const p = R.roster.find(x => x.id === t.pid);
+      const d = delegOK({ rnOnly: t.rnOnly, need: t.need, stableOnly: t.stableOnly }, who, p);
+      dgTot++;
+      /* ideal: RN-only kept by RN; delegable given to an in-scope person with report params set */
+      const ideal = t.rnOnly ? who === "rn" : (d.ok && who !== "rn");
+      if (ideal && (who === "rn" || R.delegReport[t.key])) dgGood++;
+      else if (ideal) dgGood += .6; /* right person, no report-back direction given */
+      if (!t.rnOnly && who !== "rn" && !d.ok) dgViol++;
+      if (t.rnOnly && who !== "rn") { dgViol++; R.safety.push({ t: R.t, pid: t.pid, txt: "Out-of-scope delegation: " + t.label + " to " + roleShort(who) }); }
+    });
+    let dgv = dgTot ? dgGood / dgTot : 1; dgv = clamp(dgv - dgViol * .12, 0, 1);
+    add("delegate", "Applied the Five Rights of Delegation and scope of practice", dgv, "ncsbn");
+
+    /* events by competency */
+    const byComp = {}; COMPS.forEach(([k]) => byComp[k] = []);
+    R.events.forEach(ev => {
+      let v;
+      if (ev.expired) v = 0;
+      else if (ev.pick == null) v = 0;
+      else { const ch = ev.choices[ev.pick]; v = ch && ch.good ? 1 : (ch && ch.safety ? 0 : .35); }
+      byComp[ev.comp === "escalate" ? "communicate" : ev.comp].push({ ev, v });
+    });
+    /* time management: fraction of time-sensitive events handled in-window (not expired) */
+    const tEv = R.events.filter(e => e.severity >= 1);
+    const onTime = tEv.filter(e => !e.expired && e.pick != null).length;
+    add("time", "Handled competing, concurrent demands before they expired", tEv.length ? onTime / tEv.length : 1, "rrs");
+
+    /* communication: handoff plants caught − false flags, plus SBAR/read-back events */
+    const totPlant = R.roster.reduce((n, p) => n + (p.plants || []).length, 0);
+    const caught = Object.keys(R.handoff.caught).length;
+    let comm = totPlant ? clamp((caught - R.handoff.falseFlags * .5) / totPlant, 0, 1) : 1;
+    const commEv = byComp.communicate; if (commEv.length) comm = (comm + (commEv.reduce((a, b) => a + b.v, 0) / commEv.length)) / 2;
+    add("communicate", "Caught hand-off gaps and gave focused SBAR with read-back", comm, "sbar");
+
+    /* safety: start full, subtract per safety event */
+    const safeV = clamp(1 - R.safety.length * .22, 0, 1);
+    add("safety", "No missed deterioration, scope violations, med errors or falls", safeV, "rrs");
+    /* deterioration recognition explicit check */
+    const dp = R.roster.find(p => p.deter);
+    if (dp) { const missed = deterMissed(R); add("safety", missed ? "The deteriorating patient was missed or escalated too late" : "Recognized and escalated the deteriorating patient in time", missed ? 0 : 1, "rrs"); }
+
+    /* advocacy */
+    const adv = byComp.advocate; add("advocate", "Advocated for patients (critical values, questionable orders, family)", adv.length ? adv.reduce((a, b) => a + b.v, 0) / adv.length : 1, "sbar");
+    /* continuity */
+    const cont = byComp.continuity; add("continuity", "Kept care continuous (admission med rec, discharge teach-back, transitions)", cont.length ? cont.reduce((a, b) => a + b.v, 0) / cont.length : 1, "teach");
+
+    /* roll up per competency (first chk of each key is the anchor; average all chks of that key) */
+    const byK = {}; COMPS.forEach(([k]) => { const xs = chk.filter(c => c.k === k); byK[k] = xs.length ? Math.round(xs.reduce((a, b) => a + b.v, 0) / xs.length * 100) : null });
+    let wsum = 0, w = 0; COMPS.forEach(([k]) => { if (byK[k] != null) { wsum += byK[k] * CWT[k]; w += CWT[k] } });
+    const total = Math.round(w ? wsum / w : 0);
+    return { total, byK, chk, prioKey: key, deterMissed: dp ? deterMissed(R) : false, safety: R.safety.slice() };
+  }
+
+  /* ---------- adaptive rating (Elo-style, overall + per competency) ---------- */
+  function rateRun(R, sc) {
+    const P = prog(); const d0 = TIERS[R.tier].base; const s = sc.total / 100;
+    const E = 1 / (1 + Math.pow(10, (d0 - P.r) / 400)); const K = P.n < 5 ? 80 : 48;
+    const r0 = P.r, t0 = tierNow(P);
+    const dl = Math.round(K * (s - E)) + (s >= .85 && R.tier >= t0 ? 12 : 0);
+    P.r = clamp(P.r + dl, 400, 2400); P.n++;
+    COMPS.forEach(([k]) => { if (sc.byK[k] != null) { const e = 1 / (1 + Math.pow(10, (d0 - P.c[k]) / 400)); P.c[k] = clamp(Math.round(P.c[k] + 42 * (sc.byK[k] / 100 - e)), 400, 2400) } });
+    /* two weak runs in a row at the current tier → step the student back a tier (hold) */
+    P.lowStreak = s < .55 ? (P.lowStreak || 0) + 1 : 0;
+    if (P.lowStreak >= 2 && tierNow(P) > 1) { P.hold = (P.hold || 0) + 1; P.lowStreak = 0; }
+    else if (s >= .8 && P.hold > 0) P.hold = Math.max(0, P.hold - 1);
+    P.hist.push({ t: now(), tier: R.tier, sc: sc.total, r0, r1: P.r, d: P.r - r0, b: sc.byK }); P.hist = P.hist.slice(-60);
+    saveProg(P);
+    return { r0, r1: P.r, d: P.r - r0, t0, t1: tierNow(P), pct: tierPct(P) };
+  }
+
+  /* ---------- headless policy simulator (for grading checks + tests) ---------- */
+  function simRun(tier, seed, policy) {
+    const R = newRun(tier, seed); policy = policy || "ideal";
+    /* handoff */
+    R.roster.forEach(p => { if ((p.plants || []).length) { if (policy === "ideal") flagHandoff(R, p.id, true); } });
+    if (policy === "negligent") { /* flag a wrong one, miss the real ones */ const wrong = R.roster.find(p => !(p.plants || []).length); if (wrong) flagHandoff(R, wrong.id, true); }
+    /* priority */
+    if (policy === "ideal") setPriority(R, prioKey(R.roster));
+    else setPriority(R, prioKey(R.roster).slice().reverse());
+    /* delegation */
+    rosterTasks(R.roster).forEach(t => {
+      if (policy === "ideal") {
+        if (t.rnOnly) delegate(R, t.key, "rn", true);
+        else { const who = t.need >= 1 ? "lpn" : "uap"; const p = R.roster.find(x => x.id === t.pid); const d = delegOK({ rnOnly: t.rnOnly, need: t.need, stableOnly: t.stableOnly }, who, p); delegate(R, t.key, d.ok ? who : "rn", true); }
+      } else {
+        delegate(R, t.key, "uap", false); /* dump everything on the UAP, including assessments */
+      }
+    });
+    /* events: ideal picks the good choice at the right time; negligent ignores (lets expire) */
+    R.events.filter(e => !e.escalate).forEach(ev => {
+      if (policy === "ideal") { advance(R, Math.max(0, ev.t - R.t)); const gi = ev.choices.findIndex(c => c.good); actEvent(R, ev.id, gi >= 0 ? gi : 0); }
+    });
+    if (policy === "ideal") { const dp = R.roster.find(p => p.deter); if (dp) { const e3 = R.events.find(e => e.escalate && e.pid === dp.id); if (e3) { advance(R, Math.max(0, e3.t - R.t)); escalate(R, dp.id, { s: 1, b: 1, a: 1, r: 1 }); } } }
+    advance(R, R.dur);
+    R.done = true;
+    const sc = scoreRun(R);
+    return { R, sc };
+  }
+
+  /* ======================================================================
+     UI — full-screen overlay (#vxsh). Phases: brief → prioritize → board → debrief
+     ====================================================================== */
+  const ICO = {
+    shift: '<path d="M3 7h18M3 12h18M3 17h18"/><circle cx="7" cy="7" r="0"/>',
+    board: '<rect x="3" y="4" width="7" height="7" rx="1"/><rect x="14" y="4" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="6" rx="1"/><rect x="14" y="14" width="7" height="6" rx="1"/>',
+    clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>'
+  };
+  const sv = (k, s) => '<svg viewBox="0 0 24 24" width="' + (s || 18) + '" height="' + (s || 18) + '" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + (ICO[k] || "") + '</svg>';
+  const acPill = ac => '<span class="vxsh-pill ac' + ac + '">' + (ac <= 1 ? "Critical" : ac === 2 ? "High" : ac === 3 ? "Moderate" : ac === 4 ? "Stable" : "Low") + " acuity</span>";
+  const clk = m => { m = Math.round(m); const base = 7 * 60 + m; const h = Math.floor(base / 60) % 24, mm = base % 60; return String(h).padStart(2, "0") + ":" + String(mm).padStart(2, "0") }
+
+  let RUN = null, PACE = 1, TICKER = null;
+
+  function host() { let h = document.getElementById("vxsh"); if (!h) { h = document.createElement("div"); h.id = "vxsh"; h.setAttribute("role", "dialog"); h.setAttribute("aria-label", "Shift simulation"); document.body.appendChild(h); } return h }
+  function closeOverlay() { stopTick(); const h = document.getElementById("vxsh"); if (h) h.remove(); if ((location.hash || "").indexOf("#shift") === 0) { try { history.replaceState(null, "", location.pathname + location.search) } catch (e) { } } }
+  function stopTick() { if (TICKER) { clearInterval(TICKER); TICKER = null } }
+  function startTick() {
+    stopTick(); if (!RUN || RUN.phase !== "board") return;
+    const step = () => { if (!RUN || RUN.phase !== "board") { stopTick(); return } advance(RUN, PACE); if (RUN.t >= RUN.dur) { RUN.phase = "board"; paintBoard(); return } paintBoard(true) };
+    TICKER = setInterval(step, 1000);
+  }
+
+  function open(opt) {
+    opt = opt || {}; const P = prog();
+    const tier = clamp(+opt.tier || tierNow(P), 1, 4);
+    const seed = (opt.seed >>> 0) || RNG(now()).i(1, 1e9);
+    RUN = newRun(tier, seed); PACE = +opt.pace || (window.__vxShiftT && window.__vxShiftT.pace) || 6;
+    RUN.phase = "brief";
+    try { history.replaceState(null, "", "#shift/" + tier + "/" + seed) } catch (e) { }
+    paint();
+  }
+
+  function paint() { if (!RUN) return; if (RUN.phase === "brief") paintBrief(); else if (RUN.phase === "prioritize") paintPrioritize(); else if (RUN.phase === "board") paintBoard(); else if (RUN.phase === "debrief") paintDebrief(); }
+
+  function steps(cur) { const S = [["brief", "Report"], ["prioritize", "Prioritize"], ["board", "The shift"], ["debrief", "Debrief"]]; const oi = S.findIndex(s => s[0] === cur); return '<div class="vxsh-steps">' + S.map((s, i) => '<span class="' + (s[0] === cur ? "on" : i < oi ? "done" : "") + '">' + e_(s[1]) + "</span>").join("") + "</div>" }
+  function topbar(right) { return '<div class="vxsh-top"><div class="vxsh-ttl">' + sv("board", 20) + "Shift · " + e_(TIERS[RUN.tier].n) + '</div>' + (right || "") + '<button class="vxsh-x" data-sh="close" style="margin-left:8px">Exit</button></div>' }
+  function frame(inner, right) { const h = host(); h.innerHTML = topbar(right) + '<div class="vxsh-scroll"><div class="vxsh-wrap">' + inner + "</div></div>"; }
+
+  /* ---- brief / handoff ---- */
+  function paintBrief() {
+    stopTick();
+    const R = RUN; const cards = R.roster.map(p => {
+      const pl = (p.plants || [])[0];
+      return '<div class="vxsh-card"><div style="display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap"><div><b>' + e_(p.name) + '</b> · ' + p.age + ' · Rm ' + e_(p.room) + '<div class="vxsh-pr">' + e_(p.dx) + ' · ' + e_(p.sys) + '</div></div>' + acPill(p.ac) + '</div>'
+        + '<div class="vxsh-fine" style="margin-top:6px"><b>S:</b> ' + e_(p.sbar.s) + ' <b>B:</b> ' + e_(p.sbar.b) + ' <b>A:</b> ' + e_(p.sbar.a) + ' <b>R:</b> ' + e_(p.sbar.r) + '</div>'
+        + '<div class="vxsh-fine" style="margin-top:4px">Last vitals: HR ' + p.vit.hr + ' · BP ' + e_(p.vit.bp) + ' · RR ' + p.vit.rr + ' · SpO2 ' + p.vit.spo2 + '% · T ' + p.vit.t + '°C · pain ' + p.vit.pain + '/10</div>'
+        + (pl ? '<div class="vxsh-fine" style="margin-top:4px;color:#8a4b00"><b>Chart note:</b> ' + e_(pl.txt) + '</div>' : '')
+        + '<label style="display:flex;align-items:center;gap:8px;margin-top:8px;font-size:13px"><input type="checkbox" data-sh="flag" data-pid="' + p.id + '"' + (R.handoff.caught[p.id] ? " checked" : "") + '> I-PASS catch: something in this hand-off is missing, wrong, or needs follow-up</label>'
+        + '</div>';
+    }).join("");
+    frame(steps("brief")
+      + '<div class="vxsh-ai">' + e_(AILABEL) + '</div>'
+      + '<div class="vxsh-card"><h3>Nurse-to-nurse report (SBAR / I-PASS)</h3><p class="vxsh-muted">You are taking ' + R.roster.length + ' patients. Read the hand-off for each. One or two reports contain a deliberate gap, error, or unaddressed finding — tick the box on any report you would question. ' + roleShort("rn") + ' retains assessment and teaching; a licensed team is available to help.</p></div>'
+      + cards
+      + '<div class="vxsh-btns"><button class="vxsh-btn" data-sh="toprio">Continue to prioritization</button></div>', '');
+  }
+
+  /* ---- prioritize ---- */
+  function paintPrioritize() {
+    stopTick();
+    const R = RUN; const byId = {}; R.roster.forEach(p => byId[p.id] = p);
+    const li = R.prio.chosen.map((id, i) => { const p = byId[id]; return '<li data-pid="' + id + '"><span class="vxsh-rkn"></span><div class="vxsh-rkbody"><b>' + e_(p.name) + '</b> · Rm ' + e_(p.room) + ' ' + acPill(p.ac) + '<div>' + e_(p.dx) + '</div></div><div class="vxsh-mv"><button data-sh="up" data-pid="' + id + '"' + (i === 0 ? " disabled" : "") + ' aria-label="Move up">▲</button><button data-sh="down" data-pid="' + id + '"' + (i === R.prio.chosen.length - 1 ? " disabled" : "") + ' aria-label="Move down">▼</button></div></li>' }).join("");
+    frame(steps("prioritize")
+      + '<div class="vxsh-card"><h3>Who do you see first?</h3><p class="vxsh-muted">Order your patients from see-first (top) to see-last. Think ABCs, unstable before stable, time-critical before routine (Maslow / least-to-most-stable). You will re-prioritize as the shift unfolds.</p><ol class="vxsh-rank">' + li + '</ol></div>'
+      + '<div class="vxsh-btns"><button class="vxsh-btn sec" data-sh="tobrief">Back to report</button><button class="vxsh-btn" data-sh="startboard">Start the shift</button></div>', '');
+  }
+
+  /* ---- the board ---- */
+  function paintBoard(quiet) {
+    const R = RUN; const avail = R.events.filter(e => !e.done && R.t >= e.t);
+    const key = {}; R.prio.chosen.forEach((id, i) => key[id] = i + 1);
+    const warn = R.t >= R.dur * .8;
+    const right = '<div class="vxsh-clock">' + sv("clock", 16) + '<span class="vxsh-cv ' + (warn ? "warn" : "") + '">' + clk(R.t) + '</span><button class="vxsh-x" data-sh="fast" title="Advance time">+15 min</button></div>';
+    const board = R.roster.map(p => {
+      const seen = R.seen[p.id]; const deterNow = p.deter && R.events.some(e => e.k === "deter" && e.done && e.pid === p.id && !e.expired);
+      const drift = deterVit(R, p);
+      const open = avail.some(e => e.pid === p.id);
+      return '<div class="vxsh-pt a' + p.ac + (seen ? "" : " unseen") + (open ? " dot" : "") + '" data-sh="pt" data-pid="' + p.id + '"><span class="vxsh-ord">' + (key[p.id] || "") + '</span>'
+        + '<div class="vxsh-pth"><div><span class="vxsh-pn">' + e_(p.name) + '</span><div class="vxsh-pr">Rm ' + e_(p.room) + ' · ' + e_(p.dx) + '</div></div>' + acPill(p.ac) + '</div>'
+        + '<div class="vxsh-vit">HR ' + drift.hr + ' · BP ' + e_(drift.bp) + ' · RR ' + drift.rr + ' · SpO2 ' + drift.spo2 + '%</div>'
+        + '<div class="vxsh-flags">' + (seen ? '<span class="vxsh-tag">Seen ' + clk(seen) + '</span>' : '<span class="vxsh-pill new">Not yet seen</span>') + (open ? ' <span class="vxsh-pill bad">Needs you</span>' : '') + '</div></div>';
+    }).join("");
+    const feed = avail.length ? avail.map(ev => evHTML(ev)).join("") : '<p class="vxsh-muted">No open events right now. Round on your patients and advance time as the shift continues.</p>';
+    frame(steps("board")
+      + '<div class="vxsh-card"><h3>Your assignment · ' + clk(R.t) + '</h3><p class="vxsh-muted">The numbers show your current see-first order. Tap a patient to see or delegate care. Handle events as they arrive — you cannot do everything at once; what you let wait is measured. ' + (R.team.map(m => e_(m.name)).join(", ")) + ' are available to delegate to.</p>'
+      + '<div class="vxsh-board">' + board + '</div></div>'
+      + '<div class="vxsh-card"><h3>In basket · ' + avail.length + ' open</h3><div class="vxsh-feed">' + feed + '</div></div>'
+      + '<div class="vxsh-btns"><button class="vxsh-btn sec" data-sh="deleg">Delegate tasks</button><button class="vxsh-btn sec" data-sh="reprio">Re-prioritize</button>'
+      + (window.__vx32 ? '<button class="vxsh-btn sec" data-sh="v32">Open the full deteriorating-patient drill</button>' : '')
+      + '<button class="vxsh-btn warn" data-sh="end">End shift &amp; debrief</button></div>', right);
+  }
+  function evHTML(ev) {
+    const waiting = RUN.t > ev.t + ev.win * .5;
+    return '<div class="vxsh-ev k-' + ev.k + (waiting ? " waiting" : "") + '"><div class="vxsh-evh"><span class="vxsh-evt">' + e_(ev.title) + '</span><span class="vxsh-evwhen">arrived ' + clk(ev.t) + '</span></div><div class="vxsh-evbody">' + e_(ev.body) + '</div>'
+      + '<div class="vxsh-choices">' + ev.choices.map((c, i) => '<button class="vxsh-choice" data-sh="act" data-ev="' + ev.id + '" data-i="' + i + '">' + e_(c.txt) + '</button>').join("") + '</div></div>';
+  }
+  /* deterioration vitals drift shown on the board (internal model; the full v32 engine is one tap away) */
+  function deterVit(R, p) {
+    if (!p.deter) return p.vit;
+    const chainDone = R.events.filter(e => e.k === "deter" && e.pid === p.id && R.t >= e.t).length;
+    const k = p.deterKind; const v = Object.assign({}, p.vit);
+    const s = Math.min(3, chainDone);
+    if (k === "sepsis") { v.hr += s * 10; v.rr += s * 3; v.spo2 -= s * 2; const sys = 104 - s * 12; v.bp = sys + "/" + (60 - s * 4); }
+    else if (k === "hypoxia") { v.rr += s * 4; v.spo2 -= s * 4; v.hr += s * 6; }
+    else { const sys = 110 - s * 14; v.bp = sys + "/" + (64 - s * 5); v.hr += s * 12; v.spo2 -= s * 2; }
+    return v;
+  }
+
+  /* ---- patient detail / care actions ---- */
+  function openPatient(pid) {
+    const R = RUN, p = R.roster.find(x => x.id === pid); if (!p) return; seePatient(R, pid);
+    const evs = R.events.filter(e => e.pid === pid && !e.done && R.t >= e.t);
+    const esc = R.events.some(e => e.escalate && e.pid === pid && !e.done && R.t >= e.t);
+    const body = '<h3>' + e_(p.name) + ' · Rm ' + e_(p.room) + '</h3><p class="vxsh-muted">' + e_(p.dx) + ' · ' + acPill(p.ac) + '</p>'
+      + '<div class="vxsh-fine"><b>S:</b> ' + e_(p.sbar.s) + '<br><b>B:</b> ' + e_(p.sbar.b) + '<br><b>A:</b> ' + e_(p.sbar.a) + '<br><b>R:</b> ' + e_(p.sbar.r) + '</div>'
+      + (evs.length ? '<div class="vxsh-feed" style="margin-top:10px">' + evs.map(evHTML).join("") + '</div>' : '<p class="vxsh-muted" style="margin-top:10px">No open events for this patient. You assessed and documented.</p>')
+      + (esc ? '' : '')
+      + '<div class="vxsh-btns"><button class="vxsh-btn sec" data-sh="escform" data-pid="' + pid + '">Escalate (SBAR / rapid response)</button><button class="vxsh-btn" data-sh="ptclose">Done</button></div>';
+    modal(body);
+  }
+  function escForm(pid) {
+    const p = RUN.roster.find(x => x.id === pid); if (!p) return;
+    modal('<h3>Escalate — ' + e_(p.name) + '</h3><p class="vxsh-muted">Give a focused SBAR. Fill each part, then call.</p><div class="vxsh-sbar">'
+      + '<label>Situation</label><textarea data-sb="s" placeholder="What is happening right now"></textarea>'
+      + '<label>Background</label><textarea data-sb="b" placeholder="Relevant history and why they are here"></textarea>'
+      + '<label>Assessment</label><textarea data-sb="a" placeholder="Your assessment / vitals / concern"></textarea>'
+      + '<label>Recommendation</label><textarea data-sb="r" placeholder="What you need — e.g., come evaluate, rapid response, orders"></textarea>'
+      + '</div><div class="vxsh-btns"><button class="vxsh-btn" data-sh="escsend" data-pid="' + pid + '">Call rapid response / provider</button><button class="vxsh-btn sec" data-sh="ptclose">Cancel</button></div>');
+  }
+
+  /* ---- delegation screen ---- */
+  function paintDeleg() {
+    const R = RUN; const tasks = rosterTasks(R.roster);
+    const team = [{ who: "rn", name: "Keep (RN — you)" }].concat(R.team);
+    const rows = tasks.map(t => {
+      const sel = R.deleg[t.key] || "rn"; const p = R.roster.find(x => x.id === t.pid);
+      const d = R.deleg[t.key] ? delegOK({ rnOnly: t.rnOnly, need: t.need, stableOnly: t.stableOnly }, sel, p) : null;
+      const cls = d ? (d.ok || sel === "rn" ? (t.rnOnly && sel === "rn" || (!t.rnOnly && sel !== "rn" && d.ok) ? "done-ok" : "") : "done-bad") : "";
+      return '<div class="vxsh-task ' + cls + '"><div class="vxsh-tk">' + e_(t.label) + ' <span class="vxsh-pr">· ' + e_(t.pname) + ' Rm ' + e_(t.proom) + (t.rnOnly ? ' · RN task' : '') + '</span></div>'
+        + '<div class="vxsh-tsel">' + team.map(m => '<button data-sh="dg" data-key="' + e_(t.key) + '" data-who="' + m.who + '" class="' + (sel === m.who ? "sel" : "") + '">' + e_(roleShort(m.who) === "RN" ? "Keep (RN)" : roleShort(m.who)) + '</button>').join("") + '</div>'
+        + (d ? '<div class="vxsh-fb ' + (d.ok || (t.rnOnly && sel === "rn") ? "ok" : "bad") + '">' + (t.rnOnly && sel !== "rn" ? '<b>' + e_(d.right) + ':</b> ' : (!d.ok ? '<b>' + e_(d.right) + ':</b> ' : '')) + e_(d.reason) + (d.ok && sel !== "rn" ? ' <label style="display:inline-flex;gap:5px;margin-left:6px"><input type="checkbox" data-sh="rep" data-key="' + e_(t.key) + '"' + (R.delegReport[t.key] ? " checked" : "") + '> I gave direction and the parameters to report back</label>' : '') + '</div>' : '')
+        + '</div>';
+    }).join("");
+    frame(steps("board")
+      + '<div class="vxsh-card"><h3>Delegation &amp; supervision</h3><p class="vxsh-muted">Assign each task within the Five Rights of Delegation and scope of practice (NCSBN/ANA, 2019; state nurse practice acts vary). Assessment, the first teaching, evaluation and unstable patients stay with you.</p>'
+      + '<div class="vxsh-team">' + team.slice(1).map(m => '<div class="vxsh-member"><b>' + e_(m.name) + '</b><small>' + e_(ROLE[m.who].lbl) + '</small></div>').join("") + '</div>'
+      + '<div class="vxsh-tasks">' + rows + '</div></div>'
+      + '<div class="vxsh-btns"><button class="vxsh-btn" data-sh="toboard">Back to the board</button></div>', '<div class="vxsh-clock">' + sv("clock", 16) + '<span class="vxsh-cv">' + clk(R.t) + '</span></div>');
+  }
+
+  /* ---- debrief ---- */
+  function finish() {
+    const R = RUN; stopTick(); advance(R, R.dur); R.done = true; R.phase = "debrief";
+    const sc = scoreRun(R); const rt = rateRun(R, sc);
+    R.score = sc; R.rate = rt;
+    saveDebriefNote(R, sc, rt);
+    pushInstr(R, sc);
+    paintDebrief();
+  }
+  function timeline(R) {
+    const T = [];
+    R.events.forEach(ev => { T.push({ t: ev.t, bad: ev.expired || (ev.pick != null && ev.choices[ev.pick] && !ev.choices[ev.pick].good), txt: ev.title + (ev.expired ? " — went unhandled" : ev.pick != null ? " — " + ev.choices[ev.pick].txt : "") }); });
+    R.safety.forEach(s => T.push({ t: s.t, bad: true, txt: "Safety: " + s.txt }));
+    return T.sort((a, b) => a.t - b.t);
+  }
+  function paintDebrief() {
+    const R = RUN, sc = R.score || scoreRun(R), rt = R.rate || {};
+    const key = sc.prioKey.map((id, i) => { const p = R.roster.find(x => x.id === id); return '<li>' + (i + 1) + '. ' + e_(p.name) + ' — ' + e_(p.dx) + ' ' + acPill(p.ac) + '</li>' }).join("");
+    const comps = COMPS.map(([k, n]) => '<div class="vxsh-cr"><b>' + e_(n) + '</b><div class="vxsh-bar"><i style="width:' + (sc.byK[k] || 0) + '%"></i></div><span class="vxsh-cs">' + (sc.byK[k] == null ? "—" : sc.byK[k] + "%") + '</span></div>').join("");
+    const misses = sc.chk.filter(c => c.v < 1).slice(0, 8).map(c => '<li>' + e_(c.txt) + (c.src && SRC[c.src] ? ' <span class="vxsh-fine">(' + e_(SRC[c.src]) + ')</span>' : '') + '</li>').join("");
+    const tl = timeline(R).map(z => '<div class="vxsh-tli ' + (z.bad ? "bad" : "") + '"><span class="vxsh-tlt">' + clk(z.t) + '</span> ' + e_(z.txt) + '</div>').join("");
+    frame(steps("debrief")
+      + '<div class="vxsh-ai">' + e_(AILABEL) + '</div>'
+      + '<div class="vxsh-card" style="display:flex;gap:16px;align-items:center;flex-wrap:wrap"><div><div class="vxsh-score-big">' + sc.total + '%</div><div class="vxsh-muted">Shift score · ' + e_(TIERS[R.tier].n) + '</div></div>'
+      + '<div style="flex:1;min-width:180px"><div class="vxsh-muted">Rating ' + (rt.r0 || "") + ' → <b>' + (rt.r1 || "") + '</b> (' + ((rt.d || 0) >= 0 ? "+" : "") + (rt.d || 0) + ') · now ' + e_(TIERS[rt.t1 || R.tier].n) + '</div>'
+      + (sc.deterMissed ? '<div class="vxsh-fb bad" style="margin-top:8px">You missed the quietly deteriorating patient. Re-read the early cues in the timeline below.</div>' : '<div class="vxsh-fb ok" style="margin-top:8px">You recognized and escalated the deteriorating patient.</div>') + '</div></div>'
+      + '<div class="vxsh-card"><h3>Management of Care competencies</h3><div class="vxsh-comp">' + comps + '</div></div>'
+      + '<div class="vxsh-card"><h4>Who should have been seen first</h4><ol class="vxsh-key">' + key + '</ol><p class="vxsh-fine">' + e_(SRC.maslow) + '</p></div>'
+      + (misses ? '<div class="vxsh-card"><h4>Teaching points</h4><ul>' + misses + '</ul></div>' : '')
+      + '<div class="vxsh-card"><h4>Shift timeline</h4><div class="vxsh-tl">' + tl + '</div></div>'
+      + '<div class="vxsh-card"><h4>Delegation &amp; the Five Rights</h4><p class="vxsh-fine">' + e_(SRC.ncsbn) + '. ' + e_(SRC.scope) + '.</p></div>'
+      + '<div class="vxsh-btns"><button class="vxsh-btn" data-sh="again">New shift</button><button class="vxsh-btn sec" data-sh="progress">Care Coordination progress</button><button class="vxsh-btn sec" data-sh="close">Done</button></div>', '');
+  }
+
+  /* ---- progress view ---- */
+  function paintProgress() {
+    const P = prog();
+    const moc = COMPS.map(([k, n]) => '<div class="vxsh-mc"><b>' + e_(n) + '</b><div class="vxsh-mcv">' + Math.round((P.c[k] - 400) / 20) + '</div><div class="vxsh-fine">rating ' + P.c[k] + '</div></div>').join("");
+    const hist = (P.hist || []).slice(-8).reverse().map(h => '<div class="vxsh-tli"><span class="vxsh-tlt">' + new Date(h.t).toLocaleDateString() + '</span> ' + TIERS[h.tier].n + ' · ' + h.sc + '% · rating ' + h.r0 + '→' + h.r1 + '</div>').join("") || '<p class="vxsh-muted">No shifts yet.</p>';
+    const h = host(); h.innerHTML = topbar('') + '<div class="vxsh-scroll"><div class="vxsh-wrap">'
+      + '<div class="vxsh-card"><h3>Care Coordination progress</h3><p class="vxsh-muted">' + e_(TIERS[tierNow(P)].n) + ' · ' + tierPct(P) + '% toward the next tier · ' + P.n + ' shift' + (P.n === 1 ? "" : "s") + ' run. Mapped to the NCLEX Management of Care sub-skills.</p>'
+      + '<div class="vxsh-moc">' + moc + '</div></div>'
+      + '<div class="vxsh-card"><h4>Recent shifts</h4><div class="vxsh-tl">' + hist + '</div></div>'
+      + '<div class="vxsh-btns"><button class="vxsh-btn" data-sh="again">Start a shift</button><button class="vxsh-btn sec" data-sh="close">Done</button></div>'
+      + '</div></div>';
+  }
+
+  /* ---- modal (self-contained, over the overlay) ---- */
+  function modal(html) { stopTick(); closeModal(); const d = document.createElement("div"); d.className = "smod-bg vxsh-modal"; d.style.cssText = "position:fixed;inset:0;z-index:4200;background:rgba(10,20,26,.55);display:flex;align-items:center;justify-content:center;padding:16px;overflow:auto"; d.innerHTML = '<div class="vxsh-card" style="max-width:560px;width:100%;margin:0;max-height:92vh;overflow:auto">' + html + '</div>'; document.body.appendChild(d); d.addEventListener("click", e => { if (e.target === d) closeModal() }); }
+  function closeModal() { document.querySelectorAll(".vxsh-modal").forEach(x => x.remove()) }
+
+  /* ---- debrief persistence (chart-note shape, like the v32 debrief) ---- */
+  function saveDebriefNote(R, sc, rt) {
+    const txt = ["Shift debrief (v43) · " + TIERS[R.tier].n + " · " + sc.total + "%",
+    ...COMPS.map(([k, n]) => n + ": " + (sc.byK[k] == null ? "—" : sc.byK[k] + "%")),
+    ...sc.chk.filter(x => x.v < 1).slice(0, 6).map(x => "✗ " + x.txt),
+      "Rating " + rt.r0 + " → " + rt.r1 + " (" + (rt.d >= 0 ? "+" : "") + rt.d + ")"].join("\n");
+    const note = { id: uidc(), rt: now(), type: "Shift simulation debrief", text: txt, t: 0, by: "Vexcura shift" };
+    const P = prog(); P.notes = (P.notes || []).concat([note]).slice(-30); saveProg(P);
+    /* if a patient chart is open in the EHR, attach a summary note there too (v32 debrief pattern) */
+    try {
+      const E = EH(); if (E && E.v29 && E.v29.P && E.v29.uid) { const p = E.v29.P(); if (p) { E.v29 && typeof E.upd === "function" && E.upd(q => { q.notes = q.notes || []; q.notes.push({ id: E.v29.uid(), rt: now(), type: "Shift simulation debrief", text: txt, t: (typeof E.curT === "function" ? E.curT(p) : 0), by: "Vexcura shift" }); q.shiftH = (q.shiftH || []).concat([{ t: now(), sc: sc.total, tier: R.tier }]).slice(-20) }); } }
+    } catch (e) { }
+  }
+  /* ---- instructor feed (v39) ---- */
+  function pushInstr(R, sc) { try { if (typeof window.__vx39ev === "function") window.__vx39ev("shift", "shift:" + now(), "Shift · " + TIERS[R.tier].n + " · care coordination", sc.total, { tier: R.tier, seed: R.seed, byK: sc.byK, deterMissed: sc.deterMissed, safety: R.safety.length }); } catch (e) { } }
+
+  /* ---- click handling ---- */
+  document.addEventListener("click", e => {
+    const b = e.target.closest("[data-sh]"); if (!b || !document.getElementById("vxsh")) return;
+    const a = b.dataset.sh;
+    if (a === "close") { closeModal(); closeOverlay(); return }
+    if (a === "toprio") { RUN.phase = "prioritize"; paint(); return }
+    if (a === "tobrief") { RUN.phase = "brief"; paint(); return }
+    if (a === "startboard") { RUN.phase = "board"; RUN.started = now(); paintBoard(); startTick(); return }
+    if (a === "up" || a === "down") { const id = b.dataset.pid; const arr = RUN.prio.chosen; const i = arr.indexOf(id); const j = a === "up" ? i - 1 : i + 1; if (j >= 0 && j < arr.length) {[arr[i], arr[j]] = [arr[j], arr[i]]; paintPrioritize() } return }
+    if (a === "flag") { flagHandoff(RUN, b.dataset.pid, b.checked); return }
+    if (a === "fast") { advance(RUN, 15); paintBoard(); return }
+    if (a === "pt") { openPatient(b.dataset.pid); return }
+    if (a === "ptclose") { closeModal(); RUN.phase = "board"; paintBoard(); startTick(); return }
+    if (a === "act") { const ch = actEvent(RUN, b.dataset.ev, +b.dataset.i); closeModal(); RUN.phase = "board"; paintBoard(); startTick(); if (ch) toast(ch.good ? "Good call" : ch.note ? ch.note.slice(0, 80) : "Noted"); return }
+    if (a === "escform") { escForm(b.dataset.pid); return }
+    if (a === "escsend") { const box = b.closest(".vxsh-card"); const g = s => (box.querySelector('[data-sb="' + s + '"]') || {}).value || ""; const sbar = { s: g("s") ? 1 : 0, b: g("b") ? 1 : 0, a: g("a") ? 1 : 0, r: g("r") ? 1 : 0 }; escalate(RUN, b.dataset.pid, sbar); closeModal(); RUN.phase = "board"; paintBoard(); startTick(); toast("Escalation sent"); return }
+    if (a === "deleg") { stopTick(); RUN.phase = "deleg"; paintDeleg(); return }
+    if (a === "toboard") { RUN.phase = "board"; paintBoard(); startTick(); return }
+    if (a === "dg") { delegate(RUN, b.dataset.key, b.dataset.who, RUN.delegReport[b.dataset.key]); paintDeleg(); return }
+    if (a === "rep") { RUN.delegReport[b.dataset.key] = b.checked; return }
+    if (a === "reprio") { stopTick(); RUN.phase = "prioritize"; paintPrioritize(); return }
+    if (a === "v32") { try { closeOverlay(); if (window.__vx32 && window.__vx32.open) window.__vx32.open(); } catch (e2) { } return }
+    if (a === "end") { finish(); return }
+    if (a === "again") { closeModal(); open({ tier: tierNow() }); return }
+    if (a === "progress") { RUN && (RUN.phase = "progress"); paintProgress(); return }
+  });
+  function toast(m) { try { if (typeof window.__EHX !== "undefined") { const E = EH(); if (E && E.v29 && E.v29.toastE) { E.v29.toastE(m); return } } } catch (e) { } const t = document.createElement("div"); t.textContent = m; t.style.cssText = "position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:4300;background:#0d3b52;color:#fff;padding:9px 16px;border-radius:9px;font:14px/1.3 inherit;box-shadow:0 4px 14px rgba(0,0,0,.25)"; document.body.appendChild(t); setTimeout(() => t.remove(), 2200); }
+
+  /* ======================================================================
+     Registration: launcher, library, EHR card, My Chart row, deep link, API
+     ====================================================================== */
+  const LICON = "steth";
+  function launchEntry() {
+    return { id: "shift", label: "Shift (care coordination)", hint: "Run a full shift: prioritize, delegate, coordinate", icon: '<path d="M3 7h18M3 12h18M3 17h18"/>', group: "modules", run: () => open({ tier: tierNow() }), roles: ["in"], keys: "shift care coordination prioritization delegation management of care assignment multi-patient", order: 6, more: true };
+  }
+  (window.__vxLaunchQ = window.__vxLaunchQ || []).push(launchEntry());
+  try { if (window.__vxLaunch && window.__vxLaunch.add) window.__vxLaunch.add(launchEntry()); } catch (e) { }
+
+  function libEntry() { const P = prog(); return { id: "module:shift", type: "module", title: "Shift — care coordination capstone", desc: "Run a full shift with 4–6 patients: catch hand-off gaps, prioritize, delegate within scope, coordinate the team, and keep every patient safe. Trains the NCLEX Management of Care skill set.", topic: "MOC", meta: TIERS[tierNow(P)].n + (P.n ? " · " + P.n + " run" + (P.n === 1 ? "" : "s") : ""), label: AILABEL, ai: 1, primary: "Open module", open: () => open({ tier: tierNow() }), keys: "shift prioritization delegation five rights sbar continuity management of care capstone" }; }
+  (window.__vxLibQ = window.__vxLibQ || []).push(libEntry());
+  try { if (window.__vxLib && window.__vxLib.add) window.__vxLib.add(libEntry()); } catch (e) { }
+
+  /* EHR Summary card + My Chart simulation row, injected on repaint like v32 */
+  function ehrCard() {
+    try {
+      const E = EH(); if (!E) return; const host2 = document.querySelector("#ehm .simc") || document.querySelector("#ehm .ehsim") || document.querySelector("#ehm"); if (!host2) return;
+      if (document.getElementById("vxsh-ehrcard")) return;
+      const P = prog();
+      const div = document.createElement("div"); div.id = "vxsh-ehrcard"; div.className = "vxsh-simc";
+      div.innerHTML = '<h3>' + sv("board", 16) + ' Shift — care coordination</h3><p class="vxsh-fine">Run a full shift across several patients: prioritize, delegate within scope, coordinate the team, catch the patient who quietly deteriorates. ' + TIERS[tierNow(P)].n + '.</p><button class="vxsh-btn mini" data-sh2="open">Start a shift</button>';
+      const anchor = document.querySelector("#ehm .simc"); if (anchor && anchor.parentNode) anchor.parentNode.insertBefore(div, anchor.nextSibling); else host2.appendChild(div);
+    } catch (e) { }
+  }
+  document.addEventListener("click", e => { const b = e.target.closest('[data-sh2="open"]'); if (b) { e.preventDefault(); open({ tier: tierNow() }); } });
+  try { const POST = window.__EHXpost = window.__EHXpost || []; POST.push(() => { try { ehrCard() } catch (e) { } }); } catch (e) { }
+
+  function myChartRow() {
+    const rows = document.querySelector("#c2 .v25-rows"); if (!rows || rows.querySelector('[data-v25k="shift"]')) return;
+    const P = prog();
+    const ICOSVG = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg>';
+    const at = rows.querySelector('[data-v25k="deter"]') || rows.querySelector('[data-v25k="tele"]') || rows.querySelector('[data-v25k="side"]');
+    const h = '<div class="v25-acc" data-v25k="shift"><button type="button" class="v25-row" data-sh3="open"><span class="v25-ri">' + ICOSVG + '</span><span class="v25-rt"><b>Shift — care coordination</b><small>' + TIERS[tierNow(P)].n + (P.n ? " · " + P.n + " shift" + (P.n === 1 ? "" : "s") : "") + ' · a full multi-patient shift</small></span><span class="v25-cv"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></span></button></div>';
+    if (at) at.insertAdjacentHTML("beforebegin", h); else rows.insertAdjacentHTML("beforeend", h);
+  }
+  document.addEventListener("click", e => { const b = e.target.closest('[data-sh3="open"]'); if (b) { e.preventDefault(); open({ tier: tierNow() }); } });
+  try { let busy = false, pend = 0; const mo = new MutationObserver(() => { if (busy || pend) return; pend = requestAnimationFrame(() => { pend = 0; busy = true; try { myChartRow() } catch (e) { } mo.takeRecords(); busy = false }) }); if (document.body) mo.observe(document.body, { childList: true, subtree: true }); } catch (e) { }
+
+  /* deep link: #shift, #shift/<tier>, #shift/<tier>/<seed> */
+  const parseS = h => { const m = /^#shift(?:\/(\d+))?(?:\/(\d+))?$/.exec(h || ""); return m ? { tier: m[1] ? +m[1] : 0, seed: m[2] ? +m[2] : 0 } : null };
+  function shiftGo() { const r = parseS(location.hash); if (!r) return; open({ tier: r.tier || tierNow(), seed: r.seed || 0 }); }
+  window.addEventListener("hashchange", shiftGo);
+  try { if (typeof deepLink === "function") { const _dl = deepLink; deepLink = function (k) { if (parseS("#" + (k || ""))) { setTimeout(shiftGo, 0); return true } return _dl.apply(this, arguments) } } } catch (e) { }
+  setTimeout(() => { if (parseS(location.hash)) shiftGo() }, 800);
+
+  /* ---------- public / test API ---------- */
+  window.__vxShift = {
+    version: SV, open, close: closeOverlay,
+    progress: () => { const P = prog(); return { rating: P.r, tier: tierNow(P), pct: tierPct(P), comps: Object.assign({}, P.c), shifts: P.n } }
+  };
+  if (window.__vxShiftT && window.__vxShiftT.test) Object.assign(window.__vxShift, {
+    RNG, genRoster, genTeam, buildEvents, rosterTasks, newRun, delegOK, prioKey, scoreRun, rateRun, simRun,
+    advance, actEvent, escalate, delegate, setPriority, flagHandoff, seePatient, deterMissed, deterVit,
+    prog, saveProg, tierNow, tierPct, TIERS, COMPS, ARCH, ROLE,
+    run: () => RUN, paint
+  });
+})();
+/* </v43-shift-js> */
 /* <v20-teachhub-js> */
 /* ---------- v20: role-aware landing, Student/Instructor view switcher, instructor hub (#instructor), clinical days + attendance, one Assign flow, student clinical-day strip ---------- */
 {
@@ -19615,6 +20802,348 @@ const SECX = (() => {
   setInterval(() => { try { const v = localStorage.getItem("vxbk.last"); if (v && v !== ST.bk) { const first = ST.bk === undefined; ST.bk = v; if (!first) { const o = JSON.parse(v) || {}; ev("book", "book:" + (o.ch || "") + ":" + (o.p || ""), "Review book · chapter " + (o.ch || "") + (o.p ? " page " + o.p : ""), null, o) } } else if (ST.bk === undefined) ST.bk = v } catch (e) { } }, 15000);
 }
 /* </v39-instr-js> */
+/* <v44-census-js> */
+{
+  /* v44 Brain worklist. Reads the EHR only through window.__EHX.get() (v29 public API) and
+     swaps the plain "My Patients" table for an Epic-style Brain grid after each draw.
+     Desktop / iPad only; Rover keeps its card list. Practice discharge/admission checkboxes
+     live in localStorage (per patient) and never touch the chart data model. */
+  const e_ = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+  const EH = () => { try { return window.__EHX && window.__EHX.get() } catch (e) { return null } };
+  const CK = '<svg class="vxbr-ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>';
+  const CKS = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:7px;height:7px"><path d="M5 12l4 4 10-10"/></svg>';
+  const CLOCK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
+  const NCOLS = 12;
+  const SYS = [["neuro", "Neuro"], ["cardiac", "Cardiac"], ["resp", "Respiratory"], ["gi", "GI"], ["gu", "GU"], ["skin", "Skin"], ["msk", "Activity / mobility"], ["safety", "Safety"], ["psych", "Psychosocial"]];
+
+  /* local practice-checklist store (per patient), separate from the chart */
+  const LK = "nclexsim.v44.navck";
+  const LS = {
+    all() { try { return JSON.parse(localStorage.getItem(LK) || "{}") } catch (e) { return {} } },
+    get(pid) { return this.all()[pid] || {} },
+    toggle(pid, id) { const a = this.all(); const o = a[pid] = a[pid] || {}; if (o[id]) delete o[id]; else o[id] = Date.now(); try { localStorage.setItem(LK, JSON.stringify(a)) } catch (e) { } }
+  };
+
+  const rowsOf = g => (g.rows || []).map(r => Array.isArray(r) ? r[0] : r.id);
+  function shiftOf(E, p) { const now = E.curT(p), m = E.tMin(now); const day = m >= 420 && m < 1140; const start = day ? now - (m - 420) : m >= 1140 ? now - (m - 1140) : now - (m + 300); return { now, start, day, label: day ? "Today · day shift 07:00–19:00" : "Tonight · night shift 19:00–07:00" } }
+  function dxPri(E, p) { const D = E.dxAct(p) || []; const pr = D.find(x => x.primary) || D[0]; return pr ? pr.n : "" }
+
+  /* events per hour across the shift, like the sidebar Brain, laid out horizontally */
+  function brainEvents(E, p, S) {
+    const h0 = Math.floor(S.start / 60); const byHour = {}; let prior = 0;
+    const add = (t, o) => { const h = Math.floor(t / 60); if (h >= h0 && h < h0 + NCOLS) (byHour[h] = byHour[h] || []).push(o); else if (t < S.start && (o.c === "overdue" || o.c === "due")) prior++ };
+    const hd = E.tHD(S.now);
+    (p.orders || []).forEach(o => {
+      if (o.status === "dc") return;
+      if (o.kind === "nurse") { const m = /q\s?(\d{1,2})\s?h/i.exec(o.text || ""); if (m) { const n = +m[1]; for (let d = hd; d <= hd + 1; d++) for (let mm = 0; mm < 1440; mm += n * 60) add(E.T(d, mm), { t: (o.text || "").replace(/\s*q\s?\d+\s?h.*$/i, ""), c: "nurse", go: "flow" }) } return }
+      [hd, hd + 1].forEach(d => (E.doses(p, o, d) || []).forEach(t => { const s = E.doseState(p, o, t); add(t, { t: o.med + (o.dose ? " " + o.dose + (o.unit ? " " + o.unit : "") : ""), c: s, go: "mar" }) }));
+    });
+    (p.mar || []).forEach(a => { if (a.reassessDue != null && !a.reassessed) add(a.reassessDue, { t: "PRN reassess", c: "reassess", go: "mar" }) });
+    [420, 1140].forEach(mm => [hd - 1, hd, hd + 1].forEach(d => add(E.T(d, mm), { t: "Shift change", c: "shift" })));
+    return { h0, byHour, prior };
+  }
+  const STLAB = { given: "Given", held: "Held", refused: "Refused", overdue: "Overdue", due: "Due", sched: "", nurse: "", reassess: "Due", shift: "" };
+
+  /* A / S / D navigator checklists */
+  function navItems(E, p, S, which) {
+    const G = {}; (E.FS || []).forEach(g => rowsOf(g).forEach(r => G[r] = g.g));
+    const F = (p.flow || []).filter(x => x.t >= S.start && x.t <= S.now + 60 && x.v !== "" && x.v != null);
+    const Fever = (p.flow || []).filter(x => x.v !== "" && x.v != null);
+    const has = grp => F.some(x => (G[x.r] || (String(x.r).indexOf("lda") === 0 ? "lda" : "")) === grp);
+    const hasEver = grp => Fever.some(x => (G[x.r] || (String(x.r).indexOf("lda") === 0 ? "lda" : "")) === grp);
+    const vsT = (p.flow || []).filter(x => ["hr", "bp", "rr", "spo2", "temp"].indexOf(x.r) >= 0).reduce((a, x) => Math.max(a, x.t), -1e9);
+    const vsAge = S.now - vsT;
+    const dn = E.dueNow(p) || []; const over = dn.filter(d => d.s === "overdue").length;
+    const L = (p.ldas || []).filter(l => !l.removed);
+    const notes = (p.notes || []).filter(n => n.t >= S.start);
+    const ck = LS.get(p.id);
+    const citem = (id, t, ok, go, s) => ({ id, t, ok: !!ok, go, s: ok ? "" : (s || "") });
+    const ckItem = (id, t, s) => ({ id, t, ok: !!ck[id], chk: true, s: ck[id] ? "" : (s || "") });
+    if (which === "A") return [
+      citem("adm-id", "Admission information & code status", !!p.code, "summary", "Code status not entered"),
+      citem("adm-wt", "Height & weight", !!p.wt, "flow", "Weight needed for weight-based doses"),
+      citem("adm-al", "Allergies reconciled", (p.allergies && p.allergies.length) || p.alrev >= S.start, "summary", "Review and reconcile allergies"),
+      citem("adm-dx", "Admitting problem / diagnosis", E.dxAct(p).length > 0, "summary", "Add at least one problem"),
+      citem("adm-assess", "Admission assessment (head-to-toe)", SYS.every(([g]) => hasEver(g)), "flow", "Complete a full baseline assessment"),
+      ckItem("adm-orient", "Orientation to room & call light", "Document orientation to unit"),
+      ckItem("adm-valu", "Valuables & belongings documented", "Document belongings on admission"),
+      ckItem("adm-hist", "Home medication history obtained", "Reconcile home medications")
+    ];
+    if (which === "D") return [
+      ckItem("dc-avs", "After Visit Summary printed", "Print the After Visit Summary"),
+      citem("dc-al", "Allergies reviewed", p.alrev >= S.start, "summary", "Review allergies before discharge"),
+      citem("dc-cp", "Care plan addressed", !!(p.cp && (p.cp.problems || []).length), "care", "Resolve or continue care-plan problems"),
+      ckItem("dc-belong", "Patient belongings / valuables returned", "Return and document belongings"),
+      ckItem("dc-edu", "Patient education documented", "Document teaching provided"),
+      ckItem("dc-edures", "Patient education understanding verified", "Confirm teach-back / understanding"),
+      ckItem("dc-rx", "Discharge prescriptions reconciled", "Reconcile discharge medications"),
+      ckItem("dc-fu", "Follow-up appointments arranged", "Document follow-up plan"),
+      ckItem("dc-transport", "Transportation & destination confirmed", "Confirm safe discharge disposition")
+    ];
+    /* S = shift */
+    const R = [
+      citem("s-al", "Allergies reviewed this shift", (p.alrev || -1e9) >= S.start, "summary", "Review allergies, then mark them reviewed"),
+      citem("s-vs", "Vital signs (last 4 hours)", vsAge <= 240, "flow", vsT > -1e9 ? "Last set " + Math.round(vsAge / 60) + " h ago" : "None filed this shift"),
+      citem("s-pain", "Pain assessment", has("pain"), "flow", "Not documented this shift"),
+      citem("s-assess", "Head-to-toe assessment", SYS.every(([g]) => has(g)), "flow", (() => { const m = SYS.filter(([g]) => !has(g)); return m.length === SYS.length ? "Not documented this shift" : "Still needed: " + m.map(x => x[1]).join(", ") })()),
+      citem("s-io", "Intake & output", has("io"), "flow", "Not documented this shift")
+    ];
+    if (L.length) R.push(citem("s-lda", "Lines, drains & airways (" + L.length + ")", has("lda"), "flow", "Assess each device this shift"));
+    if (over) R.push(citem("s-over", "Overdue medications (" + over + ")", false, "mar", "Document given or not given, with a reason"));
+    R.push(citem("s-cp", "Care plan reviewed", !!(p.cp && (p.cp.problems || []).length), "care", "No problems on the care plan"));
+    R.push(citem("s-note", "Shift assessment note", notes.length > 0, "notes", "No note written this shift"));
+    return R;
+  }
+  const NAV = { A: "Admission", S: "Shift", D: "Before Discharge" };
+  function navState(items) { const miss = items.filter(x => !x.ok).length; return { miss, ok: items.length - miss, done: miss === 0 } }
+
+  /* ---- render the grid ---- */
+  function gridHTML(E) {
+    const d = E.db(); const P = (d.patients || []).filter(x => !x.archived);
+    if (!P.length) return null;
+    const S0 = shiftOf(E, P[0]); const h0 = Math.floor(S0.start / 60);
+    const cols = [...Array(NCOLS)].map((_, i) => h0 + i);
+    const nowH = Math.floor(S0.now / 60);
+    const hh = h => E.hhmm(((h % 24) + 24) % 24 * 60);
+    const head = `<tr><th class="vxbr-ph">Patient</th><th class="vxbr-prior">Prior</th>${cols.map(h => `<th class="vxbr-th ${h === nowH ? "now" : ""}">${e_(hh(h)).replace(":", "")}<small>${h === nowH ? "now" : h < nowH ? "" : ""}</small></th>`).join("")}</tr>`;
+    const body = P.map(p => {
+      const S = shiftOf(E, p); const B = brainEvents(E, p, S); const nowHp = Math.floor(S.now / 60);
+      const al = (p.allergies || []);
+      const ordA = (p.orders || []).filter(o => o.status !== "dc"); const nOrd = ordA.length;
+      const prn = ordA.filter(o => { const f = (E.FREQ && E.FREQ[o.freq]) || {}; return f.prn }).length;
+      const flags = { A: navState(navItems(E, p, S, "A")), S: navState(navItems(E, p, S, "S")), D: navState(navItems(E, p, S, "D")) };
+      const flag = (k) => { const st = flags[k]; const cls = st.done ? "ok" : (st.miss ? "due" : ""); const mark = st.done ? `<span class="vxbr-okm">${CKS}</span>` : (st.miss ? `<span class="vxbr-dot"></span>` : ""); return `<button type="button" class="vxbr-nav ${cls}" data-vb-nav="${k}" data-vb-pid="${e_(p.id)}" title="${e_(NAV[k])} navigator — ${st.done ? "complete" : st.miss + " open"}" aria-label="${e_(NAV[k])} navigator, ${st.done ? "complete" : st.miss + " open items"}">${k}${mark}</button>` };
+      const ptCell = `<td class="vxbr-ptc"><button type="button" class="vxbr-pt" data-ex="go" data-v="${e_(p.id)}" title="Open ${e_(p.label)}'s chart">
+        <span class="vxbr-pth"><span class="vxbr-av">${e_((p.label || "P").replace(/^patient\s*/i, "").slice(0, 2).toUpperCase())}</span>
+          <span class="vxbr-id"><span class="vxbr-nm">${e_(p.label)}</span>
+            <span class="vxbr-meta"><b>${e_(p.age || "")} ${e_(p.sex === "F" ? "F" : p.sex === "M" ? "M" : "X")}</b> · ${e_(p.unit || "Unit")} · <b>HD ${p.hd || 1}</b>${p.sim ? " · ID " + e_(p.sim) : ""}${p.code && p.code !== "Full Code" ? ' · <b>' + e_(p.code) + "</b>" : ""}${p.iso && p.iso !== "None" ? " · " + e_(p.iso) + " iso" : ""}</span>
+          </span></span>
+        <span class="vxbr-prob">${e_(dxPri(E, p) || "No diagnosis entered")}</span>
+        <span class="vxbr-al ${al.length ? "" : "nka"}">${al.length ? "Allergies: " + al.map(a => e_(a.name)).join(", ") : "No Known Allergies"}</span>
+      </button><div class="vxbr-flags"><button type="button" class="vxbr-ord" data-vb-go="orders" data-vb-pid="${e_(p.id)}" title="Open orders">Orders${nOrd ? ` <b>${nOrd}</b>` : ""}${prn ? ` <i>PRN ${prn}</i>` : ""}</button>${flag("A")}${flag("S")}${flag("D")}</div></td>`;
+      const prior = `<td class="vxbr-tc" style="text-align:center">${B.prior ? `<span class="vxbr-prioc" title="${B.prior} item(s) carried over / overdue from before this shift">${B.prior}</span>` : ""}</td>`;
+      const cells = cols.map(h => {
+        const L = (B.byHour[h] || []); const cls = h === nowHp ? "now" : (h < nowHp ? "past" : "");
+        if (!L.length) return `<td class="vxbr-tc ${cls}">${h === nowHp ? '<span class="vxbr-empty">—</span>' : ""}</td>`;
+        const show = L.slice(0, 3); const extra = L.length - show.length;
+        return `<td class="vxbr-tc ${cls}">${show.map(x => `<button type="button" class="vxbr-c c-${e_(x.c)}" ${x.go ? `data-vb-go="${e_(x.go)}" data-vb-pid="${e_(p.id)}"` : "disabled"} title="${e_(x.t)}${STLAB[x.c] ? " — " + STLAB[x.c] : ""}">${x.c === "given" ? CK : ""}${e_(x.t)}${STLAB[x.c] ? ` <i>${STLAB[x.c]}</i>` : ""}</button>`).join("")}${extra > 0 ? `<span class="vxbr-more">+${extra} more</span>` : ""}</td>`;
+      }).join("");
+      return `<tr>${ptCell}${prior}${cells}</tr>`;
+    }).join("");
+    const bar = `<div class="vxbr-bar"><span class="vxbr-shift">${CLOCK}${e_(S0.label)}</span>
+      <span class="vxbr-leg"><span><i class="l-over"></i>Overdue</span><span><i class="l-due"></i>Due</span><span><i class="l-given"></i>Given</span><span><i class="l-nurse"></i>Task</span><span><b>A</b> Admission · <b>S</b> Shift · <b>D</b> Discharge</span></span></div>`;
+    return `${bar}<div class="vxbr-wrap"><table class="vxbr"><thead>${head}</thead><tbody>${body}</tbody></table></div>`;
+  }
+
+  /* ---- navigator popover ---- */
+  let pop = null;
+  function closePop() { if (pop) { pop.remove(); pop = null } document.removeEventListener("click", outside, true); }
+  function outside(e) { if (pop && !pop.contains(e.target) && !e.target.closest("[data-vb-nav]")) closePop() }
+  function openPop(anchor, pid, which) {
+    const E = EH(); if (!E) return; const p = E.db().patients.find(x => x.id === pid); if (!p) return;
+    const S = shiftOf(E, p); const items = navItems(E, p, S, which); const st = navState(items);
+    closePop();
+    const miss = items.filter(x => !x.ok), done = items.filter(x => x.ok);
+    const li = x => `<li class="${x.ok ? "ok" : "miss"}">${x.chk ? `<button type="button" class="vp-chk" data-vb-chk="${e_(x.id)}" data-vb-pid="${e_(pid)}" data-vb-nav="${which}" aria-label="${x.ok ? "Uncheck" : "Mark done"}">${x.ok ? CKS : ""}</button>` : `<span class="vp-st">${x.ok ? CKS : "!"}</span>`}<b>${e_(x.t)}${x.s ? `<small>${e_(x.s)}</small>` : ""}</b>${x.go && !x.ok ? `<button type="button" class="vp-go" data-vb-go="${e_(x.go)}" data-vb-pid="${e_(pid)}">Open</button>` : ""}</li>`;
+    const el = document.createElement("div"); el.id = "vxbr-pop";
+    el.innerHTML = `<div class="vp-hd"><div><b>${e_(NAV[which])}</b><br><small>${e_(p.label)} · ${st.done ? "All items complete" : st.miss + " of " + items.length + " open"}</small></div><button type="button" class="vp-x" data-vb-x="1" aria-label="Close">×</button></div>
+      ${miss.length ? `<div class="vp-grp over">Open <b>${miss.length}</b></div><ul>${miss.map(li).join("")}</ul>` : ""}
+      ${done.length ? `<div class="vp-grp">Completed <b>${done.length}</b></div><ul>${done.map(li).join("")}</ul>` : ""}
+      <div class="vp-ft">Practice checklist based on common Admission, Shift and Discharge navigators. Follow your facility's policy.</div>`;
+    document.body.appendChild(el);
+    const r = anchor.getBoundingClientRect(); const w = el.offsetWidth, hgt = el.offsetHeight;
+    let left = r.left + window.scrollX; if (left + w > window.scrollX + document.documentElement.clientWidth - 8) left = window.scrollX + document.documentElement.clientWidth - w - 8;
+    let top = r.bottom + window.scrollY + 6; if (top + hgt > window.scrollY + document.documentElement.clientHeight - 8 && r.top - hgt - 6 > 0) top = r.top + window.scrollY - hgt - 6;
+    el.style.left = Math.max(8, left) + "px"; el.style.top = top + "px"; pop = el;
+    setTimeout(() => document.addEventListener("click", outside, true), 0);
+  }
+
+  /* ---- click handling (delegated once) ---- */
+  let bound = false;
+  function bind() {
+    if (bound) return; bound = true;
+    document.addEventListener("click", e => {
+      const E = EH(); if (!E) return;
+      const chk = e.target.closest("[data-vb-chk]");
+      if (chk) { e.preventDefault(); const pid = chk.dataset.vbPid; LS.toggle(pid, chk.dataset.vbChk); const which = chk.dataset.vbNav; const nav = document.querySelector(`[data-vb-nav="${which}"][data-vb-pid="${pid}"]`); refresh(); if (nav) openPop(document.querySelector(`[data-vb-nav="${which}"][data-vb-pid="${pid}"]`) || nav, pid, which); return }
+      if (e.target.closest("[data-vb-x]")) { closePop(); return }
+      const nav = e.target.closest("[data-vb-nav]");
+      if (nav && !e.target.closest("[data-vb-chk]")) { e.preventDefault(); e.stopPropagation(); const pid = nav.dataset.vbPid, which = nav.dataset.vbNav; if (pop && pop.dataset.for === pid + which) { closePop(); return } openPop(nav, pid, which); if (pop) pop.dataset.for = pid + which; return }
+      const go = e.target.closest("[data-vb-go]");
+      if (go) { e.preventDefault(); closePop(); E.go(go.dataset.vbPid, go.dataset.vbGo); return }
+    }, false);
+    document.addEventListener("keydown", e => { if (e.key === "Escape") closePop() });
+    window.addEventListener("resize", closePop);
+  }
+
+  /* ---- swap the plain table for the Brain grid, after each draw ---- */
+  let lastSig = "";
+  function refresh() {
+    const E = EH(); if (!E) return;
+    try { if (E.v29 && E.v29.isRover && E.v29.isRover()) return } catch (e) { }
+    if (E.X && E.X.pid) return;
+    const host = document.querySelector("#app .ehw #ehm.ehm-list, #app .ehw main#ehm.ehm-list");
+    if (!host) return;
+    const scroll = host.querySelector(".ehscroll");
+    if (!scroll && !host.querySelector(".vxbr-wrap")) return; /* empty state -> leave as-is */
+    const P = (E.db().patients || []).filter(x => !x.archived);
+    const sig = P.map(p => p.id + ":" + (p.updated || 0) + ":" + (p.orders || []).length + ":" + (p.ldas || []).length).join("|") + "@" + Math.floor(E.curT(P[0] || {}) / 60);
+    const existing = host.querySelector(".vxbr-wrap"); const bar = host.querySelector(".vxbr-bar");
+    if (existing && sig === lastSig) return;
+    const html = gridHTML(E); if (!html) return;
+    lastSig = sig;
+    if (existing) { if (bar) bar.remove(); existing.outerHTML = html; }
+    else { scroll.outerHTML = html; }
+  }
+  bind();
+  (window.__EHXpost = window.__EHXpost || []).push(() => { try { refresh() } catch (e) { } });
+  window.__vxBrain = { refresh, open: openPop };
+}
+/* </v44-census-js> */
+/* <v45-look-js> */
+/* v45 Look & Feel — per-user, device-local appearance settings (theme incl. High Contrast, accent color, text size,
+   easy-read font, display density, decorations). Inserted INSIDE the app IIFE. Extends the EXISTING preference system:
+   reuses store + K2.theme/K2.text + K3.font and the existing applyPrefs()/applyFont(); adds accent/density/deco keys.
+   It wraps applyPrefs() so applyLook() runs on boot and after every theme/text toggle, and patches themeIcon()+SVG so
+   the High Contrast theme renders safely in the header toggle and band. No exact edits to the base file. */
+const V45K={accent:"nclexsim.v1.accent",density:"nclexsim.v1.density",deco:"nclexsim.v1.deco"};
+const V45_ACCENTS=[["teal","Vexcura teal"],["blue","Harbor blue"],["violet","Amethyst"],["green","Evergreen"],["crimson","Crimson"],["amber","Bronze"]];
+const V45_THEMES=[["light","Light"],["dark","Dark"],["auto","Auto"],["hc","High contrast"]];
+
+function v45State(){
+  let st={theme:"auto",text:"md",font:"std",accent:"teal",density:"comfortable",deco:"off"};
+  try{st.theme=store.get(K2.theme,"auto");st.text=store.get(K2.text,"md");st.font=store.get(K3.font,"std");
+    st.accent=store.get(V45K.accent,"teal");st.density=store.get(V45K.density,"comfortable");st.deco=store.get(V45K.deco,"off")}catch(e){}
+  return st;
+}
+function applyLook(){try{
+  const r=document.documentElement;
+  const ac=store.get(V45K.accent,"teal"); if(ac&&ac!=="teal")r.dataset.accent=ac; else delete r.dataset.accent;
+  const d=store.get(V45K.density,"comfortable"); if(d==="compact")r.dataset.density="compact"; else delete r.dataset.density;
+  const dc=store.get(V45K.deco,"off"); if(dc==="on")r.dataset.deco="on"; else delete r.dataset.deco;
+}catch(e){}}
+
+/* Make the High Contrast theme safe for the existing header theme button and band re-render, which both call
+   themeIcon() and read SVG[icon]. Base themeIcon() only knows auto/light/dark; hc would be undefined. */
+try{ if(typeof SVG==="object"&&SVG&&!SVG.hc){ SVG.hc='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3v18" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" stroke="none"/></svg>' } }catch(e){}
+{ const _v45ti=themeIcon; themeIcon=function(t){ return _v45ti(t)||({hc:["hc","High contrast"]})[t]||_v45ti("auto") }; }
+
+function v45RefreshThemeBtns(){try{
+  const t=store.get(K2.theme,"auto"); const th=themeIcon(t);
+  document.querySelectorAll('[data-act="theme"]').forEach(x=>{
+    if(x.classList&&x.classList.contains("iconbtn")&&!x.classList.contains("fontbtn")){
+      x.innerHTML=(typeof SVG!=="undefined"&&SVG[th[0]])||(SVG&&SVG.auto)||""; x.title=th[1]; x.setAttribute("aria-label",th[1]+". Change theme") }
+  });
+}catch(e){}}
+
+/* Wrap applyPrefs so the look layer is applied on boot and after every existing theme/text change. */
+{ const _v45ap=applyPrefs; applyPrefs=function(){ _v45ap.apply(this,arguments); applyLook(); v45RefreshThemeBtns() }; }
+
+/* ---------------- panel ---------------- */
+function v45PanelHTML(){
+  const s=v45State();
+  const theme=V45_THEMES.map(([v,l])=>`<button type="button" class="v45-th" data-v45-theme="${v}" aria-pressed="${s.theme===v}"><span class="v45-sw th-${v}" aria-hidden="true"></span>${l}</button>`).join("");
+  const acc=V45_ACCENTS.map(([v,l])=>`<button type="button" class="v45-ac" data-v45-accent="${v}" aria-pressed="${s.accent===v}" title="${l}" aria-label="${l}"><span class="v45-dot ac-${v}" aria-hidden="true"></span></button>`).join("");
+  return `<div class="v45-ov" data-v45-ov role="dialog" aria-modal="true" aria-labelledby="v45-h">
+   <div class="v45-card" role="document">
+    <div class="v45-top"><h2 id="v45-h">Look &amp; Feel</h2><button type="button" class="v45-x" data-v45-close aria-label="Close appearance settings">&times;</button></div>
+    <p class="v45-intro">Personalize how Vexcura looks on this device. Changes apply instantly and are saved for next time.</p>
+    <section class="v45-sec"><h3>Theme</h3><div class="v45-row" role="group" aria-label="Theme">${theme}</div></section>
+    <section class="v45-sec"><h3>Accent color</h3><div class="v45-row" role="group" aria-label="Accent color">${acc}</div></section>
+    <section class="v45-sec"><h3>Text size</h3><div class="v45-row" role="group" aria-label="Text size"><button type="button" class="v45-tb" data-v45-text="md" aria-pressed="${s.text==="md"}">Standard</button><button type="button" class="v45-tb" data-v45-text="lg" aria-pressed="${s.text==="lg"}">Large</button><button type="button" class="v45-tb" data-v45-text="xl" aria-pressed="${s.text==="xl"}">Largest</button></div></section>
+    <section class="v45-sec"><h3>Easy-read font</h3><div class="v45-row"><button type="button" class="v45-tg" data-v45-font="1" aria-pressed="${s.font==="easy"}">${s.font==="easy"?"On":"Off"}</button><span class="v45-hint">A highly legible typeface for long reading sessions.</span></div></section>
+    <section class="v45-sec"><h3>Display density</h3><div class="v45-row" role="group" aria-label="Display density"><button type="button" class="v45-tb" data-v45-dens="comfortable" aria-pressed="${s.density!=="compact"}">Comfortable</button><button type="button" class="v45-tb" data-v45-dens="compact" aria-pressed="${s.density==="compact"}">Compact</button></div></section>
+    <section class="v45-sec"><h3>Decorations</h3><div class="v45-row"><button type="button" class="v45-tg" data-v45-deco="1" aria-pressed="${s.deco==="on"}">${s.deco==="on"?"On":"Off"}</button><span class="v45-hint">A subtle accent trim on section headers and cards.</span></div></section>
+    <div class="v45-foot"><button type="button" class="v45-reset" data-v45-reset>Restore defaults</button><button type="button" class="btn2 v45-done" data-v45-close>Done</button></div>
+   </div></div>`;
+}
+let v45LastFocus=null;
+function v45Open(){
+  if(document.querySelector("[data-v45-ov]"))return;
+  v45LastFocus=document.activeElement;
+  (app||document.body).insertAdjacentHTML("beforeend",v45PanelHTML());
+  try{document.documentElement.style.overflow="hidden"}catch(e){}
+  const c=document.querySelector(".v45-card"); if(c){const f=c.querySelector("button");if(f)f.focus()}
+  if(location.hash!=="#appearance"){try{history.pushState(null,"",location.pathname+location.search+"#appearance")}catch(e){try{location.hash="appearance"}catch(e2){}}}
+}
+function v45Close(quiet){
+  const o=document.querySelector("[data-v45-ov]"); if(o)o.remove();
+  try{document.documentElement.style.overflow=""}catch(e){}
+  if(location.hash==="#appearance"){try{history.replaceState(null,"",location.pathname+location.search)}catch(e){}}
+  if(!quiet&&v45LastFocus&&document.contains(v45LastFocus)){try{v45LastFocus.focus()}catch(e){}}
+}
+function v45Repaint(focusSel){
+  const o=document.querySelector("[data-v45-ov]"); if(!o)return;
+  o.outerHTML=v45PanelHTML();
+  if(focusSel){const f=document.querySelector(focusSel);if(f){try{f.focus()}catch(e){}}}
+}
+/* each setter writes through the existing stores, applies live, then repaints the panel to reflect pressed state */
+function v45Theme(v){store.set(K2.theme,v);applyPrefs();v45Repaint(`[data-v45-theme="${v}"]`)}
+function v45Accent(v){store.set(V45K.accent,v);applyLook();v45Repaint(`[data-v45-accent="${v}"]`)}
+function v45Text(v){store.set(K2.text,v);applyPrefs();document.querySelectorAll('[data-act="text"]').forEach(x=>x.setAttribute("aria-pressed",String(x.dataset.v===v)));v45Repaint(`[data-v45-text="${v}"]`)}
+function v45Font(){const on=store.get(K3.font,"std")!=="easy";store.set(K3.font,on?"easy":"std");applyFont();document.querySelectorAll('[data-act="fontt"]').forEach(x=>x.setAttribute("aria-pressed",String(on)));v45Repaint('[data-v45-font]')}
+function v45Dens(v){store.set(V45K.density,v);applyLook();v45Repaint(`[data-v45-dens="${v}"]`)}
+function v45Deco(){const on=store.get(V45K.deco,"off")!=="on";store.set(V45K.deco,on?"on":"off");applyLook();v45Repaint('[data-v45-deco]')}
+function v45Reset(){
+  store.set(K2.theme,"auto");store.set(K2.text,"md");store.set(K3.font,"std");
+  store.set(V45K.accent,"teal");store.set(V45K.density,"comfortable");store.set(V45K.deco,"off");
+  applyPrefs();applyFont();
+  document.querySelectorAll('[data-act="text"]').forEach(x=>x.setAttribute("aria-pressed",String(x.dataset.v==="md")));
+  document.querySelectorAll('[data-act="fontt"]').forEach(x=>x.setAttribute("aria-pressed","false"));
+  v45Repaint('[data-v45-reset]');
+}
+
+/* ---------------- events + entry points ---------------- */
+document.addEventListener("click",function(e){
+  const t=e.target; if(!t||!t.closest)return;
+  const op=t.closest('[data-v45-open],[data-act="v45-look"]'); if(op){e.preventDefault();v45Open();return}
+  const ov=t.closest("[data-v45-ov]"); if(!ov)return;
+  if(t.closest("[data-v45-close]")||t===ov){e.preventDefault();v45Close();return}
+  let el;
+  if((el=t.closest("[data-v45-theme]"))){e.preventDefault();v45Theme(el.getAttribute("data-v45-theme"));return}
+  if((el=t.closest("[data-v45-accent]"))){e.preventDefault();v45Accent(el.getAttribute("data-v45-accent"));return}
+  if((el=t.closest("[data-v45-text]"))){e.preventDefault();v45Text(el.getAttribute("data-v45-text"));return}
+  if(t.closest("[data-v45-font]")){e.preventDefault();v45Font();return}
+  if((el=t.closest("[data-v45-dens]"))){e.preventDefault();v45Dens(el.getAttribute("data-v45-dens"));return}
+  if(t.closest("[data-v45-deco]")){e.preventDefault();v45Deco();return}
+  if(t.closest("[data-v45-reset]")){e.preventDefault();v45Reset();return}
+});
+document.addEventListener("keydown",function(e){
+  if(e.key==="Escape"&&document.querySelector("[data-v45-ov]")){e.preventDefault();v45Close();return}
+  if(e.key==="Tab"){const c=document.querySelector(".v45-card");if(!c)return;const f=[...c.querySelectorAll("button")].filter(x=>!x.disabled&&x.offsetParent!==null);if(!f.length)return;const a=f[0],z=f[f.length-1];if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus()}else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus()}}
+});
+window.addEventListener("hashchange",function(){
+  if(location.hash==="#appearance"){ if(!document.querySelector("[data-v45-ov]"))v45Open() }
+  else { v45Close(true) }
+});
+
+/* Signed-in users: register in the v33 launcher ("More" overflow + header search). */
+try{
+  (window.__vxLaunchQ=window.__vxLaunchQ||[]).push({
+    id:"look-feel", group:"account", order:9, icon:"info", label:"Look & Feel",
+    hint:"Theme, color, text size, density", href:"#appearance",
+    keys:"look feel appearance theme dark light high contrast color accent text size font easy read density compact display personalize settings"
+  });
+  if(window.__vxLaunch&&window.__vxLaunch.add)window.__vxLaunchQ.splice(0).forEach(x=>{try{window.__vxLaunch.add(x)}catch(e){}});
+}catch(e){}
+
+/* Signed-out visitors keep the original slide-out drawer: inject a "Look & Feel" control into its display row. */
+function v45InjectMenu(mnu){try{
+  if(!mnu||mnu.querySelector('[data-act="v45-look"]'))return;
+  const d=mnu.querySelector(".mnu-d");
+  if(d)d.insertAdjacentHTML("beforeend",'<button type="button" class="iconbtn fontbtn" data-act="v45-look" aria-haspopup="dialog">Look &amp; Feel</button>');
+}catch(e){}}
+try{
+  const host=app||document.body;
+  const mo=new MutationObserver(function(ms){for(const m of ms)for(const n of m.addedNodes){if(n.nodeType===1&&n.classList&&n.classList.contains("mnu"))v45InjectMenu(n)}});
+  mo.observe(host,{childList:true});
+  const existing=document.querySelector(".mnu"); if(existing)v45InjectMenu(existing);
+}catch(e){}
+
+/* apply immediately on load (boot's applyPrefs() also calls this via the wrapper above) */
+applyLook();
+if(location.hash==="#appearance"){try{v45Open()}catch(e){}}
+/* </v45-look-js> */
 /* <v22-daily-js> */
 /* <v22-daily-js> Daily AI questions + owner spot-check queue.
    Insert INSIDE the app's main IIFE in app.html (BANK/BY/itemHTML/qflagL are IIFE-scoped, not globals): directly after
