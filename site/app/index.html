@@ -3991,6 +3991,14 @@ html[data-theme="dark"] .vxsb .eo-ic{filter:saturate(.9) brightness(.95)}
 .vxsec-secret{font:700 16px/1.6 ui-monospace,Menlo,Consolas,monospace;letter-spacing:.08em;word-break:break-all;background:var(--sc-sunk);border-radius:8px;padding:8px 12px}
 .vxsec-qr{width:196px;height:196px;margin:8px 0;background:#fff;border:1px solid var(--sc-line);border-radius:8px;padding:6px}.vxsec-qr svg{width:100%;height:100%}
 .vxsec-steps,.vxsec-m ol.vxsec-steps{display:block!important;columns:auto!important;grid-template-columns:none!important;margin:6px 0 0 20px;padding:0;list-style:decimal outside}ul.vxsec-steps{list-style:disc outside}.vxsec-steps li{display:list-item!important;margin:6px 0;line-height:1.5;font-size:15px;color:inherit;width:auto!important;flex:none!important}
+.vxsec-apps{margin:12px 0 4px}.vxsec-apps-h{font-size:14px;color:var(--sc-mut,#5c6b74);margin:0 0 8px}
+.vxsec-app-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}@media(max-width:560px){.vxsec-app-row{grid-template-columns:1fr}}
+.vxsec-app{display:flex;gap:11px;align-items:center;border:1px solid var(--sc-line);border-radius:11px;padding:11px 13px;background:var(--sc-sunk,#f4f7f9)}
+.vxsec-app-ic{flex:none;width:34px;height:34px;color:var(--accent,#1d5670)}.vxsec-app-ic svg{width:34px;height:34px;display:block}
+.vxsec-app-b{min-width:0}.vxsec-app-b b{display:block;font-size:14px;line-height:1.25;font-weight:700}
+.vxsec-app-links{display:flex;gap:12px;margin-top:4px}.vxsec-app-links a{font-size:12.5px;font-weight:600;color:var(--accent,#1d5670);text-decoration:none}.vxsec-app-links a:hover{text-decoration:underline}
+.vxsec-apps-f{font-size:12.5px;color:var(--sc-mut,#5c6b74);margin:9px 0 0}
+.vxsec-open{display:inline-flex;align-items:center;justify-content:center;gap:7px;margin:12px 0 2px}.vxsec-open svg{width:17px;height:17px}
 .vxsec-note{border-left:4px solid var(--accent,#2c3e57);background:var(--sc-sunk);padding:10px 14px;border-radius:8px;margin:10px 0}.vxsec-note.warn{border-left-color:var(--sc-warn);background:var(--sc-warnbg)}.vxsec-note.bad{border-left-color:var(--sc-bad);background:var(--sc-badbg)}
 /* modals */
 .vxsec-mbg{position:fixed;inset:0;z-index:2147483000;background:rgba(10,18,28,.55);display:flex;align-items:center;justify-content:center;padding:16px}
@@ -4893,6 +4901,211 @@ html[data-theme="dark"] .vbx-ghost{background:#184b61}
 .fq-chip.on .fq-ck{background:#2f6fbf url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 6.2 5 8.6 9.6 3.6' fill='none' stroke='white' stroke-width='2'/%3E%3C/svg%3E") center/11px no-repeat;border-color:#2f6fbf}
 @media (pointer:coarse){.fq-chip{min-height:38px;padding:6px 14px;font-size:14px}.fq-done{height:32px}.fq-x{width:32px;height:32px}}
 /* </v48-fsq-css> */
+/* <v50-vidx-css> */
+/* v50 Video library search ("vidx"): a full-screen, YouTube/Google-style search over the existing
+   curated, vendor-approved video collection (window.__vxVids35). Epic-clean, reuses the existing
+   popup player (which is a .smod-bg at z-index 200, so this overlay sits just below it). */
+.vidx-bg{position:fixed;inset:0;z-index:190;background:rgba(20,14,8,.6);display:grid;place-items:start center;padding:24px 16px;overflow:auto}
+.vidx{background:var(--bg);color:var(--ink);width:100%;max-width:1120px;border-top:4px solid var(--accent);border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.35);font-family:var(--f-body);display:flex;flex-direction:column;min-height:min(640px,86vh)}
+.vidx-hd{display:flex;align-items:center;gap:12px;padding:16px 18px 10px}
+.vidx-hd h2{font-family:var(--f-head);font-weight:400;font-size:24px;margin:0;flex:1;line-height:1.1}
+.vidx-x{flex:none;width:36px;height:36px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);cursor:pointer;display:grid;place-items:center}
+.vidx-x:hover{background:var(--sunk)}
+.vidx-sb{position:relative;margin:0 18px 10px}
+.vidx-sb svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:20px;height:20px;color:var(--muted);pointer-events:none}
+.vidx-sb input{width:100%;box-sizing:border-box;font:inherit;font-size:18px;padding:14px 44px 14px 44px;border:1.5px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink)}
+.vidx-sb input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+.vidx-clr{position:absolute;right:10px;top:50%;transform:translateY(-50%);width:28px;height:28px;border:0;border-radius:50%;background:var(--sunk);color:var(--ink);cursor:pointer;display:none;place-items:center;font-size:16px;line-height:1}
+.vidx-sb.has input{padding-right:46px}
+.vidx-sb.has .vidx-clr{display:grid}
+.vidx-fl{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center;padding:0 18px 10px}
+.vidx-fg{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.vidx-fg>span{font-size:12.5px;color:var(--muted);margin-right:2px;align-self:center}
+.vidx-chip{font:inherit;font-size:13px;padding:5px 11px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink);cursor:pointer;white-space:nowrap}
+.vidx-chip:hover{background:var(--sunk)}
+.vidx-chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.vidx-chip.short[aria-pressed="true"]{background:#1f7a4d;border-color:#1f7a4d}
+.vidx-sel{font:inherit;font-size:13px;padding:5px 8px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink)}
+.vidx-meta{padding:2px 18px 8px;font-size:12.5px;color:var(--muted)}
+.vidx-g{flex:1;display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;padding:4px 18px 18px;align-content:start}
+.vidx-c{display:flex;flex-direction:column;gap:6px;text-align:left;font:inherit;padding:0 0 10px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);cursor:pointer;overflow:hidden;transition:box-shadow .12s,transform .12s}
+.vidx-c:hover{box-shadow:0 6px 18px rgba(0,0,0,.18);transform:translateY(-2px)}
+.vidx-c:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.vidx-th{position:relative;display:block;aspect-ratio:16/9;background:var(--sunk)}
+.vidx-th img{width:100%;height:100%;object-fit:cover;display:block}
+.vidx-th .dur{position:absolute;right:6px;bottom:6px;background:rgba(0,0,0,.82);color:#fff;font-size:12px;font-weight:600;padding:1px 6px;border-radius:4px;letter-spacing:.2px}
+.vidx-th .shb{position:absolute;left:6px;top:6px;background:#1f7a4d;color:#fff;font-size:11px;font-weight:700;padding:2px 7px;border-radius:4px;text-transform:uppercase;letter-spacing:.4px}
+.vidx-th .pl{position:absolute;inset:0;display:grid;place-items:center;opacity:0;transition:opacity .12s;background:rgba(0,0,0,.25)}
+.vidx-c:hover .vidx-th .pl,.vidx-c:focus-visible .vidx-th .pl{opacity:1}
+.vidx-th .pl svg{width:46px;height:46px;color:#fff;filter:drop-shadow(0 2px 6px rgba(0,0,0,.5))}
+.vidx-c b{font-weight:600;font-size:14.5px;line-height:1.25;padding:0 10px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.vidx-c small{color:var(--muted);font-size:12.5px;padding:0 10px;display:block}
+.vidx-c .src{font-weight:600;color:var(--ink)}
+.vidx-empty{grid-column:1/-1;text-align:center;padding:40px 10px;color:var(--muted)}
+.vidx-empty b{display:block;color:var(--ink);font-size:17px;margin-bottom:4px}
+.vidx-note{padding:0 18px 16px;font-size:12px;color:var(--muted);line-height:1.4}
+@media (max-width:640px){
+  .vidx-bg{padding:0}
+  .vidx{max-width:none;min-height:100vh;min-height:100dvh;border-radius:0;border-top:0}
+  .vidx-hd{position:sticky;top:0;background:var(--bg);z-index:2;padding-top:calc(12px + env(safe-area-inset-top))}
+  .vidx-g{grid-template-columns:1fr 1fr;gap:10px;padding:4px 12px 18px}
+  .vidx-sb,.vidx-fl,.vidx-meta,.vidx-note{padding-left:12px;padding-right:12px}
+  .vidx-sb input{font-size:16px}
+  .vidx-c b{font-size:13.5px}
+}
+@media (max-width:380px){.vidx-g{grid-template-columns:1fr}}
+/* </v50-vidx-css> */
+/* <v52-dxrx-css> */
+/* v52-dxrx-css: "Clinical Reasoning Lab" (prescription-by-proxy diagnostic-reasoning module).
+   Scoped to #vxdx (full-screen overlay) and .vxdx-*. Epic-inspired; phone(390)/iPad/desktop; reduced-motion respected; no horizontal overflow. */
+#vxdx{position:fixed;inset:0;z-index:4000;background:#eef2f5;color:#17262e;display:flex;flex-direction:column;overflow:hidden;font-family:inherit}
+#vxdx *{box-sizing:border-box}
+#vxdx .vxdx-scroll{flex:1;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch}
+#vxdx .vxdx-wrap{max-width:1040px;margin:0 auto;padding:14px 16px 96px;width:100%}
+/* top bar */
+.vxdx-top{display:flex;align-items:center;gap:10px;padding:8px 14px;background:#0d3b52;color:#fff;min-height:48px}
+.vxdx-top .vxdx-ttl{font-weight:700;font-size:16px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.vxdx-top .vxdx-ttl svg{width:20px;height:20px}
+.vxdx-top .vxdx-sub{font-weight:500;font-size:12px;background:rgba(255,255,255,.15);padding:2px 9px;border-radius:7px}
+.vxdx-x{margin-left:auto;background:transparent;border:1px solid rgba(255,255,255,.5);color:#fff;border-radius:7px;padding:5px 12px;font:inherit;font-weight:600;cursor:pointer}
+.vxdx-x:hover{background:rgba(255,255,255,.12)}
+/* cards */
+.vxdx-card{background:#fff;border:1px solid #d9e2e8;border-radius:12px;padding:14px 16px;margin:0 0 12px;box-shadow:0 1px 2px rgba(13,59,82,.05)}
+.vxdx-card h3{margin:0 0 8px;font-size:16px;display:flex;align-items:center;gap:7px}
+.vxdx-card h4{margin:0 0 8px;font-size:14px;display:flex;align-items:center;gap:6px}
+.vxdx-muted{color:#44555d;font-size:13.5px;line-height:1.55;margin:4px 0}
+.vxdx-fine{color:#6b7b84;font-size:12px;line-height:1.5;font-weight:400}
+.vxdx-ai{display:inline-block;font-size:11px;color:#6b4e00;background:#fff6cf;border:1px solid #eadd8f;border-radius:6px;padding:3px 9px;margin:0 0 10px}
+/* buttons */
+.vxdx-btn{display:inline-flex;align-items:center;gap:6px;background:#0d6cbf;color:#fff;border:1px solid #0d6cbf;border-radius:8px;padding:9px 15px;font:inherit;font-weight:600;cursor:pointer;line-height:1.2}
+.vxdx-btn:hover{background:#0b5ea6}
+.vxdx-btn.sec{background:#fff;color:#0d3b52;border-color:#aebfc9}
+.vxdx-btn.sec:hover{background:#f0f5f8}
+.vxdx-btn.mini{padding:6px 11px;font-size:13px}
+.vxdx-btn:disabled{opacity:.45;cursor:default}
+.vxdx-btn svg{width:15px;height:15px}
+/* pills */
+.vxdx-pill{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11.5px;font-weight:700;border:1px solid transparent;vertical-align:middle}
+.vxdx-pill.d2{background:#e4eef6;color:#184e77;border-color:#bcd6ea}
+.vxdx-pill.d3{background:#e3f0e6;color:#1f6b3a;border-color:#bcdcc4}
+.vxdx-pill.d4{background:#fdecd9;color:#8a4b00;border-color:#f3d2a6}
+.vxdx-pill.d5{background:#fbe6e4;color:#9b1c13;border-color:#f0c4bf}
+.vxdx-pill.ok{background:#e3f0e6;color:#1f6b3a;border-color:#bcdcc4}
+.vxdx-pill.mid{background:#fff6cf;color:#6b5600;border-color:#eadd8f}
+/* intro / stats */
+.vxdx-intro h3{font-size:17px}
+.vxdx-statrow{display:flex;gap:10px;margin:10px 0}
+.vxdx-stat{flex:1;background:#f6f9fb;border:1px solid #d3dee5;border-radius:10px;padding:9px 12px;text-align:center}
+.vxdx-stat b{display:block;font-size:20px;color:#0d3b52;line-height:1.1}
+.vxdx-stat small{color:#5a6b74;font-size:11.5px}
+/* case picker grid */
+.vxdx-tierh{margin:16px 0 8px;font-size:14px;color:#0d3b52;display:flex;flex-direction:column;gap:2px}
+.vxdx-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.vxdx-casecard{text-align:left;background:#fff;border:1px solid #d9e2e8;border-radius:12px;padding:13px 14px;cursor:pointer;font:inherit;display:flex;flex-direction:column;gap:8px;box-shadow:0 1px 2px rgba(13,59,82,.05)}
+.vxdx-casecard:hover{box-shadow:0 2px 12px rgba(13,59,82,.14);border-color:#9ec4e0}
+.vxdx-ccsys{font-size:11.5px;color:#5a6b74;font-weight:600;letter-spacing:.02em;text-transform:uppercase;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.vxdx-cccc{font-size:13.5px;color:#22323a;line-height:1.5}
+.vxdx-ccft{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto}
+.vxdx-go{display:inline-flex;align-items:center;gap:3px;color:#0d6cbf;font-weight:700;font-size:13px}
+.vxdx-go svg{width:15px;height:15px}
+/* stepper */
+.vxdx-steps{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 12px}
+.vxdx-steps span{font-size:12px;color:#5a6b74;padding:4px 11px;border-radius:999px;background:#fff;border:1px solid #d9e2e8;font-weight:600}
+.vxdx-steps span.on{background:#0d3b52;color:#fff;border-color:#0d3b52}
+.vxdx-steps span.done{background:#e3f0e6;color:#1f6b3a;border-color:#bcdcc4}
+/* stem */
+.vxdx-stem .vxdx-cc,.vxdx-cc{font-size:14.5px;font-weight:600;color:#17262e;margin:6px 0 8px;line-height:1.5}
+.vxdx-vit{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+.vxdx-vit span{background:#eef4f8;border:1px solid #d3e0e8;border-radius:7px;padding:3px 9px;font-size:12.5px;font-variant-numeric:tabular-nums}
+.vxdx-vit b{color:#0d3b52;font-weight:700}
+/* assembled findings recap */
+.vxdx-assembled{background:#f3f8fb;border-color:#cfe0ea}
+.vxdx-assembled ul{margin:4px 0 0;padding-left:18px}
+.vxdx-assembled li{font-size:13px;color:#2b3b43;margin:3px 0;line-height:1.5}
+/* committed problem banner */
+.vxdx-problem{background:#0d3b52;color:#fff;border-radius:9px;padding:9px 13px;font-weight:700;font-size:14px;line-height:1.4}
+.vxdx-dxcommit h3{margin-bottom:10px}
+/* option list */
+.vxdx-opts{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+.vxdx-opt{position:relative;text-align:left;background:#f6f9fb;border:1px solid #d3dee5;border-radius:10px;padding:11px 12px 11px 40px;font:inherit;font-size:13.5px;cursor:pointer;line-height:1.5;color:#22323a;transition:background .12s,border-color .12s}
+.vxdx-opt:hover{background:#eaf2f8;border-color:#9ec4e0}
+.vxdx-opt .vxdx-ck{position:absolute;left:12px;top:11px;width:18px;height:18px;border:1.5px solid #9fb4bf;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#0d6cbf;background:#fff;line-height:1}
+.vxdx-opt.sel{background:#e4eef6;border-color:#0d6cbf}
+.vxdx-opt.sel .vxdx-ck{border-color:#0d6cbf;background:#0d6cbf;color:#fff}
+.vxdx-opt .vxdx-ot{display:block}
+.vxdx-opt:disabled{cursor:default;opacity:1}
+.vxdx-opt.pick-ok{background:#e6f4ea;border-color:#8ac3a0}
+.vxdx-opt.pick-ok .vxdx-ck{border-color:#2e8b57;background:#2e8b57;color:#fff}
+.vxdx-opt.pick-bad{background:#fbe8e6;border-color:#e3a59e}
+.vxdx-opt.pick-bad .vxdx-ck{border-color:#b3261e;background:#b3261e;color:#fff}
+.vxdx-opt.pick-harm{background:#fbe0dd;border-color:#d9544a;box-shadow:inset 3px 0 0 #b3261e}
+.vxdx-opt.pick-harm .vxdx-ck{border-color:#b3261e;background:#b3261e;color:#fff}
+.vxdx-opt.miss{border-style:dashed;border-color:#8ac3a0;background:#f3faf5}
+.vxdx-opt.miss .vxdx-ck{border-color:#8ac3a0}
+.vxdx-reveal{margin-top:7px;font-size:12.5px;color:#2b3b43;line-height:1.5;border-top:1px dashed #cdd9e0;padding-top:6px}
+.vxdx-why{color:#44555d}
+.vxdx-tag{display:inline-block;font-size:10.5px;font-weight:700;border-radius:6px;padding:1px 7px;margin:0 4px 0 0;vertical-align:middle;text-transform:uppercase;letter-spacing:.02em}
+.vxdx-tag.key{background:#e3f0e6;color:#1f6b3a;border:1px solid #bcdcc4}
+.vxdx-tag.now{background:#e4eef6;color:#184e77;border:1px solid #bcd6ea}
+.vxdx-tag.order{background:#efe6f6;color:#5b2a86;border:1px solid #d6c2ea}
+.vxdx-tag.esc{background:#fdecd9;color:#8a4b00;border:1px solid #f3d2a6}
+.vxdx-tag.bad{background:#f1e4e3;color:#9b1c13;border:1px solid #e3c4c0}
+.vxdx-tag.harm{background:#b3261e;color:#fff;border:1px solid #b3261e}
+/* action bar + feedback */
+.vxdx-actbar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:4px 0 0;flex-wrap:wrap}
+.vxdx-actbar.wrap{gap:8px}
+.vxdx-fbbox{border-radius:10px;padding:11px 13px;font-size:13px;line-height:1.55;margin:0 0 12px}
+.vxdx-fbbox.ok{background:#e6f4ea;border:1px solid #bcdcc4;color:#1c5c35}
+.vxdx-fbbox.mid{background:#fff6e0;border:1px solid #ecd79a;color:#6b5000}
+.vxdx-fbbox.bad{background:#fbe8e6;border:1px solid #e6bdb7;color:#8a1f16}
+/* debrief */
+.vxdx-debrief{display:flex;gap:14px;align-items:center}
+.vxdx-scorebig{font-size:40px;font-weight:800;color:#0d3b52;line-height:1;min-width:84px;text-align:center}
+.vxdx-scrow{display:grid;grid-template-columns:150px 1fr 42px;gap:10px;align-items:center;margin:7px 0}
+.vxdx-scrow span{font-size:13px;color:#2b3b43}
+.vxdx-scrow b{text-align:right;font-weight:700;font-variant-numeric:tabular-nums;color:#0d3b52}
+.vxdx-bar{height:9px;border-radius:6px;background:#e4ebf0;overflow:hidden}
+.vxdx-bar>i{display:block;height:100%;background:#0d6cbf}
+.vxdx-teach{margin:0;padding-left:18px}
+.vxdx-teach li{font-size:13.5px;color:#22323a;margin:0 0 10px;line-height:1.55}
+.vxdx-cite{font-size:11.5px;color:#6b7b84;margin-top:3px;font-style:italic}
+/* EHR + My Chart cards (app styling context) */
+.vxdx-simc{border:1px solid #d9e2e8;border-radius:12px;padding:12px 14px;margin:10px 0}
+.vxdx-simc h3{margin:0 0 4px;font-size:15px;display:flex;align-items:center;gap:6px}
+/* phone */
+@media(max-width:760px){
+  #vxdx .vxdx-wrap{padding:12px 12px 100px}
+  .vxdx-grid{grid-template-columns:1fr}
+  .vxdx-scrow{grid-template-columns:116px 1fr 40px}
+  .vxdx-top .vxdx-ttl{font-size:15px}
+  .vxdx-top .vxdx-sub{display:none}
+  .vxdx-debrief{flex-direction:column;align-items:flex-start;gap:8px}
+  .vxdx-scorebig{font-size:34px}
+}
+/* reduced motion */
+@media(prefers-reduced-motion:reduce){#vxdx *{transition:none!important;animation:none!important}}
+/* dark mode (follow app scheme) */
+@media(prefers-color-scheme:dark){
+  :root:not([data-theme=light]) #vxdx{background:#0e1a20;color:#e7eef2}
+  :root:not([data-theme=light]) #vxdx .vxdx-card,:root:not([data-theme=light]) #vxdx .vxdx-casecard{background:#15242c;border-color:#2b3f4a;color:#e7eef2}
+  :root:not([data-theme=light]) #vxdx .vxdx-opt,:root:not([data-theme=light]) #vxdx .vxdx-stat,:root:not([data-theme=light]) #vxdx .vxdx-steps span,:root:not([data-theme=light]) #vxdx .vxdx-vit span{background:#1b2d36;border-color:#2b3f4a;color:#dbe7ec}
+  :root:not([data-theme=light]) #vxdx .vxdx-opt:hover{background:#213744}
+  :root:not([data-theme=light]) #vxdx .vxdx-muted,:root:not([data-theme=light]) #vxdx .vxdx-fine,:root:not([data-theme=light]) #vxdx .vxdx-cccc,:root:not([data-theme=light]) #vxdx .vxdx-why,:root:not([data-theme=light]) #vxdx .vxdx-scrow span{color:#9fb4bf}
+  :root:not([data-theme=light]) #vxdx .vxdx-cc,:root:not([data-theme=light]) #vxdx .vxdx-assembled li,:root:not([data-theme=light]) #vxdx .vxdx-teach li{color:#e7eef2}
+  :root:not([data-theme=light]) #vxdx .vxdx-assembled{background:#16262e}
+  :root:not([data-theme=light]) #vxdx .vxdx-ck{background:#0e1a20}
+  :root:not([data-theme=light]) #vxdx .vxdx-opt.pick-ok{background:#16352250}:root:not([data-theme=light]) #vxdx .vxdx-opt.pick-bad{background:#3a1c1950}:root:not([data-theme=light]) #vxdx .vxdx-opt.pick-harm{background:#45191550}:root:not([data-theme=light]) #vxdx .vxdx-opt.miss{background:#15291d}
+}
+:root[data-theme=dark] #vxdx{background:#0e1a20;color:#e7eef2}
+:root[data-theme=dark] #vxdx .vxdx-card,:root[data-theme=dark] #vxdx .vxdx-casecard{background:#15242c;border-color:#2b3f4a;color:#e7eef2}
+:root[data-theme=dark] #vxdx .vxdx-opt,:root[data-theme=dark] #vxdx .vxdx-stat,:root[data-theme=dark] #vxdx .vxdx-steps span,:root[data-theme=dark] #vxdx .vxdx-vit span{background:#1b2d36;border-color:#2b3f4a;color:#dbe7ec}
+:root[data-theme=dark] #vxdx .vxdx-opt:hover{background:#213744}
+:root[data-theme=dark] #vxdx .vxdx-muted,:root[data-theme=dark] #vxdx .vxdx-fine,:root[data-theme=dark] #vxdx .vxdx-cccc,:root[data-theme=dark] #vxdx .vxdx-why,:root[data-theme=dark] #vxdx .vxdx-scrow span{color:#9fb4bf}
+:root[data-theme=dark] #vxdx .vxdx-cc,:root[data-theme=dark] #vxdx .vxdx-assembled li,:root[data-theme=dark] #vxdx .vxdx-teach li{color:#e7eef2}
+:root[data-theme=dark] #vxdx .vxdx-assembled{background:#16262e}
+:root[data-theme=dark] #vxdx .vxdx-ck{background:#0e1a20}
+:root[data-theme=dark] #vxdx .vxdx-opt.pick-ok{background:#16352250}:root[data-theme=dark] #vxdx .vxdx-opt.pick-bad{background:#3a1c1950}:root[data-theme=dark] #vxdx .vxdx-opt.pick-harm{background:#45191550}:root[data-theme=dark] #vxdx .vxdx-opt.miss{background:#15291d}
+/* </v52-dxrx-css> */
 .areqp{border:1px solid var(--line,#cfd8e0);border-radius:10px;padding:10px 14px 4px;margin:6px 0 10px}.areqp legend{font-weight:700;padding:0 6px}.agrid input[type=date],.agrid input[type=month]{width:100%;min-width:0;max-width:100%;box-sizing:border-box;-webkit-appearance:none;appearance:none}.agrid .aip{min-width:0;max-width:100%}
 </style>
 
@@ -4905,7 +5118,7 @@ const BANK = (function(e){try{const P=">oVO^cd@ge#lJ'~wUTDiEY+LZx-K&hkt(/F0;G`N.
 let HIDQ=new Set();const CFG={c:null,bypass:false};try{const c=JSON.parse(localStorage.getItem("ns.cfg")||"null");if(c&&typeof c==="object"){CFG.c=c;HIDQ=new Set(c.hideQ||[])}}catch(e){}
 const featOn=k=>!CFG.c||!CFG.c.feat||CFG.c.feat[k]!==false;
 
-const APPV="35bc32cea41af7480184ce4b43632bb75ea8c244ed0e4cd9a9e447fa96d6c7d7";
+const APPV="21309524ef28820984e36fd204089426281d7bef00ab4a2c59e73457f8c2413b";
 const CATS={
   MOC:{n:"Management of Care",lo:15,hi:21,w:18},
   SIC:{n:"Safety and Infection Prevention and Control",lo:10,hi:16,w:13},
@@ -19605,8 +19818,14 @@ const SECX = (() => {
       const enroll = j.mfa === "enroll";
       const M = modal(`<h3>${enroll ? "Set up two-step sign-in" : "Two-step sign-in"}</h3>
         ${enroll ? `<p>${j.role === "admin" ? "Administrator accounts must" : "Your account needs to"} use a code from an authenticator app on your phone, so a stolen password isn't enough to get in.</p>
-        <ol class="vxsec-steps"><li>Install an authenticator app if you don't have one: Microsoft Authenticator, Google Authenticator, 1Password or Authy.</li><li>In the app, add an account and scan this code.</li><li>Type the 6-digit code the app shows.</li></ol>
-        <div class="vxsec-qr" data-q aria-live="polite"><small>Loading…</small></div><p><small>Can't scan? Enter this key in the app:</small></p><div class="vxsec-secret" data-k>…</div><p><a href="#" data-uri hidden>Open in my authenticator app</a></p>`
+        <div class="vxsec-apps"><p class="vxsec-apps-h">Use any authenticator app. Two free, widely used ones:</p>
+        <div class="vxsec-app-row">
+          <div class="vxsec-app"><span class="vxsec-app-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.3-2.9 7.6-7 8.9C7.9 18.6 5 15.3 5 11V6z"/><path d="M9 11.5l2 2 4-4"/></svg></span><div class="vxsec-app-b"><b>Microsoft Authenticator</b><span class="vxsec-app-links"><a href="https://apps.apple.com/app/microsoft-authenticator/id983156458" target="_blank" rel="noopener">iPhone</a><a href="https://play.google.com/store/apps/details?id=com.azure.authenticator" target="_blank" rel="noopener">Android</a></span></div></div>
+          <div class="vxsec-app"><span class="vxsec-app-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l2.5 1.5"/></svg></span><div class="vxsec-app-b"><b>Google Authenticator</b><span class="vxsec-app-links"><a href="https://apps.apple.com/app/google-authenticator/id388497605" target="_blank" rel="noopener">iPhone</a><a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2" target="_blank" rel="noopener">Android</a></span></div></div>
+        </div><p class="vxsec-apps-f">Already use Authy or 1Password? Those work too.</p></div>
+        <a href="#" class="vxi-btn vxsec-open" data-uri hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg> Open my authenticator and add Vexcura</a>
+        <ol class="vxsec-steps"><li>Open your authenticator app — tap the button above to add Vexcura automatically, or add an account and scan the code below.</li><li>Enter the 6-digit code it shows.</li></ol>
+        <div class="vxsec-qr" data-q aria-live="polite"><small>Loading…</small></div><p><small>Can't scan? Enter this key in the app by hand:</small></p><div class="vxsec-secret" data-k>…</div>`
         : `<p>Hi${j.name ? " " + E(j.name) : ""}. Open your authenticator app and type the 6-digit code for Vexcura.</p>`}
         <label class="vxsec-f"><span data-lab>6-digit code</span><input class="code" inputmode="numeric" autocomplete="one-time-code" maxlength="11" data-c aria-describedby="vxsec-mfae"></label>
         ${enroll ? "" : `<p><a href="#" data-rc>Lost your phone? Use a recovery code</a></p>`}
@@ -21795,6 +22014,982 @@ if(location.hash==="#appearance"){try{v45Open()}catch(e){}}
   window.__vxBrainX = { augment, give: giveFromBrain, reschedule };
 }
 /* </v47-brainx-js> */
+/* <v50-vidx-js> */
+/* v50 Video library search ("vidx"). A dedicated, YouTube/Google-style search surface over the app's own
+   curated, vendor-approved video collection. No new video content: it reads window.__vxVids35 (VIDS + VSRC,
+   defined by the existing video block) and reuses that block's popup player (__vxVids35.play). The surface is
+   a self-owned full-screen overlay (class vidx-bg) so the player, which is a .smod-bg at a higher z-index,
+   opens on top of it and returns here on close. Entry points are additive: a launcher entry (window.__vxLaunchQ)
+   and a deepLink wrap for the "videos"/"video" hash. Nothing in the app is edited; everything degrades quietly
+   if a hook is absent. Shares the app IIFE scope for esc and the deepLink binding (same as the v37 block). */
+{
+  const VX = {
+    search: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>',
+    close: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>',
+    play: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>'
+  };
+  const SHORT = 240, MED = 480;            /* seconds: Short <= 4:00, Short+Medium <= 8:00 */
+  const st = { q: "", src: "", cat: "", len: "" };
+  const E = s => (typeof esc === "function" ? esc(s) : String(s == null ? "" : s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])));
+  const data = () => (window.__vxVids35 && Array.isArray(window.__vxVids35.VIDS)) ? window.__vxVids35 : null;
+  const dur = d => { const m = /(\d+):(\d+)/.exec(d || ""); return m ? (+m[1]) * 60 + (+m[2]) : 0 };
+  const srcName = (V, k) => (V.VSRC && V.VSRC[k] && V.VSRC[k][0]) || k;
+
+  function tokens(q) { return (q || "").toLowerCase().replace(/[^a-z0-9 ]/g, " ").split(/\s+/).filter(Boolean) }
+  /* every query token must match some field (AND); score rewards title hits, then category, tags, source */
+  function score(V, v, toks) {
+    const title = (v[1] || "").toLowerCase(), tags = (v[5] || "").toLowerCase(), cat = (v[4] || "").toLowerCase(), src = srcName(V, v[3]).toLowerCase();
+    let total = 0;
+    for (const t of toks) {
+      let h = 0;
+      if (title.indexOf(t) >= 0) { h = (" " + title + " ").indexOf(" " + t + " ") >= 0 ? 20 : (" " + title).indexOf(" " + t) >= 0 ? 14 : 9; if (title.indexOf(t) === 0) h += 4 }
+      if (cat.indexOf(t) >= 0) h = Math.max(h, 8);
+      if (tags.indexOf(t) >= 0) h = Math.max(h, 7);
+      if (src.indexOf(t) >= 0) h = Math.max(h, 4);
+      if (h === 0) return -1;
+      total += h;
+    }
+    return total;
+  }
+
+  function results(V) {
+    const toks = tokens(st.q);
+    const rows = [];
+    V.VIDS.forEach((v, i) => {
+      if (st.cat && v[4] !== st.cat) return;
+      if (st.src && v[3] !== st.src) return;
+      const d = dur(v[2]);
+      if (st.len === "short" && d > SHORT) return;
+      if (st.len === "med" && d > MED) return;
+      const sc = score(V, v, toks);
+      if (sc < 0) return;
+      rows.push({ v, i, d, sc });
+    });
+    rows.sort((a, b) => (toks.length ? (b.sc - a.sc) : 0) || (a.d - b.d) || (a.i - b.i));
+    return rows;
+  }
+
+  function cardHTML(V, r) {
+    const v = r.v, id = v[0], short = r.d > 0 && r.d <= SHORT;
+    return `<button class="vidx-c" type="button" data-vxv="${E(id)}" title="${E(v[1])}">
+      <span class="vidx-th"><img src="https://i.ytimg.com/vi/${E(id)}/mqdefault.jpg" alt="" loading="lazy" width="320" height="180">
+        ${short ? '<em class="shb">Short</em>' : ""}<em class="dur">${E(v[2])}</em><span class="pl">${VX.play}</span></span>
+      <b>${E(v[1])}</b><small><span class="src">${E(srcName(V, v[3]))}</span> &middot; ${E(v[4])}</small></button>`;
+  }
+
+  function gridHTML(V) {
+    const rows = results(V);
+    if (!rows.length) return `<div class="vidx-empty"><b>No videos match</b><span>Try a different word, or clear a filter.</span></div>`;
+    return rows.map(r => cardHTML(V, r)).join("");
+  }
+
+  function chips(V) {
+    const cats = [...new Set(V.VIDS.map(v => v[4]))].sort();
+    const srcs = Object.keys(V.VSRC || {});
+    const lp = (id, lab, extra) => `<button class="vidx-chip${extra || ""}" type="button" data-vxlen="${id}" aria-pressed="${st.len === id}">${lab}</button>`;
+    return `<div class="vidx-fg"><span>Length</span>
+        <button class="vidx-chip" type="button" data-vxlen="" aria-pressed="${st.len === ""}">Any</button>
+        ${lp("short", "Short &middot; &le;4 min", " short")}${lp("med", "Under 8 min")}</div>
+      <div class="vidx-fg"><span>Topic</span><select class="vidx-sel" data-vxcat aria-label="Filter by topic"><option value="">All topics</option>${cats.map(c => `<option value="${E(c)}"${st.cat === c ? " selected" : ""}>${E(c)}</option>`).join("")}</select></div>
+      <div class="vidx-fg"><span>Source</span><select class="vidx-sel" data-vxsrc aria-label="Filter by source"><option value="">All sources</option>${srcs.map(k => `<option value="${E(k)}"${st.src === k ? " selected" : ""}>${E(srcName(V, k))}</option>`).join("")}</select></div>`;
+  }
+
+  function metaLine(V) {
+    const n = results(V).length, total = V.VIDS.length;
+    const filtered = st.q || st.cat || st.src || st.len;
+    return filtered ? `${n} of ${total} video${total === 1 ? "" : "s"}` : `${total} videos &middot; all 10 minutes or less`;
+  }
+
+  function repaint(root) {
+    const V = data(); if (!V || !root) return;
+    const g = root.querySelector(".vidx-g"); if (g) g.innerHTML = gridHTML(V);
+    const m = root.querySelector(".vidx-meta"); if (m) m.innerHTML = metaLine(V);
+    root.querySelectorAll("[data-vxlen]").forEach(b => b.setAttribute("aria-pressed", String(st.len === b.getAttribute("data-vxlen"))));
+    const sb = root.querySelector(".vidx-sb"); if (sb) sb.classList.toggle("has", !!st.q);
+  }
+
+  function close() { document.querySelectorAll(".vidx-bg").forEach(x => x.remove()); document.removeEventListener("keydown", onKey); }
+  function onKey(e) { if (e.key === "Escape" && !document.querySelector(".smod-bg") && document.querySelector(".vidx-bg")) close(); }
+
+  function open(preset) {
+    const V = data();
+    if (!V) { try { if (typeof sModal === "function") sModal(`<h3>Video library</h3><p class="note">The video library is still loading. Please try again in a moment.</p>`) } catch (e) { } return; }
+    if (preset != null) st.q = String(preset);
+    close();
+    const bg = document.createElement("div");
+    bg.className = "vidx-bg";
+    bg.innerHTML = `<div class="vidx" role="dialog" aria-modal="true" aria-label="Video library">
+      <div class="vidx-hd"><h2>Video library</h2><button class="vidx-x" type="button" data-vxclose aria-label="Close">${VX.close}</button></div>
+      <div class="vidx-sb${st.q ? " has" : ""}">${VX.search}<input type="search" data-vxq placeholder="Search videos: ABG, stroke, heart failure, IV fluids&hellip;" value="${E(st.q)}" aria-label="Search videos" autocomplete="off"><button class="vidx-clr" type="button" data-vxclr aria-label="Clear search">&times;</button></div>
+      <div class="vidx-fl">${chips(V)}</div>
+      <div class="vidx-meta">${metaLine(V)}</div>
+      <div class="vidx-g">${gridHTML(V)}</div>
+      <p class="vidx-note">Every clip is 10 minutes or less and comes from a public health agency, the NCLEX's owner, a medical publisher, or a nurse educator. Videos teach concepts; your course materials and facility policies come first.</p>
+    </div>`;
+    document.body.appendChild(bg);
+
+    bg.addEventListener("click", e => {
+      if (e.target === bg) { close(); return; }
+      if (e.target.closest("[data-vxclose]")) { close(); return; }
+      if (e.target.closest("[data-vxclr]")) { st.q = ""; const i = bg.querySelector("[data-vxq]"); if (i) { i.value = ""; i.focus() } repaint(bg); return; }
+      const len = e.target.closest("[data-vxlen]"); if (len) { st.len = len.getAttribute("data-vxlen"); repaint(bg); return; }
+      const card = e.target.closest("[data-vxv]");
+      if (card) { const D = data(); if (D && typeof D.play === "function") D.play(card.getAttribute("data-vxv")); }
+    });
+    bg.addEventListener("input", e => { const i = e.target; if (i && i.matches("[data-vxq]")) { st.q = i.value; repaint(bg); } });
+    bg.addEventListener("change", e => {
+      const t = e.target;
+      if (t.matches("[data-vxcat]")) { st.cat = t.value; repaint(bg); }
+      else if (t.matches("[data-vxsrc]")) { st.src = t.value; repaint(bg); }
+    });
+    document.addEventListener("keydown", onKey);
+    const q = bg.querySelector("[data-vxq]"); if (q) { try { q.focus(); const n = q.value.length; q.setSelectionRange(n, n) } catch (e) { } }
+  }
+
+  window.__vxVidx = { open, close };
+
+  /* Launcher entry (v33). Grouped under Learning modules; opens the overlay directly. */
+  try {
+    (window.__vxLaunchQ = window.__vxLaunchQ || []).push({
+      id: "vidx", group: "modules", order: 6, icon: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3z"/>',
+      label: "Video library", hint: "Search short, trusted nursing videos",
+      run: () => open(), keys: "video videos library watch clips youtube abg stroke heart failure ekg lecture review osmosis cdc ncsbn",
+      when: () => !!data()
+    });
+    if (window.__vxLaunch && window.__vxLaunch.add) window.__vxLaunchQ.splice(0).forEach(x => window.__vxLaunch.add(x));
+  } catch (e) { }
+
+  /* deepLink wrap so #videos / #video open the library (shareable, and catches any existing link). */
+  try {
+    if (typeof deepLink === "function") {
+      const _dl = deepLink;
+      deepLink = function (k) { if (k === "videos" || k === "video") { try { history.replaceState(null, "", location.pathname + location.search) } catch (e) { } open(); return true } return _dl.apply(this, arguments) };
+    }
+  } catch (e) { }
+}
+/* </v50-vidx-js> */
+/* <v52-dxrx-js> */
+/* v52-dxrx-js: "Clinical Reasoning Lab" — nurse-led diagnostic-reasoning / "prescription by proxy" teaching module.
+   An unfolding, case-based simulator that trains the first-responder RN reasoning chain:
+     Assess (gather high-yield data) -> Recognize (pattern, distinguish look-alikes) -> Diagnose (commit + rationale)
+     -> Treatment (RN-scope NOW actions + anticipated orders to request + what to escalate) -> Feedback (rationale, discriminators, guideline basis).
+   RN-scope framing throughout: nurses recognize, intervene within scope, anticipate/request orders and escalate — NOT independent prescribing.
+   Insert INSIDE the app's main IIFE, directly BEFORE the opening v22-daily-js marker comment (see patches/dxrx-apply.js).
+   Uses from the app (all optional, guarded): store, srvSyncSoon, SRV, srvIsAdmin, __EHX, __EHXpost,
+   __vxLaunchQ/__vxLaunch, __vxLibQ/__vxLib, deepLink. Everything else is local. Progress: localStorage "nclexsim.v1.dxrx".
+   Content is fictional, no PHI; every teaching point cites an open/society guideline. Carries the AI-generated label. */
+(() => {
+  "use strict";
+  const SV = 1, PKEY = "nclexsim.v1.dxrx";
+  const AILABEL = "AI-generated · fact-checked · not yet reviewed by a registered nurse";
+  const e_ = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const STO = (typeof store !== "undefined" && store) ? store : { get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d } catch (e) { return d } }, set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)) } catch (e) { } } };
+  const syncSoon = () => { try { if (typeof srvSyncSoon === "function") srvSyncSoon() } catch (e) { } };
+  const EH = () => { try { return window.__EHX && window.__EHX.get() } catch (e) { return null } };
+  const clamp = (v, lo, hi) => v < lo ? lo : v > hi ? hi : v;
+  const now = () => Date.now();
+
+  /* ---------- cited guideline bases (open / society guidelines; no copied commercial item text) ---------- */
+  const SRC = {
+    acs: "AHA. 2022 ACLS Provider Manual; ACC/AHA Guideline for the Management of Patients With Acute Coronary Syndromes (2025)",
+    hf: "ACC/AHA/HFSA. 2022 Guideline for the Management of Heart Failure; emergency management of acute pulmonary edema",
+    gold: "GOLD. Global Strategy for COPD (2026 Report)",
+    ssc: "Surviving Sepsis Campaign: International Guidelines (2021); Hour-1 bundle",
+    dka: "ADA. Standards of Care in Diabetes; consensus on management of hyperglycemic crises (DKA/HHS)",
+    stroke: "AHA/ASA. 2026 Guideline for Early Management of Acute Ischemic Stroke",
+    gib: "ACG Clinical Guideline: Upper GI and Ulcer Bleeding; AASLD guidance on variceal hemorrhage",
+    pe: "CHEST / ESC Guidelines on the Diagnosis and Management of Acute Pulmonary Embolism; Wells criteria",
+    shock: "Shock physiology and classification (hypovolemic, distributive, cardiogenic, obstructive); ABC/ABCDE primary survey",
+    scope: "NCSBN. The scope of practice for the RN; nurses recognize, intervene within scope, anticipate orders and escalate",
+    rrs: "Institute for Healthcare Improvement: rapid response activation; NEWS2 (Royal College of Physicians)",
+    oxy: "BTS/ARTP Guideline for oxygen use in adults: titrate to a target saturation, do not give routine high-flow O2 to normoxic patients"
+  };
+  const srcName = k => SRC[k] || k;
+
+  /* =======================================================================================
+     CASE DATA MODEL (data-driven; a new case needs no new engine code)
+     -------------------------------------------------------------------------------------
+     { id, title (revealed in feedback), system, diff(1-5), dx (the answer),
+       stem:{cc, hx, vitals:{...}, exam},
+       gather:[ {t, y:"key"|"good"|"low", reveal, why} ... ],   budget = count of key items
+       recognize:{ q, opts:[...], ans:idx, fb:{idx:why-wrong}, discrim },
+       diagnose:{ q, problem, cues:[...], support:[idx...], why },
+       treat:{ q, opts:[ {t, cat:"now"|"order"|"escalate"|"wrong"|"harm", why} ], escalate },
+       teach:[ {txt, src} ] }
+     Scoring per stage normalized 0..1; see scoreX(). Overall = weighted mean.
+     ======================================================================================= */
+  const CASES = [
+    /* ------------------------------------------------- 1. ACS (cardiac) diff 2 */
+    {
+      id: "acs", system: "Cardiac", diff: 2, title: "58-year-old with crushing chest pressure — acute coronary syndrome (inferior STEMI)",
+      dx: "Acute coronary syndrome (ST-elevation MI)",
+      stem: {
+        cc: "58-year-old man: sudden substernal chest pressure 8/10 that started 40 minutes ago at rest, radiating to the left jaw and arm, with diaphoresis and nausea.",
+        hx: "Hypertension, hyperlipidemia, 30-pack-year smoker. No prior cardiac workup. Took no medications today.",
+        vitals: { HR: "92", BP: "158/94", RR: "20", "SpO2": "96% RA", Temp: "37.0°C", Pain: "8/10" },
+        exam: "Anxious, pale, clammy. Clutching chest. Lungs clear, no JVD or edema. Peripheral pulses equal."
+      },
+      gather: [
+        { t: "Obtain a 12-lead ECG now", y: "key", reveal: "ST-segment elevation in leads II, III and aVF (inferior wall).", why: "The single most time-critical test — it localizes injury to a coronary territory and triggers the STEMI pathway." },
+        { t: "Send a serum troponin (serial)", y: "key", reveal: "High-sensitivity troponin elevated and rising on the repeat.", why: "Confirms myocardial injury; the trend matters more than a single value." },
+        { t: "Focused cardiac history — OPQRST, risk factors, time of onset", y: "key", reveal: "Pressure-like, exertion-independent, radiating, with diaphoresis; multiple cardiac risk factors; onset 40 min ago.", why: "Character + risk factors + an exact onset time drive both the diagnosis and thrombolytic/PCI timing." },
+        { t: "Obtain right-sided leads (V4R)", y: "good", reveal: "V4R with ST elevation — right-ventricular involvement.", why: "Useful in an inferior MI: RV involvement changes how you handle preload and nitrates." },
+        { t: "Auscultate heart and lungs", y: "good", reveal: "No murmur or rub; lungs clear.", why: "Helps exclude a rub (pericarditis) or new murmur/crackles (mechanical complication)." },
+        { t: "Stat non-contrast CT of the head", y: "low", reveal: "No neurologic complaint to justify it.", why: "No focal neuro deficit — this delays reperfusion and adds nothing." },
+        { t: "Blood cultures × 2", y: "low", reveal: "No fever or infectious source.", why: "A sepsis reflex that wastes time in a classic ACS presentation." },
+        { t: "Stat D-dimer", y: "low", reveal: "Non-specific; would be elevated by many things.", why: "Not part of the ACS pathway; a positive result would only muddy the picture." }
+      ],
+      recognize: {
+        q: "Putting the cues together, which process best fits?",
+        opts: ["ST-elevation acute coronary syndrome (inferior wall)", "Gastroesophageal reflux", "Panic attack", "Acute pericarditis"],
+        ans: 0,
+        fb: { 1: "Reflux can mimic cardiac pain, but it does not cause diaphoresis with a rising troponin and localized ST elevation.", 2: "Anxiety is a diagnosis of exclusion here — never anchor on it with diaphoresis, risk factors and ECG changes.", 3: "Pericarditis gives diffuse (not territorial) ST elevation, PR depression and a friction rub, and troponin is usually normal or mildly up." },
+        discrim: "The discriminators: pressure radiating to jaw/arm with diaphoresis and nausea, ST elevation localized to a single coronary territory (II/III/aVF), and a rising troponin — a territorial injury pattern, not diffuse or positional pain."
+      },
+      diagnose: {
+        q: "Commit to the working problem, then select the findings that genuinely support it.",
+        problem: "Acute myocardial ischemia — decreased cardiac tissue perfusion (STEMI)",
+        cues: ["Substernal pressure radiating to jaw/arm", "Diaphoresis and nausea", "ST elevation in II, III, aVF", "Rising troponin", "Multiple cardiac risk factors", "Pain reproduced by pressing on the chest wall", "Pain sharp and worse on deep inspiration", "Unilateral calf swelling"],
+        support: [0, 1, 2, 3, 4],
+        why: "Reproducible chest-wall pain points to a musculoskeletal cause, pleuritic/positional pain to pericarditis or PE, and a swollen calf to venous thromboembolism — none support myocardial ischemia."
+      },
+      treat: {
+        q: "Build your plan: immediate RN-scope actions, the orders you will anticipate/request from the provider, and what to escalate. Select everything that belongs.",
+        opts: [
+          { t: "Place on continuous cardiac monitoring / telemetry and get IV access", cat: "now", why: "Lethal arrhythmia is the early killer in MI; monitoring and access come first." },
+          { t: "Give chewable aspirin 162–325 mg per protocol unless contraindicated", cat: "now", why: "Early antiplatelet therapy reduces mortality; it is a standing-order RN action in most ACS protocols." },
+          { t: "Apply oxygen only if SpO2 < 90%", cat: "now", why: "Routine oxygen is not indicated in a normoxic ACS patient; titrate to need." },
+          { t: "Activate the STEMI pathway and notify the provider/cath lab immediately", cat: "escalate", why: "Time is muscle: inferior STEMI needs emergent reperfusion (PCI)." },
+          { t: "Anticipate an order for nitroglycerin, after checking BP and right-sided leads", cat: "order", why: "Nitrates relieve ischemic pain but can cause severe hypotension in RV infarction — you request it with that caveat." },
+          { t: "Anticipate serial ECGs and high-sensitivity troponins", cat: "order", why: "Dynamic changes drive the reperfusion decision." },
+          { t: "Give a 1-liter normal-saline bolus wide open", cat: "wrong", why: "There is no hypovolemia here; a routine bolus is unnecessary and can precipitate pulmonary edema." },
+          { t: "Administer sublingual nitroglycerin immediately, before checking BP or right-sided leads", cat: "harm", why: "In an inferior MI with possible RV involvement, nitrates can drop a preload-dependent patient into profound hypotension." },
+          { t: "Hold the aspirin until the troponin result returns", cat: "wrong", why: "Waiting for confirmation delays a mortality-reducing therapy; give aspirin on the clinical picture." }
+        ],
+        escalate: "Activate the STEMI/cath-lab pathway now and keep the patient on the monitor; reperfusion time is the outcome driver."
+      },
+      teach: [
+        { txt: "First responder reasoning: territorial ST elevation + a rising troponin + a classic ischemic story = STEMI. The RN recognizes it, starts monitoring/aspirin/IV within protocol, and drives the reperfusion clock by escalating.", src: "acs" },
+        { txt: "Oxygen is a drug: give it to a target (SpO2 ≥ 90%), not reflexively — hyperoxia offers no benefit in a normoxic ACS patient.", src: "oxy" },
+        { txt: "Inferior MI pearl: check right-sided leads and blood pressure before nitrates, because RV infarction is preload-dependent and nitroglycerin can cause abrupt hypotension.", src: "acs" }
+      ]
+    },
+
+    /* ------------------------------------------------- 2. ADHF / pulmonary edema (cardiac/resp) diff 2 */
+    {
+      id: "adhf", system: "Cardiac / Respiratory", diff: 2, title: "74-year-old gasping for air — acute decompensated heart failure (flash pulmonary edema)",
+      dx: "Acute decompensated heart failure with pulmonary edema",
+      stem: {
+        cc: "74-year-old woman woke overnight gasping, cannot lie flat (sleeps on 3 pillows), with paroxysmal nocturnal dyspnea and pink frothy sputum.",
+        hx: "HFrEF (EF 30%), hypertension. Stopped her diuretic last week and ate takeout. Weight up over several days.",
+        vitals: { HR: "112", BP: "182/104", RR: "28 labored", "SpO2": "86% RA", Temp: "36.9°C", Pain: "1/10" },
+        exam: "Sitting bolt upright, anxious, accessory-muscle use, cool diaphoretic skin."
+      },
+      gather: [
+        { t: "Auscultate the lungs", y: "key", reveal: "Bibasilar crackles to the mid-lung fields with scattered wheeze (cardiac asthma).", why: "Bilateral crackles that rise up the chest are the hallmark of alveolar flooding." },
+        { t: "Assess for JVD and peripheral edema", y: "key", reveal: "Jugular venous distension and 2+ pitting edema.", why: "Signs of elevated right-heart filling pressures and volume overload." },
+        { t: "Send a BNP / NT-proBNP", y: "key", reveal: "Markedly elevated.", why: "Helps separate a cardiac cause of dyspnea from a pulmonary one." },
+        { t: "Compare today's weight with the dry weight", y: "good", reveal: "Up ~4 kg.", why: "Daily weight is the most reliable marker of fluid status trend." },
+        { t: "Obtain a 12-lead ECG", y: "good", reveal: "Sinus tachycardia, LV hypertrophy, no acute ST elevation.", why: "Screens for an ischemic trigger and arrhythmia." },
+        { t: "Anticipate a stat chest x-ray", y: "good", reveal: "Pulmonary vascular congestion, cephalization, Kerley B lines.", why: "Confirms pulmonary edema and excludes a large effusion/consolidation." },
+        { t: "Stat D-dimer", y: "low", reveal: "Non-specific and will be elevated.", why: "Not discriminating here; the picture is volume overload, not PE." },
+        { t: "Send a sputum culture", y: "low", reveal: "No fever or purulent sputum.", why: "No evidence of infection — a low-yield shotgun test." }
+      ],
+      recognize: {
+        q: "Which process best explains this picture?",
+        opts: ["COPD exacerbation", "Acute decompensated heart failure (pulmonary edema)", "Community-acquired pneumonia", "Pulmonary embolism"],
+        ans: 1,
+        fb: { 0: "COPD gives prolonged expiration, barrel chest and a CO2-retention pattern — not JVD, a high BNP and bilateral crackles with weight gain.", 2: "Pneumonia is usually febrile with focal/unilateral crackles and an infiltrate, not symmetric congestion with JVD and orthopnea.", 3: "PE classically gives sudden dyspnea with CLEAR lungs and risk factors, not bibasilar crackles, JVD and a high BNP." },
+        discrim: "Orthopnea + PND, bilateral crackles rising up the chest, JVD, several-kilogram weight gain, a hypertensive crisis and a high BNP all point to cardiac fluid overload rather than a primary lung or vascular process."
+      },
+      diagnose: {
+        q: "Commit to the problem and select the supporting findings.",
+        problem: "Impaired gas exchange related to alveolar fluid / fluid-volume overload (ADHF)",
+        cues: ["Orthopnea and PND", "Bibasilar crackles rising up the chest", "Jugular venous distension", "Several-kg weight gain", "Markedly elevated BNP", "Fever with purulent green sputum", "Unilateral tender swollen calf", "Pain reproduced on chest-wall palpation"],
+        support: [0, 1, 2, 3, 4],
+        why: "Fever/purulent sputum suggests pneumonia, a unilateral swollen calf suggests PE, and reproducible chest-wall pain is musculoskeletal — none belong to cardiogenic pulmonary edema."
+      },
+      treat: {
+        q: "Build your plan — immediate actions, anticipated orders, and escalation.",
+        opts: [
+          { t: "Sit the patient fully upright (high-Fowler's), legs dependent", cat: "now", why: "Upright positioning reduces preload and recruits lung and eases the work of breathing immediately." },
+          { t: "Apply oxygen and titrate to SpO2 ≥ 90%", cat: "now", why: "This patient is hypoxemic at 86% — oxygen is indicated and titrated to a target." },
+          { t: "Establish IV access and place on continuous monitoring", cat: "now", why: "Needed for IV diuretics/vasodilators and to watch for arrhythmia." },
+          { t: "Anticipate an IV loop diuretic (e.g., furosemide)", cat: "order", why: "The mainstay of decongestion in acute pulmonary edema." },
+          { t: "Anticipate IV nitroglycerin for afterload/preload reduction in this hypertensive edema", cat: "order", why: "Vasodilation rapidly offloads the failing left ventricle when BP is high." },
+          { t: "Prepare for noninvasive positive-pressure ventilation (CPAP/BiPAP) and notify the provider/rapid response", cat: "escalate", why: "NIPPV improves oxygenation and work of breathing and can avert intubation in flash edema." },
+          { t: "Give a 1-liter normal-saline bolus", cat: "harm", why: "Adding volume to an overloaded patient worsens pulmonary edema — a classic harmful reflex." },
+          { t: "Lay the patient flat to take vital signs", cat: "harm", why: "Supine positioning increases venous return and can drown an edematous patient; keep them upright." },
+          { t: "Encourage extra oral fluids for the low blood pressure", cat: "wrong", why: "The blood pressure is high, not low, and the problem is fluid overload — not a volume deficit." }
+        ],
+        escalate: "Escalate for NIPPV and provider evaluation if hypoxemia or work of breathing does not improve; this patient can tire and need intubation."
+      },
+      teach: [
+        { txt: "Same symptom, opposite treatment: the dyspneic ADHF patient needs offloading (upright, diuresis, vasodilation) — the reflex of a fluid bolus is harmful. Reasoning, not a protocol habit, separates the look-alikes.", src: "hf" },
+        { txt: "Contrast with the ACS case: here the patient is hypoxemic, so oxygen IS indicated and titrated to a target — the rule is the same (titrate to need), the action differs with the number.", src: "oxy" },
+        { txt: "Hypertensive 'flash' pulmonary edema responds dramatically to afterload reduction; anticipate IV nitroglycerin alongside the diuretic and prepare for NIPPV early.", src: "hf" }
+      ]
+    },
+
+    /* ------------------------------------------------- 3. Sepsis / septic shock (infection) diff 3 */
+    {
+      id: "sepsis", system: "Infection", diff: 3, title: "68-year-old becoming confused — sepsis with hypoperfusion (early septic shock)",
+      dx: "Sepsis / early septic shock from a urinary source",
+      stem: {
+        cc: "68-year-old man admitted with pyelonephritis is suddenly more confused than his baseline, warm and flushed.",
+        hx: "Lives alone, recently treated for a UTI. Baseline alert and oriented.",
+        vitals: { HR: "118", BP: "88/48 (MAP 61)", RR: "26", "SpO2": "93% RA", Temp: "38.9°C", Glucose: "142" },
+        exam: "Drowsy, intermittently confused. Warm peripheries early, then knees mottled with delayed capillary refill."
+      },
+      gather: [
+        { t: "Draw a serum lactate", y: "key", reveal: "Lactate 4.2 mmol/L (elevated).", why: "A lactate ≥ 4 signals tissue hypoperfusion and defines septic shock severity — it drives resuscitation." },
+        { t: "Recheck a full set of vitals and calculate the MAP", y: "key", reveal: "Repeat MAP 58 mmHg — persistent hypotension.", why: "MAP < 65 after fluids is the trigger for vasopressors; trending the number is the RN's job." },
+        { t: "Obtain blood cultures × 2 BEFORE antibiotics", y: "key", reveal: "Drawn and pending.", why: "Cultures must be collected before antibiotics — but drawing them must not delay antibiotics beyond the first hour." },
+        { t: "Assess perfusion — capillary refill, skin, mentation", y: "good", reveal: "Delayed capillary refill, mottled knees, new confusion.", why: "End-organ hypoperfusion (brain, skin) is an early, bedside sepsis cue." },
+        { t: "Send a urinalysis and urine culture", y: "good", reveal: "Pyuria with bacteria.", why: "Confirms and sources the infection." },
+        { t: "Send a CBC with differential", y: "good", reveal: "WBC 18 with a left shift (bandemia).", why: "Supports infection but is non-specific." },
+        { t: "Stat non-contrast CT of the head for the confusion", y: "low", reveal: "No focal deficit; confusion fits sepsis.", why: "Anchoring on 'altered mental status = stroke' delays sepsis care; the mentation change here is hypoperfusion." },
+        { t: "Stat D-dimer", y: "low", reveal: "Non-specific.", why: "Adds nothing to the sepsis pathway." }
+      ],
+      recognize: {
+        q: "Which shock picture is emerging?",
+        opts: ["Hypovolemic shock from dehydration", "Sepsis / distributive (septic) shock", "Cardiogenic shock", "A simple urinary tract infection"],
+        ans: 1,
+        fb: { 0: "Pure hypovolemia gives cool, clamped-down skin from losses — not a febrile, initially warm vasodilated patient with an infectious source.", 2: "Cardiogenic shock comes with JVD, crackles and a pump problem — not fever, warm flush and an infection source.", 3: "A simple UTI does not cause hypotension, a lactate of 4, and new organ dysfunction — that is sepsis, not 'just a UTI.'" },
+        discrim: "Infection source + fever + warm/vasodilated early shock + a rising lactate + new organ dysfunction (confusion, hypotension) = distributive septic shock. Cold, clamped skin would point to hypovolemic or cardiogenic shock instead."
+      },
+      diagnose: {
+        q: "Commit to the problem and select the supporting findings.",
+        problem: "Sepsis with hypoperfusion (septic shock) — ineffective tissue perfusion",
+        cues: ["Known infection source (pyelonephritis)", "Fever 38.9°C with tachycardia", "New confusion (organ dysfunction)", "Hypotension / MAP < 65", "Lactate 4.2", "Black, tarry melena stools", "JVD with bibasilar crackles", "Sudden unilateral facial droop"],
+        support: [0, 1, 2, 3, 4],
+        why: "Melena would point to hemorrhagic shock, JVD/crackles to cardiogenic shock, and a facial droop to stroke — the absence of those is what makes this distributive septic shock."
+      },
+      treat: {
+        q: "Apply the sepsis bundle: immediate RN actions, anticipated orders, and escalation.",
+        opts: [
+          { t: "Establish two large-bore IVs and place on continuous monitoring", cat: "now", why: "Access and monitoring enable rapid fluids, antibiotics and vasopressors." },
+          { t: "Draw lactate and blood cultures, then begin a 30 mL/kg isotonic crystalloid bolus", cat: "now", why: "Early balanced-crystalloid resuscitation is the core of the Hour-1 bundle — here fluids ARE indicated." },
+          { t: "Apply oxygen to a target saturation and reassess the MAP frequently", cat: "now", why: "Support oxygenation and track the resuscitation response at the bedside." },
+          { t: "Anticipate broad-spectrum antibiotics within the first hour", cat: "order", why: "Every hour of delay increases mortality; request them without waiting for culture results." },
+          { t: "Anticipate a norepinephrine infusion if the MAP stays < 65 after fluids", cat: "order", why: "Vasopressors are the next step for fluid-refractory distributive shock (target MAP ≥ 65)." },
+          { t: "Call a rapid response / sepsis alert and arrange a higher level of care", cat: "escalate", why: "Early septic shock needs a team and likely ICU-level monitoring and pressors." },
+          { t: "Give an antipyretic and reassess in four hours", cat: "harm", why: "Treating the number while shock evolves wastes the window when sepsis is most reversible." },
+          { t: "Hold antibiotics until the blood cultures result", cat: "harm", why: "Cultures come first but must not delay antibiotics — this inverts the rule and costs lives." },
+          { t: "Withhold fluids because you are worried about 'fluid overload'", cat: "wrong", why: "This patient is hypoperfused and fluid-responsive; withholding resuscitation is the wrong instinct here." }
+        ],
+        escalate: "Call the rapid-response/sepsis team now; anticipate vasopressors and ICU transfer if the MAP does not recover with fluids."
+      },
+      teach: [
+        { txt: "New confusion in an older adult with an infection is organ dysfunction until proven otherwise — recognize sepsis early rather than calling it 'sundowning.'", src: "ssc" },
+        { txt: "Hour-1 bundle the RN drives: measure lactate, draw cultures before antibiotics, give antibiotics, start 30 mL/kg crystalloid, and begin vasopressors for a MAP < 65 that persists after fluids.", src: "ssc" },
+        { txt: "Cultures-before-antibiotics is true, but it never justifies delaying antibiotics past the first hour — do both quickly, in parallel.", src: "ssc" }
+      ]
+    },
+
+    /* ------------------------------------------------- 4. DKA vs HHS (endocrine) diff 3 */
+    {
+      id: "dka", system: "Endocrine", diff: 3, title: "22-year-old with deep rapid breathing — diabetic ketoacidosis",
+      dx: "Diabetic ketoacidosis",
+      stem: {
+        cc: "22-year-old woman with type 1 diabetes: two days of vomiting and a flu, now with deep rapid breathing, abdominal pain, excessive thirst and urination, and a fruity odor on her breath.",
+        hx: "Type 1 diabetes on insulin; missed several doses while unable to eat. No known heart or kidney disease.",
+        vitals: { HR: "124", BP: "104/66", RR: "30 deep (Kussmaul)", "SpO2": "99% RA", Temp: "37.6°C", Glucose: "468" },
+        exam: "Tired but alert, dry mucous membranes, sunken appearance, mild diffuse abdominal tenderness."
+      },
+      gather: [
+        { t: "Obtain a venous (or arterial) blood gas", y: "key", reveal: "pH 7.18, HCO3 10 — a high-anion-gap metabolic acidosis.", why: "Acidosis defines DKA and grades its severity; it also guides how aggressive the resuscitation must be." },
+        { t: "Check serum/urine ketones (beta-hydroxybutyrate)", y: "key", reveal: "Large ketones; beta-hydroxybutyrate markedly elevated.", why: "Ketosis is the 'K' in DKA and separates it from a hyperosmolar (HHS) picture." },
+        { t: "Send a basic metabolic panel including potassium", y: "key", reveal: "K 5.4 (serum high, total body depleted), high anion gap, corrected sodium.", why: "Potassium governs the entire treatment sequence — insulin will drive it into cells and it can fall fast." },
+        { t: "Point-of-care glucose", y: "good", reveal: "468 mg/dL.", why: "Confirms hyperglycemia and sets the hourly monitoring baseline." },
+        { t: "Assess hydration and mentation", y: "good", reveal: "Dry mucous membranes, tachycardic, alert.", why: "DKA patients are profoundly volume-depleted; mentation flags severity." },
+        { t: "Obtain a 12-lead ECG", y: "good", reveal: "Peaked T waves consistent with the potassium.", why: "A quick bedside read on dangerous potassium shifts." },
+        { t: "Stat CT of the head", y: "low", reveal: "No focal neurologic finding.", why: "Not indicated — the breathing pattern is Kussmaul respiration compensating for acidosis, not a neuro event." },
+        { t: "Blood cultures and infection screen", y: "good", reveal: "Looking for the precipitant (the viral illness).", why: "Reasonable: infection is the most common DKA trigger, so a source hunt is appropriate." }
+      ],
+      recognize: {
+        q: "Which hyperglycemic emergency is this?",
+        opts: ["Hyperosmolar hyperglycemic state (HHS)", "Diabetic ketoacidosis (DKA)", "Lactic acidosis from sepsis", "Gastroenteritis with simple dehydration"],
+        ans: 1,
+        fb: { 0: "HHS is a type-2, older-adult picture with glucose usually > 600, minimal ketones, little acidosis and profound hyperosmolar dehydration/altered mentation — not this ketotic, acidotic young patient.", 2: "Sepsis can raise lactate, but it does not explain large ketones, a fruity breath and Kussmaul breathing in a type-1 diabetic who missed insulin.", 3: "Simple gastroenteritis does not produce a high-anion-gap acidosis with ketonemia and Kussmaul respiration." },
+        discrim: "Type-1 diabetes, glucose ~450 (not > 600), large ketones, a high-anion-gap metabolic acidosis, Kussmaul breathing and fruity breath = DKA. HHS would show a much higher glucose, minimal ketones, and a hyperosmolar, more obtunded patient."
+      },
+      diagnose: {
+        q: "Commit to the problem and select the supporting findings.",
+        problem: "Diabetic ketoacidosis — fluid-volume deficit with high-anion-gap metabolic acidosis and electrolyte imbalance",
+        cues: ["Glucose 468 with missed insulin", "pH 7.18 / HCO3 10 (high-gap acidosis)", "Large serum/urine ketones", "Kussmaul respirations and fruity breath", "Dry mucous membranes / dehydration", "Glucose > 900 with no ketones", "Sudden focal arm weakness", "Melena and hematemesis"],
+        support: [0, 1, 2, 3, 4],
+        why: "Glucose > 900 with no ketones is HHS, focal weakness is stroke, and GI bleeding is hemorrhage — none fit DKA, whose signature is ketoacidosis with moderate hyperglycemia."
+      },
+      treat: {
+        q: "Sequence the care: immediate actions, anticipated orders, and escalation. Order matters in DKA.",
+        opts: [
+          { t: "Establish IV access and begin isotonic saline (0.9% NaCl) fluid resuscitation", cat: "now", why: "Fluids come FIRST in DKA — they restore perfusion and begin to correct the glucose and acidosis before insulin." },
+          { t: "Place on a cardiac monitor and check potassium before any insulin", cat: "now", why: "Potassium must be known and ≥ 3.3 before insulin, because insulin drives K into cells and can precipitate lethal hypokalemia." },
+          { t: "Check glucose hourly and watch mentation and airway", cat: "now", why: "Hourly glucose tracks the response and guards against too-rapid correction." },
+          { t: "Anticipate a continuous IV regular-insulin infusion after potassium is verified", cat: "order", why: "An insulin drip closes the anion gap; it follows fluids and a safe potassium." },
+          { t: "Anticipate potassium replacement and serial BMP/VBG per protocol", cat: "order", why: "Total-body potassium is depleted and will drop with insulin; replace and recheck frequently." },
+          { t: "Anticipate adding dextrose to the fluids when glucose approaches ~200 mg/dL", cat: "order", why: "Dextrose lets the insulin keep clearing ketones without causing hypoglycemia." },
+          { t: "Transfer to a higher level of care for the insulin drip and hourly labs, and identify the precipitant", cat: "escalate", why: "DKA on an insulin infusion needs close, often ICU-level, monitoring; find and treat the trigger." },
+          { t: "Give an IV insulin bolus immediately, before checking potassium", cat: "harm", why: "Insulin before a known, safe potassium can cause fatal hypokalemia — the most dangerous DKA error." },
+          { t: "Give IV sodium bicarbonate routinely to correct the pH", cat: "wrong", why: "Routine bicarbonate is not recommended and can worsen hypokalemia and cerebral edema; the acidosis clears with fluids and insulin." }
+        ],
+        escalate: "Escalate for ICU-level insulin-drip management and hourly labs; the sequence (fluids and potassium before insulin) is the safety-critical piece."
+      },
+      teach: [
+        { txt: "DKA sequence the RN protects: fluids first, verify potassium, THEN insulin, add dextrose near 200 — an insulin bolus before a safe potassium is the error that kills.", src: "dka" },
+        { txt: "Serum potassium is misleading in DKA: it can read normal or high while total-body stores are depleted, so anticipate it falling once insulin starts and replace proactively.", src: "dka" },
+        { txt: "Distinguish DKA from HHS at the bedside: ketones and a high-gap acidosis with moderate glucose = DKA; very high glucose, minimal ketones and a hyperosmolar, obtunded older patient = HHS.", src: "dka" }
+      ]
+    },
+
+    /* ------------------------------------------------- 5. Acute ischemic stroke (neuro) diff 3 */
+    {
+      id: "stroke", system: "Neurologic", diff: 3, title: "70-year-old with sudden face/arm weakness — acute ischemic stroke",
+      dx: "Acute ischemic stroke",
+      stem: {
+        cc: "70-year-old woman with sudden right facial droop, right arm drift and slurred speech; last known well was 45 minutes ago.",
+        hx: "Atrial fibrillation, not taking an anticoagulant; hypertension. No recent trauma or surgery.",
+        vitals: { HR: "96 irregular", BP: "196/102", RR: "16", "SpO2": "97% RA", Temp: "36.9°C", Glucose: "118" },
+        exam: "Alert, follows commands. Right facial droop sparing the forehead, right arm pronator drift, dysarthric speech."
+      },
+      gather: [
+        { t: "Check a point-of-care glucose", y: "key", reveal: "118 mg/dL — normal, so hypoglycemia is excluded.", why: "Hypoglycemia is the great stroke mimic; it must be ruled out before anything else." },
+        { t: "Perform a focused neuro exam / NIH Stroke Scale", y: "key", reveal: "NIHSS 8: right hemiparesis and dysarthria.", why: "Quantifies the deficit, trends change, and informs thrombolytic/thrombectomy decisions." },
+        { t: "Establish the exact 'last known well' time", y: "key", reveal: "45 minutes ago — inside the thrombolytic window.", why: "Eligibility for reperfusion is driven entirely by the last-known-well clock." },
+        { t: "Anticipate a stat non-contrast CT of the head", y: "good", reveal: "Ordered to exclude hemorrhage before any thrombolytic.", why: "You must prove it is ischemic, not hemorrhagic, before giving a clot-buster." },
+        { t: "Obtain a 12-lead ECG / place on telemetry", y: "good", reveal: "Atrial fibrillation — a likely cardioembolic source.", why: "Identifies the mechanism and screens for arrhythmia." },
+        { t: "Measure blood pressure in both arms and trend it", y: "good", reveal: "Severely hypertensive.", why: "BP management is tightly tied to thrombolytic eligibility and safety." },
+        { t: "Arrange a carotid ultrasound now", y: "low", reveal: "Not the acute priority.", why: "Carotid imaging is part of the later workup, not the hyperacute pathway — it must not delay CT and reperfusion." },
+        { t: "Prepare for a lumbar puncture", y: "low", reveal: "No indication acutely.", why: "An LP delays time-critical reperfusion and is not part of the acute ischemic pathway here." }
+      ],
+      recognize: {
+        q: "Which process best fits?",
+        opts: ["Hypoglycemia", "Acute ischemic stroke", "Bell's palsy", "Postictal (Todd's) paralysis after a seizure"],
+        ans: 1,
+        fb: { 0: "Hypoglycemia can mimic a stroke, but the glucose is 118 — that mimic is excluded.", 2: "Bell's palsy is a peripheral facial palsy that involves the forehead and spares the arm; this droop spares the forehead and comes with arm weakness and dysarthria (a central pattern).", 3: "There was no witnessed seizure, and the onset was sudden focal weakness, not a post-seizure deficit that resolves over hours." },
+        discrim: "Sudden focal deficit + a normal glucose + forehead-sparing (central) facial weakness + an atrial-fibrillation embolic source, all within the time window — an ischemic stroke pattern, not a peripheral palsy or a metabolic mimic."
+      },
+      diagnose: {
+        q: "Commit to the problem and select the supporting findings.",
+        problem: "Acute ischemic stroke — impaired cerebral tissue perfusion",
+        cues: ["Sudden onset of focal deficit", "Forehead-sparing (central) facial droop", "Dysarthria and arm drift", "Atrial fibrillation (embolic source)", "Normal glucose (mimic excluded)", "Gradual bilateral weakness over days", "Forehead-involving facial weakness", "Point-of-care glucose of 38"],
+        support: [0, 1, 2, 3, 4],
+        why: "Gradual bilateral onset is not an acute stroke, forehead involvement points to a peripheral (Bell's) palsy, and a glucose of 38 would make this hypoglycemia — those three are the mimics you ruled out."
+      },
+      treat: {
+        q: "Build the hyperacute plan: immediate actions, anticipated orders, and escalation.",
+        opts: [
+          { t: "Activate a code stroke / stroke alert and notify the team immediately", cat: "escalate", why: "Time is brain — the stroke team, CT and the reperfusion decision must move in minutes." },
+          { t: "Keep the patient strictly NPO until a swallow screen is done", cat: "now", why: "Dysarthria signals dysphagia risk; anything by mouth risks aspiration." },
+          { t: "Protect the airway, keep on continuous monitoring, and establish IV access (two sites)", cat: "now", why: "Supports safety and readiness for thrombolysis and contrast imaging." },
+          { t: "Anticipate a stat non-contrast CT head and coagulation/type-and-screen labs", cat: "order", why: "Hemorrhage must be excluded and labs readied before a thrombolytic." },
+          { t: "Anticipate IV thrombolytic (alteplase/tenecteplase) if eligible, and thrombectomy evaluation for a large-vessel occlusion", cat: "order", why: "These are the reperfusion therapies the RN prepares the patient and consent process for." },
+          { t: "Anticipate treating blood pressure only if it is above the thrombolytic threshold (> 185/110)", cat: "order", why: "Permissive hypertension preserves the penumbra; BP is lowered just enough to make thrombolysis safe." },
+          { t: "Give aspirin now, before the CT scan", cat: "harm", why: "An antiplatelet before hemorrhage is excluded (and inside the thrombolytic window) can cause catastrophic bleeding." },
+          { t: "Aggressively lower the blood pressure to a normal range", cat: "harm", why: "Dropping the pressure too far reduces perfusion to the ischemic penumbra and extends the infarct." },
+          { t: "Give the patient oral blood-pressure medication and a glass of water", cat: "harm", why: "The patient is NPO for dysphagia — oral intake risks aspiration." }
+        ],
+        escalate: "Code stroke now; the escalation (team + CT + reperfusion decision) is the intervention — every minute of delay costs neurons."
+      },
+      teach: [
+        { txt: "Three bedside moves define hyperacute stroke care: check glucose (exclude the mimic), score the deficit (NIHSS), and nail down last-known-well — then escalate to CT and reperfusion.", src: "stroke" },
+        { txt: "Forehead-sparing separates a central (stroke) facial droop from a peripheral Bell's palsy; a cardioembolic source such as atrial fibrillation supports the ischemic mechanism.", src: "stroke" },
+        { txt: "Permissive hypertension: do not aggressively lower BP in acute ischemic stroke; treat it only to the thrombolytic threshold (> 185/110) so the penumbra stays perfused.", src: "stroke" }
+      ]
+    },
+
+    /* ------------------------------------------------- 6. Upper GI bleed / hemorrhagic shock (GI) diff 2 */
+    {
+      id: "gib", system: "Gastrointestinal", diff: 2, title: "60-year-old vomiting blood — hypovolemic (hemorrhagic) shock from an upper GI bleed",
+      dx: "Upper GI hemorrhage with hypovolemic shock",
+      stem: {
+        cc: "60-year-old man with coffee-ground then bright-red vomiting and black tarry stools, feeling lightheaded and nearly passing out when he stands.",
+        hx: "Daily NSAID use for arthritis and a prior gastric ulcer; also a history of heavy alcohol use.",
+        vitals: { HR: "122", BP: "92/58", RR: "22", "SpO2": "97% RA", Temp: "36.6°C", Pain: "4/10 epigastric" },
+        exam: "Pale, cool, diaphoretic skin with delayed capillary refill; epigastric tenderness; anxious."
+      },
+      gather: [
+        { t: "Obtain orthostatic vitals / trend BP and HR", y: "key", reveal: "Marked orthostatic drop with a rising heart rate — significant volume loss.", why: "Quantifies the degree of hemorrhagic volume loss at the bedside." },
+        { t: "Send serial hemoglobin/hematocrit and a type-and-crossmatch", y: "key", reveal: "Hemoglobin 7.2, down from 12; type-and-cross sent.", why: "Trends the blood loss and readies compatible blood for transfusion." },
+        { t: "Assess skin, color and capillary refill (perfusion)", y: "key", reveal: "Cool, pale, clammy, delayed refill — a 'cold' clamped-down shock.", why: "Peripheral vasoconstriction is the body compensating for blood loss — the discriminator from warm septic shock." },
+        { t: "Confirm melena on rectal exam", y: "good", reveal: "Melena present.", why: "Confirms an upper GI source and ongoing loss." },
+        { t: "Send coagulation studies, INR and platelets", y: "good", reveal: "Mild coagulopathy (NSAID/alcohol history).", why: "Guides reversal and transfusion of products." },
+        { t: "Draw a serum lactate", y: "good", reveal: "Elevated — hypoperfusion.", why: "Marks the severity of shock and the resuscitation response." },
+        { t: "Blood cultures × 2", y: "low", reveal: "No infectious source or fever.", why: "There is no sign of infection — a reflex that delays resuscitation." },
+        { t: "Stat CT of the head", y: "low", reveal: "No neuro indication.", why: "The lightheadedness is from blood loss, not a primary neuro event." }
+      ],
+      recognize: {
+        q: "Which shock state is this?",
+        opts: ["Hypovolemic (hemorrhagic) shock", "Septic (distributive) shock", "Cardiogenic shock", "A benign vasovagal faint"],
+        ans: 0,
+        fb: { 1: "Septic shock is warm and vasodilated with fever and an infectious source — not a cold, clamped-down bleeding patient.", 2: "Cardiogenic shock brings JVD, crackles and a pump problem, not overt GI blood loss with a falling hemoglobin.", 3: "A vasovagal faint is brief and self-resolving — it does not produce hematemesis, melena and a hemoglobin of 7." },
+        discrim: "Overt bleeding (hematemesis + melena) + cold, clamped, poorly perfused skin + a falling hemoglobin and orthostatic hypotension = hemorrhagic (hypovolemic) shock. Warm, flushed skin with fever would make it septic instead."
+      },
+      diagnose: {
+        q: "Commit to the problem and select the supporting findings.",
+        problem: "Hypovolemic (hemorrhagic) shock related to acute GI blood loss — deficient fluid volume",
+        cues: ["Hematemesis and melena", "Tachycardia with hypotension", "Orthostatic vital-sign changes", "Cool, pale, clammy skin", "Hemoglobin dropped from 12 to 7.2", "Fever with warm flushed skin", "JVD with bibasilar crackles", "Sudden slurred speech and facial droop"],
+        support: [0, 1, 2, 3, 4],
+        why: "Fever with warm skin is septic shock, JVD/crackles is cardiogenic shock, and slurred speech with a droop is stroke — none fit a patient who is cold, clamped and bleeding."
+      },
+      treat: {
+        q: "Resuscitate: immediate actions, anticipated orders, and escalation.",
+        opts: [
+          { t: "Place two large-bore IVs and begin isotonic crystalloid resuscitation", cat: "now", why: "Restore circulating volume immediately while blood is readied." },
+          { t: "Apply oxygen, keep NPO, and place on continuous monitoring", cat: "now", why: "Protects oxygen delivery, prepares for endoscopy, and watches for decompensation." },
+          { t: "Position supine with legs elevated and reassess perfusion", cat: "now", why: "Augments venous return in a hypotensive bleeding patient." },
+          { t: "Anticipate type-specific/crossmatched PRBC transfusion (activate massive transfusion if needed)", cat: "order", why: "The definitive resuscitation for hemorrhagic shock is blood, not endless crystalloid." },
+          { t: "Anticipate an IV proton-pump-inhibitor infusion, and octreotide if a variceal source is suspected", cat: "order", why: "PPI stabilizes an ulcer clot; octreotide reduces portal pressure in variceal bleeding." },
+          { t: "Anticipate holding/reversing anticoagulants and an urgent GI consult for endoscopy", cat: "order", why: "Stopping the bleeding at its source is the goal; correct coagulopathy to help." },
+          { t: "Call a rapid response / activate the massive-transfusion protocol and arrange ICU care", cat: "escalate", why: "Ongoing hemorrhage with shock needs a team, blood products and a higher level of care." },
+          { t: "Give the patient's scheduled antihypertensive / beta-blocker", cat: "harm", why: "Lowering BP and blunting the compensatory tachycardia in a bleeding, hypotensive patient is dangerous." },
+          { t: "Offer oral fluids and a light meal to 'keep the strength up'", cat: "harm", why: "The patient must stay NPO for likely emergent endoscopy and airway protection." }
+        ],
+        escalate: "Escalate to the rapid-response/massive-transfusion team and GI/endoscopy; blood and source control are the definitive treatment."
+      },
+      teach: [
+        { txt: "Shock discriminator at the bedside: cold, clamped, poorly perfused skin = hypovolemic/cardiogenic; warm, flushed, vasodilated = early distributive (septic). The skin exam steers the whole plan.", src: "shock" },
+        { txt: "Hemorrhagic shock is treated with blood, not just crystalloid — anticipate type-and-cross, transfusion and source control, and keep the patient NPO for endoscopy.", src: "gib" },
+        { txt: "Do not blunt compensation: giving a scheduled antihypertensive or beta-blocker to a bleeding, tachycardic, hypotensive patient removes the body's only defense — recognize and hold it.", src: "gib" }
+      ]
+    },
+
+    /* ------------------------------------------------- 7. Pulmonary embolism (resp/cardiac) diff 4 ambiguous */
+    {
+      id: "pe", system: "Respiratory / Vascular", diff: 4, title: "54-year-old post-op with sudden dyspnea — acute pulmonary embolism",
+      dx: "Acute pulmonary embolism",
+      stem: {
+        cc: "54-year-old woman, four days after a total knee replacement, develops sudden pleuritic chest pain, acute shortness of breath, and a sense of impending doom.",
+        hx: "Recent major orthopedic surgery and immobility. Obese. On no anticoagulant yet.",
+        vitals: { HR: "124", BP: "104/70", RR: "30", "SpO2": "88% RA", Temp: "37.4°C", Pain: "6/10 pleuritic" },
+        exam: "Anxious, tachypneic. Lungs CLEAR to auscultation. Right calf is swollen, warm and tender compared with the left."
+      },
+      gather: [
+        { t: "Assess oxygenation ± blood gas", y: "key", reveal: "SpO2 88%; ABG shows hypoxemia with a respiratory alkalosis.", why: "Hypoxemia with clear lungs is a key PE fingerprint and drives urgency." },
+        { t: "Examine both legs for DVT", y: "key", reveal: "Right calf swelling, warmth and tenderness — a likely source clot.", why: "A unilateral swollen calf links the lung event to its venous source." },
+        { t: "Apply a pretest-probability tool (Wells) / review risk factors", y: "key", reveal: "Recent surgery + immobility + tachycardia = high pretest probability.", why: "Pretest probability decides whether you go straight to imaging or use a D-dimer." },
+        { t: "Obtain a 12-lead ECG", y: "good", reveal: "Sinus tachycardia, occasional S1Q3T3; no STEMI.", why: "Screens for right-heart strain and excludes a primary ACS." },
+        { t: "Anticipate a CT pulmonary angiogram", y: "good", reveal: "Confirms filling defects — pulmonary emboli.", why: "The confirmatory test in a high-probability patient." },
+        { t: "Auscultate the lungs carefully", y: "good", reveal: "Clear bilaterally — no crackles or consolidation.", why: "Clear lungs with severe hypoxemia argue against pneumonia and CHF." },
+        { t: "Send a stat D-dimer", y: "low", reveal: "Would be elevated and non-specific here.", why: "With a HIGH pretest probability you go straight to imaging — a D-dimer only helps rule out LOW-risk patients and would just delay care." },
+        { t: "Send a sputum culture", y: "low", reveal: "No productive cough or infiltrate.", why: "Chasing pneumonia here is a low-yield distraction." }
+      ],
+      recognize: {
+        q: "Which process best explains sudden dyspnea and hypoxemia with CLEAR lungs in this patient?",
+        opts: ["Acute coronary syndrome", "Pulmonary embolism", "Community-acquired pneumonia", "A panic attack"],
+        ans: 1,
+        fb: { 0: "ACS would usually show ischemic ECG changes and a troponin rise and does not explain a unilateral swollen calf and profound hypoxemia with clear lungs.", 2: "Pneumonia brings fever, productive cough, focal crackles and an infiltrate — not clear lungs with sudden hypoxemia after surgery.", 3: "Never anchor on anxiety: this patient has true hypoxemia (88%), tachycardia and a swollen calf — a panic attack does not drop the oxygen saturation." },
+        discrim: "Sudden pleuritic dyspnea + hypoxemia with CLEAR lungs + tachycardia + recent surgery/immobility + a unilateral swollen calf = pulmonary embolism. Crackles/JVD would suggest CHF, fever/consolidation pneumonia, and ST changes/troponin ACS."
+      },
+      diagnose: {
+        q: "Commit to the problem and select the supporting findings.",
+        problem: "Acute pulmonary embolism — impaired gas exchange with risk for obstructive shock",
+        cues: ["Sudden pleuritic dyspnea", "Hypoxemia with CLEAR lungs", "Tachycardia", "Recent surgery and immobility", "Unilateral swollen, tender calf", "Fever with productive green sputum", "Bibasilar crackles and JVD", "Pain fully reproduced by chest-wall palpation"],
+        support: [0, 1, 2, 3, 4],
+        why: "Fever/purulent sputum is pneumonia, crackles with JVD is CHF, and reproducible chest-wall pain is musculoskeletal — the clear lungs and the calf are what make this a PE."
+      },
+      treat: {
+        q: "Build the plan: immediate actions, anticipated orders, and escalation. Watch for look-alike traps.",
+        opts: [
+          { t: "Apply oxygen and titrate to a target saturation; place on continuous monitoring", cat: "now", why: "Correct the hypoxemia and watch for hemodynamic decline." },
+          { t: "Establish IV access and sit the patient in a position of comfort", cat: "now", why: "Readies the patient for anticoagulation/imaging and eases breathing." },
+          { t: "Reassess hemodynamics for right-heart strain / obstructive shock", cat: "now", why: "A large PE can obstruct the RV and crash the blood pressure — watch closely." },
+          { t: "Anticipate a CT pulmonary angiogram (or V/Q scan)", cat: "order", why: "Confirms the diagnosis so definitive therapy can proceed." },
+          { t: "Anticipate therapeutic anticoagulation (heparin) once bleeding risk is weighed", cat: "order", why: "Anticoagulation is the treatment; the recent surgery means the provider weighs bleeding risk — you request and prepare it." },
+          { t: "Prepare for possible thrombolysis/embolectomy and call rapid response if the patient becomes hypotensive", cat: "escalate", why: "A massive PE with hemodynamic collapse needs emergent clot-directed therapy and ICU care." },
+          { t: "Ambulate the patient in the hallway to 'improve oxygenation'", cat: "harm", why: "Walking a patient with a fresh DVT/PE can dislodge more clot and cause sudden collapse — keep them at rest." },
+          { t: "Withhold oxygen and treat the presentation as anxiety", cat: "harm", why: "Dismissing true hypoxemia as a panic attack is a lethal anchoring error." },
+          { t: "Give a rapid large crystalloid bolus for the borderline blood pressure", cat: "wrong", why: "Aggressive volume can over-distend and worsen a strained right ventricle; give fluids cautiously and reassess." }
+        ],
+        escalate: "Escalate for imaging and anticoagulation now, and call rapid response for any hypotension — a massive PE is an obstructive-shock emergency."
+      },
+      teach: [
+        { txt: "The PE fingerprint is sudden dyspnea and hypoxemia with CLEAR lungs plus a venous-thrombosis risk setting — pattern recognition against CHF, pneumonia and ACS is the whole skill here.", src: "pe" },
+        { txt: "Pretest probability drives the workup: in a HIGH-probability patient go straight to CT angiography; a D-dimer is only useful to rule out LOW-risk patients and otherwise just delays care.", src: "pe" },
+        { txt: "Two classic traps: anchoring on 'anxiety' despite real hypoxemia, and ambulating a patient with a fresh clot — both are dangerous. Keep the patient at rest and treat the hypoxemia.", src: "pe" }
+      ]
+    },
+
+    /* ------------------------------------------------- 8. CAPSTONE: sepsis-precipitated hyperglycemic crisis (multi-problem) diff 5 */
+    {
+      id: "capstone", system: "Multi-system (capstone)", diff: 5, title: "58-year-old lethargic diabetic — septic shock precipitating a hyperglycemic crisis",
+      dx: "Septic shock (pneumonia) with a concurrent hyperglycemic (ketoacidotic) crisis",
+      stem: {
+        cc: "58-year-old man with type 2 diabetes: three days of cough and fever, now lethargic with deep breathing. He looks critically ill.",
+        hx: "Type 2 diabetes, hypertension. Productive cough and fever for three days; reduced oral intake.",
+        vitals: { HR: "128", BP: "86/50 (MAP 62)", RR: "28", "SpO2": "90% RA", Temp: "39.2°C", Glucose: "512" },
+        exam: "Lethargic, confused, mottled skin with delayed capillary refill. Crackles and bronchial breath sounds at the right base."
+      },
+      gather: [
+        { t: "Obtain a VBG with lactate, ketones and the anion gap", y: "key", reveal: "pH 7.20, HCO3 12, lactate elevated AND ketones present — a mixed metabolic acidosis.", why: "Reveals BOTH a lactic (sepsis) and a ketotic (hyperglycemic crisis) process — the clue that there are two problems at once." },
+        { t: "Send a BMP with potassium and a corrected sodium", y: "key", reveal: "K 5.1 (depleted total body), high anion gap, elevated glucose.", why: "Potassium governs the timing of insulin, and the gap confirms the metabolic derangement." },
+        { t: "Draw blood cultures and find the source (chest x-ray, urinalysis)", y: "key", reveal: "Right-lower-lobe infiltrate; leukocytosis — pneumonia as the septic source and the DKA trigger.", why: "Source identification drives antibiotics and reveals the precipitant of the hyperglycemic crisis." },
+        { t: "Measure a full set of vitals, the MAP and perfusion", y: "good", reveal: "MAP 60, mottled skin, delayed refill — shock.", why: "Confirms hypoperfusion and the need for resuscitation." },
+        { t: "Point-of-care glucose", y: "good", reveal: "512 mg/dL.", why: "Baseline for hourly monitoring once treatment begins." },
+        { t: "Assess airway and mentation", y: "good", reveal: "Lethargic, confused — airway at risk if he declines.", why: "A lethargic, acidotic, septic patient can lose airway protection." },
+        { t: "Stat CT of the head for the confusion", y: "low", reveal: "No focal deficit; the confusion fits shock and acidosis.", why: "Anchoring on a neuro cause delays the time-critical sepsis and metabolic care." },
+        { t: "Stat D-dimer", y: "low", reveal: "Non-specific.", why: "Adds nothing and distracts from the two real problems." }
+      ],
+      recognize: {
+        q: "What is actually going on here? (Beware of anchoring on a single diagnosis.)",
+        opts: ["Diabetic ketoacidosis alone", "Pneumonia alone", "Septic shock precipitating a hyperglycemic (ketoacidotic) crisis — two problems at once", "Cardiogenic shock"],
+        ans: 2,
+        fb: { 0: "The ketoacidosis is real, but calling it 'DKA alone' misses the febrile, hypotensive pneumonia that is driving it — you would under-treat the shock.", 1: "It IS pneumonia/sepsis, but stopping there misses the hyperglycemic crisis (glucose 512, ketones, high-gap acidosis) that also needs treating.", 3: "There is no pump failure, JVD or diffuse crackles — the hypotension is distributive (septic), not cardiogenic." },
+        discrim: "Two concurrent processes: fever + an infiltrate + leukocytosis + hypotension + lactate (septic shock) AND glucose 512 + ketones + a high-anion-gap acidosis (hyperglycemic crisis). The expert move is to see both and not anchor on one — the infection precipitated the metabolic crisis."
+      },
+      diagnose: {
+        q: "Commit to the (dual) problem and select the findings that support BOTH processes.",
+        problem: "Septic shock from pneumonia with a concurrent hyperglycemic ketoacidotic crisis",
+        cues: ["Fever with a right-lower-lobe infiltrate", "Hypotension / MAP < 65 with elevated lactate", "Leukocytosis", "Glucose 512 with ketones", "High-anion-gap acidosis (pH 7.20)", "Isolated low glucose of 40", "JVD with diffuse bibasilar crackles", "Sudden unilateral facial droop"],
+        support: [0, 1, 2, 3, 4],
+        why: "A low glucose would be hypoglycemia, JVD with diffuse crackles cardiogenic shock, and a facial droop stroke — none are present; the supporting cues split cleanly into the septic and the hyperglycemic halves of this dual problem."
+      },
+      treat: {
+        q: "Prioritize for a patient with TWO problems: airway/perfusion first, then treat both. Select what belongs.",
+        opts: [
+          { t: "Support airway/oxygenation to target and place on continuous monitoring", cat: "now", why: "ABCs come first in any crashing patient, regardless of the diagnosis list." },
+          { t: "Place two large-bore IVs and begin isotonic crystalloid resuscitation", cat: "now", why: "Fluids treat BOTH the septic hypoperfusion and the DKA dehydration — the shared first step." },
+          { t: "Draw cultures, lactate, VBG and a BMP before giving antibiotics or insulin", cat: "now", why: "Capture the data that guides both problems, then move fast on treatment." },
+          { t: "Anticipate broad-spectrum antibiotics within the first hour", cat: "order", why: "Treats the septic source (pneumonia) that precipitated the crisis." },
+          { t: "Anticipate an insulin infusion only after potassium is verified and shock is being resuscitated", cat: "order", why: "Insulin follows fluids and a safe potassium; in shock, perfusion comes first." },
+          { t: "Anticipate vasopressors (norepinephrine) for a MAP that stays < 65 after fluids, plus potassium replacement and ICU care", cat: "escalate", why: "Fluid-refractory septic shock needs pressors and a higher level of care, with the insulin drip managed in parallel." },
+          { t: "Give an immediate IV insulin bolus before potassium and before resuscitating the shock", cat: "harm", why: "Insulin before a safe potassium and before volume can crash both the pressure and the potassium — the signature dual-problem error." },
+          { t: "Treat only the ketoacidosis and ignore the pneumonia/sepsis", cat: "harm", why: "Anchoring on DKA alone leaves the septic driver untreated and the patient will keep deteriorating." },
+          { t: "Give an antipyretic for the fever and recheck in four hours", cat: "wrong", why: "Treating the number while shock and acidosis evolve wastes the reversible window." }
+        ],
+        escalate: "Escalate to a sepsis alert + rapid response and ICU; anticipate vasopressors and an insulin drip managed together, with fluids and potassium sequenced ahead of insulin."
+      },
+      teach: [
+        { txt: "The expert first-responder skill is refusing to anchor: when the data fit two stories (lactate AND ketones, infection AND hyperglycemia), treat both — infection is the most common trigger of a hyperglycemic crisis.", src: "ssc" },
+        { txt: "Prioritize by physiology, not by diagnosis: airway and perfusion first. Isotonic fluids serve both the septic shock and the DKA, which is why resuscitation precedes the insulin drip.", src: "dka" },
+        { txt: "The shared safety rule still holds under pressure: verify potassium and resuscitate shock before starting insulin — the sickest patients are where that sequence matters most.", src: "dka" }
+      ]
+    }
+  ];
+  const CASE_BY = {}; CASES.forEach(c => CASE_BY[c.id] = c);
+
+  /* ---------- difficulty tiers for the case picker ---------- */
+  const TIERLBL = { 1: "Guided", 2: "Guided", 3: "Core", 4: "Advanced", 5: "Expert" };
+  const TIERNOTE = { 2: "Single problem, clear cues — build the reasoning chain.", 3: "Core clinical problems — distinguish the look-alikes.", 4: "Ambiguous presentation — resist the anchoring traps.", 5: "Multi-problem capstone — reason like a first responder." };
+
+  /* =======================================================================================
+     PROGRESS (localStorage)
+     ======================================================================================= */
+  function prog() {
+    const p = STO.get(PKEY, null) || {};
+    p.v = 1; p.n = p.n || 0; p.cases = p.cases || {}; p.hist = p.hist || [];
+    return p;
+  }
+  function saveProg(p) { STO.set(PKEY, p); syncSoon(); }
+  function caseBest(id) { const p = prog(); const c = p.cases[id]; return c ? c.best : null; }
+  function masteredCount() { const p = prog(); return CASES.filter(c => (p.cases[c.id] || {}).best >= 80).length; }
+  function doneCount() { const p = prog(); return CASES.filter(c => p.cases[c.id]).length; }
+
+  /* =======================================================================================
+     SCORING (each stage 0..1; overall weighted)
+     ======================================================================================= */
+  const YW = { key: 2, good: 1, low: 0 };
+  function budgetOf(c) { return c.gather.filter(g => g.y === "key").length; }
+  function scoreAssess(c, picks) {
+    const b = budgetOf(c);
+    const max = b * YW.key;
+    let got = 0; picks.forEach(i => { got += YW[c.gather[i].y] || 0; });
+    return { s: max ? clamp(got / max, 0, 1) : 1, max, got, budget: b };
+  }
+  function scoreRecognize(c, pick) { return { s: pick === c.recognize.ans ? 1 : 0, correct: pick === c.recognize.ans }; }
+  function scoreDiagnose(c, picks) {
+    const sup = new Set(c.diagnose.support);
+    let tp = 0, fp = 0; picks.forEach(i => { if (sup.has(i)) tp++; else fp++; });
+    const s = clamp((tp - fp) / sup.size, 0, 1);
+    return { s, tp, fp, total: sup.size };
+  }
+  function scoreTreat(c, picks) {
+    const good = c.treat.opts.map((o, i) => ["now", "order", "escalate"].includes(o.cat) ? i : -1).filter(i => i >= 0);
+    const goodSet = new Set(good);
+    let correct = 0, wrong = 0, harm = 0;
+    picks.forEach(i => { const o = c.treat.opts[i]; if (goodSet.has(i)) correct++; else { wrong++; if (o.cat === "harm") harm++; } });
+    let s = clamp((correct - wrong) / good.length, 0, 1);
+    if (harm) s = Math.max(0, s - 0.15 * harm); /* harmful selections carry an extra penalty */
+    return { s, correct, wrong, harm, total: good.length };
+  }
+  const WT = { assess: 1, recognize: 1.4, diagnose: 1.2, treat: 1.6 };
+  function overall(sc) {
+    let w = 0, acc = 0;
+    for (const k of ["assess", "recognize", "diagnose", "treat"]) { if (sc[k] != null) { acc += sc[k] * WT[k]; w += WT[k]; } }
+    return Math.round(w ? acc / w * 100 : 0);
+  }
+  function recordRun(c, sc) {
+    const p = prog(); const tot = overall(sc);
+    const prev = p.cases[c.id] || { best: 0, n: 0 };
+    p.cases[c.id] = { best: Math.max(prev.best || 0, tot), last: tot, n: (prev.n || 0) + 1, stages: { assess: Math.round(sc.assess * 100), recognize: Math.round(sc.recognize * 100), diagnose: Math.round(sc.diagnose * 100), treat: Math.round(sc.treat * 100) }, t: now() };
+    p.n++; p.hist.push({ t: now(), id: c.id, sc: tot }); p.hist = p.hist.slice(-80);
+    saveProg(p);
+    return { tot, best: p.cases[c.id].best };
+  }
+
+  /* =======================================================================================
+     UI — full-screen overlay (#vxdx). Stages: pick -> assess -> recognize -> diagnose -> treat -> feedback
+     ======================================================================================= */
+  const ICO = {
+    brain: '<path d="M8 4a3 3 0 0 0-3 3 3 3 0 0 0-1 5 3 3 0 0 0 1 5 3 3 0 0 0 3 3 2.5 2.5 0 0 0 4-2V5a2.5 2.5 0 0 0-4-1z"/><path d="M16 4a3 3 0 0 1 3 3 3 3 0 0 1 1 5 3 3 0 0 1-1 5 3 3 0 0 1-3 3"/>',
+    assess: '<circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/>', recognize: '<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/>',
+    dx: '<path d="M4 4h16v16H4z"/><path d="M8 12l3 3 5-6"/>', rx: '<path d="M6 3h7l5 5v13H6z"/><path d="M9 11h6M9 15h4"/>', fb: '<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3 9.5l6.1-.9z"/>',
+    chev: '<path d="M9 6l6 6-6 6"/>', esc: '<path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17h.01"/>'
+  };
+  const sv = (k, s) => '<svg viewBox="0 0 24 24" width="' + (s || 18) + '" height="' + (s || 18) + '" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + (ICO[k] || "") + '</svg>';
+  const diffPill = d => '<span class="vxdx-pill d' + d + '">' + e_(TIERLBL[d]) + '</span>';
+
+  const STAGES = [["assess", "Assess"], ["recognize", "Recognize"], ["diagnose", "Diagnose"], ["treat", "Treat"], ["feedback", "Debrief"]];
+  let RUN = null;
+
+  function host() { let h = document.getElementById("vxdx"); if (!h) { h = document.createElement("div"); h.id = "vxdx"; h.setAttribute("role", "dialog"); h.setAttribute("aria-label", "Clinical Reasoning Lab"); document.body.appendChild(h); } return h; }
+  function closeOverlay() { const h = document.getElementById("vxdx"); if (h) h.remove(); RUN = null; if ((location.hash || "").indexOf("#dxrx") === 0) { try { history.replaceState(null, "", location.pathname + location.search) } catch (e) { } } }
+  function topbar(sub) { return '<div class="vxdx-top"><div class="vxdx-ttl">' + sv("brain", 20) + "Clinical Reasoning Lab" + (sub ? '<span class="vxdx-sub">' + e_(sub) + "</span>" : "") + '</div><button class="vxdx-x" data-dx="close">Exit</button></div>'; }
+  function frame(inner, sub) { const h = host(); h.innerHTML = topbar(sub) + '<div class="vxdx-scroll"><div class="vxdx-wrap">' + inner + "</div></div>"; h.querySelector(".vxdx-scroll").scrollTop = 0; }
+  function stepbar(cur) { const oi = STAGES.findIndex(s => s[0] === cur); return '<div class="vxdx-steps">' + STAGES.map((s, i) => '<span class="' + (s[0] === cur ? "on" : i < oi ? "done" : "") + '">' + e_(s[1]) + "</span>").join("") + "</div>"; }
+  function vitalsHTML(v) { return '<div class="vxdx-vit">' + Object.keys(v).map(k => '<span><b>' + e_(k) + '</b> ' + e_(v[k]) + "</span>").join("") + "</div>"; }
+
+  /* ---------- case picker (home) ---------- */
+  function paintPick() {
+    RUN = null;
+    const p = prog();
+    const tiers = [[2, "Guided"], [3, "Core"], [4, "Advanced"], [5, "Expert"]];
+    let body = "";
+    tiers.forEach(([d, lbl]) => {
+      const cs = CASES.filter(c => c.diff === d); if (!cs.length) return;
+      body += '<h3 class="vxdx-tierh">' + e_(lbl) + ' <span class="vxdx-fine">' + e_(TIERNOTE[d] || "") + "</span></h3><div class=\"vxdx-grid\">";
+      cs.forEach(c => {
+        const b = (p.cases[c.id] || {}).best;
+        const badge = b != null ? '<span class="vxdx-pill ' + (b >= 80 ? "ok" : "mid") + '">Best ' + b + "%" + (b >= 80 ? " ✓" : "") + "</span>" : "";
+        body += '<button class="vxdx-casecard" data-dx="start" data-id="' + c.id + '"><div class="vxdx-ccsys">' + e_(c.system) + " " + diffPill(c.diff) + '</div><div class="vxdx-cccc">' + e_(c.stem.cc) + '</div><div class="vxdx-ccft">' + badge + '<span class="vxdx-go">Start case ' + sv("chev", 15) + "</span></div></button>";
+      });
+      body += "</div>";
+    });
+    const dc = doneCount(), mc = masteredCount();
+    frame('<div class="vxdx-ai">' + e_(AILABEL) + "</div>"
+      + '<div class="vxdx-card vxdx-intro"><h3>Prescription by proxy — nurse-led diagnostic reasoning</h3>'
+      + '<p class="vxdx-muted">You are often first on the scene. Each case trains the chain a first-responder nurse runs in real time: <b>assess</b> the patient and gather the high-yield data, <b>recognize</b> the pattern against its look-alikes, <b>commit</b> to a working problem, and <b>select the interventions and anticipated orders</b> — what to do now, what to request from the provider, and what to escalate — all within RN scope.</p>'
+      + '<div class="vxdx-statrow"><div class="vxdx-stat"><b>' + dc + " / " + CASES.length + '</b><small>cases attempted</small></div><div class="vxdx-stat"><b>' + mc + " / " + CASES.length + '</b><small>mastered (≥ 80%)</small></div></div>'
+      + '<p class="vxdx-fine">RN scope: nurses recognize, intervene within scope, anticipate and request orders, and escalate — this is clinical reasoning and anticipation, not independent prescribing.</p></div>'
+      + body, "Pick a case");
+  }
+
+  function startCase(id) {
+    const c = CASE_BY[id]; if (!c) return;
+    RUN = { c, stage: "assess", picks: { assess: [], diagnose: [], treat: [] }, rec: null, sc: {}, locked: {} };
+    try { history.replaceState(null, "", "#dxrx/" + id) } catch (e) { }
+    paint();
+  }
+  function paint() {
+    if (!RUN) { paintPick(); return; }
+    const s = RUN.stage;
+    if (s === "assess") paintAssess();
+    else if (s === "recognize") paintRecognize();
+    else if (s === "diagnose") paintDiagnose();
+    else if (s === "treat") paintTreat();
+    else if (s === "feedback") paintFeedback();
+  }
+
+  function stemCard(c) {
+    return '<div class="vxdx-card vxdx-stem"><div class="vxdx-ccsys">' + e_(c.system) + " " + diffPill(c.diff) + '</div>'
+      + '<p class="vxdx-cc">' + e_(c.stem.cc) + "</p>"
+      + '<p class="vxdx-muted"><b>History:</b> ' + e_(c.stem.hx) + "</p>"
+      + vitalsHTML(c.stem.vitals)
+      + '<p class="vxdx-muted"><b>On first look:</b> ' + e_(c.stem.exam) + "</p></div>";
+  }
+
+  /* ---------- STAGE 1: ASSESS ---------- */
+  function paintAssess() {
+    const c = RUN.c, b = budgetOf(c), locked = RUN.locked.assess;
+    const sel = RUN.picks.assess;
+    const opts = c.gather.map((g, i) => {
+      const on = sel.includes(i);
+      let cls = "vxdx-opt"; let tail = "";
+      if (locked) {
+        cls += on ? (g.y === "low" ? " pick-bad" : " pick-ok") : (g.y === "key" ? " miss" : "");
+        tail = '<div class="vxdx-reveal"><b>' + (g.y === "key" ? "High-yield" : g.y === "good" ? "Reasonable" : "Low-yield") + ":</b> " + e_(g.reveal) + ' <span class="vxdx-why">' + e_(g.why) + "</span></div>";
+      }
+      return '<button class="' + cls + '" data-dx="aopt" data-i="' + i + '"' + (locked ? " disabled" : "") + '><span class="vxdx-ck">' + (on ? "✓" : "") + "</span><span class=\"vxdx-ot\">" + e_(g.t) + "</span>" + (locked && g.y === "key" ? '<span class="vxdx-tag key">key</span>' : "") + tail + "</button>";
+    }).join("");
+    const chosen = sel.length;
+    let foot;
+    if (!locked) foot = '<div class="vxdx-actbar"><span class="vxdx-fine">' + chosen + " of " + b + ' selected</span><button class="vxdx-btn" data-dx="asubmit"' + (chosen === b ? "" : " disabled") + '>Gather this data</button></div>';
+    else { const r = RUN.sc.assessD; foot = '<div class="vxdx-fbbox ' + (r.s >= .75 ? "ok" : r.s >= .4 ? "mid" : "bad") + '"><b>' + Math.round(r.s * 100) + '% — data gathering.</b> You have a limited window; the best responders pull the few discriminating tests, not everything. ' + (r.got < r.max ? "Some high-yield data was missed or a low-yield test was chosen." : "You selected the highest-yield data available.") + '</div><div class="vxdx-actbar"><button class="vxdx-btn" data-dx="next">Continue to recognition ' + sv("chev", 15) + "</button></div>"; }
+    frame(stepbar("assess") + stemCard(c)
+      + '<div class="vxdx-card"><h3>' + sv("assess", 17) + ' Assess — what will you gather?</h3><p class="vxdx-muted">Choose the <b>' + b + ' highest-yield</b> actions. Rewarding focus: gathering low-yield data (shotgunning) will not score, and it costs time a deteriorating patient may not have.</p><div class="vxdx-opts">' + opts + "</div></div>" + foot, "Assess");
+  }
+
+  /* ---------- STAGE 2: RECOGNIZE ---------- */
+  function paintRecognize() {
+    const c = RUN.c, R = c.recognize, locked = RUN.locked.recognize, pick = RUN.rec;
+    const opts = R.opts.map((o, i) => {
+      let cls = "vxdx-opt"; let tail = "";
+      if (locked) {
+        if (i === R.ans) cls += " pick-ok"; else if (i === pick) cls += " pick-bad";
+        if (i !== R.ans && R.fb[i]) tail = '<div class="vxdx-reveal"><span class="vxdx-why">' + e_(R.fb[i]) + "</span></div>";
+      } else if (i === pick) cls += " sel";
+      return '<button class="' + cls + '" data-dx="ropt" data-i="' + i + '"' + (locked ? " disabled" : "") + '><span class="vxdx-ck">' + (locked ? (i === R.ans ? "✓" : i === pick ? "✗" : "") : (i === pick ? "●" : "")) + "</span><span class=\"vxdx-ot\">" + e_(o) + "</span>" + tail + "</button>";
+    }).join("");
+    let foot;
+    if (!locked) foot = '<div class="vxdx-actbar"><button class="vxdx-btn" data-dx="rsubmit"' + (pick == null ? " disabled" : "") + '>Commit to this pattern</button></div>';
+    else foot = '<div class="vxdx-fbbox ' + (RUN.sc.recognize ? "ok" : "bad") + '"><b>' + (RUN.sc.recognize ? "Correct." : "Not quite.") + '</b> ' + e_(R.discrim) + '</div><div class="vxdx-actbar"><button class="vxdx-btn" data-dx="next">Continue to diagnosis ' + sv("chev", 15) + "</button></div>";
+    frame(stepbar("recognize") + stemCard(c)
+      + assembledCard()
+      + '<div class="vxdx-card"><h3>' + sv("recognize", 17) + " Recognize — the pattern</h3><p class=\"vxdx-muted\">" + e_(R.q) + "</p><div class=\"vxdx-opts\">" + opts + "</div></div>" + foot, "Recognize");
+  }
+  /* small recap of what the assessment revealed, carried into later stages */
+  function assembledCard() {
+    const c = RUN.c; const picked = RUN.picks.assess.map(i => c.gather[i]).filter(g => g.y !== "low");
+    if (!picked.length) return "";
+    return '<div class="vxdx-card vxdx-assembled"><h4>What your assessment found</h4><ul>' + picked.map(g => "<li>" + e_(g.reveal) + "</li>").join("") + "</ul></div>";
+  }
+
+  /* ---------- STAGE 3: DIAGNOSE ---------- */
+  function paintDiagnose() {
+    const c = RUN.c, D = c.diagnose, locked = RUN.locked.diagnose, sel = RUN.picks.diagnose;
+    const sup = new Set(D.support);
+    const opts = D.cues.map((cue, i) => {
+      const on = sel.includes(i); let cls = "vxdx-opt"; let tail = "";
+      if (locked) {
+        if (sup.has(i)) cls += on ? " pick-ok" : " miss"; else if (on) cls += " pick-bad";
+        if (locked && !sup.has(i)) tail = '<span class="vxdx-tag bad">look-alike</span>';
+        else if (locked && sup.has(i)) tail = '<span class="vxdx-tag key">supports</span>';
+      } else if (on) cls += " sel";
+      return '<button class="' + cls + '" data-dx="dopt" data-i="' + i + '"' + (locked ? " disabled" : "") + '><span class="vxdx-ck">' + (on ? "✓" : "") + "</span><span class=\"vxdx-ot\">" + e_(cue) + "</span>" + tail + "</button>";
+    }).join("");
+    let foot;
+    if (!locked) foot = '<div class="vxdx-actbar"><span class="vxdx-fine">' + sel.length + ' selected</span><button class="vxdx-btn" data-dx="dsubmit"' + (sel.length ? "" : " disabled") + '>Commit the diagnosis</button></div>';
+    else { const r = RUN.sc.diagnoseD; foot = '<div class="vxdx-fbbox ' + (r.s >= .75 ? "ok" : r.s >= .4 ? "mid" : "bad") + '"><b>' + Math.round(r.s * 100) + '% — supporting rationale.</b> ' + e_(D.why) + '</div><div class="vxdx-actbar"><button class="vxdx-btn" data-dx="next">Continue to treatment ' + sv("chev", 15) + "</button></div>"; }
+    frame(stepbar("diagnose") + assembledCard()
+      + '<div class="vxdx-card vxdx-dxcommit"><h3>' + sv("dx", 17) + ' Diagnose — commit to the working problem</h3><div class="vxdx-problem">' + e_(D.problem) + '</div><p class="vxdx-muted">' + e_(D.q) + '</p><div class="vxdx-opts">' + opts + "</div></div>" + foot, "Diagnose");
+  }
+
+  /* ---------- STAGE 4: TREAT ---------- */
+  function paintTreat() {
+    const c = RUN.c, T = c.treat, locked = RUN.locked.treat, sel = RUN.picks.treat;
+    const catLbl = { now: ["Do now", "now"], order: ["Anticipated order", "order"], escalate: ["Escalate", "esc"], wrong: ["", ""], harm: ["", ""] };
+    const opts = T.opts.map((o, i) => {
+      const on = sel.includes(i); const goodCat = ["now", "order", "escalate"].includes(o.cat);
+      let cls = "vxdx-opt"; let tail = "";
+      if (locked) {
+        if (goodCat) cls += on ? " pick-ok" : " miss"; else if (on) cls += (o.cat === "harm" ? " pick-harm" : " pick-bad");
+        const cl = catLbl[o.cat];
+        tail = '<div class="vxdx-reveal">' + (goodCat ? '<span class="vxdx-tag ' + cl[1] + '">' + cl[0] + "</span> " : (o.cat === "harm" ? '<span class="vxdx-tag harm">harmful</span> ' : '<span class="vxdx-tag bad">avoid</span> ')) + '<span class="vxdx-why">' + e_(o.why) + "</span></div>";
+      } else if (on) cls += " sel";
+      return '<button class="' + cls + '" data-dx="topt" data-i="' + i + '"' + (locked ? " disabled" : "") + '><span class="vxdx-ck">' + (on ? "✓" : "") + "</span><span class=\"vxdx-ot\">" + e_(o.t) + "</span>" + tail + "</button>";
+    }).join("");
+    let foot;
+    if (!locked) foot = '<div class="vxdx-actbar"><span class="vxdx-fine">' + sel.length + ' selected</span><button class="vxdx-btn" data-dx="tsubmit"' + (sel.length ? "" : " disabled") + '>Set the plan</button></div>';
+    else { const r = RUN.sc.treatD; foot = '<div class="vxdx-fbbox ' + (r.s >= .75 ? "ok" : r.s >= .4 ? "mid" : "bad") + '"><b>' + Math.round(r.s * 100) + '% — plan.</b> ' + (r.harm ? "You selected a harmful action — review it carefully below. " : "") + '<br><b>Escalation:</b> ' + e_(T.escalate) + '</div><div class="vxdx-actbar"><button class="vxdx-btn" data-dx="finish">See the debrief ' + sv("chev", 15) + "</button></div>"; }
+    frame(stepbar("treat") + '<div class="vxdx-card vxdx-dxcommit"><div class="vxdx-problem">' + e_(c.diagnose.problem) + "</div></div>"
+      + '<div class="vxdx-card"><h3>' + sv("rx", 17) + ' Treat — interventions &amp; anticipated orders</h3><p class="vxdx-muted">' + e_(T.q) + ' <span class="vxdx-fine">Within RN scope: you act, you request/anticipate orders from the provider, and you escalate.</span></p><div class="vxdx-opts">' + opts + "</div></div>" + foot, "Treat");
+  }
+
+  /* ---------- STAGE 5: FEEDBACK / DEBRIEF ---------- */
+  function paintFeedback() {
+    const c = RUN.c, sc = RUN.sc, res = RUN.result;
+    const row = (lbl, v) => '<div class="vxdx-scrow"><span>' + e_(lbl) + '</span><div class="vxdx-bar"><i style="width:' + Math.round(v * 100) + '%"></i></div><b>' + Math.round(v * 100) + "%</b></div>";
+    const teach = c.teach.map(t => '<li>' + e_(t.txt) + '<div class="vxdx-cite">' + e_(srcName(t.src)) + "</div></li>").join("");
+    frame('<div class="vxdx-card vxdx-debrief"><div class="vxdx-scorebig">' + res.tot + '%</div><div><h3 style="margin:0">' + e_(c.title) + '</h3><p class="vxdx-muted" style="margin:3px 0 0">Working problem: <b>' + e_(c.dx) + '</b></p><p class="vxdx-fine" style="margin:4px 0 0">Best for this case: ' + res.best + "%" + (res.best >= 80 ? " · mastered ✓" : "") + "</p></div></div>"
+      + '<div class="vxdx-card"><h4>How you reasoned, stage by stage</h4>' + row("Assess (data gathering)", sc.assess) + row("Recognize (pattern)", sc.recognize) + row("Diagnose (rationale)", sc.diagnose) + row("Treat (plan & orders)", sc.treat) + "</div>"
+      + '<div class="vxdx-card"><h4>' + sv("fb", 16) + ' Teaching points &amp; guideline basis</h4><ul class="vxdx-teach">' + teach + "</ul></div>"
+      + '<div class="vxdx-card"><h4>The discriminating findings</h4><p class="vxdx-muted">' + e_(c.recognize.discrim) + '</p></div>'
+      + '<div class="vxdx-actbar wrap"><button class="vxdx-btn" data-dx="retry">Retry this case</button>' + nextCaseBtn(c) + '<button class="vxdx-btn sec" data-dx="pick">Back to cases</button></div>', "Debrief");
+  }
+  function nextCaseBtn(c) {
+    const idx = CASES.findIndex(x => x.id === c.id); const nx = CASES[idx + 1];
+    return nx ? '<button class="vxdx-btn" data-dx="start" data-id="' + nx.id + '">Next case ' + sv("chev", 15) + "</button>" : "";
+  }
+
+  /* ---------- advance helpers ---------- */
+  function finishStageScores() {
+    const c = RUN.c;
+    RUN.sc.assess = RUN.sc.assessD.s; RUN.sc.recognize = RUN.sc.recognizeV; RUN.sc.diagnose = RUN.sc.diagnoseD.s; RUN.sc.treat = RUN.sc.treatD.s;
+    RUN.result = recordRun(c, RUN.sc);
+  }
+
+  /* ---------- events ---------- */
+  document.addEventListener("click", e => {
+    const h = document.getElementById("vxdx"); if (!h) return;
+    const b = e.target.closest("[data-dx]"); if (!b || !h.contains(b)) return;
+    const a = b.dataset.dx;
+    if (a === "close") { e.preventDefault(); closeOverlay(); return; }
+    if (a === "pick") { e.preventDefault(); paintPick(); return; }
+    if (a === "start") { e.preventDefault(); startCase(b.dataset.id); return; }
+    if (!RUN) return;
+    const c = RUN.c;
+    if (a === "aopt") { const i = +b.dataset.i, s = RUN.picks.assess, k = s.indexOf(i); if (k >= 0) s.splice(k, 1); else { if (s.length >= budgetOf(c)) return; s.push(i); } paintAssess(); return; }
+    if (a === "asubmit") { RUN.sc.assessD = scoreAssess(c, RUN.picks.assess); RUN.locked.assess = true; paintAssess(); return; }
+    if (a === "ropt") { RUN.rec = +b.dataset.i; paintRecognize(); return; }
+    if (a === "rsubmit") { const r = scoreRecognize(c, RUN.rec); RUN.sc.recognizeV = r.s; RUN.locked.recognize = true; paintRecognize(); return; }
+    if (a === "dopt") { const i = +b.dataset.i, s = RUN.picks.diagnose, k = s.indexOf(i); if (k >= 0) s.splice(k, 1); else s.push(i); paintDiagnose(); return; }
+    if (a === "dsubmit") { RUN.sc.diagnoseD = scoreDiagnose(c, RUN.picks.diagnose); RUN.locked.diagnose = true; paintDiagnose(); return; }
+    if (a === "topt") { const i = +b.dataset.i, s = RUN.picks.treat, k = s.indexOf(i); if (k >= 0) s.splice(k, 1); else s.push(i); paintTreat(); return; }
+    if (a === "tsubmit") { RUN.sc.treatD = scoreTreat(c, RUN.picks.treat); RUN.locked.treat = true; paintTreat(); return; }
+    if (a === "next") { RUN.stage = RUN.stage === "assess" ? "recognize" : RUN.stage === "recognize" ? "diagnose" : "treat"; paint(); return; }
+    if (a === "finish") { finishStageScores(); RUN.stage = "feedback"; paint(); return; }
+    if (a === "retry") { startCase(c.id); return; }
+  });
+
+  /* =======================================================================================
+     REGISTRATION — launcher, library, EHR card, My Chart row, deep link, public API
+     ======================================================================================= */
+  const LICON = '<path d="M9 3h6l1 4a7 7 0 1 1-8 0z"/><path d="M12 12v3M10.5 13.5h3"/>';
+  function launchEntry() {
+    return { id: "dxrx", label: "Clinical Reasoning Lab", hint: "Assess → recognize → diagnose → treat: nurse-led diagnostic reasoning", icon: LICON, group: "modules", run: () => open(), roles: ["in"], keys: "clinical reasoning diagnosis diagnostic prescription by proxy differential assessment recognize treatment anticipated orders first responder deterioration sepsis dka stroke chf copd pe gi bleed acs", order: 7, more: true };
+  }
+  (window.__vxLaunchQ = window.__vxLaunchQ || []).push(launchEntry());
+  try { if (window.__vxLaunch && window.__vxLaunch.add) window.__vxLaunch.add(launchEntry()); } catch (e) { }
+
+  function libEntry() { const mc = masteredCount(); return { id: "module:dxrx", type: "module", title: "Clinical Reasoning Lab — diagnostic reasoning", desc: "Unfolding cases that train the first-responder RN chain: assess and gather high-yield data, recognize the pattern against its look-alikes, commit to a working problem, and select interventions and anticipated orders within scope. Distinguishes CHF vs COPD vs PE, sepsis vs hypovolemia, DKA vs HHS, stroke mimics and more.", topic: "RRP", meta: mc + " of " + CASES.length + " cases mastered", label: AILABEL, ai: 1, primary: "Open module", open: () => open(), keys: "clinical reasoning diagnosis differential prescription by proxy anticipated orders sepsis dka stroke heart failure pe gi bleed acs first responder" }; }
+  (window.__vxLibQ = window.__vxLibQ || []).push(libEntry());
+  try { if (window.__vxLib && window.__vxLib.add) window.__vxLib.add(libEntry()); } catch (e) { }
+
+  /* EHR summary card (injected on EHR repaint, like v32/v43) */
+  function ehrCard() {
+    try {
+      const E = EH(); if (!E) return; const host2 = document.querySelector("#ehm .simc") || document.querySelector("#ehm .ehsim") || document.querySelector("#ehm"); if (!host2) return;
+      if (document.getElementById("vxdx-ehrcard")) return;
+      const mc = masteredCount();
+      const div = document.createElement("div"); div.id = "vxdx-ehrcard"; div.className = "vxdx-simc";
+      div.innerHTML = '<h3>' + sv("brain", 16) + ' Clinical Reasoning Lab</h3><p class="vxdx-fine">Think like a first responder: assess, recognize the pattern, commit to the problem, and choose the interventions and anticipated orders — what to do now, request, and escalate. ' + mc + ' of ' + CASES.length + ' cases mastered.</p><button class="vxdx-btn mini" data-dxc="open">Open the lab</button>';
+      const anchor = document.querySelector("#ehm .simc"); if (anchor && anchor.parentNode) anchor.parentNode.insertBefore(div, anchor.nextSibling); else host2.appendChild(div);
+    } catch (e) { }
+  }
+  document.addEventListener("click", e => { const b = e.target.closest('[data-dxc="open"]'); if (b) { e.preventDefault(); open(); } });
+  try { const POST = window.__EHXpost = window.__EHXpost || []; POST.push(() => { try { ehrCard() } catch (e) { } }); } catch (e) { }
+
+  /* My Chart simulations row */
+  function myChartRow() {
+    const rows = document.querySelector("#c2 .v25-rows"); if (!rows || rows.querySelector('[data-v25k="dxrx"]')) return;
+    const mc = masteredCount();
+    const ICOSVG = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + ICO.brain + "</svg>";
+    const at = rows.querySelector('[data-v25k="shift"]') || rows.querySelector('[data-v25k="deter"]') || rows.querySelector('[data-v25k="side"]');
+    const h = '<div class="v25-acc" data-v25k="dxrx"><button type="button" class="v25-row" data-dxr="open"><span class="v25-ri">' + ICOSVG + '</span><span class="v25-rt"><b>Clinical Reasoning Lab</b><small>Diagnostic reasoning · ' + mc + ' of ' + CASES.length + ' cases mastered · assess → recognize → diagnose → treat</small></span><span class="v25-cv"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></span></button></div>';
+    if (at) at.insertAdjacentHTML("beforebegin", h); else rows.insertAdjacentHTML("beforeend", h);
+  }
+  document.addEventListener("click", e => { const b = e.target.closest('[data-dxr="open"]'); if (b) { e.preventDefault(); open(); } });
+  try { let busy = false, pend = 0; const mo = new MutationObserver(() => { if (busy || pend) return; pend = requestAnimationFrame(() => { pend = 0; busy = true; try { myChartRow() } catch (e) { } mo.takeRecords(); busy = false }) }); if (document.body) mo.observe(document.body, { childList: true, subtree: true }); } catch (e) { }
+
+  /* open entry point */
+  function open(opt) { opt = opt || {}; if (opt.id && CASE_BY[opt.id]) startCase(opt.id); else paintPick(); }
+
+  /* deep link: #dxrx, #dxrx/<caseId> */
+  const parseD = h => { const m = /^#dxrx(?:\/([a-z]+))?$/.exec(h || ""); return m ? { id: m[1] || "" } : null; };
+  function dxGo() { const r = parseD(location.hash); if (!r) return; open(r.id ? { id: r.id } : {}); }
+  window.addEventListener("hashchange", dxGo);
+  try { if (typeof deepLink === "function") { const _dl = deepLink; deepLink = function (k) { if (parseD("#" + (k || ""))) { setTimeout(dxGo, 0); return true } return _dl.apply(this, arguments) } } } catch (e) { }
+  setTimeout(() => { if (parseD(location.hash)) dxGo() }, 800);
+
+  /* public / test API */
+  window.__vxDxrx = {
+    version: SV, open, close: closeOverlay, cases: () => CASES.map(c => ({ id: c.id, system: c.system, diff: c.diff, dx: c.dx })),
+    progress: () => { const p = prog(); return { attempted: doneCount(), mastered: masteredCount(), total: CASES.length, cases: Object.assign({}, p.cases) }; }
+  };
+  if (window.__vxDxrxT && window.__vxDxrxT.test) Object.assign(window.__vxDxrx, { CASES, scoreAssess, scoreRecognize, scoreDiagnose, scoreTreat, overall, budgetOf, startCase, run: () => RUN, paint });
+})();
+/* </v52-dxrx-js> */
 /* <v22-daily-js> */
 /* <v22-daily-js> Daily AI questions + owner spot-check queue.
    Insert INSIDE the app's main IIFE in app.html (BANK/BY/itemHTML/qflagL are IIFE-scoped, not globals): directly after
