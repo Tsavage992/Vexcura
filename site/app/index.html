@@ -5282,6 +5282,19 @@ html[data-theme="dark"] .wsx-who{color:#a9bcc6}
 @media (max-width:860px){.mkmap-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:540px){.mkmap-grid{grid-template-columns:1fr}.mkmap-core{padding:22px 20px}}
 /* </v53-mktx-css> */
+/* <v57-clintabs-css> */
+/* v57 clintabs: tabbed "My Patients" workspace — Brain is the primary tab, activity cards become sub-tabs. Theme-aware. */
+.vxct{margin-top:2px}
+.vxct-bar{display:flex;gap:2px;flex-wrap:wrap;align-items:flex-end;border-bottom:2px solid var(--line,#d8e2e9);margin-bottom:14px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.vxct-tab{appearance:none;background:none;border:0;border-bottom:3px solid transparent;margin-bottom:-2px;padding:9px 16px;font:600 14.5px var(--f-body);color:var(--muted,#5c6b74);cursor:pointer;white-space:nowrap;border-radius:9px 9px 0 0;transition:color .12s,background .12s}
+.vxct-tab:hover{background:var(--surface,#f4f7f9);color:var(--ink,#14232b)}
+.vxct-tab.on{color:var(--accent,#1d5670);border-bottom-color:var(--accent,#1d5670);font-weight:800}
+.vxct-tab:focus-visible{outline:2px solid var(--accent,#1d5670);outline-offset:2px}
+.vxct-panel[hidden]{display:none}
+.vxct-panel>.ehcard{margin-top:0}
+/* on the primary tab the Brain is the hero: trim the header so the worklist sits high */
+.vxct-panel[data-vxct-panel="pts"] .ehlh{margin-bottom:10px}
+/* </v57-clintabs-css> */
 .areqp{border:1px solid var(--line,#cfd8e0);border-radius:10px;padding:10px 14px 4px;margin:6px 0 10px}.areqp legend{font-weight:700;padding:0 6px}.agrid input[type=date],.agrid input[type=month]{width:100%;min-width:0;max-width:100%;box-sizing:border-box;-webkit-appearance:none;appearance:none}.agrid .aip{min-width:0;max-width:100%}
 </style>
 
@@ -5294,7 +5307,7 @@ const BANK = (function(e){try{const P=">oVO^cd@ge#lJ'~wUTDiEY+LZx-K&hkt(/F0;G`N.
 let HIDQ=new Set();const CFG={c:null,bypass:false};try{const c=JSON.parse(localStorage.getItem("ns.cfg")||"null");if(c&&typeof c==="object"){CFG.c=c;HIDQ=new Set(c.hideQ||[])}}catch(e){}
 const featOn=k=>!CFG.c||!CFG.c.feat||CFG.c.feat[k]!==false;
 
-const APPV="98ff32d597c82506fad526423c9869fa1b2ce0fb76303f3d9343b06bcb9b5951";
+const APPV="1d9f6b7d746bcf5689e212d1738ac5525c675d8ace738a3ce7fcceda509be2cb";
 const CATS={
   MOC:{n:"Management of Care",lo:15,hi:21,w:18},
   SIC:{n:"Safety and Infection Prevention and Control",lo:10,hi:16,w:13},
@@ -23479,6 +23492,72 @@ document.addEventListener("click", async e => { const b = e.target.closest && e.
   };
 }
 /* </v53-mktx-js> */
+/* <v57-clintabs-js> */
+{
+  /* v57 clintabs: the Clinical EHR "My Patients" list becomes a tabbed workspace. The Brain worklist stays the
+     primary tab (the hero), and the activity cards (Med Quiz, clinical groups, Shift, instructor feedback, sharing)
+     move into sub-tabs across the top. Deferred to a microtask so it runs AFTER the Brain swap (census) and the
+     Shift card (shift) have been placed, regardless of hook order. Desktop list view only. Idempotent per draw. */
+  const EH = () => { try { return window.__EHX && window.__EHX.get() } catch (e) { return null } };
+  const isRover = E => { try { return !!(E.v29 && E.v29.isRover && E.v29.isRover()) } catch (e) { return false } };
+  let ACT = "pts";
+  const SHORT = {
+    "med quiz from your clinicals": "Med Quiz",
+    "school and clinical groups": "Clinical groups",
+    "shift — care coordination": "Shift",
+    "shift - care coordination": "Shift",
+    "instructor feedback": "Feedback",
+    "clinical group": "Sharing"
+  };
+  const label = c => {
+    const h = c.querySelector("h3, h2"); let t = h ? h.textContent.trim() : "Activity";
+    t = t.replace(/\s*\d+\s*new$/i, "").trim();
+    const k = t.toLowerCase();
+    if (SHORT[k]) return SHORT[k];
+    const w = t.split(/\s+/); return w.length <= 2 ? t : w.slice(0, 2).join(" ");
+  };
+  function tabify() {
+    const E = EH(); if (!E) return;
+    if (E.X && E.X.pid) return;          /* a patient chart is open, not the list */
+    if (isRover(E)) return;              /* phone has its own layout */
+    const d = E.db(); if (!d || !d.ok) return;   /* attest screen (not yet agreed) stays untouched */
+    const host = document.querySelector("#ehm.ehm-list"); if (!host) return;
+    if (!host.querySelector(":scope > .ehlh")) return;  /* only the real "My Patients" list has the header */
+    if (host.querySelector(":scope > .vxct")) return;   /* already tabified this draw */
+    const kids = [...host.children];
+    const cards = kids.filter(el => el.matches && ((el.matches(".ehcard") && !el.matches(".ehatt")) || el.id === "vxsh-ehrcard"));
+    if (!cards.length) return;           /* nothing to tab; leave as-is */
+    const ptEls = kids.filter(el => !cards.includes(el));
+    const mk = (t, c) => { const e = document.createElement(t); if (c) e.className = c; return e };
+    const tabs = [{ id: "pts", label: "My Patients", els: ptEls }];
+    cards.forEach((c, i) => tabs.push({ id: "c" + i, label: label(c), els: [c] }));
+    if (!tabs.some(t => t.id === ACT)) ACT = "pts";
+    const wrap = mk("div", "vxct");
+    const bar = mk("div", "vxct-bar"); bar.setAttribute("role", "tablist"); bar.setAttribute("aria-label", "Clinical EHR");
+    const panels = mk("div", "vxct-panels");
+    tabs.forEach(t => {
+      const b = mk("button", "vxct-tab" + (t.id === ACT ? " on" : "")); b.type = "button"; b.textContent = t.label;
+      b.dataset.vxct = t.id; b.setAttribute("role", "tab"); b.setAttribute("aria-selected", t.id === ACT ? "true" : "false");
+      bar.appendChild(b);
+      const panel = mk("div", "vxct-panel"); panel.dataset.vxctPanel = t.id; if (t.id !== ACT) panel.hidden = true;
+      t.els.forEach(el => panel.appendChild(el));   /* reparent (delegated handlers keep working) */
+      panels.appendChild(panel);
+    });
+    wrap.appendChild(bar); wrap.appendChild(panels); host.appendChild(wrap);
+  }
+  let scheduled = false;
+  function schedule() { if (scheduled) return; scheduled = true; Promise.resolve().then(() => { scheduled = false; try { tabify() } catch (e) { } }); }
+  document.addEventListener("click", e => {
+    const b = e.target.closest("[data-vxct]"); if (!b) return;
+    const host = b.closest("#ehm"); if (!host) return;
+    ACT = b.dataset.vxct;
+    host.querySelectorAll(".vxct-tab").forEach(t => { const on = t.dataset.vxct === ACT; t.classList.toggle("on", on); t.setAttribute("aria-selected", on ? "true" : "false") });
+    host.querySelectorAll("[data-vxct-panel]").forEach(p => { p.hidden = p.dataset.vxctPanel !== ACT });
+  });
+  (window.__EHXpost = window.__EHXpost || []).push(schedule);
+  window.__vxTabs = { tabify, get act() { return ACT } };
+}
+/* </v57-clintabs-js> */
 /* <v22-daily-js> */
 /* <v22-daily-js> Daily AI questions + owner spot-check queue.
    Insert INSIDE the app's main IIFE in app.html (BANK/BY/itemHTML/qflagL are IIFE-scoped, not globals): directly after
