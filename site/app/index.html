@@ -5310,7 +5310,7 @@ const BANK = (function(e){try{const P=">oVO^cd@ge#lJ'~wUTDiEY+LZx-K&hkt(/F0;G`N.
 let HIDQ=new Set();const CFG={c:null,bypass:false};try{const c=JSON.parse(localStorage.getItem("ns.cfg")||"null");if(c&&typeof c==="object"){CFG.c=c;HIDQ=new Set(c.hideQ||[])}}catch(e){}
 const featOn=k=>!CFG.c||!CFG.c.feat||CFG.c.feat[k]!==false;
 
-const APPV="fadb306e1912948f54347e2bc76ebc1b6623ed21b2cdcfca450e00cc8f0fa721";
+const APPV="9b4340dd570b1e006db341476db2a8299ac8ff0a08549d45f7b7201953c5fbb0";
 const CATS={
   MOC:{n:"Management of Care",lo:15,hi:21,w:18},
   SIC:{n:"Safety and Infection Prevention and Control",lo:10,hi:16,w:13},
@@ -7361,10 +7361,10 @@ const VXS=(()=>{
     night:{sky:["#0b1a33","#1d3557","#3a4f6e"],moon:[1300,180,40],cloud:"#4a5f7e",co:.45,mf:"#2c3e57",mn:"#22324a",h1:"#2f4a3e",h2:"#253d33",w:["#1f3a58","#0d1f33"],wall:"#c9c4b6",roof:"#14304a",win:"#33506a",lit:"#ffd77a",leaf:"#2f4a3e",bl:"#e8dfe6",bd:"#b88fa2",trunk:"#3b2f2a",bird:"#000",gr:"#22382e",city:"#2c3e57",cityw:"#ffd77a",stars:1,dark:2}};
   // v26: twelve compositions. Each slot rotates through its list by local calendar day (stable across re-renders);
   // in season (Dec-Feb snow, Mar-Apr blossoms, Sep-Nov autumn) every other day is the seasonal scene.
-  const COMPS=["lake","campus","hospital","mountains","rivertown","school","garden","nightward","graduation","autumn","spring","winter"];
-  const ROT={dawn:["lake","mountains","rivertown","garden","nightward"],morning:["campus","school","mountains","garden","graduation"],
-    midday:["hospital","graduation","rivertown","school","garden"],afternoon:["lake","rivertown","mountains","school","graduation"],
-    sunset:["hospital","mountains","rivertown","nightward","garden"],night:["campus","nightward","rivertown","mountains","garden"]};
+  const COMPS=["lake","campus","hospital","mountains","rivertown","school","garden","nightward","graduation","autumn","spring","winter","quad","harbor","meadow","downtown"];
+  const ROT={dawn:["lake","meadow","mountains","harbor","rivertown","garden","nightward"],morning:["campus","quad","school","mountains","garden","graduation"],
+    midday:["hospital","downtown","graduation","rivertown","school","garden"],afternoon:["lake","harbor","rivertown","meadow","mountains","school","graduation"],
+    sunset:["hospital","downtown","mountains","rivertown","harbor","nightward","garden"],night:["campus","nightward","downtown","rivertown","quad","mountains","garden"]};
   const SEASON=m=>(m===11||m<2)?"winter":m<4?"spring":(m>7&&m<11)?"autumn":"";
   const dayN=d=>Math.floor((d.getTime()-d.getTimezoneOffset()*6e4)/864e5);
   const slot=(d)=>{const h=(d||new Date()).getHours();let s=SLOTS[SLOTS.length-1];for(const x of SLOTS){if(h>=x[0])s=x}if(h<5)s=SLOTS[SLOTS.length-1];return s};
@@ -7557,7 +7557,49 @@ const VXS=(()=>{
       o+=g("M0 760Q400 730 800 748T1600 736V900H0Z",SN)+`<g fill="${SH}"><ellipse cx="1440" cy="824" rx="80" ry="10"/><ellipse cx="1540" cy="852" rx="60" ry="8"/><ellipse cx="1240" cy="790" rx="40" ry="6"/></g>`;
       o+=`<g transform="translate(1240 788)"><g fill="${SN}" stroke="${mix(SN,P.mn,.4)}" stroke-width="2.5"><circle cx="0" cy="-20" r="22"/><circle cx="0" cy="-54" r="15"/></g><path d="M-14-44h28v7h-28z" fill="${tone("#c4532d")}"/><path d="M-11-66h22v-4h-4v-14h-14v14h-4z" fill="${tone("#2c3e57")}"/><path d="M-20-30l-22-14M20-30l22-16" stroke="${P.trunk}" stroke-width="3" stroke-linecap="round"/></g>`;
       o+=sp(1440,820,1.4)+sp(1540,852,1.1)+sp(1336,800,.8)+sp(80,846,.8)+sp(160,866,.6);
-      return o+C.fall(48,41,(x,y,a)=>`<circle cx="${x}" cy="${y}" r="${(1.6+a*2.2).toFixed(1)}"/>`,"f1 vxs-snow").replace('<g class="vxs-sw">','<g class="vxs-sw" fill="#fff" opacity=".85">')}};
+      return o+C.fall(48,41,(x,y,a)=>`<circle cx="${x}" cy="${y}" r="${(1.6+a*2.2).toFixed(1)}"/>`,"f1 vxs-snow").replace('<g class="vxs-sw">','<g class="vxs-sw" fill="#fff" opacity=".85">')},
+    quad(C){const{P,g,tone,win,vx,tree,glow,person,lamp,bench}=C;
+      let o=g("M0 500Q240 458 480 480T960 466T1440 484T1600 474V900H0Z",P.mf)+g("M0 560Q280 528 560 546T1120 536T1600 542V900H0Z",P.mn)+g("M0 630Q400 610 800 622T1600 614V900H0Z",P.h1);
+      const wl=P.wall,sh="#00000022",st=tone(mix(P.wall,"#ffffff",.3)),dr=tone(mix(P.roof,P.wall,.5));
+      o+=`<g transform="translate(860 0)"><rect x="0" y="470" width="620" height="170" fill="${wl}" stroke="${sh}" stroke-width="2"/><rect x="-8" y="462" width="636" height="12" fill="${P.roof}"/><g fill="${st}" stroke="${sh}">${[0,1,2,3,4,5,6,7,8,9,10].map(i=>`<rect x="${20+i*54}" y="474" width="16" height="160"/>`).join("")}</g><g>${[0,1,2,3,4,5,6,7,8,9].map(i=>`<rect x="${44+i*54}" y="500" width="22" height="60" fill="${win(i%2===0)}"/>`).join("")}</g><rect x="270" y="300" width="100" height="340" fill="${wl}" stroke="${sh}" stroke-width="2"/><rect x="262" y="292" width="116" height="12" fill="${P.roof}"/><path d="M262 300L320 250L378 300Z" fill="${P.roof}"/>${vx(306,262)}<circle cx="320" cy="362" r="25" fill="${tone("#f3ece0")}" stroke="${P.roof}" stroke-width="2"/><path d="M320 362V344M320 362L334 362" stroke="${P.roof}" stroke-width="2.5" stroke-linecap="round"/><g>${[410,474,538].map(y=>`<rect x="302" y="${y}" width="36" height="42" fill="${win(1)}"/>`).join("")}</g><rect x="296" y="572" width="48" height="68" rx="24" fill="${dr}"/></g>`+(P.dark?glow(1180,560,90):"");
+      o+=g("M1160 648Q1100 720 980 770Q840 820 700 900H1000Q1070 820 1150 772Q1220 720 1210 648Z",tone(mix(wl,P.h1,.4)))+g("M0 660Q400 640 800 652T1600 644V900H0Z",P.h2);
+      const SC=["#2f7f86","#2c3e57","#7a3e4c","#3f5a78","#5a6f3a"].map(tone);
+      o+=[[1020,748,1],[1046,752,1.02,1],[1200,708,.9],[1330,698,.84],[900,806,1.2],[930,812,1.18,1],[1250,724,.92],[780,862,1.38]].map((a,i)=>person(a[0],a[1],a[2],SC[i%5],a[3])).join("");
+      o+=lamp(970,778,1)+lamp(1180,700,.82)+bench(1300,760,1)+tree(1540,700,1)+tree(740,672,.7)+tree(90,700,.8);
+      return o+g("M0 868Q400 848 800 860T1600 854V900H0Z",P.gr)+C.ff([[700,770],[1430,740]])},
+    harbor(C){const{P,g,tone,win,boat,glow,pine,tree}=C;let o=g("M0 500Q240 462 480 482T960 470T1440 486T1600 476V760H0Z",P.mf)+g("M0 560Q300 530 600 548T1200 540T1600 546V760H0Z",P.mn);
+      o+=g("M0 600Q400 588 800 598T1600 592V900H0Z",`url(#${C.id}W)`)+C.water(660);
+      const wl=P.wall,lt=P.dark?P.lit:tone("#f3e6c4");
+      o+=g("M1180 620Q1320 560 1440 600Q1560 640 1600 700V760H1180Z",tone(P.h2))+`<g transform="translate(1360 420)"><path d="M-26 200L-16 0H16L26 200Z" fill="${wl}" stroke="#00000022" stroke-width="2"/><g fill="${tone("#c4532d")}"><path d="M-21 150L21 150L22 172L-22 172Z"/><path d="M-18 96L18 96L19 118L-19 118Z"/></g><rect x="-18" y="-34" width="36" height="34" fill="${P.dark?lt:tone("#2c3e57")}"/><rect x="-24" y="-40" width="48" height="8" fill="${P.roof}"/><path d="M-16 -40L0 -58L16 -40Z" fill="${P.roof}"/><circle cx="0" cy="-17" r="13" fill="${lt}"/></g>`+(P.dark?glow(1360,403,70)+`<path d="M1360 403L1150 300M1360 403L1560 320" stroke="${P.lit}" stroke-width="44" opacity=".07"/>`:"");
+      o+=`<g><rect x="980" y="636" width="300" height="10" fill="${tone("#8a6b4a")}"/>${[1000,1060,1120,1180,1240].map(x=>`<rect x="${x}" y="646" width="8" height="40" fill="${tone("#6b5038")}"/>`).join("")}</g>`;
+      o+=`<g transform="translate(900 540)"><rect x="0" y="0" width="90" height="96" fill="${wl}" stroke="#00000022" stroke-width="2"/><path d="M-8 2L45 -34L98 2Z" fill="${P.roof}"/>${[12,52].map((x,i)=>`<rect x="${x}" y="30" width="24" height="26" fill="${win(i%2===0)}"/>`).join("")}</g>`;
+      o+=boat(1080,720,1.1)+boat(820,760,.8,tone("#f2b84b"))+boat(1240,760,.7);
+      o+=`<g fill="none" stroke="${P.bird}" stroke-width="2.4" stroke-linecap="round" opacity=".55"><path d="M980 420q8-8 16 0q8-8 16 0"/><path d="M1040 452q6-6 12 0q6-6 12 0"/></g>`;
+      o+=g("M0 820Q200 800 360 818T700 812V900H0Z",tone(P.h2));
+      return o+pine(80,880,.9)+pine(150,892,.65)+g("M0 870Q400 854 800 864T1600 858V900H0Z",P.gr)+C.ff([[1040,700],[1200,720]])},
+    meadow(C){const{P,g,tone,tree,glow,win}=C,r=rng(37);let o=g("M0 470Q220 432 440 454T880 442T1320 460T1600 442V900H0Z",mix(P.mf,P.sky[2],.3))+C.mist(440,120,.45)+g("M0 540Q280 508 560 526T1120 516T1600 522V900H0Z",P.mf)+g("M0 616Q380 592 760 606T1600 598V900H0Z",P.h1);
+      const wl=P.wall;o+=`<g transform="translate(1180 540)"><rect x="0" y="40" width="120" height="66" fill="${wl}" stroke="#00000022" stroke-width="2"/><path d="M-10 44L60 0L130 44Z" fill="${P.roof}"/>${[18,74].map((x,i)=>`<rect x="${x}" y="60" width="22" height="26" fill="${win(i%2===0)}"/>`).join("")}<rect x="50" y="74" width="22" height="32" fill="${P.roof}"/></g>`+(P.dark?glow(1240,560,70):"");
+      o+=g("M0 700Q400 680 820 694T1600 686V900H0Z",P.h2);
+      const fc=tone(mix(P.trunk,"#9a7a5a",.3));let fe="";for(let x=1180;x<1600;x+=60)fe+=`M${x} ${R0(712-(x-1180)*.04)}v40`;
+      o+=`<path d="${fe}" stroke="${fc}" stroke-width="6"/><path d="M1180 720L1600 700M1180 740L1600 720" stroke="${fc}" stroke-width="4"/>`;
+      o+=tree(1430,760,1.6)+tree(1010,700,.8);
+      const FL=["#f2a7b8","#f6d36b","#b9a3e0","#ffffff","#ee8a6a","#9fd08a"].map(tone),sg=tone("#5a8f4a");
+      let fl="";for(let i=0;i<90;i++){const x=R0(30+r()*1560),y=R0(766+r()*118),h=R0(10+r()*16);fl+=`<path d="M${x} ${y}v-${h}" stroke="${sg}" stroke-width="2" opacity=".65"/>`;if(x>720&&r()<.85)fl+=`<circle cx="${x}" cy="${y-h-2}" r="${R0(2.4+r()*2.2)}" fill="${FL[i%6]}"/>`}
+      o+=g("M0 764Q400 744 800 756T1600 748V900H0Z",P.gr)+fl;
+      return o+tree(80,796,.6)+C.fall(10,37,(x,y,a)=>x<720?"":`<path d="M0-5Q6-9 6-3Q6 3 0 2Q-6 3-6-3Q-6-9 0-5Z" fill="${FL[(a*6|0)%6]}" transform="translate(${x} ${y}) rotate(${R0(a*60-30)})"/>`,"f2")+C.ff([[900,740],[1300,720]])},
+    downtown(C){const{P,g,tone,win,glow,tree,boat}=C;let o=g("M0 540Q260 508 520 526T1040 516T1600 522V760H0Z",P.mn);
+      const WC=[tone(mix(P.wall,"#9bb0c0",.5)),tone(mix(P.wall,"#7f98ab",.5)),tone(mix(P.wall,"#aebfce",.45))];
+      const tows=[[900,300],[980,240],[1070,360],[1140,200],[1240,320],[1330,260],[1430,360],[1510,300]];let tw="";
+      tows.forEach((t,j)=>{const x=t[0],top=t[1],w=66;tw+=`<rect x="${x}" y="${top}" width="${w}" height="${640-top}" fill="${WC[j%3]}" stroke="#00000018" stroke-width="2"/>`;for(let ry=top+22;ry<628;ry+=30)for(let cx=x+10;cx<x+w-10;cx+=22)tw+=`<rect x="${cx}" y="${ry}" width="11" height="13" fill="${win((ry+cx)%3!==0)}"/>`});
+      o+=tw+`<g transform="translate(1140 158)"><rect x="0" y="0" width="40" height="40" rx="6" fill="#1f7a8c"/><path d="M16 7h8v9h9v8h-9v9h-8v-9H7v-8h9z" fill="#fff"/></g>`+(P.dark?glow(1240,440,120):"");
+      o+=g("M0 636Q400 626 800 634T1600 628V900H0Z",`url(#${C.id}W)`);
+      let rf="";tows.forEach((t,j)=>{rf+=`<rect x="${t[0]+6}" y="640" width="54" height="${R0(60+(640-t[1])*.12)}" fill="${WC[j%3]}" opacity=".16"/>`});
+      o+=rf+C.water(690);
+      const br=tone("#5a6670");o+=`<g><rect x="900" y="636" width="700" height="8" fill="${br}"/>${[960,1080,1200,1320,1440,1560].map(x=>`<path d="M${x} 636q0-40 40-40t40 40" fill="none" stroke="${br}" stroke-width="4"/>`).join("")}</g>`;
+      if(P.dark)o+=`<g fill="${P.lit}" opacity=".5">${tows.map(t=>`<circle cx="${t[0]+33}" cy="632" r="2.4"/>`).join("")}</g>`;
+      o+=boat(1020,740,.9)+boat(1260,770,.7,tone("#f2b84b"));
+      o+=g("M0 760Q260 744 500 756T820 750V900H0Z",tone(P.h2));
+      return o+tree(90,792,.8)+tree(520,752,.5)+g("M0 864Q400 846 800 858T1600 852V900H0Z",P.gr)+C.ff([[980,700],[1300,710]])}};
   const preview=(key,comp,cls,off)=>art(key,cls,comp||"lake",off);
 /*</vxs-core>*/
   const cur=()=>{let q="";try{q=new URLSearchParams(location.search).get("scene")||""}catch(e){}return PAL[q]?q:slot()[1]};
