@@ -1441,7 +1441,7 @@ body{padding-top:var(--nsb,0px)}
 .mleg{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-top:8px}.mleg .mdose{width:auto;display:inline-block;padding:2px 8px;cursor:default}
 .ehscan{display:flex;gap:8px;flex-wrap:wrap}.ehsc{flex:1;min-width:200px;display:flex;gap:6px;align-items:center;justify-content:center;padding:10px;border:2px dashed #9fb6c0;border-radius:8px;background:#f5f8fa;font:700 13px var(--f-body);cursor:pointer}.ehsc.ok{border-style:solid;border-color:#2e7d4f;background:#ddf1e4;color:#1f6b45}
 .ehscmsg.warn{color:#8c1d18}.ehrule.on{background:#fbf0d4;border:1px solid #e2c57b;border-radius:6px;padding:8px 10px}
-.bscan{min-width:min(560px,92vw)}.bscan-pt{margin:8px 0;padding:9px 12px;border-radius:8px;background:#f5f8fa;border:1px solid #d8e2e9;color:#5c6b74;font-weight:600;font-size:14px}.bscan-pt.ok{background:#ddf1e4;border-color:#2e7d4f;color:#1f6b45}
+.smod.smod-bscan{max-width:600px}.bscan{min-width:0;width:100%}.bscan-in{min-width:0}.bscan-inrow .btn2{flex:0 0 auto}.bscan-ft{flex-wrap:wrap}.bscan-ft .btn2{flex:1 1 auto}.bscan-tools{flex-wrap:wrap}.smod-bg.smod-kb{place-items:start center;padding-top:10px}@media (max-width:520px){.smod.smod-bscan{padding:16px}.bscan h3{font-size:18px}}.bscan-pt{margin:8px 0;padding:9px 12px;border-radius:8px;background:#f5f8fa;border:1px solid #d8e2e9;color:#5c6b74;font-weight:600;font-size:14px}.bscan-pt.ok{background:#ddf1e4;border-color:#2e7d4f;color:#1f6b45}
 .bscan-inrow{display:flex;gap:8px;margin:8px 0 4px}.bscan-in{flex:1;padding:12px 14px;border:2px solid var(--accent,#1d5670);border-radius:8px;font:600 16px var(--f-body);background:#fff;color:#14232b}.bscan-in:focus{outline:none;box-shadow:0 0 0 3px color-mix(in srgb,var(--accent,#1d5670) 30%,transparent)}
 .bscan-hint{color:var(--muted);margin:2px 0 8px}.bscan-hint.warn{color:#8c1d18;font-weight:700}.bscan-tools{display:flex;gap:8px;margin-bottom:8px}
 .bscan-ln{font-weight:700;color:#103a4f;font-size:13px;margin:6px 0 4px}.bscan-list{list-style:none;margin:0 0 8px;padding:0;max-height:min(42vh,320px);overflow:auto;border:1px solid #e3eaef;border-radius:8px}
@@ -4641,11 +4641,14 @@ li.eie{opacity:.65}.vxv-site.eie{opacity:.6}
    Scoped to #ehm .vxbr and the #vxbr-pop popover. */
 .vxbr-wrap{--vb-line:#d6dde2;--vb-ink:#17323f;--vb-mut:#5c6b74;--vb-head:#eef3f6;--vb-hd2:#dfeaef;--vb-pt:#fbfdfe;--vb-now:#fff6e6;--vb-nowb:#e4a62c;--vb-acc:var(--accent,#1d5670);--vb-ok:#1a7f4b;--vb-okb:#e3f3ea;--vb-over:#b3261e;--vb-overb:#fbe9e7;--vb-due:#9a6a00;--vb-dueb:#fdf3df;--vb-held:#6b5b2a;--vb-nurse:#1d5670;--vb-nurseb:#e6eef2;--vb-sched:#64737c;--vb-schedb:#eef2f4;
   border:1px solid var(--vb-line);border-radius:10px;overflow:auto;background:#fff;margin-top:10px;max-height:calc(100vh - 230px);box-shadow:0 1px 2px rgba(10,30,40,.05)}
-.vxbr{border-collapse:separate;border-spacing:0;width:100%;min-width:900px;font-size:13px;color:var(--vb-ink);table-layout:fixed}
+.vxbr{border-collapse:separate;border-spacing:0;width:100%;min-width:760px;font-size:13px;color:var(--vb-ink);table-layout:fixed}
 .vxbr thead th{position:sticky;top:0;z-index:4;background:var(--vb-head);border-bottom:2px solid var(--vb-line);font-weight:700;color:var(--vb-mut);padding:7px 6px;text-align:center;white-space:nowrap;font-variant-numeric:tabular-nums}
 .vxbr thead th.vxbr-ph{left:0;z-index:6;text-align:left;width:244px;min-width:244px;max-width:244px;border-right:2px solid var(--vb-line);padding-left:12px}
 .vxbr thead th.vxbr-prior{width:60px;min-width:60px}
-.vxbr thead th.vxbr-th{width:auto;min-width:76px}
+.vxbr thead th.vxbr-th{width:auto;min-width:0;padding-left:2px;padding-right:2px}
+/* smaller screens: narrower patient/prior columns so the 12 hour columns stay equal and fit without sideways scrolling */
+@media (max-width:1100px){.vxbr thead th.vxbr-ph{width:204px;min-width:204px;max-width:204px}}
+@media (max-width:860px){.vxbr thead th.vxbr-ph{width:168px;min-width:168px;max-width:168px;padding-left:8px}.vxbr thead th.vxbr-prior{width:48px;min-width:48px}.vxbr{font-size:12px}}
 .vxbr thead th.vxbr-th.now{background:var(--vb-now);color:#8a5a00;box-shadow:inset 0 -2px 0 var(--vb-nowb)}
 .vxbr thead th.vxbr-th small{display:block;font-weight:600;font-size:10px;letter-spacing:.02em;color:var(--vb-mut)}
 .vxbr tbody td{border-bottom:1px solid var(--vb-line);padding:0;vertical-align:top}
@@ -4654,8 +4657,11 @@ li.eie{opacity:.65}.vxv-site.eie{opacity:.6}
 .vxbr tbody td.vxbr-tc.now{background:var(--vb-now)}
 .vxbr tbody td.vxbr-tc.past{background:#fafbfc}
 /* bold shift-change dividers at 07:00 and 19:00 (day/night boundaries), in the user's theme color */
-.vxbr thead th.vxbr-th.sb{border-left:3px solid var(--vb-acc);box-shadow:inset 2px 0 0 var(--vb-acc)}
-.vxbr tbody td.vxbr-tc.sb{border-left:3px solid var(--vb-acc)}
+/* drawn as inset shadows (not borders) so the 07:00/19:00 columns are exactly as wide as every other hour */
+.vxbr thead th.vxbr-th.vxbr-sb{box-shadow:inset 3px 0 0 var(--vb-acc)}
+.vxbr thead th.vxbr-th.vxbr-sb.now{box-shadow:inset 3px 0 0 var(--vb-acc),inset 0 -2px 0 var(--vb-nowb)}
+.vxbr tbody td.vxbr-tc.vxbr-sb{border-left-color:transparent;box-shadow:inset 3px 0 0 var(--vb-acc)}
+.vxbr tbody td.vxbr-tc.vxbr-sb.vxbr-drop{box-shadow:inset 3px 0 0 var(--vb-acc),inset 0 0 0 2px var(--vb-acc)}
 /* hour-cell task icons (meds = mortar & pestle, charting = flowsheet) with a count + click-to-open popover */
 .vxbr-ic{display:inline-flex;align-items:center;gap:3px;margin:2px;padding:3px 7px 3px 5px;border-radius:7px;border:1px solid var(--vb-line);background:#fff;cursor:pointer;vertical-align:top;color:var(--vb-ink);line-height:1}
 .vxbr-ic svg{width:17px;height:17px;flex:0 0 auto}
@@ -5298,6 +5304,50 @@ html[data-theme="dark"] .wsx-who{color:#a9bcc6}
 /* on the primary tab the Brain is the hero: trim the header so the worklist sits high */
 .vxct-panel[data-vxct-panel="pts"] .ehlh{margin-bottom:10px}
 /* </v57-clintabs-css> */
+/* <v59-media-css> */
+/* v59 Media activity (prefix md-). Theme-aware through the app's --surface/--ink/--line/--accent/--muted tokens. */
+.md-rule{display:flex;gap:10px;align-items:flex-start;margin:4px 0 12px;padding:10px 14px;border-radius:10px;background:#fff8e8;border:1px solid #ecd9a8;color:#5a4410;font-size:13.5px;line-height:1.5}
+.md-rule svg{flex:0 0 auto;margin-top:2px}.md-rule p{margin:0}
+.md-wrap{display:grid;grid-template-columns:minmax(220px,300px) minmax(0,1fr);gap:14px;align-items:start}
+.md-list{list-style:none;margin:0;padding:0;display:grid;gap:8px;max-height:calc(100vh - 260px);overflow:auto}
+.md-it{display:flex;gap:10px;width:100%;text-align:left;align-items:center;padding:8px;border:1px solid var(--line,#d6dde2);border-radius:10px;background:var(--surface,#fff);color:var(--ink,#17323f);cursor:pointer;font:inherit}
+.md-it:hover{border-color:var(--accent,#1d5670)}
+.md-it.on{border-color:var(--accent,#1d5670);box-shadow:inset 3px 0 0 var(--accent,#1d5670);background:color-mix(in srgb,var(--accent,#1d5670) 6%,var(--surface,#fff))}
+.md-th{flex:0 0 64px;height:64px;border-radius:7px;overflow:hidden;background:var(--sunk,#e8eef2);display:grid;place-items:center}
+.md-th img{width:100%;height:100%;object-fit:cover;display:block}.md-th img:not([src]){visibility:hidden}
+.md-tx{display:grid;gap:1px;min-width:0}.md-tx b{font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.md-tx small{font-size:12px;color:var(--muted,#5c6b74)}
+.md-view{padding:14px;min-width:0}
+.md-vh{display:flex;gap:12px;justify-content:space-between;align-items:flex-start;flex-wrap:wrap}.md-vh h3{margin:0 0 2px}
+.md-meta{margin:0;font-size:13px;color:var(--muted,#5c6b74)}.md-where{font-weight:700;color:var(--ink,#17323f)}
+.md-vb{display:flex;gap:6px;flex-wrap:wrap}.btn2.md-del{color:#8c1d18}.btn2.md-del:not(.sec2){background:#8c1d18;color:#fff;border-color:#8c1d18}
+.md-note{margin:10px 0 0;padding:8px 10px;border-left:3px solid var(--accent,#1d5670);background:var(--sunk,#eef3f6);border-radius:4px;font-size:14px}
+.md-img{margin-top:12px;border:1px solid var(--line,#d6dde2);border-radius:8px;background:#fff;overflow:hidden;display:grid;place-items:center;min-height:160px}
+.md-img img{display:block;max-width:100%;max-height:calc(100vh - 320px);object-fit:contain}.md-img img:not([src]){visibility:hidden}
+.md-miss{padding:24px;color:var(--muted,#5c6b74);text-align:center}
+.md-empty{text-align:center;padding:28px 20px}.md-empty p{max-width:560px;margin:6px auto 16px;color:var(--muted,#5c6b74);line-height:1.55}
+.md-eic{width:64px;height:64px;margin:0 auto 6px;border-radius:50%;display:grid;place-items:center;background:color-mix(in srgb,var(--accent,#1d5670) 12%,transparent);color:var(--accent,#1d5670)}
+/* dialogs */
+.smod.smod-md{max-width:560px}.smod.smod-md.wide{max-width:min(920px,100%)}.smod.smod-md.full{max-width:min(1200px,100%)}
+.md-picks{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.md-pick{position:relative;display:grid;justify-items:center;gap:4px;padding:18px 12px;border:2px dashed var(--line,#c4d0d7);border-radius:12px;cursor:pointer;text-align:center;color:var(--ink,#17323f);background:var(--surface,#fff)}
+.md-pick:hover,.md-pick:focus-within{border-color:var(--accent,#1d5670);border-style:solid}.md-pick svg{color:var(--accent,#1d5670)}
+.md-pick small{color:var(--muted,#5c6b74);font-size:12px}
+.md-pick input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.md-msg{min-height:1.2em;margin:4px 0 0}.md-msg.warn{color:#8c1d18;font-weight:700}
+.md-tools{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.md-tool{border:1px solid var(--line,#c4d0d7);background:var(--surface,#fff);color:var(--ink,#17323f);border-radius:8px;padding:7px 11px;font:600 13px var(--f-body,inherit);cursor:pointer}
+.md-tool.on{background:var(--accent,#1d5670);border-color:var(--accent,#1d5670);color:#fff}.md-tool:disabled{opacity:.45;cursor:default}
+.md-cnt{margin-left:auto;font-size:12.5px;color:var(--muted,#5c6b74)}
+.md-cv{border:1px solid var(--line,#d6dde2);border-radius:8px;overflow:hidden;background:#f3f5f6;display:grid;place-items:center;max-height:min(52vh,520px)}
+.md-cv canvas{display:block;max-width:100%;max-height:min(52vh,520px);touch-action:none;cursor:crosshair}
+.md-chk{border:1px solid var(--line,#d6dde2);border-radius:8px;padding:8px 12px;margin:0;display:grid;gap:4px}.md-chk legend{font-weight:700;font-size:13px;padding:0 4px}
+.md-chk .achk{display:flex;gap:8px;align-items:flex-start;font-size:13.5px}
+.md-det{display:grid;grid-template-columns:1fr 1fr;gap:8px}.md-det .md-wide{grid-column:1/-1}.md-det input,.md-det select,.md-det textarea{width:100%;box-sizing:border-box}
+.md-full{display:grid;place-items:center;max-height:calc(100vh - 140px);overflow:auto}.md-full img{max-width:100%;height:auto;display:block}
+@media (max-width:760px){.md-wrap{grid-template-columns:1fr}.md-list{max-height:none;grid-auto-flow:column;grid-auto-columns:minmax(220px,78%);overflow-x:auto;padding-bottom:4px}.md-picks,.md-det{grid-template-columns:1fr}.md-img img{max-height:60vh}}
+html[data-theme="dark"] .md-rule{background:#2a2412;border-color:#5a4a20;color:#f0dfb0}html[data-theme="dark"] .md-img,html[data-theme="dark"] .md-cv{background:#0f1b21}
+@media (prefers-color-scheme:dark){html:not([data-theme="light"]) .md-rule{background:#2a2412;border-color:#5a4a20;color:#f0dfb0}html:not([data-theme="light"]) .md-img,html:not([data-theme="light"]) .md-cv{background:#0f1b21}}
+/* </v59-media-css> */
 .areqp{border:1px solid var(--line,#cfd8e0);border-radius:10px;padding:10px 14px 4px;margin:6px 0 10px}.areqp legend{font-weight:700;padding:0 6px}.agrid input[type=date],.agrid input[type=month]{width:100%;min-width:0;max-width:100%;box-sizing:border-box;-webkit-appearance:none;appearance:none}.agrid .aip{min-width:0;max-width:100%}
 </style>
 
@@ -5310,7 +5360,7 @@ const BANK = (function(e){try{const P=">oVO^cd@ge#lJ'~wUTDiEY+LZx-K&hkt(/F0;G`N.
 let HIDQ=new Set();const CFG={c:null,bypass:false};try{const c=JSON.parse(localStorage.getItem("ns.cfg")||"null");if(c&&typeof c==="object"){CFG.c=c;HIDQ=new Set(c.hideQ||[])}}catch(e){}
 const featOn=k=>!CFG.c||!CFG.c.feat||CFG.c.feat[k]!==false;
 
-const APPV="9b4340dd570b1e006db341476db2a8299ac8ff0a08549d45f7b7201953c5fbb0";
+const APPV="8b783025b91843e1165a32a2b7b83d57d980e624de00bf64054729a964574aa6";
 const CATS={
   MOC:{n:"Management of Care",lo:15,hi:21,w:18},
   SIC:{n:"Safety and Infection Prevention and Control",lo:10,hi:16,w:13},
@@ -7715,6 +7765,8 @@ document.addEventListener("click",async e=>{const b=e.target.closest("[data-wg]"
 function sModal(html,cls){sClose();const d=document.createElement("div");d.className="smod-bg";d.innerHTML=`<div class="smod ${cls||""} allow-copy" role="dialog" aria-modal="true">${html}</div>`;document.body.appendChild(d);
   d.addEventListener("click",e=>{if(e.target===d)sClose()});const f=d.querySelector("input,button");if(f)try{f.focus()}catch(e){}return d}
 function sClose(){document.querySelectorAll(".smod-bg").forEach(x=>x.remove())}
+/* keep any open dialog inside the visible area when an on-screen keyboard is up (iPad/phone) */
+(function(){const vv=window.visualViewport;if(!vv)return;const fit=()=>{const bg=document.querySelector(".smod-bg");if(!bg)return;const kb=innerHeight-vv.height>120;bg.classList.toggle("smod-kb",kb);if(kb){bg.style.top=vv.offsetTop+"px";bg.style.height=vv.height+"px";bg.style.bottom="auto"}else{bg.style.top="";bg.style.height="";bg.style.bottom=""}};vv.addEventListener("resize",fit);vv.addEventListener("scroll",fit);try{new MutationObserver(fit).observe(document.body,{childList:true})}catch(e){}})();
 document.addEventListener("keydown",e=>{if(e.key==="Escape"&&document.querySelector(".smod-bg"))sClose()});
 function sCopyBox(label,val,note){return `<label class="afld"><span>${label}</span><span class="aip"><input readonly value="${esc(val)}" class="mono" onclick="this.select()"><button type="button" class="peek cp" data-cp="${esc(val)}">Copy</button></span>${note?`<small>${note}</small>`:""}</label>`}
 document.addEventListener("click",e=>{const c=e.target.closest("[data-cp]");if(c){const v=c.dataset.cp;(navigator.clipboard?navigator.clipboard.writeText(v):Promise.reject()).then(()=>{c.textContent="Copied"},()=>{const i=c.parentNode.querySelector("input");if(i){i.select();try{document.execCommand("copy");c.textContent="Copied"}catch(x){}}});setTimeout(()=>{c.textContent="Copy"},2000)}
@@ -9206,7 +9258,7 @@ zolpidem|Sedative-hypnotic|PO||Ambien`;
       <p class="fine bscan-hint ${BSCAN.msg?"warn":""}" id="bscanmsg">${BSCAN.msg?esc(BSCAN.msg):"Use a USB barcode scanner — it types the code and presses Enter — or type the code."+(cam?" On a phone or tablet, use the camera.":"")}</p>
       <div class="bscan-tools">${cam?`<button type="button" class="btn2 mini sec2" data-ex="bscancam">${ic("pill",14)} Use camera</button>`:""}<button type="button" class="btn2 mini sec2" data-ex="bscansim">Simulate a scan</button></div>
       ${BSCAN.list.length?`<div class="bscan-ln">Scanned (${BSCAN.list.length})</div><ul class="bscan-list">${rows}</ul>`:`<p class="bscan-empty">${BSCAN.ptOK?(remaining.length?remaining.length+" dose"+(remaining.length===1?"":"s")+" due to scan.":"No scheduled doses are due right now."):""}</p>`}
-      <div class="sbtns bscan-ft"><button type="button" class="btn2" data-ex="bscanfile" ${BSCAN.list.length?"":"disabled"}>File all (${BSCAN.list.length}) as given</button><button type="button" class="btn2 sec2" data-ex="bscancancel">Close</button></div></div>`);
+      <div class="sbtns bscan-ft"><button type="button" class="btn2" data-ex="bscanfile" ${BSCAN.list.length?"":"disabled"}>File all (${BSCAN.list.length}) as given</button><button type="button" class="btn2 sec2" data-ex="bscancancel">Close</button></div></div>`,"smod-bscan");
     setTimeout(()=>{const i=document.querySelector(".bscan-in");if(i){try{i.focus()}catch(e){}}},40)}
   async function bscanHandle(code){const p=P();if(!p||!BSCAN)return;code=String(code||"").trim();if(!code)return;
     if(!BSCAN.ptOK){const r=checkPt(p,code);if(r&&r.ok){BSCAN.ptOK=true;BSCAN.msg="";try{beep()}catch(e){}}else{BSCAN.msg=(r&&r.msg)||"That isn't this patient's wristband.";}bscanModal();return}
@@ -21637,7 +21689,7 @@ const SECX = (() => {
     const nowH = Math.floor(S0.now / 60);
     const hh = h => E.hhmm(((h % 24) + 24) % 24 * 60);
     const isSB = h => { const x = ((h % 24) + 24) % 24; return x === 7 || x === 19 };
-    const head = `<tr><th class="vxbr-ph">Patient</th><th class="vxbr-prior">Prior</th>${cols.map(h => `<th class="vxbr-th ${h === nowH ? "now" : ""}${isSB(h) ? " sb" : ""}">${e_(hh(h)).replace(":", "")}<small>${h === nowH ? "now" : h < nowH ? "" : ""}</small></th>`).join("")}</tr>`;
+    const head = `<tr><th class="vxbr-ph">Patient</th><th class="vxbr-prior">Prior</th>${cols.map(h => `<th class="vxbr-th ${h === nowH ? "now" : ""}${isSB(h) ? " vxbr-sb" : ""}">${e_(hh(h)).replace(":", "")}<small>${h === nowH ? "now" : h < nowH ? "" : ""}</small></th>`).join("")}</tr>`;
     const body = P.map(p => {
       const S = shiftOf(E, p); const B = brainEvents(E, p, S); const nowHp = Math.floor(S.now / 60);
       const al = (p.allergies || []);
@@ -21656,7 +21708,7 @@ const SECX = (() => {
       const prior = `<td class="vxbr-tc" style="text-align:center">${B.prior ? `<span class="vxbr-prioc" title="${B.prior} item(s) carried over / overdue from before this shift">${B.prior}</span>` : ""}</td>`;
       const grpSt = arr => arr.some(x => x.c === "overdue") ? "overdue" : arr.some(x => x.c === "due" || x.c === "reassess") ? "due" : (arr.length && arr.every(x => x.c === "given")) ? "given" : "sched";
       const cells = cols.map(h => {
-        const L = (B.byHour[h] || []); const cls = (h === nowHp ? "now" : (h < nowHp ? "past" : "")) + (isSB(h) ? " sb" : "");
+        const L = (B.byHour[h] || []); const cls = (h === nowHp ? "now" : (h < nowHp ? "past" : "")) + (isSB(h) ? " vxbr-sb" : "");
         const meds = L.filter(x => x.go === "mar"), chart = L.filter(x => x.go === "flow");
         if (!meds.length && !chart.length) return `<td class="vxbr-tc ${cls}" data-vb-h="${h}">${h === nowHp ? '<span class="vxbr-empty">—</span>' : ""}</td>`;
         const icon = (kind, arr, svg, label, drag) => arr.length ? `<button type="button" class="vxbr-ic st-${grpSt(arr)}"${drag ? ' draggable="true"' : ""} data-vb-cell="${kind}" data-vb-h="${h}" data-vb-pid="${e_(p.id)}" title="${arr.length} ${label}${arr.length === 1 ? "" : "s"} at ${e_(hh(h))} — click to view${drag ? ", drag to reschedule" : ""}" aria-label="${arr.length} ${label}${arr.length === 1 ? "" : "s"} at ${e_(hh(h))}">${svg}<i>${arr.length}</i></button>` : "";
@@ -27274,6 +27326,190 @@ window.__vxTele={version:TLV,open,close,RH,RHM,build,grade,sigHash,presFor,conte
 
 }
 /* </v29-sdoh-js> */
+/* <v59-media-js> */
+/* v59 Media: an Epic-style "Media" activity in the practice EHR (desktop, iPad and Rover).
+   Nursing students photograph or scan their paper clinical paperwork (de-identified) and attach it to a practice chart, then
+   practise transcribing it into the EHR. Privacy guards on every photo:
+     - metadata stripped: the image is decoded and re-drawn on a canvas and re-encoded as a plain JPEG, so GPS location, camera,
+       timestamps and every other EXIF/XMP field are gone; the original file name is never kept;
+     - redact tool: black-out or pixelate (stronger than blur, not reversible) any area before saving;
+     - no-identifiers checklist: every box must be ticked before Save works; the title and note are checked by phiFind();
+     - storage: on this device (IndexedDB), tagged with the signed-in account and purged when a different person signs in on the
+       same device. The chart keeps only small metadata (title, type, size), which syncs with the rest of the practice chart.
+       When the encrypted cloud vault answers /api/vault/media/status with {on:true}, new photos go there instead and instructors
+       can review and remove them (server-enforced); until then the tab says plainly that photos stay on this device.
+   Hooks only through window.__EHX and window.__EHXpost (deliberately not window.__EHXF; see the registration note below). */
+{
+  const V = () => { try { return window.__EHX && window.__EHX.get() } catch (e) { return null } };
+  const e_ = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+  const PATH = '<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10.5" r="1.8"/><path d="M21 16l-5-5-8.5 8"/>';
+  const CAM = '<path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/>';
+  const FILE = '<path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 13h6M9 17h6"/>';
+  const ic = (p, n) => `<svg viewBox="0 0 24 24" width="${n || 16}" height="${n || 16}" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${p}</svg>`;
+  const TYPES = ["Assessment / head-to-toe", "Medication sheet", "Care plan", "Concept map", "Clinical worksheet", "Report / SBAR sheet", "Lab or flowsheet copy", "Other"];
+  const CHECK = [["names", "No names, initials or signatures"], ["dates", "No birth dates or exact calendar dates (use hospital day)"], ["ids", "No record, room, bed, account or phone numbers"], ["faces", "No faces, wristbands, labels or barcodes"], ["mine", "This is my own de-identified clinical paperwork"]];
+  const MAXPX = 2200, THUMB = 360, MAXN = 40;
+  const ST = { sel: null, ed: null, cloud: null };
+  const uid = () => { try { return (typeof SRV !== "undefined" && SRV.me && SRV.me.id) ? "u" + SRV.me.id : "guest" } catch (e) { return "guest" } };
+  const toast = t => { try { const E = V(); if (E && E.v29 && E.v29.toastE) return E.v29.toastE(t) } catch (e) { } };
+  const phi = s => { try { const E = V(); return (E && E.v29 && E.v29.phiFind) ? E.v29.phiFind(s) : [] } catch (e) { return [] } };
+  const nid = () => "md" + Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+  const fdt = t => { try { return new Date(t).toLocaleString([], { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }) } catch (e) { return "" } };
+  const kb = n => n > 1048576 ? (n / 1048576).toFixed(1) + " MB" : Math.max(1, Math.round(n / 1024)) + " KB";
+
+  /* ---------- device storage (IndexedDB), one record per photo: {uid, pid, img: Blob, th: Blob} ---------- */
+  const DBN = "vexcura-media", OS = "files"; let dbp = null;
+  const idb = () => dbp || (dbp = new Promise((res, rej) => { try { const r = indexedDB.open(DBN, 1); r.onupgradeneeded = () => { if (!r.result.objectStoreNames.contains(OS)) r.result.createObjectStore(OS) }; r.onsuccess = () => res(r.result); r.onerror = () => rej(r.error) } catch (e) { rej(e) } }));
+  const rq = r => new Promise((res, rej) => { r.onsuccess = () => res(r.result); r.onerror = () => rej(r.error) });
+  const os = async m => (await idb()).transaction(OS, m).objectStore(OS);
+  const iput = async (k, v) => rq((await os("readwrite")).put(v, k));
+  const iget = async k => rq((await os("readonly")).get(k));
+  const idel = async k => rq((await os("readwrite")).delete(k));
+  const ikeys = async () => rq((await os("readonly")).getAllKeys());
+  /* a shared school iPad: photos belong to whoever was signed in when they were taken; anyone else signing in clears them */
+  async function purgeOthers() { try { const me = uid(); for (const k of await ikeys()) { const r = await iget(k); if (!r || r.uid !== me) await idel(k) } } catch (e) { } }
+  try { (typeof SRV !== "undefined" && SRV.ready ? Promise.resolve(SRV.ready) : Promise.resolve()).then(() => setTimeout(purgeOthers, 1500)) } catch (e) { }
+  window.addEventListener("storage", () => { setTimeout(purgeOthers, 500) });
+
+  /* ---------- encrypted cloud vault: used automatically once the server says it is on ---------- */
+  async function cloudOn() {
+    if (ST.cloud != null) return ST.cloud;
+    try { const r = await fetch("/api/vault/media/status", { headers: { "X-NCLEX": "1" }, credentials: "same-origin" }); const j = r.ok ? await r.json() : null; ST.cloud = !!(j && j.on) } catch (e) { ST.cloud = false }
+    return ST.cloud;
+  }
+
+  const list = p => (p && Array.isArray(p.media) ? p.media : []);
+  const urls = new Map(); const url = (k, b) => { if (urls.has(k)) URL.revokeObjectURL(urls.get(k)); const u = URL.createObjectURL(b); urls.set(k, u); return u };
+
+  /* ---------- the activity ---------- */
+  function mediaHTML(m, p) {
+    const L = list(p).slice().sort((a, b) => b.t - a.t); if (ST.sel && !L.some(x => x.id === ST.sel)) ST.sel = null; if (!ST.sel && L.length) ST.sel = L[0].id;
+    const sel = L.find(x => x.id === ST.sel);
+    const where = ST.cloud ? "Photos are encrypted and stored in your school's Vexcura vault; your clinical instructor can review them." : "Photos stay on this device only. Nothing is uploaded, and they are cleared if someone else signs in here.";
+    m.innerHTML = `<div class="ehah"><h2>${ic(PATH, 18)} Media</h2><div class="ehact"><button class="btn2 mini" data-md="add">+ Add photo or scan</button></div></div>
+      <div class="md-rule">${ic(PATH, 15)}<p><b>De-identified paperwork only.</b> Photograph or scan your paper clinical forms, then chart from them here for practice. Cover every name, date, number, face and barcode before you save. ${e_(where)}</p></div>
+      ${L.length ? `<div class="md-wrap"><ul class="md-list" role="listbox" aria-label="Media">${L.map(x => `<li><button type="button" role="option" aria-selected="${x.id === ST.sel}" class="md-it${x.id === ST.sel ? " on" : ""}" data-md="sel" data-v="${e_(x.id)}"><span class="md-th"><img alt="" data-mdth="${e_(x.id)}"></span><span class="md-tx"><b>${e_(x.title || "Untitled")}</b><small>${e_(x.type || "Other")}</small><small>${e_(fdt(x.t))} · ${e_(kb(x.kb || 0))}</small></span></button></li>`).join("")}</ul>
+        <section class="md-view ehcard" aria-live="polite">${sel ? `<div class="md-vh"><div><h3>${e_(sel.title || "Untitled")}</h3><p class="md-meta">${e_(sel.type || "Other")} · added ${e_(fdt(sel.t))}${sel.red ? ` · ${sel.red} area${sel.red === 1 ? "" : "s"} redacted` : ""} · <span class="md-where">${sel.st === "cloud" ? "Encrypted vault" : "On this device"}</span></p></div>
+          <div class="md-vb"><button class="btn2 mini sec2" data-md="full" data-v="${e_(sel.id)}">Full size</button><button class="btn2 mini sec2" data-md="edit" data-v="${e_(sel.id)}">Edit details</button><button class="btn2 mini sec2 md-del" data-md="del" data-v="${e_(sel.id)}">Delete</button></div></div>
+          ${sel.note ? `<p class="md-note">${e_(sel.note)}</p>` : ""}<div class="md-img"><img alt="${e_(sel.title || "Clinical paperwork photo")}" data-mdimg="${e_(sel.id)}"><p class="md-miss" hidden>This photo is stored on the device it was taken on.</p></div>` : ""}</section></div>`
+        : `<section class="ehcard md-empty"><div class="md-eic">${ic(CAM, 30)}</div><h3>No paperwork attached yet</h3><p>Take a photo of your de-identified assessment sheet, med sheet or care plan from clinicals, black out anything identifying, then use it to practise updating this chart, the way nurses do when they reconcile paper records.</p><button class="btn2" data-md="add">+ Add photo or scan</button></section>`}`;
+    hydrate(L, sel);
+  }
+  async function hydrate(L, sel) {
+    for (const x of L) { const im = document.querySelector(`img[data-mdth="${CSS.escape(x.id)}"]`); if (!im) continue; try { const r = await iget(x.id); if (r && r.th) im.src = url("t" + x.id, r.th); else im.closest(".md-th").classList.add("none") } catch (e) { } }
+    if (sel) { const im = document.querySelector(`img[data-mdimg="${CSS.escape(sel.id)}"]`); if (!im) return; try { const r = await iget(sel.id); if (r && r.img) im.src = url("i" + sel.id, r.img); else { im.hidden = true; const ms = im.parentNode.querySelector(".md-miss"); if (ms) ms.hidden = false } } catch (e) { } }
+  }
+
+  /* ---------- add flow: pick → (metadata stripped) → redact → checklist + details → save ---------- */
+  function addModal() {
+    const p = V() && V().v29.P(); if (!p) return; if (list(p).length >= MAXN) { sModal(`<h3>Media is full</h3><p>A practice chart can hold ${MAXN} photos. Delete one to add another.</p><div class="sbtns"><button class="btn2" data-md="x">OK</button></div>`); return }
+    sModal(`<div class="md-add"><p class="c2bpa-k">${ic(PATH, 16)} Add clinical paperwork</p><h3>Photo or scan</h3>
+      <p class="note">Use paperwork that is already de-identified. You will cover anything else in the next step.</p>
+      <div class="md-picks"><label class="md-pick">${ic(CAM, 26)}<b>Take a photo</b><small>Uses the camera on a phone or iPad</small><input type="file" accept="image/*" capture="environment" data-mdfile></label>
+      <label class="md-pick">${ic(FILE, 26)}<b>Choose a photo or scan</b><small>JPG or PNG from your files</small><input type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif,image/*" data-mdfile></label></div>
+      <p class="fine md-msg" id="mdmsg" role="status"></p><div class="sbtns"><button class="btn2 sec2" data-md="x">Cancel</button></div></div>`, "smod-md");
+  }
+  async function decode(file) {
+    if (window.createImageBitmap) { try { return await createImageBitmap(file, { imageOrientation: "from-image" }) } catch (e) { } }
+    return await new Promise((res, rej) => { const u = URL.createObjectURL(file); const im = new Image(); im.onload = () => { res(im) }; im.onerror = () => { URL.revokeObjectURL(u); rej(new Error("decode")) }; im.src = u });
+  }
+  async function picked(file) {
+    const msg = document.getElementById("mdmsg"); if (!file) return; if (!/^image\//.test(file.type || "image/")) { if (msg) msg.textContent = "Please choose a photo (JPG or PNG)."; return }
+    if (file.size > 30 * 1048576) { if (msg) msg.textContent = "That file is over 30 MB. Please choose a smaller photo."; return }
+    if (msg) msg.textContent = "Preparing the photo…";
+    let bm; try { bm = await decode(file) } catch (e) { if (msg) msg.textContent = "This photo format can't be opened here. Please use a JPG or PNG."; return }
+    const w0 = bm.width || bm.naturalWidth, h0 = bm.height || bm.naturalHeight, s = Math.min(1, MAXPX / Math.max(w0, h0));
+    const base = document.createElement("canvas"); base.width = Math.round(w0 * s); base.height = Math.round(h0 * s);
+    const g = base.getContext("2d"); g.fillStyle = "#fff"; g.fillRect(0, 0, base.width, base.height); g.drawImage(bm, 0, 0, base.width, base.height); try { bm.close && bm.close() } catch (e) { }
+    ST.ed = { base, ops: [], tool: "black", chk: {}, title: "", type: TYPES[0], note: "" }; editor();
+  }
+  function editor() {
+    const d = ST.ed; if (!d) return;
+    sModal(`<div class="md-ed"><p class="c2bpa-k">${ic(PATH, 16)} Cover identifiers</p><h3>Redact, then confirm</h3>
+      <p class="note">Drag across anything identifying. Location and camera data has already been removed from this photo.</p>
+      <div class="md-tools" role="toolbar" aria-label="Redaction tools"><button type="button" class="md-tool${d.tool === "black" ? " on" : ""}" data-md="tool" data-v="black" aria-pressed="${d.tool === "black"}">■ Black out</button><button type="button" class="md-tool${d.tool === "pix" ? " on" : ""}" data-md="tool" data-v="pix" aria-pressed="${d.tool === "pix"}">▦ Blur</button><button type="button" class="md-tool" data-md="undo" ${d.ops.length ? "" : "disabled"}>Undo</button><button type="button" class="md-tool" data-md="clear" ${d.ops.length ? "" : "disabled"}>Clear</button><span class="md-cnt">${d.ops.length} area${d.ops.length === 1 ? "" : "s"} covered</span></div>
+      <div class="md-cv"><canvas id="mdcv" aria-label="Photo. Drag to cover an area."></canvas></div>
+      <fieldset class="md-chk"><legend>Before you save, confirm:</legend>${CHECK.map(([k, t]) => `<label class="achk"><input type="checkbox" data-mdchk="${k}" ${d.chk[k] ? "checked" : ""}><span>${e_(t)}</span></label>`).join("")}</fieldset>
+      <div class="md-det"><label class="afld"><span>Title</span><input data-mdf="title" maxlength="80" placeholder="e.g. Day 2 med sheet" value="${e_(d.title)}"></label>
+      <label class="afld"><span>Type</span><select data-mdf="type">${TYPES.map(t => `<option ${t === d.type ? "selected" : ""}>${e_(t)}</option>`).join("")}</select></label>
+      <label class="afld md-wide"><span>Note <em>optional</em></span><textarea data-mdf="note" rows="2" maxlength="400" placeholder="What to chart from this">${e_(d.note)}</textarea></label></div>
+      <p class="fine md-msg warn" id="mdmsg" role="alert"></p>
+      <div class="sbtns"><button class="btn2" data-md="save" ${CHECK.every(([k]) => d.chk[k]) ? "" : "disabled"}>Save to chart</button><button class="btn2 sec2" data-md="x">Cancel</button></div></div>`, "smod-md wide");
+    paint(); bindCanvas();
+  }
+  function render(cv, d, live) {
+    cv.width = d.base.width; cv.height = d.base.height; const g = cv.getContext("2d"); g.drawImage(d.base, 0, 0);
+    for (const o of d.ops.concat(live ? [live] : [])) {
+      const x = Math.round(Math.min(o.x0, o.x1)), y = Math.round(Math.min(o.y0, o.y1)), w = Math.round(Math.abs(o.x1 - o.x0)), h = Math.round(Math.abs(o.y1 - o.y0)); if (w < 2 || h < 2) continue;
+      if (o.k === "black") { g.fillStyle = "#000"; g.fillRect(x, y, w, h) }
+      else { const bs = Math.max(10, Math.round(Math.max(cv.width, cv.height) / 70)); const tw = Math.max(1, Math.round(w / bs)), th = Math.max(1, Math.round(h / bs)); const t = document.createElement("canvas"); t.width = tw; t.height = th; const tg = t.getContext("2d"); tg.imageSmoothingEnabled = true; tg.drawImage(cv, x, y, w, h, 0, 0, tw, th); g.save(); g.imageSmoothingEnabled = false; g.drawImage(t, 0, 0, tw, th, x, y, w, h); g.restore() }
+      if (o === live) { g.save(); g.strokeStyle = "#e4a62c"; g.lineWidth = Math.max(2, cv.width / 400); g.setLineDash([g.lineWidth * 4, g.lineWidth * 3]); g.strokeRect(x, y, w, h); g.restore() }
+    }
+  }
+  const paint = live => { const cv = document.getElementById("mdcv"); if (cv && ST.ed) render(cv, ST.ed, live) };
+  function bindCanvas() {
+    const cv = document.getElementById("mdcv"); if (!cv) return; let drag = null;
+    const pt = e => { const r = cv.getBoundingClientRect(); return [(e.clientX - r.left) * cv.width / r.width, (e.clientY - r.top) * cv.height / r.height] };
+    cv.addEventListener("pointerdown", e => { if (!ST.ed) return; e.preventDefault(); try { cv.setPointerCapture(e.pointerId) } catch (x) { } const [x, y] = pt(e); drag = { k: ST.ed.tool, x0: x, y0: y, x1: x, y1: y } });
+    cv.addEventListener("pointermove", e => { if (!drag) return; e.preventDefault(); const [x, y] = pt(e); drag.x1 = x; drag.y1 = y; paint(drag) });
+    const end = e => { if (!drag) return; const o = drag; drag = null; if (Math.abs(o.x1 - o.x0) > 4 && Math.abs(o.y1 - o.y0) > 4) { ST.ed.ops.push(o); keepForm(); editor() } else paint() };
+    cv.addEventListener("pointerup", end); cv.addEventListener("pointercancel", end);
+  }
+  function keepForm() { const d = ST.ed; if (!d) return; document.querySelectorAll("[data-mdchk]").forEach(c => d.chk[c.dataset.mdchk] = c.checked); document.querySelectorAll("[data-mdf]").forEach(f => d[f.dataset.mdf] = f.value) }
+  const blob = (cv, q) => new Promise(res => cv.toBlob(b => res(b), "image/jpeg", q));
+  async function save() {
+    keepForm(); const d = ST.ed, E = V(); if (!d || !E) return; const msg = document.getElementById("mdmsg");
+    if (!CHECK.every(([k]) => d.chk[k])) { if (msg) msg.textContent = "Tick every box to confirm the photo has no identifiers."; return }
+    const hit = phi(d.title + " \n" + d.note); if (hit && hit.length) { if (msg) msg.textContent = "The title or note looks like it has an identifier (" + hit.map(h => h[1]).join(", ") + "). Remove it to save."; return }
+    const cv = document.createElement("canvas"); render(cv, d); const img = await blob(cv, .86);
+    const s = Math.min(1, THUMB / Math.max(cv.width, cv.height)), t = document.createElement("canvas"); t.width = Math.round(cv.width * s); t.height = Math.round(cv.height * s); t.getContext("2d").drawImage(cv, 0, 0, t.width, t.height); const th = await blob(t, .8);
+    if (!img || !th) { if (msg) msg.textContent = "Couldn't save the photo. Please try again."; return }
+    const id = nid(), p0 = E.v29.P(); if (!p0) return;
+    try { await iput(id, { uid: uid(), pid: p0.id, img, th, t: Date.now() }) } catch (e) { if (msg) msg.textContent = "This device is out of storage space for photos. Delete an older photo and try again."; return }
+    E.upd(q => { q.media = Array.isArray(q.media) ? q.media : []; q.media.push({ id, t: Date.now(), title: (d.title || "").trim() || d.type, type: d.type, note: (d.note || "").trim(), w: cv.width, h: cv.height, kb: img.size, red: d.ops.length, st: "dev", chk: 1 }) });
+    ST.ed = null; ST.sel = id; sClose(); try { E.v29.draw() } catch (e) { } toast("Photo saved to this chart");
+  }
+  function editDetails(id) {
+    const p = V() && V().v29.P(); const x = list(p).find(y => y.id === id); if (!x) return;
+    sModal(`<h3>Edit details</h3><div class="md-det"><label class="afld"><span>Title</span><input data-mde="title" maxlength="80" value="${e_(x.title)}"></label><label class="afld"><span>Type</span><select data-mde="type">${TYPES.map(t => `<option ${t === x.type ? "selected" : ""}>${e_(t)}</option>`).join("")}</select></label><label class="afld md-wide"><span>Note <em>optional</em></span><textarea data-mde="note" rows="3" maxlength="400">${e_(x.note || "")}</textarea></label></div><p class="fine md-msg warn" id="mdmsg" role="alert"></p><div class="sbtns"><button class="btn2" data-md="esave" data-v="${e_(id)}">Save</button><button class="btn2 sec2" data-md="x">Cancel</button></div>`, "smod-md");
+  }
+  function eSave(id) {
+    const v = k => (document.querySelector(`[data-mde="${k}"]`) || {}).value || ""; const msg = document.getElementById("mdmsg");
+    const hit = phi(v("title") + " \n" + v("note")); if (hit && hit.length) { if (msg) msg.textContent = "The title or note looks like it has an identifier (" + hit.map(h => h[1]).join(", ") + "). Remove it to save."; return }
+    const E = V(); E.upd(q => { const x = list(q).find(y => y.id === id); if (x) { x.title = v("title").trim() || x.type; x.type = v("type"); x.note = v("note").trim() } }); sClose(); try { E.v29.draw() } catch (e) { }
+  }
+  function delAsk(id) { const p = V() && V().v29.P(); const x = list(p).find(y => y.id === id); if (!x) return; sModal(`<h3>Delete this photo?</h3><p>“${e_(x.title)}” is removed from this chart and from this device. This can't be undone.</p><div class="sbtns"><button class="btn2 md-del" data-md="delok" data-v="${e_(id)}">Delete photo</button><button class="btn2 sec2" data-md="x">Cancel</button></div>`, "smod-md") }
+  async function delOk(id) { const E = V(); try { await idel(id) } catch (e) { } E.upd(q => { q.media = list(q).filter(y => y.id !== id) }); if (ST.sel === id) ST.sel = null; sClose(); try { E.v29.draw() } catch (e) { } toast("Photo deleted") }
+  async function full(id) { let r = null; try { r = await iget(id) } catch (e) { } if (!r || !r.img) return; const u = url("f" + id, r.img); sModal(`<div class="md-full"><img src="${u}" alt="Clinical paperwork photo, full size"></div><div class="sbtns"><button class="btn2 sec2" data-md="x">Close</button></div>`, "smod-md full") }
+
+  /* ---------- events (delegated) ---------- */
+  document.addEventListener("click", e => {
+    const b = e.target.closest && e.target.closest("[data-md]"); if (!b) return; const k = b.dataset.md, v = b.dataset.v;
+    if (k === "add") return addModal(); if (k === "x") { ST.ed = null; return sClose() }
+    if (k === "sel") { ST.sel = v; try { V().v29.draw() } catch (x) { } return }
+    if (k === "tool") { keepForm(); ST.ed.tool = v; return editor() } if (k === "undo") { keepForm(); ST.ed.ops.pop(); return editor() } if (k === "clear") { keepForm(); ST.ed.ops = []; return editor() }
+    if (k === "save") return save(); if (k === "edit") return editDetails(v); if (k === "esave") return eSave(v); if (k === "del") return delAsk(v); if (k === "delok") return delOk(v); if (k === "full") return full(v);
+  });
+  document.addEventListener("change", e => {
+    const t = e.target; if (t && t.matches && t.matches("input[data-mdfile]")) { const f = t.files && t.files[0]; t.value = ""; picked(f); return }
+    if (t && t.matches && t.matches("[data-mdchk]") && ST.ed) { ST.ed.chk[t.dataset.mdchk] = t.checked; const s = document.querySelector('[data-md="save"]'); if (s) s.disabled = !CHECK.every(([k]) => ST.ed.chk[k]) }
+  });
+
+  /* ---------- register the activity (after "Notes") ----------
+     Rendered from the post-draw hook, NOT through window.__EHXF: that hook has more than one chain owner (v29 + the flowsheet
+     grid) and delegating back through it re-routes "flow" on phones. An unknown activity falls back to Summary in the core
+     dispatch; the post-draw hook then replaces #ehm with Media in the same frame. */
+  const drawMedia = () => { const E = V(); if (!E || !E.X || E.X.act !== "media") return; const m = document.getElementById("ehm"), p = E.v29 && E.v29.P(); if (m && p) mediaHTML(m, p) };
+  function addActs() {
+    const E = V(); if (!E || !E.v29 || E.v29.__md) return; const v = E.v29; v.__md = 1; v.IC.media = PATH;
+    const put = A => { if (A.some(a => a[0] === "media")) return; const i = A.findIndex(a => a[0] === "notes"); A.splice(i >= 0 ? i + 1 : A.length, 0, ["media", "Media", "media"]) };
+    put(v.ACTS); put(v.RACTS); v.ACTN.media = "Media";
+  }
+  const POST = window.__EHXpost = window.__EHXpost || []; POST.push(() => { try { addActs(); drawMedia() } catch (e) { } }); try { addActs() } catch (e) { }
+  cloudOn();
+  window.__vxMedia = { list, purgeOthers, cloudOn, uid, _st: ST, _idb: { iget, ikeys, iput } };
+}
+/* </v59-media-js> */
 /* <v28-book-js> Vexcura Review Book: secure in-app reader (v28, NOT deployed).
    Insert INSIDE the app's main IIFE in app.html, directly after the LAST closing patch marker comment of the form
    "/* </v2N-name-js> *\/" that precedes `applyPrefs();applyFont();` (today that is the v25-mychart-js marker), using
