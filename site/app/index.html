@@ -2331,6 +2331,28 @@ svg[data-vxs] .vxs-sw{animation:vxsSway 7s ease-in-out infinite alternate}
 .vxo-g2,.vxo-g3{display:grid;gap:10px;grid-template-columns:repeat(2,minmax(0,1fr))}
 .vxo-g3{grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr))}
 .vxo-payee{margin-top:10px}
+.vxo-pipe{margin-bottom:14px}
+.vxo-pipe-h{display:flex;justify-content:space-between;align-items:baseline;gap:6px 12px;flex-wrap:wrap}
+.vxo-pipe-h h3{margin:0}
+.vxo-steps{list-style:none;margin:10px 0 12px;padding:0;display:flex;gap:6px;flex-wrap:wrap;counter-reset:st}
+.vxo-steps li{counter-increment:st}
+.vxo-steps button{font:inherit;font-size:13px;font-weight:600;min-height:36px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer}
+.vxo-steps li:not(.vxo-steps-l) button::before{content:counter(st) ". "}
+.vxo-steps button:hover{border-color:var(--accent);color:var(--accent)}
+.vxo-steps button.past{background:var(--good-soft);color:var(--good);border-color:transparent}
+.vxo-steps button.cur{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.vxo-steps .vxo-steps-l{margin-left:auto}
+.vxo-steps .lostb{border-style:dashed}
+.vxo-steps .lostb.cur{background:var(--bad-soft);color:var(--bad);border:1px solid var(--bad)}
+.vxo-pipe.is-lost .vxo-steps li:not(.vxo-steps-l) button{opacity:.75}
+.vxo-lostr{margin:0 0 10px;color:var(--bad)}
+.vxo-next{display:flex;gap:8px;align-items:flex-end;flex-wrap:wrap}
+.vxo-next label{display:grid;gap:3px;font-size:12px;color:var(--muted)}
+.vxo-next .vxo-next-s{flex:1 1 240px}
+.vxo-next input{font:inherit;font-size:14px;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);min-height:40px}
+.vxo-late{color:var(--bad)}
+.vxo-pipe-t{margin:10px 0 0;font-size:13px}
+.vxo-chk{display:flex;gap:8px;align-items:center;margin:4px 0 12px;font-size:14px}
 .vxo-board{display:grid;grid-template-columns:repeat(7,minmax(180px,1fr));gap:10px;overflow-x:auto;padding-bottom:8px}
 .vxo-col{background:var(--sunk);border-radius:12px;padding:10px;min-width:0}
 .vxo-col.lost{opacity:.8}
@@ -18404,6 +18426,7 @@ if(window.__vx32T&&window.__vx32T.test)Object.assign(window.__vx32,{RUN,CASES,CA
   const ROLE={student:"Student",instructor:"Instructor",admin:"Program admin"};
   const STAGES=[["lead","Lead"],["contacted","Contacted"],["demo","Demo / pilot"],["quote","Quote"],["contract","Contract"],["active","Active"],["lost","Lost"]];
   const STN=Object.fromEntries(STAGES);
+  const STALIAS={prospect:"lead",customer:"active",won:"active",pilot:"demo"};
   const STATUS=[["all","All programs"],["prospect","Prospects"],["pilot","Pilots"],["active","Active"],["expired","Expired"]];
   const ACTS=[["needs","Needs you","inbox"],["programs","Programs","school"],["sales","Sales","pipe"],["hiring","Hiring","hire"],["security","Security","shield"],["people","Students & users","users"],["content","Content","book"],["reports","Reports","chart"],["settings","Settings","gear"]];
   const SUBS={people:[["users","Users"],["access","Access requests"],["resets","Password resets"],["assign","Assign & message"],["sessions","Signed-in devices"],["claims","Fee reimbursement"],["team","Team & roles"]],
@@ -18448,7 +18471,8 @@ if(window.__vx32T&&window.__vx32T.test)Object.assign(window.__vx32,{RUN,CASES,CA
     let status="prospect";if(s){status=!s.lic||!s.lic.ok||s.status==="expired"||s.status==="suspended"?"expired":s.status==="pilot"?"pilot":"active"}
     let auto="lead";if(a){auto=a.status==="paid"?"active":a.status==="signed"?"contract":a.status==="approved"?(a.signer_pending||a.plan?"quote":"demo"):a.status==="declined"?"lost":"lead"}
     if(s&&(!a||a.status!=="signed")){if(status==="active")auto="active";else if(status==="pilot"&&STAGES.findIndex(x=>x[0]===auto)<2)auto="demo"}
-    return {key,s,a,c,name,short:s&&s.short||"",status,stage:c&&c.stage||auto,auto,manual:!!(c&&c.stage)}}
+    const cs0=c&&c.stage||"",cs=STN[cs0]?cs0:(STALIAS[cs0]||"");
+    return {key,s,a,c,name,short:s&&s.short||"",status,stage:cs||auto,auto,manual:!!cs}}
   const prog=k=>progs().find(p=>p.key===k)||null;
   const stLabel=p=>({prospect:"Prospect",pilot:"Pilot",active:"Active",expired:p.s&&p.s.status==="suspended"?"Suspended":"Expired"})[p.status];
   const stClass=p=>({prospect:"",pilot:"warn",active:"ok",expired:"bad"})[p.status];
@@ -18514,10 +18538,10 @@ if(window.__vx32T&&window.__vx32T.test)Object.assign(window.__vx32,{RUN,CASES,CA
     const c=document.getElementById("vxo-ctx");if(c){const p=OWN.act==="programs"&&OWN.pid&&OWN.d?prog(OWN.pid):null;c.textContent=p?p.name:"All programs"}
     const s=document.getElementById("vxo-side");if(s){s.hidden=!sideOn();if(sideOn())side(s)}
     document.getElementById("vxo").classList.toggle("noside",!sideOn())}
-  function filtered(){const q=OWN.q.toLowerCase().trim();return progs().filter(p=>(OWN.f==="all"||p.status===OWN.f)&&(!q||(p.name+" "+p.short+" "+((p.c&&p.c.contact&&p.c.contact.name)||"")).toLowerCase().includes(q))).sort((a,b)=>a.name.localeCompare(b.name))}
+  function filtered(){const q=OWN.q.toLowerCase().trim();return progs().filter(p=>(OWN.f==="all"||p.status===OWN.f||OWN.f==="st:"+p.stage)&&(!q||(p.name+" "+p.short+" "+((p.c&&p.c.contact&&p.c.contact.name)||"")).toLowerCase().includes(q))).sort((a,b)=>a.name.localeCompare(b.name))}
   function side(el){const N=OWN.d?needs():[];const cnt=k=>N.filter(n=>n.key===k).length;const L=filtered();const all=progs();
     const q=document.activeElement&&document.activeElement.id==="vxo-q";
-    el.innerHTML=`<h3><span>Programs</span><span>${all.length}</span></h3><div class="vxi-sf"><input type="search" id="vxo-q" placeholder="Find a program" value="${esc(OWN.q)}" aria-label="Find a program"><select id="vxo-f" aria-label="Status">${STATUS.map(([k,l])=>`<option value="${k}" ${OWN.f===k?"selected":""}>${l} (${k==="all"?all.length:all.filter(p=>p.status===k).length})</option>`).join("")}</select></div>
+    el.innerHTML=`<h3><span>Programs</span><span>${all.length}</span></h3><div class="vxi-sf"><input type="search" id="vxo-q" placeholder="Find a program" value="${esc(OWN.q)}" aria-label="Find a program"><select id="vxo-f" aria-label="Status or pipeline stage"><optgroup label="License status">${STATUS.map(([k,l])=>`<option value="${k}" ${OWN.f===k?"selected":""}>${l} (${k==="all"?all.length:all.filter(p=>p.status===k).length})</option>`).join("")}</optgroup><optgroup label="Pipeline stage">${STAGES.map(([k,l])=>`<option value="st:${k}" ${OWN.f==="st:"+k?"selected":""}>${l} (${all.filter(p=>p.stage===k).length})</option>`).join("")}</optgroup></select></div>
      <ul class="vxi-sl">${L.map(p=>{const n=cnt(p.key);return `<li><button data-vxo="prog" data-v="${esc(p.key)}" aria-current="${OWN.act==="programs"&&OWN.pid===p.key}"><span class="vxi-av">${esc(ini(p.short||p.name))}</span><span class="vxo-pl"><b>${esc(p.name)}</b><small>${esc(stLabel(p))} · ${esc(STN[p.stage]||p.stage)}${p.s?` · ${p.s.used}${p.s.seats?"/"+p.s.seats:""} seats`:""}</small></span>${n?`<b class="vxo-n">${n}</b>`:""}</button></li>`}).join("")||`<li class="vxi-muted" style="padding:10px">${all.length?"No programs match.":"No programs yet."}</li>`}</ul>
      <div class="vxo-sfoot"><button class="vxi-btn sm sec" data-vxo="newprog">${sv("plus",16)} New prospect</button><button class="vxi-btn sm sec" data-vxo="newlic">${sv("plus",16)} New license</button></div>`;
     if(q){const i=el.querySelector("#vxo-q");i.focus();try{i.setSelectionRange(i.value.length,i.value.length)}catch(e){}}}
@@ -18562,8 +18586,9 @@ if(window.__vx32T&&window.__vx32T.test)Object.assign(window.__vx32,{RUN,CASES,CA
     const N=needs().filter(n=>n.key===p.key);const tabs=PTABS.filter(([k])=>p.s||["people","content"].indexOf(k)<0);if(!tabs.some(t=>t[0]===OWN.ptab))OWN.ptab="overview";
     const badge=k=>{const n=N.filter(x=>x.go.split("/")[2]===k).length;return n?` <b class="vxo-n">${n}</b>`:""};
     const all=progs().sort((a,b)=>a.name.localeCompare(b.name));
-    return `<div class="vxo-ph"><div class="vxo-pht"><span class="vxi-av vxo-pav">${esc(ini(p.short||p.name))}</span><div><h2>${esc(p.name)}</h2><p class="vxi-muted">${chip(stLabel(p),stClass(p))} ${chip(STN[p.stage]||p.stage)} ${p.s?`· ${esc(PLAN[p.s.plan]||p.s.plan)} · ${p.s.used}${p.s.seats?" of "+p.s.seats:""} student seats · ends ${esc(fD(p.s.ends))}`:p.a?"· program signup "+esc(({submitted:"waiting for approval",declined:"declined"})[p.a.status]||p.a.status):"· prospect"}</p></div></div>
+    return `<div class="vxo-ph"><div class="vxo-pht"><span class="vxi-av vxo-pav">${esc(ini(p.short||p.name))}</span><div><h2>${esc(p.name)}</h2><p class="vxi-muted">${chip(stLabel(p),stClass(p))} ${chip(STN[p.stage]||p.stage)} ${p.s?`· ${esc(PLAN[p.s.plan]||p.s.plan)} · ${p.s.used}${p.s.seats?" of "+p.s.seats:""} student seats · ends ${esc(fD(p.s.ends))}`:p.a?"· program signup "+esc(({submitted:"waiting for approval",declined:"declined"})[p.a.status]||p.a.status):"· no license yet"}</p></div></div>
       <label class="vxo-sw"><span class="sr">Switch program</span><select id="vxo-psel" aria-label="Switch program">${all.map(x=>`<option value="${esc(x.key)}" ${x.key===p.key?"selected":""}>${esc(x.name)}</option>`).join("")}</select></label></div>
+     <div id="vxo-pipe">${pipeHTML(p)}</div>
      <nav class="vxo-ptabs" aria-label="Program sections">${tabs.map(([k,l])=>`<a href="#admin/p/${esc(p.key)}/${k}" aria-current="${OWN.ptab===k?"page":"false"}">${l}${badge(k)}</a>`).join("")}</nav>
      <div id="vxo-pb">${ptab(p,N)}</div>`}
   function ptab(p,N){const t=OWN.ptab;const s=p.s,a=p.a;const M=s?OWN.man[s.id]:null;
@@ -18577,7 +18602,19 @@ if(window.__vx32T&&window.__vx32T.test)Object.assign(window.__vx32,{RUN,CASES,CA
     if(t==="activity")return activityTab(p,M);
     return overviewTab(p,N,M)}
   async function loadMan(sid,force){if(OWN.man[sid]&&!force)return OWN.man[sid];try{OWN.man[sid]=await srvApi(`/api/school/${sid}/manage`)}catch(e){OWN.man[sid]={error:e.message,members:[],codes:[],groups:[],seats:{used:0,total:0}}}if(view==="admin"&&OWN.act==="programs"&&OWN.pid===sid)repaintP();return OWN.man[sid]}
-  function repaintP(){const b=document.getElementById("vxo-pb");const p=prog(OWN.pid);if(b&&p)b.innerHTML=ptab(p,needs().filter(n=>n.key===p.key));after()}
+  function repaintP(){const b=document.getElementById("vxo-pb");const p=prog(OWN.pid);if(b&&p)b.innerHTML=ptab(p,needs().filter(n=>n.key===p.key));const pp=document.getElementById("vxo-pipe");if(pp&&p&&!pp.contains(document.activeElement))pp.innerHTML=pipeHTML(p);after()}
+  /* ---- pipeline: move the program through the sales stages from its own page ---- */
+  function pipeHTML(p){if(OWN.crmOff)return "";const c=p.c||{};const n=c.next||{};const st=p.stage,lost=st==="lost",t=today();
+    const flow=STAGES.filter(x=>x[0]!=="lost");const at=flow.findIndex(x=>x[0]===st);const o=OWN.crmOne[p.key];if(!o)loadCrm(p.key);
+    const open=o?(o.tasks||[]).filter(x=>!x.done):[];const late=n.date&&n.date<t;
+    return `<section class="vxi-card vxo-pipe${lost?" is-lost":""}" aria-label="Pipeline"><div class="vxo-pipe-h"><h3>Pipeline</h3><small class="vxi-muted">${p.manual?`Set by hand${p.auto!==st?` · <button class="lk" data-vxo="stageauto" data-v="${esc(p.key)}">Use automatic (${esc(STN[p.auto]||p.auto)})</button>`:""}`:"Automatic from signup and license · click a stage to set it"}</small></div>
+     <ol class="vxo-steps">${flow.map(([k,l],i)=>`<li><button type="button" class="${!lost&&i<at?"past":""}${!lost&&i===at?" cur":""}" data-vxo="stage" data-v="${esc(p.key)}" data-s="${k}" aria-pressed="${!lost&&i===at}">${l}</button></li>`).join("")}<li class="vxo-steps-l"><button type="button" class="lostb${lost?" cur":""}" data-vxo="stage" data-v="${esc(p.key)}" data-s="lost" aria-pressed="${lost}">${lost?"Lost":"Mark lost"}</button></li></ol>
+     ${lost?`<p class="vxo-lostr"><b>Lost</b>${c.lost_reason?": "+esc(c.lost_reason):""}. Pick a stage above to reopen.</p>`:""}
+     <form class="vxo-next" data-vxof="next" data-v="${esc(p.key)}"><label class="vxo-next-s"><span>Next step${late?` <b class="vxo-late">overdue</b>`:""}</span><input name="next_step" maxlength="200" value="${esc(n.step||"")}" placeholder="e.g. Follow up (reply in thread)"></label><label><span>Date</span><input name="next_date" type="date" value="${esc(n.date||"")}"></label><button class="vxi-btn sm">Save</button>${n.step?`<button type="button" class="vxi-btn sm sec" data-vxo="nextdone" data-v="${esc(p.key)}">Done, log it</button>`:""}</form>
+     ${open.length?`<p class="vxi-muted vxo-pipe-t">${open.length} open task${open.length===1?"":"s"}. Next: <b>${esc(open[0].title)}</b>${open[0].due?" · "+esc(fD(open[0].due)):""} · <a class="lk" href="#admin/p/${esc(p.key)}/tasks">All tasks</a></p>`:""}</section>`}
+  const noteAdd=(p,text)=>srvApi("/api/crm/p/"+encodeURIComponent(p.key)+"/notes",{method:"POST",body:{text}}).catch(()=>{});
+  function lostModal(p){sModal(`<h3>Mark ${esc(p.name)} lost</h3><form class="aform" data-vxof="lost" data-v="${esc(p.key)}"><label class="afld"><span>Why? <em>optional</em></span><input name="reason" maxlength="300" value="${esc((p.c&&p.c.lost_reason)||"")}" placeholder="e.g. Not interested, chose another vendor, no budget this year"></label><label class="vxo-chk"><input type="checkbox" name="close" checked> Close open tasks and clear the next step</label><div class="sbtns"><button class="btn2" type="submit">Mark lost</button><button type="button" class="btn2 sec2" data-sm="close">Cancel</button></div></form>`)}
+  async function afterCrm(p,msg){delete OWN.crmOne[p.key];await load(true);paint();if(msg)toast(msg)}
   async function loadCrm(key,force){if(OWN.crmOff)return null;if(OWN.crmOne[key]&&!force)return OWN.crmOne[key];try{OWN.crmOne[key]=await srvApi("/api/crm/p/"+encodeURIComponent(key))}catch(e){OWN.crmOne[key]={program:null,notes:[],tasks:[]}}if(OWN.act==="programs"&&OWN.pid===key)repaintP();return OWN.crmOne[key]}
   const crmOffNote=`<p class="vxi-muted vxo-off">Saving contacts, notes, tasks and stages turns on with the v22 CRM update on the server. Until then stages are worked out automatically.</p>`;
   function overviewTab(p,N,M){const s=p.s,c=p.c||{contact:{},next:{}};const ct=c.contact||{};const I=(p.a&&p.a.info)||{};const act=M&&M.members?M.members.filter(x=>x.status==="active"):[];
@@ -18683,6 +18720,10 @@ if(window.__vx32T&&window.__vx32T.test)Object.assign(window.__vx32,{RUN,CASES,CA
       if(k==="newlic"){newLicense();return}
       if(k==="newprog"){if(OWN.crmOff){alertBox("Adding prospects needs the v22 CRM update on the server. For now, create a school license or send the director to #program-setup.");return}crmModal(null);return}
       if(k==="editcrm"){crmModal(prog(v));return}
+      if(k==="stage"){const p=prog(v),s2=b.dataset.s;if(!p||!STN[s2])return;if(s2==="lost"){if(p.stage!=="lost")lostModal(p);return}if(s2===p.stage&&p.manual)return;
+        const from=STN[p.stage]||p.stage;b.disabled=true;await crmSave(p,Object.assign({stage:s2},p.stage==="lost"?{lost_reason:""}:{}));await noteAdd(p,`Stage: ${from} → ${STN[s2]}`);await afterCrm(p,p.name+": "+STN[s2]);return}
+      if(k==="stageauto"){const p=prog(v);if(!p)return;await crmSave(p,{stage:""});await noteAdd(p,`Stage: ${STN[p.stage]||p.stage} → automatic (${STN[p.auto]||p.auto})`);await afterCrm(p,"Stage set to automatic");return}
+      if(k==="nextdone"){const p=prog(v);if(!p)return;const n=(p.c&&p.c.next)||{};b.disabled=true;await noteAdd(p,"Done: "+(n.step||"next step")+(n.date?` (planned ${n.date})`:""));await crmSave(p,{next_step:"",next_date:""});await afterCrm(p,"Logged. Set the next step when you know it.");return}
       if(k==="rmnote"){await srvApi("/api/crm/notes/"+v,{method:"DELETE"});await loadCrm(b.dataset.k,true);return}
       if(k==="rmtask"){await srvApi("/api/crm/tasks/"+v,{method:"DELETE"});await loadCrm(b.dataset.k,true);await load(true);paintFrame();return}
       const p=prog(OWN.pid),sid=p&&p.s&&p.s.id;
@@ -18718,6 +18759,11 @@ if(window.__vx32T&&window.__vx32T.test)Object.assign(window.__vx32,{RUN,CASES,CA
       if(k==="crm"){const body={stage:v("stage"),value:+v("value")||0,contact:{name:v("cname"),title:v("ctitle"),email:v("cemail"),phone:v("cphone")},next_step:v("next_step"),next_date:v("next_date"),source:v("source")};
         if(!key){const r=await srvApi("/api/crm/p",{method:"POST",body:Object.assign({name:v("name")},body)});sClose();await load(true);OWN.pid=r.key;go(`p/${r.key}/overview`);return}
         const p=prog(key);await crmSave(p,body);sClose();delete OWN.crmOne[key];await load(true);paint();toast("Saved");return}
+      if(k==="next"){const p=prog(key);await crmSave(p,{next_step:v("next_step"),next_date:v("next_date")});await afterCrm(p,"Next step saved");return}
+      if(k==="lost"){const p=prog(key);const close=!!(f.elements.close&&f.elements.close.checked);const why=v("reason");const from=STN[p.stage]||p.stage;
+        await crmSave(p,Object.assign({stage:"lost",lost_reason:why},close?{next_step:"",next_date:""}:{}));
+        if(close){const o=await srvApi("/api/crm/p/"+encodeURIComponent(p.key)).catch(()=>({tasks:[]}));for(const x of (o.tasks||[]).filter(x=>!x.done))await srvApi("/api/crm/tasks/"+x.id,{method:"PUT",body:{done:true}})}
+        await noteAdd(p,`Stage: ${from} → Lost${why?" ("+why+")":""}`);sClose();await afterCrm(p,p.name+": Lost");return}
       if(k==="note"){const t=v("text");if(!t)return;await srvApi("/api/crm/p/"+encodeURIComponent(key)+"/notes",{method:"POST",body:{text:t}});await loadCrm(key,true);return}
       if(k==="task"){await srvApi("/api/crm/p/"+encodeURIComponent(key)+"/tasks",{method:"POST",body:{title:v("title"),due:v("due")}});await loadCrm(key,true);await load(true);paintFrame();return}
     }catch(er){alertBox(er.message||"Couldn't save.")}finally{if(btn&&document.body.contains(btn))btn.disabled=false}},true);
