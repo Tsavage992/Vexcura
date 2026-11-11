@@ -5370,6 +5370,61 @@ html[data-theme="dark"] .wsx-who{color:#a9bcc6}
 html[data-theme="dark"] .md-rule{background:#2a2412;border-color:#5a4a20;color:#f0dfb0}html[data-theme="dark"] .md-img,html[data-theme="dark"] .md-cv{background:#0f1b21}
 @media (prefers-color-scheme:dark){html:not([data-theme="light"]) .md-rule{background:#2a2412;border-color:#5a4a20;color:#f0dfb0}html:not([data-theme="light"]) .md-img,html:not([data-theme="light"]) .md-cv{background:#0f1b21}}
 /* </v59-media-css> */
+/* <v60-fullchart-css> */
+/* v60 Full Chart (prefix fc-). The document is always black on white, on screen and on paper. */
+.fc-bar{flex-wrap:wrap;gap:10px}.fc-lead{margin:2px 0 10px}
+.fc-opt{margin:0 0 14px;border:1px solid var(--line,#d6dde2);border-radius:10px;background:var(--surface,#fff);padding:8px 14px}
+.fc-opt summary{cursor:pointer;font-weight:700;padding:4px 0}
+.fc-chks{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:4px 14px;margin:8px 0 10px}
+.fc-chks .achk{display:flex;gap:8px;align-items:center;font-size:14px}
+.fc-ord{max-width:340px}.fc-cov{margin-top:10px}.fc-cov .ehg2{gap:8px}
+.fc-paper{background:#e9eef1;border-radius:12px;padding:18px;overflow:auto}
+.fc-doc{background:#fff;color:#14232b;max-width:8.5in;margin:0 auto;padding:.5in .55in;box-shadow:0 2px 14px rgba(20,35,43,.18);border-radius:4px;font:10pt/1.42 -apple-system,"Segoe UI",Inter,Arial,sans-serif}
+.fc-doc *{color:inherit}
+.fc-pg{width:100%;border-collapse:collapse}.fc-pg>thead>tr>td,.fc-pg>tfoot>tr>td,.fc-pg>tbody>tr>td{padding:0;border:0}
+.fc-rh{display:flex;justify-content:space-between;gap:12px;font-size:8pt;color:#566770;border-bottom:1px solid #c9d3d9;padding-bottom:4px;margin-bottom:10px}
+.fc-rh b{color:#123d52;letter-spacing:.04em}.fc-rf{font-size:7.5pt;color:#6b7a82;border-top:1px solid #c9d3d9;padding-top:4px;margin-top:10px}
+.fc-cover{border-bottom:3px solid #123d52;padding-bottom:12px;margin-bottom:12px}
+.fc-brand{display:inline-block;background:#123d52;color:#fff!important;font:800 9pt/1 Arial,sans-serif;letter-spacing:.12em;padding:5px 9px;border-radius:3px}
+.fc-cover h1{font-size:20pt;margin:8px 0 2px;color:#123d52}.fc-cover>p{margin:0 0 8px}
+.fc-who{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid #c9d3d9;border-radius:4px;margin:8px 0}
+.fc-who div{padding:6px 8px;border-left:1px solid #c9d3d9;min-height:42px}.fc-who div:first-child{border-left:0}
+.fc-who span{display:block;font-size:7pt;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#6b7a82}.fc-who b{font-size:10pt}
+.fc-sec{margin:14px 0 0}
+.fc-sec>h2{font-size:9.5pt;text-transform:uppercase;letter-spacing:.06em;color:#123d52;background:#eef3f6;border-left:4px solid #123d52;padding:4px 8px;margin:0 0 6px;break-after:avoid;page-break-after:avoid}
+.fc-kv{display:grid;grid-template-columns:repeat(3,1fr);margin:0;border:1px solid #d6dde2;border-width:1px 0 0 1px}
+.fc-kv div{border:1px solid #d6dde2;border-width:0 1px 1px 0;padding:4px 7px}.fc-kv dt{font-size:7pt;font-weight:700;text-transform:uppercase;color:#6b7a82}.fc-kv dd{margin:0;font-size:9.5pt}
+.fc-t{width:100%;border-collapse:collapse;table-layout:fixed;font-size:8.4pt;line-height:1.32}
+.fc-t th{background:#dfe7eb;color:#123d52;text-align:left;padding:3px 5px;font-size:7.8pt}
+.fc-t td{padding:3px 5px;border-bottom:1px solid #e1e7ea;vertical-align:top;overflow-wrap:anywhere}
+.fc-t tbody tr:nth-child(even) td{background:#f7f9fa}.fc-t td.fc-flag{color:#a3241b;font-weight:700}
+.fc-t thead{display:table-header-group}.fc-t tr{break-inside:avoid;page-break-inside:avoid}
+.fc-note{font-size:7.6pt;color:#6b7a82;margin:4px 0 0}.fc-none{color:#6b7a82;font-style:italic;margin:2px 0}
+.fc-blk{margin:4px 0 8px;break-inside:avoid-page}.fc-blk h3{font-size:9.5pt;margin:0 0 2px}.fc-blk p{margin:0 0 2px 8px}.fc-blk ul,.fc-sec>ul{margin:2px 0 4px 22px;padding:0}
+.fc-imgs{display:grid;gap:12px;margin-top:8px}.fc-imgs figure{margin:0;break-inside:avoid;page-break-inside:avoid;border:1px solid #d6dde2;padding:6px;text-align:center}
+.fc-imgs img{max-width:100%;max-height:8.6in;object-fit:contain}.fc-imgs figcaption{font-size:8pt;color:#566770;margin-top:4px}
+.fc-grade{break-before:page;page-break-before:always}
+.fc-gt{width:100%;border-collapse:collapse;margin:6px 0 10px}.fc-gt th{font-size:8pt;text-align:left;padding:4px;width:12%;color:#566770}.fc-gt td{border-bottom:1px solid #14232b;width:21%;height:24px}
+.fc-lines b{display:block;font-size:8pt;color:#566770;margin-bottom:2px}.fc-lines i{display:block;border-bottom:1px solid #9aa8b0;height:24px}
+.fc-att{font-size:9pt;margin:16px 0}
+.fc-sig{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:22px;font-size:8pt;color:#566770}.fc-sig i{display:block;border-bottom:1px solid #14232b;height:30px;margin-bottom:3px}
+#fcpr{display:none}
+@media (max-width:760px){.fc-paper{padding:8px;border-radius:8px}.fc-doc{padding:16px 14px;font-size:9.5pt}.fc-who,.fc-kv{grid-template-columns:1fr 1fr}.fc-rh{flex-direction:column;gap:2px}
+  .fc-t{font-size:7.8pt}.fc-t-timeline col:nth-child(3),.fc-t-timeline td:nth-child(3),.fc-t-timeline th:nth-child(3){display:none}}
+@page{size:letter;margin:.45in .45in .5in;@bottom-right{content:"Page " counter(page) " of " counter(pages);font:7.5pt Arial,sans-serif;color:#6b7a82}}
+@media print{
+  body.fc-printing>*:not(#fcpr){display:none!important}
+  body.fc-printing::before,body.fc-printing::after{content:none!important;display:none!important}
+  body.proc-on.fc-printing #fcpr{display:none!important}
+  #fcpr .fc-kv div,#fcpr .fc-who{break-inside:avoid;page-break-inside:avoid}
+  body.fc-printing{background:#fff!important;margin:0!important;padding:0!important;overflow:visible!important;height:auto!important}
+  html:has(body.fc-printing){background:#fff!important;overflow:visible!important;height:auto!important}
+  body.fc-printing #fcpr{display:block!important;position:static!important}
+  #fcpr .fc-doc{box-shadow:none;max-width:none;padding:0;margin:0;border-radius:0;font-size:9.5pt}
+  #fcpr .fc-t{font-size:8pt}#fcpr .fc-t tbody tr:nth-child(even) td,#fcpr .fc-t th,#fcpr .fc-sec>h2,#fcpr .fc-brand{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  #fcpr .fc-rh,#fcpr .fc-rf{margin:0}#fcpr .fc-pg>thead>tr>td{padding-bottom:8px}#fcpr .fc-pg>tfoot>tr>td{padding-top:8px}
+}
+/* </v60-fullchart-css> */
 .areqp{border:1px solid var(--line,#cfd8e0);border-radius:10px;padding:10px 14px 4px;margin:6px 0 10px}.areqp legend{font-weight:700;padding:0 6px}.agrid input[type=date],.agrid input[type=month]{width:100%;min-width:0;max-width:100%;box-sizing:border-box;-webkit-appearance:none;appearance:none}.agrid .aip{min-width:0;max-width:100%}
 </style>
 
@@ -5382,7 +5437,7 @@ const BANK = (function(e){try{const P=">oVO^cd@ge#lJ'~wUTDiEY+LZx-K&hkt(/F0;G`N.
 let HIDQ=new Set();const CFG={c:null,bypass:false};try{const c=JSON.parse(localStorage.getItem("ns.cfg")||"null");if(c&&typeof c==="object"){CFG.c=c;HIDQ=new Set(c.hideQ||[])}}catch(e){}
 const featOn=k=>!CFG.c||!CFG.c.feat||CFG.c.feat[k]!==false;
 
-const APPV="04d1bad8100daf57f4ad9bc56c603ba278b3c641a37660b4f51db05ca2053cf2";
+const APPV="e1bdc6a50e28b508611875ce7a9a1f32a5116d77def2c8da05258f1d11cf2b39";
 const CATS={
   MOC:{n:"Management of Care",lo:15,hi:21,w:18},
   SIC:{n:"Safety and Infection Prevention and Control",lo:10,hi:16,w:13},
@@ -9188,7 +9243,7 @@ zolpidem|Sedative-hypnotic|PO||Ambien`;
     if(id==="braden"){const ks=["bra","brb","brc","brd","bre","brf"];const v=ks.map(k=>+g(k));return v.every(x=>x)?v.reduce((a,b)=>a+b,0):""}
     if(id==="inT"||id==="outT"||id==="net"){const sum=ks=>ks.reduce((a,k)=>a+(+g(k)||0),0);const i=sum(["po","ivin","tf"]),o=sum(["uo","emesis","drain"]);const v=id==="inT"?i:id==="outT"?o:i-o;return (i||o)?v:""}
     return ""}
-  function fileVals(p,t,vals){const F=fsVals(p);Object.entries(vals).forEach(([r,v])=>{const i=F.findIndex(x=>x.r===r&&x.t===t);if(v===""||v==null){if(i>=0)F.splice(i,1)}else if(i>=0){F[i].v=v;F[i].rt=Date.now()}else F.push({t,r,v,rt:Date.now()})})}
+  function fileVals(p,t,vals){const F=fsVals(p);Object.entries(vals).forEach(([r,v])=>{const i=F.findIndex(x=>x.r===r&&x.t===t);const fx=(o,ort,n)=>{const H=p.fxh=p.fxh||[];H.push({t,r,o,ort:ort||null,n,rt:Date.now()});if(H.length>500)H.splice(0,H.length-500)};if(v===""||v==null){if(i>=0){fx(F[i].v,F[i].rt,"");F.splice(i,1)}}else if(i>=0){if(JSON.stringify(F[i].v)!==JSON.stringify(v))fx(F[i].v,F[i].rt,v);F[i].v=v;F[i].rt=Date.now()}else F.push({t,r,v,rt:Date.now()})})}
 
   /* ---- MAR ---- */
   function doses0(p,o,hd){if(o.status==="dc"&&o.dcT!=null&&o.dcT<T(hd,0))return [];const f=FREQ[o.freq]||{};if(f.prn||f.cont)return [];let L=[];
@@ -9566,7 +9621,7 @@ zolpidem|Sedative-hypnotic|PO||Ambien`;
 
   /* ---- comprehensive report model (shared by the Handoff screen and the PDF) ---- */
   const SEXW={F:"Female",M:"Male",X:"X"};
-  function rpt(p,inc){inc=inc||{};const on=k=>inc[k]!==false;const S=[];const ho=p.ho||{};const now=curT(p);
+  function rpt(p,inc){inc=inc||{};if(inc.full&&window.__vxFC)return window.__vxFC.sections(p,inc.fc||{});const on=k=>inc[k]!==false;const S=[];const ho=p.ho||{};const now=curT(p);
     S.push({id:"overview",h:"Patient overview",k:"kv",v:[["Patient",p.label],["Practice ID",p.sim],["Age range",p.age],["Sex",SEXW[p.sex]||p.sex],["Unit type",p.unit],["Hospital day",String(p.hd||1)],["Code status",p.code||"Not entered"],["Isolation",p.iso||"None"],["Fall risk",p.fall?"Yes":"No"],["Weight",p.wt?p.wt+" kg":"Not entered"],["Illness severity",ho.sev||"Not rated"],["Allergies",alText(p)]]});
     const A=dxAct(p),Ot=A.filter(x=>x.n!==dxPri(p));
     const flagged=[];[...new Set((p.flow||[]).map(x=>x.t))].sort((a,b)=>b-a).slice(0,8).forEach(t=>["temp","hr","rr","bp","spo2","bg","pain"].forEach(r=>{const v=valAt(p,r,t);const fl=v!==""&&v!=null?flagOf(r,v):"";if(fl)flagged.push(`${ROW[r].l} ${v} (${fl==="H"?"high":"low"}) at ${tLbl(t)}`)}));
@@ -9628,7 +9683,7 @@ zolpidem|Sedative-hypnotic|PO||Ambien`;
   function pWrap(s,wd,sz,b){const out=[];pTx(s).split("\n").forEach(par=>{const words=par.split(/ +/);let ln="";words.forEach(w=>{let t=ln?ln+" "+w:w;if(pW(t,sz,b)<=wd){ln=t;return}if(ln)out.push(ln);ln=w;while(pW(ln,sz,b)>wd){let i=ln.length;while(i>1&&pW(ln.slice(0,i),sz,b)>wd)i--;out.push(ln.slice(0,i));ln=ln.slice(i)}});out.push(ln)});return out}
   const NAVY="0.11 0.34 0.44",INK="0.11 0.14 0.17",GREY="0.38 0.43 0.47",LINE="0.7 0.75 0.79",TINT="0.92 0.95 0.96";
   function buildPDF(p,st,inc){const doc=PDFDoc();const M=40,CW=532,BOT=740;let y=0;const S=rpt(p,inc);
-    const title=inc.only==="care"?"Nursing Care Plan":"Post-Clinical Patient Care Report",form=inc.only==="care"?"VX-NCP-1":"VX-PCR-1";
+    const title=inc.full?"Complete Chart Record":inc.only==="care"?"Nursing Care Plan":"Post-Clinical Patient Care Report",form=inc.full?"VX-FCR-1":inc.only==="care"?"VX-NCP-1":"VX-PCR-1";
     const head=()=>{doc.np();doc.r(M,30,CW,28,{fill:NAVY});doc.t(M+10,48.5,"VEXCURA",{bold:1,size:12,c:"1 1 1"});doc.t(M+78,48.5,title,{bold:1,size:11,c:"1 1 1"});const ft="Form "+form;doc.t(M+CW-10-pW(ft,8),48,ft,{size:8,c:"0.85 0.92 0.95"});
       const id=`${p.label} · ${p.sim} · ${p.age||""} ${SEXW[p.sex]||""} · ${p.unit||""} · Hospital day ${p.hd||1}`;doc.t(M,72,id,{size:8,c:GREY});const sn=st.stu?"Student: "+st.stu:"";if(sn)doc.t(M+CW-pW(sn,8),72,sn,{size:8,c:GREY});doc.l(M,77,M+CW,77,{c:LINE});y=88};
     const need=h=>{if(y+h>BOT)head()};
@@ -9643,7 +9698,7 @@ zolpidem|Sedative-hypnotic|PO||Ambien`;
     head();
     /* student block */
     need(60);doc.r(M,y,CW,46,{stroke:LINE});const f4=[["Student",st.stu],["Clinical instructor",st.ins],["Course",st.course],["Clinical week",st.wk]];f4.forEach(([a,b],i)=>{const x=M+i*(CW/4);if(i)doc.l(x,y,x,y+46,{c:LINE});doc.t(x+6,y+11,a.toUpperCase(),{size:6.4,bold:1,c:GREY});pWrap(b||"",CW/4-12,9,true).slice(0,2).forEach((ln,k)=>doc.t(x+6,y+26+k*11,ln,{size:9,bold:1}))});y+=54;
-    para("De-identified practice record created in the Vexcura Clinical EHR practice workspace. It contains no names, dates, record numbers or other identifiers and is not part of any medical record. Times are hospital day and clock time only.",{size:7,c:GREY,after:6});
+    para("De-identified practice record created in the Vexcura Clinical EHR practice workspace. It contains no names, dates, record numbers or other identifiers and is not part of any medical record. "+(inc.full?"Chart times are hospital day and clock time; Entered shows when the student documented each item (an audit trail), not a patient date.":"Times are hospital day and clock time only."),{size:7,c:GREY,after:6});
     S.filter(s=>!inc.only||inc.only!=="care"||["overview","dx","care","synth"].indexOf(s.id)>=0).forEach(s=>{sec(s.h);
       if(s.k==="kv")kv(s.v,3);else if(s.k==="p")para(s.v);else if(s.k==="ul"){if(!s.v.length)para(s.empty||"None.",{c:GREY});else s.v.forEach(x=>{const L=pWrap(x,CW-12,8.8,false);L.forEach((ln,k)=>{need(12.2);if(!k)doc.t(M+2,y+8.8,"·",{size:10,bold:1});doc.t(M+12,y+8.8,ln,{size:8.8});y+=12.2})});y+=3}
       else if(s.k==="tbl"){if(!s.rows.length)para(s.empty||"None.",{c:GREY});else tbl(s)}
@@ -16855,7 +16910,7 @@ function addActs(){const E=V();if(!E||E.v29.__dx32)return;const v=E.v29;v.__dx32
 {const POST=window.__EHXpost=window.__EHXpost||[];POST.push(()=>{try{addActs();card();paint()}catch(e){}})}
 try{addActs()}catch(e){}
 /* ---------- Secure Chat (v29) bridge, used by the exact edits deter-apply.js makes in the v29 block ---------- */
-window.__vx32={version:DV,open:()=>startForm(),on:p=>running(p),chatScen:p=>{try{return chatScen(p)}catch(e){return null}},chatOrders:(p,sc,r)=>{try{chatOrders(p,sc,r)}catch(e){}},rrtQ:q=>{try{chatRRT(q)}catch(e){}},
+window.__vx32={version:DV,res:p=>{try{const R=p.dx32?(running(p)?runFor(p):hyd(p.dx32)):null;if(!R)return null;return{labs:R.labs.filter(z=>z.out||LABS[z.lab].poc).map(z=>({n:z.n,t:clk(z.tDraw),vals:z.vals||[],crit:z.crit||[]})),img:R.img.filter(z=>z.out).map(z=>({n:z.n,t:clk(z.tRes),txt:z.txt}))}}catch(e){return null}},open:()=>startForm(),on:p=>running(p),chatScen:p=>{try{return chatScen(p)}catch(e){return null}},chatOrders:(p,sc,r)=>{try{chatOrders(p,sc,r)}catch(e){}},rrtQ:q=>{try{chatRRT(q)}catch(e){}},
   progress:()=>{const P=prog();return {rating:P.r,tier:tierNow(P),pct:tierPct(P),comps:Object.assign({},P.c),drills:P.n}},count:()=>{const o={};CASES.forEach(c=>o[c.tier]=(o[c.tier]||0)+1);return o}};
 /* ---------- My Chart › More row (like patches/tele.js); no Menu entry ---------- */
 const DXI='<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+ICO.drill+'</svg>';
@@ -21218,7 +21273,7 @@ const SECX = (() => {
   }
   function fbItem(f, edit) { return `<li class="${f.visible ? "" : "priv"}"><div><b>${esc(f.label || KL[f.kind] || f.kind)}</b> <span class="vxi-muted">${esc(dtm(f.updated))} · ${esc(f.author)}${f.visible ? (f.read_at ? " · read by student" : " · not read yet") : " · private note"}</span></div>${f.score != null ? `<p class="v39-fsc">Score ${f.score}${f.max ? " / " + f.max : ""}${f.rubric ? " · " + f.rubric.map(r => esc(r.label) + " " + r.v + "/" + r.max).join(", ") : ""}</p>` : ""}${f.text ? `<p>${esc(f.text)}</p>` : ""}${edit ? `<div class="vxi-row"><button class="lk" data-v39="fbvis" data-v="${esc(f.id)}">${f.visible ? "Make private" : "Show to student"}</button><button class="lk" data-v39="fbdel" data-v="${esc(f.id)}">Delete</button></div>` : ""}</li>` }
   function docsOf(uid) { const X = E(); return X && X.TV.gid === IX.gid ? Object.values(X.TV.docs).filter(d => String(d.uid) === uid) : [] }
-  const PT = [["summary", "Summary"], ["flow", "Flowsheet"], ["mar", "MAR"], ["orders", "Orders"], ["notes", "Notes"], ["lda", "LDAs"], ["care", "Care plan"], ["chat", "Secure Chat & SDOH"], ["report", "Report"]];
+  const PT = [["summary", "Summary"], ["flow", "Flowsheet"], ["mar", "MAR"], ["orders", "Orders"], ["notes", "Notes"], ["lda", "LDAs"], ["care", "Care plan"], ["chat", "Secure Chat & SDOH"], ["report", "Report"], ["full", "Full chart"]]; window.__vx39paint = () => { try { paint() } catch (e) { } };
   function chartsHTML(uid) {
     const D = docsOf(uid); if (!D.length) return `<section class="vxi-card"><h3>EHR charts</h3><p class="vxi-muted">No practice charts yet. Charts this student creates appear here and update live.</p></section>`;
     const d = D.find(x => x.pid === IX.pid || x.data.id === IX.pid) || D[0]; IX.pid = d.data.id; const p = d.data; const X = E(); const t = IX.ptab || "summary"; let b = "";
@@ -21235,6 +21290,7 @@ const SECX = (() => {
       const sd = (p.sdoh && p.sdoh.at) || {};
       b = `<section class="ehcard"><h3>Secure Chat</h3>${M.length ? `<ul class="v39-items">${M.map(m => { const ref = "sbar:" + p.id + ":" + m.id; return `<li class="${m.who === "me" ? "me" : ""}"><div><b>${m.who === "me" ? esc(nm(uid)) : esc(m.n || m.who)}</b> <span class="vxi-muted">${esc(m.th)} · ${esc(dtm(m.at))}</span><p class="v39-note">${esc(m.txt || "")}</p>${m.who === "me" ? inl(ref) : ""}</div>${m.who === "me" && !m.auto ? fbB(ref, "sbar", "Secure Chat SBAR · " + String(m.txt || "").slice(0, 80)) : ""}</li>` }).join("")}</ul>` : `<p class="vxi-muted">No Secure Chat messages.</p>`}</section>
        <section class="ehcard"><h3>Social drivers of health screening</h3>${Object.keys(sd).length ? `<ul class="v39-items">${Object.entries(sd).map(([k, tt]) => { const ref = "sdoh:" + p.id + ":" + k; return `<li><div><b>${esc(k)}</b> <span class="vxi-muted">${esc(dtm(tt))}</span>${inl(ref)}</div>${fbB(ref, "sdoh", "SDOH · " + k)}</li>` }).join("")}</ul>` : `<p class="vxi-muted">Not screened yet.</p>`}</section>` }
+    else if (t === "full") b = window.__vxFC ? window.__vxFC.instr(p, { stu: nm(uid), fb: IX.fb.filter(f => !f.deleted && f.uid === String(uid) && String(f.ref || "").indexOf(p.id) >= 0).map(f => ({ t: f.updated, author: f.author, label: f.label, text: f.text, score: f.score, max: f.max })) }) : "";
     else if (t === "report") b = X.rptHTML(X.rpt(p)) + `<div class="sbtns"><button class="vxi-btn sm sec" data-v39="pdf" data-u="${esc(uid)}" data-p="${esc(p.id)}">Download PDF report</button></div>`;
     return `<div class="v39-ptbar">${D.length > 1 ? `<select data-v39sel="pt" aria-label="Patient">${D.map(x => `<option value="${esc(x.data.id)}" ${x.data.id === p.id ? "selected" : ""}>${esc(x.data.label)}</option>`).join("")}</select>` : `<b>${esc(p.label)}</b>`}<span class="vxi-muted">${esc(p.age || "")} ${esc(X.SEXW[p.sex] || "")} · ${esc(p.unit || "")} · HD ${p.hd || 1} · ${esc(X.dxPri(p) || "")} · updated ${esc(ago(d.updated).toLowerCase())}</span></div>
      <nav class="mfil twtabs v39-ptt" role="tablist">${PT.map(([k, l]) => `<button role="tab" aria-selected="${t === k}" data-v39="ptab" data-v="${k}">${l}</button>`).join("")}</nav><div class="twro v39-ro">${b}</div><p class="fine">Read-only view of the student's de-identified practice chart. It updates live while the student charts. Click a flowsheet cell, a dose or any item to leave feedback.</p>`;
@@ -27556,6 +27612,222 @@ window.__vxTele={version:TLV,open,close,RH,RHM,build,grade,sigHash,presFor,conte
   window.__vxMedia = { list, purgeOthers, cloudOn, uid, _st: ST, _idb: { iget, ikeys, iput } };
 }
 /* </v59-media-js> */
+/* <v60-fullchart-js> */
+/* v60 Full Chart: the complete admission-to-discharge record for printing, grading and review ("attorney view").
+   - Student EHR: a "Full Chart" activity right after Handoff (desktop and phone activity lists).
+   - Instructor workspace (#instructor/students/<uid>/charts): a "Full chart" patient tab (hook in the v39 chartsHTML).
+   - Print: copies the document to a top-level #fcpr node and calls window.print(); @media print hides everything else.
+   - Download PDF: core buildPDF(p, st, {full:1, fc:opts}); core rpt() returns sections(p, opts) when inc.full is set.
+   - Audit: core fileVals() logs flowsheet corrections and removals to p.fxh ({t,r,o,ort,n,rt}); shown in the record.
+   Everything here reads the chart; nothing is written except the student's own cover fields (db().stu) and the
+   per-device print options in localStorage. */
+{
+  const E = () => { try { return window.__EHX.get() } catch (e) { return null } };
+  const K = () => window.__EHX34 || null;
+  const X39 = () => { try { return window.__EHX39() } catch (e) { return null } };
+  const esc = s => String(s == null ? "" : s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const PATH = '<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/><path d="M5 7H3v14a2 2 0 0 0 2 2h10v-2"/>';
+  const dtR = rt => rt ? new Date(rt).toLocaleString([], { month: "short", day: "numeric", year: "numeric", hour: "numeric", minute: "2-digit" }) : "";
+  const one = s => String(s == null ? "" : s).replace(/\s+/g, " ").trim();
+  const cut = (s, n) => { s = one(s); return s.length > n ? s.slice(0, n - 1) + "…" : s };
+
+  /* ---------- options ---------- */
+  const SECS = [["timeline", "Complete timeline"], ["flow", "Every flowsheet entry"], ["vitals", "Vital signs table"], ["io", "Intake and output"], ["lda", "Lines, drains, airways, wounds"], ["orders", "All orders"], ["mar", "Medication administration record"], ["labs", "Labs and diagnostics"], ["notes", "Notes"], ["care", "Care plan"], ["sdoh", "Social drivers of health"], ["chat", "Secure Chat"], ["media", "Attached paperwork"], ["handoff", "Handoff"], ["audit", "Corrections and audit"], ["fb", "Instructor feedback"], ["grade", "Grading page"]];
+  const LS = "vx.fc.opts";
+  const OPT = (() => { let o = {}; try { o = JSON.parse(localStorage.getItem(LS) || "{}") || {} } catch (e) { } o.off = o.off || {}; o.order = o.order === "desc" ? "desc" : "asc"; return o })();
+  const saveOpt = () => { try { localStorage.setItem(LS, JSON.stringify({ off: OPT.off, order: OPT.order })) } catch (e) { } };
+  const on = (o, k) => !(o.off || {})[k];
+
+  /* ---------- helpers over the chart ---------- */
+  const grpN = g => { const x = E(); const G = x && x.FS && x.FS.find(z => z.g === g); return G ? G.n : (g || "") };
+  const grpI = g => { const x = E(); const i = x && x.FS ? x.FS.findIndex(z => z.g === g) : -1; return i < 0 ? 99 : i };
+  function rowInfo(p, r) {
+    const k = K(); const m = /^lda:([^:]+):(.+)$/.exec(r || "");
+    if (m && k) { const l = (p.ldas || []).find(z => z.id === m[1]); const D = l && k.LDA[l.type]; const a = D && (D.as || []).find(z => z[0] === m[2]); return { g: "lda", gn: "LDAs", l: (D ? D.n : "LDA") + (l && l.site ? " (" + l.site + ")" : "") + " · " + (a ? a[1] : m[2]) } }
+    const R = k && k.ROW[r]; return R ? { g: R.g, gn: grpN(R.g), l: R.l } : { g: "", gn: "Other", l: r }
+  }
+  const fv = v => { const k = K(); return Array.isArray(v) ? v.join(", ") : k ? k.fmtV(v) : String(v) };
+  const flag = (r, v) => { try { return K().flagOf(r, v) || "" } catch (e) { return "" } };
+  const tl = t => { const x = E(); return t == null || !x ? "" : x.v29.tLbl(t) };
+  const ldaT = l => (((l.hd || 1) - 1) * 1440) + (/^\d{1,2}:\d{2}$/.test(l.time || "") ? (+l.time.split(":")[0]) * 60 + (+l.time.split(":")[1]) : 0);
+  const orderTxt = o => { const x = X39(); try { return o.med ? x.plainOrder(o) : (o.text || "") } catch (e) { return o.med || o.text || "" } };
+  const who = (by, o) => by || o.stu || "Student";
+  const SDOH = () => window.__vxSDOH || null;
+
+  /* ---------- the timeline ---------- */
+  function events(p, o) {
+    const x = X39(), L = [];
+    const add = (t, rt, by, k, txt, extra) => L.push(Object.assign({ t: t == null || isNaN(t) ? null : +t, rt: rt || null, by, k, txt }, extra || {}));
+    const ACTL = (x && x.ACTL) || {};
+    add(null, p.created, "", "Admission", `Admitted to ${p.unit || "the unit"}${(x && x.dxPri(p)) ? " for " + x.dxPri(p) : ""}. Chart opened.`, { tl: "HD1", first: 1 });
+    (p.orders || []).forEach(z => {
+      const st = z.startT != null ? z.startT : z.startHD ? (z.startHD - 1) * 1440 : null;
+      add(st, z.created, z.by || "Not recorded", "Order", (z.kind === "nurse" ? "Nursing order: " : "Ordered: ") + orderTxt(z) + (z.hold ? " · " + z.hold : "") + (z.note ? " · " + z.note : ""), st == null ? { tl: z.startHD ? "HD" + z.startHD : "" } : {});
+      if (z.status === "dc") add(z.dcT, z.dcRt || null, z.dcBy || "", "Order", "Discontinued: " + orderTxt(z) + (z.dcWhy ? " · " + z.dcWhy : ""));
+    });
+    (p.mar || []).forEach(a => {
+      const z = (p.orders || []).find(y => y.id === a.oid) || {};
+      const d = [a.dose, a.route, a.site].filter(Boolean).join(" · ");
+      add(a.at, a.rt, a.by || "", "MAR", `${ACTL[a.act] || a.act || "Documented"} ${z.med || ""}${d ? " · " + d : ""}${a.reason || a.prnr ? " · reason: " + (a.reason || a.prnr) : ""}${a.scan ? " · " + a.scan : ""}${(a.scanAlerts || []).length ? " · scan alerts: " + a.scanAlerts.join("; ") : ""}${a.cosign ? " · double check: " + a.cosign : ""}${a.comment ? " · " + a.comment : ""}${a.dx32ctx ? " · (drill)" : ""}`, { sev: (a.scanAlerts || []).length ? "bad" : a.act !== "given" ? "warn" : "" });
+      if (a.reassessed) add(a.reassessed.t != null ? a.reassessed.t : null, a.reassessed.rt || null, a.by || "", "MAR", `Reassessed ${z.med || ""}: ${a.reassessed.eff || ""}${a.reassessed.pain ? " · pain " + a.reassessed.pain : ""}`);
+    });
+    const G = {}; (p.flow || []).forEach(r => { const kk = r.t + "|" + (r.by || "") + "|" + (r.sim ? 1 : 0); (G[kk] = G[kk] || []).push(r) });
+    Object.values(G).forEach(R => {
+      const parts = {}; R.slice().sort((a, b) => grpI(rowInfo(p, a.r).g) - grpI(rowInfo(p, b.r).g)).forEach(r => { const i = rowInfo(p, r.r); const fl = flag(r.r, r.v); (parts[i.gn] = parts[i.gn] || []).push(i.l + " " + fv(r.v) + (fl ? " (" + fl + ")" : "")) });
+      const rt = Math.max(...R.map(r => r.rt || 0)) || null;
+      add(R[0].t, rt, R[0].by || "", "Flowsheet", Object.entries(parts).map(([g, a]) => g + ": " + a.join(", ")).join(" | "), { sev: R.some(r => flag(r.r, r.v)) ? "warn" : "" });
+    });
+    (p.notes || []).forEach(n => add(n.t, n.rt, n.by || "", "Note", (n.type || "Note") + " signed: " + cut(n.text, 220)));
+    (p.ldas || []).forEach(l => {
+      const D = K() && K().LDA[l.type]; const props = Object.values(l.props || {}).filter(Boolean).join(", ");
+      add(ldaT(l), l.rt, l.by || "", "LDA", `Placed ${D ? D.n : "device"}${l.site ? " · " + l.site : ""}${props ? " · " + props : ""}`);
+      if (l.removed) add(l.removed.t != null ? l.removed.t : (l.removed.hd ? (l.removed.hd - 1) * 1440 : null), l.rmrt || null, l.removed.by || "", "LDA", `Removed ${D ? D.n : "device"}${l.removed.why ? " · " + l.removed.why : ""}`, l.removed.t == null && l.removed.hd ? { tl: "HD" + l.removed.hd } : {});
+    });
+    if (p.cp && p.cp.at) add(null, p.cp.at, "", "Care plan", `Care plan ${p.cp.edited ? "edited" : "drafted"} · ${(p.cp.problems || []).length} problem(s)${p.cp.priority ? " · priority: " + cut(p.cp.priority, 120) : ""}`);
+    const sd = p.sdoh || {}; Object.entries(sd.at || {}).forEach(([k, t]) => add(null, t, sd.by === "sim" ? "Simulation" : "", "SDOH", "Screened: " + sdName(k) + " · " + sdLevel(p, k)));
+    (sd.refs || []).forEach(r => add(null, r.t, "", "SDOH", `Referral ${r.st || ""}: ${sdRes(r.rid)}${r.dom ? " (" + sdName(r.dom) + ")" : ""}`, { tl: r.tl || "" }));
+    const th = (p.sc29 && p.sc29.th) || {}; Object.entries(th).forEach(([k, M]) => (M || []).forEach(m => add(null, m.at, m.who === "me" ? "" : (m.n || m.who || ""), "Secure Chat", `${m.who === "me" ? "To" : "From"} ${THN[k] || k}: ${cut(m.txt, 240)}`)));
+    if (p.ho && (p.ho.at || p.ho.synth)) add(null, p.ho.at || p.updated, "", "Handoff", "Handoff written" + (p.ho.sev ? " · illness severity: " + p.ho.sev : ""));
+    (p.dx32h || []).forEach(h => add(null, h.t, "", "Drill", `Deteriorating-patient drill finished · tier ${h.tier || 1} · score ${h.sc}%`));
+    (p.media || []).forEach(m => add(null, m.t, "", "Attachment", `Attached ${m.type || "document"}: ${m.title || ""}${m.red ? " · " + m.red + " area(s) redacted" : ""}`));
+    (p.fxh || []).forEach(c => { const i = rowInfo(p, c.r); add(c.t, c.rt, c.by || "", "Correction", c.n == null || c.n === "" ? `Removed ${i.gn} · ${i.l}: was ${fv(c.o)}` : `Changed ${i.gn} · ${i.l}: ${fv(c.o)} → ${fv(c.n)}`, { sev: "warn" }) });
+    (o.fb || []).forEach(f => add(null, f.t, f.author || "Instructor", "Feedback", (f.label ? f.label + ": " : "") + cut(f.text, 220)));
+    /* place entries that only have a real "entered" time next to the chart event entered just before them */
+    const timed = L.filter(e => e.t != null && e.rt).sort((a, b) => a.rt - b.rt);
+    L.forEach(e => { if (e.first) { e.key = -1e9; return } if (e.t != null) { e.key = e.t; return } let k = 0; for (const z of timed) { if (z.rt <= (e.rt || 0)) k = z.t; else break } e.key = k + 0.5 });
+    L.sort((a, b) => a.key - b.key || (a.rt || 0) - (b.rt || 0));
+    return o.order === "desc" ? L.reverse() : L;
+  }
+  const THN = { prov: "provider", lab: "lab", pharm: "pharmacy", fam: "family", charge: "charge nurse" };
+  const sdDom = k => { const S = SDOH(); return S && (S.DOM || []).find(d => d.k === k) };
+  const sdName = k => { const d = sdDom(k); return d ? d.n : k };
+  const sdLevel = (p, k) => { try { const s = SDOH().stats(p)[k]; return s.dec ? "declined / N/A" : s.lv == null ? "not screened" : s.lv >= 2 ? "high risk" : s.lv == 1 ? "at risk" : "no risk" } catch (e) { return "" } };
+  const sdRes = id => { const S = SDOH(); const r = S && (S.RES || []).find(z => z.id === id); return r ? (r.n || r.name || id) : (id || "resource") };
+  const optLabel = (o, v) => { if (!Array.isArray(o)) return fv(v); const pick = i => { const z = o[i]; return z == null ? i : typeof z === "string" ? z : (z.t || z.l || z.n || z.v || i) }; return Array.isArray(v) ? v.map(pick).join(", ") : typeof v === "number" ? pick(v) : String(v) };
+
+  /* ---------- section model (same shape as the core rpt(); used by the screen, print and the PDF) ---------- */
+  function sections(p, o) {
+    o = o || {}; const x = X39(); const S = []; const R = {}; try { x.rpt(p).forEach(s => R[s.id] = s) } catch (e) { }
+    const ev = events(p, o);
+    const firstRt = Math.min(...ev.map(e => e.rt || Infinity)), lastRt = Math.max(...ev.map(e => e.rt || 0));
+    const ov = (R.overview && R.overview.v) || [];
+    S.push({ id: "ident", h: "Chart identification", k: "kv", v: ov.concat([["Record status", p.archived ? "Closed (archived)" : "Open · hospital day " + (p.hd || 1)], ["Chart opened", dtR(p.created) || "—"], ["First entry", isFinite(firstRt) ? dtR(firstRt) : "—"], ["Last entry", lastRt ? dtR(lastRt) : "—"], ["Printed", dtR(Date.now())], ["Prepared for", o.who === "instructor" ? "Instructor review" : "Student submission"]]) });
+    const c = p.case || {}; const adm = [];
+    adm.push({ t: "Reason for admission", lines: [`${p.label}, ${p.age || ""} ${((x && x.SEXW[p.sex]) || "").toLowerCase()}, admitted to ${p.unit || "the unit"} for ${(x && x.dxPri(p)) || "a diagnosis not yet entered"}.`] });
+    if (c.hx) adm.push({ t: "History", lines: [c.hx] }); if (c.brief) adm.push({ t: "Report received at start of shift", lines: [c.brief] });
+    const hp = (p.notes || []).filter(n => /H&P|history and physical|admission/i.test(n.type || "")); hp.forEach(n => adm.push({ t: (n.type || "Admission note") + " · " + tl(n.t), lines: String(n.text || "").split("\n").filter(s => s.trim()) }));
+    S.push({ id: "admit", h: "Admission", k: "blocks", v: adm });
+    if (R.dx) S.push(R.dx);
+    if (on(o, "timeline")) S.push({ id: "timeline", h: "Complete timeline · " + (o.order === "desc" ? "newest first" : "admission to now"), k: "tbl", cols: ["Chart time", "Entered", "By", "Type", "Entry"], w: [.11, .15, .12, .1, .52], rows: ev.map(e => [e.t != null ? tl(e.t) : (e.tl || "—"), dtR(e.rt) || "—", e.k === "Admission" ? "" : who(e.by, o), e.k, e.txt]), empty: "Nothing charted yet.", note: "Chart time is the hospital day and clock time in the chart. Entered is when it was actually documented. Entries with no chart time are placed next to what was charted just before them." });
+    if (on(o, "flow")) { const F = (p.flow || []).slice().sort((a, b) => a.t - b.t || grpI(rowInfo(p, a.r).g) - grpI(rowInfo(p, b.r).g));
+      S.push({ id: "flow", h: "Flowsheets · every entry", k: "tbl", cols: ["Chart time", "Group", "Row", "Value", "By", "Entered"], w: [.11, .15, .25, .23, .11, .15], rows: F.map(r => { const i = rowInfo(p, r.r); const fl = flag(r.r, r.v); return [tl(r.t), i.gn, i.l, fv(r.v) + (fl ? " " + fl : ""), who(r.by, o), dtR(r.rt) || "—"] }), empty: "No flowsheet entries." });
+      const C = Object.entries(p.fsc || {}).map(([kk, v]) => { const m = /^(\d+)\|(.+)$/.exec(kk); const i = m ? rowInfo(p, m[2]) : { gn: "", l: kk }; return `${m ? tl(+m[1]) : ""} · ${i.gn} · ${i.l}: ${one(v && v.c != null ? v.c : v)}` }).filter(s => !/: $/.test(s));
+      if (C.length) S.push({ id: "fsc", h: "Flowsheet comments", k: "ul", v: C }) }
+    if (on(o, "vitals") && R.vitals) S.push(R.vitals);
+    if (on(o, "io") && R.io) S.push(R.io);
+    if (on(o, "lda") && R.lda) S.push(R.lda);
+    if (on(o, "orders")) S.push({ id: "orders", h: "All orders (active and discontinued)", k: "tbl", cols: ["Start", "Order", "Ordered by", "Status", "Stopped"], w: [.11, .45, .14, .1, .2], rows: (p.orders || []).filter(z => !z.dx32proto).map(z => [z.startT != null ? tl(z.startT) : z.startHD ? "HD" + z.startHD : "", (z.kind === "nurse" ? "Nursing: " : "") + orderTxt(z) + (z.hold ? " · " + z.hold : "") + (z.note ? " · " + z.note : ""), z.by || "—", z.status === "dc" ? "Discontinued" : "Active", z.status === "dc" ? (z.dcT != null ? tl(z.dcT) : "") + (z.dcWhy ? " · " + z.dcWhy : "") : ""]), empty: "No orders." });
+    if (on(o, "mar") && R.mar) S.push(R.mar);
+    if (on(o, "labs")) { const FL = f => f === "H" ? "High" : f === "L" ? "Low" : f ? "Abnormal" : "";
+      const L = (c.labs || []).map(l => [l[0], (l[1] || "") + (l[2] ? " " + l[2] : ""), "", FL(l[3]), "On admission"]);
+      let D = null; try { D = window.__vx32 && window.__vx32.res ? window.__vx32.res(p) : null } catch (e) { }
+      if (D) D.labs.forEach(z => (z.vals || []).forEach(v => L.push([(z.n ? z.n + " · " : "") + v[0], (v[1] || "") + (v[2] ? " " + v[2] : ""), v[3] || "", FL(v[4]) + ((z.crit || []).indexOf(v[0]) >= 0 ? " (critical)" : ""), z.t || ""])));
+      S.push({ id: "labs", h: "Labs and diagnostics", k: "tbl", cols: ["Test", "Result", "Reference", "Flag", "Collected"], w: [.34, .2, .18, .12, .16], rows: L, empty: "No lab results on this chart." });
+      if (D && D.img.length) S.push({ id: "img", h: "Imaging and ECG", k: "ul", v: D.img.map(z => `${z.n}${z.t ? " · " + z.t : ""}: ${one(z.txt)}`) }) }
+    if (on(o, "notes")) S.push({ id: "notes", h: "Notes · full text", k: "blocks", v: (p.notes || []).slice().sort((a, b) => a.t - b.t).map(n => ({ t: `${n.type || "Note"} · ${tl(n.t)} · ${who(n.by, o)}${n.rt ? " · entered " + dtR(n.rt) : ""}`, lines: String(n.text || "").split("\n").filter(s => s.trim()) })), empty: "No notes." });
+    if (on(o, "care") && R.care) S.push(R.care);
+    if (on(o, "sdoh")) { const sd = p.sdoh || {}; const D = (SDOH() && SDOH().DOM) || []; const B = [];
+      D.forEach(d => { const lv = sdLevel(p, d.k); if (lv === "not screened" && !(sd.dec || {})[d.k]) return; const lines = [];
+        (d.items || []).forEach(it => { const a = (sd.a || {})[it.id]; if (a != null && a !== "") lines.push(it.q + " → " + optLabel(it.o, a)) });
+        if ((sd.dec || {})[d.k]) lines.push("Declined / not applicable: " + sd.dec[d.k]); if ((sd.said || {})[d.k]) lines.push("Client said: “" + one(sd.said[d.k]) + "”");
+        B.push({ t: d.n + " · " + lv + ((sd.at || {})[d.k] ? " · screened " + dtR(sd.at[d.k]) : ""), lines }) });
+      (sd.refs || []).forEach(r => B.push({ t: "Referral · " + sdRes(r.rid), lines: [(r.dom ? sdName(r.dom) + " · " : "") + (r.st || "") + (r.tl ? " · " + r.tl : "")] }));
+      S.push({ id: "sdoh", h: "Social drivers of health screening", k: "blocks", v: B, empty: "Not screened this admission." }) }
+    if (on(o, "chat")) { const th = (p.sc29 && p.sc29.th) || {}; const B = Object.entries(th).filter(([, M]) => (M || []).length).map(([k, M]) => ({ t: "Secure Chat · " + (THN[k] || k), lines: M.slice().sort((a, b) => a.at - b.at).map(m => `${dtR(m.at)} · ${m.who === "me" ? who("", o) : (m.n || m.who)}: ${one(m.txt)}`) }));
+      S.push({ id: "chat", h: "Secure Chat transcript", k: "blocks", v: B, empty: "No Secure Chat messages." }) }
+    if (on(o, "media")) S.push({ id: "media", h: "Attached paperwork (de-identified)", k: "tbl", cols: ["Attached", "Type", "Title", "Note", "Redactions"], w: [.17, .17, .26, .28, .12], rows: (p.media || []).map(m => [dtR(m.t), m.type || "", m.title || "", m.note || "", m.red ? String(m.red) : "0"]), empty: "No paperwork attached.", note: (p.media || []).length && o.who !== "instructor" ? "The printed version includes the images. The PDF download lists them only." : "" });
+    if (on(o, "handoff")) { ["actions", "synth", "refl"].forEach(k => { if (R[k]) S.push(R[k]) }); if ((p.dx32h || []).length) S.push({ id: "drills", h: "Deteriorating-patient drills on this chart", k: "ul", v: p.dx32h.map(h => `${dtR(h.t)} · tier ${h.tier || 1} · score ${h.sc}%`) }) }
+    if (on(o, "audit")) S.push({ id: "audit", h: "Corrections and audit trail", k: "tbl", cols: ["Chart time", "Row", "Was", "Changed to", "Originally entered", "Changed"], w: [.11, .27, .16, .16, .15, .15], rows: (p.fxh || []).map(cc => { const i = rowInfo(p, cc.r); return [tl(cc.t), i.gn + " · " + i.l, fv(cc.o), cc.n == null || cc.n === "" ? "(removed)" : fv(cc.n), dtR(cc.ort) || "—", dtR(cc.rt) || "—"] }), empty: "No flowsheet corrections recorded. (Corrections are logged from Nov 2026 on.)" });
+    if (on(o, "fb") && (o.fb || []).length) S.push({ id: "fb", h: "Instructor feedback", k: "blocks", v: o.fb.slice().sort((a, b) => a.t - b.t).map(f => ({ t: `${f.author || "Instructor"} · ${dtR(f.t)}${f.label ? " · " + f.label : ""}${f.score != null ? " · score " + f.score + (f.max ? "/" + f.max : "") : ""}`, lines: [f.text || ""] })) });
+    S.push({ id: "end", h: "End of record", k: "kv", v: [["Discharge", p.archived ? "Chart closed" : "Not discharged. Record printed on hospital day " + (p.hd || 1)], ["Current chart time", (() => { try { return tl(E().curT(p)) } catch (e) { return "" } })()], ["Entries in this record", String(ev.length)]] });
+    return S;
+  }
+
+  /* ---------- HTML document ---------- */
+  function docHTML(p, o, S) {
+    const x = X39(); const st = o.st || {};
+    const body = S.map(s => `<section class="fc-sec" data-fcs="${s.id}"><h2>${esc(s.h)}</h2>${
+      s.k === "kv" ? `<dl class="fc-kv">${s.v.map(([a, b]) => `<div><dt>${esc(a)}</dt><dd>${esc(b || "—")}</dd></div>`).join("")}</dl>` :
+      s.k === "p" ? `<p>${esc(s.v)}</p>` :
+      s.k === "ul" ? (s.v.length ? `<ul>${s.v.map(z => `<li>${esc(z)}</li>`).join("")}</ul>` : `<p class="fc-none">${esc(s.empty || "None.")}</p>`) :
+      s.k === "tbl" ? (s.rows.length ? `<table class="fc-t fc-t-${s.id}"><colgroup>${s.w.map(w => `<col style="width:${(w * 100).toFixed(1)}%">`).join("")}</colgroup><thead><tr>${s.cols.map(c => `<th>${esc(c)}</th>`).join("")}</tr></thead><tbody>${s.rows.map(r => `<tr>${r.map(c => `<td${/ (H|L)$/.test(c || "") ? ' class="fc-flag"' : ""}>${esc(c)}</td>`).join("")}</tr>`).join("")}</tbody></table>${s.note ? `<p class="fc-note">${esc(s.note)}</p>` : ""}` : `<p class="fc-none">${esc(s.empty || "None.")}</p>`) :
+      s.k === "blocks" ? ((s.lead ? `<p><b>${esc(s.lead)}</b></p>` : "") + (s.v.length ? s.v.map(b => `<div class="fc-blk"><h3>${esc(b.t)}</h3>${(b.lines || []).map(l => `<p>${esc(l)}</p>`).join("")}${(b.items || []).length ? `<ul>${b.items.map(i => `<li>${esc(i)}</li>`).join("")}</ul>` : ""}${b.foot ? `<p class="fc-note">${esc(b.foot)}</p>` : ""}</div>`).join("") : `<p class="fc-none">${esc(s.empty || "None.")}</p>`)) : ""
+    }${s.id === "media" && o.imgs ? `<div class="fc-imgs" data-fcimgs="1">${(p.media || []).map(m => `<figure><img data-fcimg="${esc(m.id)}" alt="${esc(m.title || m.type || "Attached paperwork")}"><figcaption>${esc((m.type || "") + " · " + (m.title || ""))}</figcaption></figure>`).join("")}</div>` : ""}</section>`).join("");
+    const grade = on(o, "grade") ? `<section class="fc-sec fc-grade"><h2>Grading and sign-off</h2>
+      <table class="fc-gt"><tr><th>Score</th><td></td><th>Out of</th><td></td><th>Date returned</th><td></td></tr></table>
+      <div class="fc-lines"><b>Instructor comments</b>${"<i></i>".repeat(6)}</div>
+      <p class="fc-att">☐ I attest this record contains no patient identifiers and was completed under my program's clinical and privacy policies.</p>
+      <div class="fc-sig"><div><i></i>Student signature</div><div><i></i>Instructor signature</div></div></section>` : "";
+    const hd = `${esc(p.label)} · ${esc(p.sim || "")} · ${esc(p.age || "")} ${esc((x && x.SEXW[p.sex]) || "")} · ${esc(p.unit || "")}`;
+    return `<article class="fc-doc"><table class="fc-pg"><thead><tr><td><div class="fc-rh"><b>VEXCURA · Complete Chart Record</b><span>${hd}</span></div></td></tr></thead>
+      <tfoot><tr><td><div class="fc-rf">De-identified practice record · Not a legal medical record · Form VX-FCR-1</div></td></tr></tfoot><tbody><tr><td>
+      <header class="fc-cover"><div class="fc-brand">VEXCURA</div><h1>Complete Chart Record</h1><p>${hd} · Hospital day ${p.hd || 1}</p>
+       <div class="fc-who"><div><span>Student</span><b>${esc(st.stu || o.stu || "")}</b></div><div><span>Clinical instructor</span><b>${esc(st.ins || "")}</b></div><div><span>Course</span><b>${esc(st.course || "")}</b></div><div><span>Clinical week</span><b>${esc(st.wk || "")}</b></div></div>
+       <p class="fc-note">De-identified practice record created in the Vexcura Clinical EHR. It contains no names, dates of birth, record numbers or other patient identifiers and is not part of any medical record. "Entered" times show when the student documented each item (an audit trail), not patient dates.</p></header>
+      ${body}${grade}</td></tr></tbody></table></article>`;
+  }
+
+  /* ---------- screen panel (student tab and instructor tab) ---------- */
+  const CUR = { p: null, o: null };
+  function stuInfo() { try { return Object.assign({}, (E().db().stu) || {}) } catch (e) { return {} } }
+  function panel(p, o) {
+    o = Object.assign({ order: OPT.order, off: OPT.off }, o || {}); if (o.who !== "instructor") { o.st = stuInfo(); o.imgs = true; o.fb = o.fb || stuFb(p) } else o.st = Object.assign({ stu: o.stu }, o.st || {});
+    CUR.p = p; CUR.o = o; const S = sections(p, o);
+    const opts = `<details class="fc-opt"${OPT._open ? " open" : ""}><summary>Choose what's included</summary><div class="fc-chks">${SECS.map(([k, l]) => `<label class="achk"><input type="checkbox" data-fcsec="${k}" ${on(o, k) ? "checked" : ""}> ${esc(l)}</label>`).join("")}</div>
+      <label class="afld fc-ord"><span>Timeline order</span><select data-fcord="1"><option value="asc" ${o.order !== "desc" ? "selected" : ""}>Admission first (oldest to newest)</option><option value="desc" ${o.order === "desc" ? "selected" : ""}>Newest first</option></select></label>
+      ${o.who !== "instructor" ? `<div class="fc-cov"><b>Cover page</b><div class="ehg2">${[["stu", "Student name"], ["ins", "Clinical instructor"], ["course", "Course"], ["wk", "Clinical week"]].map(([k, l]) => `<label class="afld"><span>${l}</span><input data-fcst="${k}" maxlength="80" value="${esc(o.st[k] || "")}"></label>`).join("")}</div><p class="fine">Your name and course only. Never the facility, the date of clinical or anything about the patient.</p></div>` : ""}</details>`;
+    return `<div class="ehah fc-bar"><h2><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${PATH}</svg> Full chart</h2><div class="ehact"><button class="btn2 mini" data-fc="print">Print</button><button class="btn2 mini sec2" data-fc="pdf">Download PDF</button></div></div>
+     <p class="note fc-lead">The whole record from admission to now on one printable document: every order, dose, flowsheet value, note, care plan, chat and correction, in time order. ${o.who === "instructor" ? "Print it to grade on paper, or download the PDF." : "Print it to turn in on paper, or download the PDF to submit."}</p>
+     ${opts}<div class="fc-paper">${docHTML(p, o, S)}</div>`;
+  }
+  function stuFb(p) { try { const x = X39(); return ((x.SC && x.SC.fb) || []).filter(f => f.patient_id === p.id).map(f => ({ t: f.created, author: f.author_name, label: (x.SECN || {})[f.section] || "", text: f.text })) } catch (e) { return [] } }
+  async function fillImgs(root) {
+    const M = window.__vxMedia; if (!M || !M._idb || !root) return; const imgs = root.querySelectorAll("img[data-fcimg]");
+    for (const im of imgs) { if (im.src) continue; try { const r = await M._idb.iget(im.dataset.fcimg); if (r && r.img && (!r.uid || r.uid === M.uid())) im.src = URL.createObjectURL(r.img); else im.closest("figure").remove() } catch (e) { im.closest("figure").remove() } }
+  }
+
+  /* ---------- print + PDF ---------- */
+  function printNow() {
+    const src = document.querySelector(".fc-paper .fc-doc"); if (!src) return; let n = document.getElementById("fcpr"); if (n) n.remove();
+    n = document.createElement("div"); n.id = "fcpr"; n.appendChild(src.cloneNode(true)); document.body.appendChild(n);
+    n.querySelectorAll("img[data-fcimg]").forEach(im => { const o = src.querySelector(`img[data-fcimg="${im.dataset.fcimg}"]`); if (o && o.src) im.src = o.src; else im.closest("figure") && im.closest("figure").remove() });
+    document.body.classList.add("fc-printing");
+    const done = () => { document.body.classList.remove("fc-printing"); const z = document.getElementById("fcpr"); if (z) z.remove(); window.removeEventListener("afterprint", done) };
+    window.addEventListener("afterprint", done); setTimeout(() => { try { window.print() } catch (e) { done() } }, 60);
+  }
+  function pdfNow() {
+    const x = X39(); if (!x || !CUR.p) return; const o = CUR.o; const st = Object.assign({}, o.st || {}); if (!st.stu && o.stu) st.stu = o.stu;
+    let s; try { s = x.buildPDF(CUR.p, st, { full: 1, fc: Object.assign({}, o, { imgs: false }) }) } catch (e) { (window.alertBox || alert)("Couldn't build the PDF: " + e.message); return }
+    const nm = (st.stu ? st.stu + "-" : "") + CUR.p.label; x.dlPDF(s, "Vexcura-Full-Chart-" + String(nm).replace(/[^A-Za-z0-9]+/g, "-").replace(/^-|-$/g, "") + ".pdf"); try { x.toastE("Full chart PDF downloaded") } catch (e) { }
+  }
+  const redraw = () => { const x = E(); if (x && x.X && x.X.act === "full") { try { x.v29.draw() } catch (e) { } } else if (location.hash.indexOf("#instructor") === 0 && window.__vx39 && typeof window.__vx39paint === "function") window.__vx39paint(); else { const m = document.querySelector(".fc-paper"); if (m && CUR.p) { const host = m.parentElement; host.innerHTML = panel(CUR.p, CUR.o); fillImgs(host) } } };
+  document.addEventListener("toggle", e => { const t = e.target; if (t && t.classList && t.classList.contains("fc-opt")) OPT._open = t.open }, true);
+  document.addEventListener("click", e => { const b = e.target.closest && e.target.closest("[data-fc]"); if (!b) return; e.preventDefault(); if (b.dataset.fc === "print") printNow(); else if (b.dataset.fc === "pdf") pdfNow() });
+  document.addEventListener("change", e => { const t = e.target; if (!t || !t.closest || !t.closest(".fc-opt")) return;
+    if (t.dataset.fcsec) { OPT.off[t.dataset.fcsec] = !t.checked; if (t.checked) delete OPT.off[t.dataset.fcsec]; saveOpt(); redraw() }
+    else if (t.dataset.fcord) { OPT.order = t.value === "desc" ? "desc" : "asc"; saveOpt(); redraw() }
+    else if (t.dataset.fcst) { try { const x = E(); const d = x.db(); d.stu = Object.assign(d.stu || {}, { [t.dataset.fcst]: String(t.value || "").slice(0, 80) }); x.v29.save(d) } catch (er) { } redraw() } });
+
+  /* ---------- register: student activity after Handoff; instructor tab via window.__vxFC.instr ---------- */
+  const drawFull = () => { const x = E(); if (!x || !x.X || x.X.act !== "full") return; const m = document.getElementById("ehm"), p = x.v29 && x.v29.P(); if (!m || !p) return; m.innerHTML = panel(p, { who: "student" }); fillImgs(m) };
+  function addActs() { const x = E(); if (!x || !x.v29 || x.v29.__fc) return; const v = x.v29; v.__fc = 1; v.IC.full = PATH;
+    const put = A => { if (A.some(a => a[0] === "full")) return; const i = A.findIndex(a => a[0] === "handoff"); A.splice(i >= 0 ? i + 1 : A.length, 0, ["full", "Full Chart", "full"]) };
+    put(v.ACTS); put(v.RACTS); v.ACTN.full = "Full Chart" }
+  const POST = window.__EHXpost = window.__EHXpost || []; POST.push(() => { try { addActs(); drawFull() } catch (e) { } }); try { addActs() } catch (e) { }
+  window.__vxFC = { sections, events, panel, docHTML, print: printNow, pdf: pdfNow, opts: OPT,
+    instr: (p, o) => { try { return panel(p, Object.assign({ who: "instructor" }, o || {})) } catch (e) { return `<p class="vxi-muted">Couldn't build the full chart: ${esc(e.message)}</p>` } } };
+}
+/* </v60-fullchart-js> */
 /* <v28-book-js> Vexcura Review Book: secure in-app reader (v28, NOT deployed).
    Insert INSIDE the app's main IIFE in app.html, directly after the LAST closing patch marker comment of the form
    "/* </v2N-name-js> *\/" that precedes `applyPrefs();applyFont();` (today that is the v25-mychart-js marker), using
