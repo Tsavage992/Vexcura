@@ -5437,7 +5437,7 @@ const BANK = (function(e){try{const P=">oVO^cd@ge#lJ'~wUTDiEY+LZx-K&hkt(/F0;G`N.
 let HIDQ=new Set();const CFG={c:null,bypass:false};try{const c=JSON.parse(localStorage.getItem("ns.cfg")||"null");if(c&&typeof c==="object"){CFG.c=c;HIDQ=new Set(c.hideQ||[])}}catch(e){}
 const featOn=k=>!CFG.c||!CFG.c.feat||CFG.c.feat[k]!==false;
 
-const APPV="3db700e9657d7fe40df0d0527863f454483839523a511aa2d30a242e858366e3";
+const APPV="9f9d52190ca061269425e3427cdcd29e3de3ae3b6be3dd35578f291a00913d37";
 const CATS={
   MOC:{n:"Management of Care",lo:15,hi:21,w:18},
   SIC:{n:"Safety and Infection Prevention and Control",lo:10,hi:16,w:13},
@@ -7770,9 +7770,8 @@ function signupProfileFields(){const sel=(label,name,opts)=>`<label class="afld"
 document.addEventListener("change",e=>{const c=e.target.closest&&e.target.closest("[data-nodate]");if(!c)return;const f=c.closest("form");const d=f&&f.elements.examDate;if(!d)return;d.required=!c.checked;d.disabled=c.checked;if(c.checked)d.value=""});
 function renderSignup(){if(SRV.me){location.hash="#progress";return}
   if(!SRV.signups){wsxPage(`<div class="acard"><h1>Create an account</h1><p>New sign-ups are closed right now. Ask the site administrator to create an account for you.</p><p class="alinks"><a href="#signin">Sign in</a></p></div>`);return}
-  wsxPage(`<div class="acard"><h1>Create your account</h1><p class="note">Free. Your progress saves to your account so you can study on your phone, tablet, and computer. Anything you've already done in this browser comes with you.</p>
+  wsxPage(`<div class="acard"><h1>Create your free account</h1><p class="note">Free for every nursing student. Your progress saves to your account so you can study on your phone, tablet and computer, and anything you've already done in this browser comes with you.</p>
    <form class="aform" data-form="signup">${fld("Full name","name",{req:1,max:80,ac:"name"})}${fld("Email","email",{type:"email",req:1,max:254,ac:"email",im:"email"})}${fld("Password","password",{type:"password",req:1,min:8,max:200,ac:"new-password",hint:"At least 8 characters. A short phrase is easy to remember and hard to guess."})}
-    <fieldset class="adet areqp"><legend>About your program</legend><p class="note">Required. This sets up your study plan and NCLEX countdown.</p>${signupProfileFields()}</fieldset>
     <label class="achk"><input type="checkbox" name="agree" required> <span>I agree to the <a href="#terms" target="_blank">Terms of Use</a> and <a href="#privacy" target="_blank">Privacy Policy</a>.</span></label>
     ${formMsg()}<button class="btn2" type="submit">Create account</button></form><p class="alinks">Already have one? <a href="#signin">Sign in</a></p></div>`)}
 function renderForgot(){wsxPage(`<div class="acard"><h1>Reset your password</h1><p class="note">Enter the email on your account. The site administrator will get your request and send you a secure reset link.</p>
@@ -7851,6 +7850,13 @@ document.addEventListener("click",e=>{const c=e.target.closest("[data-cp]");if(c
 
 /* form handling */
 const fv=(f,n)=>{const e=f.elements[n];return e?e.value.trim():""};
+/* first-touch attribution (set by the public pages or here): landing page, referring site, UTM tags, last CTA clicked */
+function vxSrc(){let o=null,c="";try{o=JSON.parse(localStorage.getItem("vx.src")||"null")}catch(e){}try{c=sessionStorage.getItem("vx.cta")||""}catch(e){}o=o&&typeof o==="object"?o:{};return {lp:String(o.lp||"").slice(0,200),ref:String(o.ref||"").slice(0,200),us:String(o.us||"").slice(0,60),um:String(o.um||"").slice(0,60),uc:String(o.uc||"").slice(0,80),at:+o.at||0,cta:c.slice(0,120)}}
+(function(){try{const k="vx.src",q=new URLSearchParams(location.search),u={us:q.get("utm_source")||"",um:q.get("utm_medium")||"",uc:q.get("utm_campaign")||""};let o=null;try{o=JSON.parse(localStorage.getItem(k)||"null")}catch(e){}
+  if(!o||(!o.us&&u.us)){let r="";try{r=document.referrer?new URL(document.referrer).hostname:""}catch(e){}if(r===location.hostname)r="";localStorage.setItem(k,JSON.stringify({lp:location.pathname+(location.hash||"").slice(0,40),ref:r,us:u.us,um:u.um,uc:u.uc,at:Date.now()}))}}catch(e){}})();
+/* after a new sign-up: one short prompt for the program questions that used to be on the form */
+if(SRV.ready&&SRV.ready.then)SRV.ready.then(()=>{let w=null;try{w=sessionStorage.getItem("vx.welcome")}catch(e){}if(!w||!SRV.me)return;try{sessionStorage.removeItem("vx.welcome")}catch(e){}const p=SRV.me.profile||{};if(p.program&&p.examDate)return;
+  setTimeout(()=>sModal(`<h3>Welcome to Vexcura, ${esc((SRV.me.name||"").split(" ")[0])}</h3><p>Everything is unlocked. Want an NCLEX countdown and a study plan that fits your program? Add your program, graduation month and test date. It takes about 30 seconds.</p><div class="sbtns"><button class="btn2" data-sm="close" data-act="s-go" data-v="account">Add my program</button><button class="btn2 sec2" data-sm="close">Maybe later</button></div>`),600)});
 const pfromForm=f=>{const p={};["program","school","gradDate","examDate","state","phone"].forEach(k=>{const v=fv(f,k);if(v)p[k]=v});return p};
 async function afterSignin(r){SRV.me=r.user;try{await srvPullProgress()}catch(e){}
   const nx=SRV.me.mustReset?"password":(SRV.next||(srvIsAdmin()&&SRV.wantAdmin?"admin":"progress"));SRV.next=null;
@@ -7859,7 +7865,7 @@ document.addEventListener("submit",async e=>{const f=e.target.closest("form[data
   const run=async(label,fn)=>{f.dataset.busy=1;busy(f,true,label);try{await fn()}catch(er){setMsg(f,er.message);const bad=er.code&&f.elements[er.code];if(bad&&bad.focus)bad.focus()}finally{delete f.dataset.busy;busy(f,false)}};
   const pw2=()=>{if(f.elements.password2&&fv(f,"password")!==f.elements.password2.value.trim()){const er=new Error("The two passwords don't match.");er.code="password2";throw er}};
   if(k==="signin")return run("Signing in…",async()=>{SRV.wantAdmin=view==="admin";const r=await srvApi("/api/auth/login",{method:"POST",body:{email:fv(f,"email"),password:f.elements.password.value}});await afterSignin(r)});
-  if(k==="signup")return run("Creating account…",async()=>{const r=await srvApi("/api/auth/signup",{method:"POST",body:{name:fv(f,"name"),email:fv(f,"email"),password:f.elements.password.value,agree:f.elements.agree.checked,profile:pfromForm(f)}});await afterSignin(r)});
+  if(k==="signup")return run("Creating account…",async()=>{const r=await srvApi("/api/auth/signup",{method:"POST",body:{name:fv(f,"name"),email:fv(f,"email"),password:f.elements.password.value,agree:f.elements.agree.checked,profile:pfromForm(f),src:vxSrc()}});try{sessionStorage.setItem("vx.welcome","1")}catch(x){}await afterSignin(r)});
   if(k==="forgot")return run("Sending…",async()=>{await srvApi("/api/auth/forgot",{method:"POST",body:{email:fv(f,"email")}});f.outerHTML=`<p class="abox ok">Request sent. If an account uses that email, the administrator will send you a reset link. Links work for 72 hours.</p>`});
   if(k==="reset")return run("Saving…",async()=>{pw2();const r=await srvApi("/api/auth/reset",{method:"POST",body:{token:f.elements.token.value,password:f.elements.password.value}});SRV.next="account";await afterSignin(r)});
   if(k==="setup")return run("Setting up…",async()=>{const r=await srvApi("/api/auth/setup",{method:"POST",body:{key:f.elements.key.value,name:fv(f,"name"),email:fv(f,"email"),password:f.elements.password.value}});SRV.next="admin";await afterSignin(r)});
@@ -14613,7 +14619,7 @@ app.addEventListener("drop",e=>{const s2=e.target.closest&&e.target.closest(".sl
         <h1 id="lp3h">Sit the whole NCLEX&#8209;RN before test day.</h1>
         <p class="lp3-lead">Vexcura's full adaptive practice exam runs 85 to 150 items on a five-hour clock, with NGN case studies and the same stopping rules as the real exam. When it ends, students get a pass-likelihood estimate and a breakdown by client needs category.</p>
         <div class="lp3-cta"><a class="btn-lamp" href="#signin">Sign in</a><a class="btn-ink" href="/for-nursing-schools">For nursing schools</a><a class="btn-ink" href="/for-nursing-schools#pilot">Request a pilot</a></div>
-        <p class="lp3-stu">New student? <a href="#signup">Join with your school's code</a>. Students and instructors are free; your school licenses Vexcura.</p>
+        <p class="lp3-stu">Nursing student? <a href="#signup">Create your free account</a>. It's free for every nursing student, with or without a school.</p>
       </div>
       <figure class="lp3-vis duo"><div class="duo-s">${lpBrowser("exam-q","(max-width: 900px) calc(100vw - 72px), 620px",1)}${lpPhone("exam-phone","(max-width: 900px) 30vw, 170px","dv-po",1)}</div><figcaption>The full exam in progress, on a laptop and a phone. The time in the phone's status bar is yours.</figcaption></figure>
     </div>
@@ -14669,6 +14675,11 @@ app.addEventListener("drop",e=>{const s2=e.target.closest&&e.target.closest(".sl
     <section class="lp-close vxs-band">${VXS.art(VXS.cur(),"vxs-art",null,2)}<div class="vxs-sh" aria-hidden="true"></div><div class="wrap lp-ci"><div><h2 class="lp-h2 l">Bring the full NCLEX practice exam to your program.</h2><p>Talk with your dedicated Vexcura account team about bringing the full exam to your program. <a href="/about#founder">Meet the founder who built it</a></p></div><div class="lp-cta"><a class="btn-lamp lp-go" href="/for-nursing-schools">For nursing schools</a><a class="btn-ink" href="#signin">Sign in</a></div></div></section>
     </main>${foot()}</div>`;
     lpLive()}
+  {const _rl=renderLanding;renderLanding=function(){
+    if(SRV.on&&/(^|\.)vexcura\.com$/.test(location.hostname)){
+      if(SRV.loaded&&!SRV.me){location.replace("/?l=1");return}
+      if(!SRV.loaded){view="landing";app.innerHTML='<div class="page" style="min-height:70vh"></div>';SRV.ready.then(()=>{if(view!=="landing")return;if(!SRV.me)location.replace("/?l=1");else renderHome()});return}}
+    return _rl.apply(this,arguments)}}
   window.__nsLanding=renderLanding;window.addEventListener("hashchange",()=>{window.__vxMoved=1});document.addEventListener("click",e=>{if(e.target.closest&&e.target.closest("[data-act],a"))window.__vxMoved=1},true);
   const _rhL=renderHome;renderHome=function(){
     if(SRV.on&&((SRV.loaded&&!SRV.me)||(!SRV.loaded&&!hint()))){return renderLanding()}
