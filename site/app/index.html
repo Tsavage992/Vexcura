@@ -1084,7 +1084,7 @@ body{overflow-x:clip}
 html.c2on .foot2,html.c2on .pbn,html.c2on .adv{display:none!important}
 .c2{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:10px;background:var(--surface);overflow:hidden;min-height:520px;margin-top:6px}
 .c2h{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;padding:10px 14px;border-bottom:1px solid var(--line);background:var(--sunk)}
-.c2id{display:flex;gap:10px;align-items:center}.c2id b{display:block;font-size:16px}.c2id small{color:var(--muted);font-size:12.5px}
+.c2id{display:flex;gap:10px;align-items:center}.c2id b{display:block;font-size:16px}.c2id small{color:var(--muted);font-size:12.5px}.c2id abbr{text-decoration:none;cursor:help}.c2id>div{min-width:0}.c2id b{overflow:hidden;text-overflow:ellipsis}
 .c2av{width:40px;height:40px;border-radius:50%;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-weight:800;font-size:14px}
 .c2v{display:flex;gap:18px;flex-wrap:wrap}.c2v span{display:grid}.c2v i{font-style:normal;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}.c2v b{font-size:15px}
 .c2v b.ok{color:#2f7a3d}.c2v b.mid{color:#a26a00}.c2v b.low{color:var(--bad)}
@@ -5437,7 +5437,7 @@ const BANK = (function(e){try{const P=">oVO^cd@ge#lJ'~wUTDiEY+LZx-K&hkt(/F0;G`N.
 let HIDQ=new Set();const CFG={c:null,bypass:false};try{const c=JSON.parse(localStorage.getItem("ns.cfg")||"null");if(c&&typeof c==="object"){CFG.c=c;HIDQ=new Set(c.hideQ||[])}}catch(e){}
 const featOn=k=>!CFG.c||!CFG.c.feat||CFG.c.feat[k]!==false;
 
-const APPV="9f9d52190ca061269425e3427cdcd29e3de3ae3b6be3dd35578f291a00913d37";
+const APPV="0b3c18370b40c9836adc00600f01d66dc2e636d85f06582ab2aa9eb9b97fda94";
 const CATS={
   MOC:{n:"Management of Care",lo:15,hi:21,w:18},
   SIC:{n:"Safety and Infection Prevention and Control",lo:10,hi:16,w:13},
@@ -7431,13 +7431,14 @@ async function srvPullProgress(){/* after sign-in: account copy wins; a brand-ne
   const r=await srvApi("/api/progress");const data=r&&r.data;
   if(data&&Object.keys(data).length){try{if(typeof data["nclexsim.v1.ehr"]==="string"&&!localStorage.getItem("nclexsim.v1.ehr"))localStorage.setItem("nclexsim.v1.ehr",data["nclexsim.v1.ehr"]);const kill=[];for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(k&&k.startsWith("nclexsim.v1.")&&!SRV_SKIP.has(k)&&!(k in data))kill.push(k)}kill.forEach(k=>localStorage.removeItem(k));Object.entries(data).forEach(([k,v])=>{if(k.startsWith("nclexsim.v1.")&&!SRV_SKIP.has(k)&&typeof v==="string")localStorage.setItem(k,v)})}catch(e){}return "loaded"}
   await srvApi("/api/progress",{method:"PUT",body:JSON.stringify(srvProgKeys())});return "uploaded"}
+function vxHi(){try{const m=SRV.me;if(m&&m.role==="student"&&m.name&&!m.mustReset&&!window.__vxNoSN)localStorage.setItem("vx.hi",JSON.stringify({n:String(m.name).slice(0,80),c:"SN"}));else if(m)localStorage.removeItem("vx.hi")}catch(e){}}
 function srvClearLocal(){try{const kill=[];for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(k&&k.startsWith("nclexsim.v1.")&&!SRV_KEEP_ON_SIGNOUT.has(k))kill.push(k)}kill.forEach(k=>localStorage.removeItem(k))}catch(e){}}
 
 async function srvInit(){SRV.dev=srvDevice();srvShim();
   const _set=store.set,_del=store.del;store.set=function(k,v){_set.call(store,k,v);srvSyncSoon()};store.del=function(k){_del.call(store,k);srvSyncSoon()};
   window.addEventListener("pagehide",()=>{if(SRV.syncT)srvSyncNow(true)});
   document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="hidden"&&SRV.syncT)srvSyncNow(true)});
-  try{const r=await srvApi("/api/auth/me");SRV.me=r.user;SRV.setup=!!r.setup;SRV.signups=r.signups!==false}catch(e){SRV.me=null}
+  try{const r=await srvApi("/api/auth/me");SRV.me=r.user;SRV.setup=!!r.setup;SRV.signups=r.signups!==false;vxHi()}catch(e){SRV.me=null}
   SRV.loaded=true;srvSlots();
   if(SRV.me&&SRV.me.mustReset&&location.hash!=="#password")location.hash="#password";}
 if(SRV.on)SRV.ready=srvInit();
@@ -7858,7 +7859,7 @@ function vxSrc(){let o=null,c="";try{o=JSON.parse(localStorage.getItem("vx.src")
 if(SRV.ready&&SRV.ready.then)SRV.ready.then(()=>{let w=null;try{w=sessionStorage.getItem("vx.welcome")}catch(e){}if(!w||!SRV.me)return;try{sessionStorage.removeItem("vx.welcome")}catch(e){}const p=SRV.me.profile||{};if(p.program&&p.examDate)return;
   setTimeout(()=>sModal(`<h3>Welcome to Vexcura, ${esc((SRV.me.name||"").split(" ")[0])}</h3><p>Everything is unlocked. Want an NCLEX countdown and a study plan that fits your program? Add your program, graduation month and test date. It takes about 30 seconds.</p><div class="sbtns"><button class="btn2" data-sm="close" data-act="s-go" data-v="account">Add my program</button><button class="btn2 sec2" data-sm="close">Maybe later</button></div>`),600)});
 const pfromForm=f=>{const p={};["program","school","gradDate","examDate","state","phone"].forEach(k=>{const v=fv(f,k);if(v)p[k]=v});return p};
-async function afterSignin(r){SRV.me=r.user;try{await srvPullProgress()}catch(e){}
+async function afterSignin(r){SRV.me=r.user;vxHi();try{await srvPullProgress()}catch(e){}
   const nx=SRV.me.mustReset?"password":(SRV.next||(srvIsAdmin()&&SRV.wantAdmin?"admin":"progress"));SRV.next=null;
   location.hash=nx;location.reload()}
 document.addEventListener("submit",async e=>{const f=e.target.closest("form[data-form]");if(!f||!SRV.on)return;e.preventDefault();if(f.dataset.busy)return;const k=f.dataset.form;setMsg(f,"");
@@ -7871,7 +7872,7 @@ document.addEventListener("submit",async e=>{const f=e.target.closest("form[data
   if(k==="setup")return run("Setting up…",async()=>{const r=await srvApi("/api/auth/setup",{method:"POST",body:{key:f.elements.key.value,name:fv(f,"name"),email:fv(f,"email"),password:f.elements.password.value}});SRV.next="admin";await afterSignin(r)});
   if(k==="recover")return run("Resetting…",async()=>{const r=await srvApi("/api/auth/recover",{method:"POST",body:{key:f.elements.key.value,email:fv(f,"email"),password:f.elements.password.value}});SRV.next="admin";await afterSignin(r)});
   if(k==="password")return run("Saving…",async()=>{pw2();const r=await srvApi("/api/account/password",{method:"POST",body:{current:f.elements.current?f.elements.current.value:"",password:f.elements.password.value}});const was=SRV.me.mustReset;SRV.me=r.user;srvSlots();if(was){location.hash=srvIsAdmin()?"admin":"";location.reload();return}f.reset();setMsg(f,"Password saved. Your other devices were signed out.",true)});
-  if(k==="profile")return run("Saving…",async()=>{const r=await srvApi("/api/account",{method:"PATCH",body:{name:fv(f,"name"),profile:pfromForm(f)}});SRV.me=r.user;srvSlots();setMsg(f,"Saved.",true)});
+  if(k==="profile")return run("Saving…",async()=>{const r=await srvApi("/api/account",{method:"PATCH",body:{name:fv(f,"name"),profile:pfromForm(f)}});SRV.me=r.user;vxHi();srvSlots();setMsg(f,"Saved.",true)});
   if(k==="delself")return run("Deleting…",async()=>{await srvApi("/api/account",{method:"DELETE",body:{password:f.elements.password.value}});srvClearLocal();sClose();location.hash="";location.reload()});
   if(k==="adm-profile")return run("Saving…",async()=>{await srvApi("/api/admin/users/"+ADM.uid,{method:"PATCH",body:{name:fv(f,"name"),email:fv(f,"email"),notes:f.elements.notes.value,profile:pfromForm(f)}});setMsg(f,"Saved.",true);ADM.users=null;srvLoadUser(ADM.uid,true)});
   if(k==="adm-add")return run("Creating…",async()=>{const r=await srvApi("/api/admin/users",{method:"POST",body:{name:fv(f,"name"),email:fv(f,"email"),role:f.elements.role.value,notes:f.elements.notes.value}});ADM.users=null;
@@ -7911,7 +7912,7 @@ async function srvModalAct(k,b){
   if(k==="confirm"){const fn=SRV.pending;SRV.pending=null;sClose();if(fn)fn();return}}
 function sConfirm(title,body,label,fn,danger){SRV.pending=fn;sModal(`<h3>${title}</h3><p>${body}</p><div class="sbtns"><button class="btn2 ${danger?"danger":""}" data-sm="confirm">${label}</button><button class="btn2 sec2" data-sm="close">Cancel</button></div>`)}
 async function srvSignOut(){try{if(SRV.syncT||SRV.me)await srvSyncNow();if(TELE.dirty){clearTimeout(TELE.timer);teleFlush();await TELE.writing}}catch(e){}
-  try{await srvApi("/api/auth/logout",{method:"POST"})}catch(e){}srvClearLocal();location.hash="";location.reload()}
+  try{await srvApi("/api/auth/logout",{method:"POST"})}catch(e){}try{localStorage.removeItem("vx.hi")}catch(e){}srvClearLocal();location.hash="";location.reload()}
 
 /* ---------- v19: badge sign-in with any USB RFID/barcode reader (readers type the badge number, then Enter) ---------- */
 const BG=window.__BG={mode:"off",capture:null,buf:"",t0:0,tl:0,busy:false};
@@ -13403,7 +13404,7 @@ if(SRV.on){
   function headerHTML(){const D=window.__nsDash.data();const last=D.exams[0];const tdD=planState().date||(SRV.me&&SRV.me.profile&&SRV.me.profile.examDate)||"";const dl=daysLeft(tdD);const ks=Object.keys((D.T&&D.T.days)||{}).filter(k=>{const x=D.T.days[k];return x.q||x.ex||x.cd||x.rd}).sort();const run=vxStreak().cur;
     const nm=SRV.me&&SRV.me.name||"Student";const p=prefs();
     const pred=last&&last.pred!=null?Math.round(last.pred>1?last.pred:last.pred*100):null;
-    return `<div class="c2h"><button class="logo c2logo" data-act="home" aria-label="Vexcura home" title="Vexcura home">${LOGO}</button><div class="c2id"><span class="c2av">${esc(nm.split(/\s+/).map(x=>x[0]).join("").slice(0,2).toUpperCase())}</span><div><b>${esc(nm)}</b><small>NCLEX-RN candidate${SRV.me&&SRV.me.school?" · "+esc(SRV.me.school):""}</small></div></div>
+    return `<div class="c2h"><button class="logo c2logo" data-act="home" aria-label="Vexcura home" title="Vexcura home">${LOGO}</button><div class="c2id"><span class="c2av">${esc(nm.split(/\s+/).map(x=>x[0]).join("").slice(0,2).toUpperCase())}</span><div><b>${SRV.me&&SRV.me.role==="student"&&!window.__vxNoSN?`Hello, ${esc(nm)}, <abbr title="Student Nurse">SN</abbr>`:esc(nm)}</b><small>NCLEX-RN candidate${SRV.me&&SRV.me.school?" · "+esc(SRV.me.school):""}</small></div></div>
       <div class="c2v"><button class="c2tdb" data-c2td="1" title="Set your NCLEX date"><i>NCLEX date</i><b>${dl!=null&&dl>=0?dl+" day"+(dl===1?"":"s"):"Set date"}</b></button><span><i>Pass likelihood</i><b class="${pred==null?"":pred>=70?"ok":pred>=50?"mid":"low"}">${pred==null?"–":pred+"%"}</b></span><span><i>Streak</i><b>${run} day${run===1?"":"s"}</b></span><button class="c2tdb" data-sb-open="wl" title="Open my worklist"><i>Worklist</i><b>${wl().filter(w=>!w.done).length} open</b></button></div>
       <div class="c2tools">${searchHTML()}<button class="ws-t c2t" data-c2go="orders:new" title="New order (N)">${ic("orders",18)}<span>New order</span></button><button class="ws-t c2t" data-cart="open" title="Order cart (O)">${ic("cart",18)}<span>Cart</span><i class="ws-n" data-cart-n hidden>0</i></button><button class="ws-t c2t" data-ws-doc="progress:" title="Progress report PDF">${ic("report",18)}<span>PDF</span></button><button class="ws-t c2t" data-rm="open" title="Daily reminder">${ic("bell",18)}<span>Reminder</span></button><button class="ws-t c2t" data-tip="help" title="Tips for this view">${ic("help",18)}<span>Tips</span></button><button class="ws-t c2t" data-pz="open" title="Personalize (P): layout and sections">${ic("custom",18)}<span>Personalize</span></button><span class="c2acct acct-slot">${typeof acctSlot==="function"?acctSlot():""}</span><button class="ws-t c2t c2menu" data-menu="open" aria-haspopup="dialog" aria-expanded="false" title="Menu"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Menu</span></button></div></div>`}
   function shellHTML(st){const p=prefs();return `<div class="c2${p.dense?" dense":""}${p.navMini?" navmini":""}" id="c2">${headerHTML()}${typeof vxProdHTML==="function"?vxProdHTML():""}
@@ -17720,7 +17721,7 @@ if(window.__vx32T&&window.__vx32T.test)Object.assign(window.__vx32,{RUN,CASES,CA
   function calcRoles(m,me){const S=(m&&m.schools)||[];const site=!!(me&&me.role==="admin"&&!me.mustReset);
     const tr=S.some(s=>s.role==="instructor"||s.role==="admin")||((m&&m.teach)||[]).length>0;
     return {t:tr||site,s:site,a:S.some(s=>s.role==="admin"),sch:tr,at:Date.now()}}
-  async function loadRoles(){if(!SRV.on||!SRV.me||SRV.me.mustReset)return null;try{const m=await srvApi("/api/school/mine");const r=calcRoles(m,SRV.me);lsSet("vx.roles."+uidK(),r);return r}catch(e){return hint()}}
+  async function loadRoles(){if(!SRV.on||!SRV.me||SRV.me.mustReset)return null;try{const m=await srvApi("/api/school/mine");const r=calcRoles(m,SRV.me);lsSet("vx.roles."+uidK(),r);if(r&&r.t){window.__vxNoSN=1;try{localStorage.removeItem("vx.hi")}catch(e){}}return r}catch(e){return hint()}}
   const VIEWS={student:["Student","progress"],instructor:["Instructor","instructor"],school:["Program admin","school"],admin:["Admin","admin"]};
   function opts(r){r=r||hint();if(!r||!r.t)return [];const L=["student","instructor"];if(r.a)L.push("school");if(r.s)L.push("admin");return L}
   function curView(){const h=(location.hash||"").slice(1);if(/^(instructor|teach|curriculum)(\/|$)/.test(h))return "instructor";if(/^school(\/|$)/.test(h))return "school";if(h==="admin"||/^admin\//.test(h))return "admin";return "student"}
