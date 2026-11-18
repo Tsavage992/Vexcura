@@ -5605,6 +5605,23 @@ html:not([data-theme="hc"]) h1,html:not([data-theme="hc"]) h2,html:not([data-the
 .stk-row{flex-wrap:wrap}
 .vxink.vxink-half{top:auto;height:60vh;background:#0d2f41;box-shadow:0 -14px 40px -10px rgba(8,28,40,.6);border-radius:20px 20px 0 0}
 .vxink-half .vxink-bar{border-radius:20px 20px 0 0}.vxink-half .vxink-wrap{padding:8px 14px}
+.vxink-ro canvas{cursor:default}
+.vxink-fm{position:fixed;inset:0;z-index:3900;background:rgba(8,28,40,.55);display:flex;align-items:flex-start;justify-content:center;padding:4vh 14px;overflow:auto;font-family:var(--f-body)}
+.vxink-fmi{background:#fff;color:#14232b;border-radius:24px;width:100%;max-width:560px;box-shadow:0 30px 80px -20px rgba(8,28,40,.55)}.vxink-fmi.wide{max-width:860px}
+.vxink-fmi>header{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 22px 6px}.vxink-fmi h3{margin:0;font:400 30px/1.1 var(--f-head)}.vxink-fmb{padding:8px 22px 22px}.vxink-fmb h4{margin:18px 0 8px;font:700 12px/1 var(--f-body);letter-spacing:.08em;text-transform:uppercase;color:#1d5670}
+.vxink-x{border:1px solid #b9c9d2;background:#fff;border-radius:999px;padding:7px 14px;font:600 13.5px var(--f-body);cursor:pointer;color:#103a4f}
+.vxink-f{display:grid;gap:12px}.vxink-f label{display:grid;gap:4px;font-weight:600;font-size:14px}.vxink-f input,.vxink-f select,.vxink-f textarea{font:inherit;font-weight:400;padding:10px 12px;border:1px solid #b9c9d2;border-radius:10px;background:#f7fafc;color:inherit;min-height:44px}
+.vxink-r{display:grid;grid-template-columns:1fr 120px;gap:12px}.vxink-inl{grid-template-columns:1fr auto;align-items:end;margin-bottom:14px}.vxink-fe{color:#9d2a22;font-weight:600;margin:0;min-height:1em}
+.vxink-sigs{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:6px 0}.vxink-sigs figure{margin:0}.vxink-sigs figcaption{font-size:12.5px;color:#4c6470;margin-top:4px}
+.vxink-sig{display:grid;place-items:center;width:100%;aspect-ratio:10/3;border:1.5px dashed #9fb2bd;border-radius:12px;background:#f7fafc;padding:0;cursor:pointer;overflow:hidden;font:inherit;color:inherit}div.vxink-sig{cursor:default;border-style:solid}.vxink-sig svg{width:100%;height:100%}.vxink-nosig{color:#4c6470;font-size:13.5px}
+.vxink-tw{overflow-x:auto}.vxink-t{width:100%;border-collapse:collapse;font-size:14px}.vxink-t th{text-align:left;font-size:12px;color:#4c6470;padding:6px 8px;border-bottom:1px solid #d5e0e7}.vxink-t td{padding:8px;border-bottom:1px solid #e8eef2;vertical-align:top}.vxink-t small{color:#4c6470;display:block}
+.vxink-ok{color:#1f6b45}.vxink-np{color:#8a5a00}.vxink-err{opacity:.55}.vxink-err td:nth-child(-n+3){text-decoration:line-through}
+.vxink-dl{display:grid;grid-template-columns:120px 1fr;gap:6px 14px;margin:0 0 14px;font-size:15px}.vxink-dl dt{color:#4c6470}.vxink-dl dd{margin:0}
+.vxink-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px}.vxink-b{display:grid;gap:3px;font-size:13.5px}.vxink-b small{color:#4c6470}.vxink-b .vxink-lk{margin:4px 0 0;justify-self:start}
+.vxink-th2{display:block;width:100%;aspect-ratio:10/7;border:1px solid #d5e0e7;border-radius:12px;background:#f7fafc;padding:0;cursor:pointer;overflow:hidden}.vxink-th2 svg{width:100%;height:100%}
+.vxink-fbc{border-color:#e8a29c;background:#fff8f6}.vxink-fbc>div{min-width:0;flex:1}.vxink-mine{white-space:nowrap;border:0;border-radius:999px;padding:9px 16px;background:#f3c46c;color:#231505;font:600 14px var(--f-body);cursor:pointer;min-height:44px;display:inline-flex!important;align-items:center}
+@media (max-width:600px){.vxink-sigs,.vxink-r,.vxink-inl{grid-template-columns:1fr}.vxink-dl{grid-template-columns:1fr}}
+@media print{.vxink-fm{position:static;background:none;padding:0}.vxink-x,.vxink-lk{display:none}}
 /* </v72-ink-css> */
 </style>
 
@@ -5619,7 +5636,7 @@ const BANK = (function(e){try{const P=">oVO^cd@ge#lJ'~wUTDiEY+LZx-K&hkt(/F0;G`N.
 let HIDQ=new Set();const CFG={c:null,bypass:false};try{const c=JSON.parse(localStorage.getItem("ns.cfg")||"null");if(c&&typeof c==="object"){CFG.c=c;HIDQ=new Set(c.hideQ||[])}}catch(e){}
 const featOn=k=>!CFG.c||!CFG.c.feat||CFG.c.feat[k]!==false;
 
-const APPV="2225f066302704f036bf634a46c45c7a07ab2f16fcc36c2e41890ac906b90301";
+const APPV="038f361285c28a7ae8cf65b749a794856c96449aa2cda1a9eb63158c27dd0520";
 const CATS={
   MOC:{n:"Management of Care",lo:15,hi:21,w:18},
   SIC:{n:"Safety and Infection Prevention and Control",lo:10,hi:16,w:13},
@@ -21697,6 +21714,7 @@ function hsStickyMk(cfg){
       +COL.map((c,i)=>'<button type="button" class="vxink-col" data-ik="c'+i+'" aria-pressed="'+(i===0)+'" aria-label="'+["Black","Red","Green","Blue"][i]+' ink" style="background:'+c+'"></button>').join("")
       +'<span class="vxink-sep"></span><button type="button" data-ik="undo">Undo</button><button type="button" data-ik="clear">Clear</button><button type="button" data-ik="cancel">Cancel</button><button type="button" class="vxink-done" data-ik="done">Save</button></div>'
       +'<div class="vxink-wrap"><div class="vxink-page"><div class="vxink-bg">'+(o.bg||"")+'</div><canvas></canvas></div></div><p class="vxink-msg" aria-live="polite"></p>';
+    if(o.ro){el.classList.add("vxink-ro");el.querySelectorAll("[data-ik]").forEach(x=>{if(x.dataset.ik!=="cancel")x.remove()});el.querySelectorAll(".vxink-sep").forEach(x=>x.remove());el.querySelector("[data-ik=cancel]").textContent="Close"}
     document.body.appendChild(el);openEl=el;
     const page=el.querySelector(".vxink-page"),cv=el.querySelector("canvas"),g=cv.getContext("2d"),msg=el.querySelector(".vxink-msg"),wrap=el.querySelector(".vxink-wrap");
     let sc=1;
@@ -21705,7 +21723,7 @@ function hsStickyMk(cfg){
     function paint(){g.clearRect(0,0,cv.width,cv.height);S.forEach(line);if(cur&&!cur.erase)line(cur)}
     const at=e=>{const r=cv.getBoundingClientRect();return [Math.round((e.clientX-r.left)/r.width*W),Math.round((e.clientY-r.top)/r.height*H)]};
     function erase(x,y){const n=S.length;S=S.filter(s=>!pts(s).some(q=>Math.abs(q[0]-x)<16&&Math.abs(q[1]-y)<16));if(S.length!==n){dirty=true;paint()}}
-    cv.addEventListener("pointerdown",e=>{if(e.pointerType==="pen")penSeen=true;if(e.pointerType==="touch"&&penSeen)return;e.preventDefault();try{cv.setPointerCapture(e.pointerId)}catch(x){}const [x,y]=at(e);
+    cv.addEventListener("pointerdown",e=>{if(o.ro)return;if(e.pointerType==="pen")penSeen=true;if(e.pointerType==="touch"&&penSeen)return;e.preventDefault();try{cv.setPointerCapture(e.pointerId)}catch(x){}const [x,y]=at(e);
       if(tool===2){cur={erase:1};erase(x,y);return}
       if(count(S)>=(o.cap||CAP)){msg.textContent="This sheet is full. Erase something or start a new one.";return}
       const pr=e.pointerType==="pen"&&e.pressure>0?e.pressure:.5;cur={c:col,k:tool===1?1:0,w:Math.round((tool===1?3:2)*(.7+pr*.9)*10)/10,p:[x,y],lx:x,ly:y};paint()});
@@ -21727,7 +21745,7 @@ function hsStickyMk(cfg){
       else if(k==="cancel")cancel();
       else if(k==="done"){try{o.onSave&&o.onSave(S)}catch(x){msg.textContent="Couldn't save: "+(x&&x.message||x);return}close()}});
     window.addEventListener("resize",fit);document.addEventListener("keydown",key,true);fit();
-    msg.textContent="Draw with Apple Pencil, a finger or a mouse. With a Pencil, your hand can rest on the screen.";
+    msg.textContent=o.ro?(o.note||""):"Draw with Apple Pencil, a finger or a mouse. With a Pencil, your hand can rest on the screen.";
     return {close,strokes:()=>S}
   }
   /* ---- chart helpers ---- */
@@ -21776,7 +21794,92 @@ function hsStickyMk(cfg){
   document.addEventListener("click",e=>{const b=e.target.closest&&e.target.closest("[data-ink]");if(!b)return;e.preventDefault();const k=b.dataset.ink;if(k==="brain")openBrain();else if(k==="map")openMap();else if(k==="body")openBody();else if(k==="pad")openPad()});
   let raf=0;const tick=()=>{if(raf)return;raf=requestAnimationFrame(()=>{raf=0;paintChart();paintFab()})};
   new MutationObserver(tick).observe(document.documentElement,{childList:true,subtree:true});window.addEventListener("hashchange",tick);tick();
-  window.__vxInk={open,svg,version:"v72"};
+  window.__vxInk={open,svg,isOpen:()=>!!openEl,version:"v73"};
+})();
+
+/* v73 ink, shared items (server module INKS): signed skills checkoffs, handwritten feedback on a student's chart, group whiteboards.
+   Instructor entry points: Instructor dashboard header (Skills checkoffs, Whiteboard) and the feedback form on a student's chart (Handwrite it).
+   Student entry points: a card on the chart the feedback is about, and a "From your instructor" button on My Chart. */
+;(function(){
+  "use strict";
+  if(typeof srvApi!=="function"||!window.__vxInk)return;
+  const INK=window.__vxInk;
+  const esc=s=>String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const say=m=>{try{toastE(m)}catch(e){}};
+  const dt=t=>new Date(t).toLocaleString([], {month:"short",day:"numeric",year:"numeric",hour:"numeric",minute:"2-digit"});
+  const SKILLS=["Hand hygiene and PPE","Vital signs","Head-to-toe assessment","Blood glucose check","Oral medication administration","Subcutaneous injection","Intramuscular injection","IV piggyback medication","Peripheral IV insertion","IV site care and flush","Urinary catheter insertion","Urinary catheter care and removal","Sterile dressing change","Wound care","NG tube insertion and care","Tracheostomy care and suctioning","Oxygen therapy setup","Enteral feeding","Ostomy care","Transfer and ambulation","Restraint safety check","SBAR handoff"];
+  const SEC={general:"General",mar:"MAR",flow:"Flowsheets",lda:"LDAs",care:"Care plan",notes:"Notes",handoff:"Handoff"};
+  const tv=()=>{try{return typeof TV!=="undefined"?TV:null}catch(e){return null}};
+  const G=()=>{try{const X=window.__vx39;if(X&&X.gid){let M=X.members||[];if(!M.length){const T=tv();if(T&&T.gid===X.gid)M=T.members||[]}return {gid:X.gid,members:M}}}catch(e){}const T=tv();return T&&T.gid?{gid:T.gid,members:T.members||[]}:null};
+  const signedIn=()=>{try{return !!(SRV&&SRV.me&&!SRV.me.mustReset)}catch(e){return false}};
+  const phiBad=t=>{try{return typeof phiFind==="function"&&phiFind(t).length&&!(typeof phiOK==="function"&&phiOK([t]))}catch(e){return false}};
+  /* ---- small modal ---- */
+  let box=null;
+  function sheet(title,html,wide){close();box=document.createElement("div");box.className="vxink-fm";box.setAttribute("role","dialog");box.setAttribute("aria-modal","true");box.setAttribute("aria-label",title);
+    box.innerHTML='<div class="vxink-fmi'+(wide?" wide":"")+'"><header><h3>'+esc(title)+'</h3><button type="button" class="vxink-x" data-ink2="close" aria-label="Close">Close</button></header><div class="vxink-fmb">'+html+'</div></div>';document.body.appendChild(box);return box}
+  function close(){if(box){box.remove();box=null}}
+  const sig=(S)=>S&&S.length?INK.svg(S,1000,300):'<span class="vxink-nosig">Not signed</span>';
+  /* ---- instructor: checkoffs ---- */
+  async function coPanel(){const T=G();if(!T)return;sheet("Skills checkoffs",'<p class="note">Loading…</p>',1);let r;try{r=await srvApi("/api/ink/list?kind=co&gid="+encodeURIComponent(T.gid))}catch(e){box&&(box.querySelector(".vxink-fmb").innerHTML='<p class="note">'+esc(e.message)+'</p>');return}
+    if(!box)return;const L=r.items||[];box.querySelector(".vxink-fmb").innerHTML='<p class="note">A signed record that a student showed a skill. Nothing here is deleted: a mistake is marked in error and stays on the list.</p><p><button type="button" class="vxink-open" data-ink2="conew">New checkoff</button></p>'
+      +(L.length?'<div class="vxink-tw"><table class="vxink-t"><thead><tr><th>Date</th><th>Student</th><th>Skill</th><th>Result</th><th></th></tr></thead><tbody>'+L.map(x=>coRow(x,1)).join("")+'</tbody></table></div>':'<p class="note">No checkoffs for this group yet.</p>');box._L=L}
+  const coRow=(x,teach)=>{const d=x.data||{};return '<tr class="'+(x.err?"vxink-err":"")+'"><td>'+esc(dt(x.at))+'</td><td>'+esc(d.st||"")+'</td><td>'+esc(d.sk||"")+(d.n>1?' <small>attempt '+esc(d.n)+'</small>':'')+'</td><td>'+(x.err?'<b>In error</b> <small>'+esc(x.err.why)+'</small>':(d.res==="met"?'<b class="vxink-ok">Met</b>':'<b class="vxink-np">Needs practice</b>'))+'</td><td><button type="button" class="vxink-lk" data-ink2="coview" data-id="'+esc(x.id)+'">View</button>'+(teach&&!x.err?'<button type="button" class="vxink-lk" data-ink2="err" data-id="'+esc(x.id)+'">Mark in error</button>':'')+'</td></tr>'};
+  function coView(x){const d=x.data||{};sheet("Skills checkoff",'<dl class="vxink-dl"><dt>Student</dt><dd>'+esc(d.st||"")+'</dd><dt>Skill</dt><dd>'+esc(d.sk||"")+'</dd><dt>Result</dt><dd>'+(d.res==="met"?"Met":"Needs practice")+(d.n>1?" · attempt "+esc(d.n):"")+'</dd><dt>When</dt><dd>'+esc(dt(x.at))+'</dd><dt>Instructor</dt><dd>'+esc(x.by||"")+'</dd>'+(d.note?'<dt>Comments</dt><dd>'+esc(d.note)+'</dd>':'')+(x.err?'<dt>Status</dt><dd><b>In error</b>: '+esc(x.err.why)+' ('+esc(dt(x.err.at))+')</dd>':'')+'</dl><div class="vxink-sigs"><figure><div class="vxink-sig">'+sig(d.ss)+'</div><figcaption>Student signature</figcaption></figure><figure><div class="vxink-sig">'+sig(d.is)+'</div><figcaption>Instructor signature</figcaption></figure></div><p class="note">Practice record kept by the program. It is not a license, certification or employer competency record.</p>',1)}
+  function coNew(){const T=G();if(!T)return;const M=(T.members||[]).slice().sort((a,b)=>String(a.name).localeCompare(String(b.name)));if(!M.length){say("Add students to this group first");return}
+    const st={ss:null,is:null};
+    sheet("New skills checkoff",'<form class="vxink-f" data-ink2f="co"><label>Student<select name="uid" required>'+M.map(m=>'<option value="'+esc(m.id)+'">'+esc(m.name||m.email||"Student")+'</option>').join("")+'</select></label><label>Skill<select name="sk">'+SKILLS.map(s=>'<option>'+esc(s)+'</option>').join("")+'<option value="_o">Other (type it)</option></select></label><label hidden data-o>Skill name<input name="sko" maxlength="80"></label><div class="vxink-r"><label>Result<select name="res"><option value="met">Met</option><option value="np">Needs practice</option></select></label><label>Attempt<input name="n" type="number" min="1" max="20" value="1" inputmode="numeric"></label></div><label>Comments (optional)<textarea name="note" rows="3" maxlength="600" placeholder="What went well, what to practice."></textarea></label><div class="vxink-sigs"><figure><button type="button" class="vxink-sig" data-ink2="sigs" aria-label="Student signs here"><span class="vxink-nosig">Tap for the student to sign</span></button><figcaption>Student signature</figcaption></figure><figure><button type="button" class="vxink-sig" data-ink2="sigi" aria-label="Instructor signs here"><span class="vxink-nosig">Tap for you to sign</span></button><figcaption>Instructor signature</figcaption></figure></div><p class="vxink-fe" role="alert"></p><p><button class="vxink-open" type="submit">Save checkoff</button></p></form>',1);
+    box._st=st;box.querySelector("[name=sk]").addEventListener("change",e=>{box.querySelector("[data-o]").hidden=e.target.value!=="_o"})}
+  function sign(which){const st=box&&box._st;if(!st)return;const keep=box;keep.style.display="none";INK.open({title:which==="ss"?"Student signature":"Instructor signature",w:1000,h:300,fit:1,cap:900,strokes:st[which],bg:'<div style="position:absolute;left:6%;right:6%;bottom:22%;border-bottom:2px solid #9fb2bd"></div>',onSave:S=>{st[which]=S.length?S:null;const b=keep.querySelector("[data-ink2="+(which==="ss"?"sigs":"sigi")+"]");if(b)b.innerHTML=sig(st[which]);const fe=keep.querySelector(".vxink-fe");if(fe)fe.textContent=""}});
+    const iv=setInterval(()=>{if(!INK.isOpen()){clearInterval(iv);if(box===keep)keep.style.display=""}},200)}
+  async function coSave(f){const T=G(),st=box._st,fe=f.querySelector(".vxink-fe");const v=n=>String((f.elements[n]||{}).value||"").trim();const sk=v("sk")==="_o"?v("sko"):v("sk");
+    if(!sk){fe.textContent="Type the skill name.";return}if(!st.ss||!st.is){fe.textContent="Both signatures are needed before you save.";return}if(phiBad(v("note"))){fe.textContent="Take out anything that could identify a real patient.";return}
+    const m=(T.members||[]).find(x=>x.id===v("uid"));const b=f.querySelector("[type=submit]");b.disabled=true;
+    try{await srvApi("/api/ink/item",{method:"POST",body:{kind:"co",gid:T.gid,uid:v("uid"),title:sk,data:{st:m?(m.name||m.email||"Student"):"Student",sk,res:v("res"),n:Math.max(1,Math.min(20,+v("n")||1)),note:v("note"),ss:st.ss,is:st.is}}});say("Checkoff saved");coPanel()}catch(e){fe.textContent=e.message;b.disabled=false}}
+  /* ---- instructor: whiteboard ---- */
+  async function wbPanel(){const T=G();if(!T)return;sheet("Whiteboard",'<p class="note">Loading…</p>',1);let r;try{r=await srvApi("/api/ink/list?kind=wb&gid="+encodeURIComponent(T.gid))}catch(e){box&&(box.querySelector(".vxink-fmb").innerHTML='<p class="note">'+esc(e.message)+'</p>');return}
+    if(!box)return;const L=r.items||[];box._L=L;box.querySelector(".vxink-fmb").innerHTML='<p class="note">Draw a board for post-conference. Saving shares it with every student in this group.</p><form class="vxink-f vxink-inl" data-ink2f="wb"><label>Board title<input name="title" maxlength="80" required placeholder="Post-conference, heart blocks"></label><button class="vxink-open" type="submit">New board</button></form>'+wbList(L,1)}
+  const wbList=(L,teach)=>L.length?'<div class="vxink-g">'+L.map(x=>'<div class="vxink-b '+(x.err?"vxink-err":"")+'"><button type="button" class="vxink-th2" data-ink2="wbview" data-id="'+esc(x.id)+'" aria-label="Open '+esc(x.title||"board")+'">'+((x.data&&x.data.s)?INK.svg(x.data.s,1000,700):"")+'</button><b>'+esc(x.title||"Whiteboard")+'</b><small>'+esc(dt(x.at))+(x.by?" · "+esc(x.by):"")+(x.err?" · In error: "+esc(x.err.why):"")+'</small>'+(teach&&!x.err?'<button type="button" class="vxink-lk" data-ink2="err" data-id="'+esc(x.id)+'">Mark in error</button>':'')+'</div>').join("")+'</div>':'<p class="note">No boards yet.</p>';
+  function wbNew(title){const T=G();if(!T)return;const gid=T.gid;close();INK.open({title:"Whiteboard: "+title,w:1000,h:700,fit:1,cap:12000,bg:'<div class="vxink-dots" style="position:absolute;inset:0"></div>',onSave:S=>{if(!S.length)return;srvApi("/api/ink/item",{method:"POST",body:{kind:"wb",gid,title,data:{s:S,w:1000,h:700}}}).then(()=>{say("Board shared with the group");wbPanel()},e=>say(e.message))}})}
+  /* ---- instructor: handwritten feedback on the chart being reviewed ---- */
+  function fbNew(form){let x=null,section="general";const g=G();if(form.dataset.v39f){let pp=form.dataset.p||"";try{if(!pp&&/\/charts/.test(location.hash)&&window.__vx39&&window.__vx39.pid)pp=window.__vx39.pid}catch(e){}x={uid:form.dataset.u,pid:pp};section=String(form.dataset.k||"general").slice(0,20)}else{const T=tv();x=T&&T.sel&&T.docs&&T.docs[T.sel];section=(form.elements.section||{}).value||"general"}if(!x||!x.uid||!g){say("Open a student's chart first");return}const gid=g.gid;
+    INK.open({title:"Feedback: "+(SEC[section]||form.dataset.l||"General"),w:1000,h:700,fit:1,cap:9000,bg:'<div class="vxink-dots" style="position:absolute;inset:0"></div><div class="vxink-foot">The student sees this on the same chart. Do not write anything that identifies a real patient.</div>',onSave:S=>{if(!S.length)return;srvApi("/api/ink/item",{method:"POST",body:{kind:"fb",gid,uid:x.uid,pid:x.pid,section,data:{s:S,w:1000,h:700}}}).then(()=>say("Handwritten feedback sent"),e=>say(e.message))}})}
+  async function markErr(id,again){const why=window.prompt("Why is this in error? It stays on the list, greyed out.");if(!why||!why.trim())return;try{await srvApi("/api/ink/err",{method:"POST",body:{id,why:why.trim()}});say("Marked in error");again&&again()}catch(e){say(e.message)}}
+  /* ---- student: what my instructor sent ---- */
+  const MINE={at:0,items:[],busy:false,uid:null};
+  async function mine(force){if(!signedIn())return MINE.items=[];const u=SRV.me.id;if(MINE.uid!==u){MINE.uid=u;MINE.at=0;MINE.items=[]}if(MINE.busy||(!force&&Date.now()-MINE.at<120000))return MINE.items;MINE.busy=true;try{const r=await srvApi("/api/ink/list");MINE.items=r.items||[];MINE.at=Date.now()}catch(e){MINE.at=Date.now()-90000}MINE.busy=false;paint();return MINE.items}
+  function minePanel(){const co=MINE.items.filter(x=>x.kind==="co"),wb=MINE.items.filter(x=>x.kind==="wb"),fb=MINE.items.filter(x=>x.kind==="fb"&&!x.err);sheet("From your instructor",'<h4>Skills checkoffs</h4>'+(co.length?'<div class="vxink-tw"><table class="vxink-t"><thead><tr><th>Date</th><th>Student</th><th>Skill</th><th>Result</th><th></th></tr></thead><tbody>'+co.map(x=>coRow(x,0)).join("")+'</tbody></table></div>':'<p class="note">None yet.</p>')+'<h4>Whiteboards</h4>'+wbList(wb,0)+(fb.length?'<h4>Handwritten feedback</h4><div class="vxink-g">'+fb.map(fbTile).join("")+'</div>':''),1);box._L=MINE.items}
+  const fbTile=x=>'<div class="vxink-b"><button type="button" class="vxink-th2" data-ink2="fbview" data-id="'+esc(x.id)+'" aria-label="Open feedback">'+((x.data&&x.data.s)?INK.svg(x.data.s,1000,700):"")+'</button><b>'+esc(SEC[x.section]||"General")+'</b><small>'+esc(dt(x.at))+(x.by?" · "+esc(x.by):"")+'</small></div>';
+  const find=id=>((box&&box._L)||[]).concat(MINE.items).find(x=>x.id===id);
+  function view(x,title){const d=x.data||{};const keep=box;if(keep)keep.style.display="none";INK.open({title,ro:1,w:d.w||1000,h:d.h||700,fit:1,strokes:d.s||[],bg:'<div class="vxink-dots" style="position:absolute;inset:0"></div>',note:(x.by?"From "+x.by+" · ":"")+dt(x.at)});const iv=setInterval(()=>{if(!INK.isOpen()){clearInterval(iv);if(keep&&box===keep)keep.style.display=""}},200)}
+  /* ---- injection ---- */
+  let busy=false;
+  function paint(){if(busy)return;busy=true;try{
+    const T=tv(),hr=document.querySelector(".tw .ehtr");
+    if(hr&&T&&T.gid&&!hr.querySelector("[data-ink2=co]")){hr.insertAdjacentHTML("afterbegin",'<button type="button" class="ehbtn" data-ink2="co">Skills checkoffs</button><button type="button" class="ehbtn" data-ink2="wb">Whiteboard</button>')}
+    const ff=document.querySelector('form[data-txf="fb"] .sbtns');
+    if(ff&&!ff.querySelector("[data-ink2=fbnew]"))ff.insertAdjacentHTML("beforeend",'<button type="button" class="btn2 sec2" data-ink2="fbnew">Handwrite it</button>');
+    document.querySelectorAll('form[data-v39f="fb"]').forEach(f=>{if(!f.querySelector("[data-ink2=fbnew]")){const r=f.querySelector(".sbtns")||f;r.insertAdjacentHTML("beforeend",'<button type="button" class="vxi-btn sec" data-ink2="fbnew">Handwrite it</button>')}});
+    const hub=document.querySelector(".v39-today");if(hub&&G()&&!hub.querySelector("[data-ink2=co]")){const gn=hub.querySelector(".v39-gname");const h='<button type="button" class="vxi-btn sm sec" data-ink2="co">Skills checkoffs</button><button type="button" class="vxi-btn sm sec" data-ink2="wb">Whiteboard</button>';if(gn)gn.insertAdjacentHTML("beforebegin",h);else hub.insertAdjacentHTML("beforeend",h)}
+    const tools=document.querySelector("#c2 .c2tools");
+    if(tools&&signedIn()){let b=tools.querySelector("[data-ink2=mine]");const n=MINE.items.filter(x=>!x.err||x.kind==="co").length;if(n&&!b){tools.insertAdjacentHTML("afterbegin",'<button type="button" class="vxink-mine" data-ink2="mine">From your instructor</button>')}else if(!n&&b)b.remove();if(Date.now()-MINE.at>120000)mine()}
+    const m=document.getElementById("ehm");let P=null;try{const E=window.__EHX&&window.__EHX.get();P=E&&E.v29&&E.v29.P()}catch(e){}
+    const old=document.getElementById("vxink-fb");
+    if(m&&P&&signedIn()&&!document.querySelector(".tw")&&!/^#instructor/.test(location.hash)){if(Date.now()-MINE.at>120000)mine();const L=MINE.items.filter(x=>x.kind==="fb"&&!x.err&&x.pid===P.id);const key=L.map(x=>x.id).join(",");
+      if(L.length){if(!old||old.dataset.k!==key){if(old)old.remove();const a=m.querySelector(".ehah");if(a)a.insertAdjacentHTML("afterend",'<div class="vxink-card vxink-fbc" id="vxink-fb" data-k="'+esc(key)+'"><div><h3>Handwritten feedback from your instructor</h3><div class="vxink-g">'+L.map(fbTile).join("")+'</div></div></div>')}}else if(old)old.remove()}
+    else if(old&&!m)old.remove();
+  }catch(e){}busy=false}
+  document.addEventListener("click",e=>{const b=e.target.closest&&e.target.closest("[data-ink2]");if(!b)return;const k=b.dataset.ink2;e.preventDefault();
+    if(k==="close")close();else if(k==="co")coPanel();else if(k==="conew")coNew();else if(k==="sigs")sign("ss");else if(k==="sigi")sign("is");
+    else if(k==="wb")wbPanel();else if(k==="fbnew")fbNew(b.closest("form"));else if(k==="mine")minePanel();
+    else if(k==="coview"){const x=find(b.dataset.id);if(x)coView(x)}
+    else if(k==="wbview"){const x=find(b.dataset.id);if(x)view(x,x.title||"Whiteboard")}
+    else if(k==="fbview"){const x=find(b.dataset.id);if(x)view(x,"Feedback: "+(SEC[x.section]||"General"))}
+    else if(k==="err"){const x=find(b.dataset.id);markErr(b.dataset.id,x&&x.kind==="wb"?wbPanel:coPanel)}});
+  document.addEventListener("submit",e=>{const f=e.target.closest&&e.target.closest("[data-ink2f]");if(!f)return;e.preventDefault();if(f.dataset.ink2f==="co")coSave(f);else{const t=String(f.elements.title.value||"").trim();if(t)wbNew(t)}});
+  document.addEventListener("keydown",e=>{if(e.key==="Escape"&&box&&!INK.isOpen())close()});
+  let raf=0;const tick=()=>{if(raf)return;raf=requestAnimationFrame(()=>{raf=0;paint()})};
+  new MutationObserver(tick).observe(document.documentElement,{childList:true,subtree:true});window.addEventListener("hashchange",tick);tick();
+  window.__vxInk2={mine,paint};
 })();
 /* </v72-ink-js> */
 /* <v37-regs-js> */
