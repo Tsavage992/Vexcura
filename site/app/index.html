@@ -5778,7 +5778,7 @@ const BANK = (function(e){try{const P=">oVO^cd@ge#lJ'~wUTDiEY+LZx-K&hkt(/F0;G`N.
 let HIDQ=new Set();const CFG={c:null,bypass:false};try{const c=JSON.parse(localStorage.getItem("ns.cfg")||"null");if(c&&typeof c==="object"){CFG.c=c;HIDQ=new Set(c.hideQ||[])}}catch(e){}
 const featOn=k=>!CFG.c||!CFG.c.feat||CFG.c.feat[k]!==false;
 
-const APPV="e825e1766a5c8502d992ceffc36f399fc4c9a298160b3e4282f74caef04aac5f";
+const APPV="88b59694d9cb81c6b8a979df8dbaf569ee8e2c5d0cb26baba771d05be01d0cc3";
 const CATS={
   MOC:{n:"Management of Care",lo:15,hi:21,w:18},
   SIC:{n:"Safety and Infection Prevention and Control",lo:10,hi:16,w:13},
@@ -22399,7 +22399,11 @@ function hsStickyMk(cfg){
   function level() { const x = X32(); try { return x && x.tier ? x.tier() : null } catch (e) { return null } }
   function runningPid() { const E = EH(); try { const d = E.db(); const p = d.patients.find(q => q.dx32 && !q.dx32.done); return p ? p.id : null } catch (e) { return null } }
   function whenEHR(fn, n) { n = n || 0; const E = EH(); if (E && document.querySelector("#ehm")) return fn(E); if (n === 0 && !/^#ehr/.test(location.hash)) location.hash = "#ehr"; if (n > 60) return; setTimeout(() => whenEHR(fn, n + 1), 100) }
-  function start() { whenEHR(E => { const rp = runningPid(); if (rp) { try { E.go(rp, E.v29.isRover && E.v29.isRover() ? "home" : "summary") } catch (e) { } return } try { E.go(null) } catch (e) { } setTimeout(() => { try { X32().uni({}) } catch (e) { } }, 50) }) }
+  function start() { whenEHR(E => { const rp = runningPid(); if (rp) { try { E.go(rp, E.v29.isRover && E.v29.isRover() ? "home" : "summary") } catch (e) { } return } const T = level(), S = window.__vxShift;
+      /* Level 3 and up: about 1 in 3 simulations is a full shift of several patients (prioritize, delegate, hand off) */
+      if (T && T.now >= 3 && S && S.open && Math.random() < SHIFTP) { try { location.hash = "#ehr"; S.open({ tier: S.progress ? S.progress().tier : undefined }); return } catch (e) { } }
+      try { E.go(null) } catch (e) { } setTimeout(() => { try { X32().uni({}) } catch (e) { } }, 50) }) }
+  const SHIFTP = 0.33;
 
   function cardHTML() {
     const T = level(), now = T ? T.now : 1, rp = runningPid();
@@ -22408,7 +22412,7 @@ function hsStickyMk(cfg){
     return `<h3>Simulation Center</h3>
       <div class="sc-top"><div class="sc-next"><span class="sc-k">One patient. No warning.</span>
         <b>${rp ? "Your patient is waiting" : "Start a simulation"}</b>
-        <span class="sc-why">${rp ? "You have a simulation in progress. Go back to the bedside." : "You'll get a patient with a small complaint. Assess, call the provider, give the orders. Sometimes that fixes it. Sometimes it doesn't, and the patient keeps getting worse: rapid response, then a Code Blue you run yourself."}</span>
+        <span class="sc-why">${rp ? "You have a simulation in progress. Go back to the bedside." : "You'll get a patient with a small complaint. Assess, call the provider, give the orders. Sometimes that fixes it. Sometimes it doesn't, and the patient keeps getting worse: rapid response, then a Code Blue you run yourself." + (now >= 3 ? " At your level, some simulations are a full shift with several patients." : " From Level 3, some simulations are a full shift with several patients.")}</span>
         <ol class="sc-flow on" aria-label="Where a simulation can go">${flow.map(x => `<li>${x}</li>`).join("")}</ol>
         <button type="button" class="btn2" data-sc-start>${rp ? "Return to your patient" : "Start a simulation"}</button>
         <span class="sc-fine on">About 15 to 25 minutes. Pause any time. You won't know the problem until the debrief.</span></div>
