@@ -5765,6 +5765,189 @@ html.vxn-on{overflow:hidden}
 #vxsimc .sc-hist li{display:grid;grid-template-columns:1fr auto 52px;gap:10px;font-size:13.5px;background:#fff;border:1px solid var(--eh-line,#d5e0e7);border-radius:6px;padding:6px 10px}
 #vxsimc .sc-hist b{text-align:right;color:#0f7a5a}
 /* </v75-simc-css> */
+/* <v78-tv-css> */
+html.vxtv-on{overflow:hidden}
+#vxtv{position:fixed;inset:0;z-index:2147483000;background:radial-gradient(120% 90% at 10% 0%,#13384b 0%,#0b1f2a 55%,#071219 100%);color:#eef6f9;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;overflow:auto;-webkit-font-smoothing:antialiased}
+#vxtv[hidden]{display:none}
+#vxtv button{font:inherit;cursor:pointer}
+#vxtv h1,#vxtv h2,#vxtv h3{font-family:inherit;color:inherit}
+#vxtv .tv-ans li{flex-direction:row!important;justify-content:flex-start!important;text-align:left!important;min-height:0!important;height:auto!important}
+#vxtv :focus-visible{outline:4px solid #ffd166;outline-offset:3px}
+#vxtv .tv-logo{font-weight:800;letter-spacing:-.01em}
+#vxtv .tv-logo b{color:#7fd8f0;font-weight:800}
+#vxtv .tv-k{display:block;font-size:.8em;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#9fc3d1;margin:1.1em 0 .45em}
+#vxtv .tv-fine{color:#a9c4cf;font-size:.82em;line-height:1.45}
+#vxtv .tv-wait{font-size:1.6em;text-align:center;margin-top:30vh}
+#vxtv .tv-net{color:#ffd166;font-weight:700}
+#vxtv .tv-btn{background:#ffd166;color:#14232c;border:0;border-radius:14px;padding:.7em 1.4em;font-weight:800;font-size:1em}
+#vxtv .tv-btn.big{font-size:1.15em;padding:.85em 1.6em}
+#vxtv .tv-btn.sec{background:transparent;color:#eef6f9;border:2px solid rgba(255,255,255,.35)}
+#vxtv .tv-btn[disabled]{opacity:.45;cursor:default}
+#vxtv .tv-x{background:rgba(255,255,255,.1);color:#eef6f9;border:1px solid rgba(255,255,255,.25);border-radius:99px;padding:.45em 1.1em;font-weight:700}
+#vxtv .tv-row{display:flex;gap:1em;flex-wrap:wrap;justify-content:center;margin-top:2em}
+
+#vxtv.tv-host{font-size:clamp(16px,1.45vw,34px)}
+#vxtv.tv-host .tv-wrap{min-height:100%;box-sizing:border-box;padding:1.6em 3em 2em;display:flex;flex-direction:column}
+#vxtv .tv-top{display:flex;align-items:center;gap:1.2em;font-size:.95em;margin-bottom:1.2em}
+#vxtv .tv-top .tv-logo{font-size:1.25em;margin-right:auto}
+#vxtv .tv-room{color:#cfe3ea}
+#vxtv .tv-home h1{font-size:2.6em;margin:.6em 0 .8em;letter-spacing:-.02em}
+#vxtv .tv-modes{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2em;flex:1;max-height:58vh}
+#vxtv .tv-mode{display:flex;flex-direction:column;align-items:flex-start;gap:.5em;text-align:left;color:#eef6f9;border:2px solid rgba(255,255,255,.14);border-radius:28px;padding:1.4em 1.3em;background:rgba(255,255,255,.05);transition:transform .15s,background .15s}
+#vxtv .tv-mode:hover,#vxtv .tv-mode:focus-visible{transform:translateY(-4px);background:rgba(255,255,255,.1)}
+#vxtv .tv-mode b{font-size:1.6em}
+#vxtv .tv-mode span{color:#c9dde5;line-height:1.4}
+#vxtv .tv-mode small{margin-top:auto;color:#9fc3d1;font-weight:700}
+#vxtv .tv-ic{display:grid;place-items:center;width:2.4em;height:2.4em;border-radius:18px;font-size:1.5em!important;font-weight:900;color:#0b1f2a!important}
+#vxtv .m-party .tv-ic{background:#ffd166}#vxtv .m-code .tv-ic{background:#ff6b6b}#vxtv .m-monitor .tv-ic{background:#39ff88}
+#vxtv .tv-cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:3em;flex:1;align-items:start}
+#vxtv .tv-join{display:flex;gap:1.4em;align-items:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:28px;padding:1.3em}
+#vxtv .tv-qr{width:8.5em;height:8.5em;flex:0 0 auto;background:#fff;border-radius:16px;padding:.45em;box-sizing:border-box}
+#vxtv .tv-qr:empty{background:rgba(255,255,255,.08)}
+#vxtv .tv-qr svg{width:100%;height:100%;display:block}
+#vxtv .tv-join .tv-k{margin:.2em 0 .2em}
+#vxtv .tv-url{display:block;font-size:1.35em}
+#vxtv .tv-code{display:block;white-space:nowrap;font-size:3.4em;letter-spacing:.06em;color:#ffd166;line-height:1.05;font-variant-numeric:tabular-nums}
+#vxtv .tv-chips{list-style:none;padding:0;margin:1.2em 0 0;display:flex;flex-wrap:wrap;gap:.5em}
+#vxtv .tv-chips li{background:rgba(127,216,240,.16);border:1px solid rgba(127,216,240,.4);border-radius:99px;padding:.35em .9em;font-weight:700;animation:tvpop .35s ease-out}
+#vxtv .tv-chips li i{font-style:normal;color:#9fc3d1;font-weight:600}
+@keyframes tvpop{from{transform:scale(.6);opacity:0}to{transform:none;opacity:1}}
+#vxtv .tv-set h2{font-size:1.7em;margin:.1em 0 .4em}
+#vxtv .tv-opts{display:flex;flex-wrap:wrap;gap:.5em}
+#vxtv .tv-chip{background:rgba(255,255,255,.07);color:#eef6f9;border:2px solid rgba(255,255,255,.18);border-radius:99px;padding:.4em .95em;font-weight:700;font-size:.85em}
+#vxtv .tv-chip.on{background:#7fd8f0;color:#0b1f2a;border-color:#7fd8f0}
+#vxtv .tv-set .tv-btn.big{margin-top:1.4em}
+#vxtv .tv-steps{line-height:1.6;padding-left:1.2em}
+#vxtv .tv-roles{list-style:none;padding:0;margin:0;display:grid;gap:.5em}
+#vxtv .tv-roles li{display:grid;grid-template-columns:9em 1fr auto;gap:1em;align-items:center;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:.6em 1em}
+#vxtv .tv-roles li span{color:#c9dde5;font-size:.85em}
+#vxtv .tv-roles li em{font-style:normal;color:#9fc3d1;font-weight:700}
+#vxtv .tv-roles li.on em{color:#39ff88}
+
+#vxtv .tv-qh{display:flex;justify-content:space-between;align-items:center;color:#9fc3d1;font-weight:700}
+#vxtv .tv-sec{font-size:2em;color:#ffd166;font-variant-numeric:tabular-nums}
+#vxtv .tv-timer{display:block;height:.45em;background:rgba(255,255,255,.12);border-radius:99px;overflow:hidden;margin:.5em 0 1em}
+#vxtv .tv-timer i{display:block;height:100%;background:linear-gradient(90deg,#ffd166,#ff9f43);transition:width .2s linear}
+#vxtv .tv-stem{font-size:2.05em;line-height:1.25;margin:.2em 0 .5em;letter-spacing:-.01em;font-weight:700}
+#vxtv .tv-stem.sm{font-size:1.25em;font-weight:600;color:#dfeef3}
+#vxtv .tv-sata{color:#ffd166;font-weight:800;margin:-.2em 0 .6em}
+#vxtv .tv-ans{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:.8em}
+#vxtv .tv-ans li{position:relative;display:flex;gap:.6em;align-items:center;border-radius:18px;padding:.8em 1em;font-size:1.15em;line-height:1.3;color:#0b1f2a;font-weight:650;overflow:hidden}
+#vxtv .tv-ans li b{font-weight:900}
+#vxtv .tv-sh{font-size:1.15em;width:1.4em;text-align:center}
+#vxtv .tv-ans .tc0,#vxtv .tp-a.tc0{background:#7fd8f0}#vxtv .tv-ans .tc1,#vxtv .tp-a.tc1{background:#ffd166}#vxtv .tv-ans .tc2,#vxtv .tp-a.tc2{background:#ff9b9b}#vxtv .tv-ans .tc3,#vxtv .tp-a.tc3{background:#c3a6ff}#vxtv .tv-ans .tc4,#vxtv .tp-a.tc4{background:#9ff0b8}#vxtv .tv-ans .tc5,#vxtv .tp-a.tc5{background:#ffc48c}
+#vxtv .tv-count{margin-top:auto;padding-top:1em;color:#9fc3d1;font-weight:700;text-align:right}
+
+#vxtv .tv-cols2{display:grid;grid-template-columns:minmax(0,1fr) 19em;gap:2em;flex:1}
+#vxtv .tv-ans.rev{grid-template-columns:1fr;gap:.45em}
+#vxtv .tv-ans.rev li{font-size:.95em;padding:.55em .9em}
+#vxtv .tv-ans.rev li.no{opacity:.42}
+#vxtv .tv-ans.rev li.ok{box-shadow:0 0 0 4px #39ff88}
+#vxtv .tv-ans.rev li em{margin-left:auto;font-style:normal;font-weight:900;position:relative;z-index:1}
+#vxtv .tv-ans.rev li i{position:absolute;left:0;bottom:0;height:5px;background:rgba(11,31,42,.55)}
+#vxtv .tv-rat{margin-top:1em;background:rgba(255,255,255,.06);border-left:5px solid #39ff88;border-radius:12px;padding:.8em 1.1em}
+#vxtv .tv-rat p{margin:.3em 0;line-height:1.45;font-size:.95em}
+#vxtv .tv-rat small{color:#9fc3d1}
+#vxtv .tv-board{background:rgba(255,255,255,.05);border-radius:24px;padding:1.1em 1.2em;display:flex;flex-direction:column}
+#vxtv .tv-board h3{margin:0 0 .5em}
+#vxtv .tv-board ol{padding:0;margin:0;list-style:none;display:grid;gap:.35em;counter-reset:b}
+#vxtv .tv-board li{display:grid;grid-template-columns:1.6em 1fr auto auto;gap:.5em;align-items:center;counter-increment:b}
+#vxtv .tv-board li::before{content:counter(b);color:#9fc3d1;font-weight:800}
+#vxtv .tv-board li i{font-style:normal;color:#39ff88;font-weight:800;font-size:.85em}
+#vxtv .tv-board .tv-btn{margin-top:auto}
+
+#vxtv .tv-fin h1{text-align:center;font-size:2.6em;margin:.2em 0 .6em}
+#vxtv .tv-pod{list-style:none;padding:0;margin:0 auto;display:flex;gap:1.2em;align-items:flex-end;justify-content:center}
+#vxtv .tv-pod li{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:.3em;width:9em;border-radius:22px 22px 8px 8px;padding:1em .6em;background:rgba(255,255,255,.08);text-align:center}
+#vxtv .tv-pod .p1{order:2;height:12em;background:linear-gradient(#ffd166,#f2a93b);color:#14232c}
+#vxtv .tv-pod .p2{order:1;height:9em;background:linear-gradient(#dfe7ea,#b8c6cc);color:#14232c}
+#vxtv .tv-pod .p3{order:3;height:7em;background:linear-gradient(#f0b48a,#c98559);color:#14232c}
+#vxtv .tv-pod b{font-size:1.2em;word-break:break-word}#vxtv .tv-pod i{font-style:normal;font-weight:900}
+#vxtv .tv-rest{max-width:28em;margin:1.4em auto 0;display:grid;gap:.3em}
+#vxtv .tv-rest li{display:flex;justify-content:space-between}
+
+#vxtv.tv-phone{font-size:17px}
+#vxtv .tp-wrap{max-width:560px;margin:0 auto;padding:14px 16px 28px;box-sizing:border-box;min-height:100%}
+#vxtv .tp-top{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+#vxtv .tp-top .tv-logo{margin-right:auto}
+#vxtv .tp-join h1,#vxtv .tp-h{font-size:28px;margin:8px 0 14px}
+#vxtv .tp-join label{display:block;margin-bottom:14px}
+#vxtv .tp-join label span{display:block;font-weight:700;margin-bottom:6px;color:#cfe3ea}
+#vxtv .tp-join input{width:100%;box-sizing:border-box;font:inherit;font-size:22px;padding:12px 14px;border-radius:14px;border:2px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:#fff}
+#vxtv .tp-join input[name=code]{font-size:34px;letter-spacing:.12em;text-align:center;font-variant-numeric:tabular-nums}
+#vxtv .tp-join .tv-btn{width:100%}
+#vxtv .tp-big{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;margin-top:16vh}
+#vxtv .tp-big b{font-size:34px}
+#vxtv .tp-big span{color:#cfe3ea;font-size:18px;line-height:1.4}
+#vxtv .tp-big.ok b{color:#39ff88}#vxtv .tp-big.no b{color:#ff9b9b}
+#vxtv .tp-big .tp-tot{color:#ffd166;font-weight:800}
+#vxtv .tp-k{color:#9fc3d1;font-weight:700;font-size:14px;margin:0 0 4px}
+#vxtv .tp-stem{font-size:17px;line-height:1.4;margin:0 0 12px}
+#vxtv .tp-ans{display:grid;gap:10px;margin-bottom:12px}
+#vxtv .tp-a{display:grid;grid-template-columns:28px 22px 1fr;gap:6px;align-items:center;text-align:left;border:0;border-radius:16px;padding:14px 12px;color:#0b1f2a;font-weight:650;min-height:58px;line-height:1.3}
+#vxtv .tp-a span{font-size:20px;text-align:center}
+#vxtv .tp-a.on{box-shadow:0 0 0 4px #fff}
+#vxtv .tp-roles{display:grid;gap:10px}
+#vxtv .tp-role{display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:4px;background:rgba(255,255,255,.07);color:#eef6f9;border:2px solid rgba(255,255,255,.18);border-radius:16px;padding:14px}
+#vxtv .tp-role b{font-size:19px}#vxtv .tp-role span{color:#c9dde5;font-size:15px}#vxtv .tp-role em{font-style:normal;color:#39ff88;font-weight:700;font-size:14px}
+#vxtv .tp-st{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.07);border-radius:14px;padding:10px 12px;margin-bottom:12px}
+#vxtv .tp-st b{font-size:19px}#vxtv .tp-st span{color:#cfe3ea;margin-right:auto;font-variant-numeric:tabular-nums}
+#vxtv .tp-chg{background:transparent;color:#7fd8f0;border:0;font-weight:700}
+#vxtv .tp-g{font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:#9fc3d1;margin:14px 0 6px}
+#vxtv .tp-acts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+#vxtv .tp-do{background:#eef6f9;color:#0b1f2a;border:0;border-radius:14px;padding:14px 10px;font-weight:750;min-height:56px;line-height:1.25;transition:transform .1s,background .2s}
+#vxtv .tp-do.big{grid-column:1/-1;background:#ff6b6b;color:#fff;font-size:20px;min-height:68px}
+#vxtv .tp-do[disabled]{opacity:.4}
+#vxtv .tp-do.sent{transform:scale(.95);background:#39ff88}
+#vxtv .tp-ask{background:#ffd166;color:#14232c;border-radius:16px;padding:12px;display:grid;gap:8px;margin-bottom:10px}
+#vxtv .tp-ask .tp-do{background:#fff}
+#vxtv .tp-log{margin:16px 0 0;padding-left:18px;color:#cfe3ea;font-size:14px;line-height:1.5}
+#tvtoast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,30px);opacity:0;z-index:2147483001;background:#14232c;color:#fff;border-radius:12px;padding:10px 16px;font:600 15px/1.3 Inter,system-ui,sans-serif;transition:.2s;pointer-events:none;max-width:90vw}
+#tvtoast.on{opacity:1;transform:translate(-50%,0)}
+
+#vxtvbar{position:fixed;z-index:2147482990;font:600 15px/1.35 Inter,system-ui,sans-serif;color:#eef6f9}
+html.vxtv-code #vxtvbar{top:12px;right:12px;width:290px;background:rgba(7,18,25,.94);border-radius:18px;padding:12px 14px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+html.vxtv-code body{padding-right:310px}
+#vxtvbar .tvb-h{display:flex;gap:8px;align-items:center;margin-bottom:8px}
+#vxtvbar .tvb-h b{margin-right:auto;color:#ffd166}
+#vxtvbar button{font:inherit;background:rgba(255,255,255,.12);color:#fff;border:0;border-radius:99px;padding:4px 12px;cursor:pointer}
+#vxtvbar ul,#vxtvbar ol{list-style:none;padding:0;margin:0 0 8px;display:grid;gap:4px}
+#vxtvbar .tvb-team li{display:flex;justify-content:space-between;gap:8px}
+#vxtvbar .tvb-team span{color:#9fc3d1}
+#vxtvbar .tvb-log li{background:rgba(255,255,255,.07);border-radius:10px;padding:5px 8px;font-weight:500;animation:tvpop .3s ease-out}
+#vxtvbar .tvb-f{color:#9fc3d1;font-weight:500;margin:0}
+#vxtvbar .tvb-pill{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);display:flex;gap:10px;align-items:center;background:#0b1f2a;border-radius:99px;padding:6px 6px 6px 14px;box-shadow:0 6px 20px rgba(0,0,0,.3);white-space:nowrap}
+html.vxtv-code .ehx-hdr,html.vxtv-code .topbar{font-size:1.05em}
+@media (min-width:1600px){html.vxtv-code body{zoom:1.25}html.vxtv-code #vxtvbar{zoom:.8}}
+
+#vxtv.tv-mon-on{background:#000}
+#vxtv .tv-mon{height:100%;display:flex;flex-direction:column;padding:1.2vw 1.6vw;box-sizing:border-box;font-size:clamp(14px,1.2vw,30px)}
+#vxtv .tm-top{display:flex;align-items:center;gap:1em;color:#cfe3ea;margin-bottom:.6em}
+#vxtv .tm-top b{font-size:1.3em;color:#fff}
+#vxtv .tm-top #tmsub{margin-right:auto;color:#9fc3d1}
+#vxtv .tm-top .tm-r{color:#6c8a96}
+#vxtv .tm-grid{flex:1;display:grid;grid-template-columns:minmax(0,1fr) 30%;gap:1vw;min-height:0}
+#vxtv .tm-waves{display:grid;grid-template-rows:1.4fr 1fr;gap:1vw;min-height:0}
+#vxtv .tm-w{position:relative;background:#020a0f;border:1px solid #12303c;border-radius:10px;overflow:hidden;min-height:0}
+#vxtv .tm-w span{position:absolute;left:.7em;top:.4em;color:#39ff88;font-weight:800;z-index:1}
+#vxtv .tm-w.pl span{color:#3fd7ff}
+#vxtv .tm-w canvas{width:100%;height:100%;display:block}
+#vxtv .tm-nums{display:grid;grid-template-rows:1.4fr 1fr 1fr .8fr .8fr;gap:.6vw;min-height:0}
+#vxtv .tm-n{background:#020a0f;border:1px solid #12303c;border-radius:10px;padding:.4em .8em;display:grid;grid-template-columns:auto 1fr;grid-template-rows:auto 1fr;align-items:end;overflow:hidden}
+#vxtv .tm-n span{font-weight:800;font-size:.95em}
+#vxtv .tm-n b{grid-column:1/-1;font-size:3.6em;line-height:1;font-variant-numeric:tabular-nums;text-align:right;font-weight:600}
+#vxtv .tm-n small{grid-row:1;grid-column:2;text-align:right;color:inherit;opacity:.8}
+#vxtv .tm-n.hr{color:#39ff88}#vxtv .tm-n.hr b{font-size:5.4em}
+#vxtv .tm-n.sp{color:#3fd7ff}#vxtv .tm-n.bp{color:#ff6b6b}#vxtv .tm-n.rr{color:#ffd166}#vxtv .tm-n.tp{color:#e9e9e9}
+#vxtv .tm-n.bp b{font-size:3em}
+#vxtv .tm-alarm{position:absolute;top:4.2em;left:50%;transform:translateX(-50%);background:#ffd166;color:#14232c;font-weight:900;padding:.4em 1.2em;border-radius:10px;letter-spacing:.04em;animation:tvblink 1s steps(2) infinite}
+#vxtv .tm-alarm.crit{background:#ff3b3b;color:#fff}
+@keyframes tvblink{50%{opacity:.35}}
+#vxtv .tv-mon.stale .tm-n b{opacity:.6}
+#vxtv .tm-fine{color:#4f6b76;font-size:.75em;margin:.5em 0 0;text-align:center}
+@media (max-width:760px){#vxtv.tv-host{font-size:15px}#vxtv .tv-modes,#vxtv .tv-cols,#vxtv .tv-cols2{grid-template-columns:1fr}#vxtv .tv-ans{grid-template-columns:1fr}#vxtv .tm-grid{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){#vxtv *,#vxtvbar *{animation:none!important;transition:none!important}}
+/* </v78-tv-css> */
 </style>
 
 <div id="app"></div>
@@ -5778,7 +5961,7 @@ const BANK = (function(e){try{const P=">oVO^cd@ge#lJ'~wUTDiEY+LZx-K&hkt(/F0;G`N.
 let HIDQ=new Set();const CFG={c:null,bypass:false};try{const c=JSON.parse(localStorage.getItem("ns.cfg")||"null");if(c&&typeof c==="object"){CFG.c=c;HIDQ=new Set(c.hideQ||[])}}catch(e){}
 const featOn=k=>!CFG.c||!CFG.c.feat||CFG.c.feat[k]!==false;
 
-const APPV="88b59694d9cb81c6b8a979df8dbaf569ee8e2c5d0cb26baba771d05be01d0cc3";
+const APPV="6226402d1a1cc901fda2c6094cc54e8518b03afc34773e58abd022dff93cb883";
 const CATS={
   MOC:{n:"Management of Care",lo:15,hi:21,w:18},
   SIC:{n:"Safety and Infection Prevention and Control",lo:10,hi:16,w:13},
@@ -17612,6 +17795,373 @@ Object.assign(window.__vx32,{uni:o=>startUni(o||{}),start:o=>startUni(o||{}),cas
   running:()=>{try{return !!(RUN&&RUN.R)}catch(e){return false}},uniState:()=>RUN.R&&RUN.R.uni?JSON.parse(JSON.stringify(RUN.R.uni)):null,uniBack:a=>uniBack(!!a)});
 if(window.__vx32T&&window.__vx32T.test)Object.assign(window.__vx32,{uniCode:by=>RUN.R&&uniCode(RUN.R,by||"you"),uniBase:()=>RUN.R&&uniBase(RUN.R)});
 /* </v76-course> */
+/* <v78-tv> TV mode (Tyler 2026-11-23: "How can we use the user's TV" → "All of it!").
+   The TV opens vexcura.com/tv (or mirrors a phone), creates a room and shows a 6-digit code + QR. Phones open
+   vexcura.com/join and become remotes. Three modes, all hosted by the TV:
+     party   – Study Party: NCLEX questions on the TV, everyone answers on their phone, reveal + rationale + scores.
+     code    – Code Blue team: the ACLS megacode runs on the TV; each phone takes a role and taps that role's actions.
+     monitor – Monitor on the wall: a student's phone streams their live simulation; the TV is the bedside monitor.
+   Lives inside the v32 drill IIFE (after <v76-course>) so it can use BANK, HIDQ, CATS, CODES, C and RUN.
+   Relay: worker/room.js (Durable Object VxRoom). Base URL is window.__vxRoomBase in tests, else this origin. */
+const TV = { ws: null, role: null, code: null, key: null, mode: null, players: new Map(), s: null, me: null, tries: 0, closed: false, last: 0 };
+const tvE = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const tvBase = () => (window.__vxRoomBase || location.origin).replace(/\/$/, "");
+const tvJoinURL = c => location.origin + "/join" + (c ? "/" + c : "");
+const tvSpaced = c => String(c || "").replace(/^(\d{3})(\d{3})$/, "$1 $2");
+function tvRoot() { let el = document.getElementById("vxtv"); if (!el) { el = document.createElement("div"); el.id = "vxtv"; document.body.appendChild(el) } return el }
+function tvShow(html, cls) { const r = tvRoot(); r.className = cls || ""; r.innerHTML = html; r.hidden = false; document.documentElement.classList.add("vxtv-on"); const f = r.querySelector("[autofocus]") || r.querySelector("[data-tvf]"); if (f) try { f.focus({ preventScroll: true }) } catch (e) { } }
+function tvHide() { const r = document.getElementById("vxtv"); if (r) { r.hidden = true; r.innerHTML = "" } document.documentElement.classList.remove("vxtv-on") }
+function tvBar(html) { let b = document.getElementById("vxtvbar"); if (!html) { if (b) b.remove(); return } if (!b) { b = document.createElement("aside"); b.id = "vxtvbar"; b.setAttribute("aria-label", "TV room"); document.body.appendChild(b) } b.innerHTML = html }
+const tvLS = { get(k, d) { try { const v = localStorage.getItem(k); return v == null ? d : v } catch (e) { return d } }, set(k, v) { try { localStorage.setItem(k, v) } catch (e) { } } };
+function tvPid() { let p = tvLS.get("vx.tv.pid", ""); if (!/^[a-f0-9]{12}$/.test(p)) { const a = new Uint8Array(6); crypto.getRandomValues(a); p = [...a].map(x => x.toString(16).padStart(2, "0")).join(""); tvLS.set("vx.tv.pid", p) } return p }
+let TVZX = null;
+function tvQR(el, text) {
+  TVZX = TVZX || new Promise((res, rej) => { if (window.ZXing) return res(window.ZXing); const s = document.createElement("script"); s.src = "/vendor/jsd/@zxing/library@0.21.3/umd/index.min.js"; s.async = true; s.onload = () => window.ZXing ? res(window.ZXing) : rej(); s.onerror = () => { TVZX = null; rej() }; document.head.appendChild(s) });
+  TVZX.then(Z => { const h = new Map(); h.set(Z.EncodeHintType.MARGIN, 1); const M = new Z.QRCodeWriter().encode(text, Z.BarcodeFormat.QR_CODE, 0, 0, h); const n = M.getWidth(); let d = ""; for (let y = 0; y < n; y++) { let x = 0; while (x < n) { if (M.get(x, y)) { let w = 1; while (x + w < n && M.get(x + w, y)) w++; d += `M${x} ${y}h${w}v1h-${w}z`; x += w } else x++ } }
+    if (el.isConnected) el.innerHTML = `<svg viewBox="0 0 ${n} ${n}" shape-rendering="crispEdges" role="img" aria-label="QR code to join this room"><rect width="${n}" height="${n}" fill="#fff"/><path d="${d}" fill="#0b1f2a"/></svg>` }).catch(() => { if (el.isConnected) el.innerHTML = "" });
+}
+
+/* ---------- connection ---------- */
+function tvConnect(q, onMsg) {
+  const u = tvBase().replace(/^http/, "ws") + "/api/room/ws?" + new URLSearchParams(q).toString();
+  let ws; try { ws = new WebSocket(u) } catch (e) { return null }
+  TV.ws = ws; TV.closed = false;
+  ws.onopen = () => { TV.tries = 0; tvNet(true) };
+  ws.onmessage = e => { let o; try { o = JSON.parse(e.data) } catch (x) { return } if (o.t === "pong") return; onMsg(o) };
+  ws.onclose = e => { tvNet(false); if (TV.closed || e.code === 4000 || e.code === 4001 || e.code === 1000) return; const d = Math.min(15000, 600 * Math.pow(2, TV.tries++)); setTimeout(() => { if (!TV.closed && TV.ws === ws) tvConnect(q, onMsg) }, d) };
+  clearInterval(TV.ping); TV.ping = setInterval(() => tvSend({ t: "ping" }), 25000);
+  return ws;
+}
+function tvSend(o) { const w = TV.ws; if (w && w.readyState === 1) try { w.send(JSON.stringify(o)); return true } catch (e) { } return false }
+function tvNet(ok) { const n = document.querySelector("#vxtv .tv-net, #vxtvbar .tv-net"); if (n) n.textContent = ok ? "" : "Reconnecting…" }
+function tvLeave() { TV.closed = true; clearInterval(TV.ping); clearInterval(TV.tick); clearInterval(TV.mstream); try { if (TV.role === "host") tvSend({ t: "end" }); TV.ws && TV.ws.close(1000) } catch (e) { } TV.ws = null; TV.role = null; TV.code = null; TV.s = null; TV.players.clear(); tvMonStop(); tvBar(null); document.documentElement.classList.remove("vxtv-code"); try { sessionStorage.removeItem("vx.tv.host") } catch (e) { } }
+function tvBroadcast(s) { TV.s = s; tvSend({ t: "state", s }) }
+
+/* ---------- TV home ---------- */
+const TVMODES = [["party", "Study Party", "NCLEX questions on the TV. Everyone answers on their phone.", "Up to 40 players"],
+  ["code", "Code Blue team", "Run an ACLS megacode together. Each phone takes a role: compressions, defibrillator, airway, meds or leader.", "2 to 6 players"],
+  ["monitor", "Monitor on the wall", "Put your simulation patient's bedside monitor on the TV while you work on your phone.", "1 phone"]];
+function tvHome() {
+  tvLeave(); TV.closed = false;
+  tvShow(`<div class="tv-wrap tv-home"><header class="tv-top"><span class="tv-logo">Vexcura <b>TV</b></span><button class="tv-x" data-tv="exit" data-tvf>Exit</button></header>
+    <h1>What are we playing?</h1>
+    <div class="tv-modes">${TVMODES.map(([k, t, d, n], i) => `<button class="tv-mode m-${k}" data-tv="new" data-v="${k}" data-tvf ${i ? "" : "autofocus"}><span class="tv-ic" aria-hidden="true">${k === "party" ? "?" : k === "code" ? "♥" : "∿"}</span><b>${t}</b><span>${d}</span><small>${n}</small></button>`).join("")}</div>
+    <p class="tv-fine">Phones join at <b>${tvE(location.host)}/join</b>. No account needed to play Study Party or Code Blue. Practice only, with made-up patients.</p></div>`, "tv-host");
+}
+async function tvCreate(mode) {
+  tvShow(`<div class="tv-wrap"><p class="tv-wait">Opening a room…</p></div>`, "tv-host");
+  let r; try { r = await (await fetch(tvBase() + "/api/room/new", { method: "POST", headers: { "Content-Type": "text/plain" }, body: JSON.stringify({ mode }) })).json() } catch (e) { r = null }
+  if (!r || !r.ok) { tvShow(`<div class="tv-wrap"><p class="tv-wait">Couldn't open a room. Check the internet connection and try again.</p><button class="tv-btn" data-tv="home" data-tvf autofocus>Back</button></div>`, "tv-host"); return }
+  TV.role = "host"; TV.code = r.code; TV.key = r.key; TV.mode = mode; TV.players.clear();
+  try { sessionStorage.setItem("vx.tv.host", JSON.stringify({ code: r.code, key: r.key, mode })) } catch (e) { }
+  tvConnect({ code: r.code, key: r.key }, tvHostMsg);
+  if (mode === "party") PTY.reset(); if (mode === "code") CTM.reset(); if (mode === "monitor") MON.reset();
+  tvLobby();
+}
+function tvRoster() { return [...TV.players.values()] }
+function tvHostMsg(o) {
+  if (o.t === "roster") { (o.players || []).forEach(p => TV.players.set(p.id, Object.assign(TV.players.get(p.id) || { score: 0 }, p, { on: 1 }))); if (TV.s) tvBroadcast(TV.s); tvRedraw(); return }
+  if (o.t === "join") { const p = TV.players.get(o.id) || { score: 0 }; TV.players.set(o.id, Object.assign(p, { id: o.id, name: o.name, on: 1 })); if (TV.mode === "code") CTM.push(); tvRedraw(); return }
+  if (o.t === "leave") { const p = TV.players.get(o.id); if (p) p.on = 0; tvRedraw(); return }
+  if (o.t === "act") { const p = TV.players.get(o.id); if (!p) return; if (TV.mode === "party") PTY.act(p, o); else if (TV.mode === "code") CTM.act(p, o); else if (TV.mode === "monitor") MON.act(p, o) }
+}
+function tvRedraw() { if (TV.mode === "party") PTY.draw(); else if (TV.mode === "code") CTM.draw(); else if (TV.mode === "monitor") MON.draw() }
+function tvJoinBox() { return `<div class="tv-join"><div class="tv-qr" id="tvqr" aria-hidden="true"></div><div><span class="tv-k">Join on your phone</span><b class="tv-url">${tvE(location.host)}/join</b><span class="tv-k">Room code</span><b class="tv-code" aria-label="Room code ${tvE(TV.code.split("").join(" "))}">${tvSpaced(TV.code)}</b><span class="tv-net" role="status"></span></div></div>` }
+function tvChips() { const L = tvRoster().filter(p => p.on); return L.length ? `<ul class="tv-chips" aria-label="Players">${L.map(p => `<li>${tvE(p.name)}${p.role ? ` <i>${tvE(CTROLE[p.role] ? CTROLE[p.role][0] : "")}</i>` : ""}</li>`).join("")}</ul>` : `<p class="tv-k">Waiting for players…</p>` }
+function tvLobby() { tvRedraw(); const q = document.getElementById("tvqr"); if (q) tvQR(q, tvJoinURL(TV.code)) }
+
+/* ---------- Study Party ---------- */
+const PCOL = [["A", "▲"], ["B", "◆"], ["C", "●"], ["D", "■"], ["E", "★"], ["F", "⬟"]];
+const PTY = {
+  o: { cat: "all", n: 10, sec: 30 }, Q: [], i: -1, ph: "lobby", ans: new Map(), t0: 0, ends: 0,
+  reset() { this.Q = []; this.i = -1; this.ph = "lobby"; this.ans = new Map(); TV.players.forEach(p => { p.score = 0; p.streak = 0 }); tvBroadcast({ mode: "party", ph: "lobby" }) },
+  pool() { return BANK.filter(it => (it.t === "mc" || it.t === "sata") && !it.cs && !HIDQ.has(it.id) && (this.o.cat === "all" || it.c === this.o.cat) && it.q && it.q.length <= 380 && it.o && it.o.length >= 3 && it.o.length <= 6 && it.o.every(x => String(x).length <= 150)) },
+  start() {
+    const P = this.pool().sort(() => Math.random() - .5).slice(0, this.o.n);
+    this.Q = P.map(it => { const ord = it.o.map((_, i) => i).sort(() => Math.random() - .5); const key = it.t === "mc" ? [0] : it.o.map((_, i) => i).slice(0, it.k); return { id: it.id, t: it.t, stem: it.q, opts: ord.map(i => it.o[i]), right: ord.map((o, j) => key.includes(o) ? j : -1).filter(j => j >= 0), r: it.r || "", s: it.s || "", cat: (CATS[it.c] || {}).n || "" } });
+    TV.players.forEach(p => { p.score = 0; p.streak = 0 }); this.i = -1; this.next();
+  },
+  next() {
+    this.i++; if (this.i >= this.Q.length) { this.ph = "final"; this.send(); this.draw(); this.priv(); return }
+    this.ph = "q"; this.ans = new Map(); this.t0 = Date.now(); this.ends = this.t0 + this.o.sec * 1000; this.send(); this.draw();
+    clearInterval(TV.tick); TV.tick = setInterval(() => { const left = this.ends - Date.now(); const bar = document.getElementById("tvbar"); if (bar) bar.style.width = Math.max(0, left / (this.o.sec * 10)) + "%"; const sl = document.getElementById("tvsec"); if (sl) sl.textContent = Math.max(0, Math.ceil(left / 1000)); if (left <= 0) this.reveal() }, 200);
+  },
+  q() { return this.Q[this.i] },
+  send() {
+    const q = this.q(), base = { mode: "party", ph: this.ph, i: this.i, n: this.Q.length };
+    if (this.ph === "q") tvBroadcast(Object.assign(base, { stem: q.stem, opts: q.opts, sata: q.t === "sata", ends: this.ends, sec: this.o.sec }));
+    else if (this.ph === "reveal") tvBroadcast(Object.assign(base, { stem: q.stem, opts: q.opts, sata: q.t === "sata", right: q.right, r: q.r.slice(0, 600) }));
+    else tvBroadcast(Object.assign(base, { top: this.board().slice(0, 5).map(p => [p.name, p.score]) }));
+  },
+  board() { return tvRoster().filter(p => p.on || p.score).sort((a, b) => b.score - a.score) },
+  act(p, o) {
+    if (o.a !== "ans" || this.ph !== "q" || o.i !== this.i || this.ans.has(p.id)) return;
+    const v = Array.isArray(o.v) ? [...new Set(o.v.filter(x => Number.isInteger(x) && x >= 0 && x < this.q().opts.length))].sort() : []; if (!v.length) return;
+    this.ans.set(p.id, { v, t: Date.now() }); tvSend({ t: "to", id: p.id, m: { k: "locked", i: this.i } });
+    const c = document.getElementById("tvcount"); if (c) c.textContent = this.ans.size + " of " + tvRoster().filter(x => x.on).length + " answered";
+    if (this.ans.size >= tvRoster().filter(x => x.on).length) this.reveal();
+  },
+  reveal() {
+    if (this.ph !== "q") return; clearInterval(TV.tick); this.ph = "reveal"; const q = this.q(), R = q.right.join(",");
+    TV.players.forEach(p => { const a = this.ans.get(p.id); p.last = 0; p.ok = false; if (!a) { p.streak = 0; return } const ok = a.v.join(",") === R; p.ok = ok; if (ok) { const f = Math.max(0, Math.min(1, (this.ends - a.t) / (this.o.sec * 1000))); p.streak = (p.streak || 0) + 1; p.last = Math.round(500 + 500 * f) + (p.streak >= 3 ? 100 : 0); p.score += p.last } else p.streak = 0 });
+    this.send(); this.draw(); this.priv();
+  },
+  priv() { const B = this.board(); B.forEach((p, i) => tvSend({ t: "to", id: p.id, m: { k: this.ph === "final" ? "final" : "result", ok: !!p.ok, pts: p.last || 0, total: p.score, rank: i + 1, of: B.length, streak: p.streak || 0, answered: this.ph === "final" ? 1 : this.ans.has(p.id) ? 1 : 0 } })) },
+  draw() {
+    const top = `<header class="tv-top"><span class="tv-logo">Vexcura <b>Study Party</b></span><span class="tv-room">Room <b>${tvSpaced(TV.code)}</b> · ${tvE(location.host)}/join</span><span class="tv-net" role="status"></span><button class="tv-x" data-tv="home" data-tvf>End</button></header>`;
+    if (this.ph === "lobby") {
+      const cats = [["all", "All categories"]].concat(Object.entries(CATS).map(([k, v]) => [k, v.n]));
+      tvShow(`<div class="tv-wrap tv-lobby">${top.replace('<span class="tv-room">', '<span class="tv-room" hidden>')}<div class="tv-cols"><div>${tvJoinBox()}${tvChips()}</div>
+        <div class="tv-set"><h2>Study Party</h2><span class="tv-k">Category</span><div class="tv-opts">${cats.map(([k, l]) => `<button class="tv-chip${this.o.cat === k ? " on" : ""}" data-tv="pcat" data-v="${k}" data-tvf aria-pressed="${this.o.cat === k}">${tvE(l)}</button>`).join("")}</div>
+        <span class="tv-k">Questions</span><div class="tv-opts">${[5, 10, 15, 20].map(n => `<button class="tv-chip${this.o.n === n ? " on" : ""}" data-tv="pn" data-v="${n}" data-tvf aria-pressed="${this.o.n === n}">${n}</button>`).join("")}</div>
+        <span class="tv-k">Time per question</span><div class="tv-opts">${[20, 30, 60].map(n => `<button class="tv-chip${this.o.sec === n ? " on" : ""}" data-tv="psec" data-v="${n}" data-tvf aria-pressed="${this.o.sec === n}">${n} s</button>`).join("")}</div>
+        <button class="tv-btn big" data-tv="pstart" data-tvf ${tvRoster().some(p => p.on) ? "autofocus" : "disabled"}>Start${tvRoster().some(p => p.on) ? "" : " (waiting for players)"}</button><p class="tv-fine">Questions from the Vexcura bank, each with a cited rationale. Faster right answers score more.</p></div></div></div>`, "tv-host");
+      const qe = document.getElementById("tvqr"); if (qe && !qe.innerHTML) tvQR(qe, tvJoinURL(TV.code)); return;
+    }
+    if (this.ph === "q") { const q = this.q();
+      tvShow(`<div class="tv-wrap tv-q">${top}<div class="tv-qh"><span>Question ${this.i + 1} of ${this.Q.length}${q.cat ? " · " + tvE(q.cat) : ""}</span><b class="tv-sec" id="tvsec">${this.o.sec}</b></div><i class="tv-timer"><i id="tvbar" style="width:100%"></i></i>
+        <h1 class="tv-stem">${tvE(q.stem)}</h1>${q.t === "sata" ? `<p class="tv-sata">Select all that apply</p>` : ""}<ol class="tv-ans n${q.opts.length}">${q.opts.map((o, j) => `<li class="tc${j}"><span class="tv-sh" aria-hidden="true">${PCOL[j][1]}</span><b>${PCOL[j][0]}</b> ${tvE(o)}</li>`).join("")}</ol>
+        <p class="tv-count" id="tvcount">0 of ${tvRoster().filter(x => x.on).length} answered</p></div>`, "tv-host"); return }
+    if (this.ph === "reveal") { const q = this.q(), cnt = q.opts.map((_, j) => [...this.ans.values()].filter(a => a.v.includes(j)).length), mx = Math.max(1, ...cnt), B = this.board();
+      tvShow(`<div class="tv-wrap tv-rev">${top}<div class="tv-cols2"><div><div class="tv-qh"><span>Question ${this.i + 1} of ${this.Q.length}</span></div><h2 class="tv-stem sm">${tvE(q.stem)}</h2>
+        <ol class="tv-ans rev">${q.opts.map((o, j) => `<li class="tc${j}${q.right.includes(j) ? " ok" : " no"}"><span class="tv-sh" aria-hidden="true">${PCOL[j][1]}</span><b>${PCOL[j][0]}</b> ${tvE(o)}<em>${q.right.includes(j) ? "✓ " : ""}${cnt[j]}</em><i style="width:${cnt[j] / mx * 100}%"></i></li>`).join("")}</ol>
+        <div class="tv-rat"><b>Why</b><p>${tvE(q.r)}</p>${q.s ? `<small>Source: ${tvE(q.s)}</small>` : ""}</div></div>
+        <div class="tv-board"><h3>Standings</h3><ol>${B.slice(0, 8).map(p => `<li><span>${tvE(p.name)}</span><b>${p.score}</b>${p.last ? `<i>+${p.last}</i>` : ""}</li>`).join("")}</ol><button class="tv-btn big" data-tv="pnext" data-tvf autofocus>${this.i + 1 >= this.Q.length ? "Final scores" : "Next question"}</button></div></div></div>`, "tv-host"); return }
+    if (this.ph === "final") { const B = this.board();
+      tvShow(`<div class="tv-wrap tv-fin">${top}<h1>Final scores</h1><ol class="tv-pod">${B.slice(0, 3).map((p, i) => `<li class="p${i + 1}"><b>${tvE(p.name)}</b><span>${p.score}</span><i>${["1st", "2nd", "3rd"][i]}</i></li>`).join("")}</ol>
+        ${B.length > 3 ? `<ol class="tv-rest" start="4">${B.slice(3, 20).map(p => `<li><span>${tvE(p.name)}</span><b>${p.score}</b></li>`).join("")}</ol>` : ""}
+        <div class="tv-row"><button class="tv-btn big" data-tv="pagain" data-tvf autofocus>Play again</button><button class="tv-btn sec" data-tv="home" data-tvf>Back to TV home</button></div></div>`, "tv-host"); return }
+  }
+};
+
+/* ---------- Code Blue team ---------- */
+const CTROLE = { lead: ["Leader", "Run the code: rhythm calls, causes, when to stop."], cpr: ["Compressions", "Start, switch and pause compressions."], defib: ["Defibrillator", "Pads, charge, shock, pacing."], air: ["Airway", "Oxygen, bag-mask, airway, capnography."], meds: ["Meds and access", "IV or IO, then the drugs."] };
+function ctRoleOf(id) {
+  const k = id.split(":").slice(1).join(":");
+  if (/^ca:(cpr|switch|pulse)$/.test(id)) return "cpr";
+  if (/^ca:(pads|charge|shock|sync|pace|disarm|clear|nibp|rcheck)$/.test(id)) return "defib";
+  if (/^ca:(o2|bvm|opa|ett|capno|p_o2|p_vent)$/.test(id)) return "air";
+  if (/^ca:(iv|io|p_bp|p_glu)$/.test(id) || /^cdsel:|^cgive:/.test(id)) return "meds";
+  return "lead";
+}
+const CTM = {
+  cat: [], started: 0, log: [],
+  reset() { this.cat = []; this.started = 0; this.log = []; TV.players.forEach(p => p.role = null); tvBroadcast({ mode: "code", ph: "lobby", roles: {} }) },
+  inCode() { try { return typeof view !== "undefined" && view === "code" && !!document.getElementById("cpanel") } catch (e) { return !!document.getElementById("cpanel") } },
+  start() {
+    const keys = Object.keys(CODES).filter(k => k !== "dx"); const key = keys[Math.floor(Math.random() * keys.length)];
+    const app = document.getElementById("app"); if (!app) return; tvHide();
+    const b = document.createElement("button"); b.hidden = true; b.dataset.act = "cstart"; b.dataset.v = key; app.appendChild(b); b.click(); b.remove();
+    document.documentElement.classList.add("vxtv-code"); this.started = Date.now();
+    setTimeout(() => { this.crawl(); this.push(); this.draw() }, 400);
+    clearInterval(TV.tick); TV.tick = setInterval(() => { if (!this.inCode()) { this.draw(); return } this.push() }, 900);
+  },
+  btns() { const root = document.getElementById("cpanel") && document.getElementById("cpanel").closest("main, #app") || document.getElementById("app"); return [...root.querySelectorAll('[data-act="ca"],[data-act="crh"],[data-act="cdsel"],[data-act="cgive"]')] },
+  idOf(b) { const a = b.dataset.act; return a === "ca" ? "ca:" + b.dataset.k : a === "cgive" ? "cgive:" + b.dataset.v + ":" + b.dataset.i : a + ":" + b.dataset.v },
+  tab() { try { return C && C.tab } catch (e) { return null } },
+  setTab(t) { if (!t || this.tab() === t) return; const b = document.querySelector('[data-act="ctab"][data-v="' + t + '"]'); if (b) b.click() },
+  crawl() {
+    const seen = new Map(), here = this.tab() || "team"; const add = (t) => this.btns().forEach(b => { const id = this.idOf(b); if (/^crh:/.test(id)) return; if (!seen.has(id)) seen.set(id, { id, lab: (b.childNodes[0] && b.childNodes[0].textContent || b.textContent).trim().slice(0, 60), tab: b.closest("#cpanel") ? t : null }) });
+    ["team", "air", "drugs", "ht", "post"].forEach(t => { this.setTab(t); add(t); if (t === "drugs") [...document.querySelectorAll('[data-act="cdsel"]')].map(d => [d.dataset.v, d.textContent.trim()]).forEach(([v, n]) => { const d = document.querySelector('[data-act="cdsel"][data-v="' + v + '"]'); if (d) d.click(); this.btns().filter(b => b.dataset.act === "cgive" && b.dataset.v === v).forEach(b => { const id = this.idOf(b); seen.set(id, { id, lab: n + ": " + b.textContent.trim(), tab: "drugs", dsel: v }) }) }) });
+    try { C.dsel = null } catch (e) { } this.setTab(here); this.cat = [...seen.values()].filter(x => !/^cdsel:/.test(x.id));
+  },
+  push() {
+    if (!this.inCode()) { tvBroadcast({ mode: "code", ph: this.started ? "done" : "lobby", roles: this.roles() }); return }
+    let c = {}; try { c = { t: Math.round(C.t || 0), phase: C.phase, ask: !!C.ask, end: !!C.end, cpr: !!C.cpr, title: C.S && C.S.t, log: (C.log || []).slice(-6).reverse().map(l => l.txt) } } catch (e) { }
+    const live = new Map(this.btns().map(b => [this.idOf(b), b])); const tab = this.tab();
+    const acts = this.cat.map(a => { const b = live.get(a.id); const lab = b ? (b.childNodes[0] && b.childNodes[0].textContent || b.textContent).trim().slice(0, 60) : a.lab; return { id: a.id, lab: a.id.startsWith("cgive:") ? a.lab : lab, r: ctRoleOf(a.id), dis: b ? !!b.disabled : false, tab: a.tab } });
+    const ask = c.ask ? [...document.querySelectorAll('[data-act="crh"]')].map(b => ({ id: "crh:" + b.dataset.v, lab: b.textContent.trim() })) : null;
+    tvBroadcast({ mode: "code", ph: c.end ? "end" : "run", c, acts, ask, roles: this.roles(), tab });
+  },
+  roles() { const o = {}; TV.players.forEach(p => { if (p.role) o[p.id] = p.role }); return o },
+  act(p, o) {
+    if (o.a === "role" && CTROLE[o.r]) { p.role = o.r; this.push(); this.draw(); return }
+    if (o.a !== "do" || typeof o.x !== "string" || !this.inCode()) return; const X = o.x;
+    const okRole = p.role === "lead" || ctRoleOf(X) === p.role || (/^crh:/.test(X) && (p.role === "defib" || p.role === "lead")); if (!okRole) return;
+    const a = this.cat.find(x => x.id === X); const here = this.tab();
+    const find = () => this.btns().find(b => this.idOf(b) === X);
+    let b = find();
+    if (!b && a && a.tab) { this.setTab(a.tab); if (a.dsel) { const d = document.querySelector('[data-act="cdsel"][data-v="' + a.dsel + '"]'); if (d) d.click() } b = find() }
+    if (b && !b.disabled) { const lab = a ? a.lab : b.textContent.trim(); b.click(); this.log.unshift([p.name, (CTROLE[p.role] || [""])[0], lab]); this.log = this.log.slice(0, 5) }
+    else tvSend({ t: "to", id: p.id, m: { k: "nope", lab: a ? a.lab : X } });
+    if (here && this.tab() !== here && this.inCode()) this.setTab(here);
+    this.push(); this.draw();
+  },
+  draw() {
+    if (!this.started) {
+      const L = tvRoster().filter(p => p.on);
+      tvShow(`<div class="tv-wrap tv-lobby"><header class="tv-top"><span class="tv-logo">Vexcura <b>Code Blue team</b></span><span class="tv-net" role="status"></span><button class="tv-x" data-tv="home" data-tvf>End</button></header><div class="tv-cols"><div>${tvJoinBox()}</div>
+        <div class="tv-set"><h2>Pick your roles on your phones</h2><ul class="tv-roles">${Object.entries(CTROLE).map(([k, [n, d]]) => { const who = L.filter(p => p.role === k).map(p => p.name); return `<li class="${who.length ? "on" : ""}"><b>${n}</b><span>${d}</span><em>${who.length ? tvE(who.join(", ")) : "Open"}</em></li>` }).join("")}</ul>
+        <p class="tv-fine">The Leader sees every action. Empty roles are fine: the Leader covers them. A random code starts when you press Start. Practice only; not an AHA course.</p>
+        <button class="tv-btn big" data-tv="cstart" data-tvf ${L.length ? "autofocus" : "disabled"}>Start the code${L.length ? "" : " (waiting for players)"}</button></div></div></div>`, "tv-host");
+      const qe = document.getElementById("tvqr"); if (qe && !qe.innerHTML) tvQR(qe, tvJoinURL(TV.code)); return;
+    }
+    if (!this.inCode()) { tvBar(null); document.documentElement.classList.remove("vxtv-code");
+      tvShow(`<div class="tv-wrap"><header class="tv-top"><span class="tv-logo">Vexcura <b>Code Blue team</b></span><button class="tv-x" data-tv="home" data-tvf>End</button></header><h1>Code finished</h1><div class="tv-row"><button class="tv-btn big" data-tv="cagain" data-tvf autofocus>Run another code</button><button class="tv-btn sec" data-tv="home" data-tvf>Back to TV home</button></div></div>`, "tv-host"); return }
+    const L = tvRoster().filter(p => p.on);
+    tvBar(`<div class="tvb-h"><b>Room ${tvSpaced(TV.code)}</b><span class="tv-net" role="status"></span><button data-tv="home">End</button></div><ul class="tvb-team">${L.map(p => `<li><b>${tvE(p.name)}</b><span>${tvE(p.role ? CTROLE[p.role][0] : "No role yet")}</span></li>`).join("")}</ul>${this.log.length ? `<ol class="tvb-log">${this.log.map(([n, r, l]) => `<li><b>${tvE(n)}</b> ${tvE(l)}</li>`).join("")}</ol>` : `<p class="tvb-f">Actions from phones show here.</p>`}`);
+  }
+};
+
+/* ---------- Monitor on the wall ---------- */
+const MON = {
+  v: null, src: null, at: 0, cv: null, raf: 0, strip: null, sk: "", x: 0, lastT: 0, sound: false, beepT: 0,
+  reset() { this.v = null; this.src = null; tvBroadcast({ mode: "monitor", ph: "wait" }) },
+  act(p, o) { if (o.a !== "vit" || !o.v || typeof o.v !== "object") return; const first = !this.v; this.v = o.v; this.src = p; this.at = Date.now(); if (first || !document.getElementById("tvmon")) this.draw(); else this.nums() },
+  draw() {
+    if (!this.v) { tvMonStop();
+      tvShow(`<div class="tv-wrap tv-lobby"><header class="tv-top"><span class="tv-logo">Vexcura <b>Monitor</b></span><span class="tv-net" role="status"></span><button class="tv-x" data-tv="home" data-tvf>End</button></header><div class="tv-cols"><div>${tvJoinBox()}${tvChips()}</div>
+        <div class="tv-set"><h2>Your patient's monitor, on the TV</h2><ol class="tv-steps"><li>On your phone, go to <b>${tvE(location.host)}/join</b> and enter the code.</li><li>Sign in, then start or resume a simulation.</li><li>The bedside monitor shows up here. Keep working on your phone.</li></ol><p class="tv-fine">Made-up patients for practice. Alarms are silent until you turn sound on.</p></div></div></div>`, "tv-host");
+      const qe = document.getElementById("tvqr"); if (qe && !qe.innerHTML) tvQR(qe, tvJoinURL(TV.code)); return;
+    }
+    tvShow(`<div class="tv-mon" id="tvmon"><header class="tm-top"><b id="tmpt"></b><span id="tmsub"></span><span class="tv-net" role="status"></span><span class="tm-r">Room ${tvSpaced(TV.code)}</span><button class="tv-x" data-tv="msound" data-tvf aria-pressed="${this.sound}">${this.sound ? "Sound on" : "Sound off"}</button><button class="tv-x" data-tv="home" data-tvf>End</button></header>
+      <div class="tm-grid"><div class="tm-waves"><div class="tm-w"><span>II</span><canvas id="tmecg"></canvas></div><div class="tm-w pl"><span>Pleth</span><canvas id="tmpl"></canvas></div></div>
+      <div class="tm-nums"><div class="tm-n hr"><span>HR</span><b id="tmhr">--</b><small id="tmrh"></small></div><div class="tm-n sp"><span>SpO₂</span><b id="tmsp">--</b><small>%</small></div><div class="tm-n bp"><span id="tmbpl">NIBP</span><b id="tmbp">--/--</b><small id="tmmap"></small></div><div class="tm-n rr"><span>RR</span><b id="tmrr">--</b></div><div class="tm-n tp"><span>Temp</span><b id="tmtp">--</b><small>°F</small></div></div></div>
+      <div class="tm-alarm" id="tmal" role="alert" hidden></div><p class="tm-fine">Practice simulation · computer-generated rhythm · not a real patient</p></div>`, "tv-mon-on");
+    this.cv = [document.getElementById("tmecg"), document.getElementById("tmpl")]; this.nums(); this.loop();
+  },
+  nums() {
+    const v = this.v; if (!v) return; const set = (id, t) => { const e = document.getElementById(id); if (e) e.textContent = t };
+    const stale = Date.now() - this.at > 6000, live = v.live;
+    set("tmpt", v.pt || "Patient"); set("tmsub", v.code ? "CODE BLUE in progress" : (live ? "Continuous monitoring" : "Not on a continuous monitor: last charted vital signs") + (stale ? " · waiting for the phone…" : ""));
+    set("tmhr", v.arr ? (v.arr === "asys" ? "0" : "--") : v.hr != null ? v.hr : "--"); set("tmrh", v.rhn || ""); set("tmsp", v.spo2 != null && !v.arr ? v.spo2 : "--");
+    set("tmbp", v.sbp != null && !v.arr ? v.sbp + "/" + v.dbp : "--/--"); set("tmmap", v.map != null && !v.arr ? "(" + v.map + ")" : ""); set("tmbpl", v.art ? "ART" : "NIBP"); set("tmrr", v.rr != null && !v.arr ? v.rr : "--"); set("tmtp", v.temp != null ? v.temp : "--");
+    const al = []; if (v.arr || v.code) al.push(v.arr === "vf" ? "VENTRICULAR FIBRILLATION" : v.arr === "vt" ? "VENTRICULAR TACHYCARDIA" : v.arr === "asys" ? "ASYSTOLE" : "NO PULSE"); else { if (v.hr >= 130) al.push("HR HIGH"); if (v.hr && v.hr < 45) al.push("HR LOW"); if (v.spo2 && v.spo2 < 90) al.push("SpO₂ LOW"); if (v.map && v.map < 65) al.push("MAP LOW"); if (v.rr && (v.rr >= 28 || v.rr < 8)) al.push("RR " + (v.rr >= 28 ? "HIGH" : "LOW")) }
+    const A = document.getElementById("tmal"); if (A) { A.hidden = !al.length; A.textContent = al.join(" · "); A.className = "tm-alarm" + (v.arr || v.code ? " crit" : "") }
+    document.getElementById("tvmon") && document.getElementById("tvmon").classList.toggle("stale", stale || !live);
+    if (al.length && this.sound && Date.now() - this.beepT > (v.arr ? 1200 : 3000)) { this.beepT = Date.now(); this.beep(v.arr ? 960 : 660) }
+  },
+  beep(f) { try { const a = this.ac || (this.ac = new (window.AudioContext || window.webkitAudioContext)()); const o = a.createOscillator(), g = a.createGain(); o.frequency.value = f; g.gain.value = .06; o.connect(g); g.connect(a.destination); o.start(); o.stop(a.currentTime + .18) } catch (e) { } },
+  buildStrip() {
+    const v = this.v, T = window.__vxTele, rid = v.arr === "vf" ? "vf" : v.arr === "vt" ? "vt" : v.arr === "asys" ? "asys" : v.rh || "nsr", key = rid + "|" + Math.round((v.hr || 0) / 8);
+    if (this.sk === key && this.strip) return; this.sk = key; this.strip = null;
+    try { if (T && T.build) { let best = null; for (let i = 0; i < 10; i++) { const st = T.build(T.RHM && T.RHM[rid] ? rid : "nsr", { seed: 7 + i * 7919, dur: 6 }); const r = st.truth && st.truth.vMed, d = v.hr && r ? Math.abs(r - v.hr) : 0; if (!best || d < best.d) best = { st, d }; if (d < 5) break } const st = best.st; const sig = st.sig.II, sr = st.sr; let mx = 0; for (const y of sig) if (y > mx) mx = y; const th = mx * .6, beats = []; let lastI = -1e9; for (let i = 1; i < sig.length - 1; i++) if (sig[i] >= th && sig[i] >= sig[i - 1] && sig[i] > sig[i + 1] && i - lastI > sr * .28) { beats.push(i / sr); lastI = i } this.strip = { sig, sr, dur: st.dur, beats } } } catch (e) { this.strip = null }
+  },
+  loop() {
+    cancelAnimationFrame(this.raf); const self = this; let prev = performance.now(), sweep = 0;
+    const fit = c => { const r = c.getBoundingClientRect(), d = window.devicePixelRatio || 1; if (c.width !== Math.round(r.width * d)) { c.width = Math.round(r.width * d); c.height = Math.round(r.height * d) } return d };
+    function frame(now) {
+      if (!document.getElementById("tvmon")) return; self.buildStrip(); const [e, p] = self.cv; if (!e || !p) return; const d1 = fit(e); fit(p); const W = e.width, H = e.height, sec = 6, pxs = W / sec;
+      const dt = Math.min(.1, (now - prev) / 1000); prev = now; const x0 = sweep; sweep = (sweep + dt * pxs) % W;
+      const ce = e.getContext("2d"), cp = p.getContext("2d"); const gap = 14 * d1;
+      [[ce, e], [cp, p]].forEach(([g, c]) => { g.fillStyle = "#020a0f"; if (sweep > x0) g.fillRect(x0, 0, sweep - x0 + gap, c.height); else { g.fillRect(x0, 0, W - x0, c.height); g.fillRect(0, 0, sweep + gap, c.height) } });
+      const S = self.strip, flat = !S || !self.v.live || self.v.code && !self.v.arr; const t0 = (now / 1000) % (S ? S.dur : 6);
+      ce.strokeStyle = "#39ff88"; ce.lineWidth = 2.2 * d1; ce.beginPath();
+      const steps = Math.max(2, Math.ceil(Math.abs(sweep - x0 < 0 ? sweep + W - x0 : sweep - x0))); let started = false;
+      for (let i = 0; i <= steps; i++) { const x = (x0 + i) % W, tt = ((x / pxs) + Math.floor(now / 1000 / sec) * sec) % (S ? S.dur : 6); let y = 0; if (S && !flat) { const k = Math.floor(tt * S.sr); y = S.sig[Math.min(S.sig.length - 1, k)] || 0 } const py = H * .55 - y * H * .32; if (!started || x < 1) { ce.moveTo(x, py); started = true } else ce.lineTo(x, py) } ce.stroke();
+      cp.strokeStyle = "#3fd7ff"; cp.lineWidth = 2.2 * d1; cp.beginPath(); started = false; const PH = p.height;
+      for (let i = 0; i <= steps; i++) { const x = (x0 + i) % W, tt = ((x / pxs) + Math.floor(now / 1000 / sec) * sec) % (S ? S.dur : 6); let y = 0; if (S && !flat && !self.v.arr && self.v.spo2) { for (const q of S.beats) { const u = tt - q - .18; if (u > 0 && u < .7) { y = Math.max(y, Math.sin(Math.min(1, u / .22) * Math.PI / 2) * Math.exp(-Math.max(0, u - .22) * 4.2) + (u > .3 && u < .45 ? .12 * Math.sin((u - .3) / .15 * Math.PI) : 0)) } } } const py = PH * .82 - y * PH * .6; if (!started || x < 1) { cp.moveTo(x, py); started = true } else cp.lineTo(x, py) } cp.stroke();
+      self.raf = requestAnimationFrame(frame);
+    }
+    this.raf = requestAnimationFrame(frame);
+    clearInterval(TV.tick); TV.tick = setInterval(() => this.nums(), 1000);
+  }
+};
+function tvMonStop() { cancelAnimationFrame(MON.raf) }
+
+/* ---------- phone side ---------- */
+function tvJoin(code) {
+  tvLeave(); TV.closed = false; const name = tvLS.get("vx.tv.name", "");
+  tvShow(`<div class="tp-wrap"><header class="tp-top"><span class="tv-logo">Vexcura <b>TV</b></span><button class="tv-x" data-tv="exit">Close</button></header>
+    <form class="tp-join" data-tvform="join"><h1>Join a room</h1><label><span>Room code on the TV</span><input name="code" inputmode="numeric" pattern="[0-9 ]*" maxlength="7" autocomplete="off" value="${tvE(tvSpaced(code || ""))}" required ${code ? "" : "autofocus"}></label>
+    <label><span>Your name (first name or nickname)</span><input name="name" maxlength="18" autocomplete="nickname" value="${tvE(name)}" required ${code ? "autofocus" : ""}></label><button class="tv-btn big" type="submit">Join</button>
+    <p class="tv-fine">Everyone in the room sees your name. Don't use your full name.</p></form></div>`, "tv-phone");
+}
+function tvJoinGo(code, name) {
+  code = String(code || "").replace(/\D/g, ""); name = String(name || "").trim().slice(0, 18); if (!/^\d{6}$/.test(code) || !name) return;
+  tvLS.set("vx.tv.name", name); TV.role = "player"; TV.code = code; TV.mode = null; TV.s = null; TV.m = null;
+  try { sessionStorage.setItem("vx.tv.join", JSON.stringify({ code, name })) } catch (e) { }
+  tvShow(`<div class="tp-wrap"><p class="tv-wait">Joining room ${tvSpaced(code)}…</p></div>`, "tv-phone");
+  const ws = tvConnect({ code, name, pid: tvPid() }, tvPlayerMsg);
+  if (ws) ws.addEventListener("close", e => { if (TV.role === "player" && !TV.mode && !TV.closed) { TV.closed = true; tvShow(`<div class="tp-wrap"><h1>Couldn't join</h1><p>Check the code on the TV and try again.</p><button class="tv-btn big" data-tv="rejoin">Try again</button></div>`, "tv-phone") } }, { once: true });
+}
+function tvPlayerMsg(o) {
+  if (o.t === "hello") { TV.me = o.id; TV.mode = o.mode; tvPDraw(); return }
+  if (o.t === "state") { const prevI = TV.s && TV.s.i, prevPh = TV.s && TV.s.ph; TV.s = o.s; if (TV.mode === "party" && (o.s.ph === "q" && (prevI !== o.s.i || prevPh !== "q"))) { TV.pick = []; TV.locked = false; TV.m = null } tvPDraw(); return }
+  if (o.t === "m") { TV.m = o.m; if (o.m.k === "locked") TV.locked = true; if (o.m.k === "nope") { tvToast("Not available right now: " + o.m.lab); return } tvPDraw(); return }
+  if (o.t === "end") { TV.closed = true; clearInterval(TV.mstream); tvBar(null); tvShow(`<div class="tp-wrap"><h1>The room closed</h1><p>${o.why === "removed" ? "The host removed you from the room." : "Thanks for playing."}</p><button class="tv-btn big" data-tv="joinnew">Join another room</button><button class="tv-btn sec" data-tv="exit">Close</button></div>`, "tv-phone") }
+}
+function tvToast(t) { let el = document.getElementById("tvtoast"); if (!el) { el = document.createElement("div"); el.id = "tvtoast"; el.setAttribute("role", "status"); document.body.appendChild(el) } el.textContent = t; el.className = "on"; clearTimeout(el._t); el._t = setTimeout(() => el.className = "", 2200) }
+function tvPDraw() {
+  const s = TV.s || {}, top = `<header class="tp-top"><span class="tv-logo">Room <b>${tvSpaced(TV.code)}</b></span><span class="tv-net" role="status"></span><button class="tv-x" data-tv="leave">Leave</button></header>`;
+  if (TV.mode === "party") {
+    if (!s.ph || s.ph === "lobby") return tvShow(`<div class="tp-wrap">${top}<div class="tp-big"><b>You're in!</b><span>Watch the TV. The game starts soon.</span></div></div>`, "tv-phone");
+    if (s.ph === "q") { const pick = TV.pick || [];
+      if (TV.locked) return tvShow(`<div class="tp-wrap">${top}<div class="tp-big"><b>Locked in</b><span>Eyes on the TV.</span></div></div>`, "tv-phone");
+      return tvShow(`<div class="tp-wrap">${top}<p class="tp-k">Question ${s.i + 1} of ${s.n}${s.sata ? " · Select all that apply" : ""}</p><p class="tp-stem">${tvE(s.stem)}</p><div class="tp-ans">${s.opts.map((o, j) => `<button class="tp-a tc${j}${pick.includes(j) ? " on" : ""}" data-tv="pa" data-v="${j}" aria-pressed="${pick.includes(j)}"><span aria-hidden="true">${PCOL[j][1]}</span><b>${PCOL[j][0]}</b>${tvE(o)}</button>`).join("")}</div>${s.sata ? `<button class="tv-btn big" data-tv="psub" ${pick.length ? "" : "disabled"}>Submit</button>` : ""}</div>`, "tv-phone") }
+    if (s.ph === "reveal") { const m = TV.m && TV.m.k === "result" ? TV.m : null;
+      return tvShow(`<div class="tp-wrap">${top}<div class="tp-big ${m ? (m.ok ? "ok" : "no") : ""}"><b>${m ? (m.answered ? (m.ok ? "Correct!" : "Not quite") : "Time's up") : "Answer revealed"}</b>${m ? `<span>${m.ok ? "+" + m.pts + " points" + (m.streak >= 3 ? " · streak bonus" : "") : "The rationale is on the TV."}</span><span class="tp-tot">${m.total} points · #${m.rank} of ${m.of}</span>` : ""}</div></div>`, "tv-phone") }
+    if (s.ph === "final") { const m = TV.m && TV.m.k === "final" ? TV.m : null; return tvShow(`<div class="tp-wrap">${top}<div class="tp-big"><b>${m ? "#" + m.rank + " of " + m.of : "Game over"}</b>${m ? `<span>${m.total} points</span>` : ""}<span>Thanks for playing. Stay in the room for the next game.</span></div></div>`, "tv-phone") }
+  }
+  if (TV.mode === "code") {
+    const myRole = (s.roles || {})[TV.me];
+    if (!myRole) return tvShow(`<div class="tp-wrap">${top}<h1 class="tp-h">Pick your role</h1><div class="tp-roles">${Object.entries(CTROLE).map(([k, [n, d]]) => { const taken = Object.values(s.roles || {}).filter(r => r === k).length; return `<button class="tp-role" data-tv="role" data-v="${k}"><b>${n}</b><span>${d}</span>${taken ? `<em>${taken} on it</em>` : ""}</button>` }).join("")}</div></div>`, "tv-phone");
+    if (s.ph !== "run" && s.ph !== "end") return tvShow(`<div class="tp-wrap">${top}<div class="tp-big"><b>${CTROLE[myRole][0]}</b><span>${s.ph === "done" ? "The code is over. Look at the debrief on the TV." : "Waiting for the leader to start the code on the TV."}</span><button class="tv-btn sec" data-tv="role0">Change role</button></div></div>`, "tv-phone");
+    const c = s.c || {}, acts = (s.acts || []).filter(a => myRole === "lead" || a.r === myRole);
+    const grp = {}; acts.forEach(a => { const g = a.id.startsWith("cgive:") ? a.lab.split(":")[0] : a.tab === "ht" ? "H's & T's" : a.tab === "post" ? "After ROSC" : myRole === "lead" ? (CTROLE[a.r] || ["Other"])[0] : ""; (grp[g] = grp[g] || []).push(a) });
+    return tvShow(`<div class="tp-wrap tp-code">${top}<div class="tp-st"><b>${tvE(CTROLE[myRole][0])}</b><span>${c.end ? "Code ended" : (String(Math.floor((c.t || 0) / 60)).padStart(2, "0") + ":" + String((c.t || 0) % 60).padStart(2, "0"))}${c.cpr ? " · compressions running" : ""}</span><button class="tp-chg" data-tv="role0">Change</button></div>
+      ${s.ask && (myRole === "lead" || myRole === "defib") ? `<div class="tp-ask"><b>Rhythm check: call the rhythm</b>${s.ask.map(a => `<button class="tp-do" data-tv="do" data-v="${tvE(a.id)}">${tvE(a.lab)}</button>`).join("")}</div>` : ""}
+      ${Object.entries(grp).map(([g, L]) => `${g ? `<h2 class="tp-g">${tvE(g)}</h2>` : ""}<div class="tp-acts">${L.map(a => `<button class="tp-do${a.id === "ca:cpr" || a.id === "ca:shock" ? " big" : ""}" data-tv="do" data-v="${tvE(a.id)}" ${a.dis ? "disabled" : ""}>${tvE(a.id.startsWith("cgive:") ? a.lab.split(": ").slice(1).join(": ") : a.lab)}</button>`).join("")}</div>`).join("")}
+      ${c.log && c.log.length ? `<ol class="tp-log">${c.log.slice(0, 4).map(l => `<li>${tvE(l)}</li>`).join("")}</ol>` : ""}</div>`, "tv-phone");
+  }
+  if (TV.mode === "monitor") {
+    const signed = tvSigned(), running = tvRunning();
+    return tvShow(`<div class="tp-wrap">${top}<div class="tp-big"><b>Linked to the TV</b><span>${!signed ? "Sign in first, then start or resume a simulation. Your patient's monitor shows on the TV." : running ? "Your simulation is streaming to the TV. Go back to your patient." : "Start or resume a simulation. Your patient's monitor shows on the TV."}</span>
+      <button class="tv-btn big" data-tv="msim">${!signed ? "Sign in" : running ? "Back to my patient" : "Open the Simulation Center"}</button><p class="tv-fine">Only the monitor numbers and rhythm are sent: no names and nothing from your chart notes.</p></div></div>`, "tv-phone");
+  }
+  tvShow(`<div class="tp-wrap">${top}<p class="tv-wait">Connected.</p></div>`, "tv-phone");
+}
+function tvSigned() { try { return !!(window.__EHX && window.__EHX.get() && window.__EHX.get().db) && !!document.querySelector('[data-act="signout"], .acct, #acct') || !!localStorage.getItem("nclexsim.v1.session") } catch (e) { return false } }
+function tvRunning() { try { return !!(RUN && RUN.R && !RUN.R.done) } catch (e) { return false } }
+function tvVitals() {
+  try {
+    const R = RUN.R; if (!R || R.done) { if (typeof view !== "undefined" && view === "code" && C) return { code: 1, arr: C.phase === "arrest" ? "pea" : null, pt: C.S && C.S.pt ? C.S.pt[0] : "", live: 1 }; return null }
+    const D = R.D || {}, live = R.mon >= 2, lv = R.acts.filter(a => a.k === "vit").slice(-1)[0];
+    const pv = live ? D : (lv && lv.v) || {}; const p = (() => { try { return V().db().patients.find(z => z.id === RUN.pid) } catch (e) { return null } })() || {};
+    return { pt: [p.label, [p.age, p.sex].filter(Boolean).join(" ")].filter(Boolean).join(" · "), live: live ? 1 : 0, art: !!(R.aline || R.mon >= 3), arr: R.x.arr || null, code: R.uni && R.uni.code && !R.uni.code.res ? 1 : 0,
+      hr: pv.hr != null ? Math.round(pv.hr) : null, rh: live ? D.rh : null, rhn: live && typeof RHN !== "undefined" ? (RHN[D.rh] || "") : "", spo2: pv.spo2 != null ? Math.round(pv.spo2) : null, sbp: pv.sbp != null ? Math.round(pv.sbp) : null, dbp: pv.dbp != null ? Math.round(pv.dbp) : null, map: pv.map != null ? Math.round(pv.map) : null, rr: pv.rr != null ? Math.round(pv.rr) : null, temp: pv.temp != null ? Math.round(pv.temp * 10) / 10 : null };
+  } catch (e) { return null }
+}
+function tvMonStream() { clearInterval(TV.mstream); TV.mstream = setInterval(() => { if (TV.role !== "player" || TV.mode !== "monitor") return; const v = tvVitals(); if (v) tvSend({ t: "act", a: "vit", v }); tvPill() }, 1000) }
+function tvPill() { if (TV.role !== "player" || TV.mode !== "monitor" || !document.getElementById("vxtv") || !document.getElementById("vxtv").hidden) { tvBar(null); return } tvBar(`<div class="tvb-pill"><span>TV linked · room ${tvSpaced(TV.code)}</span><span class="tv-net" role="status"></span><button data-tv="leave">Unlink</button></div>`) }
+
+/* ---------- input ---------- */
+document.addEventListener("click", e => {
+  const b = e.target && e.target.closest && e.target.closest("[data-tv]"); if (!b || !(b.closest("#vxtv") || b.closest("#vxtvbar"))) return; e.preventDefault();
+  const a = b.dataset.tv, v = b.dataset.v;
+  if (a === "exit") { tvLeave(); tvHide(); try { history.replaceState(null, "", location.pathname + location.search) } catch (x) { } return }
+  if (a === "home") { if (TV.mode === "code" && CTM.inCode()) { try { const btn = document.querySelector('[data-act="code"]'); } catch (x) { } } document.documentElement.classList.remove("vxtv-code"); tvBar(null); tvHome(); return }
+  if (a === "new") return tvCreate(v);
+  if (a === "pcat") { PTY.o.cat = v; return PTY.draw() } if (a === "pn") { PTY.o.n = +v; return PTY.draw() } if (a === "psec") { PTY.o.sec = +v; return PTY.draw() }
+  if (a === "pstart" || a === "pagain") return PTY.start(); if (a === "pnext") return PTY.next();
+  if (a === "cstart" || a === "cagain") return CTM.start();
+  if (a === "msound") { MON.sound = !MON.sound; b.textContent = MON.sound ? "Sound on" : "Sound off"; b.setAttribute("aria-pressed", MON.sound); if (MON.sound) MON.beep(520); return }
+  if (a === "leave") { tvLeave(); tvJoin(""); return } if (a === "joinnew" || a === "rejoin") { const j = (() => { try { return JSON.parse(sessionStorage.getItem("vx.tv.join") || "{}") } catch (x) { return {} } })(); return tvJoin(a === "rejoin" ? j.code : "") }
+  if (a === "pa") { const j = +v, s = TV.s || {}; if (TV.locked || s.ph !== "q") return; if (!s.sata) { TV.pick = [j]; tvSend({ t: "act", a: "ans", i: s.i, v: [j] }); TV.locked = true; return tvPDraw() } TV.pick = TV.pick || []; TV.pick = TV.pick.includes(j) ? TV.pick.filter(x => x !== j) : TV.pick.concat([j]); return tvPDraw() }
+  if (a === "psub") { const s = TV.s || {}; if (!TV.pick || !TV.pick.length) return; tvSend({ t: "act", a: "ans", i: s.i, v: TV.pick }); TV.locked = true; return tvPDraw() }
+  if (a === "role") { tvSend({ t: "act", a: "role", r: v }); return } if (a === "role0") { tvSend({ t: "act", a: "role", r: "none" }); TV.s = Object.assign({}, TV.s, { roles: Object.assign({}, (TV.s || {}).roles, { [TV.me]: undefined }) }); return tvPDraw() }
+  if (a === "do") { if (tvSend({ t: "act", a: "do", x: v })) { b.classList.add("sent"); setTimeout(() => b.classList.remove("sent"), 500) } return }
+  if (a === "msim") { tvMonStream(); tvHide(); tvPill(); if (!tvSigned()) return; if (tvRunning()) { try { const E = window.__EHX.get(); E.go(RUN.pid, E.v29.isRover && E.v29.isRover() ? "home" : "summary") } catch (x) { location.hash = "#ehr" } } else if (window.__vxSimC) window.__vxSimC.open(); return }
+}, true);
+document.addEventListener("submit", e => { const f = e.target; if (!f || !f.matches || !f.matches('[data-tvform="join"]')) return; e.preventDefault(); tvJoinGo(f.code.value, f.name.value) }, true);
+/* TV remotes send arrow keys: move focus between [data-tvf] buttons in reading order */
+document.addEventListener("keydown", e => {
+  if (!document.documentElement.classList.contains("vxtv-on") || !/^Arrow/.test(e.key) || (e.target && /^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName))) return;
+  const L = [...document.querySelectorAll("#vxtv [data-tvf]:not([disabled])")]; if (!L.length) return; const cur = document.activeElement, r0 = cur && L.includes(cur) ? cur.getBoundingClientRect() : null;
+  if (!r0) { L[0].focus(); e.preventDefault(); return }
+  const dir = e.key.slice(5), cx = r0.left + r0.width / 2, cy = r0.top + r0.height / 2; let best = null, bd = 1e9;
+  L.forEach(el => { if (el === cur) return; const r = el.getBoundingClientRect(), x = r.left + r.width / 2, y = r.top + r.height / 2, dx = x - cx, dy = y - cy;
+    const ok = dir === "Right" ? dx > 4 : dir === "Left" ? dx < -4 : dir === "Down" ? dy > 4 : dy < -4; if (!ok) return; const d = (dir === "Right" || dir === "Left") ? Math.abs(dx) + Math.abs(dy) * 2.5 : Math.abs(dy) + Math.abs(dx) * 2.5; if (d < bd) { bd = d; best = el } });
+  if (best) { best.focus(); e.preventDefault() }
+});
+/* routes: /tv → #tv, /join[/123456] → #join[/123456] (worker redirects). Open on load and on hash changes; never close on other hashes. */
+function tvRoute() { const h = location.hash; let m;
+  if (/^#tv\/?$/.test(h)) { if (TV.role === "host") return; const s = (() => { try { return JSON.parse(sessionStorage.getItem("vx.tv.host") || "null") } catch (e) { return null } })(); tvHome(); return }
+  if ((m = h.match(/^#join(?:\/(\d{6}))?\/?$/))) { if (TV.role === "player" && TV.code === m[1]) return; tvJoin(m[1] || "") } }
+window.addEventListener("hashchange", tvRoute);
+if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", () => setTimeout(tvRoute, 0)); else setTimeout(tvRoute, 0);
+window.__vxTV = { version: "v78", home: tvHome, join: tvJoin, state: () => ({ role: TV.role, code: TV.code, mode: TV.mode, players: tvRoster().length, s: TV.s }), _vitals: tvVitals, _party: PTY, _code: CTM, _mon: MON };
+/* </v78-tv> */
 window.__vx32.validate=validateAll;
 /* ---------- test hooks (only with window.__vx32T.test) ---------- */
 if(window.__vx32T&&window.__vx32T.test)Object.assign(window.__vx32,{RUN,CASES,CASEM,inst,derive,step,simulate,validateCase,startDrill,doAct,acceptOrders,scoreRun,rateRun,prog,saveProg,tierNow,tierPct,TIERS,ENC,DEC,ORD,TX,
